@@ -1,0 +1,91 @@
+/* KudsRocket —— created 20261014 by Claude Opus 5.5 */
+:root {
+  color-scheme: dark;
+  --bg: #111; --panel: #1c1c1c; --line: #333; --ink: #ddd; --ink-soft: #888; --accent: #7aa2ff; --warn: #e0a040; --err: #e05a5a;
+  --tool: 40px;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); font: 15px/1.5 system-ui, sans-serif; }
+body { overscroll-behavior: none; }
+button { font: inherit; color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 8px 14px; cursor: pointer; }
+button:hover { border-color: var(--ink-soft); }
+button.primary { background: #263a66; border-color: var(--accent); }
+button:disabled { opacity: .4; cursor: default; }
+.muted { color: var(--ink-soft); }
+.icon { width: 20px; height: 20px; flex: none; }
+
+/* ── 主页 ── */
+#home { max-width: 760px; margin: 0 auto; padding: 24px 16px 48px; display: grid; gap: 16px; }
+.home-head { display: flex; align-items: baseline; gap: 12px; }
+.home-head h1 { margin: 0; font-size: 22px; font-weight: 600; }
+.account { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.library { display: grid; gap: 8px; }
+.disc { display: flex; align-items: center; gap: 12px; text-align: left; padding: 14px 16px; width: 100%; }
+.disc .title { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 16px; }
+.disc.continue { border-color: var(--accent); }
+.local { padding-top: 8px; border-top: 1px solid var(--line); }
+
+/* ── 游戏 ── */
+#game { position: fixed; inset: 0; display: grid; grid-template-rows: var(--tool) 1fr; }
+.toolbar { display: flex; align-items: center; gap: 4px; padding: 0 6px; background: #0a0a0a; border-bottom: 1px solid #222; }
+#title-wrap { flex: 1; overflow: hidden; }
+#title { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--ink-soft); padding-left: 6px; }
+.icon-btn { background: none; border: 1px solid transparent; padding: 6px 8px; display: inline-flex; align-items: center; gap: 4px; min-height: 34px; }
+.icon-btn.on { border-color: var(--accent); }
+.icon-btn .label { font-size: 13px; }
+
+#stage { position: relative; display: grid; place-items: center; overflow: hidden; container-type: size; background: #000; touch-action: none; user-select: none; -webkit-user-select: none; }
+#stage canvas { width: min(100cqw, calc(100cqh * 480 / 272)); height: auto; aspect-ratio: 480 / 272; image-rendering: pixelated; background: #000; }
+#stage canvas[hidden] { display: none; }
+@media (orientation: portrait) { #stage { place-items: start center; } }
+#stage:fullscreen { background: #000; }
+#paused-mark { position: absolute; top: 12px; left: 50%; transform: translateX(-50%); padding: 4px 14px; border-radius: 999px; background: rgba(0,0,0,.6); color: #fff; pointer-events: none; }
+#status { position: absolute; left: 8px; bottom: 8px; margin: 0; padding: 8px; max-width: calc(100% - 16px); white-space: pre-wrap; font: 11px/1.4 ui-monospace, monospace; background: rgba(0,0,0,.7); border-radius: 6px; pointer-events: none; }
+
+/* ── 软键：铺满画面那一层，只有键本身接 pointer ── */
+.softkeys { position: absolute; inset: 0; pointer-events: none; --u: min(11vmin, 72px); }
+.softkeys[hidden] { display: none; }
+.softkeys .pk, .softkeys .dpad { pointer-events: auto; touch-action: none; position: absolute; }
+.pk { display: grid; place-items: center; color: rgba(255,255,255,.75); background: rgba(255,255,255,.10); border: 1.5px solid rgba(255,255,255,.28); font: 600 calc(var(--u) * .28)/1 system-ui, sans-serif; letter-spacing: .04em; }
+.pk.on { background: rgba(122,162,255,.40); border-color: rgba(122,162,255,.9); }
+.shoulder { top: calc(var(--u) * .3); width: calc(var(--u) * 2.1); height: calc(var(--u) * .8); border-radius: calc(var(--u) * .3); }
+.shoulder.l { left: calc(var(--u) * .3); }
+.shoulder.r { right: calc(var(--u) * .3); }
+.dpad { left: calc(var(--u) * .4); bottom: calc(var(--u) * .5); width: calc(var(--u) * 2.7); height: calc(var(--u) * 2.7); }
+.dpad .arm { position: absolute; width: 34%; height: 34%; background: rgba(255,255,255,.10); border: 1.5px solid rgba(255,255,255,.28); border-radius: 18%; }
+.dpad .arm.on { background: rgba(122,162,255,.40); border-color: rgba(122,162,255,.9); }
+.dpad .up { left: 33%; top: 0; } .dpad .down { left: 33%; bottom: 0; } .dpad .left { left: 0; top: 33%; } .dpad .right { right: 0; top: 33%; }
+.face { position: absolute; right: calc(var(--u) * .4); bottom: calc(var(--u) * .5); width: calc(var(--u) * 2.7); height: calc(var(--u) * 2.7); pointer-events: none; }
+.fb { width: 36%; height: 36%; border-radius: 50%; }
+.fb.tri { left: 32%; top: 0; } .fb.cr { left: 32%; bottom: 0; } .fb.sq { left: 0; top: 32%; } .fb.ci { right: 0; top: 32%; }
+.mid { position: absolute; left: 50%; bottom: calc(var(--u) * .3); transform: translateX(-50%); display: flex; gap: calc(var(--u) * .5); pointer-events: none; }
+.mid .pk { position: static; width: calc(var(--u) * 1.6); height: calc(var(--u) * .55); border-radius: 999px; font-size: calc(var(--u) * .18); }
+/* PSP 键帽符号：CSS 几何形顶位（图标库缺，已登记 SVG Icons/TODO.md） */
+.sym { display: block; width: 46%; height: 46%; position: relative; }
+.sym.ci { border: 2.5px solid #ff8fa0; border-radius: 50%; }
+.sym.sq { border: 2.5px solid #f0a0e0; border-radius: 2px; width: 40%; height: 40%; }
+.sym.tri { width: 0; height: 0; border-left: calc(var(--u) * .2) solid transparent; border-right: calc(var(--u) * .2) solid transparent; border-bottom: calc(var(--u) * .34) solid #7fe0c0; }
+.sym.cr::before, .sym.cr::after { content: ""; position: absolute; left: 50%; top: 0; width: 2.5px; height: 100%; background: #9fb8ff; transform: translateX(-50%) rotate(45deg); }
+.sym.cr::after { transform: translateX(-50%) rotate(-45deg); }
+
+/* ── 面板 / 横条 / 提示 / 遮罩 ── */
+.sheet-back { position: fixed; inset: 0; background: rgba(0,0,0,.55); display: grid; place-items: center; z-index: 50; padding: 16px; }
+.sheet { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px; width: min(520px, 100%); display: grid; gap: 12px; }
+.sheet h2 { margin: 0; font-size: 18px; }
+.sheet p { margin: 0; }
+.sheet .hint { color: var(--ink-soft); font-size: 13px; }
+.sheet input { font: inherit; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--line); background: #111; color: var(--ink); }
+.sheet .row { display: flex; justify-content: flex-end; gap: 8px; flex-wrap: wrap; }
+.slot { display: grid; grid-template-columns: auto 1fr auto auto; align-items: center; gap: 8px; padding: 6px 0; border-top: 1px solid var(--line); }
+.slot.current .slot-name { color: var(--accent); }
+#banners { position: fixed; top: 8px; left: 50%; transform: translateX(-50%); width: min(640px, calc(100% - 16px)); display: grid; gap: 6px; z-index: 60; }
+.banner { display: flex; align-items: center; gap: 8px; padding: 8px 8px 8px 14px; border-radius: 8px; background: #3a1d1d; border: 1px solid var(--err); }
+.banner.warning { background: #3a2e17; border-color: var(--warn); }
+.banner span { flex: 1; }
+#note { position: fixed; bottom: 12px; left: 50%; transform: translateX(-50%); padding: 6px 14px; border-radius: 999px; background: rgba(30,30,30,.92); border: 1px solid var(--line); z-index: 40; max-width: calc(100% - 24px); font-size: 13px; }
+#update { position: fixed; bottom: 12px; right: 12px; display: flex; align-items: center; gap: 8px; padding: 6px 6px 6px 14px; border-radius: 10px; background: var(--panel); border: 1px solid var(--accent); z-index: 45; }
+#busy { position: fixed; inset: 0; background: rgba(0,0,0,.5); display: grid; place-items: center; z-index: 70; }
+#busy span { padding: 10px 18px; border-radius: 10px; background: var(--panel); border: 1px solid var(--line); }
+[hidden] { display: none !important; }
+/* 竖屏：画面在上、软键在下 → L / R 放到十字键和四个键上方（不叠在画面上） */
+@media (orientation: portrait) { .shoulder { top: auto; bottom: calc(var(--u) * 3.5); } }

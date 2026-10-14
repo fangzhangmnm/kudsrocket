@@ -1,0 +1,43 @@
+<!doctype html>
+<!-- created 20261014 by Claude Opus 5.5 -->
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#111111">
+<title>KudsRocket</title>
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="stylesheet" href="./styles.css?v=007a2252cab7">
+</head>
+<body>
+<main id="home">
+  <header class="home-head"><h1>KudsRocket</h1><span id="version" class="muted"></span></header>
+  <div id="account" class="account"></div>
+  <section class="library-head">
+    <button id="unlock" hidden>输入口令看名字</button>
+  </section>
+  <div id="library" class="library"></div>
+  <section class="local">
+    <button id="open-local">这台设备上的文件…</button>
+    <input type="file" id="local-file" hidden>
+  </section>
+</main>
+
+<main id="game" hidden>
+  <div id="toolbar" class="toolbar"><span id="title"></span></div>
+  <!-- #gl 在核启动时以 OffscreenCanvas 交给核线程（GPU 渲染）；#screen 是软件渲染兜底，主线程画 -->
+  <div id="stage">
+    <canvas id="gl" width="480" height="272"></canvas>
+    <canvas id="screen" width="480" height="272" hidden></canvas>
+    <div id="paused-mark" hidden>暂停中</div>
+  </div>
+  <pre id="status" hidden></pre>
+</main>
+
+<div id="banners"></div>
+<div id="note" hidden></div>
+<div id="update" hidden></div>
+<div id="busy" hidden><span></span></div>
+<script type="module" src="./dist/kudsrocket-007a2252cab7.mjs"></script>
+</body>
+</html>

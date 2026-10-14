@@ -1,0 +1,338 @@
+diff --git a/Common/TimeUtil.cpp b/Common/TimeUtil.cpp
+index 344990a..96c64b8 100644
+--- a/Common/TimeUtil.cpp
++++ b/Common/TimeUtil.cpp
+@@ -266,7 +266,7 @@ void sleep_ms(int ms, const char *reason) {
+ 	Sleep(ms);
+ #elif defined(HAVE_LIBNX)
+ 	svcSleepThread(ms * 1000000);
+-#elif defined(__EMSCRIPTEN__)
++#elif defined(__EMSCRIPTEN__) && !defined(__EMSCRIPTEN_PTHREADS__)  // KudsRocket patch: with pthreads, usleep blocks fine in workers; emscripten_sleep needs Asyncify
+ 	emscripten_sleep(ms);
+ #else
+ 	usleep(ms * 1000);
+@@ -284,7 +284,7 @@ void sleep_us(int us, const char *reason) {
+ 	Sleep(us / 1000);
+ #elif defined(HAVE_LIBNX)
+ 	svcSleepThread(us * 1000);
+-#elif defined(__EMSCRIPTEN__)
++#elif defined(__EMSCRIPTEN__) && !defined(__EMSCRIPTEN_PTHREADS__)  // KudsRocket patch: with pthreads, usleep blocks fine in workers; emscripten_sleep needs Asyncify
+ 	emscripten_sleep(us / 1000);
+ #else
+ 	usleep(us);
+@@ -341,7 +341,7 @@ void sleep_precise(double seconds, const char *reason) {
+ 	// On other platforms, we just do a conversion with more input precision than in sleep_ms which is restricted to whole milliseconds.
+ #elif defined(HAVE_LIBNX)
+ 	svcSleepThread((int64_t)(seconds * 1000000000.0));
+-#elif defined(__EMSCRIPTEN__)
++#elif defined(__EMSCRIPTEN__) && !defined(__EMSCRIPTEN_PTHREADS__)  // KudsRocket patch: with pthreads, usleep blocks fine in workers; emscripten_sleep needs Asyncify
+ 	emscripten_sleep(seconds * 1000.0);
+ #else
+ 	usleep(seconds * 1000000.0);
+diff --git a/Core/Debugger/WebSocket.cpp b/Core/Debugger/WebSocket.cpp
+index 6e12abe..9114164 100644
+--- a/Core/Debugger/WebSocket.cpp
++++ b/Core/Debugger/WebSocket.cpp
+@@ -120,7 +120,7 @@ static void WebSocketNotifyLifecycle(CoreLifecycle stage) {
+ 	}
+ }
+ 
+-static void SetupDebuggerLock() {
++void SetupDebuggerLock() {
+ 	if (!lifecycleLockSetup) {
+ 		Core_ListenLifecycle(&WebSocketNotifyLifecycle);
+ 		lifecycleLockSetup = true;
+diff --git a/Core/Debugger/WebSocket.h b/Core/Debugger/WebSocket.h
+index f05856d..89f2c42 100644
+--- a/Core/Debugger/WebSocket.h
++++ b/Core/Debugger/WebSocket.h
+@@ -22,5 +22,7 @@ class ServerRequest;
+ }
+ 
+ void HandleDebuggerRequest(const http::ServerRequest &request);
++// KudsRocket patch: register the lifecycle lock listener before a game starts (headless boots immediately).
++void SetupDebuggerLock();
+ // Note: blocks.
+ void StopAllDebuggers();
+diff --git a/Core/MIPS/JitCommon/JitCommon.cpp b/Core/MIPS/JitCommon/JitCommon.cpp
+index fd53e69..fac84b7 100644
+--- a/Core/MIPS/JitCommon/JitCommon.cpp
++++ b/Core/MIPS/JitCommon/JitCommon.cpp
+@@ -122,6 +122,9 @@ namespace MIPSComp {
+ 		return new MIPSComp::RiscVJit(mipsState);
+ #elif PPSSPP_ARCH(LOONGARCH64)
+ 		return new MIPSComp::LoongArch64Jit(mipsState);
++#elif defined(__EMSCRIPTEN__)
++		// KudsRocket patch: no native JIT in wasm; use the IR interpreter.
++		return new MIPSComp::IRJit(mipsState, false);
+ #else
+ 		return new MIPSComp::FakeJit(mipsState);
+ #endif
+diff --git a/Core/WebServer.cpp b/Core/WebServer.cpp
+index 9c0c469..fbbe89d 100644
+--- a/Core/WebServer.cpp
++++ b/Core/WebServer.cpp
+@@ -95,6 +95,8 @@ static ServerStatus RetrieveStatus() {
+ // This reports the local IP address to report.ppsspp.org, which can then
+ // relay that address to a mobile device on the same wifi/LAN searching for the server.
+ static bool RegisterServer(int port) {
++	// KudsRocket patch: never announce this machine (local IP + port) to report.ppsspp.org.
++	return false;
+ 	bool success = false;
+ 	http::Client http(nullptr);
+ 	bool cancelled = false;
+Submodule ext/aemu_postoffice contains modified content
+diff --git a/ext/aemu_postoffice/client/sock_impl_linux.c b/ext/aemu_postoffice/client/sock_impl_linux.c
+index 4a44f53..a6ac5b7 100644
+--- a/ext/aemu_postoffice/client/sock_impl_linux.c
++++ b/ext/aemu_postoffice/client/sock_impl_linux.c
+@@ -118,7 +118,9 @@ int native_connect_tcp_sock(void *addr, int addrlen){
+ 
+ 	#ifndef __linux__
+ 	sockopt = 1;
++#ifdef SO_NOSIGPIPE  // KudsRocket patch
+ 	setsockopt(sock, SOL_SOCKET, SO_NOSIGPIPE, &sockopt, sizeof(sockopt));
++#endif
+ 	#endif
+ 
+ 	// Show some socket options
+@@ -140,8 +142,10 @@ int native_connect_tcp_sock(void *addr, int addrlen){
+ 	#ifndef __linux__
+ 	opt_len = sizeof(sockopt);
+ 	sockopt = 0;
++#ifdef SO_NOSIGPIPE  // KudsRocket patch
+ 	get_ret = getsockopt(sock, SOL_SOCKET, SO_NOSIGPIPE, &sockopt, &opt_len);
+ 	LOG("%s: SO_NOSIGPIPE is %d (0x%x)\n", __func__, sockopt, get_ret == -1 ? errno : 0);
++#endif
+ 	#endif
+ 
+ 	return sock;
+Submodule ext/cpu_features contains modified content
+diff --git a/ext/cpu_features/src/hwcaps.c b/ext/cpu_features/src/hwcaps.c
+index f44f6c3..f11ff2e 100644
+--- a/ext/cpu_features/src/hwcaps.c
++++ b/ext/cpu_features/src/hwcaps.c
+@@ -100,6 +100,12 @@ static uint32_t GetElfHwcapFromGetauxval(uint32_t hwcap_type) {
+   dlclose(libc_handle);
+   return ret;
+ }
++#elif defined(__EMSCRIPTEN__)
++// KudsRocket patch: wasm has no auxv; report no hardware capabilities.
++static unsigned long GetElfHwcapFromGetauxval(uint32_t hwcap_type) {
++  (void)hwcap_type;
++  return 0;
++}
+ #else
+ #error "This platform does not provide hardware capabilities."
+ #endif
+diff --git a/headless/Headless.cpp b/headless/Headless.cpp
+index 293878d..c7df5ee 100644
+--- a/headless/Headless.cpp
++++ b/headless/Headless.cpp
+@@ -42,6 +42,12 @@
+ #include "Core/CoreTiming.h"
+ #include "Core/System.h"
+ #include "Core/WebServer.h"
++#include "Core/Screenshot.h"
++#include "Core/CoreTiming.h"
++#include "Core/HLE/sceCtrl.h"
++#include "GPU/GPU.h"
++#include "GPU/Common/GPUDebugInterface.h"
++#include "Core/Debugger/WebSocket.h"
+ #include "Core/HLE/sceUtility.h"
+ #include "Core/SaveState.h"
+ #include "GPU/GPUCommon.h"
+@@ -179,6 +185,72 @@ struct AutoTestOptions {
+ 	bool bench : 1;
+ };
+ 
++// KudsRocket patch: oracle mode for reference runs of real games (off unless KR_DUMP_DIR is set).
++// Dumps the displayed frame as PNG every KR_DUMP_EVERY_MS of emulated time, and taps one button
++// (KR_PRESS_SEQ, see below) every KR_PRESS_EVERY_MS after KR_PRESS_AFTER_MS.
++// Emulated time, not wall time: headless runs unthrottled.
++static void KrOracleTick() {
++	static const char *dir = getenv("KR_DUMP_DIR");
++	if (!dir || !gpuDebug)
++		return;
++	auto envMs = [](const char *name, double def) { const char *v = getenv(name); return v ? atof(v) : def; };
++	static const double dumpEvery = envMs("KR_DUMP_EVERY_MS", 2000.0);
++	static const double pressEvery = envMs("KR_PRESS_EVERY_MS", 0.0);
++	static const double pressAfter = envMs("KR_PRESS_AFTER_MS", 15000.0);
++	static std::vector<u32> seq = [] {
++		// KR_PRESS_SEQ: comma list (up,down,left,right,circle,cross,square,triangle,start,select); after the list, the last one repeats.
++		std::vector<u32> out;
++		std::string spec = getenv("KR_PRESS_SEQ") ? getenv("KR_PRESS_SEQ") : (getenv("KR_PRESS_BUTTON") ? getenv("KR_PRESS_BUTTON") : "circle");
++		size_t pos = 0;
++		while (pos <= spec.size()) {
++			size_t comma = spec.find(',', pos);
++			std::string name = spec.substr(pos, comma == std::string::npos ? std::string::npos : comma - pos);
++			u32 bit = name == "up" ? CTRL_UP : name == "down" ? CTRL_DOWN : name == "left" ? CTRL_LEFT : name == "right" ? CTRL_RIGHT
++				: name == "cross" ? CTRL_CROSS : name == "square" ? CTRL_SQUARE : name == "triangle" ? CTRL_TRIANGLE
++				: name == "start" ? CTRL_START : name == "select" ? CTRL_SELECT : CTRL_CIRCLE;
++			out.push_back(bit);
++			if (comma == std::string::npos) break;
++			pos = comma + 1;
++		}
++		return out;
++	}();
++	static size_t seqIdx = 0;
++	static u32 button = 0;
++	static double nextDump = 0.0, nextPress = pressAfter, releaseAt = -1.0;
++	static int frameNo = 0;
++	const double t = CoreTiming::GetGlobalTimeUs() / 1000.0;
++	if (releaseAt >= 0.0 && t >= releaseAt) {
++		__CtrlUpdateButtons(0, button);
++		releaseAt = -1.0;
++	}
++	if (pressEvery > 0.0 && t >= nextPress) {
++		button = seq[std::min(seqIdx, seq.size() - 1)];
++		seqIdx++;
++		__CtrlUpdateButtons(button, 0);
++		releaseAt = t + 100.0;
++		nextPress = t + pressEvery;
++	}
++	if (t >= nextDump) {
++		nextDump = t + dumpEvery;
++		GPUDebugBuffer buf;
++		const bool gotFb = gpuDebug->GetCurrentFramebuffer(buf, GPU_DBG_FRAMEBUF_DISPLAY, -1);
++		if (getenv("KR_DUMP_VERBOSE")) fprintf(stderr, "[kr] t=%.0fms getFb=%d\n", t, (int)gotFb);
++		if (gotFb) {
++			u8 *temp = nullptr;
++			u32 w = 480, h = 272;  // in: max size, out: actual size
++			const u8 *rgb = ConvertBufferToScreenshot(buf, false, temp, w, h);
++			if (getenv("KR_DUMP_VERBOSE") && !rgb) fprintf(stderr, "[kr] convert failed\n");
++			if (rgb) {
++				char name[512];
++				snprintf(name, sizeof(name), "%s/frame_%04d_%07.0fms.png", dir, frameNo++, t);
++				const bool saved = Save888RGBScreenshot(Path(std::string(name)), ScreenshotFormat::PNG, rgb, w, h);
++				if (getenv("KR_DUMP_VERBOSE")) fprintf(stderr, "[kr] %ux%u saved=%d %s\n", w, h, (int)saved, name);
++			}
++			delete[] temp;
++		}
++	}
++}
++
+ bool RunAutoTest(HeadlessHost *headlessHost, CoreParameter &coreParameter, const AutoTestOptions &opt) {
+ 	// Kinda ugly, trying to guesstimate the test name from filename...
+ 	currentTestName = GetTestName(coreParameter.fileToStart);
+@@ -233,6 +305,7 @@ bool RunAutoTest(HeadlessHost *headlessHost, CoreParameter &coreParameter, const
+ 	{
+ 		int blockTicks = (int)usToCycles(1000000 / 10);
+ 		PSP_RunLoopFor(blockTicks);
++		KrOracleTick();  // KudsRocket patch
+ 
+ 		// If we were rendering, this might be a nice time to do something about it.
+ 		if (coreState == CORE_NEXTFRAME) {
+@@ -614,6 +687,7 @@ int main(int argc, const char* argv[])
+ 	if (debuggerPort > 0) {
+ 		g_Config.iRemoteISOPort = debuggerPort;
+ 		coreParameter.startBreak = true;
++		SetupDebuggerLock();  // KudsRocket patch: before PSP_InitStart, so STARTING/START_COMPLETE pair up
+ 		StartWebServer(WebServerFlags::DEBUGGER);
+ 	}
+ 
+diff --git a/libretro/Makefile b/libretro/Makefile
+index de50cbd..36767c3 100644
+--- a/libretro/Makefile
++++ b/libretro/Makefile
+@@ -306,6 +306,7 @@ else ifeq ($(platform), emscripten)
+ 	PLATCFLAGS += -msimd128 -msse3 -mssse3 -msse4.1 -pthread -D__EMSCRIPTEN__ -DNO_MMAP
+ 	PLATFORM_EXT = emscripten
+ 	STATIC_LINKING = 1
++	FFMPEGINCFLAGS += -I$(FFMPEGDIR)/build-wasm/install/include
+ 
+ # Windows MSVC all architectures
+ else ifneq (,$(findstring windows_msvc2019,$(platform)))
+@@ -425,10 +426,9 @@ else
+ endif
+ 
+ COREFLAGS += -D__LIBRETRO__ -DPPSSPP -DWITH_UPNP -DGLEW_STATIC -DGLEW_NO_GLU -DMINIUPNP_STATICLIB
+-ifneq ($(platform), emscripten)
+-	# ffmpeg does not work with emscripten
+-	COREFLAGS += -DUSE_FFMPEG
+-endif
++# KudsRocket patch: ffmpeg works with emscripten when built for wasm (see ffmpeg/build-wasm, configured like linux_x86-64.sh
++# minus encoders/muxers/asm/threads). Without it PSP videos (PMF / H.264) can't decode: games hang on intro movies or show green.
++COREFLAGS += -DUSE_FFMPEG
+ 
+ ifeq ($(DEBUG), 1)
+ 	ifneq (,$(findstring msvc,$(platform)))
+diff --git a/libretro/Makefile.common b/libretro/Makefile.common
+index 6bdb4ef..1f71ff8 100644
+--- a/libretro/Makefile.common
++++ b/libretro/Makefile.common
+@@ -369,8 +369,10 @@ SOURCES_CXX += \
+ ifeq ($(PLATFORM_EXT), android)
+ COREFLAGS += -DHAVE_DLFCN_H
+ else ifneq ($(PLATFORM_EXT), win32)
++ifneq ($(PLATFORM_EXT), emscripten)  # KudsRocket patch: wasm has no getauxval
+ COREFLAGS += -DHAVE_STRONG_GETAUXVAL
+ endif
++endif
+ ifneq (,$(findstring osx,$(platform)))
+ ifneq (,$(findstring x86,$(TARGET_ARCH)))
+ 	COREFLAGS += -DHAVE_SYSCTLBYNAME
+diff --git a/libretro/libretro.cpp b/libretro/libretro.cpp
+index 3b2f103..b220538 100644
+--- a/libretro/libretro.cpp
++++ b/libretro/libretro.cpp
+@@ -1170,6 +1170,11 @@ static void check_variables(CoreParameter &coreParam)
+    set_variable_visibility();
+ }
+ 
++// KudsRocket patch: change the frameskip count without a full check_variables() pass. Toggling ppsspp_frameskip through
++// RETRO_ENVIRONMENT_GET_VARIABLE_UPDATE mid-game re-runs all of check_variables, which hangs with the GL emu thread.
++// The frontend calls this between retro_run() calls (it only writes an int the emu thread reads at the next flip).
++extern "C" void kr_ppsspp_set_frameskip(int n) { g_Config.iFrameSkip = n; }
++
+ void retro_set_audio_sample_batch(retro_audio_sample_batch_t cb) { audio_batch_cb = cb; }
+ void retro_set_audio_sample(retro_audio_sample_t cb) { (void)cb; }
+ void retro_set_input_poll(retro_input_poll_t cb) { input_poll_cb = cb; }
+@@ -2048,24 +2053,15 @@ inline int16_t Clamp16(int32_t sample) {
+ 
+ void System_AudioPushSamples(const int32_t *audio, int numSamples, float volume) {
+    // We ignore volume here, because it's handled by libretro presumably.
+-
+-   // Convert to 16-bit audio for further processing.
+-   int16_t buffer[1024 * 2];
++   // KudsRocket patch: the old version converted into a 1024-frame stack buffer without advancing the source pointer,
++   // then memcpy'd numSamples*2 values from it -- reading past the buffer whenever numSamples > 1024. Convert straight
++   // into the output buffer instead.
+    int origSamples = numSamples * 2;
+-
+-   while (numSamples > 0) {
+-      int blockSize = std::min(1024, numSamples);
+-      for (int i = 0; i < blockSize; i++) {
+-         buffer[i * 2] = Clamp16(audio[i * 2]);
+-         buffer[i * 2 + 1] = Clamp16(audio[i * 2 + 1]);
+-      }
+-
+-      numSamples -= blockSize;
+-   }
+-
+    if (output_audio_buffer.capacity - output_audio_buffer.size < origSamples)
+       ensure_output_audio_buffer_capacity((output_audio_buffer.capacity + origSamples) * 1.5);
+-   memcpy(output_audio_buffer.data + output_audio_buffer.size, buffer, origSamples * sizeof(*output_audio_buffer.data));
++   int16_t *dst = output_audio_buffer.data + output_audio_buffer.size;
++   for (int i = 0; i < origSamples; i++)
++      dst[i] = Clamp16(audio[i]);
+    output_audio_buffer.size += origSamples;
+ }
+ 
+diff --git a/ppsspp_config.h b/ppsspp_config.h
+index faef7e4..24b93b6 100644
+--- a/ppsspp_config.h
++++ b/ppsspp_config.h
+@@ -8,7 +8,11 @@
+ #define PPSSPP_API(PPSSPP_FEATURE) (PPSSPP_API_##PPSSPP_FEATURE)
+ 
+ // ARCH defines
+-#if defined(_M_IX86) || defined(__i386__) || defined (__EMSCRIPTEN__)
++#if defined(__EMSCRIPTEN__)
++    // KudsRocket patch (same idea as root-hunter/ppsspp-wasm): wasm32 is a generic 32-bit target, not x86.
++    #define PPSSPP_ARCH_32BIT 1
++    #define PPSSPP_PLATFORM_EMSCRIPTEN 1
++#elif defined(_M_IX86) || defined(__i386__)
+     #define PPSSPP_ARCH_X86 1
+     #define PPSSPP_ARCH_32BIT 1
+     #define PPSSPP_ARCH_SSE2 1
