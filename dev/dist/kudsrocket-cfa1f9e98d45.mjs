@@ -7344,13 +7344,13 @@ var pantryComplete = false;
 function renderAccount() {
   const row = $("account");
   if (!auth.isAuthConfigured()) {
-    row.replaceChildren(h("span", { class: "muted" }, "\u6CA1\u914D OneDrive"));
+    row.replaceChildren();
     return;
   }
   if (auth.isSignedIn()) {
     row.replaceChildren(
       icon("cloud"),
-      h("span", {}, "OneDrive \u5DF2\u8FDE\u63A5"),
+      h("span", {}, "OneDrive"),
       h("button", { onclick: async () => {
         await auth.signOut();
         renderAccount();
@@ -7359,13 +7359,11 @@ function renderAccount() {
     );
   } else {
     row.replaceChildren(
-      icon("cloud"),
-      h("span", { class: "muted" }, "\u6CA1\u767B\u5F55\uFF1A\u6E38\u620F\u5E93\u548C\u5B58\u6863\u90FD\u5728\u4F60\u81EA\u5DF1\u7684 OneDrive \u91CC"),
       h("button", { class: "primary", onclick: () => {
         requestStoragePersistence().catch(() => {
         });
         auth.signIn().catch((e) => banner(`\u767B\u5F55\u5931\u8D25\uFF1A${errorText(e)}`));
-      } }, "\u767B\u5F55 OneDrive")
+      } }, icon("cloud"), "\u767B\u5F55")
     );
   }
 }
@@ -7395,8 +7393,8 @@ function renderLibrary() {
       h("span", { class: "muted" }, gb(d.size))
     ));
   }
-  if (!discs.length) {
-    rows.push(h("p", { class: "muted" }, !auth.isSignedIn() ? "\u767B\u5F55\u540E\u8FD9\u91CC\u5217\u51FA OneDrive \u91CC\u7684\u76D8\u3002" : pantryComplete ? `\u98DF\u54C1\u67DC\u662F\u7A7A\u7684\uFF1A\u628A\u76D8\u653E\u8FDB OneDrive\u300C\u5E94\u7528\u300D\u6587\u4EF6\u5939\u91CC\u672C app \u7684\u6587\u4EF6\u5939 \u2192 ${PANTRY}/\uFF08\u52A0\u5BC6\u7684 .wafter \u6216 .iso / .cso\uFF09\u3002` : "\u6B63\u5728\u770B\u98DF\u54C1\u67DC\u2026"));
+  if (!discs.length && auth.isSignedIn()) {
+    rows.push(h("p", { class: "muted" }, pantryComplete ? `\u7A7A\u7684\u3002\u6587\u4EF6\u653E\u5728 OneDrive\u300C\u5E94\u7528\u300D\u91CC\u672C app \u7684\u6587\u4EF6\u5939 \u2192 ${PANTRY}/` : "\u2026"));
   }
   list.replaceChildren(...rows);
   $("unlock").hidden = !locked;
@@ -7793,7 +7791,7 @@ async function boot() {
   mountIcons();
   $("version").textContent = APP_VERSION;
   if (!await ensureIsolation()) {
-    $("library").replaceChildren(h("p", {}, "\u8FD9\u4E2A\u6D4F\u89C8\u5668\u5F00\u4E0D\u4E86\u591A\u7EBF\u7A0B\uFF08\u8DE8\u6E90\u9694\u79BB\u6CA1\u751F\u6548\uFF09\u3002\u8BF7\u6362\u6700\u65B0\u7248\u7684 Chrome / Edge / Safari / Quest \u6D4F\u89C8\u5668\u3002"));
+    $("library").replaceChildren(h("p", {}, "\u8FD9\u4E2A\u6D4F\u89C8\u5668\u7528\u4E0D\u4E86\uFF08\u8DE8\u6E90\u9694\u79BB\u6CA1\u751F\u6548\uFF09\u3002\u8BF7\u6362\u6700\u65B0\u7248\u7684 Chrome / Edge / Safari\u3002"));
     return;
   }
   softKeys = mountSoftKeys($("stage"), (m) => session?.setMask("soft", m));
@@ -7869,4 +7867,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-007a2252cab7.mjs.map
+//# sourceMappingURL=kudsrocket-cfa1f9e98d45.mjs.map
