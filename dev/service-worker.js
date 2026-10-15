@@ -4,15 +4,18 @@
 //   这里给本站的每个响应补上 COOP / COEP / CORP（做法同开源的 coi-serviceworker）。第一次打开时页面还没被本 SW 管，
 //   main.ts 等 SW 接管后自动重新载入一次。
 // 缓存：
-//   - 名字 = "kudsrocket-<主 bundle 哈希>"；新版本 = 新缓存名，activate 只删自己前缀的旧缓存（家规：同域名兄弟和 pwa-models 不碰）。
+//   - 名字 = "kudsrocket-prod-<主 bundle 哈希>" / "kudsrocket-dev-<哈希>"：prod（站点根）和 dev（/dev/）同一个域名，缓存池是共用的，
+//     所以前缀带频道——activate 只删**自己频道**的旧缓存（10-14 第一次推 prod 前查出：前缀不分频道时两边互删离线壳）。
+//     家规：同域名兄弟和 pwa-models 不碰。频道分开之前的老名字（"kudsrocket-<哈希>"，那时只有 dev）由 dev 收拾。
 //   - dist/ 下的文件名都带内容哈希（主 bundle、核目录 core-<哈希>/）= 永不变 → 先看缓存；第一次用到时才下载、存进缓存（核约 20 MB，不预缓存）。
 //   - 其余（index.html、styles.css …）：prod 先看缓存、后台核对（变了提示「有新版本」）；dev（路径含 /dev/ 或本机）先走网络。
 //   - 不缓存：别的域名（OneDrive / 登录）、本机开发服务器的 /__dev/。
 
-const PREFIX = "kudsrocket-";
 const STATIC_PRECACHE = ["./", "./index.html", "./styles.css", "./audio-worklet.js", "./manifest.webmanifest", "./vendor/msal/msal-browser.min.js"];
 const SCOPE_PATH = self.location.pathname.replace(/[^/]*$/, "");
 const IS_DEV = SCOPE_PATH.includes("/dev/") || /^(127\.0\.0\.1|localhost)$/.test(self.location.hostname);
+const PREFIX = IS_DEV ? "kudsrocket-dev-" : "kudsrocket-prod-";
+const LEGACY = (k) => IS_DEV && /^kudsrocket-(?!dev-|prod-)/.test(k); // 频道分开之前的老缓存（只有 dev 用过）
 
 let CACHE_NAME = PREFIX + "boot";
 // SW 空闲被杀后重启，顶层重跑：从 caches.keys() 找回自己那个缓存（家族级坑）
@@ -40,7 +43,7 @@ self.addEventListener("activate", (event) => {
   event.waitUntil((async () => {
     const keep = await cacheName();
     const keys = await caches.keys();
-    await Promise.all(keys.filter((k) => k.startsWith(PREFIX) && k !== keep).map((k) => caches.delete(k)));
+    await Promise.all(keys.filter((k) => (k.startsWith(PREFIX) && k !== keep) || LEGACY(k)).map((k) => caches.delete(k)));
     await self.clients.claim();
   })());
 });
