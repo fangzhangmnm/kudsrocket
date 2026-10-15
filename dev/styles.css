@@ -192,6 +192,7 @@ button:disabled { opacity: .4; cursor: default; }
 .slot.auto .slot-name { color: var(--ink-soft); }
 .slot-buttons button.small { padding: 6px 10px; font-size: 13px; }
 .undo-row button { border-color: var(--warn); }
+button.has-bins { border-color: var(--warn); }
 /* 快照面板第二版：主按钮 = 覆盖 F2 那格，自动快照折起来。edited 20261014 by Claude Opus 5.5 */
 .sheet .row.save-row { display: grid; grid-template-columns: 1fr auto; gap: 8px; justify-content: stretch; }
 .sheet button.save-main { flex-direction: column; gap: 2px; }
