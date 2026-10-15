@@ -1,0 +1,11 @@
+{
+  "name": "KudsRocket",
+  "short_name": "KudsRocket",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#111111",
+  "theme_color": "#111111",
+  "icons": []
+}

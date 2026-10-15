@@ -1,0 +1,55 @@
+<!doctype html>
+<!-- created 20261014 by Claude Opus 5.5 -->
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#111111">
+<title>KudsRocket</title>
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="stylesheet" href="./styles.css?v=d309bef57f64">
+</head>
+<body>
+<main id="home">
+  <header class="home-head"><h1>KudsRocket</h1><button id="version" class="muted version"></button></header>
+  <div id="account" class="account"></div>
+  <div id="sync-home" class="sync-home idle muted" hidden></div>
+  <section class="library-head">
+    <button id="unlock" hidden>输入口令</button>
+    <button id="refresh" title="重新列一次 OneDrive 里的内容">刷新</button>
+  </section>
+  <div id="library" class="library"></div>
+  <section id="tools" class="tools" hidden>
+    <button id="open-local">本机文件…</button>
+    <button id="upload-wafter" title="选一个本机文件，边加密边传进 OneDrive，不留本机副本（iPad / Quest 也能用）">上传盘…</button>
+    <button id="make-wafter">做加密盘…</button>
+    <button id="unwrap-wafter">解密盘…</button>
+    <button id="clear-cache" title="放掉所有已同步的本机副本（没传上去的不动）">清本机缓存</button>
+    <label class="muted">暂存区上限 <select id="staging-cap"></select></label>
+    <button id="force-update" title="清掉这个 app 自己的离线壳缓存并重新载入">强制更新</button>
+    <input type="file" id="local-file" hidden>
+    <input type="file" id="upload-file" hidden>
+    <p id="tools-hint" class="muted" hidden>做加密盘 / 解密盘要用电脑上的 Chrome 或 Edge（要能直接写本机文件）。</p>
+  </section>
+</main>
+
+<main id="game" hidden>
+  <div id="toolbar" class="toolbar"><span id="title"></span><span id="hud" class="hud muted"></span></div>
+  <!-- #gl 在核启动时以 OffscreenCanvas 交给核线程（GPU 渲染）；#screen 是软件渲染兜底，主线程画 -->
+  <div id="stage">
+    <canvas id="gl" width="480" height="272"></canvas>
+    <canvas id="screen" width="480" height="272" hidden></canvas>
+    <div id="paused-mark" hidden>暂停中</div>
+    <div id="resume-cover" hidden></div>
+    <div id="syncbar" class="syncbar idle" hidden></div>
+  </div>
+  <pre id="status" hidden></pre>
+</main>
+
+<div id="banners"></div>
+<div id="note" hidden></div>
+<div id="update" hidden></div>
+<div id="busy" hidden><span></span></div>
+<script type="module" src="./dist/kudsrocket-d309bef57f64.mjs"></script>
+</body>
+</html>
