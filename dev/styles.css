@@ -31,7 +31,8 @@ button:disabled { opacity: .4; cursor: default; }
 .sheet progress { width: 100%; }
 
 /* ── 游戏 ── */
-#game { position: fixed; inset: 0; display: grid; grid-template-rows: var(--tool) 1fr; }
+#game { position: fixed; inset: 0; display: grid; grid-template-rows: var(--tool) 1fr; grid-template-columns: minmax(0, 1fr); background: #000; /* minmax(0)：工具栏的最小宽不许把整列撑出屏（窄手机上画面曾比屏宽） */
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); } /* viewport-fit=cover：刘海 / 圆角 / 底部横条里不放东西 */
 .toolbar { display: flex; align-items: center; gap: 4px; padding: 0 6px; background: #0a0a0a; border-bottom: 1px solid #222; }
 #title-wrap { flex: 1; overflow: hidden; }
 #title { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--ink-soft); padding-left: 6px; }
@@ -42,13 +43,18 @@ button:disabled { opacity: .4; cursor: default; }
 #stage { position: relative; display: grid; place-items: center; overflow: hidden; container-type: size; background: #000; touch-action: none; user-select: none; -webkit-user-select: none; }
 #stage canvas { width: min(100cqw, calc(100cqh * 480 / 272)); height: auto; aspect-ratio: 480 / 272; image-rendering: pixelated; background: #000; }
 #stage canvas[hidden] { display: none; }
-@media (orientation: portrait) { #stage { place-items: start center; } }
+@container (orientation: portrait) { #stage canvas { align-self: start; } } /* 竖的是游戏区本身（不是整个视口）：画面贴顶、键在下面 */
 #stage:fullscreen { background: #000; }
 #paused-mark { position: absolute; top: 12px; left: 50%; transform: translateX(-50%); padding: 4px 14px; border-radius: 999px; background: rgba(0,0,0,.6); color: #fff; pointer-events: none; }
 #status { position: absolute; left: 8px; bottom: 8px; margin: 0; padding: 8px; max-width: calc(100% - 16px); white-space: pre-wrap; font: 11px/1.4 ui-monospace, monospace; background: rgba(0,0,0,.7); border-radius: 6px; pointer-events: none; }
 
 /* ── 软键：铺满画面那一层，只有键本身接 pointer ── */
-.softkeys { position: absolute; inset: 0; pointer-events: none; --u: min(11vmin, 72px); }
+/* 软键尺寸 = 一个单位 --u，按游戏区（#stage 是 size 容器）剩下多少地方算，不按整个屏幕（10-14 user iPad mini 竖屏截图：
+   旧的 --u = 11vmin，竖屏中间一排比十字键和四键之间的空宽，压在十字键 / × 上）。各种屏都验过：private/tests/softkey-layout.ts。
+   横：键盖在画面两侧。左右各一列 = 肩键（顶）· 摇杆 · 十字键 / 四键（底），中间一排在底部正中 → 宽要 ≥ 14.5u、高要 ≥ 7.4u。
+   竖：键在画面下面那块。自下而上 = 中间一排 · 十字键 / 四键 · 摇杆 · 肩键（宽 ≥ 9.6u、画面下面那块高 ≥ 7.7u）。72px 封顶（大屏不让键变成盘子）。 */
+.softkeys { position: absolute; inset: 0; pointer-events: none; --u: min(100cqh / 7.4, 100cqw / 14.5, 72px); }
+@container (orientation: portrait) { .softkeys { --u: min((100cqh - 100cqw * 272 / 480) / 7.7, 100cqw / 9.6, 72px); } }
 .softkeys[hidden] { display: none; }
 .softkeys .pk, .softkeys .dpad { pointer-events: auto; touch-action: none; position: absolute; }
 .pk { display: grid; place-items: center; color: rgba(255,255,255,.75); background: rgba(255,255,255,.10); border: 1.5px solid rgba(255,255,255,.28); font: 600 calc(var(--u) * .28)/1 system-ui, sans-serif; letter-spacing: .04em; }
@@ -75,7 +81,7 @@ button:disabled { opacity: .4; cursor: default; }
 
 /* ── 面板 / 横条 / 提示 / 遮罩 ── */
 .sheet-back { position: fixed; inset: 0; background: rgba(0,0,0,.55); display: grid; place-items: center; z-index: 50; padding: 16px; }
-.sheet { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px; width: min(520px, 100%); display: grid; gap: 12px; }
+.sheet { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px; width: min(520px, 100%); display: grid; gap: 12px; max-height: calc(100dvh - 32px); overflow-y: auto; } /* 手机横屏只有三百来 px 高：面板自己滚 */
 .sheet h2 { margin: 0; font-size: 18px; }
 .sheet p { margin: 0; }
 .sheet .hint { color: var(--ink-soft); font-size: 13px; }
@@ -92,7 +98,7 @@ button:disabled { opacity: .4; cursor: default; }
 .banner { display: flex; align-items: center; gap: 8px; padding: 8px 8px 8px 14px; border-radius: 8px; background: #3a1d1d; border: 1px solid var(--err); }
 .banner.warning { background: #3a2e17; border-color: var(--warn); }
 .banner span { flex: 1; }
-#note { position: fixed; bottom: 12px; left: 50%; transform: translateX(-50%); padding: 6px 14px; border-radius: 999px; background: rgba(30,30,30,.92); border: 1px solid var(--line); z-index: 40; max-width: calc(100% - 24px); font-size: 13px; }
+#note { position: fixed; bottom: 12px; left: 50%; transform: translateX(-50%); width: max-content; padding: 6px 14px; border-radius: 999px; background: rgba(30,30,30,.92); border: 1px solid var(--line); z-index: 40; max-width: calc(100% - 24px); font-size: 13px; }
 #update { position: fixed; bottom: 12px; right: 12px; display: flex; align-items: center; gap: 8px; padding: 6px 6px 6px 14px; border-radius: 10px; background: var(--panel); border: 1px solid var(--accent); z-index: 45; }
 #busy { position: fixed; inset: 0; background: rgba(0,0,0,.5); display: grid; place-items: center; z-index: 70; }
 #busy span { padding: 10px 18px; border-radius: 10px; background: var(--panel); border: 1px solid var(--line); }
@@ -161,7 +167,17 @@ button:disabled { opacity: .4; cursor: default; }
 .softkeys .stick.on .knob { background: rgba(122,162,255,.45); border-color: rgba(122,162,255,.9); transition: none; }
 .mid .pk.sys { color: rgba(255,255,255,.6); }
 .mid .pk { pointer-events: auto; touch-action: none; }
-@media (orientation: portrait) { .softkeys .shoulder { top: auto; bottom: calc(var(--u) * 6.1); } }
+@container (orientation: portrait) {
+  .softkeys .shoulder { top: auto; bottom: calc(var(--u) * 6.6); }
+  .softkeys .stick { bottom: calc(var(--u) * 4.2); }
+  .softkeys .dpad, .softkeys .face { bottom: calc(var(--u) * 1.2); }
+}
+/* 十字键上的箭头（CSS 几何形，和四键符号同一个顶位办法） */
+.dpad .arm::after { content: ""; position: absolute; left: 50%; top: 50%; width: 0; height: 0; transform: translate(-50%, -50%); border: calc(var(--u) * .11) solid transparent; }
+.dpad .up::after { border-top-width: 0; border-bottom: calc(var(--u) * .15) solid rgba(255,255,255,.5); }
+.dpad .down::after { border-bottom-width: 0; border-top: calc(var(--u) * .15) solid rgba(255,255,255,.5); }
+.dpad .left::after { border-left-width: 0; border-right: calc(var(--u) * .15) solid rgba(255,255,255,.5); }
+.dpad .right::after { border-right-width: 0; border-left: calc(var(--u) * .15) solid rgba(255,255,255,.5); }
 /* 音量 / 截图 */
 .icon-btn.muted-on { color: var(--warn); }
 .volume-row input[type=range] { flex: 1; }
@@ -172,11 +188,24 @@ button:disabled { opacity: .4; cursor: default; }
 .slot.auto .slot-name { color: var(--ink-soft); }
 .slot-buttons button.small { padding: 6px 10px; font-size: 13px; }
 .undo-row button { border-color: var(--warn); }
+/* 快照面板第二版：主按钮 = 覆盖 F2 那格，自动快照折起来。edited 20261014 by Claude Opus 5.5 */
+.sheet .row.save-row { display: grid; grid-template-columns: 1fr auto; gap: 8px; justify-content: stretch; }
+.sheet button.save-main { flex-direction: column; gap: 2px; }
+.sheet button.save-main .muted { font-size: 12px; color: inherit; opacity: .8; }
+details.auto-snaps { border-top: 1px solid var(--line); }
+details.auto-snaps summary { cursor: pointer; padding: 10px 0; color: var(--ink-soft); }
 .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
 .seg button { border: none; border-radius: 0; padding: 6px 10px; }
 .seg button.on { background: var(--accent); color: #000; }
 /* 游戏界面里横条在工具栏下面，不盖住按钮（10-14 无头测试抓到：报错横条把快照按钮盖住了）。全屏时横条挂在 #stage 里，那里没有工具栏。 */
-body:has(#game:not([hidden])) > #banners { top: calc(var(--tool) + 6px); }
+body:has(#game:not([hidden])) > #banners { top: calc(env(safe-area-inset-top) + var(--tool) + 6px); }
+/* 游戏界面里提示 / 「有新版本」放到顶部正中：底部是软键（10-14 各种屏截图里它们正好盖在 × / 快进 / 中间一排上），
+   横屏时两个上角是肩键，只有顶部正中两边肩键之间是空的。「有新版本」在上、提示在它下面一行。全屏时它们挂在 #stage 里（没有工具栏）。 */
+body:has(#game:not([hidden])) > #update, #stage > #update { left: 50%; right: auto; transform: translateX(-50%); bottom: auto; width: max-content; max-width: calc(100% - 24px); }
+body:has(#game:not([hidden])) > #update { top: calc(env(safe-area-inset-top) + var(--tool) + 6px); }
+body:has(#game:not([hidden])) > #note { top: calc(env(safe-area-inset-top) + var(--tool) + 64px); bottom: auto; }
+#stage > #update { top: calc(env(safe-area-inset-top) + 8px); }
+#stage > #note { top: calc(env(safe-area-inset-top) + 66px); bottom: auto; }
 
 /* 工具栏：名字吃掉剩下的宽度；性能读数；按钮带文字（窄屏只留图标 / 字更小）。等读盘 = 红。 */
 .toolbar #title-wrap { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }

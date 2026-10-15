@@ -1,5 +1,5 @@
 // src/version.ts
-var APP_VERSION = "v0.1.10-2026-10-14";
+var APP_VERSION = "v0.1.11-2026-10-14";
 
 // assets/icons.svg
 var icons_default = '<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none">\n<!--\n  13 icons extracted from the family icon library (../20260708 SVG Icons/icons.svg) by extract-icons.py \u2014 do not hand-edit; re-run the script instead.\n  Family SVG Icons \u2014 MIT License, Copyright (c) 2026 fangzhangmnm.\n  Contains work derived from (per-icon provenance in data-src):\n    Feather Icons \u2014 MIT License, Copyright (c) 2013-2023 Cole Bemis \xB7 https://github.com/feathericons/feather\n-->\n  <!-- media -->\n  <!-- pause \u2014 \u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="pause" data-cat="media" data-src="own" data-note="\u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="3.2"><path d="M8.3 5.5 V18.5"/><path d="M15.7 5.5 V18.5"/></g></symbol>\n  <!-- play \u2014 \u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="play" data-cat="media" data-src="own" data-note="\u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 5.4 L18.8 12 L8.2 18.6 Z" fill="currentColor"/></symbol>\n  <!-- fast-forward \u2014 \u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="fast-forward" data-cat="media" data-src="own" data-note="\u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.4 6.8 L10.9 12 L4.4 17.2 Z" fill="currentColor"/><path d="M13.1 6.8 L19.6 12 L13.1 17.2 Z" fill="currentColor"/></symbol>\n  <!-- volume \u2014 \u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009) -->\n  <symbol id="volume" data-cat="media" data-src="own" data-note="\u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 10.3 H8.7 L12.6 6.6 V17.4 L8.7 13.7 H5.5 Z" fill="currentColor"/><path d="M15.13 9.73 A3.4 3.4 0 0 1 15.13 14.27"/><path d="M16.36 7.19 A6.1 6.1 0 0 1 16.36 16.81"/></symbol>\n  <!-- file -->\n  <!-- floppy-disk \u2014 \u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3 -->\n  <symbol id="floppy-disk" data-cat="file" data-src="feather:save" data-note="\u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13l3 3v13a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 17 8 17 3"/></symbol>\n  <!-- folder-open \u2014 \u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF -->\n  <symbol id="folder-open" data-cat="file" data-src="own" data-note="\u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18 V7 a2 2 0 0 1 2 -2 h4 l2 2 h6 a2 2 0 0 1 2 2 v1.8"/><path d="M3 18 L6.4 10.8 H21.6 L18.2 18 Z"/></symbol>\n  <!-- hierarchy -->\n  <!-- lock \u2014 \u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D -->\n  <symbol id="lock" data-cat="hierarchy" data-src="own" data-note="\u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10" width="13" height="11"/><path d="M8.8 10 V6.5 a3.2 3.2 0 0 1 6.4 0 V10"/></symbol>\n  <!-- common -->\n  <!-- x \u2014 \u53C9 -->\n  <symbol id="x" data-cat="common" data-src="own" data-note="\u53C9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 L17.5 17.5 M17.5 6.5 L6.5 17.5"/></symbol>\n  <!-- cloud -->\n  <!-- cloud \u2014 \u4E91 -->\n  <symbol id="cloud" data-cat="cloud" data-src="feather:cloud" data-note="\u4E91" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>\n  <!-- viewport -->\n  <!-- maximize-viewport \u2014 \u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55) -->\n  <symbol id="maximize-viewport" data-cat="viewport" data-src="own" data-note="\u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934 --> <polyline points="4 9 4 4 9 4"/> <polyline points="20 9 20 4 15 4"/> <polyline points="4 15 4 20 9 20"/> <polyline points="20 15 20 20 15 20"/></symbol>\n  <!-- ui -->\n  <!-- more \u2014 \u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00) -->\n  <symbol id="more" data-cat="ui" data-src="own" data-note="\u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/></symbol>\n  <!-- keyboard \u2014 \u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49) -->\n  <symbol id="keyboard" data-cat="ui" data-src="own" data-note="\u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="7.2" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="7.2" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><path d="M8.6 15.6 H15.4"/></symbol>\n  <!-- menu \u2014 \u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17) -->\n  <symbol id="menu" data-cat="ui" data-src="own" data-note="\u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"></line> <line x1="4" y1="12" x2="20" y2="12"></line> <line x1="4" y1="17" x2="20" y2="17"></line></symbol>\n</svg>\n';
@@ -596,6 +596,10 @@ function mountSoftKeys(host, on) {
   const pointerKey = /* @__PURE__ */ new Map();
   const pointerOn = /* @__PURE__ */ new Map();
   const hit = (x, y) => {
+    for (const [id, k] of keys) {
+      const b = k.el.getBoundingClientRect();
+      if (x >= b.left && x <= b.right && y >= b.top && y <= b.bottom) return { bits: k.bits, id };
+    }
     const r = dpad.getBoundingClientRect();
     const pad2 = r.width * 0.15;
     if (x >= r.left - pad2 && x <= r.right + pad2 && y >= r.top - pad2 && y <= r.bottom + pad2) {
@@ -9536,11 +9540,17 @@ function openSlots() {
     done();
     if (await confirmSheet("\u79FB\u5230\u56DE\u6536\u7AD9\uFF1F", "\u5FEB\u7167\u4F1A\u8FDB\u56DE\u6536\u7AD9\uFF0C\u4E3B\u9875\u300C\u56DE\u6536\u7AD9 / \u5907\u4EFD\u7BB1\u300D\u91CC\u80FD\u6062\u590D\u3002", "\u79FB\u5230\u56DE\u6536\u7AD9")) s.remove(id).catch((e) => banner(errorText(e)));
   } }, "\u5220");
-  const filled = s.slots.filter((x) => x.savedAt);
+  const q = quickSlot(true);
+  const target = s.slots.find((x) => x.id === q.id) ?? q;
+  const targetFilled = !!target.savedAt;
   const ats = /* @__PURE__ */ new Map();
   const rows = /* @__PURE__ */ new Map();
-  const timeline = h("div", { class: "slots" });
-  const order = () => [...filled].sort((a, b) => (ats.get(b.id) ?? b.savedAt) - (ats.get(a.id) ?? a.savedAt));
+  const byAt = (list) => [...list].sort((a, b) => (ats.get(b.id) ?? b.savedAt) - (ats.get(a.id) ?? a.savedAt));
+  const manual = s.slots.filter((x) => x.savedAt && x.kind === "s");
+  const auto = s.slots.filter((x) => x.savedAt && x.kind === "a");
+  const manualList = h("div", { class: "slots" });
+  const autoList = h("div", { class: "slots" });
+  const targetWhen = h("span", { class: "muted" }, targetFilled ? `\u76D6\u6389 ${when(target.savedAt)} \u90A3\u4EFD \xB7 \u80FD\u64A4\u9500` : "");
   const row = (slot, done) => {
     const thumb = h("div", { class: "thumb" });
     const timeEl = h("span", { class: "muted" }, `${when(slot.savedAt)}${slot.local ? " \xB7 \u672C\u673A" : ""}`);
@@ -9551,20 +9561,20 @@ function openSlots() {
       h(
         "div",
         { class: "slot-text" },
-        h("span", { class: "slot-name" }, slotLabel(slot), slot.id === currentSlot?.id ? h("span", { class: "tag", title: "F2 \u5B58 / F4 \u8BFB \u5BF9\u7684\u662F\u8FD9\u4E00\u683C" }, "F2 / F4") : null),
+        h("span", { class: "slot-name" }, slotLabel(slot), targetFilled && slot.id === target.id ? h("span", { class: "tag", title: "F2 \u5B58 / F4 \u8BFB \u5BF9\u7684\u662F\u8FD9\u4E00\u683C" }, "F2 / F4") : null),
         timeEl
       ),
       h(
         "div",
         { class: "slot-buttons" },
-        h("button", { class: "primary", onclick: () => {
-          done();
-          loadFrom(slot);
-        } }, "\u8BFB"),
-        slot.kind === "s" ? h("button", { class: "small", title: "\u7528\u73B0\u5728\u7684\u8FDB\u5EA6\u76D6\u6389\u8FD9\u4E00\u683C\uFF08\u80FD\u64A4\u9500\uFF09", onclick: () => {
+        slot.kind === "s" ? h("button", { title: "\u7528\u73B0\u5728\u7684\u8FDB\u5EA6\u76D6\u6389\u8FD9\u4E00\u683C\uFF08\u80FD\u64A4\u9500\uFF09", onclick: () => {
           done();
           saveTo(slot);
         } }, "\u8986\u76D6") : null,
+        h("button", { title: "\u8BFB\u8FD9\u4E00\u683C\uFF1A\u624B\u4E0A\u6CA1\u5B58\u7684\u8FDB\u5EA6\u4F1A\u4E22\uFF08\u80FD\u300C\u64A4\u9500\u8BFB\u6863\u300D\u627E\u56DE\uFF09", onclick: () => {
+          done();
+          loadFrom(slot);
+        } }, "\u8BFB"),
         removeBtn(slot.id, done)
       )
     );
@@ -9574,6 +9584,7 @@ function openSlots() {
       if (m?.at) {
         ats.set(slot.id, m.at);
         timeEl.textContent = `${when(m.at)}${slot.local ? " \xB7 \u672C\u673A" : ""}`;
+        if (slot.id === target.id) targetWhen.textContent = `\u76D6\u6389 ${when(m.at)} \u90A3\u4EFD \xB7 \u80FD\u64A4\u9500`;
       }
     }) };
   };
@@ -9603,9 +9614,12 @@ function openSlots() {
   };
   const foreign = s.foreign();
   sheet((done) => {
-    const built = order().map((slot) => row(slot, () => done()));
-    timeline.replaceChildren(...built.map((b) => b.el));
-    Promise.all(built.map((b) => b.peek)).then(() => timeline.replaceChildren(...order().map((x) => rows.get(x.id))));
+    const builtManual = byAt(manual).map((slot) => row(slot, () => done()));
+    const builtAuto = byAt(auto).map((slot) => row(slot, () => done()));
+    manualList.replaceChildren(...builtManual.map((b) => b.el));
+    autoList.replaceChildren(...builtAuto.map((b) => b.el));
+    Promise.all(builtManual.map((b) => b.peek)).then(() => manualList.replaceChildren(...byAt(manual).map((x) => rows.get(x.id))));
+    Promise.all(builtAuto.map((b) => b.peek)).then(() => autoList.replaceChildren(...byAt(auto).map((x) => rows.get(x.id))));
     const undo = [
       s.undoSaveText ? h("button", { onclick: () => {
         done();
@@ -9616,15 +9630,34 @@ function openSlots() {
         s.undoLastLoad().catch((e) => banner(errorText(e)));
       } }, s.undoLoadText) : null
     ].filter(Boolean);
+    const autoNewest = auto.length ? Math.max(...auto.map((x) => x.savedAt)) : 0;
     return [
       h("h2", {}, "\u5FEB\u7167"),
       ...undo.length ? [h("div", { class: "row undo-row" }, ...undo)] : [],
-      h("button", { class: "primary big", onclick: () => {
+      targetFilled ? h(
+        "div",
+        { class: "row save-row" },
+        h("button", { class: "primary big save-main", onclick: () => {
+          done();
+          saveTo(target);
+        } }, h("span", {}, `\u8986\u76D6\u300C${slotLabel(target)}\u300D`), targetWhen),
+        h("button", { class: "big", onclick: () => {
+          done();
+          saveTo(s.nextManualSlot());
+        } }, "\u5B58\u4E00\u4EFD\u65B0\u7684")
+      ) : h("button", { class: "primary big", onclick: () => {
         done();
-        saveTo(s.nextManualSlot());
+        saveTo(target);
       } }, "\u5B58\u4E00\u4EFD\u65B0\u7684"),
-      filled.length ? timeline : h("p", { class: "muted" }, "\u8FD8\u6CA1\u6709\u5FEB\u7167\u3002"),
-      h("p", { class: "hint" }, `\u65B0\u7684\u5728\u4E0A\u3002\u624B\u52A8\u5FEB\u7167\u4E0D\u9650\u4EFD\u6570\uFF1B\u81EA\u52A8\u5FEB\u7167\u5207\u5230\u540E\u53F0\u3001\u6BCF\u8FD0\u884C 10 \u5206\u949F\u5404\u5B58\u4E00\u4EFD\uFF0C\u8F6E\u6D41\u7528 ${AUTO_SLOTS} \u683C\u3002\u5B58\u6863\uFF08\u7A0B\u5E8F\u81EA\u5DF1\u5B58\u7684\uFF09\u53E6\u5916\u81EA\u52A8\u540C\u6B65\u3002\u64A4\u9500\u53EA\u5728\u8FD9\u4E00\u9875\u91CC\u6709\u6548\u3002`),
+      manual.length ? manualList : h("p", { class: "muted" }, "\u8FD8\u6CA1\u6709\u624B\u52A8\u5FEB\u7167\u3002"),
+      h("p", { class: "hint" }, "\u65B0\u7684\u5728\u4E0A\uFF0C\u4E0D\u9650\u4EFD\u6570\u3002\u8BFB\u6863\u4F1A\u4E22\u6389\u624B\u4E0A\u6CA1\u5B58\u7684\u8FDB\u5EA6\uFF0C\u8BFB\u9519\u4E86\u70B9\u300C\u64A4\u9500\u8BFB\u6863\u300D\u56DE\u53BB\u3002"),
+      ...auto.length ? [h(
+        "details",
+        { class: "auto-snaps" },
+        h("summary", {}, `\u81EA\u52A8\u5FEB\u7167 \xB7 ${auto.length} \u4EFD \xB7 \u6700\u65B0 ${when(autoNewest)}`),
+        h("p", { class: "hint" }, `\u4E0D\u7528\u7BA1\uFF1A\u5207\u5230\u540E\u53F0\u3001\u6BCF\u8FD0\u884C 10 \u5206\u949F\u5404\u5B58\u4E00\u4EFD\uFF0C\u8F6E\u6D41\u7528 ${AUTO_SLOTS} \u683C\u3002\u300C\u4ECE\u4E0A\u6B21\u5F00\u59CB\u300D\u4F1A\u81EA\u5DF1\u6311\u624B\u52A8\u548C\u81EA\u52A8\u91CC\u6700\u65B0\u7684\u90A3\u4EFD\u3002`),
+        autoList
+      )] : [],
       ...foreign.length ? [h("h3", {}, "\u522B\u7684\u5FEB\u7167"), h("div", { class: "slots" }, ...foreign.map((g) => foreignRow(g, () => done())))] : [],
       h("div", { class: "row" }, h("button", { onclick: () => {
         done();
@@ -10378,4 +10411,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-a01143c3c6ea.mjs.map
+//# sourceMappingURL=kudsrocket-a1afd569e280.mjs.map
