@@ -774,6 +774,34 @@ static void service_snapshots(void) {
 // 三种排程：跟屏幕（默认，Worker 里的 rAF）/ 墙钟（没有 Worker rAF 时退回，或 ?pace=wall）/ 声音（?pace=audio，顺滑模式）。
 EM_JS(int, kr_worker_has_raf, (void), { return typeof requestAnimationFrame === "function" ? 1 : 0; });
 static int g_timing_mode = -1;                   // 主循环当前的排程（EM_TIMING_SETIMMEDIATE / EM_TIMING_RAF）
+
+// ── 切后台回来停死（10-15 user「切到claude再切回来之后游戏停死了」；日志：回来 2 s 只走 3 帧然后不动，声音 running）──
+//   两个嫌疑分开治：A) worker 的 rAF 被系统停了不再来 → frame() 没人调 → 看门狗（setInterval，还活着）切成 setImmediate 并重新排程；
+//   B) WebGL 上下文被回收 → 接浏览器的 webglcontextlost / restored 事件 → 告诉核 context_destroy / context_reset（PPSSPP 自己的 DeviceLost / DeviceRestore，
+//   Android 切后台走的同一条路：GL 对象只是缓存，真相在模拟内存里）。主线程读 kr_loop_last_ms / kr_gl_state 分辨是哪一种。edited 20261015 by Claude Fable 5.1
+static atomic_int g_gl_lost = 0;          // JS 事件写：上下文丢了（待 destroy）
+static atomic_int g_gl_restored = 0;      // JS 事件写：浏览器恢复了（待 reset）
+static int g_gl_destroyed = 0;            // 核线程：已经告诉过核 context_destroy
+static atomic_uint g_gl_restores = 0;
+static atomic_int g_debug_lose_gl = 0;    // 无头测试：假装丢一次（WEBGL_lose_context）
+static _Atomic double g_loop_last = 0;    // frame() 最后一次被调用的时刻（主线程判「循环死了」vs「循环在跑但没出帧」）
+static atomic_uint g_loop_rescues = 0;
+static double g_raf_hold_until = 0;       // 看门狗救过之后这段时间不回 rAF
+EM_JS(void, kr_gl_hook_events, (int handle, int *lostFlag, int *restoredFlag), {
+  var c = GL.contexts[handle]; if (!c || !c.GLctx || !c.GLctx.canvas) return;
+  var canvas = c.GLctx.canvas;
+  canvas.addEventListener("webglcontextlost", function (e) { e.preventDefault(); Atomics.store(HEAP32, lostFlag >> 2, 1); });
+  canvas.addEventListener("webglcontextrestored", function () { Atomics.store(HEAP32, restoredFlag >> 2, 1); });
+});
+EM_JS(void, kr_gl_debug_lose, (int handle), {
+  var c = GL.contexts[handle]; if (!c || !c.GLctx) return;
+  var ext = c.GLctx.getExtension("WEBGL_lose_context"); if (!ext) return;
+  ext.loseContext(); setTimeout(function () { ext.restoreContext(); }, 1500);
+});
+EMSCRIPTEN_KEEPALIVE double kr_loop_last_ms(void) { return atomic_load(&g_loop_last); }
+EMSCRIPTEN_KEEPALIVE unsigned kr_loop_rescues(void) { return atomic_load(&g_loop_rescues); }
+EMSCRIPTEN_KEEPALIVE int kr_gl_state(void) { return (atomic_load(&g_gl_lost) ? 1 : 0) | ((int)atomic_load(&g_gl_restores) << 1); }
+EMSCRIPTEN_KEEPALIVE void kr_debug_lose_gl(void) { atomic_store(&g_debug_lose_gl, 1); }
 static double g_anchor_real = 0, g_anchor_emu = 0;
 static double g_frame_ms_avg = 1000.0 / 59.94;   // 平滑后的每帧模拟时长
 static double g_frame_ms_last = 1000.0 / 59.94;
@@ -834,16 +862,47 @@ static void run_one(void) {
 static double g_last_frame_at = 0;
 static void watchdog(void *arg) {
   (void)arg;
-  if (emscripten_get_now() - g_last_frame_at > 300.0) service_snapshots();
+  double now = emscripten_get_now();
+  if (now - g_last_frame_at > 300.0) service_snapshots();
+  // A) rAF 饿死：没暂停、排程是 rAF、1.5 s 没进过 frame() → 切 setImmediate 并立刻重新排程（pause + resume 让 emscripten 马上调度一次），15 s 内不回 rAF
+  if (!g_paused && g_timing_mode == EM_TIMING_RAF && g_last_frame_at > 0 && now - g_last_frame_at > 1500.0) {
+    emscripten_set_main_loop_timing(EM_TIMING_SETIMMEDIATE, 0);
+    g_timing_mode = EM_TIMING_SETIMMEDIATE;
+    g_raf_hold_until = now + 15000.0;
+    g_anchor_real = 0;
+    atomic_fetch_add(&g_loop_rescues, 1);
+    fprintf(stderr, "[kr] frame loop starved for %.0f ms (rAF?) — switched to setImmediate\n", now - g_last_frame_at);
+    emscripten_pause_main_loop();
+    emscripten_resume_main_loop();
+  }
+  if (atomic_exchange(&g_debug_lose_gl, 0) && g_gl) kr_gl_debug_lose((int)g_gl);
 }
 
 static void frame(void) {
   g_last_frame_at = emscripten_get_now();
-  int want = (g_pacing == 2 && kr_worker_has_raf()) ? EM_TIMING_RAF : EM_TIMING_SETIMMEDIATE;
+  atomic_store(&g_loop_last, g_last_frame_at);
+  int want = (g_pacing == 2 && kr_worker_has_raf() && g_last_frame_at >= g_raf_hold_until) ? EM_TIMING_RAF : EM_TIMING_SETIMMEDIATE;
   if (want != g_timing_mode) {
     emscripten_set_main_loop_timing(want, want == EM_TIMING_RAF ? 1 : 0);
     g_timing_mode = want;
     g_anchor_real = 0;
+  }
+  // B) WebGL 上下文丢了：告诉核一次 context_destroy（停掉模拟线程、放掉 GL 对象），之后不跑帧；浏览器恢复了 → 重建我们的 FBO、context_reset（DeviceRestore）接着跑
+  if (g_hw_accepted && atomic_load(&g_gl_lost)) {
+    if (!g_gl_destroyed) { fprintf(stderr, "[kr] WebGL context lost: context_destroy\n"); if (g_hw.context_destroy) g_hw.context_destroy(); g_gl_destroyed = 1; }
+    if (!atomic_load(&g_gl_restored)) { service_snapshots(); g_anchor_real = 0; return; }
+    atomic_store(&g_gl_restored, 0);
+    atomic_store(&g_gl_lost, 0);
+    emscripten_webgl_make_context_current(g_gl);
+    int w = g_fbo_w, h = g_fbo_h;
+    g_fbo = 0; g_fbo_color = 0; g_fbo_depth = 0; g_fbo_w = 0; g_fbo_h = 0;   // 旧名字随上下文一起没了，别去删
+    gl_make_fbo(w, h);
+    glBindFramebuffer(GL_FRAMEBUFFER, g_fbo);
+    if (g_hw.context_reset) g_hw.context_reset();
+    g_gl_destroyed = 0;
+    atomic_fetch_add(&g_gl_restores, 1);
+    g_anchor_real = 0;
+    fprintf(stderr, "[kr] WebGL context restored: context_reset\n");
   }
   if (g_paused) { service_snapshots(); g_anchor_real = 0; return; } // 继续时重新锚定，不补回暂停的时间
   if (g_anchor_real == 0 || g_anchor_speed != g_speed) reanchor();
@@ -945,6 +1004,7 @@ int main(int argc, char **argv) {
     glBindFramebuffer(GL_FRAMEBUFFER, g_fbo);
     if (g_hw.context_reset) g_hw.context_reset();
     g_hw_active = 1;
+    kr_gl_hook_events((int)g_gl, (int *)&g_gl_lost, (int *)&g_gl_restored);
     fprintf(stderr, "[kr] GPU rendering: WebGL2, framebuffer %dx%d\n", w, h);
   } else {
     fprintf(stderr, "[kr] software rendering\n");
