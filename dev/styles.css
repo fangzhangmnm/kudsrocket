@@ -99,3 +99,12 @@ button:disabled { opacity: .4; cursor: default; }
 [hidden] { display: none !important; }
 /* 竖屏：画面在上、软键在下 → L / R 放到十字键和四个键上方（不叠在画面上） */
 @media (orientation: portrait) { .shoulder { top: auto; bottom: calc(var(--u) * 3.5); } }
+/* 游戏库一行 = 盘按钮 + 留本机 / 移除；标题下一行小字是 OneDrive 里的文件名（W-8）。added 20261014 by Claude Fable 5.1 */
+.disc-row { display: flex; align-items: stretch; gap: 6px; }
+.disc-row .disc { flex: 1; min-width: 0; }
+.disc .title { display: flex; flex-direction: column; gap: 2px; }
+.disc .title .sub { font-size: 12px; }
+.sheet h3 { margin: 14px 0 6px; font-size: 14px; color: var(--muted, #999); }
+.bins { display: grid; gap: 6px; max-height: 50vh; overflow: auto; }
+.bin-row { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; }
+.bin-row .slot-text { flex: 1; min-width: 0; }

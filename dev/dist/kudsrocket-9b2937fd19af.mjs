@@ -1,5 +1,5 @@
 // src/version.ts
-var APP_VERSION = "v0.1.1-2026-10-14";
+var APP_VERSION = "v0.1.2-2026-10-14";
 
 // assets/icons.svg
 var icons_default = '<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none">\n<!--\n  12 icons extracted from the family icon library (../20260708 SVG Icons/icons.svg) by extract-icons.py \u2014 do not hand-edit; re-run the script instead.\n  Family SVG Icons \u2014 MIT License, Copyright (c) 2026 fangzhangmnm.\n  Contains work derived from (per-icon provenance in data-src):\n    Feather Icons \u2014 MIT License, Copyright (c) 2013-2023 Cole Bemis \xB7 https://github.com/feathericons/feather\n-->\n  <!-- media -->\n  <!-- pause \u2014 \u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="pause" data-cat="media" data-src="own" data-note="\u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="3.2"><path d="M8.3 5.5 V18.5"/><path d="M15.7 5.5 V18.5"/></g></symbol>\n  <!-- play \u2014 \u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="play" data-cat="media" data-src="own" data-note="\u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 5.4 L18.8 12 L8.2 18.6 Z" fill="currentColor"/></symbol>\n  <!-- fast-forward \u2014 \u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="fast-forward" data-cat="media" data-src="own" data-note="\u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.4 6.8 L10.9 12 L4.4 17.2 Z" fill="currentColor"/><path d="M13.1 6.8 L19.6 12 L13.1 17.2 Z" fill="currentColor"/></symbol>\n  <!-- file -->\n  <!-- floppy-disk \u2014 \u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3 -->\n  <symbol id="floppy-disk" data-cat="file" data-src="feather:save" data-note="\u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13l3 3v13a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 17 8 17 3"/></symbol>\n  <!-- folder-open \u2014 \u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF -->\n  <symbol id="folder-open" data-cat="file" data-src="own" data-note="\u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18 V7 a2 2 0 0 1 2 -2 h4 l2 2 h6 a2 2 0 0 1 2 2 v1.8"/><path d="M3 18 L6.4 10.8 H21.6 L18.2 18 Z"/></symbol>\n  <!-- hierarchy -->\n  <!-- lock \u2014 \u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D -->\n  <symbol id="lock" data-cat="hierarchy" data-src="own" data-note="\u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10" width="13" height="11"/><path d="M8.8 10 V6.5 a3.2 3.2 0 0 1 6.4 0 V10"/></symbol>\n  <!-- common -->\n  <!-- x \u2014 \u53C9 -->\n  <symbol id="x" data-cat="common" data-src="own" data-note="\u53C9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 L17.5 17.5 M17.5 6.5 L6.5 17.5"/></symbol>\n  <!-- cloud -->\n  <!-- cloud \u2014 \u4E91 -->\n  <symbol id="cloud" data-cat="cloud" data-src="feather:cloud" data-note="\u4E91" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>\n  <!-- viewport -->\n  <!-- maximize-viewport \u2014 \u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55) -->\n  <symbol id="maximize-viewport" data-cat="viewport" data-src="own" data-note="\u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934 --> <polyline points="4 9 4 4 9 4"/> <polyline points="20 9 20 4 15 4"/> <polyline points="4 15 4 20 9 20"/> <polyline points="20 15 20 20 15 20"/></symbol>\n  <!-- ui -->\n  <!-- more \u2014 \u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00) -->\n  <symbol id="more" data-cat="ui" data-src="own" data-note="\u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/></symbol>\n  <!-- keyboard \u2014 \u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49) -->\n  <symbol id="keyboard" data-cat="ui" data-src="own" data-note="\u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="7.2" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="7.2" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><path d="M8.6 15.6 H15.4"/></symbol>\n  <!-- missing -->\n  <!-- gamepad \u2014 \u7F3A\u56FE\u6807\u5360\u4F4D \u2014 gamepad \u5C1A\u672A\u8FDB icons.svg -->\n  <symbol data-missing="1" id="gamepad" data-cat="missing" data-src="own" data-note="\u7F3A\u56FE\u6807\u5360\u4F4D \u2014 gamepad \u5C1A\u672A\u8FDB icons.svg\uFF0C\u91CD\u8DD1 extract-icons.py \u53EF\u81EA\u52A8\u6362\u6210\u771F\u56FE\u6807" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2.5" stroke-dasharray="2.5 2.5" opacity="0.35"/></symbol>\n</svg>\n';
@@ -64,12 +64,21 @@ function sheet(build, opts = {}) {
     addEventListener("keydown", onKey2, true);
     box.append(...build(done));
     back.append(box);
-    document.body.append(back);
+    overlayHost().append(back);
     openSheet = handle;
     box.querySelector("input, button.primary")?.focus();
   });
 }
 var isSheetOpen = () => openSheet !== null;
+var OVERLAY_IDS = ["banners", "note", "update", "busy"];
+var overlayHost = () => document.fullscreenElement ?? document.body;
+function mountOverlays() {
+  document.addEventListener("fullscreenchange", () => {
+    const host = overlayHost();
+    for (const id of OVERLAY_IDS) host.append($(id));
+    for (const back of Array.from(document.querySelectorAll(".sheet-back"))) host.append(back);
+  });
+}
 function askPassword(title, hint = "") {
   return sheet((done) => {
     const input = h("input", { type: "password", autocomplete: "off", spellcheck: "false" });
@@ -164,6 +173,9 @@ var CoreSession = class _CoreSession {
   image = null;
   ctx2d;
   fpsWindow = { t: performance.now(), frames: 0, fps: 0, emuMs: 0, speed: 0 };
+  // 读盘的网络用量：这一秒拿了多少字节、核等读盘等了多少毫秒（核的读是同步的——等多久就停多久，声音跟着欠）。
+  //   user 10-14「状态栏显示实时网络用量判断是游戏卡了还是在等网」。added 20261014 by Claude Fable 5.1
+  net = { bytes: 0, waitMs: 0, inflight: 0, bps: 0, waitPerSec: 0 };
   pace = { mean: 0, sd: 0, max: 0, late: 0, bunched: 0, frameMs: 0, frameMsSd: 0 };
   perRefresh = { last: performance.now(), seq: 0, dts: [], counts: [0, 0, 0], hz: 0, shown: [0, 0, 0] };
   startedAt = performance.now();
@@ -174,9 +186,22 @@ var CoreSession = class _CoreSession {
     const core = await createKrCore({
       krMedia: {
         size: media.size,
-        read: (offset, length) => {
-          if (session2) session2.mediaReads++;
-          return media.read(offset, length);
+        read: async (offset, length) => {
+          const s = session2, t0 = performance.now();
+          if (s) {
+            s.mediaReads++;
+            s.net.inflight++;
+          }
+          try {
+            const bytes = await media.read(offset, length);
+            if (s) s.net.bytes += bytes.length;
+            return bytes;
+          } finally {
+            if (s) {
+              s.net.waitMs += performance.now() - t0;
+              s.net.inflight--;
+            }
+          }
         }
       },
       arguments: [`/disc/game${opts.ext}`, String(media.size), ...opts.lowLatency ? ["lowlatency"] : []],
@@ -235,6 +260,9 @@ var CoreSession = class _CoreSession {
     };
     addEventListener("pointerdown", resume);
     addEventListener("keydown", resume);
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "visible") resume();
+    });
     resume();
   }
   // ── 输入 ──
@@ -354,6 +382,11 @@ var CoreSession = class _CoreSession {
       const emuMs = core._kr_stat_emu_ms();
       fw.fps = (frames - fw.frames) * 1e3 / (now - fw.t);
       fw.speed = (emuMs - fw.emuMs) / (now - fw.t);
+      const n = this.net;
+      n.bps = n.bytes * 1e3 / (now - fw.t);
+      n.waitPerSec = n.waitMs * 1e3 / (now - fw.t);
+      n.bytes = 0;
+      n.waitMs = 0;
       fw.t = now;
       fw.frames = frames;
       fw.emuMs = emuMs;
@@ -382,6 +415,11 @@ var CoreSession = class _CoreSession {
       bytesFetched: core._kr_stat_bytes_fetched(),
       readsWaiting: core._kr_stat_reads_waiting(),
       mediaReads: this.mediaReads,
+      /** 这一秒读盘拿到的字节 / 秒。 */
+      netBps: this.net.bps,
+      /** 这一秒里核等读盘等了多少毫秒（接近 1000 = 整秒都在等网）。 */
+      netWaitMs: this.net.waitPerSec,
+      netInflight: this.net.inflight,
       audioState: ac2.state,
       audioClock: ac2.currentTime,
       audioRead: core.HEAP32[core._kr_audio_r_ptr() >> 2],
@@ -5906,8 +5944,9 @@ var JARS = "jars";
 var DISC_SUFFIXES = [".wafter", ".iso", ".cso"];
 var CRUMB_SUFFIX = ".crumb";
 var JAM_SUFFIX = ".jam";
-var SLOTS = 4;
 var AUTO_SLOTS = 4;
+var LOCAL_SNAPSHOTS_KEPT = 2;
+var READ_AHEAD_BYTES = 4 * 2 ** 20;
 var AUTO_EVERY_MS = 10 * 6e4;
 var AUTO_MIN_GAP_MS = 3e4;
 var THUMB_W = 240;
@@ -5915,18 +5954,31 @@ var PLATFORM_CODE = { psp: "wafer" };
 var JAM_POLL_MS = 2e3;
 var FAST_FORWARD = 3;
 
-// src/app/store-ui.ts
-var BACKGROUND_KEYS = /* @__PURE__ */ new Set(["sync.pushing", "file.renaming"]);
-function stemOf(identifier) {
+// src/app/labels.ts
+var labels = /* @__PURE__ */ new Map();
+var setLabel = (identifier, label) => {
+  labels.set(identifier, label);
+};
+function labelFor(identifier) {
+  const known = labels.get(identifier);
+  if (known) return known;
+  const m = /^crumbs\/[0-9a-f]{16}-([sa])([0-9]+)\.crumb$/.exec(identifier);
+  if (m) return `\u5FEB\u7167\uFF08${m[1] === "s" ? "\u624B\u52A8" : "\u81EA\u52A8"} ${m[2]}\uFF09`;
+  if (identifier.startsWith("jars/")) return "\u6E38\u620F\u5B58\u6863";
+  if (identifier.startsWith("pantry/")) return "\u76D8";
   return identifier.replace(/^.*\//, "");
 }
+
+// src/app/store-ui.ts
+var BACKGROUND_KEYS = /* @__PURE__ */ new Set(["sync.pushing", "file.renaming"]);
+var stemOf = (identifier) => labelFor(identifier);
 var storeUI = {
   busy: (label, fn, key) => key && BACKGROUND_KEYS.has(key) ? fn() : withBusy(label, fn),
   resolveConflict: async ({ name, occasion }) => {
     const choice = await sheet((done) => [
       h("h2", {}, "\u4E91\u7AEF\u548C\u8FD9\u53F0\u8BBE\u5907\u4E0A\u7684\u4E0D\u4E00\u6837"),
-      h("p", {}, `${stemOf(name)}\uFF1A\u522B\u7684\u8BBE\u5907\u6539\u8FC7\u4E91\u7AEF\u90A3\u4EFD\uFF0C\u8FD9\u53F0\u8BBE\u5907\u4E0A\u4E5F\u6709\u6CA1\u4F20\u4E0A\u53BB\u7684\u6539\u52A8\u3002`),
-      h("p", { class: "hint" }, occasion === "push" ? "\u300C\u7528\u8FD9\u53F0\u7684\u300D= \u9A6C\u4E0A\u7528\u8FD9\u53F0\u7684\u8986\u76D6\u4E91\u7AEF\uFF0C\u4E91\u7AEF\u90A3\u4EFD\u79FB\u5230\u5907\u4EFD\uFF1B\u300C\u7528\u4E91\u7AEF\u7684\u300D= \u8FD9\u53F0\u7684\u79FB\u5230\u5907\u4EFD\uFF0C\u6362\u6210\u4E91\u7AEF\u90A3\u4EFD\u3002" : "\u73B0\u5728\u5148\u6253\u5F00\u8FD9\u53F0\u8BBE\u5907\u4E0A\u7684\uFF1B\u300C\u7528\u4E91\u7AEF\u7684\u300D= \u8FD9\u53F0\u7684\u79FB\u5230\u5907\u4EFD\uFF0C\u6362\u6210\u4E91\u7AEF\u90A3\u4EFD\u3002"),
+      h("p", {}, `${stemOf(name)}\uFF1A\u4E91\u7AEF\u90A3\u4EFD\u548C\u8FD9\u53F0\u8BBE\u5907\u4E0A\u8981\u5B58\u7684\u8FD9\u4EFD\u4E0D\u662F\u540C\u4E00\u4E2A\u7248\u672C\uFF08\u522B\u7684\u8BBE\u5907\u5B58\u8FC7\uFF0C\u6216\u8005\u8FD9\u53F0\u6CA1\u8BFB\u5230\u8FC7\u4E91\u7AEF\u90A3\u4EFD\uFF09\u3002`),
+      h("p", { class: "hint" }, occasion === "push" ? "\u300C\u7528\u8FD9\u53F0\u7684\u300D= \u7528\u8FD9\u53F0\u7684\u8986\u76D6\u4E91\u7AEF\uFF0C\u4E91\u7AEF\u90A3\u4EFD\u79FB\u5230\u5907\u4EFD\u7BB1\uFF1B\u300C\u7528\u4E91\u7AEF\u7684\u300D= \u8FD9\u53F0\u7684\u79FB\u5230\u5907\u4EFD\u7BB1\uFF0C\u6362\u6210\u4E91\u7AEF\u90A3\u4EFD\u3002\u4E24\u8FB9\u90FD\u4E0D\u4F1A\u4E22\uFF0C\u5907\u4EFD\u7BB1\u91CC\u80FD\u627E\u56DE\u3002" : "\u73B0\u5728\u5148\u6253\u5F00\u8FD9\u53F0\u8BBE\u5907\u4E0A\u7684\uFF1B\u300C\u7528\u4E91\u7AEF\u7684\u300D= \u8FD9\u53F0\u7684\u79FB\u5230\u5907\u4EFD\u7BB1\uFF0C\u6362\u6210\u4E91\u7AEF\u90A3\u4EFD\u3002"),
       h(
         "div",
         { class: "row" },
@@ -6183,10 +6235,17 @@ async function sha256Hex(bytes) {
   const d = new Uint8Array(await crypto.subtle.digest("SHA-256", bytes));
   return Array.from(d, (b) => b.toString(16).padStart(2, "0")).join("");
 }
+async function pipe(bytes, ts) {
+  const stream = new Blob([bytes]).stream().pipeThrough(ts);
+  return new Uint8Array(await new Response(stream).arrayBuffer());
+}
+var deflateRaw = (bytes) => pipe(bytes, new CompressionStream("deflate-raw"));
+var inflateRaw = (bytes) => pipe(bytes, new DecompressionStream("deflate-raw"));
 async function sealBytes(password, plain, opts = {}) {
+  const payload = opts.compress ? await deflateRaw(plain) : plain;
   const w = await beginDisc(password, { salt: opts.salt });
-  const body = await w.encrypt(plain);
-  const tail = await w.finish({ ...opts.meta, sha256: await sha256Hex(plain) });
+  const body = await w.encrypt(payload);
+  const tail = await w.finish({ ...opts.meta, ...opts.compress ? { z: "deflate-raw" } : {}, sha256: await sha256Hex(payload) });
   const out = new Uint8Array(body.length + tail.length);
   out.set(body, 0);
   out.set(tail, body.length);
@@ -6194,9 +6253,10 @@ async function sealBytes(password, plain, opts = {}) {
 }
 async function unsealBytes(password, sealed) {
   const disc = await openDisc({ size: sealed.length, read: async (o, n) => sealed.subarray(o, o + n) }, password);
-  const plain = await disc.read(0, disc.size);
-  if (disc.meta.sha256 && disc.meta.sha256 !== await sha256Hex(plain)) throw new CorruptDiscError("content does not match its recorded sha256");
-  return { plain, meta: disc.meta };
+  const payload = await disc.read(0, disc.size);
+  if (disc.meta.sha256 && disc.meta.sha256 !== await sha256Hex(payload)) throw new CorruptDiscError("content does not match its recorded sha256");
+  if (disc.meta.z && disc.meta.z !== "deflate-raw") throw new CorruptDiscError(`unknown compression "${String(disc.meta.z)}"`);
+  return { plain: disc.meta.z ? await inflateRaw(payload) : payload, meta: disc.meta };
 }
 
 // src/disc/sfo.ts
@@ -6254,12 +6314,7 @@ async function readDiscLabel(src) {
   }
 }
 
-// src/app/discs.ts
-var sessionPassword = null;
-var getPassword = () => sessionPassword;
-var setPassword = (p) => {
-  sessionPassword = p;
-};
+// src/app/identity.ts
 async function sha16(text) {
   const d = new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text)));
   return Array.from(d.slice(0, 8), (b) => b.toString(16).padStart(2, "0")).join("");
@@ -6267,6 +6322,20 @@ async function sha16(text) {
 async function discKey(stem) {
   return /^[0-9a-f]{16}$/.test(stem) ? stem : sha16(stem);
 }
+var gameKey = (fp) => sha16(`${fp.k}:${fp.id}:${fp.v ?? ""}`);
+function fpCompatible(saved, now) {
+  if (!saved) return true;
+  if (saved.k !== now.k || saved.size !== now.size) return false;
+  if (saved.id && now.id && (saved.id !== now.id || (saved.v ?? "") !== (now.v ?? ""))) return false;
+  return true;
+}
+
+// src/app/discs.ts
+var sessionPassword = null;
+var getPassword = () => sessionPassword;
+var setPassword = (p) => {
+  sessionPassword = p;
+};
 var stemOf2 = (name) => name.replace(/^.*\//, "").replace(/\.[^.]*$/, "");
 var extOf = (name) => (name.match(/\.[A-Za-z0-9]+$/)?.[0] ?? ".iso").toLowerCase();
 var NeedPassword = class extends Error {
@@ -6296,19 +6365,33 @@ async function unwrap(src, name, password) {
   }
   const label = await readDiscLabel(media);
   const fp = { k: PLATFORM_CODE.psp, size: media.size, ...label?.id ? { id: label.id } : {}, ...label?.version ? { v: label.version } : {} };
-  return { media, ext: extOf(original), title: stemOf2(original), opened, fp };
+  const keyFromGame = !!fp.id;
+  const key = keyFromGame ? await gameKey(fp) : await discKey(stemOf2(name));
+  return { media, ext: extOf(original), title: stemOf2(original), fp, key, keyFromGame };
 }
 async function fromLocalFile(file, password) {
   const src = { size: file.size, read: async (o, n) => new Uint8Array(await file.slice(o, o + n).arrayBuffer()) };
-  const u = await unwrap(src, file.name, password);
-  return { ...u, key: await discKey(stemOf2(file.name)), identifier: null };
+  return { ...await unwrap(src, file.name, password), identifier: null };
+}
+function withReadAhead(stream) {
+  let aheadUntil = 0;
+  return {
+    size: stream.totalSize,
+    read(o, n) {
+      const end = o + n;
+      if (READ_AHEAD_BYTES > 0 && end + READ_AHEAD_BYTES / 2 > aheadUntil && end < stream.totalSize) {
+        aheadUntil = Math.min(stream.totalSize, end + READ_AHEAD_BYTES);
+        stream.prefetch(end, aheadUntil - end).catch(() => {
+        });
+      }
+      return stream.read(o, n);
+    }
+  };
 }
 async function fromPantry(identifier, password) {
   const stream = await getStore().file(identifier, { mode: "existing" }).openStream();
   if (!stream) throw new Error("\u8FD9\u5F20\u76D8\u73B0\u5728\u62FF\u4E0D\u5230\uFF08\u6CA1\u767B\u5F55\u3001\u79BB\u7EBF\uFF0C\u6216\u8005\u4E91\u7AEF\u5DF2\u7ECF\u6CA1\u6709\u4E86\uFF09");
-  const src = { size: stream.totalSize, read: (o, n) => stream.read(o, n) };
-  const u = await unwrap(src, identifier, password);
-  return { ...u, key: await discKey(stemOf2(identifier)), identifier };
+  return { ...await unwrap(withReadAhead(stream), identifier, password), identifier };
 }
 async function titleInPantry(identifier) {
   if (!identifier.endsWith(".wafter")) return stemOf2(identifier);
@@ -7296,25 +7379,27 @@ function parseCrumbId(id) {
   const m = CRUMB_RE.exec(id);
   return m ? { key: m[1], kind: m[2], n: Number(m[3]) } : null;
 }
+var isLocal = (syncState) => syncState !== "cloud-only";
 function watchSlots(key, cb) {
   return getStore().files.watchFolder(CRUMBS, (snap) => {
-    const byId = new Map(snap.items.map((it) => [it.identifier, it.lastModified ?? Date.now()]));
-    const mk = (kind, n) => {
-      const id = crumbId(key, kind, n);
-      return { id, kind, n, savedAt: byId.get(id) ?? null };
-    };
-    cb(
-      [...Array.from({ length: SLOTS }, (_, i) => mk("s", i + 1)), ...Array.from({ length: AUTO_SLOTS }, (_, i) => mk("a", i + 1))],
-      snap.items.map((it) => it.identifier),
-      snap.complete
-    );
+    const all = [];
+    for (const it of snap.items) {
+      const c = parseCrumbId(it.identifier);
+      if (c) all.push({ id: it.identifier, ...c, savedAt: it.lastModified ?? Date.now(), local: isLocal(it.syncState) });
+    }
+    const mine = all.filter((c) => c.key === key);
+    const manual = mine.filter((c) => c.kind === "s").sort((a, b) => a.n - b.n).map((c) => ({ id: c.id, kind: "s", n: c.n, savedAt: c.savedAt, local: c.local }));
+    const autos = Array.from({ length: AUTO_SLOTS }, (_, i) => {
+      const n = i + 1, id = crumbId(key, "a", n), hit = mine.find((c) => c.id === id);
+      return { id, kind: "a", n, savedAt: hit?.savedAt ?? null, local: hit?.local ?? false };
+    });
+    cb([...manual, ...autos], all, snap.complete);
   });
 }
 async function put(identifier, sealed) {
   const store2 = getStore();
   await store2.files.ensureFolder(identifier.replace(/\/[^/]*$/, ""));
-  const exists = await store2.files.occupied(identifier);
-  return store2.file(identifier, { mode: exists ? "existing" : "new" }).save(new Blob([sealed]));
+  return store2.file(identifier, { mode: "existing" }).save(new Blob([sealed]));
 }
 async function get(identifier) {
   const store2 = getStore();
@@ -7324,7 +7409,7 @@ async function get(identifier) {
 }
 async function saveSnapshot(identifier, state, meta, password) {
   const thumb = meta.thumb ? btoa(Array.from(meta.thumb, (b) => String.fromCharCode(b)).join("")) : void 0;
-  return put(identifier, await sealBytes(password, state, { salt: sessionSalt, meta: { thumb, at: meta.at, auto: meta.auto, fp: meta.fp } }));
+  return put(identifier, await sealBytes(password, state, { salt: sessionSalt, compress: true, meta: { thumb, at: meta.at, auto: meta.auto, fp: meta.fp } }));
 }
 async function loadSnapshot(identifier, password) {
   const sealed = await get(identifier);
@@ -7345,10 +7430,32 @@ async function moveSnapshot(from, to) {
   const r = await getStore().file(from, { mode: "existing" }).tryMove(to);
   return r.ok;
 }
-var jamId = async (dir) => `${JARS}/${await sha16(`savedata:${dir}`)}${JAM_SUFFIX}`;
-function listJams(timeoutMs = 1e4) {
+async function deleteSnapshot(identifier) {
+  const r = await getStore().file(identifier, { mode: "existing" }).delete();
+  return r.status !== "cancelled" && r.status !== "noop";
+}
+async function tidyLocalSnapshots(slots) {
+  const have = slots.filter((s) => s.savedAt && s.local).sort((a, b) => b.savedAt - a.savedAt).slice(LOCAL_SNAPSHOTS_KEPT);
+  let n = 0;
+  for (const s of have) {
+    try {
+      await getStore().file(s.id, { mode: "existing" }).offload();
+      n++;
+    } catch (e) {
+      console.info("[tidy] kept", s.id, e);
+    }
+  }
+  return n;
+}
+var jarFolder = (k) => k === PLATFORM_CODE.psp ? JARS : `${JARS}/${k}`;
+var jamId = async (jar) => {
+  const seed = jar.k === PLATFORM_CODE.psp && jar.m === "shared" ? `savedata:${jar.u}` : `${jar.k}/${jar.m}:${jar.u}`;
+  return `${jarFolder(jar.k)}/${await sha16(seed)}${JAM_SUFFIX}`;
+};
+var describeJar = (jar) => jar.m === "shared" ? `\u6E38\u620F\u5B58\u6863 ${jar.u}` : `\u6E38\u620F\u5B58\u6863\uFF08\u8DDF\u6587\u4EF6 ${jar.u}\uFF09`;
+function listFolderOnce(folder, timeoutMs = 1e4) {
   return new Promise((resolve) => {
-    let latest = { ids: [], complete: false };
+    let latest = { items: [], complete: false };
     let off = null;
     let settled = false;
     const finish = () => {
@@ -7359,49 +7466,124 @@ function listJams(timeoutMs = 1e4) {
       resolve(latest);
     };
     const timer = setTimeout(finish, timeoutMs);
-    off = getStore().files.watchFolder(JARS, (snap) => {
-      latest = { ids: snap.items.map((it) => it.identifier).filter((id) => id.endsWith(JAM_SUFFIX)), complete: snap.complete };
+    off = getStore().files.watchFolder(folder, (snap) => {
+      latest = { items: snap.items.map((it) => ({ identifier: it.identifier, syncState: it.syncState, size: it.size, lastModified: it.lastModified })), complete: snap.complete };
       if (snap.complete) finish();
     });
     if (settled) off();
   });
 }
-async function loadMemstick(password, ids, complete) {
-  const files = /* @__PURE__ */ new Map();
-  const dirs = /* @__PURE__ */ new Set();
+async function listJams(k, timeoutMs = 1e4) {
+  const { items, complete } = await listFolderOnce(jarFolder(k), timeoutMs);
+  return { ids: items.map((it) => it.identifier).filter((id) => id.endsWith(JAM_SUFFIX)), complete };
+}
+var SYNC_TEXT = {
+  "synced": "\u5DF2\u540C\u6B65",
+  "cloud-only": "\u53EA\u5728\u4E91\u7AEF",
+  "unpushed": "\u6709\u6539\u52A8\u6CA1\u4F20\u4E0A\u53BB",
+  "newer-on-cloud": "\u4E91\u7AEF\u6709\u65B0\u7248",
+  "conflict": "\u548C\u4E91\u7AEF\u51B2\u7A81",
+  "ghost": "\u4E91\u7AEF\u90A3\u4EFD\u6CA1\u4E86\uFF0C\u8FD9\u53F0\u6709\u6CA1\u4F20\u7684",
+  "pendingGone": "\u4E91\u7AEF\u521A\u6CA1\u4E86",
+  "float": "\u53EA\u5728\u8FD9\u53F0\u8BBE\u5907\uFF0C\u4ECE\u6CA1\u4F20\u8FC7",
+  "local-only": "\u53EA\u5728\u8FD9\u53F0\u8BBE\u5907"
+};
+var needsAttention = (syncState) => !["synced", "cloud-only", "local-only"].includes(syncState);
+async function nudge(identifier, syncState) {
+  const f = getStore().file(identifier, { mode: "existing" });
+  if (syncState === "newer-on-cloud") {
+    await f.pullIfClean();
+    return "\u5DF2\u6362\u6210\u4E91\u7AEF\u90A3\u4EFD";
+  }
+  const local = await f.open();
+  if (!local) return "\u8FD9\u53F0\u8BBE\u5907\u4E0A\u6CA1\u6709\u5B83\u7684\u526F\u672C";
+  const r = await f.save(local);
+  if (r.pushed) return "\u4F20\u4E0A\u53BB\u4E86";
+  return r.reason === "cancelled" || r.resolution ? `\u8FD9\u6B21\u6CA1\u4F20\uFF08${r.resolution ?? r.reason}\uFF09` : `\u8FD8\u6CA1\u4F20\u4E0A\u53BB\uFF08${r.reason ?? "\u770B\u6A2A\u6761"}\uFF09`;
+}
+async function loadMemstick(k, password, ids, complete) {
+  const got = /* @__PURE__ */ new Map();
+  const unreadable = /* @__PURE__ */ new Set();
+  let wrongPassword = 0;
   let next = 0;
   const worker = async () => {
     while (next < ids.length) {
       const id = ids[next++];
-      const sealed = await get(id);
-      if (!sealed) continue;
-      const unzipped = unzipSync((await unsealBytes(password, sealed)).plain);
-      for (const [path, bytes] of Object.entries(unzipped)) {
-        files.set(path, bytes);
-        dirs.add(path.split("/")[0]);
+      try {
+        const sealed = await get(id);
+        if (!sealed) {
+          unreadable.add(id);
+          continue;
+        }
+        const { plain, meta } = await unsealBytes(password, sealed);
+        const entries = unzipSync(plain);
+        const dir = meta.jar?.u ?? Object.keys(entries)[0]?.split("/")[0];
+        if (!dir) {
+          unreadable.add(id);
+          continue;
+        }
+        got.set(id, { dir, entries });
+      } catch (e) {
+        if (e instanceof WrongPasswordError) wrongPassword++;
+        else console.warn("[memstick]", id, e);
+        unreadable.add(id);
       }
     }
   };
   await Promise.all(Array.from({ length: Math.min(6, ids.length) }, worker));
-  return { files, dirs, complete };
+  if (wrongPassword && !got.size) throw new WrongPasswordError();
+  const owners = /* @__PURE__ */ new Map();
+  for (const [id, { dir }] of got) owners.set(dir, [...owners.get(dir) ?? [], id]);
+  const duplicates = new Map([...owners].filter(([, v]) => v.length > 1));
+  const files = /* @__PURE__ */ new Map(), dirs = /* @__PURE__ */ new Set(), loaded = /* @__PURE__ */ new Map();
+  for (const [id, { dir, entries }] of got) {
+    setLabel(id, describeJar({ k, m: "shared", u: dir }));
+    if (duplicates.has(dir)) continue;
+    loaded.set(id, dir);
+    dirs.add(dir);
+    for (const [path, bytes] of Object.entries(entries)) files.set(path, bytes);
+  }
+  return { files, dirs, complete, loaded, unreadable, duplicates };
 }
-async function saveSaveDir(dir, files, password) {
+async function saveSaveDir(jar, files, password) {
+  const id = await jamId(jar);
+  setLabel(id, describeJar(jar));
   const zip = zipSync(Object.fromEntries(files), { level: 0 });
-  return put(await jamId(dir), await sealBytes(password, zip, { salt: sessionSalt }));
+  return put(id, await sealBytes(password, zip, { salt: sessionSalt, meta: { jar } }));
 }
-async function deleteSaveDir(dir) {
-  const id = await jamId(dir);
+async function deleteSaveDir(jar) {
+  const id = await jamId(jar);
   const store2 = getStore();
   if (await store2.files.occupied(id)) await store2.file(id, { mode: "existing" }).delete();
 }
+async function deleteJam(identifier) {
+  const r = await getStore().file(identifier, { mode: "existing" }).delete();
+  return r.status !== "cancelled" && r.status !== "noop";
+}
+async function listBins() {
+  const store2 = getStore();
+  const [trash, backup] = await Promise.all([store2.files.listTrash(), store2.files.listBackup()]);
+  const mk = (bin) => (t) => ({ bin, identifier: t.identifier, label: labelOfBinned(t.identifier), ts: t.ts, side: t.side, raw: { localKey: t.localKey, cloudRef: t.cloudRef, encrypted: t.encrypted } });
+  return [...trash.map(mk("trash")), ...backup.map(mk("backup"))].sort((a, b) => (b.ts ?? "").localeCompare(a.ts ?? ""));
+}
+function labelOfBinned(identifier) {
+  const c = parseCrumbId(identifier);
+  if (c) return `\u5FEB\u7167\uFF08${c.kind === "s" ? "\u624B\u52A8" : "\u81EA\u52A8"} ${c.n}\uFF0C\u76D8 ${c.key.slice(0, 6)}\u2026\uFF09`;
+  if (identifier.endsWith(JAM_SUFFIX)) return "\u6E38\u620F\u5B58\u6863\uFF08\u4E00\u7F50\uFF09";
+  return identifier.replace(/^.*\//, "");
+}
+async function restoreBin(item) {
+  const r = await getStore().files.restoreTrash({
+    trashKey: item.raw.localKey,
+    cloudRef: item.raw.cloudRef,
+    fromCloud: item.side !== "local",
+    targetName: item.identifier,
+    encrypted: item.raw.encrypted
+  });
+  return r.status;
+}
 
 // src/app/snapshots.ts
-function fpCompatible(saved, now) {
-  if (!saved) return true;
-  if (saved.k !== now.k || saved.size !== now.size) return false;
-  if (saved.id && now.id && (saved.id !== now.id || (saved.v ?? "") !== (now.v ?? ""))) return false;
-  return true;
-}
 var fpSame = (saved, now) => !!saved && fpCompatible(saved, now);
 var slotLabel = (s) => `${s.kind === "s" ? "\u624B\u52A8" : "\u81EA\u52A8"} ${s.n}`;
 var Snapshots = class {
@@ -7412,6 +7594,7 @@ var Snapshots = class {
     this.off = watchSlots(disc.key, (slots, all, complete) => {
       this.slots = slots;
       this.all = all;
+      for (const s of slots) setLabel(s.id, `\u5FEB\u7167\uFF08${slotLabel(s)}\uFF0C${disc.title}\uFF09`);
       onChange();
       if (complete) void this.tryHeal();
     });
@@ -7422,7 +7605,7 @@ var Snapshots = class {
   playedSinceSnap = 0;
   metaCache = /* @__PURE__ */ new Map();
   healTried = false;
-  /** 这一页自愈接过来的格子：不许被这一页接下来的存档盖掉。 */
+  /** 这一页从别的代号接过来的格子：不许被这一页接下来的存档盖掉。 */
   adopted = /* @__PURE__ */ new Set();
   off;
   dispose() {
@@ -7436,6 +7619,11 @@ var Snapshots = class {
   }
   newest() {
     return this.slots.filter((s) => s.savedAt).sort((a, b) => b.savedAt - a.savedAt)[0] ?? null;
+  }
+  /** 手动快照不设上限：新一格的号 = 现有最大号 + 1。 */
+  nextManualSlot() {
+    const n = Math.max(0, ...this.slots.filter((s) => s.kind === "s").map((s) => s.n)) + 1;
+    return { id: crumbId(this.disc.key, "s", n), kind: "s", n, savedAt: null, local: false };
   }
   /** 存一格。auto = 自动存的（存不了就算了，不打扰人）。 */
   async save(kind, n, auto = false) {
@@ -7470,6 +7658,7 @@ var Snapshots = class {
       const r = await saveSnapshot(crumbId(this.disc.key, kind, n), state, { thumb, at: Date.now(), auto, fp: this.disc.fp }, pw);
       label = slotLabel({ kind, n });
       this.verbs.say(`${auto ? "\u81EA\u52A8\u5FEB\u7167" : `\u5DF2\u5B58\u300C${label}\u300D`}${r.pushed ? "\uFF0C\u5DF2\u4F20\u5230 OneDrive" : "\uFF0C\u5148\u5B58\u5728\u8FD9\u53F0\u8BBE\u5907\uFF0C\u8054\u7F51\u767B\u5F55\u540E\u81EA\u52A8\u4F20"}`);
+      if (r.pushed) tidyLocalSnapshots(this.slots).catch((e) => console.warn("[tidy]", e));
     } finally {
       this.busy = false;
     }
@@ -7494,7 +7683,7 @@ var Snapshots = class {
   async onLeave() {
     if (this.playedSinceSnap >= AUTO_MIN_GAP_MS) await this.auto();
   }
-  /** 读一格。指纹对不上先问人；人说不读就返回 false。 */
+  /** 读一格（这张盘的，或别的代号下的）。指纹对不上先问人；人说不读就返回 false。 */
   async load(slot) {
     const pw = await this.verbs.password("\u5FEB\u7167");
     if (!pw) return false;
@@ -7509,53 +7698,197 @@ var Snapshots = class {
     this.verbs.say(`\u5DF2\u8BFB\u300C${slotLabel(slot)}\u300D`);
     return true;
   }
+  /** 删一格 → 回收站。 */
+  async remove(id) {
+    const ok = await deleteSnapshot(id);
+    if (ok) {
+      this.adopted.delete(id);
+      this.verbs.say("\u5DF2\u79FB\u5230\u56DE\u6536\u7AD9");
+    }
+    return ok;
+  }
   /** 面板上的缩略图 / 时间：只读文件尾。这一页没口令就不读（不为了看缩略图去问人）。 */
-  peek(slot) {
+  peek(item) {
     const pw = this.verbs.knownPassword();
-    if (!pw || !slot.savedAt) return Promise.resolve(null);
-    const k = `${slot.id}@${slot.savedAt}`;
+    if (!pw || !item.savedAt) return Promise.resolve(null);
+    const k = `${item.id}@${item.savedAt}`;
     let p = this.metaCache.get(k);
     if (!p) {
-      p = peekSnapshot(slot.id, pw).catch(() => null);
+      p = peekSnapshot(item.id, pw).catch(() => null);
       this.metaCache.set(k, p);
     }
     return p;
   }
-  /** 孤儿自愈：这张盘一格快照都没有时，看看 crumbs/ 里有没有「主人已经不在食品柜里」、指纹又对得上的快照
-   *  （原来那份文件改了名、或重新导入过）。有就问人，人同意才搬过来（不替人猜）。 */
+  /** crumbs/ 里不是这张盘代号的快照，按主人分组、新的在前。面板全列出来：能读、能接、能删——自动不猜的人来做。 */
+  foreign() {
+    const groups = /* @__PURE__ */ new Map();
+    for (const c of this.all) if (c.key !== this.disc.key) groups.set(c.key, [...groups.get(c.key) ?? [], c]);
+    return [...groups].map(([key, items]) => ({ key, items: items.sort((a, b) => b.savedAt - a.savedAt), newestAt: Math.max(...items.map((i) => i.savedAt)) })).sort((a, b) => b.newestAt - a.newestAt);
+  }
+  /** 把一组快照接到这张盘上（人点的）。手动的接成新号（不盖现有的），自动的接进空格；没空格的留在原处。返回接上了几个。 */
+  async adopt(group) {
+    let moved = 0;
+    let nextManual = this.nextManualSlot().n;
+    const freeAutos = this.slots.filter((s) => s.kind === "a" && !s.savedAt && !this.adopted.has(s.id)).map((s) => s.n);
+    for (const it of group.items) {
+      let n;
+      if (it.kind === "s") n = nextManual++;
+      else {
+        const f = freeAutos.shift();
+        if (f == null) continue;
+        n = f;
+      }
+      const to = crumbId(this.disc.key, it.kind, n);
+      if (!await moveSnapshot(it.id, to)) continue;
+      moved++;
+      this.adopted.add(to);
+    }
+    this.verbs.say(moved === group.items.length ? `\u63A5\u4E0A\u4E86 ${moved} \u4E2A\u5FEB\u7167` : `\u63A5\u4E0A\u4E86 ${moved} \u4E2A\uFF0C\u8FD8\u6709 ${group.items.length - moved} \u4E2A\u6CA1\u7A7A\u683C\u653E\uFF0C\u7559\u5728\u539F\u5904`);
+    return moved;
+  }
+  /** 自愈：这张盘一格快照都没有时，看看别的代号下有没有指纹**肯定**对得上的快照组（代号从文件名换成游戏身份、或盘号读不出的老盘）。
+   *  有就问人，人同意才搬过来（不替人猜）；不同意的仍在面板「别的快照」里，随时能手动接。 */
   async heal() {
     if (this.slots.some((s) => s.savedAt)) return;
     const pw = this.verbs.knownPassword();
     if (!pw) return;
-    const live = await this.verbs.liveKeys();
-    const groups = /* @__PURE__ */ new Map();
-    for (const id of this.all) {
-      const c = parseCrumbId(id);
-      if (!c || c.key === this.disc.key || live.has(c.key)) continue;
-      groups.set(c.key, [...groups.get(c.key) ?? [], { id, kind: c.kind, n: c.n }]);
-    }
     let best = null;
-    for (const items of groups.values()) {
-      for (const it of items) {
-        const meta = await peekSnapshot(it.id, pw).catch(() => null);
-        if (!meta) continue;
-        if (fpSame(meta.fp, this.disc.fp) && (!best || (meta.at ?? 0) > best.at)) best = { items, at: meta.at ?? 0 };
-        break;
-      }
+    for (const g of this.foreign()) {
+      const meta = await peekSnapshot(g.items[0].id, pw).catch(() => null);
+      if (meta && fpSame(meta.fp, this.disc.fp) && (!best || g.newestAt > best.newestAt)) best = g;
     }
-    if (!best || !await this.verbs.confirmAdopt(best.items.length, best.at || null)) return;
-    let moved = 0;
-    for (const it of best.items) {
-      const to = crumbId(this.disc.key, it.kind, it.n);
-      if (!await moveSnapshot(it.id, to)) continue;
-      moved++;
-      this.adopted.add(to);
-      const slot = this.slots.find((s) => s.id === to);
-      if (slot) slot.savedAt ??= Date.now();
-    }
-    this.verbs.say(`\u63A5\u4E0A\u4E86 ${moved} \u4E2A\u5FEB\u7167`);
+    if (!best || !await this.verbs.confirmAdopt(best.items.length, best.newestAt || null)) return;
+    await this.adopt(best);
   }
 };
+
+// src/app/panels.ts
+var fmtWhen = (t) => t ? new Date(t).toLocaleString() : "";
+var fmtSize = (n) => n ? n >= 2 ** 20 ? `${(n / 2 ** 20).toFixed(1)} MB` : `${(n / 1024).toFixed(0)} KB` : "";
+async function openSaveManager() {
+  let jars, crumbs, complete;
+  try {
+    const [j, c] = await withBusy("\u6B63\u5728\u5217\u5B58\u6863\u2026", () => Promise.all([listFolderOnce(jarFolder(PLATFORM_CODE.psp), 8e3), listFolderOnce(CRUMBS, 8e3)]));
+    jars = j.items;
+    crumbs = c.items;
+    complete = j.complete && c.complete;
+  } catch (e) {
+    banner(`\u5217\u4E0D\u51FA\u5B58\u6863\uFF1A${errorText(e)}`);
+    return;
+  }
+  const all = [...jars, ...crumbs].sort((a, b) => (b.lastModified ?? 0) - (a.lastModified ?? 0));
+  const todo = all.filter((it) => needsAttention(it.syncState)), fine = all.filter((it) => !needsAttention(it.syncState));
+  await sheet((done) => {
+    const row = (it) => h(
+      "div",
+      { class: "bin-row" },
+      h(
+        "div",
+        { class: "slot-text" },
+        h("span", { class: "slot-name" }, labelFor(it.identifier)),
+        h("span", { class: "muted" }, [SYNC_TEXT[it.syncState] ?? it.syncState, fmtSize(it.size), fmtWhen(it.lastModified)].filter(Boolean).join(" \xB7 "))
+      ),
+      needsAttention(it.syncState) ? h("button", { class: "primary", onclick: async () => {
+        done();
+        try {
+          note(await nudge(it.identifier, it.syncState), 6e3);
+        } catch (e) {
+          banner(`\u6CA1\u5904\u7406\u6210\uFF1A${errorText(e)}`);
+        }
+      } }, it.syncState === "newer-on-cloud" ? "\u62C9\u4E91\u7AEF\u7684" : "\u63A8\u4E00\u628A") : null,
+      h("button", { title: "\u79FB\u5230\u56DE\u6536\u7AD9", onclick: async () => {
+        done();
+        try {
+          if (await deleteJam(it.identifier)) note("\u5DF2\u79FB\u5230\u56DE\u6536\u7AD9");
+        } catch (e) {
+          banner(`\u6CA1\u80FD\u79FB\u5230\u56DE\u6536\u7AD9\uFF1A${errorText(e)}`);
+        }
+      } }, "\u5220")
+    );
+    return [
+      h("h2", {}, "\u5B58\u6863\u7BA1\u7406"),
+      h("p", { class: "hint" }, `${complete ? "" : "\u4E91\u7AEF\u5217\u8868\u6CA1\u62FF\u5168\uFF08\u6CA1\u767B\u5F55 / \u7F51\u7EDC\u6162\uFF09\uFF0C\u770B\u5230\u7684\u53EF\u80FD\u4E0D\u5168\u3002"}\u300C\u63A8\u4E00\u628A\u300D= \u628A\u8FD9\u53F0\u7684\u90A3\u4EFD\u518D\u4F20\u4E00\u6B21\uFF1A\u4E91\u7AEF\u4E5F\u6539\u8FC7\u5C31\u4F1A\u8BA9\u4F60\u9009\uFF0C\u8F93\u7684\u8FDB\u5907\u4EFD\u7BB1\u3002`),
+      h("h3", {}, todo.length ? `\u8981\u5904\u7406\u7684\uFF08${todo.length}\uFF09` : "\u6CA1\u6709\u8981\u5904\u7406\u7684"),
+      todo.length ? h("div", { class: "bins" }, ...todo.map(row)) : null,
+      h("h3", {}, `\u6B63\u5E38\u7684\uFF08${fine.length}\uFF09`),
+      fine.length ? h("div", { class: "bins" }, ...fine.map(row)) : h("p", { class: "muted" }, "\u7A7A\u7684\u3002"),
+      h("div", { class: "row" }, h("button", { onclick: () => {
+        done();
+        openBins().catch((e) => banner(errorText(e)));
+      } }, "\u56DE\u6536\u7AD9 / \u5907\u4EFD\u7BB1"), h("button", { onclick: () => done() }, "\u5173\u95ED"))
+    ].filter(Boolean);
+  });
+}
+var fmtTs = (ts) => ts && ts.length >= 12 ? `${ts.slice(0, 4)}-${ts.slice(4, 6)}-${ts.slice(6, 8)} ${ts.slice(8, 10)}:${ts.slice(10, 12)}` : "";
+var sideText = { local: "\u53EA\u5728\u8FD9\u53F0\u8BBE\u5907", cloud: "\u53EA\u5728\u4E91\u7AEF", both: "\u4E24\u8FB9\u90FD\u6709" };
+async function openBins() {
+  let items;
+  try {
+    items = await withBusy("\u6B63\u5728\u5217\u56DE\u6536\u7AD9\u2026", listBins);
+  } catch (e) {
+    banner(`\u5217\u4E0D\u51FA\u56DE\u6536\u7AD9\uFF1A${errorText(e)}`);
+    return;
+  }
+  await sheet((done) => {
+    const row = (it) => h(
+      "div",
+      { class: "bin-row" },
+      h(
+        "div",
+        { class: "slot-text" },
+        h("span", { class: "slot-name" }, it.label),
+        h("span", { class: "muted" }, `${it.bin === "trash" ? "\u56DE\u6536\u7AD9" : "\u5907\u4EFD\u7BB1"} \xB7 ${fmtTs(it.ts)} \xB7 ${sideText[it.side]}`)
+      ),
+      h("button", { onclick: async () => {
+        done();
+        try {
+          const status = await restoreBin(it);
+          banner(`\u5DF2\u6062\u590D\uFF08${status}\uFF09\u3002\u6062\u590D\u51FA\u6765\u7684\u548C\u73B0\u6709\u7684\u540C\u540D\u65F6\uFF0C\u6587\u4EF6\u540D\u4F1A\u591A\u4E00\u4E2A\u65F6\u95F4\u6233\uFF1B\u5B58\u6863\u7F50\u91CD\u590D\u65F6\u4E0B\u6B21\u5F00\u76D8\u4F1A\u8BA9\u4F60\u9009\u4E00\u7F50\u3002`, "warning");
+        } catch (e) {
+          banner(`\u6062\u590D\u5931\u8D25\uFF1A${errorText(e)}`);
+        }
+      } }, "\u6062\u590D")
+    );
+    return [
+      h("h2", {}, "\u56DE\u6536\u7AD9 / \u5907\u4EFD\u7BB1"),
+      h("p", { class: "hint" }, "\u5220\u6389\u7684\u5FEB\u7167\u3001\u6E38\u620F\u5220\u6389\u7684\u5B58\u6863\u5728\u56DE\u6536\u7AD9\uFF1B\u4E91\u7AEF\u548C\u8FD9\u53F0\u8BBE\u5907\u51B2\u7A81\u65F6\u8F93\u7684\u90A3\u4E00\u65B9\u5728\u5907\u4EFD\u7BB1\u3002\u90FD\u6CA1\u6709\u771F\u7684\u4E22\u3002"),
+      items.length ? h("div", { class: "bins" }, ...items.map(row)) : h("p", { class: "muted" }, "\u662F\u7A7A\u7684\u3002"),
+      h("div", { class: "row" }, h("button", { onclick: () => done() }, "\u5173\u95ED"))
+    ];
+  });
+}
+async function resolveDuplicates(duplicates, peek) {
+  let changed = false;
+  for (const [dir, ids] of duplicates) {
+    const infos = await Promise.all(ids.map(async (id) => ({ id, meta: await peek(id).catch(() => null) })));
+    const keep = await sheet((done) => [
+      h("h2", {}, `\u5B58\u6863\u300C${dir}\u300D\u6709 ${ids.length} \u4EFD`),
+      h("p", { class: "hint" }, "\u53EF\u80FD\u662F\u4ECE\u56DE\u6536\u7AD9\u6062\u590D\u8FC7\u3001\u6216\u624B\u5DE5\u642C\u8FC7\u5B58\u6863\u3002\u9009\u4E00\u4EFD\u7559\u4E0B\uFF0C\u5176\u4F59\u79FB\u5230\u56DE\u6536\u7AD9\uFF1B\u4E0D\u9009 = \u8FD9\u4E00\u5C40\u8FD9\u4E2A\u5B58\u6863\u4E0D\u8BFB\u4E5F\u4E0D\u5199\u3002"),
+      h("div", { class: "bins" }, ...infos.map(({ id, meta }) => h(
+        "div",
+        { class: "bin-row" },
+        h(
+          "div",
+          { class: "slot-text" },
+          h("span", { class: "slot-name" }, labelFor(id)),
+          h("span", { class: "muted" }, `${id.replace(/^.*\//, "").slice(0, 8)}\u2026 \xB7 ${meta?.size ? `${(meta.size / 1024).toFixed(0)} KB` : ""}`)
+        ),
+        h("button", { class: "primary", onclick: () => done(id) }, "\u7559\u8FD9\u4EFD")
+      ))),
+      h("div", { class: "row" }, h("button", { onclick: () => done(null) }, "\u5148\u4E0D\u9009"))
+    ], { dismissable: false });
+    if (!keep) continue;
+    for (const id of ids) {
+      if (id === keep) continue;
+      try {
+        if (await deleteJam(id)) changed = true;
+      } catch (e) {
+        banner(`\u6CA1\u80FD\u79FB\u5230\u56DE\u6536\u7AD9\uFF1A${errorText(e)}`);
+      }
+    }
+  }
+  return changed;
+}
 
 // src/app/disc-tools.ts
 var CHUNK = 8 * 2 ** 20;
@@ -7653,6 +7986,15 @@ var say = (text, ms) => {
 };
 var pantryItems = [];
 var pantryComplete = false;
+var unwatchPantry = null;
+function watchPantry() {
+  unwatchPantry?.();
+  unwatchPantry = getStore().files.watchFolder(PANTRY, (snap) => {
+    pantryItems = snap.items.map((it) => ({ identifier: it.identifier, size: it.size, lastModified: it.lastModified, syncState: it.syncState }));
+    pantryComplete = snap.complete;
+    renderLibrary();
+  });
+}
 function renderAccount() {
   const row = $("account");
   $("tools").hidden = !auth.isSignedIn();
@@ -7698,36 +8040,86 @@ function renderLibrary() {
   }
   for (const d of discs) {
     const t = titles.get(d.identifier) ?? (d.identifier.endsWith(".wafter") ? null : stemOf2(d.identifier));
+    const local = d.syncState !== "cloud-only";
     rows.push(h(
-      "button",
-      { class: "disc", onclick: () => playFromPantry(d.identifier, false) },
-      t ? null : icon("lock"),
-      h("span", { class: "title" }, t ?? stemOf2(d.identifier)),
-      h("span", { class: "muted" }, gb(d.size))
+      "div",
+      { class: "disc-row" },
+      h(
+        "button",
+        { class: "disc", onclick: () => playFromPantry(d.identifier, false) },
+        t ? null : icon("lock"),
+        h(
+          "span",
+          { class: "title" },
+          h("span", {}, t ?? stemOf2(d.identifier)),
+          t && t !== stemOf2(d.identifier) ? h("span", { class: "sub muted" }, stemOf2(d.identifier) + (d.identifier.match(/\.[^.]*$/)?.[0] ?? "")) : null
+        ),
+        h("span", { class: "muted" }, `${gb(d.size)}${local ? " \xB7 \u672C\u673A" : ""}`)
+      ),
+      // 留一份在这台设备（离线能玩、不等网）/ 移除本机副本（云端那份不动）。user 10-14「可以加一个手动cache的功能」
+      h("button", {
+        class: "icon-btn",
+        title: local ? "\u79FB\u9664\u8FD9\u53F0\u8BBE\u5907\u4E0A\u7684\u526F\u672C\uFF08\u4E91\u7AEF\u4E0D\u52A8\uFF09" : "\u628A\u8FD9\u5F20\u76D8\u6574\u4E2A\u7559\u5728\u8FD9\u53F0\u8BBE\u5907\u4E0A\uFF08\u79BB\u7EBF\u4E5F\u80FD\u73A9\uFF09",
+        onclick: () => local ? offloadDisc(d.identifier) : keepDisc(d.identifier)
+      }, icon(local ? "x" : "cloud"))
     ));
   }
   if (!discs.length && auth.isSignedIn()) {
     rows.push(h("p", { class: "muted" }, pantryComplete ? `\u7A7A\u7684\u3002\u6587\u4EF6\u653E\u5728 OneDrive\u300C\u5E94\u7528\u300D\u91CC\u672C app \u7684\u6587\u4EF6\u5939 \u2192 ${PANTRY}/` : "\u2026"));
   }
+  if (auth.isSignedIn()) rows.push(h(
+    "div",
+    { class: "row" },
+    h("button", { onclick: () => {
+      openSaveManager().catch((e) => banner(errorText(e)));
+    } }, "\u5B58\u6863\u7BA1\u7406"),
+    h("button", { onclick: () => {
+      openBins().catch((e) => banner(errorText(e)));
+    } }, "\u56DE\u6536\u7AD9 / \u5907\u4EFD\u7BB1")
+  ));
   list.replaceChildren(...rows);
   $("unlock").hidden = !locked;
+}
+async function keepDisc(identifier) {
+  const f = getStore().file(identifier, { mode: "existing" });
+  say("\u6B63\u5728\u628A\u6574\u5F20\u76D8\u7559\u5230\u8FD9\u53F0\u8BBE\u5907\u2026", 6e5);
+  try {
+    await f.keepOffline({ onProgress: (done, total) => say(`\u6B63\u5728\u7559\u5230\u8FD9\u53F0\u8BBE\u5907\u2026 ${(done / 2 ** 20).toFixed(0)} / ${(total / 2 ** 20).toFixed(0)} MB`, 6e5) });
+    say(await f.isKeptOffline() ? "\u8FD9\u5F20\u76D8\u5DF2\u7ECF\u5728\u8FD9\u53F0\u8BBE\u5907\u4E0A\u4E86\uFF0C\u79BB\u7EBF\u4E5F\u80FD\u73A9" : "\u6CA1\u7559\u6210\uFF08\u770B\u6A2A\u6761\uFF09");
+  } catch (e) {
+    banner(`\u6CA1\u7559\u6210\uFF1A${errorText(e)}`);
+  }
+}
+async function offloadDisc(identifier) {
+  try {
+    await getStore().file(identifier, { mode: "existing" }).offload();
+    say("\u5DF2\u79FB\u9664\u8FD9\u53F0\u8BBE\u5907\u4E0A\u7684\u526F\u672C");
+  } catch (e) {
+    banner(`\u6CA1\u79FB\u9664\uFF1A${errorText(e)}`);
+  }
 }
 async function unlockTitles() {
   const pw = await askPassword("\u8F93\u5165\u53E3\u4EE4", "\u52A0\u5BC6\u76D8\u7684\u540D\u5B57\u8981\u53E3\u4EE4\u624D\u770B\u5F97\u89C1\u3002\u53E3\u4EE4\u53EA\u5728\u8FD9\u4E00\u9875\u91CC\u8BB0\u7740\uFF0C\u5173\u6389\u5C31\u5FD8\u3002");
   if (!pw) return;
   setPassword(pw);
   let wrong = 0;
-  for (const d of pantryItems.filter((it) => it.identifier.endsWith(".wafter") && !titles.has(it.identifier))) {
-    try {
-      const t = await titleInPantry(d.identifier);
-      if (t) {
-        titles.set(d.identifier, t);
-        renderLibrary();
-      } else wrong++;
-    } catch (e) {
-      banner(`\u8BFB\u540D\u5B57\u5931\u8D25\uFF1A${errorText(e)}`, "warning");
+  const todo = pantryItems.filter((it) => it.identifier.endsWith(".wafter") && !titles.has(it.identifier)).map((it) => it.identifier);
+  let next = 0;
+  const worker = async () => {
+    while (next < todo.length) {
+      const id = todo[next++];
+      try {
+        const t = await titleInPantry(id);
+        if (t) {
+          titles.set(id, t);
+          renderLibrary();
+        } else wrong++;
+      } catch (e) {
+        banner(`\u8BFB\u540D\u5B57\u5931\u8D25\uFF1A${errorText(e)}`, "warning");
+      }
     }
-  }
+  };
+  await Promise.all(Array.from({ length: Math.min(4, todo.length) }, worker));
   if (wrong) say(`${wrong} \u5F20\u76D8\u8FD9\u4E2A\u53E3\u4EE4\u6253\u4E0D\u5F00`);
 }
 var appState = () => getStore().collection("synced-app-state");
@@ -7778,30 +8170,43 @@ async function ensurePassword(why) {
   return got;
 }
 var jamBlocked = false;
+var memstickInfo = null;
+var PSP_JAR = (dir) => ({ k: PLATFORM_CODE.psp, m: "shared", u: dir });
 async function play(prepare, resume) {
   const disc = await prepare();
   if (!disc) return;
   current = disc;
   let memstick = /* @__PURE__ */ new Map();
   say("\u6B63\u5728\u8BFB\u8BB0\u5FC6\u68D2\u2026", 3e4);
-  const listed = await listJams(auth.isSignedIn() ? 1e4 : 1500);
+  const listed = await listJams(PLATFORM_CODE.psp, auth.isSignedIn() ? 1e4 : 1500);
   if (listed.ids.length) {
     const loaded = await withPassword(async (pw) => {
       const p = pw ?? getPassword();
       if (!p) throw new NeedPassword();
-      const m = await loadMemstick(p, listed.ids, listed.complete);
+      const m = await loadMemstick(PLATFORM_CODE.psp, p, listed.ids, listed.complete);
       if (pw) setPassword(pw);
       return m;
     }, "\u6E38\u620F\u5B58\u6863");
     if (loaded) {
+      memstickInfo = loaded;
       memstick = loaded.files;
       say(`\u8BB0\u5FC6\u68D2\uFF1A${loaded.dirs.size} \u4E2A\u5B58\u6863`);
+      if (loaded.unreadable.size) banner(`${loaded.unreadable.size} \u7F50\u5B58\u6863\u8FD9\u6B21\u6CA1\u8BFB\u8FDB\u6765\uFF08\u62FF\u4E0D\u5230\u3001\u53E3\u4EE4\u4E0D\u662F\u8FD9\u4E2A\u3001\u6216\u5185\u5BB9\u574F\u4E86\uFF09\uFF1A\u5B83\u4EEC\u5BF9\u5E94\u7684\u5B58\u6863\u8FD9\u4E00\u5C40\u4E0D\u4F1A\u88AB\u8986\u76D6\u3002`, "warning");
+      if (loaded.duplicates.size) {
+        const pw = getPassword();
+        const changed = await resolveDuplicates(loaded.duplicates, (id) => peekSnapshot(id, pw).then((m) => m && { at: m.at, size: m.size }));
+        if (changed) {
+          banner("\u5B58\u6863\u6574\u7406\u597D\u4E86\uFF0C\u91CD\u65B0\u5F00\u8FD9\u5F20\u76D8\u5C31\u4F1A\u8BFB\u8FDB\u6765\u3002", "warning");
+          return;
+        }
+        banner(`${loaded.duplicates.size} \u4E2A\u5B58\u6863\u5404\u6709\u597D\u51E0\u4EFD\u3001\u8FD8\u6CA1\u9009\uFF1A\u8FD9\u4E00\u5C40\u5B83\u4EEC\u4E0D\u8BFB\u4E5F\u4E0D\u5199\u3002`, "warning");
+      }
     } else {
       jamBlocked = true;
       banner("\u6CA1\u8BFB\u8BB0\u5FC6\u68D2\uFF1A\u8FD9\u4E00\u5C40\u91CC\u6E38\u620F\u81EA\u5DF1\u5B58\u7684\u6863\u4E0D\u4F1A\u540C\u6B65\u5230 OneDrive\uFF08\u514D\u5F97\u76D6\u6389\u539F\u6765\u7684\uFF09\u3002", "warning");
     }
   } else say("\u8BB0\u5FC6\u68D2\u662F\u7A7A\u7684", 2e3);
-  if (auth.isSignedIn() && !listed.complete) banner("\u8BB0\u5FC6\u68D2\u7684\u4E91\u7AEF\u5217\u8868\u6CA1\u62FF\u5168\uFF08\u7F51\u7EDC\u6162\uFF1F\uFF09\uFF1A\u8FD9\u4E00\u5C40\u53EF\u80FD\u770B\u4E0D\u5230\u522B\u7684\u8BBE\u5907\u4E0A\u7684\u65B0\u5B58\u6863\u3002", "warning");
+  if (auth.isSignedIn() && !listed.complete) banner("\u8BB0\u5FC6\u68D2\u7684\u4E91\u7AEF\u5217\u8868\u6CA1\u62FF\u5168\uFF08\u7F51\u7EDC\u6162\uFF1F\uFF09\uFF1A\u8FD9\u4E00\u5C40\u53EF\u80FD\u770B\u4E0D\u5230\u522B\u7684\u8BBE\u5907\u4E0A\u7684\u65B0\u5B58\u6863\uFF1B\u65B0\u5B58\u7684\u6863\u548C\u4E91\u7AEF\u649E\u4E0A\u65F6\u4F1A\u8BA9\u4F60\u9009\u3002", "warning");
   $("home").hidden = true;
   $("game").hidden = false;
   $("title").textContent = disc.title;
@@ -7825,9 +8230,7 @@ async function play(prepare, resume) {
     }
   }
   snaps = new Snapshots(session, disc, snapshotVerbs, () => {
-    if (snaps) currentSlot ??= snaps.slots[0] ?? null;
   });
-  currentSlot ??= snaps.slots[0] ?? null;
   jamSigs = session.memstickDirs();
   setInterval(() => jamTick(false), JAM_POLL_MS);
   addEventListener("visibilitychange", () => {
@@ -7855,6 +8258,17 @@ var jamSigs = /* @__PURE__ */ new Map();
 var jamPending = /* @__PURE__ */ new Map();
 var jamSaving = false;
 var jamRetryAt = 0;
+var jamWarned = /* @__PURE__ */ new Set();
+async function jamWritable(dir) {
+  const id = await jamId(PSP_JAR(dir));
+  const why = memstickInfo?.duplicates.has(dir) ? "\u6709\u597D\u51E0\u4EFD\u3001\u8FD8\u6CA1\u9009\u4E00\u4EFD" : memstickInfo?.unreadable.has(id) ? "\u539F\u6765\u90A3\u4EFD\u8FD9\u6B21\u6CA1\u8BFB\u8FDB\u6765" : null;
+  if (!why) return true;
+  if (!jamWarned.has(dir)) {
+    jamWarned.add(dir);
+    banner(`\u5B58\u6863\u300C${dir}\u300D${why}\uFF1A\u8FD9\u4E00\u5C40\u6E38\u620F\u5B58\u7684\u8FD9\u4E2A\u6863\u53EA\u7559\u5728\u8FD9\u53F0\u8BBE\u5907\u7684\u5185\u5B58\u91CC\uFF0C\u4E0D\u4F1A\u5199\u5230 OneDrive\uFF08\u514D\u5F97\u76D6\u6389\u539F\u6765\u7684\uFF09\u3002`, "warning");
+  }
+  return false;
+}
 async function jamTick(force) {
   if (!session || jamBlocked || jamSaving || performance.now() < jamRetryAt) return;
   const now = session.memstickDirs();
@@ -7863,7 +8277,9 @@ async function jamTick(force) {
     if (jamSigs.get(dir) === sig) continue;
     if (force || jamPending.get(dir) === sig) changed.push(dir);
   }
-  for (const dir of jamSigs.keys()) if (!now.has(dir) && (force || !jamPending.has(dir))) removed.push(dir);
+  if (now.size > 0 || jamSigs.size === 0) {
+    for (const dir of jamSigs.keys()) if (!now.has(dir) && (force || !jamPending.has(dir))) removed.push(dir);
+  }
   jamPending = now;
   if (!changed.length && !removed.length) return;
   const pw = await ensurePassword("\u6E38\u620F\u5B58\u6863");
@@ -7874,17 +8290,21 @@ async function jamTick(force) {
   }
   jamSaving = true;
   try {
-    let pushed = true;
+    let pushed = true, wrote = 0;
     for (const dir of changed) {
-      const r = await saveSaveDir(dir, session.readSaveDir(dir), pw);
+      if (!await jamWritable(dir)) continue;
+      const r = await saveSaveDir(PSP_JAR(dir), session.readSaveDir(dir), pw);
       jamSigs.set(dir, now.get(dir));
       pushed &&= r.pushed;
+      wrote++;
     }
     for (const dir of removed) {
-      await deleteSaveDir(dir);
+      if (!await jamWritable(dir)) continue;
+      await deleteSaveDir(PSP_JAR(dir));
       jamSigs.delete(dir);
+      wrote++;
     }
-    say(pushed ? "\u6E38\u620F\u5B58\u6863\u5DF2\u540C\u6B65\u5230 OneDrive" : "\u6E38\u620F\u5B58\u6863\u5DF2\u5B58\u5728\u8FD9\u53F0\u8BBE\u5907\uFF08\u8054\u7F51\u767B\u5F55\u540E\u81EA\u52A8\u4F20\u4E0A\u53BB\uFF09");
+    if (wrote) say(pushed ? "\u6E38\u620F\u5B58\u6863\u5DF2\u540C\u6B65\u5230 OneDrive" : "\u6E38\u620F\u5B58\u6863\u5DF2\u5B58\u5728\u8FD9\u53F0\u8BBE\u5907\uFF08\u8054\u7F51\u767B\u5F55\u540E\u81EA\u52A8\u4F20\u4E0A\u53BB\uFF09");
   } catch (e) {
     jamRetryAt = performance.now() + 3e4;
     banner(`\u6E38\u620F\u5B58\u6863\u6CA1\u5B58\u4E0A\uFF1A${errorText(e)}\uFF0830 \u79D2\u540E\u518D\u8BD5\uFF09`);
@@ -7908,15 +8328,10 @@ var snapshotVerbs = {
   confirmMismatch: () => confirmSheet("\u8FD9\u4E2A\u5FEB\u7167\u50CF\u662F\u522B\u7684\u76D8\u5B58\u7684", "\u5B58\u5B83\u7684\u65F6\u5019\u7528\u7684\u4E0D\u662F\u8FD9\u5F20\u76D8\uFF08\u7F16\u53F7\u3001\u7248\u672C\u6216\u5927\u5C0F\u5BF9\u4E0D\u4E0A\uFF09\u3002\u786C\u8BFB\u53EF\u80FD\u8DD1\u98DE\uFF0C\u8BFB\u4E4B\u524D\u6700\u597D\u5148\u5B58\u4E00\u4EFD\u3002", "\u8FD8\u662F\u8BFB", "\u4E0D\u8BFB"),
   confirmAdopt: (count, at) => confirmSheet(
     "\u627E\u5230\u8FD9\u5F20\u76D8\u7684\u5FEB\u7167\u4E86\uFF1F",
-    `\u6709 ${count} \u4E2A\u5FEB\u7167\u770B\u7740\u662F\u8FD9\u5F20\u76D8\u7684${at ? `\uFF08\u6700\u65B0\u7684\u5B58\u4E8E ${new Date(at).toLocaleString()}\uFF09` : ""}\uFF0C\u539F\u6765\u90A3\u4EFD\u6587\u4EF6\u53EF\u80FD\u6539\u4E86\u540D\u6216\u91CD\u65B0\u5BFC\u5165\u8FC7\u3002\u63A5\u5230\u8FD9\u5F20\u76D8\u4E0A\u5417\uFF1F`,
+    `\u6709 ${count} \u4E2A\u5FEB\u7167\u770B\u7740\u662F\u8FD9\u5F20\u76D8\u7684${at ? `\uFF08\u6700\u65B0\u7684\u5B58\u4E8E ${new Date(at).toLocaleString()}\uFF09` : ""}\uFF0C\u662F\u5728\u522B\u7684\u540D\u5B57\u4E0B\u5B58\u7684\uFF08\u540C\u4E00\u5F20\u76D8\u7684\u672C\u673A\u6587\u4EF6 / \u6539\u8FC7\u540D / \u8001\u7248\u672C\uFF09\u3002\u63A5\u5230\u8FD9\u5F20\u76D8\u4E0A\u5417\uFF1F\u4E0D\u63A5\u4E5F\u968F\u65F6\u80FD\u5728\u5FEB\u7167\u9762\u677F\u300C\u522B\u7684\u5FEB\u7167\u300D\u91CC\u624B\u52A8\u63A5\u3002`,
     "\u63A5\u4E0A",
     "\u4E0D\u7528"
   ),
-  async liveKeys() {
-    const keys = /* @__PURE__ */ new Set();
-    for (const it of pantryItems) if (DISC_SUFFIXES.some((x) => it.identifier.toLowerCase().endsWith(x))) keys.add(await discKey(stemOf2(it.identifier)));
-    return keys;
-  },
   say: (text, ms) => say(text, ms)
 };
 function saveTo(slot) {
@@ -7926,11 +8341,17 @@ function saveTo(slot) {
 }
 function loadFrom(slot) {
   snaps?.load(slot).then((ok) => {
-    if (ok && slot.kind === "s") currentSlot = slot;
+    if (ok && slot.kind === "s" && "savedAt" in slot) currentSlot = slot;
   }, (e) => {
     if (e instanceof WrongPasswordError) banner("\u5FEB\u7167\u7684\u53E3\u4EE4\u548C\u8FD9\u4E00\u9875\u8BB0\u7740\u7684\u53E3\u4EE4\u4E0D\u4E00\u6837\uFF0C\u8BFB\u4E0D\u4E86\u3002");
     else banner(`\u8BFB\u5FEB\u7167\u5931\u8D25\uFF1A${errorText(e)}`);
   });
+}
+function quickSlot(forSave) {
+  if (!snaps) return null;
+  if (currentSlot) return currentSlot;
+  const manual = snaps.slots.filter((s) => s.kind === "s" && s.savedAt).sort((a, b) => b.savedAt - a.savedAt)[0];
+  return manual ?? (forSave ? snaps.nextManualSlot() : snaps.newest());
 }
 async function restoreFromDevServer(name) {
   const r = await fetch(`/__dev/state/${encodeURIComponent(name)}`);
@@ -7942,6 +8363,10 @@ function openSlots() {
   if (!snaps) return;
   const s = snaps;
   const when = (t) => t ? new Date(t).toLocaleString() : "\u7A7A";
+  const removeBtn = (id, done) => h("button", { title: "\u79FB\u5230\u56DE\u6536\u7AD9", onclick: async () => {
+    done();
+    if (await confirmSheet("\u79FB\u5230\u56DE\u6536\u7AD9\uFF1F", "\u5FEB\u7167\u4F1A\u8FDB\u56DE\u6536\u7AD9\uFF0C\u4E3B\u9875\u300C\u56DE\u6536\u7AD9 / \u5907\u4EFD\u7BB1\u300D\u91CC\u80FD\u6062\u590D\u3002", "\u79FB\u5230\u56DE\u6536\u7AD9")) s.remove(id).catch((e) => banner(errorText(e)));
+  } }, "\u5220");
   const row = (slot, done) => {
     const thumb = h("div", { class: "thumb" });
     s.peek(slot).then((m) => {
@@ -7951,7 +8376,7 @@ function openSlots() {
       "div",
       { class: `slot${slot.id === currentSlot?.id ? " current" : ""}` },
       thumb,
-      h("div", { class: "slot-text" }, h("span", { class: "slot-name" }, slotLabel(slot)), h("span", { class: "muted" }, when(slot.savedAt))),
+      h("div", { class: "slot-text" }, h("span", { class: "slot-name" }, slotLabel(slot)), h("span", { class: "muted" }, `${when(slot.savedAt)}${slot.local ? " \xB7 \u672C\u673A" : ""}`)),
       h(
         "div",
         { class: "slot-buttons" },
@@ -7959,6 +8384,7 @@ function openSlots() {
           done();
           saveTo(slot);
         } }, "\u5B58\u5230\u8FD9\u91CC") : null,
+        slot.savedAt ? removeBtn(slot.id, done) : null,
         h("button", { class: "primary", disabled: !slot.savedAt, onclick: () => {
           done();
           loadFrom(slot);
@@ -7966,11 +8392,76 @@ function openSlots() {
       )
     );
   };
+  const foreignRow = (g, done) => {
+    const head = h("span", { class: "muted" }, `\u4EE3\u53F7 ${g.key.slice(0, 8)}\u2026 \xB7 ${g.items.length} \u4E2A \xB7 \u6700\u65B0 ${when(g.newestAt)}`);
+    const title = h("span", { class: "slot-name" }, "\u522B\u7684\u540D\u5B57\u4E0B\u7684\u5FEB\u7167");
+    s.peek(g.items[0]).then((m) => {
+      if (m?.fp) title.textContent = `${m.fp.id ?? "\u7F16\u53F7\u4E0D\u660E"}${m.fp.v ? ` v${m.fp.v}` : ""} \xB7 ${(m.fp.size / 2 ** 30).toFixed(2)} GB${m.fp.id === current?.fp.id && m.fp.size === current?.fp.size ? "\uFF08\u548C\u8FD9\u5F20\u76D8\u5BF9\u5F97\u4E0A\uFF09" : ""}`;
+    });
+    return h(
+      "div",
+      { class: "slot" },
+      h("div", { class: "slot-text" }, title, head),
+      h(
+        "div",
+        { class: "slot-buttons" },
+        h("button", { onclick: () => {
+          done();
+          s.adopt(g).catch((e) => banner(errorText(e)));
+        } }, "\u63A5\u5230\u8FD9\u5F20\u76D8"),
+        h("button", { onclick: () => {
+          done();
+          openForeign(g);
+        } }, "\u9010\u4E2A\u770B")
+      )
+    );
+  };
+  const foreign = s.foreign();
   sheet((done) => [
     h("h2", {}, "\u5FEB\u7167"),
-    h("p", { class: "hint" }, "\u81EA\u52A8\u5FEB\u7167\uFF1A\u5207\u5230\u540E\u53F0\u3001\u9000\u51FA\u3001\u6BCF\u73A9 10 \u5206\u949F\u5404\u5B58\u4E00\u4EFD\uFF0C\u8F6E\u6D41\u7528 4 \u683C\u3002\u6E38\u620F\u81EA\u5DF1\u5B58\u7684\u6863\u53E6\u5916\u81EA\u52A8\u540C\u6B65\u3002"),
+    h("p", { class: "hint" }, `\u624B\u52A8\u5FEB\u7167\u4E0D\u9650\u4EFD\u6570\uFF1B\u81EA\u52A8\u5FEB\u7167\u5207\u5230\u540E\u53F0\u3001\u9000\u51FA\u3001\u6BCF\u73A9 10 \u5206\u949F\u5404\u5B58\u4E00\u4EFD\uFF0C\u8F6E\u6D41\u7528 ${AUTO_SLOTS} \u683C\u3002\u6E38\u620F\u81EA\u5DF1\u5B58\u7684\u6863\u53E6\u5916\u81EA\u52A8\u540C\u6B65\u3002`),
     h("div", { class: "slots" }, ...s.slots.map((slot) => row(slot, () => done()))),
-    h("div", { class: "row" }, h("button", { onclick: () => done() }, "\u5173\u95ED"))
+    h("div", { class: "row" }, h("button", { onclick: () => {
+      done();
+      saveTo(s.nextManualSlot());
+    } }, "\u5B58\u6210\u65B0\u7684\u4E00\u683C")),
+    ...foreign.length ? [h("h3", {}, "\u522B\u7684\u5FEB\u7167"), h("div", { class: "slots" }, ...foreign.map((g) => foreignRow(g, () => done())))] : [],
+    h("div", { class: "row" }, h("button", { onclick: () => {
+      done();
+      openBins().catch((e) => banner(errorText(e)));
+    } }, "\u56DE\u6536\u7AD9 / \u5907\u4EFD\u7BB1"), h("button", { onclick: () => done() }, "\u5173\u95ED"))
+  ]);
+}
+function openForeign(g) {
+  if (!snaps) return;
+  const s = snaps;
+  sheet((done) => [
+    h("h2", {}, `\u4EE3\u53F7 ${g.key.slice(0, 8)}\u2026 \u7684\u5FEB\u7167`),
+    h("div", { class: "slots" }, ...g.items.map((it) => {
+      const thumb = h("div", { class: "thumb" });
+      s.peek(it).then((m) => {
+        if (m?.thumb) thumb.append(h("img", { src: `data:image/jpeg;base64,${m.thumb}`, alt: "" }));
+      });
+      return h(
+        "div",
+        { class: "slot" },
+        thumb,
+        h("div", { class: "slot-text" }, h("span", { class: "slot-name" }, slotLabel(it)), h("span", { class: "muted" }, new Date(it.savedAt).toLocaleString())),
+        h(
+          "div",
+          { class: "slot-buttons" },
+          h("button", { onclick: async () => {
+            done();
+            if (await confirmSheet("\u79FB\u5230\u56DE\u6536\u7AD9\uFF1F", "\u4E3B\u9875\u300C\u56DE\u6536\u7AD9 / \u5907\u4EFD\u7BB1\u300D\u91CC\u80FD\u6062\u590D\u3002", "\u79FB\u5230\u56DE\u6536\u7AD9")) s.remove(it.id).catch((e) => banner(errorText(e)));
+          } }, "\u5220"),
+          h("button", { class: "primary", onclick: () => {
+            done();
+            loadFrom(it);
+          } }, "\u8BFB")
+        )
+      );
+    })),
+    h("div", { class: "row" }, h("button", { onclick: () => done() }, "\u8FD4\u56DE"))
   ]);
 }
 function toolButton(name, title, onclick, label) {
@@ -8091,7 +8582,7 @@ function statusText() {
     `${APP_VERSION} \xB7 ${s.fps.toFixed(1)} fps \xB7 \u901F\u5EA6 ${(s.speed * 100).toFixed(0)}% \xB7 ${s.renderer} \xB7 \u9650\u901F\uFF1A${s.pacing}${s.paused ? " \xB7 \u6682\u505C\u4E2D" : ""}${s.gameSpeed > 1 ? ` \xB7 \u5FEB\u8FDB \xD7${s.gameSpeed}` : ""}`,
     `\u753B\u9762\u8282\u594F\uFF1A\u51FA\u5E27\u95F4\u9694 ${s.pace.mean.toFixed(1)} \xB1 ${s.pace.sd.toFixed(1)} ms \xB7 \u6700\u957F ${s.pace.max.toFixed(0)} ms \xB7 \u8DF3\u5E27 ${["\u5173", "\u6BCF 2 \u5E27\u753B 1", "\u6BCF 3 \u5E27\u753B 1"][s.frameskip]} \xB7 \u8FFD\u8FDB\u5EA6 ${s.catchup} \u5E27 \xB7 \u91CD\u65B0\u5BF9\u9F50 ${s.reanchors} \u6B21`,
     `\u663E\u793A\u5668 \u2248 ${s.displayHz.toFixed(0)} Hz \xB7 \u6BCF\u6B21\u5237\u65B0\u770B\u5230\u65B0\u5E27\uFF1A0 \u5F20 ${s.perRefresh[0]} \xB7 1 \u5F20 ${s.perRefresh[1]} \xB7 2 \u5F20\u4EE5\u4E0A ${s.perRefresh[2]}\uFF08\u6BCF\u79D2\uFF09`,
-    `\u76D8\uFF1A\u8BFB\u4E86 ${(s.bytesFetched / 2 ** 20).toFixed(1)} MB / ${s.mediaReads} \u6B21 \xB7 \u7B49\u5F85\u4E2D ${s.readsWaiting}`,
+    `\u76D8\uFF1A\u8FD9\u4E00\u79D2 ${(s.netBps / 1024).toFixed(0)} KB/s \xB7 \u7B49\u8BFB\u76D8 ${s.netWaitMs.toFixed(0)} ms/s${s.netInflight ? `\uFF08\u6B63\u5728\u7B49 ${s.netInflight} \u4E2A\uFF09` : ""} \xB7 \u7D2F\u8BA1 ${(s.bytesFetched / 2 ** 20).toFixed(1)} MB / ${s.mediaReads} \u6B21`,
     `\u58F0\u97F3\uFF1A${s.audioState} \xB7 \u7F13\u51B2 ${s.audioFillMs.toFixed(0)} ms \xB7 \u8F93\u51FA\u5EF6\u8FDF ${s.outputLatencyMs.toFixed(0)} ms \xB7 \u6B20\u8F7D\u7D2F\u8BA1 ${s.audioUnderrunMs.toFixed(0)} ms \xB7 \u4E22\u5F03 ${s.audioDropped}`,
     `\u624B\u67C4\uFF1A${padInfo || "\u6CA1\u68C0\u6D4B\u5230\uFF08\u63D2\u4E0A\u540E\u5728\u9875\u9762\u4E0A\u6309\u4E00\u4E0B\u624B\u67C4\u6309\u952E\uFF09"}`,
     `\u952E\u76D8\uFF1A\u65B9\u5411\u952E \xB7 X \u25CB \xB7 Z \xD7 \xB7 A \u25A1 \xB7 S \u25B3 \xB7 Q/W L/R \xB7 \u56DE\u8F66 Start \xB7 \u7A7A\u683C Select \xB7 P \u6682\u505C \xB7 \u6309\u4F4F Tab \u5FEB\u8FDB \xB7 F2 \u5B58 / F4 \u8BFB\u5F53\u524D\u683C`
@@ -8118,12 +8609,14 @@ function onKey(e, down) {
     }
     if (e.code === "F2") {
       e.preventDefault();
-      if (currentSlot) saveTo(currentSlot);
+      const t = quickSlot(true);
+      if (t) saveTo(t);
       return;
     }
     if (e.code === "F4") {
       e.preventDefault();
-      if (currentSlot) loadFrom(currentSlot);
+      const t = quickSlot(false);
+      if (t) loadFrom(t);
       return;
     }
   }
@@ -8218,6 +8711,7 @@ var toolErr = (e) => {
 };
 async function boot() {
   mountIcons();
+  mountOverlays();
   $("version").textContent = APP_VERSION;
   if (!await ensureIsolation()) {
     $("library").replaceChildren(h("p", {}, "\u8FD9\u4E2A\u6D4F\u89C8\u5668\u7528\u4E0D\u4E86\uFF08\u8DE8\u6E90\u9694\u79BB\u6CA1\u751F\u6548\uFF09\u3002\u8BF7\u6362\u6700\u65B0\u7248\u7684 Chrome / Edge / Safari\u3002"));
@@ -8254,11 +8748,13 @@ async function boot() {
     unlockTitles().catch((e) => banner(errorText(e)));
   });
   const store2 = getStore();
-  store2.files.watchFolder(PANTRY, (snap) => {
-    pantryItems = snap.items;
-    pantryComplete = snap.complete;
-    renderLibrary();
-  });
+  watchPantry();
+  $("refresh").addEventListener("click", () => watchPantry());
+  const refocus = () => {
+    if (!session && auth.isSignedIn() && document.visibilityState === "visible") watchPantry();
+  };
+  document.addEventListener("visibilitychange", refocus);
+  addEventListener("focus", refocus);
   renderAccount();
   renderLibrary();
   auth.onAuthChanged(() => {
@@ -8308,4 +8804,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-f15d1de32ba5.mjs.map
+//# sourceMappingURL=kudsrocket-9b2937fd19af.mjs.map
