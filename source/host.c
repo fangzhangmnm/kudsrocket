@@ -486,7 +486,8 @@ EMSCRIPTEN_KEEPALIVE void kr_set_frameskip_floor(int n) { g_frameskip_floor = n 
 EMSCRIPTEN_KEEPALIVE int kr_frameskip_floor_active(void) { return g_native60 ? g_frameskip_floor : 0; }
 EMSCRIPTEN_KEEPALIVE double kr_native_fps(void) { return atomic_load(&g_native_fps); }
 
-// 每秒一次的杂务（核线程、帧边界上）：GL 有没有报错（核自己只在 debug 构建里查）；游戏本身是 30 还是 60 帧。
+static void pace_tick_1s(void); // 排程自检（定义在主循环那节）
+// 每秒一次的杂务（核线程、帧边界上）：GL 有没有报错（核自己只在 debug 构建里查）；游戏本身是 30 还是 60 帧；排程自检。
 static void pf_tick_1s(void) {
   double now = PF_NOW();
   if (now - g_pf_err_at < 1000.0) return;
@@ -508,6 +509,7 @@ static void pf_tick_1s(void) {
     g_native60 = ratio < 1.5;
     atomic_store(&g_native_fps, 60.0 / (ratio < 1 ? 1 : ratio));
   }
+  pace_tick_1s();
 }
 // out[0..21] 本文件的累计量；out[22..36] = kr_ppsspp_gpu_stats。只有 run_max（最长一趟 retro_run）读一次清一次。
 EMSCRIPTEN_KEEPALIVE void kr_perf_stats(double *out) {
@@ -669,8 +671,14 @@ EMSCRIPTEN_KEEPALIVE unsigned kr_audio_dropped(void) { return g_audio_dropped; }
 EMSCRIPTEN_KEEPALIVE double kr_stat_emu_ms(void) { return g_emu_ms_total; }
 EMSCRIPTEN_KEEPALIVE void kr_audio_set_target(unsigned frames) { g_audio_target = frames; }
 EMSCRIPTEN_KEEPALIVE void kr_audio_set_max(unsigned frames) { g_audio_max = frames; }
-EMSCRIPTEN_KEEPALIVE void kr_set_pacing(int mode) { g_pacing = mode; }
+// 核自己量到 worker 的 rAF 慢就改墙钟（10-15 iPad Safari：worker 的 rAF 只有 ~20 Hz，核等它、落后、跳帧，怪猎 18 fps；切墙钟满 30）。
+//   主线程手动选排程（kr_set_pacing）就重置、重新量。判定在 pace_tick_1s（每秒一次，核线程）。
+static atomic_int g_pacing_auto_wall = 0;
+static int g_raf_slow_secs = 0;
+static void pace_tick_1s(void);
+EMSCRIPTEN_KEEPALIVE void kr_set_pacing(int mode) { g_pacing = mode; atomic_store(&g_pacing_auto_wall, 0); g_raf_slow_secs = 0; }
 EMSCRIPTEN_KEEPALIVE int kr_get_pacing(void) { return g_pacing; }
+EMSCRIPTEN_KEEPALIVE int kr_pacing_auto_wall(void) { return atomic_load(&g_pacing_auto_wall); }
 // 声音时钟开 / 停。开的时候丢掉积压（r = w），否则会把攒了几百毫秒的旧声音补播出来。
 EMSCRIPTEN_KEEPALIVE void kr_audio_set_live(int live) {
   if (live) atomic_store(&g_audio_r, atomic_load(&g_audio_w));
@@ -722,8 +730,14 @@ static atomic_uint g_frameskip_now = 0;
 EMSCRIPTEN_KEEPALIVE unsigned kr_frameskip(void) { return g_frameskip_now; }
 
 // ───────────── 核选项 / 环境 ─────────────
+// CPU 核：默认 IR 解释器（10-15 起；上游补丁让 wasm 真的读这个选项）；启动参数 cpu=interp 退回经典解释器（慢 3 倍，排查某张盘在 IR 下的问题用）
+static const char *g_cpu_core = "IR JIT";
 static const struct { const char *key, *value; } g_options[] = {
-  {"ppsspp_cpu_core", "IR JIT"}, // = IR 解释器（wasm 里没有原生 JIT）
+  {"ppsspp_cpu_core", "IR JIT"}, // 实际值看 g_cpu_core（environment() 里）
+  // 快内存 = 读写 PSP 地址不检查（IR 的 IRPassSimplify 会把 ValidateAddress 全删掉）。wasm 的堆只有 768 MB、没有保护页：游戏碰一个坏地址就是
+  //   wasm 越界 trap、整个核死（10-15 iPad / PC：Clannad 开盘第 7 帧「RuntimeError: Out of bounds memory access」；经典解释器会检查、报错后忽略所以没事）。
+  //   关掉 = IR 保留地址检查，坏访问走 Core_MemoryException + IgnoreBadMemAccess，和经典解释器一样活下来。
+  {"ppsspp_fast_memory", "disabled"},
   {"ppsspp_software_rendering", "enabled"}, // 有 GPU 时在 environment() 里改答 "disabled"
   {"ppsspp_internal_resolution", "480x272"},
   {"ppsspp_auto_frameskip", "disabled"}, // 不用 PPSSPP 的自动跳帧：它在不限速时最多连跳 8 帧，太狠（10-14 实测画面掉到 10 帧）；
@@ -750,6 +764,7 @@ static bool environment(unsigned cmd, void *data) {
     case RETRO_ENVIRONMENT_GET_VARIABLE: {
       struct retro_variable *var = data;
       if (!strcmp(var->key, "ppsspp_software_rendering")) { var->value = g_gl ? "disabled" : "enabled"; return true; }
+      if (!strcmp(var->key, "ppsspp_cpu_core")) { var->value = g_cpu_core; return true; }
       if (!strcmp(var->key, "ppsspp_frameskip")) { var->value = "disabled"; return true; } // 运行中由 kr_ppsspp_set_frameskip 改
       for (size_t i = 0; i < sizeof(g_options) / sizeof(g_options[0]); i++)
         if (!strcmp(var->key, g_options[i].key)) { var->value = g_options[i].value; return true; }
@@ -969,6 +984,18 @@ EMSCRIPTEN_KEEPALIVE void kr_frame_ms_stats(double *out) {
   g_fm_n = g_fm_sum = g_fm_sumsq = 0;
 }
 
+// 跟屏幕排程下、没暂停、rAF 的间隔连着 2 秒比游戏一帧长 25% 以上 = 浏览器在压 worker 的 rAF（不是核算不动：那种情况 retro_run 自己会长）→ 这一局改墙钟。
+//   参照的是 g_frame_ms_avg（30 帧的游戏一趟 ≈ 33 ms；rAF 33 ms 对它刚好不算慢）。
+static void pace_tick_1s(void) {
+  if (g_pacing != 2 || g_timing_mode != EM_TIMING_RAF || g_paused || g_vs_dt <= 0 || atomic_load(&g_pacing_auto_wall)) { g_raf_slow_secs = 0; return; }
+  if (g_vs_dt > g_frame_ms_avg * 1.25) {
+    if (++g_raf_slow_secs >= 2) {
+      atomic_store(&g_pacing_auto_wall, 1);
+      fprintf(stderr, "[kr] worker rAF slow (%.1f ms per tick, game frame %.1f ms) — wall-clock pacing for this session\n", g_vs_dt, g_frame_ms_avg);
+    }
+  } else g_raf_slow_secs = 0;
+}
+
 static void run_one(void) {
   service_snapshots();
   uint64_t produced_before = g_audio_produced;
@@ -1014,7 +1041,7 @@ static void watchdog(void *arg) {
 static void frame(void) {
   g_last_frame_at = emscripten_get_now();
   atomic_store(&g_loop_last, g_last_frame_at);
-  int want = (g_pacing == 2 && kr_worker_has_raf() && g_last_frame_at >= g_raf_hold_until) ? EM_TIMING_RAF : EM_TIMING_SETIMMEDIATE;
+  int want = (g_pacing == 2 && !atomic_load(&g_pacing_auto_wall) && kr_worker_has_raf() && g_last_frame_at >= g_raf_hold_until) ? EM_TIMING_RAF : EM_TIMING_SETIMMEDIATE;
   if (want != g_timing_mode) {
     emscripten_set_main_loop_timing(want, want == EM_TIMING_RAF ? 1 : 0);
     g_timing_mode = want;
@@ -1109,8 +1136,11 @@ int main(int argc, char **argv) {
   }
   snprintf(g_disc_path, sizeof(g_disc_path), "%s", argv[1]);
   g_disc_size = strtoll(argv[2], NULL, 10);
-  for (int i = 3; i < argc; i++)
+  for (int i = 3; i < argc; i++) {
     if (!strcmp(argv[i], "lowlatency")) g_want_desync = true;
+    if (!strcmp(argv[i], "cpu=interp")) g_cpu_core = "Interpreter";
+  }
+  fprintf(stderr, "[kr] cpu core: %s\n", g_cpu_core);
   for (int i = 0; i < KR_CACHE_BLOCKS; i++) g_cache[i].block = -1;
   if (g_disc_size > 0) g_seen = (_Atomic uint8_t *)calloc((size_t)((g_disc_size / KR_SECTOR + 8) / 8), 1);
   mkdir("/saves", 0777);

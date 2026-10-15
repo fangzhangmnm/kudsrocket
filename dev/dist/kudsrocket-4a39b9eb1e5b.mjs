@@ -1,5 +1,5 @@
 // src/version.ts
-var APP_VERSION = "v0.1.31-2026-10-15";
+var APP_VERSION = "v0.1.32-2026-10-15";
 
 // assets/icons.svg
 var icons_default = '<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none">\n<!--\n  13 icons extracted from the family icon library (../20260708 SVG Icons/icons.svg) by extract-icons.py \u2014 do not hand-edit; re-run the script instead.\n  Family SVG Icons \u2014 MIT License, Copyright (c) 2026 fangzhangmnm.\n  Contains work derived from (per-icon provenance in data-src):\n    Feather Icons \u2014 MIT License, Copyright (c) 2013-2023 Cole Bemis \xB7 https://github.com/feathericons/feather\n-->\n  <!-- media -->\n  <!-- pause \u2014 \u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="pause" data-cat="media" data-src="own" data-note="\u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="3.2"><path d="M8.3 5.5 V18.5"/><path d="M15.7 5.5 V18.5"/></g></symbol>\n  <!-- play \u2014 \u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="play" data-cat="media" data-src="own" data-note="\u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 5.4 L18.8 12 L8.2 18.6 Z" fill="currentColor"/></symbol>\n  <!-- fast-forward \u2014 \u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="fast-forward" data-cat="media" data-src="own" data-note="\u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.4 6.8 L10.9 12 L4.4 17.2 Z" fill="currentColor"/><path d="M13.1 6.8 L19.6 12 L13.1 17.2 Z" fill="currentColor"/></symbol>\n  <!-- volume \u2014 \u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009) -->\n  <symbol id="volume" data-cat="media" data-src="own" data-note="\u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 10.3 H8.7 L12.6 6.6 V17.4 L8.7 13.7 H5.5 Z" fill="currentColor"/><path d="M15.13 9.73 A3.4 3.4 0 0 1 15.13 14.27"/><path d="M16.36 7.19 A6.1 6.1 0 0 1 16.36 16.81"/></symbol>\n  <!-- file -->\n  <!-- floppy-disk \u2014 \u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3 -->\n  <symbol id="floppy-disk" data-cat="file" data-src="feather:save" data-note="\u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13l3 3v13a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 17 8 17 3"/></symbol>\n  <!-- folder-open \u2014 \u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF -->\n  <symbol id="folder-open" data-cat="file" data-src="own" data-note="\u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18 V7 a2 2 0 0 1 2 -2 h4 l2 2 h6 a2 2 0 0 1 2 2 v1.8"/><path d="M3 18 L6.4 10.8 H21.6 L18.2 18 Z"/></symbol>\n  <!-- hierarchy -->\n  <!-- lock \u2014 \u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D -->\n  <symbol id="lock" data-cat="hierarchy" data-src="own" data-note="\u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10" width="13" height="11"/><path d="M8.8 10 V6.5 a3.2 3.2 0 0 1 6.4 0 V10"/></symbol>\n  <!-- common -->\n  <!-- x \u2014 \u53C9 -->\n  <symbol id="x" data-cat="common" data-src="own" data-note="\u53C9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 L17.5 17.5 M17.5 6.5 L6.5 17.5"/></symbol>\n  <!-- cloud -->\n  <!-- cloud \u2014 \u4E91 -->\n  <symbol id="cloud" data-cat="cloud" data-src="feather:cloud" data-note="\u4E91" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>\n  <!-- viewport -->\n  <!-- maximize-viewport \u2014 \u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55) -->\n  <symbol id="maximize-viewport" data-cat="viewport" data-src="own" data-note="\u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934 --> <polyline points="4 9 4 4 9 4"/> <polyline points="20 9 20 4 15 4"/> <polyline points="4 15 4 20 9 20"/> <polyline points="20 15 20 20 15 20"/></symbol>\n  <!-- ui -->\n  <!-- more \u2014 \u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00) -->\n  <symbol id="more" data-cat="ui" data-src="own" data-note="\u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/></symbol>\n  <!-- keyboard \u2014 \u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49) -->\n  <symbol id="keyboard" data-cat="ui" data-src="own" data-note="\u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="7.2" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="7.2" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><path d="M8.6 15.6 H15.4"/></symbol>\n  <!-- menu \u2014 \u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17) -->\n  <symbol id="menu" data-cat="ui" data-src="own" data-note="\u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"></line> <line x1="4" y1="12" x2="20" y2="12"></line> <line x1="4" y1="17" x2="20" y2="17"></line></symbol>\n</svg>\n';
@@ -236,7 +236,7 @@ var CoreSession = class _CoreSession {
           }
         }
       },
-      arguments: [`/disc/game${opts.ext}`, String(media.size), ...opts.lowLatency ? ["lowlatency"] : []],
+      arguments: [`/disc/game${opts.ext}`, String(media.size), ...opts.lowLatency ? ["lowlatency"] : [], ...opts.cpuCore === "interp" ? ["cpu=interp"] : []],
       locateFile: (path) => new URL(`${opts.coreDir}${path}`, location.href).href,
       preRun: [(M) => {
         if (!opts.memstick?.size) return;
@@ -635,14 +635,17 @@ var CoreSession = class _CoreSession {
       this.perRefresh.counts = [0, 0, 0];
     }
     const pacing = core._kr_get_pacing();
+    const autoWall = core._kr_pacing_auto_wall ? core._kr_pacing_auto_wall() === 1 : false;
     return {
+      /** 核自己量到 worker 的 rAF 慢、这一局改了墙钟（设的仍是跟屏幕）。 */
+      autoWall,
       frames,
       fps: fw.fps,
       speed: fw.speed,
       pace: this.pace,
       displayHz: this.perRefresh.hz,
       perRefresh: this.perRefresh.shown,
-      pacing: ["\u5899\u949F", "\u58F0\u97F3", "\u8DDF\u5C4F\u5E55"][pacing] + (pacing === 2 ? ["\uFF08\u6309\u65F6\u95F4\u5BF9\u9F50\uFF09", "\uFF08\u6BCF\u5237\u65B0 1 \u5E27\uFF09"][core._kr_vsync_lock()] : ""),
+      pacing: autoWall ? "\u5899\u949F\uFF08\u8BBE\u7684\u662F\u8DDF\u5C4F\u5E55\uFF1B\u6838\u91CF\u5230 rAF \u6162\uFF0C\u81EA\u52A8\u5207\uFF09" : ["\u5899\u949F", "\u58F0\u97F3", "\u8DDF\u5C4F\u5E55"][pacing] + (pacing === 2 ? ["\uFF08\u6309\u65F6\u95F4\u5BF9\u9F50\uFF09", "\uFF08\u6BCF\u5237\u65B0 1 \u5E27\uFF09"][core._kr_vsync_lock()] : ""),
       catchup: core._kr_catchup_runs(),
       reanchors: core._kr_reanchors(),
       /** 核线程 rAF 的间隔（EMA，ms；0 = 不是跟屏幕排程）：Safari 把 worker 的 rAF 压慢时这里 > 16.7。 */
@@ -761,23 +764,37 @@ function mountSoftKeys(host, on) {
     for (const v of pointers.values()) m |= v;
     if (m === shown) return;
     shown = m;
-    for (const [, k] of keys) k.el.classList.toggle("on", false);
-    for (const [id, k] of keys) if ([...pointers.values()].some((v) => v === k.bits && pointerKey.get(id))) k.el.classList.add("on");
+    for (const [id, k] of keys) k.el.classList.toggle("on", (pointerKey.get(id) ?? 0) > 0);
     for (const d of ["up", "down", "left", "right"]) dpad.querySelector(`.${d}`).classList.toggle("on", (m & bit(d)) !== 0);
     on.onMask(m);
   };
   const pointerKey = /* @__PURE__ */ new Map();
   const pointerOn = /* @__PURE__ */ new Map();
+  const FACE_REACH = 1.5;
   const hit = (x, y) => {
+    {
+      let bits2 = 0;
+      const ids = [];
+      for (const [n] of FACE) {
+        const k = keys.get(n), b = k.el.getBoundingClientRect(), r2 = b.width / 2;
+        if (Math.hypot(x - (b.left + r2), y - (b.top + b.height / 2)) <= r2 * FACE_REACH) {
+          bits2 |= k.bits;
+          ids.push(n);
+        }
+      }
+      if (ids.length) return { bits: bits2, ids };
+    }
+    const isFace = (id) => FACE.some(([n]) => n === id);
     for (const [id, k] of keys) {
+      if (isFace(id)) continue;
       const b = k.el.getBoundingClientRect();
-      if (x >= b.left && x <= b.right && y >= b.top && y <= b.bottom) return { bits: k.bits, id };
+      if (x >= b.left && x <= b.right && y >= b.top && y <= b.bottom) return { bits: k.bits, ids: [id] };
     }
     const r = dpad.getBoundingClientRect();
     const pad2 = r.width * 0.15;
     if (x >= r.left - pad2 && x <= r.right + pad2 && y >= r.top - pad2 && y <= r.bottom + pad2) {
       const dx = x - (r.left + r.width / 2), dy = y - (r.top + r.height / 2);
-      if (Math.hypot(dx, dy) < r.width * 0.12) return { bits: 0, id: null };
+      if (Math.hypot(dx, dy) < r.width * 0.12) return { bits: 0, ids: [] };
       const sector = (Math.round(Math.atan2(dy, dx) / (Math.PI / 4)) + 8) % 8;
       return { bits: [
         bit("right"),
@@ -788,21 +805,21 @@ function mountSoftKeys(host, on) {
         bit("left") | bit("up"),
         bit("up"),
         bit("up") | bit("right")
-      ][sector], id: null };
+      ][sector], ids: [] };
     }
     for (const [id, k] of keys) {
+      if (isFace(id)) continue;
       const b = k.el.getBoundingClientRect();
-      if (x >= b.left - 4 && x <= b.right + 4 && y >= b.top - 4 && y <= b.bottom + 4) return { bits: k.bits, id };
+      if (x >= b.left - 4 && x <= b.right + 4 && y >= b.top - 4 && y <= b.bottom + 4) return { bits: k.bits, ids: [id] };
     }
-    return { bits: 0, id: null };
+    return { bits: 0, ids: [] };
   };
   const setPointer = (pid, x, y) => {
-    const prev = pointerOn.get(pid);
-    if (prev) pointerKey.set(prev, false);
+    for (const prev of pointerOn.get(pid) ?? []) pointerKey.set(prev, Math.max(0, (pointerKey.get(prev) ?? 1) - 1));
     const got = hit(x, y);
     pointers.set(pid, got.bits);
-    pointerOn.set(pid, got.id);
-    if (got.id) pointerKey.set(got.id, true);
+    pointerOn.set(pid, got.ids);
+    for (const id of got.ids) pointerKey.set(id, (pointerKey.get(id) ?? 0) + 1);
     shown = -1;
     publish();
   };
@@ -882,8 +899,7 @@ function mountSoftKeys(host, on) {
       on.onFast(false);
       return;
     }
-    const id = pointerOn.get(e.pointerId);
-    if (id) pointerKey.set(id, false);
+    for (const id of pointerOn.get(e.pointerId) ?? []) pointerKey.set(id, Math.max(0, (pointerKey.get(id) ?? 1) - 1));
     pointerOn.delete(e.pointerId);
     if (pointers.delete(e.pointerId)) {
       shown = -1;
@@ -6692,11 +6708,13 @@ function track(label, bytes, run, verb = "\u4F20") {
     throw e;
   });
 }
-function setPending(n) {
+function setPending(n, newer = 0) {
   pending = n;
+  newerOnCloud = newer;
   if (n === 0) softProblem = null;
   render();
 }
+var newerOnCloud = 0;
 function dumpLog() {
   return log.map((e) => `${new Date(e.at).toLocaleTimeString()} ${e.level === "info" ? " " : e.level === "warn" ? "!" : "\u2716"} ${e.text}`).join("\n") || "\uFF08\u8FD8\u6CA1\u6709\u8BB0\u5F55\uFF09";
 }
@@ -6723,7 +6741,8 @@ function state() {
   if (softProblem && pending > 0) return { kind: "pending", text: softProblem.text };
   if (performance.now() < doneUntil) return signedIn() ? { kind: "done", text: "\u4F20\u597D\u4E86" } : { kind: "local", text: "\u5B58\u5728\u8FD9\u53F0\u8BBE\u5907\u4E86\uFF08\u6CA1\u767B\u5F55\uFF0C\u4E0D\u4F20\uFF09" };
   if (!signedIn()) return pending > 0 ? { kind: "local", text: `${pending} \u4E2A\u53EA\u5728\u8FD9\u53F0\u8BBE\u5907\uFF08\u767B\u5F55\u540E\u518D\u4F20\uFF09` } : { kind: "idle", text: "\u6CA1\u767B\u5F55\uFF1A\u5B58\u6863\u53EA\u5728\u8FD9\u53F0\u8BBE\u5907" };
-  if (pending > 0) return { kind: "pending", text: `${pending} \u4E2A\u6CA1\u4F20\u4E0A\u53BB / \u8981\u5904\u7406` };
+  if (pending > 0) return { kind: "pending", text: `${pending} \u4E2A\u6CA1\u4F20\u4E0A\u53BB / \u8981\u5904\u7406${newerOnCloud ? ` \xB7 ${newerOnCloud} \u4E2A\u4E91\u7AEF\u6709\u65B0\u7248` : ""}` };
+  if (newerOnCloud > 0) return { kind: "idle", text: `\u4E91\u7AEF\u6709\u65B0\u7248 ${newerOnCloud} \u4E2A\uFF08\u522B\u7684\u8BBE\u5907\u5B58\u7684\uFF0C\u81EA\u52A8\u6362\uFF09` };
   return { kind: "idle", text: "\u4E91\u7AEF\uFF1A\u5DF2\u540C\u6B65" };
 }
 function render() {
@@ -8616,6 +8635,16 @@ var SYNC_TEXT = {
   "local-only": "\u53EA\u5728\u8FD9\u53F0\u8BBE\u5907"
 };
 var needsAttention = (syncState2) => !["synced", "cloud-only", "local-only"].includes(syncState2);
+var LOG_SLOT = "tmp/log.txt";
+async function uploadLog(text) {
+  const f = getStore().file(LOG_SLOT, { mode: "existing" });
+  await f.open().catch(() => null);
+  const r = await f.save(new Blob([text], { type: "text/plain" }), { tryPush: true });
+  if (!r.pushed) throw new Error(`\u6CA1\u4F20\u4E0A\u53BB\uFF08${r.resolution ?? r.reason ?? "\u539F\u56E0\u4E0D\u660E"}\uFF09`);
+}
+async function dropStaleLocal(identifier) {
+  await getStore().file(identifier, { mode: "existing" }).offload();
+}
 async function nudge(identifier, syncState2) {
   const f = getStore().file(identifier, { mode: "existing" });
   if (syncState2 === "newer-on-cloud") {
@@ -9996,14 +10025,17 @@ async function openSaveManager(ctx) {
         closeSheet();
         canLoad.load(r.it.identifier, c.kind, c.n);
       } }, "\u8BFB") : null,
-      h("button", { title: "\u79FB\u5230\u56DE\u6536\u7AD9", onclick: async () => {
+      // 10-15 user：00:54 那两份（自动 1 / 手动 1）就是在这里按的「删」——以为删的是这台没传上去的副本，其实云端那份一起进了回收站。先确认、说清楚。
+      h("button", { title: "\u5220\u6389\u8FD9\u4EFD\uFF1A\u4E91\u7AEF\u90A3\u4EFD\u548C\u8FD9\u53F0\u8BBE\u5907\u4E0A\u7684\u526F\u672C\u90FD\u79FB\u5230\u56DE\u6536\u7AD9", onclick: async () => {
         closeSheet();
+        const ok = await confirmSheet("\u5220\u6389\u8FD9\u4EFD\uFF1F", `${nameOf(r)}\uFF1A\u4E91\u7AEF\u90A3\u4EFD\u548C\u8FD9\u53F0\u8BBE\u5907\u4E0A\u7684\u526F\u672C\u90FD\u4F1A\u79FB\u5230\u56DE\u6536\u7AD9\uFF08\u4E3B\u9875\u300C\u56DE\u6536\u7AD9 / \u5907\u4EFD\u7BB1\u300D\u80FD\u6062\u590D\uFF09\u3002\u53EA\u662F\u60F3\u653E\u5F03\u8FD9\u53F0\u8BBE\u5907\u4E0A\u6CA1\u4F20\u4E0A\u53BB\u7684\u6539\u52A8\uFF1F\u90A3\u5C31\u70B9\u300C\u63A8\u4E00\u628A\u300D\uFF0C\u649E\u4E0A\u51B2\u7A81\u65F6\u9009\u300C\u7528\u4E91\u7AEF\u7684\u300D\u3002`, "\u79FB\u5230\u56DE\u6536\u7AD9");
+        if (!ok) return;
         try {
           if (await deleteJam(r.it.identifier)) note("\u5DF2\u79FB\u5230\u56DE\u6536\u7AD9");
         } catch (e) {
           banner(`\u6CA1\u80FD\u79FB\u5230\u56DE\u6536\u7AD9\uFF1A${errorText(e)}`);
         }
-      } }, "\u5220")
+      } }, "\u5220\u6389")
     );
   };
   const fill2 = async () => {
@@ -10066,6 +10098,10 @@ async function openSaveManager(ctx) {
     cancelled = true;
   });
 }
+var deviceLabel = () => {
+  const ua = navigator.userAgent;
+  return /OculusBrowser|Quest/i.test(ua) ? "Quest" : /iPad|iPhone/.test(ua) || /Macintosh/.test(ua) && navigator.maxTouchPoints > 1 ? "iPad" : /Android/.test(ua) ? "Android" : "PC";
+};
 function openLog() {
   const text = dumpLog();
   void sheet((done) => [
@@ -10077,6 +10113,18 @@ function openLog() {
       h("button", { onclick: () => {
         navigator.clipboard?.writeText(text).then(() => note("\u5DF2\u590D\u5236"), () => note("\u590D\u5236\u4E0D\u4E86\uFF0C\u624B\u52A8\u9009\u4E2D\u590D\u5236"));
       } }, "\u590D\u5236"),
+      // Quest 上复制粘贴太麻烦：一键写到云端 tmp/log.txt（明文、所有设备一个槽），电脑上从 OneDrive 文件夹拿
+      h("button", { onclick: async () => {
+        const head = `# KudsRocket ${APP_VERSION} \xB7 ${deviceLabel()} \xB7 ${(/* @__PURE__ */ new Date()).toISOString()} \xB7 ${navigator.userAgent}
+
+`;
+        try {
+          await withBusy("\u5199\u65E5\u5FD7\u5230\u4E91\u7AEF\u2026", () => uploadLog(head + dumpLog()));
+          note(`\u5199\u597D\u4E86\uFF1A${LOG_SLOT}\uFF08\u4F1A\u76D6\u6389\u4E0A\u4E00\u4EFD\uFF09`, 6e3);
+        } catch (e) {
+          banner(`\u65E5\u5FD7\u6CA1\u5199\u4E0A\u53BB\uFF1A${errorText(e)}`);
+        }
+      } }, "\u5199\u5230\u4E91\u7AEF\uFF08tmp/log.txt\uFF09"),
       h("button", { onclick: () => done() }, "\u5173\u95ED")
     )
   ]);
@@ -10364,6 +10412,13 @@ var titles = { get: (id) => cards.get(id)?.title, has: (id) => cards.has(id) };
 function audioContext() {
   ac ??= new AudioContext({ sampleRate: 44100, latencyHint: "interactive" });
   return ac;
+}
+async function cycleAudio() {
+  const ctx = audioContext();
+  if (ctx.state === "closed") return;
+  await ctx.suspend();
+  await ctx.resume();
+  logEvent("info", `\u58F0\u97F3\u6302\u8D77\u2192\u6062\u590D\uFF1A${ctx.state}`);
 }
 async function rebuildAudio(why) {
   if (!session) return;
@@ -10765,12 +10820,13 @@ async function play(prepare, resume) {
     onInput: () => activity?.input(performance.now()),
     media: disc.media,
     ext: disc.ext,
-    coreDir: "./dist/core-75cbd681ad57/",
+    coreDir: "./dist/core-eb19133e8281/",
     glCanvas: $("gl"),
     softCanvas: $("screen"),
     audioContext: audioContext(),
     lowLatency: params.get("lowlatency") !== "0",
     pacing: params.get("pace") === "wall" ? "wall" : params.get("pace") === "audio" ? "audio" : void 0,
+    cpuCore: params.get("cpu") === "interp" ? "interp" : void 0,
     memstick,
     memstickTimes
   });
@@ -10793,7 +10849,14 @@ async function play(prepare, resume) {
     if (document.visibilityState !== "hidden") {
       const s0 = session.stats();
       const f0 = s0.frames;
-      logEvent("info", `\u56DE\u5230\u524D\u53F0\uFF1A\u5E27 ${f0}\uFF0C\u58F0\u97F3 ${audioContext().state}`);
+      logEvent("info", `\u56DE\u5230\u524D\u53F0\uFF1A\u5E27 ${f0}\uFF0C\u58F0\u97F3 ${audioContext().state}${pausedByHide ? "\uFF08\u540E\u53F0\u65F6\u6682\u505C\u7740\uFF09" : ""}`);
+      if (pausedByHide) {
+        pausedByHide = false;
+        session.setPaused(false);
+        renderToolbar();
+      }
+      if (!session.paused) cycleAudio().catch((e) => logEvent("warn", `\u58F0\u97F3\u6302\u8D77\u2192\u6062\u590D\u5931\u8D25\uFF1A${errorText(e)}`));
+      perfSoon();
       setTimeout(() => {
         if (!session) return;
         const st = session.stats();
@@ -10806,6 +10869,10 @@ async function play(prepare, resume) {
       return;
     }
     logEvent("info", `\u5207\u5230\u540E\u53F0\uFF1A\u5E27 ${session.stats().frames}\uFF0C\u58F0\u97F3 ${audioContext().state}`);
+    if (!session.paused) {
+      session.setPaused(true);
+      pausedByHide = true;
+    }
     snaps?.onLeave().catch((e) => console.warn("[auto snapshot]", e));
     jamTick(true);
   });
@@ -11637,6 +11704,10 @@ var statusAt = 0;
 var lastFrameAt = performance.now();
 var perfLogAt = 0;
 var perfLogged = 0;
+function perfSoon() {
+  perfLogAt = performance.now() - (perfLogged ? 11e4 : 0);
+}
+var pausedByHide = false;
 function frame() {
   if (!session) return;
   pollGamepads(session);
@@ -11976,8 +12047,11 @@ async function boot() {
   const countPending = (folder) => {
     pendingWatch.get(folder)?.();
     pendingWatch.set(folder, store2.files.watchFolder(folder, (snap) => {
-      pendingBy.set(folder, snap.items.filter((it) => needsAttention(it.syncState)).length);
-      setPending([...pendingBy.values()].reduce((a, b) => a + b, 0));
+      const newer = snap.items.filter((it) => it.syncState === "newer-on-cloud");
+      pendingBy.set(folder, { todo: snap.items.filter((it) => needsAttention(it.syncState) && it.syncState !== "newer-on-cloud").length, newer: newer.length });
+      const sum = [...pendingBy.values()].reduce((a, b) => ({ todo: a.todo + b.todo, newer: a.newer + b.newer }), { todo: 0, newer: 0 });
+      setPending(sum.todo, sum.newer);
+      for (const it of newer) if (folder === CRUMBS || !session) dropStaleLocal(it.identifier).catch((e) => console.warn("[stale]", e));
     }));
   };
   const recount = () => {
@@ -12018,7 +12092,7 @@ async function boot() {
     retryTimer = window.setTimeout(pushDirty, 15e3);
   });
   setInterval(() => {
-    if ([...pendingBy.values()].some((n) => n > 0)) pushDirty();
+    if ([...pendingBy.values()].some((n) => n.todo > 0)) pushDirty();
   }, 45e3);
   auth.onAuthChanged(() => {
     renderAccount();
@@ -12108,4 +12182,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-23c0450e961d.mjs.map
+//# sourceMappingURL=kudsrocket-4a39b9eb1e5b.mjs.map
