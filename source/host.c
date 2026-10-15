@@ -226,10 +226,28 @@ static int64_t vfs_seek(struct retro_vfs_file_handle *h, int64_t offset, int whe
   return 0;
 }
 
+// 「游戏这一局读过的盘上字节」并集的大小（挂机判定的进展信号；user 10-14「盘区取决于chunk的大小…换一个数学上稳健的」）。
+//   量在游戏自己的读请求上（我们的块缓存的上游），用一张扇区位图：ISO 的逻辑块 = 2048 字节是盘格式定的，PPSSPP 读 ISO 也按整块读，
+//   所以「位图里置位的扇区 × 2048」就是并集的字节数（末扇区按盘尾截断）。循环的 BGM / 反复播的动画读的是读过的字节，并集不长。
+//   added 20261014 by Claude Opus 5.5
+#define KR_SECTOR 2048
+static _Atomic uint8_t *g_seen = NULL;
+static _Atomic uint64_t g_seen_bytes = 0;
+EMSCRIPTEN_KEEPALIVE double kr_disc_seen_bytes(void) { return (double)g_seen_bytes; }
+static void mark_seen(int64_t offset, int64_t len) {
+  if (!g_seen || len <= 0) return;
+  for (int64_t sec = offset / KR_SECTOR, last = (offset + len - 1) / KR_SECTOR; sec <= last; sec++) {
+    uint8_t mask = (uint8_t)(1u << (sec & 7));
+    if (atomic_fetch_or_explicit(&g_seen[sec >> 3], mask, memory_order_relaxed) & mask) continue;
+    int64_t span = g_disc_size - sec * KR_SECTOR;
+    atomic_fetch_add_explicit(&g_seen_bytes, (uint64_t)(span < KR_SECTOR ? span : KR_SECTOR), memory_order_relaxed);
+  }
+}
+
 static int64_t vfs_read(struct retro_vfs_file_handle *h, void *s, uint64_t len) {
   if (!h->is_disc) return retro_vfs_file_read_impl(h->impl, s, len);
   int64_t n = disc_read(h->pos, (uint8_t *)s, (int64_t)len);
-  if (n > 0) h->pos += n;
+  if (n > 0) { mark_seen(h->pos, n); h->pos += n; }
   return n;
 }
 
@@ -703,7 +721,18 @@ static void capture_thumb(void) {
   g_thumb_h = h;
 }
 
+// 只抓一帧（截图分享，user 10-14「截图分享功能，走分享按钮，原生大小」）：和快照同一个抓帧函数，不序列化整机状态。added 20261014 by Claude Opus 5.5
+static _Atomic int g_req_frame = 0;
+static _Atomic unsigned g_frame_shot_seq = 0;
+EMSCRIPTEN_KEEPALIVE void kr_request_frame(void) { g_req_frame = 1; }
+EMSCRIPTEN_KEEPALIVE unsigned kr_frame_shot_seq(void) { return g_frame_shot_seq; }
+
 static void service_snapshots(void) {
+  if (g_req_frame) {
+    g_req_frame = 0;
+    capture_thumb();
+    atomic_fetch_add(&g_frame_shot_seq, 1);
+  }
   if (g_req_snapshot) {
     g_req_snapshot = 0;
     capture_thumb();
@@ -886,6 +915,7 @@ int main(int argc, char **argv) {
   for (int i = 3; i < argc; i++)
     if (!strcmp(argv[i], "lowlatency")) g_want_desync = true;
   for (int i = 0; i < KR_CACHE_BLOCKS; i++) g_cache[i].block = -1;
+  if (g_disc_size > 0) g_seen = (_Atomic uint8_t *)calloc((size_t)((g_disc_size / KR_SECTOR + 8) / 8), 1);
   mkdir("/saves", 0777);
 
   retro_set_environment(environment);

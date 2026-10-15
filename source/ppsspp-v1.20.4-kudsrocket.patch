@@ -273,7 +273,7 @@ index 6bdb4ef..1f71ff8 100644
  ifneq (,$(findstring x86,$(TARGET_ARCH)))
  	COREFLAGS += -DHAVE_SYSCTLBYNAME
 diff --git a/libretro/libretro.cpp b/libretro/libretro.cpp
-index 3b2f103..b220538 100644
+index 3b2f103..e49dcfa 100644
 --- a/libretro/libretro.cpp
 +++ b/libretro/libretro.cpp
 @@ -1170,6 +1170,11 @@ static void check_variables(CoreParameter &coreParam)
@@ -288,7 +288,26 @@ index 3b2f103..b220538 100644
  void retro_set_audio_sample_batch(retro_audio_sample_batch_t cb) { audio_batch_cb = cb; }
  void retro_set_audio_sample(retro_audio_sample_t cb) { (void)cb; }
  void retro_set_input_poll(retro_input_poll_t cb) { input_poll_cb = cb; }
-@@ -2048,24 +2053,15 @@ inline int16_t Clamp16(int32_t sample) {
+@@ -1475,11 +1480,13 @@ namespace Libretro
+ 
+       emuThreadState = EmuThreadState::PAUSE_REQUESTED;
+ 
+-      // Is this safe?
+-      ctx->ThreadFrame(true); // Eat 1 frame
+-
+-      while (emuThreadState != EmuThreadState::PAUSED)
+-         sleep_ms(1, "libretro-pause-poll");
++      // KudsRocket: keep servicing the render queue until the EmuThread has actually paused (same as EmuThreadStop does).
++      // Upstream ate one frame and then spun waiting; when the EmuThread was itself waiting on the render thread (e.g. all
++      // in-flight frame slots busy) both sides waited on each other forever. Repro 2026-10-14 (wasm, GL on the host thread):
++      // a savestate save/load cycle hung the core after 2-5 cycles.
++      ctx->ThreadFrameUntilCondition([]() -> bool {
++         return emuThreadState == EmuThreadState::PAUSED;
++      });
+    }
+ 
+ } // namespace Libretro
+@@ -2048,24 +2055,15 @@ inline int16_t Clamp16(int32_t sample) {
  
  void System_AudioPushSamples(const int32_t *audio, int numSamples, float volume) {
     // We ignore volume here, because it's handled by libretro presumably.

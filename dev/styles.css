@@ -148,3 +148,23 @@ button:disabled { opacity: .4; cursor: default; }
 /* 真进度：条子不再无限滑动 */
 .syncbar.known .syncbar-fill { animation: none; transition: width .2s linear; }
 .tools select { font: inherit; background: var(--panel); color: var(--ink); border: 1px solid var(--line); border-radius: 6px; padding: 4px 6px; }
+/* 软键摇杆（W-13）：横屏在十字键上方；竖屏在十字键右边（上方是 L / R）。added 20261014 by Claude Opus 5.5 */
+.softkeys .stick { pointer-events: auto; touch-action: none; position: absolute; left: calc(var(--u) * .7); bottom: calc(var(--u) * 3.6); width: calc(var(--u) * 2.1); height: calc(var(--u) * 2.1); border-radius: 50%; background: rgba(255,255,255,.06); border: 1.5px solid rgba(255,255,255,.22); display: grid; place-items: center; }
+.softkeys .stick .knob { width: 46%; height: 46%; border-radius: 50%; background: rgba(255,255,255,.18); border: 1.5px solid rgba(255,255,255,.4); transition: transform .06s linear; }
+.softkeys .stick.on .knob { background: rgba(122,162,255,.45); border-color: rgba(122,162,255,.9); transition: none; }
+@media (orientation: portrait) { .softkeys .stick { left: calc(var(--u) * 3.3); bottom: calc(var(--u) * 1.2); width: calc(var(--u) * 1.8); height: calc(var(--u) * 1.8); } }
+/* 音量 / 截图 */
+.icon-btn.muted-on { color: var(--warn); }
+.volume-row input[type=range] { flex: 1; }
+.sheet img.shot { width: 100%; height: auto; image-rendering: pixelated; border-radius: 6px; background: #000; }
+/* 快照面板（时间线 + 撤销）。added 20261014 by Claude Opus 5.5 */
+.sheet button.big { justify-content: center; padding: 12px 14px; font-size: 15px; }
+.slot .tag { margin-left: 8px; padding: 1px 6px; border-radius: 999px; font-size: 11px; border: 1px solid var(--accent); color: var(--accent); }
+.slot.auto .slot-name { color: var(--ink-soft); }
+.slot-buttons button.small { padding: 6px 10px; font-size: 13px; }
+.undo-row button { border-color: var(--warn); }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.seg button { border: none; border-radius: 0; padding: 6px 10px; }
+.seg button.on { background: var(--accent); color: #000; }
+/* 游戏界面里横条在工具栏下面，不盖住按钮（10-14 无头测试抓到：报错横条把快照按钮盖住了）。全屏时横条挂在 #stage 里，那里没有工具栏。 */
+body:has(#game:not([hidden])) > #banners { top: calc(var(--tool) + 6px); }
