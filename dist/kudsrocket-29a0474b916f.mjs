@@ -1,5 +1,5 @@
 // src/version.ts
-var APP_VERSION = "v0.1.19-2026-10-15";
+var APP_VERSION = "v0.1.29-2026-10-15";
 
 // assets/icons.svg
 var icons_default = '<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none">\n<!--\n  13 icons extracted from the family icon library (../20260708 SVG Icons/icons.svg) by extract-icons.py \u2014 do not hand-edit; re-run the script instead.\n  Family SVG Icons \u2014 MIT License, Copyright (c) 2026 fangzhangmnm.\n  Contains work derived from (per-icon provenance in data-src):\n    Feather Icons \u2014 MIT License, Copyright (c) 2013-2023 Cole Bemis \xB7 https://github.com/feathericons/feather\n-->\n  <!-- media -->\n  <!-- pause \u2014 \u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="pause" data-cat="media" data-src="own" data-note="\u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="3.2"><path d="M8.3 5.5 V18.5"/><path d="M15.7 5.5 V18.5"/></g></symbol>\n  <!-- play \u2014 \u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="play" data-cat="media" data-src="own" data-note="\u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 5.4 L18.8 12 L8.2 18.6 Z" fill="currentColor"/></symbol>\n  <!-- fast-forward \u2014 \u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="fast-forward" data-cat="media" data-src="own" data-note="\u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.4 6.8 L10.9 12 L4.4 17.2 Z" fill="currentColor"/><path d="M13.1 6.8 L19.6 12 L13.1 17.2 Z" fill="currentColor"/></symbol>\n  <!-- volume \u2014 \u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009) -->\n  <symbol id="volume" data-cat="media" data-src="own" data-note="\u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 10.3 H8.7 L12.6 6.6 V17.4 L8.7 13.7 H5.5 Z" fill="currentColor"/><path d="M15.13 9.73 A3.4 3.4 0 0 1 15.13 14.27"/><path d="M16.36 7.19 A6.1 6.1 0 0 1 16.36 16.81"/></symbol>\n  <!-- file -->\n  <!-- floppy-disk \u2014 \u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3 -->\n  <symbol id="floppy-disk" data-cat="file" data-src="feather:save" data-note="\u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13l3 3v13a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 17 8 17 3"/></symbol>\n  <!-- folder-open \u2014 \u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF -->\n  <symbol id="folder-open" data-cat="file" data-src="own" data-note="\u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18 V7 a2 2 0 0 1 2 -2 h4 l2 2 h6 a2 2 0 0 1 2 2 v1.8"/><path d="M3 18 L6.4 10.8 H21.6 L18.2 18 Z"/></symbol>\n  <!-- hierarchy -->\n  <!-- lock \u2014 \u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D -->\n  <symbol id="lock" data-cat="hierarchy" data-src="own" data-note="\u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10" width="13" height="11"/><path d="M8.8 10 V6.5 a3.2 3.2 0 0 1 6.4 0 V10"/></symbol>\n  <!-- common -->\n  <!-- x \u2014 \u53C9 -->\n  <symbol id="x" data-cat="common" data-src="own" data-note="\u53C9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 L17.5 17.5 M17.5 6.5 L6.5 17.5"/></symbol>\n  <!-- cloud -->\n  <!-- cloud \u2014 \u4E91 -->\n  <symbol id="cloud" data-cat="cloud" data-src="feather:cloud" data-note="\u4E91" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>\n  <!-- viewport -->\n  <!-- maximize-viewport \u2014 \u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55) -->\n  <symbol id="maximize-viewport" data-cat="viewport" data-src="own" data-note="\u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934 --> <polyline points="4 9 4 4 9 4"/> <polyline points="20 9 20 4 15 4"/> <polyline points="4 15 4 20 9 20"/> <polyline points="20 15 20 20 15 20"/></symbol>\n  <!-- ui -->\n  <!-- more \u2014 \u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00) -->\n  <symbol id="more" data-cat="ui" data-src="own" data-note="\u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/></symbol>\n  <!-- keyboard \u2014 \u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49) -->\n  <symbol id="keyboard" data-cat="ui" data-src="own" data-note="\u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="7.2" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="7.2" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><path d="M8.6 15.6 H15.4"/></symbol>\n  <!-- menu \u2014 \u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17) -->\n  <symbol id="menu" data-cat="ui" data-src="own" data-note="\u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"></line> <line x1="4" y1="12" x2="20" y2="12"></line> <line x1="4" y1="17" x2="20" y2="17"></line></symbol>\n</svg>\n';
@@ -173,6 +173,8 @@ var bit = (b) => 1 << BUTTON[b];
 var PACE_MODES = { wall: 0, audio: 1, vsync: 2 };
 var MEMSTICK_DIR = "/saves/PSP/SAVEDATA";
 var RUNNING_FRAMES = 2;
+var loopAge = (v) => v <= 0 ? -1 : v > 1e11 ? Date.now() - v : performance.now() - v;
+var SNAPSHOT_FRAMES = 60;
 var CoreSession = class _CoreSession {
   constructor(core, opts) {
     this.opts = opts;
@@ -259,6 +261,30 @@ var CoreSession = class _CoreSession {
     new ResizeObserver(tellSize).observe(opts.glCanvas);
     tellSize();
   }
+  audioHooked = false;
+  audioNode = null;
+  syncLive() {
+    this.core._kr_audio_set_live(this.ac.state === "running" ? 1 : 0);
+  }
+  /** 声音管线整个重建（新 AudioContext + 新 worklet，接回同一个环形缓冲）：iOS 从中断回来 AudioContext 说 running 其实哑着（10-15 user「游戏复活但是没声音」）。
+   *  旧上下文关掉（best effort）；读指针跳到写指针（不回放后台攒下的旧声音）。 */
+  async rebuildAudio(fresh) {
+    const old = this.ac;
+    try {
+      this.audioNode?.disconnect();
+    } catch {
+    }
+    try {
+      this.gain?.disconnect();
+    } catch {
+    }
+    old.close().catch(() => {
+    });
+    this.ac = fresh;
+    const { core } = this;
+    Atomics.store(core.HEAP32, core._kr_audio_r_ptr() >> 2, Atomics.load(core.HEAP32, core._kr_audio_w_ptr() >> 2));
+    await this.startAudio();
+  }
   async startAudio() {
     const { core, ac: ac2 } = this;
     await ac2.audioWorklet.addModule(new URL("./audio-worklet.js", location.href));
@@ -277,20 +303,24 @@ var CoreSession = class _CoreSession {
         // ≈ 46 ms；对齐模式下核那边的硬上限是 3584（≈ 81 ms）
       }
     });
+    this.audioNode = node;
     this.gain = ac2.createGain();
     node.connect(this.gain).connect(ac2.destination);
     this.applyGain();
-    const sync = () => core._kr_audio_set_live(ac2.state === "running" ? 1 : 0);
+    const sync = () => this.syncLive();
     ac2.onstatechange = sync;
     const resume = () => {
-      if (!this.paused) ac2.resume().then(sync, () => {
+      if (!this.paused) this.ac.resume().then(sync, () => {
       });
     };
-    addEventListener("pointerdown", resume);
-    addEventListener("keydown", resume);
-    document.addEventListener("visibilitychange", () => {
-      if (document.visibilityState === "visible") resume();
-    });
+    if (!this.audioHooked) {
+      this.audioHooked = true;
+      addEventListener("pointerdown", resume);
+      addEventListener("keydown", resume);
+      document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "visible") resume();
+      });
+    }
     resume();
   }
   // ── 输入 ──
@@ -341,6 +371,9 @@ var CoreSession = class _CoreSession {
     this.held = h2;
     this.applyGain();
   }
+  get isHeld() {
+    return this.held;
+  }
   applyGain() {
     if (!this.gain) return;
     const g = this.muted || this.held ? 0 : this.vol * this.vol;
@@ -370,6 +403,9 @@ var CoreSession = class _CoreSession {
     else this.ac.resume().catch(() => {
     });
   }
+  get audio() {
+    return this.ac;
+  }
   get speed() {
     return this.core._kr_get_speed();
   }
@@ -390,24 +426,37 @@ var CoreSession = class _CoreSession {
   }
   /** 存 / 读之前等核真正跑起来（出过 RUNNING_FRAMES 帧）：刚启动时 PPSSPP 的模拟线程还在「已请求启动」，上游 EmuThreadPause 遇到这个状态直接返回，
    *  存 / 恢复和刚起步的模拟线程撞在一起会把核卡死（10-14 流程测试抓到：「从上次开始」一开盘就读档 → core did not answer）。 */
-  async whenRunning() {
+  async whenRunning(minFrames = RUNNING_FRAMES) {
     const t0 = performance.now(), f0 = this.stats().frames;
     try {
-      await this.whenRunningInner();
+      await this.whenRunningInner(minFrames);
     } finally {
-      console.info(`[resume] whenRunning waited ${(performance.now() - t0).toFixed(0)} ms (frames ${f0} \u2192 ${this.stats().frames})`);
+      console.info(`[resume] whenRunning(${minFrames}) waited ${(performance.now() - t0).toFixed(0)} ms (frames ${f0} \u2192 ${this.stats().frames})`);
     }
   }
-  async whenRunningInner() {
+  /** 核出过 n 帧没有（刚开盘拍快照前问一句，没到就别拍——不是错，是还没到时候）。 */
+  framesRun() {
+    return this.core._kr_stat_frames();
+  }
+  /** 无头测试：让核假装丢一次 WebGL 上下文（1.5 s 后浏览器恢复）。老核没有 → false。 */
+  debugLoseGl() {
+    if (!this.core._kr_debug_lose_gl) return false;
+    this.core._kr_debug_lose_gl();
+    return true;
+  }
+  readyForSnapshot() {
+    return this.framesRun() >= SNAPSHOT_FRAMES;
+  }
+  async whenRunningInner(minFrames) {
     const t0 = performance.now();
-    while (this.core._kr_stat_frames() < RUNNING_FRAMES) {
+    while (this.core._kr_stat_frames() < minFrames) {
       if (performance.now() - t0 > 3e4) throw new Error("core is not running yet");
       await new Promise((r) => setTimeout(r, 50));
     }
   }
   /** 存整机状态；同一帧的画面（RGBA，左上角原点）一起交出来给缩略图用（取不到 = null）。 */
   async snapshot() {
-    await this.whenRunning();
+    await this.whenRunning(SNAPSHOT_FRAMES);
     const { core } = this;
     const before = core._kr_snap_seq();
     core._kr_request_snapshot();
@@ -507,6 +556,11 @@ var CoreSession = class _CoreSession {
       pacing: ["\u5899\u949F", "\u58F0\u97F3", "\u8DDF\u5C4F\u5E55"][pacing] + (pacing === 2 ? ["\uFF08\u6309\u65F6\u95F4\u5BF9\u9F50\uFF09", "\uFF08\u6BCF\u5237\u65B0 1 \u5E27\uFF09"][core._kr_vsync_lock()] : ""),
       catchup: core._kr_catchup_runs(),
       reanchors: core._kr_reanchors(),
+      /** 核的帧循环多久没被调用了（ms；-1 = 老核不知道）。大 = 循环死了（rAF 没人调）；小而帧数不走 = 卡在 retro_run 里。 */
+      loopAgeMs: core._kr_loop_last_ms ? loopAge(core._kr_loop_last_ms()) : -1,
+      loopRescues: core._kr_loop_rescues ? core._kr_loop_rescues() : 0,
+      glLost: core._kr_gl_state ? (core._kr_gl_state() & 1) === 1 : false,
+      glRestores: core._kr_gl_state ? core._kr_gl_state() >> 1 : 0,
       frameskip: core._kr_frameskip(),
       renderer: core._kr_hw_active() ? "GPU\uFF08WebGL2\uFF09" + ["", " \xB7 \u4F4E\u5EF6\u8FDF\u753B\u5E03\uFF1A\u6D4F\u89C8\u5668\u91C7\u7EB3", " \xB7 \u4F4E\u5EF6\u8FDF\u753B\u5E03\uFF1A\u6D4F\u89C8\u5668\u6CA1\u91C7\u7EB3"][core._kr_desync_state()] : "\u8F6F\u4EF6\u6E32\u67D3",
       bytesFetched: core._kr_stat_bytes_fetched(),
@@ -1211,6 +1265,7 @@ function createSafeResolve(cfg) {
 // node_modules/@internal/store/dist/push.js
 var passBusy = (_l, fn) => fn();
 var isConflict = (e) => !!e && (e.name === "CloudConflictError" || e.status === 412);
+var pushRetryDefaults = { maxAttempts: 4, backoffMs: 200, exponential: false };
 function retriable(e) {
   const x = e;
   const s = x?.status;
@@ -1219,7 +1274,7 @@ function retriable(e) {
   return (s == null || s === 429 || s >= 500 && s <= 599) && x?.name !== "CloudConflictError" && x?.name !== "CloudNameCollisionError";
 }
 function createPush(cfg) {
-  const { cloud, head, seal, safeResolve, serialize, editVersion, busy = passBusy, maxAttempts = 4, backoffMs = 200, sleep = (ms) => new Promise((r) => setTimeout(r, ms)) } = cfg;
+  const { cloud, head, seal, safeResolve, serialize, editVersion, busy = passBusy, maxAttempts = pushRetryDefaults.maxAttempts, backoffMs = pushRetryDefaults.backoffMs, exponential = pushRetryDefaults.exponential, sleep = (ms) => new Promise((r) => setTimeout(r, ms)) } = cfg;
   async function doPush(name, { encode: encode2, getEditVersion = editVersion, onConflict, adopt, surfaceCollision = false, onProgress }) {
     const ifMatch = head.ifMatchFor(name);
     const v0 = getEditVersion();
@@ -1255,7 +1310,7 @@ function createPush(cfg) {
           }
           if (retriable(e) && attempt < maxAttempts) {
             lastErr = e;
-            await sleep(backoffMs * attempt);
+            await sleep(exponential ? Math.min(backoffMs * 2 ** (attempt - 1), 15e3) : backoffMs * attempt);
             continue;
           }
           throw e;
@@ -3193,9 +3248,9 @@ function createIdbCache(dbName) {
       return;
     const p = _db;
     _db = null;
-    void p?.then((db3) => {
+    void p?.then((db4) => {
       try {
-        db3.close();
+        db4.close();
       } catch {
       }
     }).catch(() => {
@@ -3222,19 +3277,19 @@ function createIdbCache(dbName) {
       };
       r.onsuccess = () => {
         clearTimeout(timer2);
-        const db3 = r.result;
-        db3.onclose = () => {
+        const db4 = r.result;
+        db4.onclose = () => {
           dropConnection(p);
         };
-        db3.onversionchange = () => {
-          db3.close();
+        db4.onversionchange = () => {
+          db4.close();
           dropConnection(p);
         };
         if (_db !== p) {
-          db3.close();
+          db4.close();
           return;
         }
-        resolve(db3);
+        resolve(db4);
       };
       r.onerror = () => {
         clearTimeout(timer2);
@@ -3251,7 +3306,7 @@ function createIdbCache(dbName) {
     _win?.removeEventListener("pageshow", _onPageShow);
     dropConnection(null);
   }
-  function tx3(mode, run, op = "tx") {
+  function tx4(mode, run, op = "tx") {
     if (_suspended)
       return Promise.reject(new IdbSuspendedError(`${mode} ${op}`));
     return txOnce(mode, run, op).catch((e) => {
@@ -3267,8 +3322,8 @@ function createIdbCache(dbName) {
   }
   function txOnce(mode, run, op) {
     const conn = openDb();
-    return conn.then((db3) => new Promise((resolve, reject) => {
-      const t = db3.transaction(STORE, mode);
+    return conn.then((db4) => new Promise((resolve, reject) => {
+      const t = db4.transaction(STORE, mode);
       const ms = _idbOpTimeoutMs;
       const rec = { t, mode, suspended: false };
       _active.add(rec);
@@ -3325,25 +3380,25 @@ function createIdbCache(dbName) {
   return {
     close,
     get(name) {
-      return tx3("readonly", (s) => {
+      return tx4("readonly", (s) => {
         const r = s.get(name);
         return () => r.result;
       }, "get");
     },
     put(name, rec) {
-      return tx3("readwrite", (s) => {
+      return tx4("readwrite", (s) => {
         s.put(rec, name);
         return () => void 0;
       }, "put");
     },
     del(name) {
-      return tx3("readwrite", (s) => {
+      return tx4("readwrite", (s) => {
         s.delete(name);
         return () => void 0;
       }, "del");
     },
     keys() {
-      return tx3("readonly", (s) => {
+      return tx4("readonly", (s) => {
         const r = s.getAllKeys();
         return () => r.result.filter((k) => typeof k === "string");
       }, "keys");
@@ -3351,7 +3406,7 @@ function createIdbCache(dbName) {
     /** 按 key 前缀汇总占用（单事务 cursor 走一遍；`Blob.size` 是引用属性，**不把字节读进内存**）。
      *  只返两个标量，不返任何名字 —— 拿不到清单，故**不能**当全库列举用（那是被否决的退化设计）。 */
     usage(prefix) {
-      return tx3("readonly", (s) => {
+      return tx4("readonly", (s) => {
         let bytes = 0, count = 0;
         const c = s.openCursor();
         c.onsuccess = () => {
@@ -3372,7 +3427,7 @@ function createIdbCache(dbName) {
     },
     /** 原子改名(同一事务 get→put 新→del 旧):trash/restore/backup 用。源不存在则 noop。 */
     rename(from, to) {
-      return tx3("readwrite", (s) => {
+      return tx4("readwrite", (s) => {
         const g = s.get(from);
         g.onsuccess = () => {
           const v = g.result;
@@ -4437,7 +4492,7 @@ function createStore(config) {
   });
   const busyT = (label, fn) => ui.busy(resolveStoreText(ui.text, label), fn, label);
   const busyK = (key, params2, fn) => ui.busy(resolveStoreText(ui.text, key, params2), fn, key);
-  const pushMod = createPush({ cloud, head, seal, safeResolve, serialize: sub.serialize, editVersion: () => sub.edits.version(), busy: busyT });
+  const pushMod = createPush({ cloud, head, seal, safeResolve, serialize: sub.serialize, editVersion: () => sub.edits.version(), busy: busyT, ...config.pushRetry });
   const uploadReplayPolicy = config.offlineUploadReplay ?? "manual";
   if (uploadReplayPolicy !== "manual") {
     if (!ui.onReplayStatus)
@@ -4445,7 +4500,7 @@ function createStore(config) {
     if (uploadReplayPolicy === "ask" && !ui.confirmReplay)
       throw new Error("createStore: offlineUploadReplay='ask' \u9700 ui.confirmReplay\uFF08\u56DE\u7EBF\u8BE2\u95EE\u7528\u6237\uFF09");
   }
-  const pushBg = createPush({ cloud, head, seal, safeResolve, serialize: sub.serialize, editVersion: () => sub.edits.version(), busy: (_l, fn) => fn() });
+  const pushBg = createPush({ cloud, head, seal, safeResolve, serialize: sub.serialize, editVersion: () => sub.edits.version(), busy: (_l, fn) => fn(), ...config.pushRetry });
   async function pushLocalBytes(name) {
     const blob = await local2.get(name);
     if (!blob)
@@ -5237,6 +5292,19 @@ function createStore(config) {
 }
 
 // node_modules/@internal/store/dist/providers/graph.js
+var DEFAULT_GRAPH_TIMEOUTS = { meta: 3e4, chunk: 12e4, range: 6e4, blob: 15 * 6e4 };
+var graphTimeouts = null;
+var graphChunkResume = false;
+var graphVerifyCommit = false;
+var graphSleep = (ms) => new Promise((r) => setTimeout(r, ms));
+var timed = (kind) => {
+  if (!graphTimeouts)
+    return void 0;
+  const ms = graphTimeouts[kind];
+  return typeof AbortSignal !== "undefined" && typeof AbortSignal.timeout === "function" ? AbortSignal.timeout(ms) : void 0;
+};
+var CHUNK_RETRY_MAX = 5;
+var chunkBackoffMs = (attempt) => Math.min(1e3 * 2 ** (attempt - 1), 16e3);
 var GRAPH_BASE = "https://graph.microsoft.com/v1.0";
 var SIMPLE_UPLOAD_LIMIT = 4 * 1024 * 1024;
 function encodeSeg(name) {
@@ -5249,7 +5317,12 @@ function _rangeHeader(offset, length) {
   return offset == null ? `bytes=-${length}` : `bytes=${offset}-${offset + length - 1}`;
 }
 async function downloadRangeFromUrl(downloadUrl, offset, length) {
-  const r = await fetch(downloadUrl, { headers: { Range: _rangeHeader(offset, length) } });
+  let r;
+  try {
+    r = await fetch(downloadUrl, { headers: { Range: _rangeHeader(offset, length) }, signal: timed("range") });
+  } catch (e) {
+    throw new CloudNetworkError(`range download: network fetch failed (${String(e)})`, e);
+  }
   if (!r.ok && r.status !== 206) {
     const err3 = new Error(`range download failed ${r.status}`);
     err3.status = r.status;
@@ -5257,7 +5330,12 @@ async function downloadRangeFromUrl(downloadUrl, offset, length) {
   }
   return await r.arrayBuffer();
 }
-function createGraph(tokenSource) {
+function createGraph(tokenSource, opts = {}) {
+  graphTimeouts = opts.timeouts ? { ...DEFAULT_GRAPH_TIMEOUTS, ...opts.timeouts } : null;
+  graphChunkResume = !!opts.chunkResume;
+  graphVerifyCommit = !!opts.verifyChunkedCommit;
+  if (opts.sleep)
+    graphSleep = opts.sleep;
   const getToken2 = () => {
     if (!tokenSource)
       throw new Error("graph token source missing (page: createOneDriveProvider; SW: createGraph(createBridgeTokenSource(dbName)))");
@@ -5266,7 +5344,7 @@ function createGraph(tokenSource) {
   async function graphFetch(method, pathOrUrl, { headers = {}, body = null } = {}) {
     const token = await getToken2();
     const url = pathOrUrl.startsWith("http") ? pathOrUrl : `${GRAPH_BASE}${pathOrUrl}`;
-    const init = { method, headers: { Authorization: `Bearer ${token}`, ...headers } };
+    const init = { method, headers: { Authorization: `Bearer ${token}`, ...headers }, signal: timed("meta") };
     if (body != null) {
       if (typeof body === "string" || body instanceof ArrayBuffer || ArrayBuffer.isView(body) || body instanceof Blob) {
         init.body = body;
@@ -5327,7 +5405,12 @@ function createGraph(tokenSource) {
   async function downloadItemBlob(itemId) {
     const dl = await getDownloadUrl(itemId);
     if (dl) {
-      const r2 = await fetch(dl);
+      let r2;
+      try {
+        r2 = await fetch(dl, { signal: timed("blob") });
+      } catch (e) {
+        throw new CloudNetworkError(`downloadUrl: network fetch failed (${String(e)})`, e);
+      }
       if (!r2.ok)
         throw new Error(`downloadUrl failed ${r2.status}`);
       return await r2.blob();
@@ -5393,9 +5476,45 @@ function createGraph(tokenSource) {
     const total = source.size;
     let offset = 0;
     let last = null;
+    let failures = 0;
+    const resumeFrom = async (why) => {
+      failures++;
+      if (failures > CHUNK_RETRY_MAX)
+        throw new CloudNetworkError(`Graph chunked upload ${path}: gave up after ${CHUNK_RETRY_MAX} retries at ${offset}/${total} (${why})`);
+      await graphSleep(chunkBackoffMs(failures));
+      let st;
+      try {
+        st = await fetch(uploadUrl, { signal: timed("meta") });
+      } catch (e) {
+        throw new CloudNetworkError(`Graph upload session status: network fetch failed (${String(e)})`, e);
+      }
+      if (!st.ok)
+        throw new CloudNetworkError(`Graph upload session ${path}: gone (${st.status}) after ${why}`);
+      const j = await st.json().catch(() => null);
+      const next = j?.nextExpectedRanges?.[0]?.split("-")[0];
+      const at = next != null ? Number(next) : NaN;
+      if (!Number.isFinite(at) || at < 0 || at > total)
+        throw new CloudNetworkError(`Graph upload session ${path}: no usable nextExpectedRanges after ${why}`);
+      return at;
+    };
+    const cancelSession = async () => {
+      try {
+        await fetch(uploadUrl, { method: "DELETE", signal: timed("meta") });
+      } catch (_) {
+      }
+    };
     onProgress?.(0, total);
     while (offset < total) {
       const end = Math.min(offset + CHUNK2, total) - 1;
+      if (graphVerifyCommit && end === total - 1 && eTag) {
+        const cur = await getItemByPath(path);
+        if (cur && cur.eTag && cur.eTag !== eTag) {
+          await cancelSession();
+          const err3 = new Error(`chunked upload ${path}: item changed during upload (If-Match ${eTag} \u2260 ${cur.eTag})`);
+          err3.status = 412;
+          throw err3;
+        }
+      }
       const chunk = await source.read(offset, end - offset + 1);
       if (chunk.length !== end - offset + 1)
         throw new Error(`[graph] chunk source short read at ${offset}: wanted ${end - offset + 1}, got ${chunk.length}`);
@@ -5407,16 +5526,25 @@ function createGraph(tokenSource) {
             "Content-Length": String(chunk.length),
             "Content-Range": `bytes ${offset}-${end}/${total}`
           },
-          body: chunk
+          body: chunk,
+          signal: timed("chunk")
         });
       } catch (e) {
-        throw new CloudNetworkError(`Graph chunked upload PUT (${offset}-${end}/${total}): network fetch failed (${String(e)})`, e);
+        if (!graphChunkResume)
+          throw new CloudNetworkError(`Graph chunked upload PUT (${offset}-${end}/${total}): network fetch failed (${String(e)})`, e);
+        offset = await resumeFrom(`network: ${String(e)}`);
+        continue;
       }
       if (!r.ok && r.status !== 202) {
+        if (graphChunkResume && (r.status === 429 || r.status === 416 || r.status >= 500 && r.status <= 599)) {
+          offset = await resumeFrom(`http ${r.status}`);
+          continue;
+        }
         const err3 = new Error(`chunked upload failed ${r.status}`);
         err3.status = r.status;
         throw err3;
       }
+      failures = 0;
       last = await r.json().then((j) => j).catch(() => null);
       offset = end + 1;
       onProgress?.(offset, total);
@@ -5519,7 +5647,7 @@ function createGraph(tokenSource) {
     for (let attempt = 1; attempt <= 170; attempt++) {
       let mr;
       try {
-        mr = await fetch(monitor);
+        mr = await fetch(monitor, { signal: timed("meta") });
       } catch (e) {
         throw new CloudNetworkError(`Graph copy monitor: network fetch failed (${String(e)})`, e);
       }
@@ -6034,7 +6162,7 @@ function graphToCloudProvider(graph) {
 function createOneDriveProvider(config = {}) {
   configureOneDriveAuth(config);
   const hid = config.homeAccountId;
-  const g = createGraph(hid ? () => getTokenFor(hid) : getToken);
+  const g = createGraph(hid ? () => getTokenFor(hid) : getToken, config.transport ?? {});
   const provider = Object.assign(graphToCloudProvider(g), {
     onAuthChanged: (cb) => onAuthChanged((st) => cb({ signedIn: st.signedIn, reason: st.reason }))
   });
@@ -6077,14 +6205,14 @@ function _hex(u83) {
   return [...u83].map((b) => b.toString(16).padStart(2, "0")).join("");
 }
 async function _deriveKey(password, salt) {
-  const cacheKey = `${password}\0${_hex(salt)}`;
-  const hit = _keyCache.get(cacheKey);
+  const cacheKey2 = `${password}\0${_hex(salt)}`;
+  const hit = _keyCache.get(cacheKey2);
   if (hit)
     return hit;
   const subtle = globalThis.crypto.subtle;
   const base = await subtle.importKey("raw", new TextEncoder().encode(password), "PBKDF2", false, ["deriveKey"]);
   const key = await subtle.deriveKey({ name: "PBKDF2", hash: "SHA-256", salt, iterations: PBKDF2_ITERS }, base, { name: "AES-GCM", length: 256 }, false, ["encrypt", "decrypt"]);
-  _keyCache.set(cacheKey, key);
+  _keyCache.set(cacheKey2, key);
   return key;
 }
 async function encryptPeek(bytes, password) {
@@ -6281,9 +6409,57 @@ function labelFor(identifier) {
   return identifier.replace(/^.*\//, "");
 }
 
+// src/app/device-kv.ts
+var PREFIX = `${APP_ID}.device.`;
+var mem = /* @__PURE__ */ new Map();
+function get(key) {
+  try {
+    return localStorage.getItem(PREFIX + key) ?? mem.get(key) ?? null;
+  } catch {
+    return mem.get(key) ?? null;
+  }
+}
+function set(key, value) {
+  if (value == null) mem.delete(key);
+  else mem.set(key, value);
+  try {
+    if (value == null) localStorage.removeItem(PREFIX + key);
+    else localStorage.setItem(PREFIX + key, value);
+  } catch {
+  }
+}
+var STAGING_CAP_CHOICES = [
+  { label: "256 MB\uFF08\u9ED8\u8BA4\uFF09", bytes: 0 },
+  { label: "1 GB", bytes: 1 * 2 ** 30 },
+  { label: "4 GB", bytes: 4 * 2 ** 30 },
+  { label: "16 GB", bytes: 16 * 2 ** 30 }
+];
+function stagingCapBytes() {
+  const n = Number(get("staging-cap") ?? 0);
+  return Number.isFinite(n) && n > 0 ? n : 0;
+}
+function setStagingCapBytes(bytes) {
+  set("staging-cap", bytes > 0 ? String(bytes) : null);
+}
+var BLACKBOX_MAX = 400;
+function loadBlackbox() {
+  try {
+    const v = JSON.parse(get("blackbox") ?? "[]");
+    return Array.isArray(v) ? v : [];
+  } catch {
+    return [];
+  }
+}
+function saveBlackbox(entries) {
+  try {
+    set("blackbox", JSON.stringify(entries.slice(-BLACKBOX_MAX)));
+  } catch {
+  }
+}
+
 // src/app/sync-status.ts
 var STUCK_MS = 45e3;
-var LOG_MAX = 300;
+var LOG_MAX = 400;
 var flights = /* @__PURE__ */ new Map();
 var nextId = 1;
 var pending = 0;
@@ -6309,7 +6485,18 @@ function setReadWait(text) {
     else render();
   }
 }
-var log = [];
+var log = loadBlackbox();
+log.push({ at: Date.now(), level: "info", text: `\u2014\u2014 \u9875\u9762\u8F7D\u5165 ${APP_VERSION} \u2014\u2014` });
+var flushTimer = 0;
+function flushLog() {
+  clearTimeout(flushTimer);
+  flushTimer = 0;
+  saveBlackbox(log);
+}
+addEventListener("pagehide", flushLog);
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "hidden") flushLog();
+});
 var onClick = null;
 var signedIn = () => true;
 var timer = 0;
@@ -6352,6 +6539,7 @@ var secs = (t0) => `${((performance.now() - t0) / 1e3).toFixed(0)} s`;
 function logEvent(level, text) {
   log.push({ at: Date.now(), level, text });
   if (log.length > LOG_MAX) log.shift();
+  if (!flushTimer) flushTimer = window.setTimeout(flushLog, 500);
   (level === "info" ? console.info : console.warn)("[sync]", text);
   render();
 }
@@ -6498,6 +6686,7 @@ var storeUI = {
     }
     if (level === "log") {
       console.info("[store]", err3);
+      logEvent("info", `store\xB7log\uFF1A${errorText(err3).slice(0, 220)}`);
       return;
     }
     if (level === "info") {
@@ -6518,41 +6707,14 @@ var storeUI = {
   }
 };
 
-// src/app/device-kv.ts
-var PREFIX = `${APP_ID}.device.`;
-var mem = /* @__PURE__ */ new Map();
-function get(key) {
-  try {
-    return localStorage.getItem(PREFIX + key) ?? mem.get(key) ?? null;
-  } catch {
-    return mem.get(key) ?? null;
-  }
-}
-function set(key, value) {
-  if (value == null) mem.delete(key);
-  else mem.set(key, value);
-  try {
-    if (value == null) localStorage.removeItem(PREFIX + key);
-    else localStorage.setItem(PREFIX + key, value);
-  } catch {
-  }
-}
-var STAGING_CAP_CHOICES = [
-  { label: "256 MB\uFF08\u9ED8\u8BA4\uFF09", bytes: 0 },
-  { label: "1 GB", bytes: 1 * 2 ** 30 },
-  { label: "4 GB", bytes: 4 * 2 ** 30 },
-  { label: "16 GB", bytes: 16 * 2 ** 30 }
-];
-function stagingCapBytes() {
-  const n = Number(get("staging-cap") ?? 0);
-  return Number.isFinite(n) && n > 0 ? n : 0;
-}
-function setStagingCapBytes(bytes) {
-  set("staging-cap", bytes > 0 ? String(bytes) : null);
-}
-
 // src/app/app-store.ts
-var od = createOneDriveProvider({ clientId: CLIENT_ID2, scopes: SCOPES2, authority: AUTHORITY2, msalUrl: MSAL_URL2 });
+var od = createOneDriveProvider({
+  clientId: CLIENT_ID2,
+  scopes: SCOPES2,
+  authority: AUTHORITY2,
+  msalUrl: MSAL_URL2,
+  transport: { timeouts: DEFAULT_GRAPH_TIMEOUTS, chunkResume: true, verifyChunkedCommit: true }
+});
 var auth = od.auth;
 var activeIdentifier = null;
 function setActiveIdentifier(id) {
@@ -6578,6 +6740,8 @@ function getStore() {
     encryption: createEncryption(),
     // 不用库的加密（我们自己的 KRD1 在 app 层封好再交给库，库只见密文）
     reconcilePolicy: "app-driven",
+    pushRetry: { maxAttempts: 5, backoffMs: 1e3, exponential: true },
+    // 0.17.2 显式开：熬得过 iOS 切网络那几秒（默认 4 × 200·n ms）
     validateAdopt,
     docKinds: [
       { kind: "disc", suffix: ".wafter", container: "raw" },
@@ -6631,12 +6795,12 @@ function normalizePassword(password) {
 var derivedKeys = /* @__PURE__ */ new Map();
 var DERIVED_KEYS_MAX = 512;
 async function deriveKeys(password, salt, iterations) {
-  const cacheKey = `${iterations}:${Array.from(salt, (b) => b.toString(16).padStart(2, "0")).join("")}:${normalizePassword(password)}`;
-  const hit = derivedKeys.get(cacheKey);
+  const cacheKey2 = `${iterations}:${Array.from(salt, (b) => b.toString(16).padStart(2, "0")).join("")}:${normalizePassword(password)}`;
+  const hit = derivedKeys.get(cacheKey2);
   if (hit) return hit;
   const p = deriveKeysUncached(password, salt, iterations);
-  derivedKeys.set(cacheKey, p);
-  p.catch(() => derivedKeys.delete(cacheKey));
+  derivedKeys.set(cacheKey2, p);
+  p.catch(() => derivedKeys.delete(cacheKey2));
   if (derivedKeys.size > DERIVED_KEYS_MAX) derivedKeys.delete(derivedKeys.keys().next().value);
   return p;
 }
@@ -6973,6 +7137,12 @@ var setPassword = (p) => {
 };
 var stemOf2 = (name) => name.replace(/^.*\//, "").replace(/\.[^.]*$/, "");
 var extOf = (name) => (name.match(/\.[A-Za-z0-9]+$/)?.[0] ?? ".iso").toLowerCase();
+var DiscUnavailableError = class extends Error {
+  constructor(identifier) {
+    super(`disc unavailable right now: ${identifier}`);
+    this.name = "DiscUnavailableError";
+  }
+};
 var NeedPassword = class extends Error {
   constructor() {
     super("password needed");
@@ -6988,7 +7158,7 @@ async function isEncrypted(src) {
     throw e;
   }
 }
-async function unwrap(src, name, password) {
+async function unwrap(src, name, password, fallbackKey) {
   let media = src, original = name, opened = null;
   if (await isEncrypted(src)) {
     const pw = password ?? sessionPassword;
@@ -7000,7 +7170,8 @@ async function unwrap(src, name, password) {
   }
   const fp = await fingerprintOf(media, opened?.meta.fp);
   const keyFromGame = !!fp.id;
-  const key = keyFromGame ? await gameKey(fp) : await discKey(stemOf2(name));
+  const key = keyFromGame ? await gameKey(fp) : fallbackKey ?? await discKey(stemOf2(name));
+  if (!keyFromGame) console.warn("[disc] disc id unreadable; key =", fallbackKey ? "cached card" : "file name");
   return { media, ext: extOf(original), title: stemOf2(original), fp, key, keyFromGame };
 }
 async function fingerprintOf(media, fromMeta) {
@@ -7045,10 +7216,10 @@ function withReadAhead(stream) {
     }
   };
 }
-async function fromPantry(identifier, password) {
+async function fromPantry(identifier, password, fallbackKey) {
   const stream = await getStore().file(identifier, { mode: "existing" }).openStream();
   if (!stream) throw new Error("\u8FD9\u5F20\u76D8\u73B0\u5728\u62FF\u4E0D\u5230\uFF08\u6CA1\u767B\u5F55\u3001\u79BB\u7EBF\uFF0C\u6216\u8005\u4E91\u7AEF\u5DF2\u7ECF\u6CA1\u6709\u4E86\uFF09");
-  return { ...await unwrap(withReadAhead(stream), identifier, password), identifier };
+  return { ...await unwrap(withReadAhead(stream), identifier, password, fallbackKey), identifier };
 }
 async function inspectPantry(identifier) {
   const encrypted = identifier.endsWith(".wafter");
@@ -7064,7 +7235,7 @@ async function inspectPantry(identifier) {
       }
     }
     const stream = await f.openStream();
-    if (!stream) return null;
+    if (!stream) throw new DiscUnavailableError(identifier);
     try {
       const src = { size: stream.totalSize, read: (o, n) => stream.read(o, n) };
       let media = src, name = identifier, metaFp;
@@ -7135,6 +7306,75 @@ async function recallPassword() {
 }
 var hasRememberedPassword = async () => await tx("readonly", (s) => s.get(KEY2)).catch(() => void 0) != null;
 var forgetPassword = () => tx("readwrite", (s) => s.delete(KEY2)).then(() => void 0);
+
+// src/app/title-cache.ts
+var DB_NAME2 = "kudsrocket.titles";
+var STORE3 = "cards";
+var SALT_KEY = "_salt";
+var dbp2 = null;
+function db2() {
+  dbp2 ??= new Promise((resolve, reject) => {
+    const req = indexedDB.open(DB_NAME2, 1);
+    req.onupgradeneeded = () => {
+      req.result.createObjectStore(STORE3);
+    };
+    req.onsuccess = () => resolve(req.result);
+    req.onerror = () => reject(req.error);
+  });
+  dbp2.catch(() => {
+    dbp2 = null;
+  });
+  return dbp2;
+}
+async function tx2(mode, body) {
+  const d = await db2();
+  return new Promise((resolve, reject) => {
+    const t = d.transaction(STORE3, mode);
+    let result;
+    const req = body(t.objectStore(STORE3));
+    if (req) req.onsuccess = () => {
+      result = req.result;
+    };
+    t.oncomplete = () => resolve(result);
+    t.onerror = () => reject(t.error);
+    t.onabort = () => reject(t.error ?? new Error("title-cache transaction aborted"));
+  });
+}
+async function cacheKey(password, create) {
+  let salt = await tx2("readonly", (s) => s.get(SALT_KEY));
+  if (!salt) {
+    if (!create) return null;
+    salt = crypto.getRandomValues(new Uint8Array(16));
+    await tx2("readwrite", (s) => s.put(salt, SALT_KEY));
+  }
+  return (await deriveKeys(password, salt, DEFAULT_ITERATIONS)).meta;
+}
+async function loadTitleCards(password) {
+  const out = /* @__PURE__ */ new Map();
+  const key = await cacheKey(password, false).catch(() => null);
+  if (!key) return out;
+  const keys = await tx2("readonly", (s) => s.getAllKeys()).catch(() => void 0) ?? [];
+  const vals = await tx2("readonly", (s) => s.getAll()).catch(() => void 0) ?? [];
+  for (let i = 0; i < keys.length && i < vals.length; i++) {
+    if (keys[i] === SALT_KEY) continue;
+    const v = vals[i];
+    try {
+      const plain = await crypto.subtle.decrypt({ name: "AES-GCM", iv: v.iv }, key, v.ct);
+      out.set(String(keys[i]), { size: v.size, card: JSON.parse(new TextDecoder().decode(plain)) });
+    } catch {
+    }
+  }
+  return out;
+}
+async function saveTitleCard(password, identifier, size, card) {
+  const key = await cacheKey(password, true);
+  if (!key) return;
+  const iv = crypto.getRandomValues(new Uint8Array(12));
+  const ct = await crypto.subtle.encrypt({ name: "AES-GCM", iv }, key, new TextEncoder().encode(JSON.stringify(card)));
+  const rec = { size, iv, ct };
+  await tx2("readwrite", (s) => s.put(rec, identifier));
+}
+var clearTitleCards = () => tx2("readwrite", (s) => s.clear()).then(() => void 0);
 
 // vendor/fflate/fflate.esm.js
 var u8 = Uint8Array;
@@ -8100,8 +8340,9 @@ function unzipSync(data, opts) {
 
 // src/app/saves.ts
 var sessionSalt = crypto.getRandomValues(new Uint8Array(16));
+var HISTORY_KEEP = 3;
 var crumbId = (key, kind, n) => `${CRUMBS}/${key}-${kind}${n}${CRUMB_SUFFIX}`;
-var CRUMB_RE = new RegExp(`^${CRUMBS}/([0-9a-f]{16})-([sa])([0-9]+)\\${CRUMB_SUFFIX}$`);
+var CRUMB_RE = new RegExp(`^${CRUMBS}/([0-9a-f]{16})-([sah])([0-9]+)\\${CRUMB_SUFFIX}$`);
 function parseCrumbId(id) {
   const m = CRUMB_RE.exec(id);
   return m ? { key: m[1], kind: m[2], n: Number(m[3]) } : null;
@@ -8166,6 +8407,15 @@ async function get2(identifier) {
 }
 async function ensureLineage(identifier) {
   const f = getStore().file(identifier, { mode: "existing" });
+  if (navigator.onLine) {
+    const r = await f.pullIfClean().catch((e) => {
+      console.warn("[lineage]", e);
+      return null;
+    });
+    if (r && (r.status === "in-sync" || r.status === "fast-forwarded" || r.status === "cloud-absent")) return true;
+    if (r && r.status === "dirty-skip") return false;
+    if (r && (r.status === "cloud-error" || r.status === "ff-failed" || r.status === "escaped")) return false;
+  }
   if (await f.isKeptOffline()) return true;
   return await f.open().catch(() => null) != null;
 }
@@ -8212,8 +8462,9 @@ async function deleteSnapshot(identifier) {
   const r = await getStore().file(identifier, { mode: "existing" }).delete();
   return r.status !== "cancelled" && r.status !== "noop";
 }
-async function tidyLocalSnapshots(slots) {
+async function tidyLocalSnapshots(slots, history = []) {
   const have = slots.filter((s) => s.kind === "s" && s.savedAt && s.local).sort((a, b) => b.savedAt - a.savedAt).slice(LOCAL_SNAPSHOTS_KEPT);
+  for (const h2 of history) if (h2.local) have.push(h2);
   let n = 0;
   for (const s of have) {
     try {
@@ -8339,15 +8590,19 @@ async function deleteJam(identifier) {
   const r = await getStore().file(identifier, { mode: "existing" }).delete();
   return r.status !== "cancelled" && r.status !== "noop";
 }
-async function listBins() {
+async function listBins(titleByKey) {
   const store2 = getStore();
   const [trash, backup] = await Promise.all([store2.files.listTrash(), store2.files.listBackup()]);
-  const mk = (bin) => (t) => ({ bin, identifier: t.identifier, label: labelOfBinned(t.identifier), ts: t.ts, side: t.side, raw: { localKey: t.localKey, cloudRef: t.cloudRef, encrypted: t.encrypted } });
+  const mk = (bin) => (t) => ({ bin, identifier: t.identifier, label: labelOfBinned(t.identifier, titleByKey), ts: t.ts, side: t.side, raw: { localKey: t.localKey, cloudRef: t.cloudRef, encrypted: t.encrypted } });
   return [...trash.map(mk("trash")), ...backup.map(mk("backup"))].sort((a, b) => (b.ts ?? "").localeCompare(a.ts ?? ""));
 }
-function labelOfBinned(identifier) {
+function labelOfBinned(identifier, titleByKey) {
   const c = parseCrumbId(identifier);
-  if (c) return `\u5FEB\u7167\uFF08${c.kind === "s" ? "\u624B\u52A8" : "\u81EA\u52A8"} ${c.n}\uFF0C\u76D8 ${c.key.slice(0, 6)}\u2026\uFF09`;
+  if (c) {
+    const game = titleByKey?.(c.key) ?? `\u76D8 ${c.key.slice(0, 6)}\u2026`;
+    const slot = c.kind === "h" ? `\u5386\u53F2\uFF08\u5B58\u4E8E ${new Date(c.n).toLocaleString()}\uFF09` : `${c.kind === "s" ? "\u624B\u52A8" : "\u81EA\u52A8"} ${c.n}`;
+    return `\u5FEB\u7167 ${slot} \xB7 ${game}`;
+  }
   if (identifier.endsWith(JAM_SUFFIX)) return "\u5B58\u6863\uFF08\u4E00\u7F50\uFF09";
   return identifier.replace(/^.*\//, "");
 }
@@ -8396,29 +8651,29 @@ function pickNewest(cands) {
 }
 
 // src/app/undo-guard.ts
-var DB_NAME2 = "kudsrocket.undo-guard";
-var STORE3 = "guards";
-var dbp2 = null;
-function db2() {
-  dbp2 ??= new Promise((resolve, reject) => {
-    const req = indexedDB.open(DB_NAME2, 1);
+var DB_NAME3 = "kudsrocket.undo-guard";
+var STORE4 = "guards";
+var dbp3 = null;
+function db3() {
+  dbp3 ??= new Promise((resolve, reject) => {
+    const req = indexedDB.open(DB_NAME3, 1);
     req.onupgradeneeded = () => {
-      req.result.createObjectStore(STORE3);
+      req.result.createObjectStore(STORE4);
     };
     req.onsuccess = () => resolve(req.result);
     req.onerror = () => reject(req.error);
   });
-  dbp2.catch(() => {
-    dbp2 = null;
+  dbp3.catch(() => {
+    dbp3 = null;
   });
-  return dbp2;
+  return dbp3;
 }
-async function tx2(mode, body) {
-  const d = await db2();
+async function tx3(mode, body) {
+  const d = await db3();
   return new Promise((resolve, reject) => {
-    const t = d.transaction(STORE3, mode);
+    const t = d.transaction(STORE4, mode);
     let result;
-    const req = body(t.objectStore(STORE3));
+    const req = body(t.objectStore(STORE4));
     if (req) req.onsuccess = () => {
       result = req.result;
     };
@@ -8427,13 +8682,13 @@ async function tx2(mode, body) {
     t.onabort = () => reject(t.error ?? new Error("undo-guard transaction aborted"));
   });
 }
-var putGuard = (g) => tx2("readwrite", (s) => s.put(g, g.kind));
+var putGuard = (g) => tx3("readwrite", (s) => s.put(g, g.kind));
 async function getGuard(kind, discKey2) {
-  const g = await tx2("readonly", (s) => s.get(kind));
+  const g = await tx3("readonly", (s) => s.get(kind));
   return g && g.discKey === discKey2 ? g : void 0;
 }
 async function deleteGuard(kind, discKey2) {
-  if (await getGuard(kind, discKey2)) await tx2("readwrite", (s) => s.delete(kind));
+  if (await getGuard(kind, discKey2)) await tx3("readwrite", (s) => s.delete(kind));
 }
 
 // src/disc/ppst.ts
@@ -8538,9 +8793,9 @@ var rzfh = function(dat, w) {
     if (flg & 8)
       err2(0);
     var bt = 6 - ss;
-    var db3 = df == 3 ? 4 : df;
-    var di = rb(dat, bt, db3);
-    bt += db3;
+    var db4 = df == 3 ? 4 : df;
+    var di = rb(dat, bt, db4);
+    bt += db4;
     var fsb = fcf ? 1 << fcf : ss;
     var fss = rb(dat, bt, fsb) + (fcf == 1 && 256);
     var ws = fss;
@@ -9089,7 +9344,7 @@ function decompress(dat, buf) {
 // src/app/snapshots.ts
 var SAVE_DEADLINE_MS = 2e4;
 var fpSame = (saved, now) => !!saved && fpCompatible(saved, now);
-var slotLabel = (s) => `${s.kind === "s" ? "\u624B\u52A8" : "\u81EA\u52A8"} ${s.n}`;
+var slotLabel = (s) => s.kind === "h" ? `\u5386\u53F2 ${new Date(s.n).toLocaleString()}` : `${s.kind === "s" ? "\u624B\u52A8" : "\u81EA\u52A8"} ${s.n}`;
 var Snapshots = class {
   constructor(session2, disc, verbs, onChange) {
     this.session = session2;
@@ -9189,6 +9444,7 @@ var Snapshots = class {
       await Promise.all(Array.from({ length: Math.min(4, cands.length) }, worker));
     }
     const slot = pickNewest(cands);
+    logEvent("info", `\u7EED\u73A9\u9009\u683C\uFF1A${slot ? `${slotLabel(slot)}\uFF08at ${new Date(cands.find((c) => c.item === slot)?.at ?? slot.savedAt ?? 0).toLocaleString()}\uFF09` : "\u6CA1\u6709"}\uFF0C\u5019\u9009 ${cands.length}\uFF0C\u4E91\u7AEF\u5E27${this.listComplete ? "\u5230\u4E86" : "\u6CA1\u7B49\u5230"}`);
     console.info(`[resume] first frame ${(tFrame - t0).toFixed(0)} ms \xB7 cloud frame ${(tCloud - tFrame).toFixed(0)} ms \xB7 password ${(tPw - tCloud).toFixed(0)} ms \xB7 peek ${cands.length} slots ${(performance.now() - tPw).toFixed(0)} ms`);
     return slot ? { slot, partial } : null;
   }
@@ -9240,8 +9496,10 @@ var Snapshots = class {
         n = alt.n;
         label = slotLabel({ kind, n });
       }
-      let old = null;
+      let old = null, oldAt = 0;
       if (!auto && kind === "s" && this.slots.some((x) => x.kind === "s" && x.n === n && x.savedAt)) {
+        const existing = this.slots.find((x) => x.kind === "s" && x.n === n);
+        oldAt = (await this.peek(existing).catch(() => null))?.at ?? existing.savedAt ?? Date.now();
         old = await readSealed(crumbId(this.disc.key, kind, n)).catch(() => null);
         if (!old) {
           const fresh = this.nextManualSlot();
@@ -9260,20 +9518,25 @@ var Snapshots = class {
       const r = await withDeadline(
         saveSnapshot(id, state2, { thumb, at, auto, fp: this.disc.fp, title: this.disc.title }, pw, { deferPush: hidden }),
         SAVE_DEADLINE_MS,
-        (late) => logEvent(late.ok ? "info" : "warn", late.ok ? `\u300C${label}\u300D\u90A3\u6B21\u8FDF\u5230\u7684\u4E0A\u4F20${late.value.pushed ? "\u4F20\u597D\u4E86" : "\u6CA1\u4F20\u4E0A\u53BB\uFF08\u4F1A\u7EED\u63A8\uFF09"}` : `\u300C${label}\u300D\u90A3\u6B21\u8FDF\u5230\u7684\u4E0A\u4F20\u51FA\u9519\uFF1A${String(late.error)}`)
+        (late) => {
+          if (!late.ok && auto) this.leaveFailed = true;
+          logEvent(late.ok ? "info" : "warn", late.ok ? `\u300C${label}\u300D\u90A3\u6B21\u8FDF\u5230\u7684\u4E0A\u4F20${late.value.pushed ? "\u4F20\u597D\u4E86" : "\u6CA1\u4F20\u4E0A\u53BB\uFF08\u4F1A\u7EED\u63A8\uFF09"}` : `\u300C${label}\u300D\u90A3\u6B21\u8FDF\u5230\u7684\u4E0A\u4F20\u51FA\u9519\uFF1A${String(late.error)}`);
+        }
       );
+      this.metaCache.delete(id);
       if (r === "timeout") {
         logEvent("warn", `\u5B58\u300C${label}\u300D${SAVE_DEADLINE_MS / 1e3} s \u8FD8\u6CA1\u7ED3\u675F\uFF1A\u5148\u653E\u5F00\uFF0C\u672C\u673A\u90A3\u4EFD\u4F1A\u843D\u4E0B\u3001\u4E91\u7AEF\u81EA\u52A8\u7EED\u63A8\uFF1B\u8FD9\u6B21\u4E0D\u7559\u64A4\u9500`);
         this.verbs.say(`\u300C${label}\u300D\u4E0A\u4F20\u5F88\u6162\uFF0C\u5148\u653E\u5F00\u8BA9\u4F60\u80FD\u63A5\u7740\u5B58\uFF1B\u4F1A\u81EA\u52A8\u7EED\u4F20`, 6e3);
         return;
       }
+      if (old) void this.keepHistory(old, oldAt);
       if (!auto) {
         this.undoSaveInfo = { id, label, old, newAt: at };
         putGuard({ kind: "save", discKey: this.disc.key, id, label, old: old ? new Blob([old]) : null, newAt: at, at }).catch((e) => console.warn("[undo-guard] save", e));
       }
       if (r.pushed) {
         recheckAfterPush(id).then((v) => logEvent("info", `\u63A8\u5B8C\u590D\u6838 ${label}\uFF1A${v}`), (e) => logEvent("warn", `\u63A8\u5B8C\u590D\u6838 ${label} \u5931\u8D25\uFF1A${String(e)}`));
-        tidyLocalSnapshots(this.slots).catch((e) => console.warn("[tidy]", e));
+        tidyLocalSnapshots(this.slots, this.history()).catch((e) => console.warn("[tidy]", e));
       }
     } finally {
       endLocal();
@@ -9318,6 +9581,25 @@ var Snapshots = class {
       this.busy = false;
     }
   }
+  /** 这张盘的历史份（手动覆盖时被盖掉的），新的在前。 */
+  history() {
+    return this.all.filter((c) => c.key === this.disc.key && c.kind === "h").sort((a, b) => b.n - a.n);
+  }
+  /** 把被盖掉的那份存成历史（新文件，不留本机副本），多出 HISTORY_KEEP 的最老的进回收站。user 10-15「手动覆盖时，被盖的那份自动留进「历史」，保留最近 3 份 同意」。 */
+  async keepHistory(sealed, at) {
+    const id = crumbId(this.disc.key, "h", at || Date.now());
+    try {
+      if (this.all.some((c) => c.id === id)) return;
+      await putSealed(id, sealed);
+      logEvent("info", `\u5386\u53F2\uFF1A\u7559\u4E0B\u88AB\u76D6\u6389\u7684\u90A3\u4EFD\uFF08\u5B58\u4E8E ${new Date(at).toLocaleString()}\uFF09`);
+      for (const h2 of this.history().filter((c) => c.id !== id).slice(HISTORY_KEEP - 1)) {
+        logEvent("info", `\u5386\u53F2\uFF1A\u8D85\u8FC7 ${HISTORY_KEEP} \u4EFD\uFF0C\u6700\u8001\u7684\u8FDB\u56DE\u6536\u7AD9\uFF08${slotLabel(h2)}\uFF09`);
+        await deleteSnapshot(h2.id).catch((e) => console.warn("[history]", e));
+      }
+    } catch (e) {
+      logEvent("warn", `\u5386\u53F2\u4EFD\u6CA1\u5B58\u4E0A\uFF1A${String(e)}`);
+    }
+  }
   /** 自动快照：先填空格，满了覆盖最旧的（刚接上的不算）。 */
   async auto() {
     await this.tryHeal();
@@ -9337,8 +9619,24 @@ var Snapshots = class {
     if (this.playedSinceSnap >= AUTO_EVERY_MS) this.auto().catch((e) => console.warn("[auto snapshot]", e));
   }
   /** 切到后台 / 退出前：离上次快照玩过一阵了就存一份。 */
+  leaveFailed = false;
   async onLeave() {
-    if (this.playedSinceSnap >= AUTO_MIN_GAP_MS) await this.auto();
+    if (this.playedSinceSnap < AUTO_MIN_GAP_MS) return;
+    try {
+      await this.auto();
+      this.leaveFailed = false;
+    } catch (e) {
+      this.leaveFailed = true;
+      logEvent("warn", `\u79BB\u5F00\u65F6\u7684\u81EA\u52A8\u5FEB\u7167\u6CA1\u6210\uFF1A${String(e)}`);
+      throw e;
+    }
+  }
+  /** 回到前台：离开时那份自动快照没成（iOS 冻住页面让 IDB 写超时，10-15 日志「store：timeout」）就补一份。 */
+  async onWake() {
+    if (!this.leaveFailed) return;
+    this.leaveFailed = false;
+    logEvent("info", "\u79BB\u5F00\u65F6\u7684\u81EA\u52A8\u5FEB\u7167\u6CA1\u6210\uFF0C\u56DE\u6765\u8865\u4E00\u4EFD");
+    await this.auto();
   }
   /** 读一格（这张盘的，或别的代号下的）。指纹对不上先问人；人说不读就返回 false。 */
   async load(slot) {
@@ -9350,9 +9648,10 @@ var Snapshots = class {
       return false;
     }
     if (!fpCompatible(got.meta.fp, this.disc.fp) && !await this.verbs.confirmMismatch()) return false;
-    const before = await this.session.snapshot().catch(() => null);
+    const before = this.session.readyForSnapshot() ? await this.session.snapshot().catch(() => null) : null;
     await this.session.restore(got.state);
-    this.undoLoadState = before ? { state: before.state, label: slotLabel(slot) } : null;
+    if (before) this.undoLoadState = { state: before.state, label: slotLabel(slot) };
+    else logEvent("info", `\u8BFB\u300C${slotLabel(slot)}\u300D\uFF1A\u521A\u5F00\u76D8\uFF0C\u6CA1\u62CD\u64A4\u9500\u62A4\u680F${this.undoLoadState ? "\uFF08\u4FDD\u7559\u4E0A\u4E00\u4EFD\uFF09" : ""}`);
     if (before) {
       const label = slotLabel(slot);
       void sealBytes(pw, before.state, { compress: true }).then((sealed) => putGuard({ kind: "load", discKey: this.disc.key, sealed: new Blob([sealed]), label, at: Date.now() })).catch((e) => console.warn("[undo-guard] load", e));
@@ -9401,16 +9700,19 @@ var Snapshots = class {
       return;
     }
     if (!u.old) {
+      logEvent("warn", `\u64A4\u9500\u5B58\u6863\uFF08\u521A\u5B58\u7684\u65B0\u683C\u79FB\u5230\u56DE\u6536\u7AD9\uFF09\uFF1A${u.id}`);
       if (await deleteSnapshot(u.id)) this.verbs.say(`\u5DF2\u64A4\u9500\uFF1A\u521A\u5B58\u7684\u300C${u.label}\u300D\u79FB\u5230\u4E86\u56DE\u6536\u7AD9`);
       return;
     }
     const keep = this.nextManualSlot();
+    logEvent("warn", `\u64A4\u9500\u5B58\u6863\uFF08\u8986\u76D6\uFF09\uFF1A\u521A\u5B58\u7684 ${u.id} \u632A\u5230 ${keep.id}\uFF0C\u539F\u6765\u90A3\u4EFD\u5199\u56DE`);
     if (!await moveSnapshot(u.id, keep.id)) throw new Error(`\u6CA1\u80FD\u628A\u521A\u5B58\u7684\u90A3\u4EFD\u632A\u5230\u300C${slotLabel(keep)}\u300D\uFF0C\u64A4\u9500\u6CA1\u505A\uFF08\u4E24\u4EFD\u90FD\u8FD8\u5728\u539F\u5904\uFF09`);
     await putSealed(u.id, u.old);
     this.verbs.say(`\u5DF2\u64A4\u9500\uFF1A\u300C${u.label}\u300D\u6362\u56DE\u539F\u6765\u90A3\u4EFD\uFF1B\u521A\u5B58\u7684\u90A3\u4EFD\u5728\u300C${slotLabel(keep)}\u300D`, 8e3);
   }
   /** 删一格 → 回收站。 */
   async remove(id) {
+    logEvent("warn", `\u4EBA\u5220\u5FEB\u7167\uFF1A${id}`);
     const ok = await deleteSnapshot(id);
     if (ok) {
       this.adopted.delete(id);
@@ -9438,29 +9740,31 @@ var Snapshots = class {
   /** crumbs/ 里不是这张盘代号的快照，按主人分组、新的在前。面板全列出来：能读、能接、能删——自动不猜的人来做。 */
   foreign() {
     const groups = /* @__PURE__ */ new Map();
-    for (const c of this.all) if (c.key !== this.disc.key) groups.set(c.key, [...groups.get(c.key) ?? [], c]);
+    for (const c of this.all) if (c.key !== this.disc.key && c.kind !== "h") groups.set(c.key, [...groups.get(c.key) ?? [], c]);
     return [...groups].map(([key, items]) => ({ key, items: items.sort((a, b) => b.savedAt - a.savedAt), newestAt: Math.max(...items.map((i) => i.savedAt)) })).sort((a, b) => b.newestAt - a.newestAt);
   }
   /** 把一组快照接到这张盘上（人点的）。手动的接成新号（不盖现有的），自动的接进空格；没空格的留在原处。返回接上了几个。 */
-  async adopt(group) {
-    let moved = 0;
-    let nextManual = this.nextManualSlot().n;
-    const freeAutos = this.slots.filter((s) => s.kind === "a" && !s.savedAt && !this.adopted.has(s.id)).map((s) => s.n);
-    for (const it of group.items) {
-      let n;
-      if (it.kind === "s") n = nextManual++;
-      else {
-        const f = freeAutos.shift();
-        if (f == null) continue;
-        n = f;
-      }
-      const to = crumbId(this.disc.key, it.kind, n);
-      if (!await moveSnapshot(it.id, to)) continue;
-      moved++;
-      this.adopted.add(to);
-    }
-    this.verbs.say(moved === group.items.length ? `\u63A5\u4E0A\u4E86 ${moved} \u4E2A\u5FEB\u7167` : `\u63A5\u4E0A\u4E86 ${moved} \u4E2A\uFF0C\u8FD8\u6709 ${group.items.length - moved} \u4E2A\u6CA1\u7A7A\u683C\u653E\uFF0C\u7559\u5728\u539F\u5904`);
-    return moved;
+  /** 「这一局用这组快照」= 把这一局的快照代号改成那组的（v0.1.21）。**不挪文件、不删文件**。
+   *  以前是 adopt = 一张一张 move 到这张盘的代号下——库的 move 在离线 / 没登录时是「本机删旧名 + 新名等着推」，新名那半边没推上去云端就只剩回收站那份：
+   *  10-15 user 的手动快照就是这么「不见」的（00:54 自动 1 / 手动 1 先后进回收站）。user「玩家如果习惯用独苗存档的话丢存档的风险是无法直视的」→
+   *  手动快照从此不被任何自动流程挪 / 删 / 盖；只有人按「删」「撤销存档」才动它。 */
+  async useGroup(group, opts = {}) {
+    const pw = this.verbs.knownPassword() ?? await this.verbs.password("\u5FEB\u7167");
+    if (!pw) return false;
+    const meta = await peekSnapshot(group.items[0].id, pw).catch(() => null);
+    const same = !!meta && fpSame(meta.fp, this.disc.fp);
+    const game = meta?.fp ? `${meta.fp.id ?? "\u7F16\u53F7\u4E0D\u660E"}${meta.fp.v ? ` v${meta.fp.v}` : ""}` : `\u4EE3\u53F7 ${group.key.slice(0, 8)}\u2026`;
+    if (!same && !opts.confirmed && !await this.verbs.confirmUseGroup(game)) return false;
+    this.rekey(group.key, `\u8FD9\u4E00\u5C40\u6539\u7528\u5FEB\u7167\u4EE3\u53F7 ${group.key.slice(0, 8)}\u2026\uFF08${game}\uFF0C${group.items.length} \u4E2A\uFF1B${same ? "\u6307\u7EB9\u5BF9\u5F97\u4E0A" : "\u6307\u7EB9\u5BF9\u4E0D\u4E0A\uFF0C\u4EBA\u786E\u8BA4\u7684"}\uFF09`);
+    this.verbs.say(`\u8FD9\u4E00\u5C40\u7528\u90A3 ${group.items.length} \u4E2A\u5FEB\u7167\uFF08\u4EE3\u53F7 ${group.key.slice(0, 8)}\u2026\uFF09\uFF1B\u6587\u4EF6\u6CA1\u52A8`, 6e3);
+    return true;
+  }
+  rekey(key, why) {
+    logEvent("info", why);
+    this.disc.key = key;
+    this.off();
+    this.off = this.subscribe(this.onChange);
+    this.healTried = true;
   }
   /** 自愈：这张盘一格快照都没有时，看看别的代号下有没有指纹**肯定**对得上的快照组（代号从文件名换成游戏身份、或盘号读不出的老盘）。
    *  有就问人，人同意才搬过来（不替人猜）；不同意的仍在面板「别的快照」里，随时能手动接。 */
@@ -9474,7 +9778,7 @@ var Snapshots = class {
       if (meta && fpSame(meta.fp, this.disc.fp) && (!best || g.newestAt > best.newestAt)) best = g;
     }
     if (!best || !await this.verbs.confirmAdopt(best.items.length, best.newestAt || null)) return;
-    await this.adopt(best);
+    await this.useGroup(best, { confirmed: true });
   }
 };
 
@@ -9483,10 +9787,10 @@ var fmtTs = (ts) => ts && ts.length >= 12 ? `${ts.slice(0, 4)}-${ts.slice(4, 6)}
 var fmtWhen = (t) => t ? new Date(t).toLocaleString() : "";
 var fmtSize = (n) => n ? n >= 2 ** 20 ? `${(n / 2 ** 20).toFixed(1)} MB` : `${(n / 1024).toFixed(0)} KB` : "";
 var sideText = { local: "\u53EA\u5728\u8FD9\u53F0\u8BBE\u5907", cloud: "\u53EA\u5728\u4E91\u7AEF", both: "\u4E24\u8FB9\u90FD\u6709" };
-async function openBins() {
+async function openBins(titleByKey) {
   let items;
   try {
-    items = await withBusy("\u6B63\u5728\u5217\u56DE\u6536\u7AD9\u2026", listBins);
+    items = await withBusy("\u6B63\u5728\u5217\u56DE\u6536\u7AD9\u2026", () => listBins(titleByKey));
   } catch (e) {
     banner(`\u5217\u4E0D\u51FA\u56DE\u6536\u7AD9\uFF1A${errorText(e)}`);
     return;
@@ -9651,7 +9955,7 @@ async function openSaveManager(ctx) {
         { class: "row" },
         h("button", { onclick: () => {
           done();
-          openBins().catch((e) => banner(errorText(e)));
+          openBins(ctx.titleByKey).catch((e) => banner(errorText(e)));
         } }, "\u56DE\u6536\u7AD9 / \u5907\u4EFD\u7BB1"),
         h("button", { onclick: () => {
           done();
@@ -9839,6 +10143,50 @@ function createActivity(rules, startAt) {
   };
 }
 
+// src/app/stall.ts
+function createStallDetector(opts) {
+  let armed = false;
+  let lastFrames = -1;
+  let since = 0;
+  let reported = false;
+  return {
+    /** 每次 HUD 刷新喂一次。 */
+    feed(s) {
+      if (!armed) {
+        if (s.frames >= opts.armFrames) {
+          armed = true;
+          lastFrames = s.frames;
+          since = s.now;
+        }
+        return "idle";
+      }
+      if (s.frames !== lastFrames) {
+        lastFrames = s.frames;
+        since = s.now;
+        reported = false;
+        return "ok";
+      }
+      if (!s.visible || s.paused || s.held || s.waitingDisc) {
+        since = s.now;
+        return "idle";
+      }
+      if (s.now - since >= opts.stallMs && !reported) {
+        reported = true;
+        return "stalled";
+      }
+      return reported ? "idle" : "ok";
+    },
+    /** 人点了「先不管」/ 救活没成：过 ms 之后允许再判一次。 */
+    snooze(nowMs) {
+      since = nowMs;
+      reported = false;
+    },
+    get stalledForMs() {
+      return (now) => now - since;
+    }
+  };
+}
+
 // src/app/main.ts
 var params = new URLSearchParams(location.search);
 var DEV_SERVER = /^(127\.0\.0\.1|localhost)$/.test(location.hostname);
@@ -9919,6 +10267,16 @@ function audioContext() {
   ac ??= new AudioContext({ sampleRate: 44100, latencyHint: "interactive" });
   return ac;
 }
+async function rebuildAudio(why) {
+  if (!session) return;
+  const fresh = new AudioContext({ sampleRate: 44100, latencyHint: "interactive" });
+  ac = fresh;
+  await session.rebuildAudio(fresh);
+  logEvent("warn", `\u58F0\u97F3\u91CD\u5EFA\uFF08${why}\uFF09\uFF1A\u65B0 AudioContext ${fresh.state}`);
+}
+function audioAlive(a, b) {
+  return b.audioClock - a.audioClock > 0.5 || b.audioRead !== a.audioRead;
+}
 var say = (text, ms) => {
   lastNote = text;
   note(text, ms);
@@ -9935,8 +10293,40 @@ function watchPantry() {
   });
 }
 var remembered = false;
+var triedUnlock = /* @__PURE__ */ new Set();
+var titleCache = null;
+var titleCacheFor = null;
+async function hydrateTitles() {
+  const pw = getPassword();
+  if (!pw) return;
+  if (titleCacheFor !== pw) {
+    titleCacheFor = pw;
+    titleCache = await loadTitleCards(pw).catch((e) => {
+      console.warn("[title-cache]", e);
+      return /* @__PURE__ */ new Map();
+    });
+  }
+  let hit = 0;
+  for (const it of pantryItems) {
+    if (cards.has(it.identifier)) continue;
+    const c = titleCache?.get(it.identifier);
+    if (c && (it.size == null || c.size === it.size)) {
+      cards.set(it.identifier, c.card);
+      hit++;
+    }
+  }
+  if (hit) renderLibrary();
+}
+var unlockRetryMs = 15e3;
+var unlockRetryTimer = 0;
 function adoptPassword(pw) {
+  if (pw !== getPassword()) {
+    triedUnlock.clear();
+    titleCacheFor = null;
+  }
   setPassword(pw);
+  hydrateTitles().catch(() => {
+  });
   if (!takeRememberChoice()) return;
   rememberPassword(pw).then(() => {
     remembered = true;
@@ -9946,10 +10336,15 @@ function adoptPassword(pw) {
 }
 async function forgetRemembered(why) {
   await forgetPassword().catch((e) => console.warn("[remember]", e));
+  await clearTitleCards().catch(() => {
+  });
+  titleCache = null;
+  titleCacheFor = null;
   remembered = false;
   renderAccount();
   say(why);
 }
+var logButton = () => h("button", { title: "\u9ED1\u5323\u5B50\uFF1A\u5B58 / \u4F20 / \u51B2\u7A81 / \u5207\u540E\u53F0 / \u6838\u6CA1\u53CD\u5E94\u2026\u2026\u8DE8\u91CD\u8F7D\u4FDD\u7559", onclick: () => openLog() }, "\u65E5\u5FD7");
 var rememberRow = () => remembered ? [h("span", { class: "muted" }, "\xB7 \u8FD9\u53F0\u8BBE\u5907\u8BB0\u7740\u53E3\u4EE4"), h("button", { onclick: () => {
   forgetRemembered("\u5DF2\u5FD8\u8BB0\u8FD9\u53F0\u8BBE\u5907\u8BB0\u7740\u7684\u53E3\u4EE4").catch(() => {
   });
@@ -9970,7 +10365,8 @@ function renderAccount() {
         renderAccount();
         renderLibrary();
       } }, "\u9000\u51FA\u767B\u5F55"),
-      ...rememberRow()
+      ...rememberRow(),
+      logButton()
     );
   } else {
     row.replaceChildren(
@@ -9979,7 +10375,8 @@ function renderAccount() {
         });
         auth.signIn().catch((e) => banner(`\u767B\u5F55\u5931\u8D25\uFF1A${errorText(e)}`));
       } }, icon("cloud"), "\u767B\u5F55"),
-      ...rememberRow()
+      ...rememberRow(),
+      logButton()
     );
   }
 }
@@ -9988,6 +10385,17 @@ function renderLibrary() {
   const list = $("library");
   const discs = pantryItems.filter((it) => DISC_SUFFIXES.some((s) => it.identifier.toLowerCase().endsWith(s))).sort((a, b) => (b.lastModified ?? 0) - (a.lastModified ?? 0));
   const locked = discs.some((d) => d.identifier.endsWith(".wafter") && !titles.has(d.identifier));
+  if (getPassword()) {
+    if (titleCacheFor !== getPassword()) {
+      hydrateTitles().catch(() => {
+      });
+    }
+    const pending2 = discs.filter((d) => d.identifier.endsWith(".wafter") && !cards.has(d.identifier) && !triedUnlock.has(d.identifier) && !(titleCache?.get(d.identifier) && (d.size == null || titleCache.get(d.identifier).size === d.size)));
+    if (pending2.length) {
+      for (const d of pending2) triedUnlock.add(d.identifier);
+      unlockTitles().catch((e) => console.warn("[unlock]", e));
+    }
+  }
   const rows = [];
   const last = lastPlayed();
   if (last && discs.some((d) => d.identifier === last)) {
@@ -10037,7 +10445,7 @@ function renderLibrary() {
       openSaveManager(saveManagerContext).catch((e) => banner(errorText(e)));
     } }, "\u5B58\u6863\u7BA1\u7406"),
     h("button", { onclick: () => {
-      openBins().catch((e) => banner(errorText(e)));
+      openBins(saveManagerContext.titleByKey).catch((e) => banner(errorText(e)));
     } }, "\u56DE\u6536\u7AD9 / \u5907\u4EFD\u7BB1")
   ));
   list.replaceChildren(...rows);
@@ -10115,7 +10523,7 @@ async function unlockTitles() {
     if (!pw) return;
     adoptPassword(pw);
   }
-  let wrong = 0;
+  let wrong = 0, unavailable = 0;
   const todo = pantryItems.filter((it) => it.identifier.endsWith(".wafter") && !cards.has(it.identifier)).map((it) => it.identifier);
   let next = 0;
   const worker = async () => {
@@ -10126,14 +10534,31 @@ async function unlockTitles() {
         if (card) {
           cards.set(id, card);
           renderLibrary();
-        } else wrong++;
+          const size = pantryItems.find((it) => it.identifier === id)?.size ?? 0;
+          saveTitleCard(pw, id, size, card).then(() => {
+            titleCache?.set(id, { size, card });
+          }, (e) => console.warn("[title-cache]", e));
+        } else {
+          wrong++;
+          logEvent("warn", `\u76D8\u540D\uFF1A${id} \u8FD9\u4E2A\u53E3\u4EE4\u6253\u4E0D\u5F00`);
+        }
       } catch (e) {
-        banner(`\u8BFB\u540D\u5B57\u5931\u8D25\uFF1A${errorText(e)}`, "warning");
+        logEvent("warn", `\u76D8\u540D\uFF1A${id} \u6CA1\u8BFB\u5230\u2014\u2014${errorText(e).slice(0, 200)}`);
+        if (e instanceof DiscUnavailableError || isNetworkError(e)) {
+          unavailable++;
+          triedUnlock.delete(id);
+        } else banner(`\u8BFB\u540D\u5B57\u5931\u8D25\uFF1A${errorText(e)}`, "warning");
       }
     }
   };
   await Promise.all(Array.from({ length: Math.min(4, todo.length) }, worker));
   if (wrong) say(`${wrong} \u5F20\u76D8\u8FD9\u4E2A\u53E3\u4EE4\u6253\u4E0D\u5F00`);
+  if (unavailable) {
+    say(`${unavailable} \u5F20\u76D8\u7684\u540D\u5B57\u8FD9\u6B21\u6CA1\u8BFB\u5230\uFF08\u79BB\u7EBF / \u7F51\u7EDC\uFF1F\uFF09\uFF0C${unlockRetryMs / 1e3} \u79D2\u540E\u518D\u8BD5`, 5e3);
+    clearTimeout(unlockRetryTimer);
+    unlockRetryTimer = window.setTimeout(() => renderLibrary(), unlockRetryMs);
+    unlockRetryMs = Math.min(unlockRetryMs * 2, 6e4);
+  } else unlockRetryMs = 15e3;
 }
 var appState = () => getStore().collection("synced-app-state");
 function lastPlayed() {
@@ -10168,7 +10593,8 @@ async function withPassword(open, what) {
 }
 function playFromPantry(identifier, resume) {
   audioContext();
-  runPlay(() => withPassword((pw) => fromPantry(identifier, pw), "\u8FD9\u5F20\u76D8"), resume);
+  const cachedKey = cards.get(identifier)?.key ?? titleCache?.get(identifier)?.card.key;
+  runPlay(() => withPassword((pw) => fromPantry(identifier, pw, cachedKey), "\u8FD9\u5F20\u76D8"), resume);
 }
 function playLocal(file) {
   audioContext();
@@ -10241,7 +10667,7 @@ async function play(prepare, resume) {
     onInput: () => activity?.input(performance.now()),
     media: disc.media,
     ext: disc.ext,
-    coreDir: "./dist/core-a4308d6eac3e/",
+    coreDir: "./dist/core-de23f161e6bc/",
     glCanvas: $("gl"),
     softCanvas: $("screen"),
     audioContext: audioContext(),
@@ -10264,10 +10690,23 @@ async function play(prepare, resume) {
   jamSigs = session.memstickDirs();
   setInterval(() => jamTick(false), JAM_POLL_MS);
   addEventListener("visibilitychange", () => {
+    if (!session) return;
     if (document.visibilityState !== "hidden") {
+      const s0 = session.stats();
+      const f0 = s0.frames;
+      logEvent("info", `\u56DE\u5230\u524D\u53F0\uFF1A\u5E27 ${f0}\uFF0C\u58F0\u97F3 ${audioContext().state}`);
+      setTimeout(() => {
+        if (!session) return;
+        const st = session.stats();
+        const soundOk = st.audioState !== "running" || session.paused || st.frames === f0 || audioAlive(s0, st);
+        logEvent(st.frames > f0 && soundOk ? "info" : "warn", `\u56DE\u6765 2 s\uFF1A\u5E27 ${f0} \u2192 ${st.frames}${st.frames > f0 ? "" : "\uFF08\u6CA1\u8D70\uFF01\uFF09"}\uFF0C\u58F0\u97F3 ${st.audioState} \u65F6\u949F+${(st.audioClock - s0.audioClock).toFixed(2)} s \u8BFB\u6307\u9488${st.audioRead === s0.audioRead ? "\u6CA1\u52A8" : "\u5728\u8D70"} \u7F13\u51B2 ${st.audioFillMs.toFixed(0)} ms \u6B20\u8F7D ${st.audioUnderrunMs.toFixed(0)} ms \u4E22 ${st.audioDropped}${soundOk ? "" : "\uFF08\u54D1\u4E86\uFF01\uFF09"}\uFF0C\u8FFD\u8FDB\u5EA6 ${st.catchup}\uFF0C\u91CD\u951A ${st.reanchors}\uFF0C\u7B49\u8BFB\u76D8 ${st.netInflight}\uFF0C\u6682\u505C ${session.paused}\uFF0C\u5FAA\u73AF ${st.loopAgeMs < 0 ? "?" : `${st.loopAgeMs.toFixed(0)} ms \u524D`}\uFF0C\u81EA\u6551 ${st.loopRescues}\uFF0CGL ${st.glLost ? "\u4E22\u4E86" : "\u5728"}/\u6062\u590D ${st.glRestores}`);
+        if (!soundOk) rebuildAudio("\u56DE\u6765\u540E\u58F0\u97F3\u4E0D\u8D70").catch((e) => logEvent("error", `\u58F0\u97F3\u91CD\u5EFA\u5931\u8D25\uFF1A${errorText(e)}`));
+      }, 2e3);
       snaps?.refresh();
+      snaps?.onWake().catch((e) => console.warn("[wake snapshot]", e));
       return;
     }
+    logEvent("info", `\u5207\u5230\u540E\u53F0\uFF1A\u5E27 ${session.stats().frames}\uFF0C\u58F0\u97F3 ${audioContext().state}`);
     snaps?.onLeave().catch((e) => console.warn("[auto snapshot]", e));
     jamTick(true);
   });
@@ -10411,10 +10850,11 @@ var snapshotVerbs = {
   confirmMismatch: () => confirmSheet("\u8FD9\u4E2A\u5FEB\u7167\u50CF\u662F\u522B\u7684\u76D8\u5B58\u7684", "\u5B58\u5B83\u7684\u65F6\u5019\u7528\u7684\u4E0D\u662F\u8FD9\u5F20\u76D8\uFF08\u7F16\u53F7\u3001\u7248\u672C\u6216\u5927\u5C0F\u5BF9\u4E0D\u4E0A\uFF09\u3002\u786C\u8BFB\u53EF\u80FD\u8DD1\u98DE\uFF0C\u8BFB\u4E4B\u524D\u6700\u597D\u5148\u5B58\u4E00\u4EFD\u3002", "\u8FD8\u662F\u8BFB", "\u4E0D\u8BFB"),
   confirmAdopt: (count, at) => confirmSheet(
     "\u627E\u5230\u8FD9\u5F20\u76D8\u7684\u5FEB\u7167\u4E86\uFF1F",
-    `\u6709 ${count} \u4E2A\u5FEB\u7167\u770B\u7740\u662F\u8FD9\u5F20\u76D8\u7684${at ? `\uFF08\u6700\u65B0\u7684\u5B58\u4E8E ${new Date(at).toLocaleString()}\uFF09` : ""}\uFF0C\u662F\u5728\u522B\u7684\u540D\u5B57\u4E0B\u5B58\u7684\uFF08\u540C\u4E00\u5F20\u76D8\u7684\u672C\u673A\u6587\u4EF6 / \u6539\u8FC7\u540D / \u8001\u7248\u672C\uFF09\u3002\u63A5\u5230\u8FD9\u5F20\u76D8\u4E0A\u5417\uFF1F\u4E0D\u63A5\u4E5F\u968F\u65F6\u80FD\u5728\u5FEB\u7167\u9762\u677F\u300C\u522B\u7684\u5FEB\u7167\u300D\u91CC\u624B\u52A8\u63A5\u3002`,
-    "\u63A5\u4E0A",
+    `\u6709 ${count} \u4E2A\u5FEB\u7167\u770B\u7740\u662F\u8FD9\u5F20\u76D8\u7684${at ? `\uFF08\u6700\u65B0\u7684\u5B58\u4E8E ${new Date(at).toLocaleString()}\uFF09` : ""}\uFF0C\u662F\u5728\u522B\u7684\u4EE3\u53F7\u4E0B\u5B58\u7684\uFF08\u540C\u4E00\u5F20\u76D8\u7684\u672C\u673A\u6587\u4EF6 / \u6539\u8FC7\u540D / \u76D8\u53F7\u6CA1\u8BFB\u51FA\u6765\uFF09\u3002\u8FD9\u4E00\u5C40\u5C31\u7528\u90A3\u7EC4\u7684\u4EE3\u53F7\u5B58\u8BFB\u5417\uFF1F\u6587\u4EF6\u4E0D\u4F1A\u88AB\u632A\u52A8\u3002\u4E0D\u7528\u7684\u8BDD\u968F\u65F6\u80FD\u5728\u5FEB\u7167\u9762\u677F\u300C\u522B\u7684\u5FEB\u7167\u300D\u91CC\u9009\u3002`,
+    "\u7528\u90A3\u7EC4",
     "\u4E0D\u7528"
   ),
+  confirmUseGroup: (game) => confirmSheet("\u4E0D\u662F\u8FD9\u5F20\u76D8\u7684\u5FEB\u7167\u7EC4", `\u8FD9\u7EC4\u5FEB\u7167\u662F ${game} \u7684\uFF08\u6307\u7EB9\u548C\u8FD9\u5F20\u76D8\u5BF9\u4E0D\u4E0A\uFF09\u3002\u8FD9\u4E00\u5C40\u6539\u7528\u5B83\u7684\u4EE3\u53F7\u5B58\u8BFB\u7684\u8BDD\uFF0C\u4E4B\u540E\u5B58\u7684\u5FEB\u7167\u90FD\u653E\u8FDB\u90A3\u7EC4\u3002\u6587\u4EF6\u4E0D\u4F1A\u88AB\u632A\u52A8\u3002`, "\u7528\u5B83", "\u4E0D\u7528"),
   say: (text, ms) => say(text, ms)
 };
 function saveTo(slot) {
@@ -10442,6 +10882,22 @@ async function restoreFromDevServer(name) {
   await session.restore(new Uint8Array(await r.arrayBuffer()));
   say(`\u5DF2\u8BFB\u5F00\u53D1\u5FEB\u7167 ${name}`);
 }
+function binsButton(close) {
+  const b = h("button", { onclick: () => {
+    close();
+    openBins(saveManagerContext.titleByKey).catch((e) => banner(errorText(e)));
+  } }, "\u56DE\u6536\u7AD9 / \u5907\u4EFD\u7BB1");
+  const key = current?.key;
+  if (key) listBins(saveManagerContext.titleByKey).then((items) => {
+    const n = items.filter((it) => parseCrumbId(it.identifier)?.key === key).length;
+    if (n) {
+      b.textContent = `\u56DE\u6536\u7AD9 / \u5907\u4EFD\u7BB1\uFF08\u8FD9\u5F20\u76D8 ${n} \u4EFD\uFF09`;
+      b.classList.add("has-bins");
+    }
+  }).catch(() => {
+  });
+  return b;
+}
 var slotsSheetOpen = false;
 function openSlots() {
   if (!snaps) return;
@@ -10464,6 +10920,7 @@ function renderSlots() {
   const byAt = (list) => [...list].sort((a, b) => (ats.get(b.id) ?? b.savedAt) - (ats.get(a.id) ?? a.savedAt));
   const manual = s.slots.filter((x) => x.savedAt && x.kind === "s");
   const auto = s.slots.filter((x) => x.savedAt && x.kind === "a");
+  const history = s.history();
   const manualList = h("div", { class: "slots" });
   const autoList = h("div", { class: "slots" });
   const targetWhen = h("span", { class: "muted" }, targetFilled ? `\u76D6\u6389 ${when(target.savedAt)} \u90A3\u4EFD \xB7 \u80FD\u64A4\u9500` : "");
@@ -10512,15 +10969,16 @@ function renderSlots() {
     });
     return h(
       "div",
-      { class: "slot" },
+      { class: "slot foreign" },
+      // 没缩略图：两列（user 10-15 iPad 截图：文字被挤进 96px 的缩略图列，「col比例不对」）
       h("div", { class: "slot-text" }, title, head),
       h(
         "div",
         { class: "slot-buttons" },
-        h("button", { onclick: () => {
+        h("button", { title: "\u8FD9\u4E00\u5C40\u6539\u7528\u8FD9\u7EC4\u7684\u4EE3\u53F7\u5B58\u8BFB\uFF1B\u6587\u4EF6\u4E0D\u632A\u4E0D\u5220", onclick: () => {
           done();
-          s.adopt(g).catch((e) => banner(errorText(e)));
-        } }, "\u63A5\u5230\u8FD9\u5F20\u76D8"),
+          s.useGroup(g).catch((e) => banner(errorText(e)));
+        } }, "\u8FD9\u4E00\u5C40\u7528\u8FD9\u7EC4\u5FEB\u7167"),
         h("button", { onclick: () => {
           done();
           openForeign(g);
@@ -10568,6 +11026,33 @@ function renderSlots() {
       } }, "\u5B58\u4E00\u4EFD\u65B0\u7684"),
       manual.length ? manualList : h("p", { class: "muted" }, "\u8FD8\u6CA1\u6709\u624B\u52A8\u5FEB\u7167\u3002"),
       h("p", { class: "hint" }, "\u65B0\u7684\u5728\u4E0A\uFF0C\u4E0D\u9650\u4EFD\u6570\u3002\u8BFB\u6863\u4F1A\u4E22\u6389\u624B\u4E0A\u6CA1\u5B58\u7684\u8FDB\u5EA6\uFF0C\u8BFB\u9519\u4E86\u70B9\u300C\u64A4\u9500\u8BFB\u6863\u300D\u56DE\u53BB\u3002"),
+      ...history.length ? [h(
+        "details",
+        { class: "auto-snaps" },
+        h("summary", {}, `\u8986\u76D6\u65F6\u7559\u4E0B\u7684\u5386\u53F2 \xB7 ${history.length} \u4EFD \xB7 \u6700\u8FD1 ${when(history[0].n)}`),
+        h("p", { class: "hint" }, `\u8986\u76D6\u624B\u52A8\u683C\u65F6\u88AB\u76D6\u6389\u7684\u90A3\u4EFD\u4F1A\u7559\u5728\u8FD9\u91CC\uFF0C\u6BCF\u5F20\u76D8\u7559\u6700\u8FD1 ${HISTORY_KEEP} \u4EFD\uFF1B\u66F4\u8001\u7684\u8FDB\u56DE\u6536\u7AD9\u3002\u8BFB\u5B83 = \u56DE\u5230\u90A3\u4E00\u523B\uFF1B\u60F3\u653E\u56DE\u67D0\u4E00\u683C\u5C31\u8BFB\u4E86\u518D\u8986\u76D6\u3002`),
+        h("div", { class: "slots" }, ...history.map((it) => {
+          const thumb = h("div", { class: "thumb" });
+          s.peek(it).then((m) => {
+            if (m?.thumb) thumb.append(h("img", { src: `data:image/jpeg;base64,${m.thumb}`, alt: "" }));
+          });
+          return h(
+            "div",
+            { class: "slot auto" },
+            thumb,
+            h("div", { class: "slot-text" }, h("span", { class: "slot-name" }, slotLabel(it)), h("span", { class: "muted" }, `${when(it.n)}${it.local ? " \xB7 \u672C\u673A" : ""}`)),
+            h(
+              "div",
+              { class: "slot-buttons" },
+              h("button", { title: "\u8BFB\u8FD9\u4E00\u4EFD\uFF1A\u624B\u4E0A\u6CA1\u5B58\u7684\u8FDB\u5EA6\u4F1A\u4E22\uFF08\u80FD\u300C\u64A4\u9500\u8BFB\u6863\u300D\u627E\u56DE\uFF09", onclick: () => {
+                done();
+                loadFrom(it);
+              } }, "\u8BFB"),
+              removeBtn(it.id, done)
+            )
+          );
+        }))
+      )] : [],
       ...auto.length ? [h(
         "details",
         { class: "auto-snaps" },
@@ -10583,10 +11068,7 @@ function renderSlots() {
           done();
           importPcSnapshot();
         } }, "\u4ECE PC \u7248 PPSSPP \u5BFC\u5165\u2026"),
-        h("button", { onclick: () => {
-          done();
-          openBins().catch((e) => banner(errorText(e)));
-        } }, "\u56DE\u6536\u7AD9 / \u5907\u4EFD\u7BB1"),
+        binsButton(() => done()),
         h("button", { onclick: () => done() }, "\u5173\u95ED")
       )
     ];
@@ -10697,6 +11179,7 @@ function openMenu() {
         item("\u5B58\u6863\u7BA1\u7406", "\u8FD9\u5F20\u76D8\u7684\u5FEB\u7167\u548C\u5B58\u6863", () => {
           openSaveManager({ ...saveManagerContext, only: current ? { title: current.title, key: current.key, discId: current.fp.id } : void 0 }).catch((e) => banner(errorText(e)));
         }),
+        item("\u65E5\u5FD7", "\u9ED1\u5323\u5B50\uFF08\u8DE8\u91CD\u8F7D\uFF09", openLog),
         item("\u9000\u51FA\u8FD9\u5F20\u76D8", "\u5B58\u6863\u4F1A\u5148\u540C\u6B65\u5B8C", () => {
           quit().catch((e) => banner(errorText(e)));
         })
@@ -10710,6 +11193,7 @@ function renderHud() {
   if (!session) return;
   const st = session.stats();
   const now = performance.now(), dt = (now - hudPrev.t) / 1e3;
+  feedStall(now, st);
   const up = (netBytes.up - hudPrev.up) / dt, down = st.netBps + (netBytes.down - hudPrev.down) / dt;
   hudPrev = { t: now, up: netBytes.up, down: netBytes.down };
   const rate = (b) => b >= 2 ** 20 ? `${(b / 2 ** 20).toFixed(1)}M` : b >= 1024 ? `${(b / 1024).toFixed(0)}K` : `${b.toFixed(0)}`;
@@ -10884,6 +11368,79 @@ function toggleFullscreen() {
   if (document.fullscreenElement) document.exitFullscreen().catch(() => {
   });
   else $("stage").requestFullscreen({ navigationUI: "hide" }).catch((e) => say(`\u5168\u5C4F\u5931\u8D25\uFF1A${errorText(e)}`));
+}
+var stall = createStallDetector({ stallMs: 3e3, armFrames: 2 });
+var stallSheetOpen = false;
+function feedStall(now, st) {
+  if (!session) return;
+  const v = stall.feed({ now, frames: st.frames, visible: document.visibilityState === "visible", paused: session.paused, held: session.isHeld, waitingDisc: st.netInflight > 0 });
+  if (v === "stalled" && !stallSheetOpen) {
+    logEvent("error", `\u6838\u6CA1\u53CD\u5E94\uFF1A${(stall.stalledForMs(now) / 1e3).toFixed(0)} s \u6CA1\u51FA\u5E27\uFF08\u58F0\u97F3 ${audioContext().state}\uFF0C\u8FFD\u8FDB\u5EA6 ${st.catchup}\uFF0C\u91CD\u951A ${st.reanchors}\uFF0C\u5FAA\u73AF ${st.loopAgeMs < 0 ? "?" : `${st.loopAgeMs.toFixed(0)} ms \u524D`}\uFF0C\u81EA\u6551 ${st.loopRescues}\uFF0CGL ${st.glLost ? "\u4E22\u4E86" : "\u5728"}/\u6062\u590D ${st.glRestores}\uFF09`);
+    openStallSheet();
+  }
+}
+function openStallSheet() {
+  if (!session || stallSheetOpen) return;
+  const s = session;
+  stallSheetOpen = true;
+  const tryRevive = async () => {
+    audioContext().resume().catch(() => {
+    });
+    s.setPaused(false);
+    s.setHold(false);
+    const a0 = s.stats();
+    const f0 = a0.frames;
+    await new Promise((r) => setTimeout(r, 1500));
+    const a1 = s.stats();
+    if (a1.audioState === "running" && !audioAlive(a0, a1)) await rebuildAudio("\u6551\u6D3B\u65F6\u58F0\u97F3\u4E0D\u8D70").catch(() => {
+    });
+    const ok = a1.frames > f0;
+    logEvent(ok ? "info" : "error", ok ? "\u6551\u6D3B\u4E86\uFF08\u5E27\u6570\u53C8\u8D70\u4E86\uFF09" : "\u6CA1\u6551\u6D3B\uFF08\u5E27\u6570\u8FD8\u662F\u4E0D\u52A8\uFF09");
+    say(ok ? "\u6551\u6D3B\u4E86" : "\u6CA1\u6551\u6D3B\uFF1A\u6838\u8FD8\u662F\u4E0D\u52A8\u3002\u8BD5\u300C\u5B58\u5FEB\u7167\u62A2\u6551\u300D\u6216\u91CD\u65B0\u8F7D\u5165", 6e3);
+    if (!ok) {
+      stall.snooze(performance.now());
+      openStallSheet();
+    }
+  };
+  const rescue = async () => {
+    try {
+      await snaps?.save("s", snaps.nextManualSlot().n);
+      logEvent("info", "\u62A2\u6551\u5FEB\u7167\uFF1A\u6838\u7B54\u4E86\uFF0C\u5DF2\u5B58\u6210\u65B0\u7684\u624B\u52A8\u683C");
+    } catch (e) {
+      logEvent("error", `\u62A2\u6551\u5FEB\u7167\u5931\u8D25\uFF1A${errorText(e)}`);
+      banner(`\u62A2\u6551\u5FEB\u7167\u5931\u8D25\uFF1A${errorText(e)}\u3002\u5207\u51FA\u53BB\u90A3\u4E00\u523B\u5B58\u8FC7\u81EA\u52A8\u5FEB\u7167\u7684\u8BDD\uFF0C\u91CD\u65B0\u8F7D\u5165\u540E\u4E3B\u9875\u300C\u7EE7\u7EED\u300D\u80FD\u8BFB\u5230\u3002`);
+    }
+  };
+  void sheet((done) => [
+    h("h2", {}, "\u753B\u9762\u4E0D\u52A8\u4E86\uFF08\u6838\u6CA1\u53CD\u5E94\uFF09"),
+    h("p", {}, "\u5E38\u89C1\u539F\u56E0\uFF1A\u4ECE\u522B\u7684 app / \u9501\u5C4F\u5207\u56DE\u6765\u540E\uFF0C\u7CFB\u7EDF\u628A\u663E\u5361\u4E0A\u4E0B\u6587\u6536\u8D70\u4E86\u3002\u6309\u987A\u5E8F\u8BD5\uFF1A"),
+    h(
+      "div",
+      { class: "menu-list" },
+      h("button", { class: "menu-item", onclick: () => {
+        done();
+        void tryRevive();
+      } }, h("span", {}, "\u8BD5\u7740\u6551\u6D3B"), h("span", { class: "muted" }, "\u6062\u590D\u58F0\u97F3\u3001\u89E3\u9664\u6682\u505C\uFF0C\u770B\u5E27\u6570\u52A8\u4E0D\u52A8")),
+      h("button", { class: "menu-item", onclick: () => {
+        done();
+        void rescue();
+      } }, h("span", {}, "\u5B58\u5FEB\u7167\u62A2\u6551"), h("span", { class: "muted" }, "\u6838\u8FD8\u80FD\u7B54\u5C31\u5B58\u6210\u65B0\u7684\u624B\u52A8\u683C")),
+      h("button", { class: "menu-item", onclick: () => {
+        done();
+        location.reload();
+      } }, h("span", {}, "\u91CD\u65B0\u8F7D\u5165"), h("span", { class: "muted" }, "\u4E3B\u9875\u70B9\u300C\u7EE7\u7EED\u300D\u8BFB\u6700\u65B0\u5FEB\u7167\uFF08\u5207\u51FA\u53BB\u65F6\u5B58\u8FC7\u81EA\u52A8\u5FEB\u7167\uFF09")),
+      h("button", { class: "menu-item", onclick: () => {
+        done();
+        quit().catch((e) => banner(errorText(e)));
+      } }, h("span", {}, "\u9000\u51FA\u8FD9\u5F20\u76D8"), h("span", { class: "muted" }, "\u5B58\u6863\u4F1A\u5148\u540C\u6B65\u5B8C"))
+    ),
+    h("div", { class: "row" }, h("button", { onclick: () => {
+      done();
+      stall.snooze(performance.now() + 27e3);
+    } }, "\u5148\u4E0D\u7BA1\uFF0830 \u79D2\u540E\u518D\u770B\uFF09"))
+  ], { dismissable: false }).then(() => {
+    stallSheetOpen = false;
+  });
 }
 async function quit() {
   const ok = await confirmSheet("\u9000\u51FA\uFF1F", "\u5B58\u6863\u4F1A\u5148\u540C\u6B65\u5B8C\u518D\u9000\u51FA\uFF1B\u4E0D\u4F1A\u81EA\u52A8\u5B58\u5FEB\u7167\u3002", "\u9000\u51FA");
@@ -11372,6 +11929,20 @@ globalThis.kr = {
     askPassword: () => ensurePassword("\u6D4B\u8BD5"),
     hasPassword: () => getPassword() !== null,
     remembered: () => hasRememberedPassword(),
+    openStallSheet: () => openStallSheet(),
+    log: () => dumpLog(),
+    debugLoseGl: () => session?.debugLoseGl() ?? false,
+    history: () => snaps?.history().map((h2) => h2.n) ?? [],
+    rebuildAudio: () => rebuildAudio("\u6D4B\u8BD5"),
+    async titleCacheTest() {
+      const pw = getPassword();
+      if (!pw) return "no password";
+      const card = { title: "\u6D4B\u8BD5\u76D8", fp: { k: "wafer", id: "TEST00001", v: "1.00", size: 123 }, key: "k" };
+      await saveTitleCard(pw, "pantry/test.wafter", 123, card);
+      const got = (await loadTitleCards(pw)).get("pantry/test.wafter");
+      const other = (await loadTitleCards("other-password")).get("pantry/test.wafter");
+      return got?.card.title === "\u6D4B\u8BD5\u76D8" && got.size === 123 && !other ? "ok" : `bad: ${JSON.stringify(got)} / ${JSON.stringify(other)}`;
+    },
     resumeNewest: () => resumeNewest().then((s) => s ? `${s.kind}${s.n}` : null),
     // 探针：同一局里反复「存 → 恢复」n 次，每步报耗时和帧数（查「恢复两次之后核不应答」）
     async stateCycle(n) {
@@ -11401,4 +11972,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-f07b137ec915.mjs.map
+//# sourceMappingURL=kudsrocket-29a0474b916f.mjs.map

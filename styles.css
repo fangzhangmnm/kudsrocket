@@ -91,6 +91,8 @@ button:disabled { opacity: .4; cursor: default; }
 .slots { display: grid; gap: 0; max-height: 60vh; overflow-y: auto; }
 .slot { display: grid; grid-template-columns: 96px 1fr auto; align-items: center; gap: 10px; padding: 6px 0; border-top: 1px solid var(--line); }
 .slot .thumb { width: 96px; aspect-ratio: 480 / 272; background: #000; border-radius: 4px; overflow: hidden; }
+.slot.foreign { grid-template-columns: minmax(0, 1fr) auto; } /* 别的快照那几行没缩略图：两列 */
+.slot.foreign .slot-buttons { flex-wrap: wrap; justify-content: flex-end; }
 .slot .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .slot-text { display: grid; min-width: 0; }
 .slot-buttons { display: flex; gap: 6px; }
@@ -128,6 +130,7 @@ button:disabled { opacity: .4; cursor: default; }
 .syncbar-fill { display: block; height: 100%; width: 35%; background: var(--accent); animation: syncbar-slide 1.4s linear infinite; }
 .syncbar.stuck .syncbar-fill, .syncbar.bad .syncbar-fill { background: var(--err); animation: none; width: 100%; }
 .syncbar.pending .syncbar-fill { background: var(--warn); animation: none; width: 100%; }
+.syncbar.done .syncbar-fill, .syncbar.local .syncbar-fill { animation: none; width: 100%; } /* 传好了 / 存在这台设备了：静态满条，别再转（user 10-15「存档好了下面的蓝条还要转几秒」） */
 .syncbar-text { justify-self: end; margin: 2px 8px 0 0; padding: 2px 10px; border-radius: 999px; font-size: 11px; background: rgba(0,0,0,.6); color: #ddd; }
 .syncbar.stuck .syncbar-text, .syncbar.bad .syncbar-text { background: var(--err); color: #fff; }
 .syncbar.pending .syncbar-text { background: var(--warn); color: #000; }
@@ -189,6 +192,7 @@ button:disabled { opacity: .4; cursor: default; }
 .slot.auto .slot-name { color: var(--ink-soft); }
 .slot-buttons button.small { padding: 6px 10px; font-size: 13px; }
 .undo-row button { border-color: var(--warn); }
+button.has-bins { border-color: var(--warn); }
 /* 快照面板第二版：主按钮 = 覆盖 F2 那格，自动快照折起来。edited 20261014 by Claude Opus 5.5 */
 .sheet .row.save-row { display: grid; grid-template-columns: 1fr auto; gap: 8px; justify-content: stretch; }
 .sheet button.save-main { flex-direction: column; gap: 2px; }
