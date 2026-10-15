@@ -204,8 +204,11 @@ body:has(#game:not([hidden])) > #banners { top: calc(env(safe-area-inset-top) + 
 body:has(#game:not([hidden])) > #update, #stage > #update { left: 50%; right: auto; transform: translateX(-50%); bottom: auto; width: max-content; max-width: calc(100% - 24px); }
 body:has(#game:not([hidden])) > #update { top: calc(env(safe-area-inset-top) + var(--tool) + 6px); }
 body:has(#game:not([hidden])) > #note { top: calc(env(safe-area-inset-top) + var(--tool) + 64px); bottom: auto; }
-#stage > #update { top: calc(env(safe-area-inset-top) + 8px); }
-#stage > #note { top: calc(env(safe-area-inset-top) + 66px); bottom: auto; }
+/* 全屏浮条（截图 · 快照 · 菜单）：只在全屏显示（.fs-test 给无头测试用）；提示 / 有新版本往下让。added 20261015 by Claude Fable 5.1 */
+#fs-bar { display: none; position: absolute; top: calc(env(safe-area-inset-top) + 6px); left: 50%; transform: translateX(-50%); gap: 2px; padding: 2px 4px; border-radius: 10px; background: rgba(10,10,10,.78); border: 1px solid #222; z-index: 6; }
+#stage:fullscreen #fs-bar, #stage.fs-test #fs-bar { display: flex; }
+#stage > #update { top: calc(env(safe-area-inset-top) + 52px); }
+#stage > #note { top: calc(env(safe-area-inset-top) + 110px); bottom: auto; }
 
 /* 工具栏：名字吃掉剩下的宽度；性能读数；按钮带文字（窄屏只留图标 / 字更小）。等读盘 = 红。 */
 .toolbar #title-wrap { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
