@@ -1,5 +1,5 @@
 // src/version.ts
-var APP_VERSION = "v0.1.30-2026-10-15";
+var APP_VERSION = "v0.1.31-2026-10-15";
 
 // assets/icons.svg
 var icons_default = '<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none">\n<!--\n  13 icons extracted from the family icon library (../20260708 SVG Icons/icons.svg) by extract-icons.py \u2014 do not hand-edit; re-run the script instead.\n  Family SVG Icons \u2014 MIT License, Copyright (c) 2026 fangzhangmnm.\n  Contains work derived from (per-icon provenance in data-src):\n    Feather Icons \u2014 MIT License, Copyright (c) 2013-2023 Cole Bemis \xB7 https://github.com/feathericons/feather\n-->\n  <!-- media -->\n  <!-- pause \u2014 \u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="pause" data-cat="media" data-src="own" data-note="\u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="3.2"><path d="M8.3 5.5 V18.5"/><path d="M15.7 5.5 V18.5"/></g></symbol>\n  <!-- play \u2014 \u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="play" data-cat="media" data-src="own" data-note="\u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 5.4 L18.8 12 L8.2 18.6 Z" fill="currentColor"/></symbol>\n  <!-- fast-forward \u2014 \u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="fast-forward" data-cat="media" data-src="own" data-note="\u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.4 6.8 L10.9 12 L4.4 17.2 Z" fill="currentColor"/><path d="M13.1 6.8 L19.6 12 L13.1 17.2 Z" fill="currentColor"/></symbol>\n  <!-- volume \u2014 \u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009) -->\n  <symbol id="volume" data-cat="media" data-src="own" data-note="\u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 10.3 H8.7 L12.6 6.6 V17.4 L8.7 13.7 H5.5 Z" fill="currentColor"/><path d="M15.13 9.73 A3.4 3.4 0 0 1 15.13 14.27"/><path d="M16.36 7.19 A6.1 6.1 0 0 1 16.36 16.81"/></symbol>\n  <!-- file -->\n  <!-- floppy-disk \u2014 \u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3 -->\n  <symbol id="floppy-disk" data-cat="file" data-src="feather:save" data-note="\u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13l3 3v13a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 17 8 17 3"/></symbol>\n  <!-- folder-open \u2014 \u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF -->\n  <symbol id="folder-open" data-cat="file" data-src="own" data-note="\u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18 V7 a2 2 0 0 1 2 -2 h4 l2 2 h6 a2 2 0 0 1 2 2 v1.8"/><path d="M3 18 L6.4 10.8 H21.6 L18.2 18 Z"/></symbol>\n  <!-- hierarchy -->\n  <!-- lock \u2014 \u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D -->\n  <symbol id="lock" data-cat="hierarchy" data-src="own" data-note="\u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10" width="13" height="11"/><path d="M8.8 10 V6.5 a3.2 3.2 0 0 1 6.4 0 V10"/></symbol>\n  <!-- common -->\n  <!-- x \u2014 \u53C9 -->\n  <symbol id="x" data-cat="common" data-src="own" data-note="\u53C9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 L17.5 17.5 M17.5 6.5 L6.5 17.5"/></symbol>\n  <!-- cloud -->\n  <!-- cloud \u2014 \u4E91 -->\n  <symbol id="cloud" data-cat="cloud" data-src="feather:cloud" data-note="\u4E91" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>\n  <!-- viewport -->\n  <!-- maximize-viewport \u2014 \u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55) -->\n  <symbol id="maximize-viewport" data-cat="viewport" data-src="own" data-note="\u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934 --> <polyline points="4 9 4 4 9 4"/> <polyline points="20 9 20 4 15 4"/> <polyline points="4 15 4 20 9 20"/> <polyline points="20 15 20 20 15 20"/></symbol>\n  <!-- ui -->\n  <!-- more \u2014 \u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00) -->\n  <symbol id="more" data-cat="ui" data-src="own" data-note="\u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/></symbol>\n  <!-- keyboard \u2014 \u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49) -->\n  <symbol id="keyboard" data-cat="ui" data-src="own" data-note="\u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="7.2" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="7.2" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><path d="M8.6 15.6 H15.4"/></symbol>\n  <!-- menu \u2014 \u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17) -->\n  <symbol id="menu" data-cat="ui" data-src="own" data-note="\u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"></line> <line x1="4" y1="12" x2="20" y2="12"></line> <line x1="4" y1="17" x2="20" y2="17"></line></symbol>\n</svg>\n';
@@ -204,6 +204,9 @@ var CoreSession = class _CoreSession {
   perfBuf = 0;
   perfPrev = null;
   perf = null;
+  /** 这一秒窗口的排程读数：追进度 / 重锚每秒几次、跑了几帧（0 = 核没在跑，性能读数当作废）。 */
+  win = { catchupPerSec: 0, reanchorsPerSec: 0, ranFrames: 0 };
+  winPrev = { catchup: 0, reanchors: 0 };
   /** 核 stderr 最近几十行（只留像报错 / 诊断的）：日志面板要的。 */
   stderrTail = [];
   /** 显卡名（核起 GL 时问浏览器的；软件渲染 / 老核 = 空）。 */
@@ -436,6 +439,14 @@ var CoreSession = class _CoreSession {
   setSpeed(x) {
     this.core._kr_set_speed(x);
   }
+  /** 排程（运行中可切；核在下一趟 frame() 换 rAF / setImmediate 并重新锚定）：两条线程都不忙、帧率却低时，换一种看帧率变不变 = 分辨「GPU 慢」和「浏览器把 worker 的 rAF 压慢了」。 */
+  setPacing(mode) {
+    this.core._kr_set_pacing(PACE_MODES[mode]);
+  }
+  pacingMode() {
+    const v = this.core._kr_get_pacing();
+    return v === 0 ? "wall" : v === 1 ? "audio" : "vsync";
+  }
   // ── 画 30 帧（移动设备默认；user 10-14「移动设备上应该限速30吧」）：游戏逻辑仍 60，只对本身 60 帧的游戏少画一半（核按 vblank / flip 比判断，30 帧的游戏不再折半）──
   cap30 = false;
   setFrameCap30(on) {
@@ -573,6 +584,11 @@ var CoreSession = class _CoreSession {
       core._kr_pace_stats(this.paceBuf);
       const f = core.HEAPF64.subarray(this.paceBuf >> 3, (this.paceBuf >> 3) + 8);
       this.pace = { mean: f[1], sd: f[2], max: f[3], late: f[4], bunched: f[5], frameMs: f[6], frameMsSd: f[7] };
+      {
+        const c = core._kr_catchup_runs(), r = core._kr_reanchors();
+        this.win = { catchupPerSec: (c - this.winPrev.catchup) * 1e3 / dtMs, reanchorsPerSec: (r - this.winPrev.reanchors) * 1e3 / dtMs, ranFrames };
+        this.winPrev = { catchup: c, reanchors: r };
+      }
       if (core._kr_perf_stats) {
         core._kr_perf_stats(this.perfBuf);
         const p = core.HEAPF64.slice(this.perfBuf >> 3, (this.perfBuf >> 3) + PERF_WORDS);
@@ -629,6 +645,9 @@ var CoreSession = class _CoreSession {
       pacing: ["\u5899\u949F", "\u58F0\u97F3", "\u8DDF\u5C4F\u5E55"][pacing] + (pacing === 2 ? ["\uFF08\u6309\u65F6\u95F4\u5BF9\u9F50\uFF09", "\uFF08\u6BCF\u5237\u65B0 1 \u5E27\uFF09"][core._kr_vsync_lock()] : ""),
       catchup: core._kr_catchup_runs(),
       reanchors: core._kr_reanchors(),
+      /** 核线程 rAF 的间隔（EMA，ms；0 = 不是跟屏幕排程）：Safari 把 worker 的 rAF 压慢时这里 > 16.7。 */
+      vsyncDt: core._kr_vsync_dt(),
+      win: this.win,
       /** 核的帧循环多久没被调用了（ms；-1 = 老核不知道）。大 = 循环死了（rAF 没人调）；小而帧数不走 = 卡在 retro_run 里。 */
       loopAgeMs: core._kr_loop_last_ms ? loopAge(core._kr_loop_last_ms()) : -1,
       loopRescues: core._kr_loop_rescues ? core._kr_loop_rescues() : 0,
@@ -10746,7 +10765,7 @@ async function play(prepare, resume) {
     onInput: () => activity?.input(performance.now()),
     media: disc.media,
     ext: disc.ext,
-    coreDir: "./dist/core-589a1ccb156c/",
+    coreDir: "./dist/core-75cbd681ad57/",
     glCanvas: $("gl"),
     softCanvas: $("screen"),
     audioContext: audioContext(),
@@ -11257,6 +11276,10 @@ function openMenu() {
           s.setFrameCap30(!s.frameCap30);
           renderToolbar();
         }, s.frameCap30),
+        item(s.pacingMode() === "wall" ? "\u6392\u7A0B\uFF1A\u5899\u949F \u2192 \u8DDF\u5C4F\u5E55" : "\u6392\u7A0B\uFF1A\u8DDF\u5C4F\u5E55 \u2192 \u5899\u949F", "\u5E27\u7387\u4F4E\u4F46\u6838\u4E0D\u5FD9\u65F6\u6362\u4E00\u79CD\u5BF9\u7167\uFF08\u8BCA\u65AD\u7528\uFF09", () => {
+          s.setPacing(s.pacingMode() === "wall" ? "vsync" : "wall");
+          renderToolbar();
+        }, s.pacingMode() === "wall"),
         item($("status").hidden ? "\u7EDF\u8BA1\u8BE6\u60C5" : "\u6536\u8D77\u7EDF\u8BA1", "\u5E27\u8282\u594F \xB7 \u58F0\u97F3 \xB7 \u8BFB\u76D8 \xB7 \u624B\u67C4", () => {
           $("status").hidden = !$("status").hidden;
         }),
@@ -11642,9 +11665,13 @@ var pct = (x) => `${(x * 100).toFixed(0)}%`;
 function perfLines(s) {
   const p = s.perf;
   if (!p) return ["\u6838\u7EBF\u7A0B\uFF1A\u8FD8\u6CA1\u6709\u8BFB\u6570\uFF08\u521A\u8D77 / \u8001\u6838\uFF09"];
-  const who = p.emuBusy > 0.85 ? "\u6A21\u62DF\u7EBF\u7A0B\uFF08CPU\uFF1A\u89E3\u91CA\u5668 / \u9876\u70B9\u89E3\u7801\uFF09" : p.submitBusy > 0.7 ? "\u63D0\u4EA4\u7EBF\u7A0B\uFF08GL \u8C03\u7528\u592A\u591A / \u592A\u8D35\uFF09" : s.fps < 50 ? "\u6D4F\u89C8\u5668 / GPU / \u6392\u7A0B\uFF08\u4E24\u6761\u7EBF\u7A0B\u90FD\u4E0D\u7D27\uFF09" : "\u90FD\u4E0D\u7D27";
+  if (s.win.ranFrames === 0) return [`\u6838\u7EBF\u7A0B\uFF1A\u8FD9\u4E00\u79D2\u6CA1\u8DD1\u5E27\uFF08${s.paused ? "\u6682\u505C\u4E2D" : "\u6838\u6CA1\u5728\u8DD1"}\uFF09${s.glRenderer ? ` \xB7 ${s.glRenderer}` : ""}`];
+  const capText = s.frameCap.want ? s.frameCap.active ? "\u751F\u6548" : `\u5F85\u547D\uFF08\u672C\u8EAB ${s.frameCap.nativeFps ? s.frameCap.nativeFps.toFixed(0) + " \u5E27" : "\u672A\u91CF"}\uFF09` : "\u5173";
+  const rafSlow = s.vsyncDt > 21;
+  const who = p.emuBusy > 0.85 ? "\u6A21\u62DF\u7EBF\u7A0B\uFF08CPU\uFF1A\u89E3\u91CA\u5668 / \u9876\u70B9\u89E3\u7801\uFF09" : p.submitBusy > 0.7 ? "\u63D0\u4EA4\u7EBF\u7A0B\uFF08GL \u8C03\u7528\u592A\u591A / \u592A\u8D35\uFF09" : s.fps < 50 && rafSlow ? `\u6392\u7A0B\uFF08\u6838\u7684 rAF \u88AB\u538B\u6162\u5230 ${s.vsyncDt.toFixed(0)} ms\uFF1AGPU \u8FDB\u7A0B\u8DDF\u4E0D\u4E0A\u6216\u6D4F\u89C8\u5668\u8282\u6D41\u2014\u2014\u2630 \u5207\u300C\u5899\u949F\u300D\u5BF9\u7167\uFF09` : s.fps < 50 ? "\u6D4F\u89C8\u5668 / GPU\uFF08\u4E24\u6761\u7EBF\u7A0B\u90FD\u4E0D\u7D27\u3001rAF \u4E5F\u51C6\u65F6\uFF09" : "\u90FD\u4E0D\u7D27";
   return [
     `\u6838\u7EBF\u7A0B\uFF1A\u6A21\u62DF ${pct(p.emuBusy)} \u5FD9 \xB7 \u63D0\u4EA4 ${pct(p.submitBusy)} \u5FD9\uFF08retro_run \u5747 ${p.runMsPerFrame.toFixed(1)} / \u6700\u957F ${p.runMaxMs.toFixed(0)} ms \xB7 \u4E0A\u5C4F ${p.presentMs.toFixed(2)} ms\uFF09\xB7 \u74F6\u9888\uFF1A${who}${p.glErrors ? ` \xB7 GL \u9519\u8BEF 0x${p.glError.toString(16)} \xD7${p.glErrors}` : ""}${s.glRenderer ? ` \xB7 ${s.glRenderer}` : ""}`,
+    `\u6392\u7A0B\uFF1A${s.pacing} \xB7 \u6838 rAF \u95F4\u9694 ${s.vsyncDt ? s.vsyncDt.toFixed(1) + " ms" : "\u2014"} \xB7 \u51FA\u5E27\u95F4\u9694 ${s.pace.mean.toFixed(1)} \xB1 ${s.pace.sd.toFixed(1)} / \u6700\u957F ${s.pace.max.toFixed(0)} ms \xB7 \u8FFD\u8FDB\u5EA6 ${s.win.catchupPerSec.toFixed(0)} \u5E27/s \xB7 \u91CD\u951A ${s.win.reanchorsPerSec.toFixed(1)}/s \xB7 \u8DF3\u5E27 ${s.frameskip} \xB7 \u753B 30 \u5E27\uFF1A${capText} \xB7 \u4E3B\u7EBF\u7A0B ${s.displayHz.toFixed(0)} Hz\uFF08\u6BCF\u6B21\u5237\u65B0\u65B0\u5E27 0/1/2+\uFF1A${s.perRefresh.join("/")}\uFF09`,
     `\u6BCF\u5E27 GL\uFF1A\u753B ${p.draws.toFixed(0)} \u6B21 \xB7 \u6362\u7A0B\u5E8F ${p.prog.toFixed(0)} \xB7 \u8D34\u56FE ${p.tex.toFixed(1)}\uFF08${(p.texPx / 1e3).toFixed(0)}k px\uFF0C${p.texMs.toFixed(2)} ms\uFF09\xB7 \u7F13\u51B2 ${p.buf.toFixed(1)}\uFF08${(p.bufBytes / 1024).toFixed(0)} KB\uFF0C${p.bufMs.toFixed(2)} ms\uFF09\xB7 map ${p.map.toFixed(1)}\uFF08${p.mapMs.toFixed(2)} ms\uFF09\xB7 \u56DE\u8BFB ${p.read.toFixed(1)}\uFF08${p.readMs.toFixed(2)} ms\uFF09\xB7 \u540C\u6B65 ${p.sync.toFixed(1)}\uFF08${p.syncMs.toFixed(2)} ms\uFF09\xB7 blit ${p.blit.toFixed(1)} \xB7 PPSSPP\uFF1Adraw ${p.ppsspp.drawCalls} \xB7 \u9876\u70B9 ${p.ppsspp.vertsSubmitted}\uFF08\u89E3\u7801 ${p.ppsspp.vertsDecoded}\uFF09\xB7 \u8D34\u56FE\u89E3\u7801 ${p.ppsspp.texturesDecoded} \xB7 \u56DE\u8BFB ${p.ppsspp.readbacks} \xB7 \u62F7\u8D1D ${p.ppsspp.copies} \xB7 \u663E\u793A\u5217\u8868 ${p.ppsspp.listMs.toFixed(1)} ms`
   ];
 }
@@ -12081,4 +12108,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-29171bc7945b.mjs.map
+//# sourceMappingURL=kudsrocket-23c0450e961d.mjs.map

@@ -34,6 +34,9 @@ ln -s "$lib" "$assets/libppsspp_libretro.a"
 for f in compat.ini knownfuncs.ini langregion.ini ppge_atlas.meta ppge_atlas.zim font_atlas.meta font_atlas.zim asciifont_atlas.meta asciifont_atlas.zim; do
   cp "$PPSSPP_SRC/assets/$f" "$assets/PPSSPP/"
 done
+# VFPU 查表（assets/vfpu/*.dat，4.8 MB）：PPSSPP 用它们复现 PSP 硬件 sin / cos / rcp / asin / exp2 / log2 的精确位结果（Core/MIPS/MIPSVFPUUtils.cpp LOAD_TABLE）。
+#   10-15 iPad 日志抓到「[CPU] Error loading 'vfpu/vfpu_sin_lut8192.dat' (size=0)」= 以前没打进包，核一直在用近似的浮点回退。
+cp -r "$PPSSPP_SRC/assets/vfpu" "$assets/PPSSPP/"
 
 # 性能量具（host.c「性能量具」节）：核对这些 GLES2 函数的调用在链接时绕到 host.c 的 __wrap_glXxx（计数 / 计时），再转 __real_glXxx。
 wrap=""
