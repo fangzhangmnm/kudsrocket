@@ -128,6 +128,7 @@ button:disabled { opacity: .4; cursor: default; }
 .syncbar-fill { display: block; height: 100%; width: 35%; background: var(--accent); animation: syncbar-slide 1.4s linear infinite; }
 .syncbar.stuck .syncbar-fill, .syncbar.bad .syncbar-fill { background: var(--err); animation: none; width: 100%; }
 .syncbar.pending .syncbar-fill { background: var(--warn); animation: none; width: 100%; }
+.syncbar.done .syncbar-fill, .syncbar.local .syncbar-fill { animation: none; width: 100%; } /* 传好了 / 存在这台设备了：静态满条，别再转（user 10-15「存档好了下面的蓝条还要转几秒」） */
 .syncbar-text { justify-self: end; margin: 2px 8px 0 0; padding: 2px 10px; border-radius: 999px; font-size: 11px; background: rgba(0,0,0,.6); color: #ddd; }
 .syncbar.stuck .syncbar-text, .syncbar.bad .syncbar-text { background: var(--err); color: #fff; }
 .syncbar.pending .syncbar-text { background: var(--warn); color: #000; }
