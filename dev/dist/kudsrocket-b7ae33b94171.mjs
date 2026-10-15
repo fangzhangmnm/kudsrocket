@@ -1,5 +1,5 @@
 // src/version.ts
-var APP_VERSION = "v0.1.26-2026-10-15";
+var APP_VERSION = "v0.1.27-2026-10-15";
 
 // assets/icons.svg
 var icons_default = '<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none">\n<!--\n  13 icons extracted from the family icon library (../20260708 SVG Icons/icons.svg) by extract-icons.py \u2014 do not hand-edit; re-run the script instead.\n  Family SVG Icons \u2014 MIT License, Copyright (c) 2026 fangzhangmnm.\n  Contains work derived from (per-icon provenance in data-src):\n    Feather Icons \u2014 MIT License, Copyright (c) 2013-2023 Cole Bemis \xB7 https://github.com/feathericons/feather\n-->\n  <!-- media -->\n  <!-- pause \u2014 \u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="pause" data-cat="media" data-src="own" data-note="\u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="3.2"><path d="M8.3 5.5 V18.5"/><path d="M15.7 5.5 V18.5"/></g></symbol>\n  <!-- play \u2014 \u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="play" data-cat="media" data-src="own" data-note="\u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 5.4 L18.8 12 L8.2 18.6 Z" fill="currentColor"/></symbol>\n  <!-- fast-forward \u2014 \u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="fast-forward" data-cat="media" data-src="own" data-note="\u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.4 6.8 L10.9 12 L4.4 17.2 Z" fill="currentColor"/><path d="M13.1 6.8 L19.6 12 L13.1 17.2 Z" fill="currentColor"/></symbol>\n  <!-- volume \u2014 \u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009) -->\n  <symbol id="volume" data-cat="media" data-src="own" data-note="\u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 10.3 H8.7 L12.6 6.6 V17.4 L8.7 13.7 H5.5 Z" fill="currentColor"/><path d="M15.13 9.73 A3.4 3.4 0 0 1 15.13 14.27"/><path d="M16.36 7.19 A6.1 6.1 0 0 1 16.36 16.81"/></symbol>\n  <!-- file -->\n  <!-- floppy-disk \u2014 \u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3 -->\n  <symbol id="floppy-disk" data-cat="file" data-src="feather:save" data-note="\u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13l3 3v13a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 17 8 17 3"/></symbol>\n  <!-- folder-open \u2014 \u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF -->\n  <symbol id="folder-open" data-cat="file" data-src="own" data-note="\u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18 V7 a2 2 0 0 1 2 -2 h4 l2 2 h6 a2 2 0 0 1 2 2 v1.8"/><path d="M3 18 L6.4 10.8 H21.6 L18.2 18 Z"/></symbol>\n  <!-- hierarchy -->\n  <!-- lock \u2014 \u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D -->\n  <symbol id="lock" data-cat="hierarchy" data-src="own" data-note="\u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10" width="13" height="11"/><path d="M8.8 10 V6.5 a3.2 3.2 0 0 1 6.4 0 V10"/></symbol>\n  <!-- common -->\n  <!-- x \u2014 \u53C9 -->\n  <symbol id="x" data-cat="common" data-src="own" data-note="\u53C9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 L17.5 17.5 M17.5 6.5 L6.5 17.5"/></symbol>\n  <!-- cloud -->\n  <!-- cloud \u2014 \u4E91 -->\n  <symbol id="cloud" data-cat="cloud" data-src="feather:cloud" data-note="\u4E91" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>\n  <!-- viewport -->\n  <!-- maximize-viewport \u2014 \u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55) -->\n  <symbol id="maximize-viewport" data-cat="viewport" data-src="own" data-note="\u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934 --> <polyline points="4 9 4 4 9 4"/> <polyline points="20 9 20 4 15 4"/> <polyline points="4 15 4 20 9 20"/> <polyline points="20 15 20 20 15 20"/></symbol>\n  <!-- ui -->\n  <!-- more \u2014 \u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00) -->\n  <symbol id="more" data-cat="ui" data-src="own" data-note="\u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/></symbol>\n  <!-- keyboard \u2014 \u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49) -->\n  <symbol id="keyboard" data-cat="ui" data-src="own" data-note="\u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="7.2" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="7.2" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><path d="M8.6 15.6 H15.4"/></symbol>\n  <!-- menu \u2014 \u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17) -->\n  <symbol id="menu" data-cat="ui" data-src="own" data-note="\u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"></line> <line x1="4" y1="12" x2="20" y2="12"></line> <line x1="4" y1="17" x2="20" y2="17"></line></symbol>\n</svg>\n';
@@ -7140,7 +7140,7 @@ async function isEncrypted(src) {
     throw e;
   }
 }
-async function unwrap(src, name, password) {
+async function unwrap(src, name, password, fallbackKey) {
   let media = src, original = name, opened = null;
   if (await isEncrypted(src)) {
     const pw = password ?? sessionPassword;
@@ -7152,7 +7152,8 @@ async function unwrap(src, name, password) {
   }
   const fp = await fingerprintOf(media, opened?.meta.fp);
   const keyFromGame = !!fp.id;
-  const key = keyFromGame ? await gameKey(fp) : await discKey(stemOf2(name));
+  const key = keyFromGame ? await gameKey(fp) : fallbackKey ?? await discKey(stemOf2(name));
+  if (!keyFromGame) console.warn("[disc] disc id unreadable; key =", fallbackKey ? "cached card" : "file name");
   return { media, ext: extOf(original), title: stemOf2(original), fp, key, keyFromGame };
 }
 async function fingerprintOf(media, fromMeta) {
@@ -7197,10 +7198,10 @@ function withReadAhead(stream) {
     }
   };
 }
-async function fromPantry(identifier, password) {
+async function fromPantry(identifier, password, fallbackKey) {
   const stream = await getStore().file(identifier, { mode: "existing" }).openStream();
   if (!stream) throw new Error("\u8FD9\u5F20\u76D8\u73B0\u5728\u62FF\u4E0D\u5230\uFF08\u6CA1\u767B\u5F55\u3001\u79BB\u7EBF\uFF0C\u6216\u8005\u4E91\u7AEF\u5DF2\u7ECF\u6CA1\u6709\u4E86\uFF09");
-  return { ...await unwrap(withReadAhead(stream), identifier, password), identifier };
+  return { ...await unwrap(withReadAhead(stream), identifier, password, fallbackKey), identifier };
 }
 async function inspectPantry(identifier) {
   const encrypted = identifier.endsWith(".wafter");
@@ -8321,8 +8322,9 @@ function unzipSync(data, opts) {
 
 // src/app/saves.ts
 var sessionSalt = crypto.getRandomValues(new Uint8Array(16));
+var HISTORY_KEEP = 3;
 var crumbId = (key, kind, n) => `${CRUMBS}/${key}-${kind}${n}${CRUMB_SUFFIX}`;
-var CRUMB_RE = new RegExp(`^${CRUMBS}/([0-9a-f]{16})-([sa])([0-9]+)\\${CRUMB_SUFFIX}$`);
+var CRUMB_RE = new RegExp(`^${CRUMBS}/([0-9a-f]{16})-([sah])([0-9]+)\\${CRUMB_SUFFIX}$`);
 function parseCrumbId(id) {
   const m = CRUMB_RE.exec(id);
   return m ? { key: m[1], kind: m[2], n: Number(m[3]) } : null;
@@ -8387,6 +8389,15 @@ async function get2(identifier) {
 }
 async function ensureLineage(identifier) {
   const f = getStore().file(identifier, { mode: "existing" });
+  if (navigator.onLine) {
+    const r = await f.pullIfClean().catch((e) => {
+      console.warn("[lineage]", e);
+      return null;
+    });
+    if (r && (r.status === "in-sync" || r.status === "fast-forwarded" || r.status === "cloud-absent")) return true;
+    if (r && r.status === "dirty-skip") return false;
+    if (r && (r.status === "cloud-error" || r.status === "ff-failed" || r.status === "escaped")) return false;
+  }
   if (await f.isKeptOffline()) return true;
   return await f.open().catch(() => null) != null;
 }
@@ -8433,8 +8444,9 @@ async function deleteSnapshot(identifier) {
   const r = await getStore().file(identifier, { mode: "existing" }).delete();
   return r.status !== "cancelled" && r.status !== "noop";
 }
-async function tidyLocalSnapshots(slots) {
+async function tidyLocalSnapshots(slots, history = []) {
   const have = slots.filter((s) => s.kind === "s" && s.savedAt && s.local).sort((a, b) => b.savedAt - a.savedAt).slice(LOCAL_SNAPSHOTS_KEPT);
+  for (const h2 of history) if (h2.local) have.push(h2);
   let n = 0;
   for (const s of have) {
     try {
@@ -8560,15 +8572,19 @@ async function deleteJam(identifier) {
   const r = await getStore().file(identifier, { mode: "existing" }).delete();
   return r.status !== "cancelled" && r.status !== "noop";
 }
-async function listBins() {
+async function listBins(titleByKey) {
   const store2 = getStore();
   const [trash, backup] = await Promise.all([store2.files.listTrash(), store2.files.listBackup()]);
-  const mk = (bin) => (t) => ({ bin, identifier: t.identifier, label: labelOfBinned(t.identifier), ts: t.ts, side: t.side, raw: { localKey: t.localKey, cloudRef: t.cloudRef, encrypted: t.encrypted } });
+  const mk = (bin) => (t) => ({ bin, identifier: t.identifier, label: labelOfBinned(t.identifier, titleByKey), ts: t.ts, side: t.side, raw: { localKey: t.localKey, cloudRef: t.cloudRef, encrypted: t.encrypted } });
   return [...trash.map(mk("trash")), ...backup.map(mk("backup"))].sort((a, b) => (b.ts ?? "").localeCompare(a.ts ?? ""));
 }
-function labelOfBinned(identifier) {
+function labelOfBinned(identifier, titleByKey) {
   const c = parseCrumbId(identifier);
-  if (c) return `\u5FEB\u7167\uFF08${c.kind === "s" ? "\u624B\u52A8" : "\u81EA\u52A8"} ${c.n}\uFF0C\u76D8 ${c.key.slice(0, 6)}\u2026\uFF09`;
+  if (c) {
+    const game = titleByKey?.(c.key) ?? `\u76D8 ${c.key.slice(0, 6)}\u2026`;
+    const slot = c.kind === "h" ? `\u5386\u53F2\uFF08\u5B58\u4E8E ${new Date(c.n).toLocaleString()}\uFF09` : `${c.kind === "s" ? "\u624B\u52A8" : "\u81EA\u52A8"} ${c.n}`;
+    return `\u5FEB\u7167 ${slot} \xB7 ${game}`;
+  }
   if (identifier.endsWith(JAM_SUFFIX)) return "\u5B58\u6863\uFF08\u4E00\u7F50\uFF09";
   return identifier.replace(/^.*\//, "");
 }
@@ -9310,7 +9326,7 @@ function decompress(dat, buf) {
 // src/app/snapshots.ts
 var SAVE_DEADLINE_MS = 2e4;
 var fpSame = (saved, now) => !!saved && fpCompatible(saved, now);
-var slotLabel = (s) => `${s.kind === "s" ? "\u624B\u52A8" : "\u81EA\u52A8"} ${s.n}`;
+var slotLabel = (s) => s.kind === "h" ? `\u5386\u53F2 ${new Date(s.n).toLocaleString()}` : `${s.kind === "s" ? "\u624B\u52A8" : "\u81EA\u52A8"} ${s.n}`;
 var Snapshots = class {
   constructor(session2, disc, verbs, onChange) {
     this.session = session2;
@@ -9462,8 +9478,10 @@ var Snapshots = class {
         n = alt.n;
         label = slotLabel({ kind, n });
       }
-      let old = null;
+      let old = null, oldAt = 0;
       if (!auto && kind === "s" && this.slots.some((x) => x.kind === "s" && x.n === n && x.savedAt)) {
+        const existing = this.slots.find((x) => x.kind === "s" && x.n === n);
+        oldAt = (await this.peek(existing).catch(() => null))?.at ?? existing.savedAt ?? Date.now();
         old = await readSealed(crumbId(this.disc.key, kind, n)).catch(() => null);
         if (!old) {
           const fresh = this.nextManualSlot();
@@ -9482,20 +9500,25 @@ var Snapshots = class {
       const r = await withDeadline(
         saveSnapshot(id, state2, { thumb, at, auto, fp: this.disc.fp, title: this.disc.title }, pw, { deferPush: hidden }),
         SAVE_DEADLINE_MS,
-        (late) => logEvent(late.ok ? "info" : "warn", late.ok ? `\u300C${label}\u300D\u90A3\u6B21\u8FDF\u5230\u7684\u4E0A\u4F20${late.value.pushed ? "\u4F20\u597D\u4E86" : "\u6CA1\u4F20\u4E0A\u53BB\uFF08\u4F1A\u7EED\u63A8\uFF09"}` : `\u300C${label}\u300D\u90A3\u6B21\u8FDF\u5230\u7684\u4E0A\u4F20\u51FA\u9519\uFF1A${String(late.error)}`)
+        (late) => {
+          if (!late.ok && auto) this.leaveFailed = true;
+          logEvent(late.ok ? "info" : "warn", late.ok ? `\u300C${label}\u300D\u90A3\u6B21\u8FDF\u5230\u7684\u4E0A\u4F20${late.value.pushed ? "\u4F20\u597D\u4E86" : "\u6CA1\u4F20\u4E0A\u53BB\uFF08\u4F1A\u7EED\u63A8\uFF09"}` : `\u300C${label}\u300D\u90A3\u6B21\u8FDF\u5230\u7684\u4E0A\u4F20\u51FA\u9519\uFF1A${String(late.error)}`);
+        }
       );
+      this.metaCache.delete(id);
       if (r === "timeout") {
         logEvent("warn", `\u5B58\u300C${label}\u300D${SAVE_DEADLINE_MS / 1e3} s \u8FD8\u6CA1\u7ED3\u675F\uFF1A\u5148\u653E\u5F00\uFF0C\u672C\u673A\u90A3\u4EFD\u4F1A\u843D\u4E0B\u3001\u4E91\u7AEF\u81EA\u52A8\u7EED\u63A8\uFF1B\u8FD9\u6B21\u4E0D\u7559\u64A4\u9500`);
         this.verbs.say(`\u300C${label}\u300D\u4E0A\u4F20\u5F88\u6162\uFF0C\u5148\u653E\u5F00\u8BA9\u4F60\u80FD\u63A5\u7740\u5B58\uFF1B\u4F1A\u81EA\u52A8\u7EED\u4F20`, 6e3);
         return;
       }
+      if (old) void this.keepHistory(old, oldAt);
       if (!auto) {
         this.undoSaveInfo = { id, label, old, newAt: at };
         putGuard({ kind: "save", discKey: this.disc.key, id, label, old: old ? new Blob([old]) : null, newAt: at, at }).catch((e) => console.warn("[undo-guard] save", e));
       }
       if (r.pushed) {
         recheckAfterPush(id).then((v) => logEvent("info", `\u63A8\u5B8C\u590D\u6838 ${label}\uFF1A${v}`), (e) => logEvent("warn", `\u63A8\u5B8C\u590D\u6838 ${label} \u5931\u8D25\uFF1A${String(e)}`));
-        tidyLocalSnapshots(this.slots).catch((e) => console.warn("[tidy]", e));
+        tidyLocalSnapshots(this.slots, this.history()).catch((e) => console.warn("[tidy]", e));
       }
     } finally {
       endLocal();
@@ -9540,6 +9563,25 @@ var Snapshots = class {
       this.busy = false;
     }
   }
+  /** 这张盘的历史份（手动覆盖时被盖掉的），新的在前。 */
+  history() {
+    return this.all.filter((c) => c.key === this.disc.key && c.kind === "h").sort((a, b) => b.n - a.n);
+  }
+  /** 把被盖掉的那份存成历史（新文件，不留本机副本），多出 HISTORY_KEEP 的最老的进回收站。user 10-15「手动覆盖时，被盖的那份自动留进「历史」，保留最近 3 份 同意」。 */
+  async keepHistory(sealed, at) {
+    const id = crumbId(this.disc.key, "h", at || Date.now());
+    try {
+      if (this.all.some((c) => c.id === id)) return;
+      await putSealed(id, sealed);
+      logEvent("info", `\u5386\u53F2\uFF1A\u7559\u4E0B\u88AB\u76D6\u6389\u7684\u90A3\u4EFD\uFF08\u5B58\u4E8E ${new Date(at).toLocaleString()}\uFF09`);
+      for (const h2 of this.history().filter((c) => c.id !== id).slice(HISTORY_KEEP - 1)) {
+        logEvent("info", `\u5386\u53F2\uFF1A\u8D85\u8FC7 ${HISTORY_KEEP} \u4EFD\uFF0C\u6700\u8001\u7684\u8FDB\u56DE\u6536\u7AD9\uFF08${slotLabel(h2)}\uFF09`);
+        await deleteSnapshot(h2.id).catch((e) => console.warn("[history]", e));
+      }
+    } catch (e) {
+      logEvent("warn", `\u5386\u53F2\u4EFD\u6CA1\u5B58\u4E0A\uFF1A${String(e)}`);
+    }
+  }
   /** 自动快照：先填空格，满了覆盖最旧的（刚接上的不算）。 */
   async auto() {
     await this.tryHeal();
@@ -9559,8 +9601,24 @@ var Snapshots = class {
     if (this.playedSinceSnap >= AUTO_EVERY_MS) this.auto().catch((e) => console.warn("[auto snapshot]", e));
   }
   /** 切到后台 / 退出前：离上次快照玩过一阵了就存一份。 */
+  leaveFailed = false;
   async onLeave() {
-    if (this.playedSinceSnap >= AUTO_MIN_GAP_MS) await this.auto();
+    if (this.playedSinceSnap < AUTO_MIN_GAP_MS) return;
+    try {
+      await this.auto();
+      this.leaveFailed = false;
+    } catch (e) {
+      this.leaveFailed = true;
+      logEvent("warn", `\u79BB\u5F00\u65F6\u7684\u81EA\u52A8\u5FEB\u7167\u6CA1\u6210\uFF1A${String(e)}`);
+      throw e;
+    }
+  }
+  /** 回到前台：离开时那份自动快照没成（iOS 冻住页面让 IDB 写超时，10-15 日志「store：timeout」）就补一份。 */
+  async onWake() {
+    if (!this.leaveFailed) return;
+    this.leaveFailed = false;
+    logEvent("info", "\u79BB\u5F00\u65F6\u7684\u81EA\u52A8\u5FEB\u7167\u6CA1\u6210\uFF0C\u56DE\u6765\u8865\u4E00\u4EFD");
+    await this.auto();
   }
   /** 读一格（这张盘的，或别的代号下的）。指纹对不上先问人；人说不读就返回 false。 */
   async load(slot) {
@@ -9629,6 +9687,7 @@ var Snapshots = class {
       return;
     }
     const keep = this.nextManualSlot();
+    logEvent("warn", `\u64A4\u9500\u5B58\u6863\uFF08\u8986\u76D6\uFF09\uFF1A\u521A\u5B58\u7684 ${u.id} \u632A\u5230 ${keep.id}\uFF0C\u539F\u6765\u90A3\u4EFD\u5199\u56DE`);
     if (!await moveSnapshot(u.id, keep.id)) throw new Error(`\u6CA1\u80FD\u628A\u521A\u5B58\u7684\u90A3\u4EFD\u632A\u5230\u300C${slotLabel(keep)}\u300D\uFF0C\u64A4\u9500\u6CA1\u505A\uFF08\u4E24\u4EFD\u90FD\u8FD8\u5728\u539F\u5904\uFF09`);
     await putSealed(u.id, u.old);
     this.verbs.say(`\u5DF2\u64A4\u9500\uFF1A\u300C${u.label}\u300D\u6362\u56DE\u539F\u6765\u90A3\u4EFD\uFF1B\u521A\u5B58\u7684\u90A3\u4EFD\u5728\u300C${slotLabel(keep)}\u300D`, 8e3);
@@ -9663,7 +9722,7 @@ var Snapshots = class {
   /** crumbs/ 里不是这张盘代号的快照，按主人分组、新的在前。面板全列出来：能读、能接、能删——自动不猜的人来做。 */
   foreign() {
     const groups = /* @__PURE__ */ new Map();
-    for (const c of this.all) if (c.key !== this.disc.key) groups.set(c.key, [...groups.get(c.key) ?? [], c]);
+    for (const c of this.all) if (c.key !== this.disc.key && c.kind !== "h") groups.set(c.key, [...groups.get(c.key) ?? [], c]);
     return [...groups].map(([key, items]) => ({ key, items: items.sort((a, b) => b.savedAt - a.savedAt), newestAt: Math.max(...items.map((i) => i.savedAt)) })).sort((a, b) => b.newestAt - a.newestAt);
   }
   /** 把一组快照接到这张盘上（人点的）。手动的接成新号（不盖现有的），自动的接进空格；没空格的留在原处。返回接上了几个。 */
@@ -9710,10 +9769,10 @@ var fmtTs = (ts) => ts && ts.length >= 12 ? `${ts.slice(0, 4)}-${ts.slice(4, 6)}
 var fmtWhen = (t) => t ? new Date(t).toLocaleString() : "";
 var fmtSize = (n) => n ? n >= 2 ** 20 ? `${(n / 2 ** 20).toFixed(1)} MB` : `${(n / 1024).toFixed(0)} KB` : "";
 var sideText = { local: "\u53EA\u5728\u8FD9\u53F0\u8BBE\u5907", cloud: "\u53EA\u5728\u4E91\u7AEF", both: "\u4E24\u8FB9\u90FD\u6709" };
-async function openBins() {
+async function openBins(titleByKey) {
   let items;
   try {
-    items = await withBusy("\u6B63\u5728\u5217\u56DE\u6536\u7AD9\u2026", listBins);
+    items = await withBusy("\u6B63\u5728\u5217\u56DE\u6536\u7AD9\u2026", () => listBins(titleByKey));
   } catch (e) {
     banner(`\u5217\u4E0D\u51FA\u56DE\u6536\u7AD9\uFF1A${errorText(e)}`);
     return;
@@ -9878,7 +9937,7 @@ async function openSaveManager(ctx) {
         { class: "row" },
         h("button", { onclick: () => {
           done();
-          openBins().catch((e) => banner(errorText(e)));
+          openBins(ctx.titleByKey).catch((e) => banner(errorText(e)));
         } }, "\u56DE\u6536\u7AD9 / \u5907\u4EFD\u7BB1"),
         h("button", { onclick: () => {
           done();
@@ -10368,7 +10427,7 @@ function renderLibrary() {
       openSaveManager(saveManagerContext).catch((e) => banner(errorText(e)));
     } }, "\u5B58\u6863\u7BA1\u7406"),
     h("button", { onclick: () => {
-      openBins().catch((e) => banner(errorText(e)));
+      openBins(saveManagerContext.titleByKey).catch((e) => banner(errorText(e)));
     } }, "\u56DE\u6536\u7AD9 / \u5907\u4EFD\u7BB1")
   ));
   list.replaceChildren(...rows);
@@ -10516,7 +10575,8 @@ async function withPassword(open, what) {
 }
 function playFromPantry(identifier, resume) {
   audioContext();
-  runPlay(() => withPassword((pw) => fromPantry(identifier, pw), "\u8FD9\u5F20\u76D8"), resume);
+  const cachedKey = cards.get(identifier)?.key ?? titleCache?.get(identifier)?.card.key;
+  runPlay(() => withPassword((pw) => fromPantry(identifier, pw, cachedKey), "\u8FD9\u5F20\u76D8"), resume);
 }
 function playLocal(file) {
   audioContext();
@@ -10625,6 +10685,7 @@ async function play(prepare, resume) {
         if (!soundOk) rebuildAudio("\u56DE\u6765\u540E\u58F0\u97F3\u4E0D\u8D70").catch((e) => logEvent("error", `\u58F0\u97F3\u91CD\u5EFA\u5931\u8D25\uFF1A${errorText(e)}`));
       }, 2e3);
       snaps?.refresh();
+      snaps?.onWake().catch((e) => console.warn("[wake snapshot]", e));
       return;
     }
     logEvent("info", `\u5207\u5230\u540E\u53F0\uFF1A\u5E27 ${session.stats().frames}\uFF0C\u58F0\u97F3 ${audioContext().state}`);
@@ -10825,6 +10886,7 @@ function renderSlots() {
   const byAt = (list) => [...list].sort((a, b) => (ats.get(b.id) ?? b.savedAt) - (ats.get(a.id) ?? a.savedAt));
   const manual = s.slots.filter((x) => x.savedAt && x.kind === "s");
   const auto = s.slots.filter((x) => x.savedAt && x.kind === "a");
+  const history = s.history();
   const manualList = h("div", { class: "slots" });
   const autoList = h("div", { class: "slots" });
   const targetWhen = h("span", { class: "muted" }, targetFilled ? `\u76D6\u6389 ${when(target.savedAt)} \u90A3\u4EFD \xB7 \u80FD\u64A4\u9500` : "");
@@ -10930,6 +10992,33 @@ function renderSlots() {
       } }, "\u5B58\u4E00\u4EFD\u65B0\u7684"),
       manual.length ? manualList : h("p", { class: "muted" }, "\u8FD8\u6CA1\u6709\u624B\u52A8\u5FEB\u7167\u3002"),
       h("p", { class: "hint" }, "\u65B0\u7684\u5728\u4E0A\uFF0C\u4E0D\u9650\u4EFD\u6570\u3002\u8BFB\u6863\u4F1A\u4E22\u6389\u624B\u4E0A\u6CA1\u5B58\u7684\u8FDB\u5EA6\uFF0C\u8BFB\u9519\u4E86\u70B9\u300C\u64A4\u9500\u8BFB\u6863\u300D\u56DE\u53BB\u3002"),
+      ...history.length ? [h(
+        "details",
+        { class: "auto-snaps" },
+        h("summary", {}, `\u8986\u76D6\u65F6\u7559\u4E0B\u7684\u5386\u53F2 \xB7 ${history.length} \u4EFD \xB7 \u6700\u8FD1 ${when(history[0].n)}`),
+        h("p", { class: "hint" }, `\u8986\u76D6\u624B\u52A8\u683C\u65F6\u88AB\u76D6\u6389\u7684\u90A3\u4EFD\u4F1A\u7559\u5728\u8FD9\u91CC\uFF0C\u6BCF\u5F20\u76D8\u7559\u6700\u8FD1 ${HISTORY_KEEP} \u4EFD\uFF1B\u66F4\u8001\u7684\u8FDB\u56DE\u6536\u7AD9\u3002\u8BFB\u5B83 = \u56DE\u5230\u90A3\u4E00\u523B\uFF1B\u60F3\u653E\u56DE\u67D0\u4E00\u683C\u5C31\u8BFB\u4E86\u518D\u8986\u76D6\u3002`),
+        h("div", { class: "slots" }, ...history.map((it) => {
+          const thumb = h("div", { class: "thumb" });
+          s.peek(it).then((m) => {
+            if (m?.thumb) thumb.append(h("img", { src: `data:image/jpeg;base64,${m.thumb}`, alt: "" }));
+          });
+          return h(
+            "div",
+            { class: "slot auto" },
+            thumb,
+            h("div", { class: "slot-text" }, h("span", { class: "slot-name" }, slotLabel(it)), h("span", { class: "muted" }, `${when(it.n)}${it.local ? " \xB7 \u672C\u673A" : ""}`)),
+            h(
+              "div",
+              { class: "slot-buttons" },
+              h("button", { title: "\u8BFB\u8FD9\u4E00\u4EFD\uFF1A\u624B\u4E0A\u6CA1\u5B58\u7684\u8FDB\u5EA6\u4F1A\u4E22\uFF08\u80FD\u300C\u64A4\u9500\u8BFB\u6863\u300D\u627E\u56DE\uFF09", onclick: () => {
+                done();
+                loadFrom(it);
+              } }, "\u8BFB"),
+              removeBtn(it.id, done)
+            )
+          );
+        }))
+      )] : [],
       ...auto.length ? [h(
         "details",
         { class: "auto-snaps" },
@@ -10947,7 +11036,7 @@ function renderSlots() {
         } }, "\u4ECE PC \u7248 PPSSPP \u5BFC\u5165\u2026"),
         h("button", { onclick: () => {
           done();
-          openBins().catch((e) => banner(errorText(e)));
+          openBins(saveManagerContext.titleByKey).catch((e) => banner(errorText(e)));
         } }, "\u56DE\u6536\u7AD9 / \u5907\u4EFD\u7BB1"),
         h("button", { onclick: () => done() }, "\u5173\u95ED")
       )
@@ -11851,4 +11940,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-0b9481909b78.mjs.map
+//# sourceMappingURL=kudsrocket-b7ae33b94171.mjs.map
