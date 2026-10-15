@@ -7955,6 +7955,7 @@ async function ensureIsolation() {
   navigator.serviceWorker.addEventListener("message", (e) => {
     if (e.data?.type === "asset-updated") showUpdate();
   });
+  if (reg) watchUpdates(reg);
   if (crossOriginIsolated) return true;
   if (!reg || navigator.serviceWorker.controller) return false;
   await new Promise((r) => navigator.serviceWorker.addEventListener("controllerchange", r, { once: true }));
@@ -7962,11 +7963,44 @@ async function ensureIsolation() {
   return new Promise(() => {
   });
 }
+function watchUpdates(reg) {
+  const live = () => !!navigator.serviceWorker.controller;
+  if (reg.waiting && live()) showUpdate();
+  reg.addEventListener("updatefound", () => {
+    const w = reg.installing;
+    w?.addEventListener("statechange", () => {
+      if ((w.state === "installed" || w.state === "activated") && live()) showUpdate();
+    });
+  });
+  const check = () => {
+    if (document.visibilityState === "visible") reg.update().catch(() => {
+    });
+  };
+  document.addEventListener("visibilitychange", check);
+  addEventListener("focus", check);
+  setInterval(check, 10 * 6e4);
+}
 function showUpdate() {
   const el = $("update");
   if (!el.hidden) return;
-  el.replaceChildren(h("span", {}, "\u6709\u65B0\u7248\u672C"), h("button", { onclick: () => location.reload() }, session ? "\u91CD\u65B0\u8F7D\u5165\uFF08\u8FD9\u4E00\u5C40\u4F1A\u9000\u51FA\uFF09" : "\u91CD\u65B0\u8F7D\u5165"));
+  const close = h("button", { class: "icon-btn", title: "\u5148\u4E0D\u7BA1" }, icon("x"));
+  close.addEventListener("click", () => {
+    el.hidden = true;
+  });
+  el.replaceChildren(h("span", {}, "\u6709\u65B0\u7248\u672C"), h("button", { class: "primary", onclick: () => location.reload() }, session ? "\u91CD\u65B0\u8F7D\u5165\uFF08\u8FD9\u4E00\u5C40\u4F1A\u9000\u51FA\uFF09" : "\u91CD\u65B0\u8F7D\u5165"), close);
   el.hidden = false;
+}
+async function forceUpdate() {
+  if (!await confirmSheet("\u5F3A\u5236\u66F4\u65B0\uFF1F", `\u73B0\u5728\u662F ${APP_VERSION}\u3002\u4F1A\u6E05\u6389\u8FD9\u4E2A app \u81EA\u5DF1\u7684\u79BB\u7EBF\u58F3\u7F13\u5B58\u5E76\u91CD\u65B0\u8F7D\u5165${session ? "\uFF08\u8FD9\u4E00\u5C40\u4F1A\u9000\u51FA\uFF09" : ""}\uFF1B\u5B58\u6863\u3001\u5FEB\u7167\u3001\u767B\u5F55\u72B6\u6001\u90FD\u4E0D\u52A8\u3002`, "\u66F4\u65B0")) return;
+  try {
+    const reg = await navigator.serviceWorker?.getRegistration();
+    await reg?.unregister();
+    const keys = await caches.keys();
+    await Promise.all(keys.filter((k) => k.startsWith("kudsrocket-")).map((k) => caches.delete(k)));
+  } catch (e) {
+    console.warn("[force-update]", e);
+  }
+  location.reload();
 }
 var session = null;
 var current = null;
@@ -8491,6 +8525,8 @@ function renderToolbar() {
     toolButton("more", "\u7EDF\u8BA1", () => {
       $("status").hidden = !$("status").hidden;
     }),
+    h("span", { class: "muted ver", title: "\u7248\u672C" }, APP_VERSION),
+    // 版本水印：更新有没有生效，看这里（家族规矩：一直在屏幕上，不藏菜单里）
     toolButton("x", "\u9000\u51FA\u8FD9\u5F20\u76D8", quit)
   );
   $("paused-mark").hidden = !paused;
@@ -8713,6 +8749,13 @@ async function boot() {
   mountIcons();
   mountOverlays();
   $("version").textContent = APP_VERSION;
+  $("version").title = "\u70B9\u4E00\u4E0B\uFF1A\u5F3A\u5236\u66F4\u65B0";
+  $("version").addEventListener("click", () => {
+    forceUpdate().catch((e) => banner(errorText(e)));
+  });
+  $("force-update").addEventListener("click", () => {
+    forceUpdate().catch((e) => banner(errorText(e)));
+  });
   if (!await ensureIsolation()) {
     $("library").replaceChildren(h("p", {}, "\u8FD9\u4E2A\u6D4F\u89C8\u5668\u7528\u4E0D\u4E86\uFF08\u8DE8\u6E90\u9694\u79BB\u6CA1\u751F\u6548\uFF09\u3002\u8BF7\u6362\u6700\u65B0\u7248\u7684 Chrome / Edge / Safari\u3002"));
     return;
@@ -8804,4 +8847,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-9b2937fd19af.mjs.map
+//# sourceMappingURL=kudsrocket-7f714a65aa06.mjs.map

@@ -7,11 +7,11 @@
 <meta name="theme-color" content="#111111">
 <title>KudsRocket</title>
 <link rel="manifest" href="./manifest.webmanifest">
-<link rel="stylesheet" href="./styles.css?v=9b2937fd19af">
+<link rel="stylesheet" href="./styles.css?v=7f714a65aa06">
 </head>
 <body>
 <main id="home">
-  <header class="home-head"><h1>KudsRocket</h1><span id="version" class="muted"></span></header>
+  <header class="home-head"><h1>KudsRocket</h1><button id="version" class="muted version"></button></header>
   <div id="account" class="account"></div>
   <section class="library-head">
     <button id="unlock" hidden>输入口令</button>
@@ -22,6 +22,7 @@
     <button id="open-local">本机文件…</button>
     <button id="make-wafter">做加密盘…</button>
     <button id="unwrap-wafter">解密盘…</button>
+    <button id="force-update" title="清掉这个 app 自己的离线壳缓存并重新载入">强制更新</button>
     <input type="file" id="local-file" hidden>
     <p id="tools-hint" class="muted" hidden>做加密盘 / 解密盘要用电脑上的 Chrome 或 Edge（要能直接写本机文件）。</p>
   </section>
@@ -42,6 +43,6 @@
 <div id="note" hidden></div>
 <div id="update" hidden></div>
 <div id="busy" hidden><span></span></div>
-<script type="module" src="./dist/kudsrocket-9b2937fd19af.mjs"></script>
+<script type="module" src="./dist/kudsrocket-7f714a65aa06.mjs"></script>
 </body>
 </html>
