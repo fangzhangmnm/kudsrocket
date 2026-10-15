@@ -1,5 +1,5 @@
 // src/version.ts
-var APP_VERSION = "v0.1.3-2026-10-14";
+var APP_VERSION = "v0.1.4-2026-10-14";
 
 // assets/icons.svg
 var icons_default = '<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none">\n<!--\n  12 icons extracted from the family icon library (../20260708 SVG Icons/icons.svg) by extract-icons.py \u2014 do not hand-edit; re-run the script instead.\n  Family SVG Icons \u2014 MIT License, Copyright (c) 2026 fangzhangmnm.\n  Contains work derived from (per-icon provenance in data-src):\n    Feather Icons \u2014 MIT License, Copyright (c) 2013-2023 Cole Bemis \xB7 https://github.com/feathericons/feather\n-->\n  <!-- media -->\n  <!-- pause \u2014 \u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="pause" data-cat="media" data-src="own" data-note="\u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="3.2"><path d="M8.3 5.5 V18.5"/><path d="M15.7 5.5 V18.5"/></g></symbol>\n  <!-- play \u2014 \u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="play" data-cat="media" data-src="own" data-note="\u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 5.4 L18.8 12 L8.2 18.6 Z" fill="currentColor"/></symbol>\n  <!-- fast-forward \u2014 \u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="fast-forward" data-cat="media" data-src="own" data-note="\u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.4 6.8 L10.9 12 L4.4 17.2 Z" fill="currentColor"/><path d="M13.1 6.8 L19.6 12 L13.1 17.2 Z" fill="currentColor"/></symbol>\n  <!-- file -->\n  <!-- floppy-disk \u2014 \u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3 -->\n  <symbol id="floppy-disk" data-cat="file" data-src="feather:save" data-note="\u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13l3 3v13a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 17 8 17 3"/></symbol>\n  <!-- folder-open \u2014 \u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF -->\n  <symbol id="folder-open" data-cat="file" data-src="own" data-note="\u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18 V7 a2 2 0 0 1 2 -2 h4 l2 2 h6 a2 2 0 0 1 2 2 v1.8"/><path d="M3 18 L6.4 10.8 H21.6 L18.2 18 Z"/></symbol>\n  <!-- hierarchy -->\n  <!-- lock \u2014 \u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D -->\n  <symbol id="lock" data-cat="hierarchy" data-src="own" data-note="\u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10" width="13" height="11"/><path d="M8.8 10 V6.5 a3.2 3.2 0 0 1 6.4 0 V10"/></symbol>\n  <!-- common -->\n  <!-- x \u2014 \u53C9 -->\n  <symbol id="x" data-cat="common" data-src="own" data-note="\u53C9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 L17.5 17.5 M17.5 6.5 L6.5 17.5"/></symbol>\n  <!-- cloud -->\n  <!-- cloud \u2014 \u4E91 -->\n  <symbol id="cloud" data-cat="cloud" data-src="feather:cloud" data-note="\u4E91" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>\n  <!-- viewport -->\n  <!-- maximize-viewport \u2014 \u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55) -->\n  <symbol id="maximize-viewport" data-cat="viewport" data-src="own" data-note="\u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934 --> <polyline points="4 9 4 4 9 4"/> <polyline points="20 9 20 4 15 4"/> <polyline points="4 15 4 20 9 20"/> <polyline points="20 15 20 20 15 20"/></symbol>\n  <!-- ui -->\n  <!-- more \u2014 \u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00) -->\n  <symbol id="more" data-cat="ui" data-src="own" data-note="\u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/></symbol>\n  <!-- keyboard \u2014 \u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49) -->\n  <symbol id="keyboard" data-cat="ui" data-src="own" data-note="\u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="7.2" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="7.2" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><path d="M8.6 15.6 H15.4"/></symbol>\n  <!-- missing -->\n  <!-- gamepad \u2014 \u7F3A\u56FE\u6807\u5360\u4F4D \u2014 gamepad \u5C1A\u672A\u8FDB icons.svg -->\n  <symbol data-missing="1" id="gamepad" data-cat="missing" data-src="own" data-note="\u7F3A\u56FE\u6807\u5360\u4F4D \u2014 gamepad \u5C1A\u672A\u8FDB icons.svg\uFF0C\u91CD\u8DD1 extract-icons.py \u53EF\u81EA\u52A8\u6362\u6210\u771F\u56FE\u6807" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2.5" stroke-dasharray="2.5 2.5" opacity="0.35"/></symbol>\n</svg>\n';
@@ -1024,7 +1024,7 @@ function retriable(e) {
 }
 function createPush(cfg) {
   const { cloud, head, seal, safeResolve, serialize, editVersion, busy = passBusy, maxAttempts = 4, backoffMs = 200, sleep = (ms) => new Promise((r) => setTimeout(r, ms)) } = cfg;
-  async function doPush(name, { encode: encode2, getEditVersion = editVersion, onConflict, adopt, surfaceCollision = false }) {
+  async function doPush(name, { encode: encode2, getEditVersion = editVersion, onConflict, adopt, surfaceCollision = false, onProgress }) {
     const ifMatch = head.ifMatchFor(name);
     const v0 = getEditVersion();
     const e0 = head.editCount?.(name) ?? 0;
@@ -1036,7 +1036,7 @@ function createPush(cfg) {
       while (attempt < maxAttempts) {
         attempt++;
         try {
-          const { item } = await cloud.push(name, bytes, { baseEtag: ifMatch, encrypted: isEnc });
+          const { item } = await cloud.push(name, bytes, { baseEtag: ifMatch, encrypted: isEnc, onProgress });
           if (!(item && item.eTag))
             return { status: "deferred", dirtyAfter: true };
           const dirtyAfter = editedSince();
@@ -1077,12 +1077,21 @@ function createPush(cfg) {
 // node_modules/@internal/store/dist/freshness.js
 var passBusy2 = (_l, fn) => fn();
 function createFreshness(cfg) {
-  const { cloud, head, safeResolve, busy: _busy = passBusy2 } = cfg;
+  const { cloud, head, safeResolve, busy: _busy = passBusy2, hints } = cfg;
+  const hintedInSync = (name) => {
+    const h2 = hints?.peek(name);
+    const base = head.seenBase(name);
+    return !!h2 && base != null && h2.etag === base;
+  };
   const pullFailText = (reason) => reason === "invalid-cloud-bytes" ? "\u4E91\u7AEF\u5185\u5BB9\u6CA1\u901A\u8FC7\u6821\u9A8C\uFF0C\u53EF\u80FD\u662F\u516C\u5171 Wi-Fi \u767B\u5F55\u9875\u52AB\u6301\u6216\u6587\u4EF6\u635F\u574F" : reason === "cloud-vanished" ? "\u4E91\u7AEF\u6587\u4EF6\u521A\u521A\u88AB\u79FB\u52A8\u6216\u5220\u9664" : reason === "backup-failed" ? "\u672C\u5730\u7559\u5E95\u5931\u8D25\uFF0C\u4E3A\u4FDD\u6570\u636E\u6CA1\u6709\u8986\u76D6" : reason;
   async function open(name, opts = {}) {
     const { isOnline = () => true, probe, onNewer, adopt, localDirty, busy = passBusy2 } = opts;
     if (!isOnline())
       return { source: "local", reason: "offline" };
+    if (hintedInSync(name)) {
+      head.markSeen(name, head.seenBase(name));
+      return { source: "local", reason: "in-sync" };
+    }
     return busy("cloud.checking", async () => {
       let meta;
       if (probe) {
@@ -1133,6 +1142,10 @@ function createFreshness(cfg) {
       return { status: "offline" };
     if (head.isDirtyAnywhere(name) || localDirty && localDirty())
       return { status: "dirty-skip" };
+    if (hintedInSync(name)) {
+      head.markSeen(name, head.seenBase(name));
+      return { status: "in-sync" };
+    }
     return busy("cloud.checking", async () => {
       let meta;
       try {
@@ -1168,6 +1181,31 @@ function createFreshness(cfg) {
     });
   }
   return { open, refresh };
+}
+
+// node_modules/@internal/store/dist/fresh-hints.js
+function createFreshHints(opts = {}) {
+  const ttl = opts.ttlMs ?? 3e4;
+  const now = opts.now ?? (() => Date.now());
+  const map = /* @__PURE__ */ new Map();
+  return {
+    note(name, meta) {
+      map.set(name, { meta, at: now() });
+    },
+    peek(name) {
+      const h2 = map.get(name);
+      if (!h2)
+        return null;
+      if (now() - h2.at > ttl) {
+        map.delete(name);
+        return null;
+      }
+      return h2.meta;
+    },
+    forget(name) {
+      map.delete(name);
+    }
+  };
 }
 
 // node_modules/@internal/store/dist/move-aside.js
@@ -1515,7 +1553,7 @@ function createCloudSync(cfg) {
     const wrote = bytes && (bytes.byteLength ?? bytes.size ?? bytes.length) || 0;
     let item = null;
     try {
-      item = await provider.upload(path, bytes, { contentType, eTag: baseEtag, conflictBehavior: baseEtag ? "replace" : "fail" });
+      item = await provider.upload(path, bytes, { contentType, eTag: baseEtag, conflictBehavior: baseEtag ? "replace" : "fail", onProgress: opts.onProgress });
     } catch (e) {
       const status = e?.status;
       if (status === 412)
@@ -1540,6 +1578,30 @@ function createCloudSync(cfg) {
     if (item && item.eTag) {
       setETag(name, item.eTag);
       setDirty(name, false);
+    }
+    return { item };
+  }
+  async function pushStream(name, source, opts = {}) {
+    if (!provider.uploadStream)
+      throw new Error("cloud-sync.pushStream: provider has no uploadStream");
+    const path = fileName(name);
+    let item = null;
+    try {
+      item = await provider.uploadStream(path, source, { contentType, conflictBehavior: "fail", onProgress: opts.onProgress });
+    } catch (e) {
+      if (e?.status === 409)
+        throw new CloudNameCollisionError(name);
+      throw e;
+    }
+    if (!item || !item.eTag) {
+      const fresh = await provider.getItemByPath(path).catch((e) => {
+        reportStoreError(e, "log");
+        return null;
+      });
+      if (fresh && fresh.eTag && fresh.size === source.size)
+        item = fresh;
+      else
+        throw new Error(`cloud-sync.pushStream: upload of "${name}" was not confirmed by the cloud`);
     }
     return { item };
   }
@@ -1759,6 +1821,7 @@ function createCloudSync(cfg) {
   }
   return {
     push,
+    pushStream,
     pull,
     fetchMeta,
     pullTail,
@@ -3771,6 +3834,7 @@ async function requestStoragePersistence(sm = globalStorage()) {
 var STORE_TEXT_EN = {
   "sync.pushing": "Syncing\u2026",
   "file.renaming": "Renaming\u2026",
+  "file.uploading": "Uploading\u2026",
   "file.pulling": "Pulling\u2026",
   "cloud.checking": "Checking cloud\u2026",
   "file.deleting": "Deleting\u2026",
@@ -4005,10 +4069,10 @@ function createStore(config) {
   });
   const watcherOnError = /* @__PURE__ */ new WeakMap();
   function emitFolderError(folder, err2, phase) {
-    const set = folderWatchers.get(folder);
-    if (!set)
+    const set2 = folderWatchers.get(folder);
+    if (!set2)
       return;
-    for (const cb of set) {
+    for (const cb of set2) {
       const h2 = watcherOnError.get(cb);
       if (h2) {
         try {
@@ -4048,10 +4112,10 @@ function createStore(config) {
       ui.reportError(new Error(`watchFolder \u8DEF\u5F84\u9519\u4E71\uFF1A\u8BA2\u9605\u300C${folder}\u300D\u6536\u5230\u300C${snap.folder}\u300D\uFF0C\u5DF2\u4E22\u5F03`));
       return;
     }
-    const set = folderWatchers.get(folder);
-    if (!set)
+    const set2 = folderWatchers.get(folder);
+    if (!set2)
       return;
-    for (const cb of set) {
+    for (const cb of set2) {
       try {
         cb(snap);
       } catch (e) {
@@ -4090,8 +4154,12 @@ function createStore(config) {
       ui.reportError(e);
       emitFolderError(folder, e, "remote");
     }
-    if (live?.complete)
+    if (live?.complete) {
       writeDirIndexCache(folder, live);
+      for (const f of live.files)
+        if (f.eTag)
+          freshHints.note(f.name, { etag: f.eTag, lastModified: f.lastModifiedDateTime, size: f.size, item: f });
+    }
   }
   function notifyFolderOf(name) {
     void pushLocalFrame(name.includes("/") ? name.slice(0, name.lastIndexOf("/")) : "");
@@ -4099,12 +4167,12 @@ function createStore(config) {
   function watchFolder(folder, cb, opts) {
     if (folder)
       assertValidFileName(folder, appId);
-    let set = folderWatchers.get(folder);
-    if (!set) {
-      set = /* @__PURE__ */ new Set();
-      folderWatchers.set(folder, set);
+    let set2 = folderWatchers.get(folder);
+    if (!set2) {
+      set2 = /* @__PURE__ */ new Set();
+      folderWatchers.set(folder, set2);
     }
-    set.add(cb);
+    set2.add(cb);
     if (opts?.onError)
       watcherOnError.set(cb, opts.onError);
     const fail = (e, phase) => {
@@ -4200,7 +4268,8 @@ function createStore(config) {
     confirm: ui.confirmReplay,
     onStatus: ui.onReplayStatus
   });
-  const fresh = createFreshness({ cloud, head, safeResolve, busy: busyT });
+  const freshHints = createFreshHints();
+  const fresh = createFreshness({ cloud, head, safeResolve, busy: busyT, hints: freshHints });
   const del = createDelete({ cloud, local: local2, head, kv, busy: busyT });
   const identity = createIdentity({
     cloud,
@@ -4471,7 +4540,7 @@ function createStore(config) {
           return { pushed: false, reason: "not-attempted" };
         let pushed = false, reason, resolution;
         try {
-          const r = await pushMod.push(name, { encode: () => plain, onConflict, surfaceCollision: mode !== "new" });
+          const r = await pushMod.push(name, { encode: () => plain, onConflict, surfaceCollision: mode !== "new", onProgress: opts?.onProgress });
           pushed = r.status === "pushed" || r.status === "healed" || r.status === "resolved";
           if (!pushed)
             reason = r.status;
@@ -4481,6 +4550,7 @@ function createStore(config) {
           ui.reportError(e);
           reason = "error";
         }
+        notifyFolderOf(name);
         if (head.isDirtyThisTab(name) && head.seenBase(name) == null)
           uploadReplay.enqueue(name);
         return { pushed, reason, resolution };
@@ -4854,6 +4924,23 @@ function createStore(config) {
        *  **不含** trash/backup/collections 分区、app 自己别的 IDB 库、纯云端未缓存的作品。
        *  ⚠ **只返两个标量、永不返名字** —— 它不是、也不能变成全库列举（列举唯一面 = watchFolder）。 */
       usage: () => local2.usage(),
+      /** 0.17.0：流式新建一个纯云端文件（KudsRocket「边加密边上传、不留本地副本」）。宿主按 source.read 逐块给字节（本地 File、边加密的管线……），
+       *  库逐块上传（Graph 上传会话；最后一块落地才成文件，中途断了云端没有半成品），**整份永不进内存、不落本地、不写谱系**。
+       *  只准新建：身份已占（本地或云端）→ CloudNameCollisionError，一个字节不传。要网：离线 / 没登录 → 抛（没有本地字节可排队）。
+       *  成功后文件是 cloud-only（本夹 watcher 重画）；之后 open() 走 acquire 照常。进度经 onProgress。busy 键 "file.uploading"（宿主可按键路由到后台提示）。 */
+      uploadStream: async (identifier, source, opts = {}) => {
+        roGuard("uploadStream");
+        await migrationReady;
+        assertValidFileName(identifier, appId);
+        if (!isOnline())
+          throw new Error(`uploadStream "${identifier}": cloud unreachable (offline or signed out)`);
+        const where = await nameOccupied(identifier);
+        if (where)
+          throw new CloudNameCollisionError(identifier, where);
+        await busyK("file.uploading", void 0, () => cloud.pushStream(identifier, source, { onProgress: opts.onProgress }));
+        notifyFolderOf(identifier);
+        return { status: "uploaded", size: source.size };
+      },
       /** 确保文件夹存在。**离线也能建**（本地登记 + 回线 drainOfflineQueue 补建）。 */
       ensureFolder: (path) => {
         roGuard("ensureFolder");
@@ -5076,16 +5163,26 @@ function createGraph(tokenSource) {
     const j = await r.json();
     return j["@microsoft.graph.downloadUrl"] || null;
   }
-  async function uploadFileToApproot(path, blob, contentType = "application/octet-stream", { conflictBehavior = "replace", eTag = null } = {}) {
+  async function uploadFileToApproot(path, blob, contentType = "application/octet-stream", { conflictBehavior = "replace", eTag = null, onProgress } = {}) {
     if (conflictBehavior === "replace" && !eTag)
       throw new Error(`[graph] blind overwrite forbidden: conflictBehavior:"replace" requires If-Match eTag (${path})`);
     const headers = { "Content-Type": contentType };
     if (eTag)
       headers["If-Match"] = eTag;
     if (blob.size <= SIMPLE_UPLOAD_LIMIT) {
+      onProgress?.(0, blob.size);
       const r = await graphFetch("PUT", `/me/drive/special/approot:/${encodeApprootPath(path)}:/content?@microsoft.graph.conflictBehavior=${conflictBehavior}`, { headers, body: blob });
+      onProgress?.(blob.size, blob.size);
       return r.json();
     }
+    return uploadChunked(path, { size: blob.size, read: async (o, n) => new Uint8Array(await blob.slice(o, o + n).arrayBuffer()) }, conflictBehavior, eTag, onProgress);
+  }
+  async function uploadStreamToApproot(path, source, _contentType = "application/octet-stream", { conflictBehavior = "fail", eTag = null, onProgress } = {}) {
+    if (conflictBehavior === "replace" && !eTag)
+      throw new Error(`[graph] blind overwrite forbidden: conflictBehavior:"replace" requires If-Match eTag (${path})`);
+    return uploadChunked(path, source, conflictBehavior, eTag, onProgress);
+  }
+  async function uploadChunked(path, source, conflictBehavior, eTag, onProgress) {
     const sessR = await graphFetch("POST", `/me/drive/special/approot:/${encodeApprootPath(path)}:/createUploadSession`, {
       body: {
         item: {
@@ -5097,23 +5194,27 @@ function createGraph(tokenSource) {
     });
     const { uploadUrl } = await sessR.json();
     const CHUNK2 = 5 * 1024 * 1024;
+    const total = source.size;
     let offset = 0;
     let last = null;
-    while (offset < blob.size) {
-      const end = Math.min(offset + CHUNK2, blob.size) - 1;
-      const chunk = blob.slice(offset, end + 1);
+    onProgress?.(0, total);
+    while (offset < total) {
+      const end = Math.min(offset + CHUNK2, total) - 1;
+      const chunk = await source.read(offset, end - offset + 1);
+      if (chunk.length !== end - offset + 1)
+        throw new Error(`[graph] chunk source short read at ${offset}: wanted ${end - offset + 1}, got ${chunk.length}`);
       let r;
       try {
         r = await fetch(uploadUrl, {
           method: "PUT",
           headers: {
-            "Content-Length": String(chunk.size),
-            "Content-Range": `bytes ${offset}-${end}/${blob.size}`
+            "Content-Length": String(chunk.length),
+            "Content-Range": `bytes ${offset}-${end}/${total}`
           },
           body: chunk
         });
       } catch (e) {
-        throw new CloudNetworkError(`Graph chunked upload PUT (${offset}-${end}/${blob.size}): network fetch failed (${String(e)})`, e);
+        throw new CloudNetworkError(`Graph chunked upload PUT (${offset}-${end}/${total}): network fetch failed (${String(e)})`, e);
       }
       if (!r.ok && r.status !== 202) {
         const err2 = new Error(`chunked upload failed ${r.status}`);
@@ -5122,6 +5223,7 @@ function createGraph(tokenSource) {
       }
       last = await r.json().then((j) => j).catch(() => null);
       offset = end + 1;
+      onProgress?.(offset, total);
     }
     return last;
   }
@@ -5254,6 +5356,7 @@ function createGraph(tokenSource) {
     downloadItemRange,
     getDownloadUrl,
     uploadFileToApproot,
+    uploadStreamToApproot,
     deleteItem,
     clearFolderCaches,
     getApprootId,
@@ -5711,10 +5814,13 @@ function graphToCloudProvider(graph) {
     // graph.js 是 Blob 原生（按 .size 选简单/分块路径、用 .slice 切块）；lib 把字节归一成 Uint8Array。
     // 必须在这道接缝转回 Blob——Uint8Array.size===undefined → undefined<=4MB 为 false → 永远走分块、
     // while(0<undefined) 一个 chunk 都不传 → 上传 0 字节占位还回 etag（postmortem 2026-06-05 根因）。
-    upload: (path, blob, { contentType = "application/octet-stream", eTag = null, conflictBehavior = "replace" } = {}) => {
+    upload: (path, blob, { contentType = "application/octet-stream", eTag = null, conflictBehavior = "replace", onProgress } = {}) => {
       const body = blob instanceof Blob ? blob : new Blob([blob], { type: contentType });
-      return graph.uploadFileToApproot(path, body, contentType, { conflictBehavior, eTag }).then(toItem);
+      return graph.uploadFileToApproot(path, body, contentType, { conflictBehavior, eTag, onProgress }).then(toItem);
     },
+    ...graph.uploadStreamToApproot ? {
+      uploadStream: (path, source, { contentType = "application/octet-stream", eTag = null, conflictBehavior = "fail", onProgress } = {}) => graph.uploadStreamToApproot(path, source, contentType, { conflictBehavior, eTag, onProgress }).then(toItem)
+    } : {},
     // 文件硬删。⚠ 2026-08-25 修：旧版 `(id) => graph.deleteItem(id)` 把 eTag 吞了——purge 的 If-Match
     //   （v435 立的硬删守卫）从没到过 Graph，mock 比真机严（mock 校验 If-Match、真机根本没收到）。透传。
     delete: (ref, eTag) => graph.deleteItem(ref, eTag),
@@ -6014,11 +6120,21 @@ function logEvent(level, text) {
   (level === "info" ? console.info : console.warn)("[sync]", text);
   render();
 }
-function track(label, bytes, p) {
+function track(label, bytes, run) {
   const id = nextId++;
-  const f = { id, label, bytes, startedAt: performance.now() };
+  const f = { id, label, bytes, startedAt: performance.now(), done: null };
   flights.set(id, f);
   logEvent("info", `\u5F00\u59CB\u4F20 ${label}\uFF08${mb(bytes)}\uFF09`);
+  let lastPaint = 0;
+  const p = run((done, total) => {
+    f.done = done;
+    if (total) f.bytes = total;
+    const now = performance.now();
+    if (now - lastPaint > 200 || done === total) {
+      lastPaint = now;
+      render();
+    }
+  });
   return p.then((r) => {
     flights.delete(id);
     if (r.pushed) {
@@ -6060,8 +6176,9 @@ function state() {
   if (first) {
     const elapsed = performance.now() - first.startedAt;
     const more = flights.size > 1 ? `\uFF08\u8FD8\u6709 ${flights.size - 1} \u4E2A\u6392\u7740\uFF09` : "";
-    if (elapsed > STUCK_MS) return { kind: "stuck", text: `\u5361\u4F4F\u4E86\uFF1F${first.label} \u5DF2\u7ECF\u4F20\u4E86 ${secs(first.startedAt)}${more}` };
-    return { kind: "busy", text: `\u6B63\u5728\u4F20 ${first.label} ${mb(first.bytes)} \xB7 ${secs(first.startedAt)}${more}` };
+    const pct = first.done != null && first.bytes ? ` ${Math.floor(first.done / first.bytes * 100)}%` : "";
+    if (elapsed > STUCK_MS) return { kind: "stuck", text: `\u5361\u4F4F\u4E86\uFF1F${first.label} \u5DF2\u7ECF\u4F20\u4E86 ${secs(first.startedAt)}${pct}${more}`, fraction: first.done != null ? first.done / first.bytes : null };
+    return { kind: "busy", text: `\u6B63\u5728\u4F20 ${first.label} ${mb(first.bytes)}${pct} \xB7 ${secs(first.startedAt)}${more}`, fraction: first.done != null ? first.done / first.bytes : null };
   }
   if (problem) return { kind: "bad", text: problem.text };
   if (performance.now() < doneUntil) return signedIn() ? { kind: "done", text: "\u4F20\u597D\u4E86" } : { kind: "local", text: "\u5B58\u5728\u8FD9\u53F0\u8BBE\u5907\u4E86\uFF08\u6CA1\u767B\u5F55\uFF0C\u4E0D\u4F20\uFF09" };
@@ -6074,9 +6191,11 @@ function render() {
   for (const cb of listeners) cb(s);
   const bar = document.getElementById("syncbar"), home = document.getElementById("sync-home");
   if (bar) {
-    bar.className = `syncbar ${s.kind}`;
+    bar.className = `syncbar ${s.kind}${s.fraction != null ? " known" : ""}`;
     bar.hidden = s.kind === "idle";
-    bar.replaceChildren(h("span", { class: "syncbar-track" }, h("span", { class: "syncbar-fill" })), h("span", { class: "syncbar-text" }, s.text));
+    const fill = h("span", { class: "syncbar-fill" });
+    if (s.fraction != null) fill.style.width = `${Math.max(2, Math.min(100, s.fraction * 100)).toFixed(1)}%`;
+    bar.replaceChildren(h("span", { class: "syncbar-track" }, fill), h("span", { class: "syncbar-text" }, s.text));
   }
   if (home) {
     home.className = `sync-home ${s.kind}`;
@@ -6094,7 +6213,7 @@ function render() {
 }
 
 // src/app/store-ui.ts
-var BACKGROUND_KEYS = /* @__PURE__ */ new Set(["sync.pushing", "file.renaming"]);
+var BACKGROUND_KEYS = /* @__PURE__ */ new Set(["sync.pushing", "file.renaming", "file.uploading"]);
 var stemOf = (identifier) => labelFor(identifier);
 var storeUI = {
   busy: (label, fn, key) => key && BACKGROUND_KEYS.has(key) ? fn() : withBusy(label, fn),
@@ -6137,6 +6256,39 @@ var storeUI = {
   }
 };
 
+// src/app/device-kv.ts
+var PREFIX = `${APP_ID}.device.`;
+var mem = /* @__PURE__ */ new Map();
+function get(key) {
+  try {
+    return localStorage.getItem(PREFIX + key) ?? mem.get(key) ?? null;
+  } catch {
+    return mem.get(key) ?? null;
+  }
+}
+function set(key, value) {
+  if (value == null) mem.delete(key);
+  else mem.set(key, value);
+  try {
+    if (value == null) localStorage.removeItem(PREFIX + key);
+    else localStorage.setItem(PREFIX + key, value);
+  } catch {
+  }
+}
+var STAGING_CAP_CHOICES = [
+  { label: "256 MB\uFF08\u9ED8\u8BA4\uFF09", bytes: 0 },
+  { label: "1 GB", bytes: 1 * 2 ** 30 },
+  { label: "4 GB", bytes: 4 * 2 ** 30 },
+  { label: "16 GB", bytes: 16 * 2 ** 30 }
+];
+function stagingCapBytes() {
+  const n = Number(get("staging-cap") ?? 0);
+  return Number.isFinite(n) && n > 0 ? n : 0;
+}
+function setStagingCapBytes(bytes) {
+  set("staging-cap", bytes > 0 ? String(bytes) : null);
+}
+
 // src/app/app-store.ts
 var od = createOneDriveProvider({ clientId: CLIENT_ID2, scopes: SCOPES2, authority: AUTHORITY2, msalUrl: MSAL_URL2 });
 var auth = od.auth;
@@ -6174,6 +6326,8 @@ function getStore() {
     ],
     autoCacheOpenedFile: true,
     // 快照 / 存档 open 后留本地；盘只走 openStream（不整份落本地）
+    ...stagingCapBytes() ? { stagingCapBytes: stagingCapBytes() } : {},
+    // 流式暂存区上限（设置里改；user「cache上限设置」）。改了要重新载入才生效
     offlineUploadReplay: "auto",
     signedIn: () => od.auth.isSignedIn(),
     activeIdentifier: () => activeIdentifier
@@ -6327,8 +6481,11 @@ async function beginDisc(password, opts = {}) {
       offset += plain.length;
       return out;
     },
+    encryptAt(at, plain) {
+      return ctrAt(keys.body, nonce, at, plain);
+    },
     async finish(extra = {}) {
-      const meta = { v: 1, size: offset, ...extra };
+      const meta = { v: 1, size: opts.size ?? offset, ...extra };
       const metaIv = random(12);
       const sealed = new Uint8Array(await crypto.subtle.encrypt(
         { name: "AES-GCM", iv: metaIv },
@@ -6338,7 +6495,7 @@ async function beginDisc(password, opts = {}) {
       if (layout === "head") {
         if (sealed.length > metaCap) throw new RangeError(`metadata (${sealed.length} bytes) exceeds the reserved ${metaCap} bytes`);
         const head = new Uint8Array(HEADER_BYTES + metaCap);
-        head.set(encodeParams({ iterations, salt, nonce, metaIv, metaBytes: sealed.length, bodyBytes: offset, metaCap, layout }), 0);
+        head.set(encodeParams({ iterations, salt, nonce, metaIv, metaBytes: sealed.length, bodyBytes: meta.size, metaCap, layout }), 0);
         head.set(sealed, HEADER_BYTES);
         return head;
       }
@@ -7609,9 +7766,31 @@ async function put(identifier, sealed) {
     ensured.catch(() => foldersEnsured.delete(folder));
   }
   await ensured;
-  return track(labelFor(identifier), sealed.length, store2.file(identifier, { mode: "existing" }).save(new Blob([sealed])));
+  return track(labelFor(identifier), sealed.length, (onProgress) => store2.file(identifier, { mode: "existing" }).save(new Blob([sealed]), { onProgress }));
 }
-async function get(identifier) {
+async function clearLocalCopies(folders) {
+  const store2 = getStore();
+  let dropped = 0, kept = 0, bytes = 0;
+  for (const folder of folders) {
+    const { items } = await listFolderOnce(folder, 8e3);
+    for (const it of items) {
+      if (it.syncState === "cloud-only") continue;
+      if (it.syncState !== "synced") {
+        kept++;
+        continue;
+      }
+      try {
+        await store2.file(it.identifier, { mode: "existing" }).offload();
+        dropped++;
+        bytes += it.size ?? 0;
+      } catch {
+        kept++;
+      }
+    }
+  }
+  return { dropped, kept, bytes };
+}
+async function get2(identifier) {
   const store2 = getStore();
   if (!await store2.files.occupied(identifier)) return null;
   const blob = await store2.file(identifier, { mode: "existing" }).open();
@@ -7622,7 +7801,7 @@ async function saveSnapshot(identifier, state2, meta, password) {
   return put(identifier, await sealBytes(password, state2, { salt: sessionSalt, compress: true, meta: { thumb, at: meta.at, auto: meta.auto, fp: meta.fp, t: meta.title } }));
 }
 async function loadSnapshot(identifier, password) {
-  const sealed = await get(identifier);
+  const sealed = await get2(identifier);
   if (!sealed) return null;
   const { plain, meta } = await unsealBytes(password, sealed);
   return { state: plain, meta };
@@ -7730,7 +7909,7 @@ async function loadMemstick(k, password, ids, complete) {
     while (next < ids.length) {
       const id = ids[next++];
       try {
-        const sealed = await get(id);
+        const sealed = await get2(id);
         if (!sealed) {
           unreadable.add(id);
           continue;
@@ -8248,6 +8427,34 @@ async function writeAll(out, body) {
     });
     throw e;
   }
+}
+async function uploadToPantry(input, password, identifier, onProgress) {
+  const src = { size: input.size, read: async (o, n) => new Uint8Array(await input.slice(o, o + n).arrayBuffer()) };
+  const label = await readDiscLabel(src);
+  const fp = { k: PLATFORM_CODE.psp, size: input.size, ...label?.id ? { id: label.id } : {}, ...label?.version ? { v: label.version } : {} };
+  const writer = await beginDisc(password, { size: input.size });
+  const head = await writer.finish({ name: input.name, fp });
+  const total = head.length + input.size;
+  const source = {
+    size: total,
+    async read(offset, length) {
+      const out = new Uint8Array(length);
+      let o = 0;
+      if (offset < head.length) {
+        const n = Math.min(length, head.length - offset);
+        out.set(head.subarray(offset, offset + n), 0);
+        o = n;
+      }
+      if (o < length) {
+        const bodyOff = offset + o - head.length;
+        if (bodyOff % 16 !== 0) throw new RangeError(`upload chunk not 16-aligned at body offset ${bodyOff}`);
+        const plain = new Uint8Array(await input.slice(bodyOff, bodyOff + (length - o)).arrayBuffer());
+        out.set(await writer.encryptAt(bodyOff, plain), o);
+      }
+      return out;
+    }
+  };
+  await getStore().files.uploadStream(identifier, source, { onProgress });
 }
 async function encryptToLocal(input, password, out, p) {
   const src = { size: input.size, read: async (o, n) => new Uint8Array(await input.slice(o, o + n).arrayBuffer()) };
@@ -9147,6 +9354,32 @@ async function unwrapWafer() {
 var toolErr = (e) => {
   if (e?.name !== "AbortError") banner(errorText(e));
 };
+async function uploadWafer(file) {
+  const pw = await askNewPassword();
+  if (!pw) return;
+  const identifier = `${PANTRY}/${randomStem()}.wafter`;
+  await track(`\u76D8 ${file.name}`, file.size, (onProgress) => uploadToPantry(file, pw, identifier, onProgress).then(() => ({ pushed: true })));
+  say(`\u4F20\u597D\u4E86\uFF1A${file.name}\u3002\u5173\u6389\u8FD9\u4E00\u9875\u524D\u522B\u6E05\u6D4F\u89C8\u5668\u6570\u636E\u4E5F\u6CA1\u5173\u7CFB\u2014\u2014\u5B83\u6CA1\u7559\u672C\u673A\u526F\u672C\u3002`, 8e3);
+  watchPantry();
+}
+async function clearCache() {
+  if (!await confirmSheet("\u6E05\u672C\u673A\u7F13\u5B58\uFF1F", "\u653E\u6389\u6240\u6709\u5DF2\u7ECF\u540C\u6B65\u5230 OneDrive \u7684\u672C\u673A\u526F\u672C\uFF08\u76D8\u3001\u5B58\u6863\u3001\u5FEB\u7167\uFF09\uFF1B\u6CA1\u4F20\u4E0A\u53BB\u7684\u3001\u53EA\u5728\u8FD9\u53F0\u8BBE\u5907\u4E0A\u7684\u4E00\u5F8B\u4E0D\u52A8\u3002\u8981\u79BB\u7EBF\u73A9\u7684\u76D8\u4E4B\u540E\u518D\u300C\u7559\u5728\u8FD9\u53F0\u8BBE\u5907\u300D\u3002", "\u6E05")) return;
+  try {
+    const r = await withBusyNote("\u6B63\u5728\u6E05\u672C\u673A\u7F13\u5B58\u2026", () => clearLocalCopies([PANTRY, jarFolder(PLATFORM_CODE.psp), CRUMBS]));
+    banner(`\u653E\u6389\u4E86 ${r.dropped} \u4E2A\u672C\u673A\u526F\u672C\uFF08\u7EA6 ${(r.bytes / 2 ** 20).toFixed(0)} MB\uFF09${r.kept ? `\uFF1B${r.kept} \u4E2A\u6CA1\u52A8\uFF08\u6CA1\u4F20\u4E0A\u53BB / \u53EA\u5728\u672C\u673A / \u4E91\u7AEF\u62FF\u4E0D\u5230\uFF09` : ""}\u3002\u6D41\u5F0F\u6682\u5B58\u533A\u7531\u5E93\u6309\u4E0A\u9650\u81EA\u5DF1\u6E05\u3002`, "warning");
+    watchPantry();
+  } catch (e) {
+    banner(`\u6E05\u7F13\u5B58\u5931\u8D25\uFF1A${errorText(e)}`);
+  }
+}
+async function withBusyNote(text, fn) {
+  say(text, 6e5);
+  try {
+    return await fn();
+  } finally {
+    note("", 1);
+  }
+}
 async function boot() {
   mountIcons();
   mountOverlays();
@@ -9181,6 +9414,25 @@ async function boot() {
   $("tools-hint").hidden = local2;
   $("make-wafter").addEventListener("click", () => {
     makeWafer().catch(toolErr);
+  });
+  const uploadInput = $("upload-file");
+  $("upload-wafter").addEventListener("click", () => {
+    uploadInput.value = "";
+    uploadInput.click();
+  });
+  uploadInput.addEventListener("change", () => {
+    const f = uploadInput.files?.[0];
+    if (f) uploadWafer(f).catch(toolErr);
+  });
+  $("clear-cache").addEventListener("click", () => {
+    clearCache().catch(toolErr);
+  });
+  const capSel = $("staging-cap");
+  for (const c of STAGING_CAP_CHOICES) capSel.append(h("option", { value: String(c.bytes) }, c.label));
+  capSel.value = String(stagingCapBytes());
+  capSel.addEventListener("change", () => {
+    setStagingCapBytes(Number(capSel.value));
+    banner("\u6682\u5B58\u533A\u4E0A\u9650\u6539\u4E86\uFF0C\u91CD\u65B0\u8F7D\u5165\u9875\u9762\u540E\u751F\u6548\u3002", "warning");
   });
   $("unwrap-wafter").addEventListener("click", () => {
     unwrapWafer().catch(toolErr);
@@ -9264,4 +9516,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-4a39c4f1d0eb.mjs.map
+//# sourceMappingURL=kudsrocket-9d143fa28b10.mjs.map

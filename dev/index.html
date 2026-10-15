@@ -7,7 +7,7 @@
 <meta name="theme-color" content="#111111">
 <title>KudsRocket</title>
 <link rel="manifest" href="./manifest.webmanifest">
-<link rel="stylesheet" href="./styles.css?v=4a39c4f1d0eb">
+<link rel="stylesheet" href="./styles.css?v=9d143fa28b10">
 </head>
 <body>
 <main id="home">
@@ -21,10 +21,14 @@
   <div id="library" class="library"></div>
   <section id="tools" class="tools" hidden>
     <button id="open-local">本机文件…</button>
+    <button id="upload-wafter" title="选一个本机文件，边加密边传进 OneDrive，不留本机副本（iPad / Quest 也能用）">上传盘…</button>
     <button id="make-wafter">做加密盘…</button>
     <button id="unwrap-wafter">解密盘…</button>
+    <button id="clear-cache" title="放掉所有已同步的本机副本（没传上去的不动）">清本机缓存</button>
+    <label class="muted">暂存区上限 <select id="staging-cap"></select></label>
     <button id="force-update" title="清掉这个 app 自己的离线壳缓存并重新载入">强制更新</button>
     <input type="file" id="local-file" hidden>
+    <input type="file" id="upload-file" hidden>
     <p id="tools-hint" class="muted" hidden>做加密盘 / 解密盘要用电脑上的 Chrome 或 Edge（要能直接写本机文件）。</p>
   </section>
 </main>
@@ -45,6 +49,6 @@
 <div id="note" hidden></div>
 <div id="update" hidden></div>
 <div id="busy" hidden><span></span></div>
-<script type="module" src="./dist/kudsrocket-4a39c4f1d0eb.mjs"></script>
+<script type="module" src="./dist/kudsrocket-9d143fa28b10.mjs"></script>
 </body>
 </html>

@@ -145,3 +145,6 @@ button:disabled { opacity: .4; cursor: default; }
 .bin-row.attention { border-left: 3px solid var(--warn); }
 /* 连点按钮不选中文字（user 10-14「连续按按钮的时候状态栏上的文字会被选中」） */
 .toolbar, #status, .syncbar, #note, #banners, .sheet .row, .softkeys, .sync-home, .home-head { user-select: none; -webkit-user-select: none; }
+/* 真进度：条子不再无限滑动 */
+.syncbar.known .syncbar-fill { animation: none; transition: width .2s linear; }
+.tools select { font: inherit; background: var(--panel); color: var(--ink); border: 1px solid var(--line); border-radius: 6px; padding: 4px 6px; }
