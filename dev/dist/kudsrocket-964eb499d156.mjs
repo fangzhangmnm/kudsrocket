@@ -11901,6 +11901,7 @@ globalThis.kr = {
     openStallSheet: () => openStallSheet(),
     log: () => dumpLog(),
     debugLoseGl: () => session?.debugLoseGl() ?? false,
+    history: () => snaps?.history().map((h2) => h2.n) ?? [],
     rebuildAudio: () => rebuildAudio("\u6D4B\u8BD5"),
     async titleCacheTest() {
       const pw = getPassword();
@@ -11940,4 +11941,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-b7ae33b94171.mjs.map
+//# sourceMappingURL=kudsrocket-964eb499d156.mjs.map
