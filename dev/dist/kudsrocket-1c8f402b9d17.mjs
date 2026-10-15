@@ -6393,14 +6393,22 @@ async function fromPantry(identifier, password) {
   if (!stream) throw new Error("\u8FD9\u5F20\u76D8\u73B0\u5728\u62FF\u4E0D\u5230\uFF08\u6CA1\u767B\u5F55\u3001\u79BB\u7EBF\uFF0C\u6216\u8005\u4E91\u7AEF\u5DF2\u7ECF\u6CA1\u6709\u4E86\uFF09");
   return { ...await unwrap(withReadAhead(stream), identifier, password), identifier };
 }
-async function titleInPantry(identifier) {
-  if (!identifier.endsWith(".wafter")) return stemOf2(identifier);
-  if (!sessionPassword) return null;
+async function inspectPantry(identifier) {
+  const encrypted = identifier.endsWith(".wafter");
+  if (encrypted && !sessionPassword) return null;
   const stream = await getStore().file(identifier, { mode: "existing" }).openStream();
   if (!stream) return null;
   try {
-    const opened = await openDisc({ size: stream.totalSize, read: (o, n) => stream.read(o, n) }, sessionPassword);
-    return stemOf2(opened.meta.name ?? identifier);
+    const src = { size: stream.totalSize, read: (o, n) => stream.read(o, n) };
+    let media = src, name = identifier;
+    if (encrypted) {
+      const opened = await openDisc(src, sessionPassword);
+      media = opened;
+      name = opened.meta.name ?? identifier;
+    }
+    const label = await readDiscLabel(media);
+    const fp = { k: PLATFORM_CODE.psp, size: media.size, ...label?.id ? { id: label.id } : {}, ...label?.version ? { v: label.version } : {} };
+    return { title: stemOf2(name), fp, key: fp.id ? await gameKey(fp) : await discKey(stemOf2(identifier)) };
   } catch (e) {
     if (e instanceof WrongPasswordError) return null;
     throw e;
@@ -7409,7 +7417,7 @@ async function get(identifier) {
 }
 async function saveSnapshot(identifier, state, meta, password) {
   const thumb = meta.thumb ? btoa(Array.from(meta.thumb, (b) => String.fromCharCode(b)).join("")) : void 0;
-  return put(identifier, await sealBytes(password, state, { salt: sessionSalt, compress: true, meta: { thumb, at: meta.at, auto: meta.auto, fp: meta.fp } }));
+  return put(identifier, await sealBytes(password, state, { salt: sessionSalt, compress: true, meta: { thumb, at: meta.at, auto: meta.auto, fp: meta.fp, t: meta.title } }));
 }
 async function loadSnapshot(identifier, password) {
   const sealed = await get(identifier);
@@ -7417,7 +7425,7 @@ async function loadSnapshot(identifier, password) {
   const { plain, meta } = await unsealBytes(password, sealed);
   return { state: plain, meta };
 }
-async function peekSnapshot(identifier, password) {
+async function peekMeta(identifier, password) {
   const stream = await getStore().file(identifier, { mode: "existing" }).openStream();
   if (!stream) return null;
   try {
@@ -7426,6 +7434,7 @@ async function peekSnapshot(identifier, password) {
     stream.close();
   }
 }
+var peekSnapshot = peekMeta;
 async function moveSnapshot(from, to) {
   const r = await getStore().file(from, { mode: "existing" }).tryMove(to);
   return r.ok;
@@ -7549,7 +7558,7 @@ async function saveSaveDir(jar, files, password) {
   const id = await jamId(jar);
   setLabel(id, describeJar(jar));
   const zip = zipSync(Object.fromEntries(files), { level: 0 });
-  return put(id, await sealBytes(password, zip, { salt: sessionSalt, meta: { jar } }));
+  return put(id, await sealBytes(password, zip, { salt: sessionSalt, meta: { jar, at: Date.now() } }));
 }
 async function deleteSaveDir(jar) {
   const id = await jamId(jar);
@@ -7655,7 +7664,7 @@ var Snapshots = class {
         if (!alt) return;
         n = alt.n;
       }
-      const r = await saveSnapshot(crumbId(this.disc.key, kind, n), state, { thumb, at: Date.now(), auto, fp: this.disc.fp }, pw);
+      const r = await saveSnapshot(crumbId(this.disc.key, kind, n), state, { thumb, at: Date.now(), auto, fp: this.disc.fp, title: this.disc.title }, pw);
       label = slotLabel({ kind, n });
       this.verbs.say(`${auto ? "\u81EA\u52A8\u5FEB\u7167" : `\u5DF2\u5B58\u300C${label}\u300D`}${r.pushed ? "\uFF0C\u5DF2\u4F20\u5230 OneDrive" : "\uFF0C\u5148\u5B58\u5728\u8FD9\u53F0\u8BBE\u5907\uFF0C\u8054\u7F51\u767B\u5F55\u540E\u81EA\u52A8\u4F20"}`);
       if (r.pushed) tidyLocalSnapshots(this.slots).catch((e) => console.warn("[tidy]", e));
@@ -7765,7 +7774,22 @@ var Snapshots = class {
 // src/app/panels.ts
 var fmtWhen = (t) => t ? new Date(t).toLocaleString() : "";
 var fmtSize = (n) => n ? n >= 2 ** 20 ? `${(n / 2 ** 20).toFixed(1)} MB` : `${(n / 1024).toFixed(0)} KB` : "";
-async function openSaveManager() {
+function describe(it, meta, ctx) {
+  const when = meta?.at ?? null;
+  const c = parseCrumbId(it.identifier);
+  if (c) {
+    const game = meta?.t ?? ctx.titleByKey(c.key) ?? (meta?.fp?.id ? `${meta.fp.id}${meta.fp.v ? ` v${meta.fp.v}` : ""}` : null);
+    return { name: `\u5FEB\u7167 ${c.kind === "s" ? "\u624B\u52A8" : "\u81EA\u52A8"} ${c.n}${game ? ` \xB7 ${game}` : ""}`, when };
+  }
+  const dir = meta?.jar?.u;
+  if (dir) {
+    const t = ctx.titleByDir(dir);
+    return { name: `\u5B58\u6863 ${dir}${t ? ` \xB7 ${t}` : ""}`, when };
+  }
+  return { name: labelFor(it.identifier), when };
+}
+var detailLine = (it, when) => [when ? fmtWhen(when) : it.lastModified ? `${fmtWhen(it.lastModified)}\uFF08\u6587\u4EF6\u65F6\u95F4\uFF09` : "\u65F6\u95F4\u4E0D\u660E", SYNC_TEXT[it.syncState] ?? it.syncState, fmtSize(it.size)].filter(Boolean).join(" \xB7 ");
+async function openSaveManager(ctx) {
   let jars, crumbs, complete;
   try {
     const [j, c] = await withBusy("\u6B63\u5728\u5217\u5B58\u6863\u2026", () => Promise.all([listFolderOnce(jarFolder(PLATFORM_CODE.psp), 8e3), listFolderOnce(CRUMBS, 8e3)]));
@@ -7778,36 +7802,63 @@ async function openSaveManager() {
   }
   const all = [...jars, ...crumbs].sort((a, b) => (b.lastModified ?? 0) - (a.lastModified ?? 0));
   const todo = all.filter((it) => needsAttention(it.syncState)), fine = all.filter((it) => !needsAttention(it.syncState));
+  const rowEls = /* @__PURE__ */ new Map();
+  let cancelled = false;
+  const fill = async () => {
+    const pw = ctx.password();
+    if (!pw) return;
+    const queue = all.slice();
+    const worker = async () => {
+      while (queue.length && !cancelled) {
+        const it = queue.shift();
+        const els = rowEls.get(it.identifier);
+        if (!els) continue;
+        const meta = await peekMeta(it.identifier, pw).catch(() => null);
+        const d = describe(it, meta, ctx);
+        els.name.textContent = d.name;
+        els.detail.textContent = detailLine(it, d.when);
+      }
+    };
+    await Promise.all(Array.from({ length: 4 }, worker));
+  };
   await sheet((done) => {
-    const row = (it) => h(
-      "div",
-      { class: "bin-row" },
-      h(
+    const row = (it) => {
+      const name = h("span", { class: "slot-name" }, labelFor(it.identifier));
+      const detail = h("span", { class: "muted" }, detailLine(it, null));
+      rowEls.set(it.identifier, { name, detail });
+      return h(
         "div",
-        { class: "slot-text" },
-        h("span", { class: "slot-name" }, labelFor(it.identifier)),
-        h("span", { class: "muted" }, [SYNC_TEXT[it.syncState] ?? it.syncState, fmtSize(it.size), fmtWhen(it.lastModified)].filter(Boolean).join(" \xB7 "))
-      ),
-      needsAttention(it.syncState) ? h("button", { class: "primary", onclick: async () => {
-        done();
-        try {
-          note(await nudge(it.identifier, it.syncState), 6e3);
-        } catch (e) {
-          banner(`\u6CA1\u5904\u7406\u6210\uFF1A${errorText(e)}`);
-        }
-      } }, it.syncState === "newer-on-cloud" ? "\u62C9\u4E91\u7AEF\u7684" : "\u63A8\u4E00\u628A") : null,
-      h("button", { title: "\u79FB\u5230\u56DE\u6536\u7AD9", onclick: async () => {
-        done();
-        try {
-          if (await deleteJam(it.identifier)) note("\u5DF2\u79FB\u5230\u56DE\u6536\u7AD9");
-        } catch (e) {
-          banner(`\u6CA1\u80FD\u79FB\u5230\u56DE\u6536\u7AD9\uFF1A${errorText(e)}`);
-        }
-      } }, "\u5220")
-    );
+        { class: "bin-row" },
+        h("div", { class: "slot-text" }, name, detail),
+        needsAttention(it.syncState) ? h("button", { class: "primary", onclick: async () => {
+          done();
+          try {
+            note(await nudge(it.identifier, it.syncState), 6e3);
+          } catch (e) {
+            banner(`\u6CA1\u5904\u7406\u6210\uFF1A${errorText(e)}`);
+          }
+        } }, it.syncState === "newer-on-cloud" ? "\u62C9\u4E91\u7AEF\u7684" : "\u63A8\u4E00\u628A") : null,
+        h("button", { title: "\u79FB\u5230\u56DE\u6536\u7AD9", onclick: async () => {
+          done();
+          try {
+            if (await deleteJam(it.identifier)) note("\u5DF2\u79FB\u5230\u56DE\u6536\u7AD9");
+          } catch (e) {
+            banner(`\u6CA1\u80FD\u79FB\u5230\u56DE\u6536\u7AD9\uFF1A${errorText(e)}`);
+          }
+        } }, "\u5220")
+      );
+    };
+    const unlock = ctx.password() ? null : h("button", { onclick: async () => {
+      if (await ctx.askPassword()) {
+        unlock.remove();
+        void fill();
+      }
+    } }, "\u8F93\u5165\u53E3\u4EE4\uFF0C\u770B\u662F\u54EA\u4E2A\u6E38\u620F");
+    void fill();
     return [
       h("h2", {}, "\u5B58\u6863\u7BA1\u7406"),
       h("p", { class: "hint" }, `${complete ? "" : "\u4E91\u7AEF\u5217\u8868\u6CA1\u62FF\u5168\uFF08\u6CA1\u767B\u5F55 / \u7F51\u7EDC\u6162\uFF09\uFF0C\u770B\u5230\u7684\u53EF\u80FD\u4E0D\u5168\u3002"}\u300C\u63A8\u4E00\u628A\u300D= \u628A\u8FD9\u53F0\u7684\u90A3\u4EFD\u518D\u4F20\u4E00\u6B21\uFF1A\u4E91\u7AEF\u4E5F\u6539\u8FC7\u5C31\u4F1A\u8BA9\u4F60\u9009\uFF0C\u8F93\u7684\u8FDB\u5907\u4EFD\u7BB1\u3002`),
+      unlock,
       h("h3", {}, todo.length ? `\u8981\u5904\u7406\u7684\uFF08${todo.length}\uFF09` : "\u6CA1\u6709\u8981\u5904\u7406\u7684"),
       todo.length ? h("div", { class: "bins" }, ...todo.map(row)) : null,
       h("h3", {}, `\u6B63\u5E38\u7684\uFF08${fine.length}\uFF09`),
@@ -7817,6 +7868,8 @@ async function openSaveManager() {
         openBins().catch((e) => banner(errorText(e)));
       } }, "\u56DE\u6536\u7AD9 / \u5907\u4EFD\u7BB1"), h("button", { onclick: () => done() }, "\u5173\u95ED"))
     ].filter(Boolean);
+  }).finally(() => {
+    cancelled = true;
   });
 }
 var fmtTs = (ts) => ts && ts.length >= 12 ? `${ts.slice(0, 4)}-${ts.slice(4, 6)}-${ts.slice(6, 8)} ${ts.slice(8, 10)}:${ts.slice(10, 12)}` : "";
@@ -8009,7 +8062,8 @@ var softKeys = null;
 var snaps = null;
 var currentSlot = null;
 var lastNote = "";
-var titles = /* @__PURE__ */ new Map();
+var cards = /* @__PURE__ */ new Map();
+var titles = { get: (id) => cards.get(id)?.title, has: (id) => cards.has(id) };
 function audioContext() {
   ac ??= new AudioContext({ sampleRate: 44100, latencyHint: "interactive" });
   return ac;
@@ -8105,7 +8159,7 @@ function renderLibrary() {
     "div",
     { class: "row" },
     h("button", { onclick: () => {
-      openSaveManager().catch((e) => banner(errorText(e)));
+      openSaveManager(saveManagerContext).catch((e) => banner(errorText(e)));
     } }, "\u5B58\u6863\u7BA1\u7406"),
     h("button", { onclick: () => {
       openBins().catch((e) => banner(errorText(e)));
@@ -8114,6 +8168,20 @@ function renderLibrary() {
   list.replaceChildren(...rows);
   $("unlock").hidden = !locked;
 }
+var saveManagerContext = {
+  password: () => getPassword(),
+  async askPassword() {
+    const pw = await askPassword("\u8F93\u5165\u53E3\u4EE4", "\u8BFB\u5FEB\u7167 / \u5B58\u6863\u7684\u5143\u6570\u636E\u624D\u77E5\u9053\u662F\u54EA\u4E2A\u6E38\u620F\u3002\u53E3\u4EE4\u53EA\u5728\u8FD9\u4E00\u9875\u91CC\u8BB0\u7740\u3002");
+    if (pw) {
+      setPassword(pw);
+      unlockTitles().catch(() => {
+      });
+    }
+    return pw;
+  },
+  titleByKey: (key) => [...cards.values()].find((c) => c.key === key)?.title ?? null,
+  titleByDir: (dir) => [...cards.values()].find((c) => c.fp.id && dir.toUpperCase().startsWith(c.fp.id.toUpperCase()))?.title ?? null
+};
 async function keepDisc(identifier) {
   const f = getStore().file(identifier, { mode: "existing" });
   say("\u6B63\u5728\u628A\u6574\u5F20\u76D8\u7559\u5230\u8FD9\u53F0\u8BBE\u5907\u2026", 6e5);
@@ -8137,15 +8205,15 @@ async function unlockTitles() {
   if (!pw) return;
   setPassword(pw);
   let wrong = 0;
-  const todo = pantryItems.filter((it) => it.identifier.endsWith(".wafter") && !titles.has(it.identifier)).map((it) => it.identifier);
+  const todo = pantryItems.filter((it) => it.identifier.endsWith(".wafter") && !cards.has(it.identifier)).map((it) => it.identifier);
   let next = 0;
   const worker = async () => {
     while (next < todo.length) {
       const id = todo[next++];
       try {
-        const t = await titleInPantry(id);
-        if (t) {
-          titles.set(id, t);
+        const card = await inspectPantry(id);
+        if (card) {
+          cards.set(id, card);
           renderLibrary();
         } else wrong++;
       } catch (e) {
@@ -8403,14 +8471,16 @@ function openSlots() {
   } }, "\u5220");
   const row = (slot, done) => {
     const thumb = h("div", { class: "thumb" });
+    const timeEl = h("span", { class: "muted" }, `${when(slot.savedAt)}${slot.local ? " \xB7 \u672C\u673A" : ""}`);
     s.peek(slot).then((m) => {
       if (m?.thumb) thumb.append(h("img", { src: `data:image/jpeg;base64,${m.thumb}`, alt: "" }));
+      if (m?.at) timeEl.textContent = `${when(m.at)}${slot.local ? " \xB7 \u672C\u673A" : ""}`;
     });
     return h(
       "div",
       { class: `slot${slot.id === currentSlot?.id ? " current" : ""}` },
       thumb,
-      h("div", { class: "slot-text" }, h("span", { class: "slot-name" }, slotLabel(slot)), h("span", { class: "muted" }, `${when(slot.savedAt)}${slot.local ? " \xB7 \u672C\u673A" : ""}`)),
+      h("div", { class: "slot-text" }, h("span", { class: "slot-name" }, slotLabel(slot)), timeEl),
       h(
         "div",
         { class: "slot-buttons" },
@@ -8847,4 +8917,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-7f714a65aa06.mjs.map
+//# sourceMappingURL=kudsrocket-1c8f402b9d17.mjs.map
