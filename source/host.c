@@ -389,8 +389,134 @@ static void gl_make_fbo(int w, int h) {
 }
 
 static uintptr_t hw_get_current_framebuffer(void) { return g_fbo; }
+
+// ───────────── 性能量具（W-4「先量后优」；added 20261015 by Claude Fable 5.1）─────────────
+// 一帧要过三条线：模拟线程（CPU 解释器 + GE 显示列表 / 顶点解码）→ 提交线程（= 本线程，把 GL 命令一条条交给浏览器）→ 浏览器的 GPU 进程。
+//   谁是瓶颈：① 模拟线程忙多少 = 1 − 它等提交线程的时间（上游补丁 GLRenderManager.cpp 计：BeginFrame / FlushSync 里的等待）；
+//   ② 提交线程忙多少 = retro_run 的墙钟时间 − 它等模拟线程的时间（同一补丁：ThreadFrame 里的等待）；③ 两边都不忙、帧率还低 = 浏览器 / GPU / 排程那边。
+//   GL 调用计数：链接时 -Wl,--wrap=glXxx（core/ppsspp/build.sh）把核对 GLES2 函数的调用绕到 __wrap_glXxx（计数；贵的几个顺便计时）；
+//   GLES3 的函数核经 get_proc_address 拿，这里同样包一层。全部累计值、各自只由本线程写，主线程每秒读一次算差。
+//   每秒一次 glGetError（浏览器侧是同步往返，一秒一次无感）：Quest 上山脊赛车画面塌了那种事，错误码能进日志。
+static double g_pf_run_ms = 0, g_pf_run_max = 0, g_pf_present_ms = 0;
+static double g_pf_draws = 0, g_pf_tex = 0, g_pf_tex_px = 0, g_pf_tex_ms = 0, g_pf_buf = 0, g_pf_buf_bytes = 0, g_pf_buf_ms = 0;
+static double g_pf_read = 0, g_pf_read_ms = 0, g_pf_geterr = 0, g_pf_sync = 0, g_pf_sync_ms = 0, g_pf_prog = 0, g_pf_fbo = 0, g_pf_map = 0, g_pf_map_ms = 0, g_pf_blit = 0;
+static _Atomic uint32_t g_pf_gl_error = 0, g_pf_gl_errors = 0; // 最近看到的错误码、累计次数
+static double g_pf_err_at = 0;
+static int g_pf_err_printed = 0;
+static char g_gl_renderer[256] = "";
+#define PF_NOW() emscripten_get_now()
+
+void __real_glDrawElements(GLenum, GLsizei, GLenum, const void *);
+void __wrap_glDrawElements(GLenum mode, GLsizei count, GLenum type, const void *indices) { g_pf_draws += 1; __real_glDrawElements(mode, count, type, indices); }
+void __real_glDrawArrays(GLenum, GLint, GLsizei);
+void __wrap_glDrawArrays(GLenum mode, GLint first, GLsizei count) { g_pf_draws += 1; __real_glDrawArrays(mode, first, count); }
+void __real_glTexImage2D(GLenum, GLint, GLint, GLsizei, GLsizei, GLint, GLenum, GLenum, const void *);
+void __wrap_glTexImage2D(GLenum t, GLint l, GLint i, GLsizei w, GLsizei h, GLint b, GLenum f, GLenum ty, const void *p) {
+  double t0 = PF_NOW(); __real_glTexImage2D(t, l, i, w, h, b, f, ty, p); g_pf_tex_ms += PF_NOW() - t0; g_pf_tex += 1; g_pf_tex_px += (double)w * h;
+}
+void __real_glTexSubImage2D(GLenum, GLint, GLint, GLint, GLsizei, GLsizei, GLenum, GLenum, const void *);
+void __wrap_glTexSubImage2D(GLenum t, GLint l, GLint x, GLint y, GLsizei w, GLsizei h, GLenum f, GLenum ty, const void *p) {
+  double t0 = PF_NOW(); __real_glTexSubImage2D(t, l, x, y, w, h, f, ty, p); g_pf_tex_ms += PF_NOW() - t0; g_pf_tex += 1; g_pf_tex_px += (double)w * h;
+}
+void __real_glCompressedTexImage2D(GLenum, GLint, GLenum, GLsizei, GLsizei, GLint, GLsizei, const void *);
+void __wrap_glCompressedTexImage2D(GLenum t, GLint l, GLenum i, GLsizei w, GLsizei h, GLint b, GLsizei n, const void *p) {
+  double t0 = PF_NOW(); __real_glCompressedTexImage2D(t, l, i, w, h, b, n, p); g_pf_tex_ms += PF_NOW() - t0; g_pf_tex += 1; g_pf_tex_px += (double)w * h;
+}
+void __real_glBufferData(GLenum, GLsizeiptr, const void *, GLenum);
+void __wrap_glBufferData(GLenum t, GLsizeiptr n, const void *p, GLenum u) { double t0 = PF_NOW(); __real_glBufferData(t, n, p, u); g_pf_buf_ms += PF_NOW() - t0; g_pf_buf += 1; g_pf_buf_bytes += (double)n; }
+void __real_glBufferSubData(GLenum, GLintptr, GLsizeiptr, const void *);
+void __wrap_glBufferSubData(GLenum t, GLintptr o, GLsizeiptr n, const void *p) { double t0 = PF_NOW(); __real_glBufferSubData(t, o, n, p); g_pf_buf_ms += PF_NOW() - t0; g_pf_buf += 1; g_pf_buf_bytes += (double)n; }
+void __real_glReadPixels(GLint, GLint, GLsizei, GLsizei, GLenum, GLenum, void *);
+void __wrap_glReadPixels(GLint x, GLint y, GLsizei w, GLsizei h, GLenum f, GLenum t, void *p) { double t0 = PF_NOW(); __real_glReadPixels(x, y, w, h, f, t, p); g_pf_read_ms += PF_NOW() - t0; g_pf_read += 1; }
+GLenum __real_glGetError(void);
+GLenum __wrap_glGetError(void) { g_pf_geterr += 1; return __real_glGetError(); }
+void __real_glFinish(void);
+void __wrap_glFinish(void) { double t0 = PF_NOW(); __real_glFinish(); g_pf_sync_ms += PF_NOW() - t0; g_pf_sync += 1; }
+void __real_glFlush(void);
+void __wrap_glFlush(void) { g_pf_sync += 1; __real_glFlush(); }
+void __real_glUseProgram(GLuint);
+void __wrap_glUseProgram(GLuint p) { g_pf_prog += 1; __real_glUseProgram(p); }
+void __real_glBindFramebuffer(GLenum, GLuint);
+void __wrap_glBindFramebuffer(GLenum t, GLuint f) { g_pf_fbo += 1; __real_glBindFramebuffer(t, f); }
+
+static void *(*real_glMapBufferRange)(GLenum, GLintptr, GLsizeiptr, GLbitfield);
+static void *pf_glMapBufferRange(GLenum t, GLintptr o, GLsizeiptr l, GLbitfield a) { double t0 = PF_NOW(); void *r = real_glMapBufferRange(t, o, l, a); g_pf_map_ms += PF_NOW() - t0; g_pf_map += 1; return r; }
+static GLboolean (*real_glUnmapBuffer)(GLenum);
+static GLboolean pf_glUnmapBuffer(GLenum t) { double t0 = PF_NOW(); GLboolean r = real_glUnmapBuffer(t); g_pf_map_ms += PF_NOW() - t0; return r; }
+static GLenum (*real_glClientWaitSync)(GLsync, GLbitfield, GLuint64);
+static GLenum pf_glClientWaitSync(GLsync s, GLbitfield f, GLuint64 t) { double t0 = PF_NOW(); GLenum r = real_glClientWaitSync(s, f, t); g_pf_sync_ms += PF_NOW() - t0; g_pf_sync += 1; return r; }
+static void (*real_glBlitFramebuffer)(GLint, GLint, GLint, GLint, GLint, GLint, GLint, GLint, GLbitfield, GLenum);
+static void pf_glBlitFramebuffer(GLint a, GLint b, GLint c, GLint d, GLint e, GLint f, GLint g, GLint h, GLbitfield m, GLenum fl) { g_pf_blit += 1; real_glBlitFramebuffer(a, b, c, d, e, f, g, h, m, fl); }
+static void (*real_glDrawRangeElements)(GLenum, GLuint, GLuint, GLsizei, GLenum, const void *);
+static void pf_glDrawRangeElements(GLenum m, GLuint s, GLuint e, GLsizei c, GLenum t, const void *i) { g_pf_draws += 1; real_glDrawRangeElements(m, s, e, c, t, i); }
+
 static retro_proc_address_t hw_get_proc_address(const char *sym) {
-  return (retro_proc_address_t)emscripten_webgl_get_proc_address(sym);
+  void *real = emscripten_webgl_get_proc_address(sym);
+  if (!real) return NULL;
+#define PF_HOOK(name) if (!strcmp(sym, #name)) { real_##name = (typeof(real_##name))real; return (retro_proc_address_t)pf_##name; }
+  PF_HOOK(glMapBufferRange) PF_HOOK(glUnmapBuffer) PF_HOOK(glClientWaitSync) PF_HOOK(glBlitFramebuffer) PF_HOOK(glDrawRangeElements)
+#undef PF_HOOK
+  return (retro_proc_address_t)real;
+}
+
+// 显卡名（WEBGL_debug_renderer_info 的 unmasked renderer；没有就 RENDERER）：只写 ASCII，不依赖运行时的字符串函数。
+EM_JS(void, kr_gl_renderer_query, (int handle, char *out, int cap), {
+  var c = GL.contexts[handle]; if (!c || !c.GLctx) return;
+  var ctx = c.GLctx, s = "";
+  try { var ext = ctx.getExtension("WEBGL_debug_renderer_info"); if (ext) s = ctx.getParameter(ext.UNMASKED_RENDERER_WEBGL) || ""; } catch (e) {}
+  try { if (!s) s = ctx.getParameter(ctx.RENDERER) || ""; } catch (e) {}
+  s = String(s);
+  var n = Math.min(s.length, cap - 1), i;
+  for (i = 0; i < n; i++) { var ch = s.charCodeAt(i); HEAPU8[out + i] = ch < 128 ? ch : 63; }
+  HEAPU8[out + n] = 0;
+});
+
+void kr_ppsspp_gpu_stats(double *out); // 上游补丁（libretro.cpp）：PPSSPP 自己的每帧 GPU 统计 + 两边线程的等待累计 + vblank / flip 计数
+void kr_ppsspp_set_debug_stats(int on); // 同上：让 PPSSPP 记 gpuStats（只是计数，不画任何东西）
+
+// ── 移动设备画 30 帧（user 10-14「移动设备上应该限速30吧」「区区kud竟然想浪费我60帧的电」）──
+// 跳帧下限：主线程按设备设 1（每 2 帧画 1）。但 PPSSPP 的固定跳帧是按「游戏的 flip」数的（sceDisplay.cpp DoFrameTiming 每 flip 调一次）：
+//   本身 30 帧的游戏（每 2 个 vblank 才 flip 一次，怪物猎人就是）再跳一半就成 15 帧——所以下限只对「本身 60 帧」的游戏生效：
+//   每秒看一次 PPSSPP 的 vblank / flip 比（1 ≈ 60 帧游戏，2 ≈ 30 帧游戏），比值 < 1.5 才把下限压上去。游戏逻辑永远 60，只少画。
+static atomic_int g_frameskip_floor = 0;     // 主线程设：0 = 不限；1 = 画一半
+static atomic_int g_native60 = 1;            // 这一秒里游戏本身是不是 60 帧（每 vblank 一 flip）
+static _Atomic double g_native_fps = 0;      // 估的游戏本身帧率（60 / 每 flip 的 vblank 数）
+static double g_vb_prev = 0, g_fl_prev = 0;
+EMSCRIPTEN_KEEPALIVE void kr_set_frameskip_floor(int n) { g_frameskip_floor = n < 0 ? 0 : n > 2 ? 2 : n; }
+EMSCRIPTEN_KEEPALIVE int kr_frameskip_floor_active(void) { return g_native60 ? g_frameskip_floor : 0; }
+EMSCRIPTEN_KEEPALIVE double kr_native_fps(void) { return atomic_load(&g_native_fps); }
+
+// 每秒一次的杂务（核线程、帧边界上）：GL 有没有报错（核自己只在 debug 构建里查）；游戏本身是 30 还是 60 帧。
+static void pf_tick_1s(void) {
+  double now = PF_NOW();
+  if (now - g_pf_err_at < 1000.0) return;
+  g_pf_err_at = now;
+  if (g_hw_active) {
+    GLenum e = __real_glGetError();
+    if (e) {
+      atomic_store(&g_pf_gl_error, (uint32_t)e);
+      atomic_fetch_add(&g_pf_gl_errors, 1);
+      if (g_pf_err_printed < 5) { g_pf_err_printed++; fprintf(stderr, "[kr] GL error 0x%x\n", e); }
+    }
+  }
+  double st[40];
+  kr_ppsspp_gpu_stats(st);
+  double dvb = st[15] - g_vb_prev, dfl = st[16] - g_fl_prev;
+  g_vb_prev = st[15]; g_fl_prev = st[16];
+  if (dfl >= 10 && dvb > 0) { // 够样本才下结论；暂停 / 读档中不改
+    double ratio = dvb / dfl;
+    g_native60 = ratio < 1.5;
+    atomic_store(&g_native_fps, 60.0 / (ratio < 1 ? 1 : ratio));
+  }
+}
+// out[0..21] 本文件的累计量；out[22..36] = kr_ppsspp_gpu_stats。只有 run_max（最长一趟 retro_run）读一次清一次。
+EMSCRIPTEN_KEEPALIVE void kr_perf_stats(double *out) {
+  out[0] = g_pf_run_ms; out[1] = g_pf_run_max; out[2] = g_pf_present_ms;
+  out[3] = g_pf_draws; out[4] = g_pf_tex; out[5] = g_pf_tex_px; out[6] = g_pf_tex_ms; out[7] = g_pf_buf; out[8] = g_pf_buf_bytes; out[9] = g_pf_buf_ms;
+  out[10] = g_pf_read; out[11] = g_pf_read_ms; out[12] = g_pf_geterr; out[13] = g_pf_sync; out[14] = g_pf_sync_ms; out[15] = g_pf_prog; out[16] = g_pf_fbo;
+  out[17] = g_pf_map; out[18] = g_pf_map_ms; out[19] = g_pf_blit; out[20] = (double)atomic_load(&g_pf_gl_error); out[21] = (double)atomic_load(&g_pf_gl_errors);
+  kr_ppsspp_gpu_stats(out + 22);
+  g_pf_run_max = 0;
 }
 
 // ── 出帧节奏统计（10-14 user：「显示的60fps但是卡顿明显」——平均 60 帧也可能是忽快忽慢，要量间隔）──
@@ -449,6 +575,7 @@ static void ensure_up(int w, int h) {
 
 static void gl_present(unsigned w, unsigned h) {
   record_present();
+  double pf_t0 = PF_NOW();
   int tw = g_disp_w > 0 ? g_disp_w : (int)w, th = g_disp_h > 0 ? g_disp_h : (int)h;
   int cw = 0, ch = 0;
   emscripten_get_canvas_element_size("#gl", &cw, &ch);
@@ -473,6 +600,7 @@ static void gl_present(unsigned w, unsigned h) {
     emscripten_glBlitFramebuffer(0, 0, (GLint)w * k, (GLint)h * k, dx, dy, dx + dw, dy + dh, GL_COLOR_BUFFER_BIT, GL_LINEAR);
   }
   glBindFramebuffer(GL_FRAMEBUFFER, g_fbo);
+  g_pf_present_ms += PF_NOW() - pf_t0;
 }
 
 // ───────────── 画面 / 声音 / 输入 ─────────────
@@ -844,7 +972,12 @@ EMSCRIPTEN_KEEPALIVE void kr_frame_ms_stats(double *out) {
 static void run_one(void) {
   service_snapshots();
   uint64_t produced_before = g_audio_produced;
+  double pf_t0 = PF_NOW();
   retro_run();
+  double pf_dt = PF_NOW() - pf_t0;
+  g_pf_run_ms += pf_dt;
+  if (pf_dt > g_pf_run_max) g_pf_run_max = pf_dt;
+  pf_tick_1s();
   atomic_fetch_add(&g_frames_run, 1);
   uint64_t produced = g_audio_produced - produced_before;
   double emu_ms = produced ? (double)produced * 1000.0 / g_rate : g_frame_ms_avg;
@@ -927,6 +1060,8 @@ static void frame(void) {
     if (d > e * 2.0) want = 2;
     else if (d > e * 0.5) want = want > 1 ? want : 1;
     else if (d < e * 0.25) want = 0;
+    int floor_now = kr_frameskip_floor_active();
+    if (want < floor_now) want = floor_now;
     g_frameskip_want = want;
     g_frameskip_now = want;
     if (g_frameskip_want != g_frameskip_told) { kr_ppsspp_set_frameskip(g_frameskip_want); g_frameskip_told = g_frameskip_want; }
@@ -994,6 +1129,7 @@ int main(int argc, char **argv) {
     fprintf(stderr, "[kr] retro_load_game failed for %s\n", g_disc_path);
     return 1;
   }
+  kr_ppsspp_set_debug_stats(1);
   struct retro_system_av_info av;
   retro_get_system_av_info(&av);
   if (av.timing.fps > 1.0) g_fps = av.timing.fps;
@@ -1005,7 +1141,9 @@ int main(int argc, char **argv) {
     if (g_hw.context_reset) g_hw.context_reset();
     g_hw_active = 1;
     kr_gl_hook_events((int)g_gl, (int *)&g_gl_lost, (int *)&g_gl_restored);
+    kr_gl_renderer_query((int)g_gl, g_gl_renderer, (int)sizeof g_gl_renderer);
     fprintf(stderr, "[kr] GPU rendering: WebGL2, framebuffer %dx%d\n", w, h);
+    fprintf(stderr, "[kr] GL renderer: %s\n", g_gl_renderer[0] ? g_gl_renderer : "(unknown)");
   } else {
     fprintf(stderr, "[kr] software rendering\n");
   }

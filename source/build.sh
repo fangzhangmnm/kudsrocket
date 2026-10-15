@@ -35,11 +35,22 @@ for f in compat.ini knownfuncs.ini langregion.ini ppge_atlas.meta ppge_atlas.zim
   cp "$PPSSPP_SRC/assets/$f" "$assets/PPSSPP/"
 done
 
+# 性能量具（host.c「性能量具」节）：核对这些 GLES2 函数的调用在链接时绕到 host.c 的 __wrap_glXxx（计数 / 计时），再转 __real_glXxx。
+wrap=""
+for s in glDrawElements glDrawArrays glTexImage2D glTexSubImage2D glCompressedTexImage2D glBufferData glBufferSubData glReadPixels glGetError glFinish glFlush glUseProgram glBindFramebuffer; do
+  wrap="$wrap -Wl,--wrap=$s"
+done
+# 默认保留 wasm 函数名（--profiling-funcs，+1 MB，行为不变）：浏览器的 CPU 采样（iPad Safari 检查器 / Quest 远程调试 / private/tests/perf-probe.ts --profile）
+#   能认出核里的函数——10-15 就是这样抓到上游把 wasm 钉死在慢解释器上的。KR_NO_SYMBOLS=1 去掉。
+prof="--profiling-funcs"
+[ "${KR_NO_SYMBOLS:-0}" = "1" ] && prof=""
+
 # host.c 是 C：先用 emcc 编成 .o；核里是 C++，链接交给 em++ 才会带上 C++ 标准库
 emcc -c "$here/host.c" -o "$assets/host.o" -I"$PPSSPP_SRC/libretro/libretro-common/include" -O3 -pthread -msimd128
+# shellcheck disable=SC2086
 em++ "$assets/host.o" "$assets/libppsspp_libretro.a" \
   "$ff/libavformat.a" "$ff/libavcodec.a" "$ff/libswscale.a" "$ff/libswresample.a" "$ff/libavutil.a" \
-  -O3 -pthread -msimd128 \
+  -O3 -pthread -msimd128 $wrap $prof \
   -sPROXY_TO_PTHREAD=1 -sPTHREAD_POOL_SIZE=12 \
   -sMODULARIZE=1 -sEXPORT_ES6=1 -sEXPORT_NAME=createKrCore -sENVIRONMENT=web,worker \
   -sINITIAL_MEMORY=768MB -sALLOW_MEMORY_GROWTH=0 \

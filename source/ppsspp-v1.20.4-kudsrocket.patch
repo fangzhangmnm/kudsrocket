@@ -1,3 +1,62 @@
+diff --git a/Common/GPU/OpenGL/GLRenderManager.cpp b/Common/GPU/OpenGL/GLRenderManager.cpp
+index 14dd54e..394b9ce 100644
+--- a/Common/GPU/OpenGL/GLRenderManager.cpp
++++ b/Common/GPU/OpenGL/GLRenderManager.cpp
+@@ -11,6 +11,13 @@
+ #include "Common/StringUtils.h"
+ #include "Common/Math/math_util.h"
+ 
++// KudsRocket patch (perf probe): how long each side of the GL hand-off spends waiting for the other.
++//   emu thread waits in BeginFrame (frame slot not yet consumed) and FlushSync; render thread waits in ThreadFrame (queue empty).
++//   Microseconds, cumulative, each written by one thread only; the frontend (host.c) reads them once a second.
++#include <atomic>
++std::atomic<uint64_t> g_kr_emu_wait_us{0}, g_kr_render_wait_us{0};
++static inline uint64_t kr_now_us() { return (uint64_t)(time_now_d() * 1e6); }
++
+ #if 0 // def _DEBUG
+ #define VLOG(...) INFO_LOG(Log::G3D, __VA_ARGS__)
+ #else
+@@ -150,7 +157,11 @@ bool GLRenderManager::ThreadFrame(bool waitIfEmpty) {
+ 				return false;
+ 			}
+ 
+-			pushCondVar_.wait(lock, [this] { return !renderThreadQueue_.empty(); });
++			if (renderThreadQueue_.empty()) {
++				uint64_t t0 = kr_now_us();
++				pushCondVar_.wait(lock, [this] { return !renderThreadQueue_.empty(); });
++				g_kr_render_wait_us += kr_now_us() - t0;
++			}
+ 			task = renderThreadQueue_.front();
+ 			renderThreadQueue_.pop();
+ 		}
+@@ -361,8 +372,12 @@ void GLRenderManager::BeginFrame(bool enableProfiling) {
+ 	{
+ 		std::unique_lock<std::mutex> lock(frameData.fenceMutex);
+ 		VLOG("PUSH: BeginFrame (curFrame = %d, readyForFence = %d, time=%0.3f)", curFrame, (int)frameData.readyForFence, time_now_d());
+-		while (!frameData.readyForFence) {
+-			frameData.fenceCondVar.wait(lock);
++		if (!frameData.readyForFence) {
++			uint64_t t0 = kr_now_us();
++			while (!frameData.readyForFence) {
++				frameData.fenceCondVar.wait(lock);
++			}
++			g_kr_emu_wait_us += kr_now_us() - t0;
+ 		}
+ 		frameData.readyForFence = false;
+ 	}
+@@ -551,10 +566,12 @@ void GLRenderManager::FlushSync() {
+ 	{
+ 		std::unique_lock<std::mutex> lock(syncMutex_);
+ 		// Wait for the flush to be hit, since we're syncing.
++		uint64_t t0 = kr_now_us();
+ 		while (!syncDone_) {
+ 			VLOG("PUSH: Waiting for frame[%d].readyForFence = 1 (sync)", curFrame_);
+ 			syncCondVar_.wait(lock);
+ 		}
++		g_kr_emu_wait_us += kr_now_us() - t0;
+ 		syncDone_ = false;
+ 	}
+ }
 diff --git a/Common/TimeUtil.cpp b/Common/TimeUtil.cpp
 index 344990a..96c64b8 100644
 --- a/Common/TimeUtil.cpp
@@ -68,6 +127,27 @@ index fd53e69..fac84b7 100644
  #else
  		return new MIPSComp::FakeJit(mipsState);
  #endif
+diff --git a/Core/System.cpp b/Core/System.cpp
+index 9881887..b2623c3 100644
+--- a/Core/System.cpp
++++ b/Core/System.cpp
+@@ -76,6 +76,8 @@
+ #include "GPU/Debugger/Playback.h"
+ #include "GPU/Debugger/RecordFormat.h"
+ #include "UI/DiscordIntegration.h"
++#include "GPU/GPU.h"
++GPUStatistics g_kr_gpuStatsLast;  // KudsRocket patch (perf probe)
+ 
+ enum CPUThreadState {
+ 	CPU_THREAD_NOT_RUNNING,
+@@ -572,6 +574,7 @@ void PSP_UpdateDebugStats(bool collectStats) {
+ 
+ 	if (!PSP_CoreParameter().frozen && !Core_IsStepping()) {
+ 		kernelStats.ResetFrame();
++		g_kr_gpuStatsLast = gpuStats;  // KudsRocket patch (perf probe): keep the finished frame's numbers for the frontend
+ 		gpuStats.ResetFrame();
+ 	}
+ }
 diff --git a/Core/WebServer.cpp b/Core/WebServer.cpp
 index 9c0c469..fbbe89d 100644
 --- a/Core/WebServer.cpp
@@ -273,10 +353,25 @@ index 6bdb4ef..1f71ff8 100644
  ifneq (,$(findstring x86,$(TARGET_ARCH)))
  	COREFLAGS += -DHAVE_SYSCTLBYNAME
 diff --git a/libretro/libretro.cpp b/libretro/libretro.cpp
-index 3b2f103..e49dcfa 100644
+index 3b2f103..7f55d60 100644
 --- a/libretro/libretro.cpp
 +++ b/libretro/libretro.cpp
-@@ -1170,6 +1170,11 @@ static void check_variables(CoreParameter &coreParam)
+@@ -547,7 +547,13 @@ static void check_variables(CoreParameter &coreParam)
+        g_Config.iCpuCore = (int)CPUCore::IR_INTERPRETER;
+    }
+ #else
+-   g_Config.iCpuCore = (int)CPUCore::INTERPRETER;
++   // KudsRocket patch: upstream pins wasm to the plain interpreter (MIPSInt::*), ignoring ppsspp_cpu_core. The IR interpreter runs fine
++   // in wasm and is several times faster (10-15 profile: MIPSInt::Int_* + PSP_RunLoopWhileState = 60% of the emu thread). Honor the option;
++   // "JIT" (no native JIT here) and anything unknown also mean the IR interpreter.
++   g_Config.iCpuCore = (int)CPUCore::IR_INTERPRETER;
++   var.key = "ppsspp_cpu_core";
++   if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value && !strcmp(var.value, "Interpreter"))
++      g_Config.iCpuCore = (int)CPUCore::INTERPRETER;
+ #endif
+ 
+    var.key = "ppsspp_fast_memory";
+@@ -1170,6 +1176,31 @@ static void check_variables(CoreParameter &coreParam)
     set_variable_visibility();
  }
  
@@ -284,11 +379,39 @@ index 3b2f103..e49dcfa 100644
 +// RETRO_ENVIRONMENT_GET_VARIABLE_UPDATE mid-game re-runs all of check_variables, which hangs with the GL emu thread.
 +// The frontend calls this between retro_run() calls (it only writes an int the emu thread reads at the next flip).
 +extern "C" void kr_ppsspp_set_frameskip(int n) { g_Config.iFrameSkip = n; }
++// KudsRocket patch (perf probe): collect gpuStats (numDrawCalls etc.) even without PPSSPP's UI overlay (EmuScreen drives
++// PSP_UpdateDebugStats in the desktop app; the libretro build never calls it). Counters only; nothing is drawn.
++static bool g_kr_debug_stats = false;
++extern "C" void kr_ppsspp_set_debug_stats(int on) { g_kr_debug_stats = on != 0; }
++
++// KudsRocket patch (perf probe): PPSSPP's own per-frame GPU statistics + the GL hand-off wait counters, for the frontend's stats line.
++//   out[0..11] = drawCalls, vertexDecodes, vertsSubmitted, vertsDecoded, flushes, texturesDecoded, readbacks, blockingReadbacks,
++//                uploads, blockTransfers, copiesForShaderBlend+copiesForSelfTex, fbosCreated (all for the last completed frame);
++//   out[12] = emu-thread wait µs (cumulative), out[13] = render-thread wait µs (cumulative), out[14] = msProcessingDisplayLists (last frame).
++extern std::atomic<uint64_t> g_kr_emu_wait_us, g_kr_render_wait_us;
++extern GPUStatistics g_kr_gpuStatsLast;
++extern "C" void kr_ppsspp_gpu_stats(double *out) {
++   const GPUStatistics &g = g_kr_gpuStatsLast;
++   out[0] = g.numDrawCalls; out[1] = g.numVertexDecodes; out[2] = g.numVertsSubmitted; out[3] = g.numVertsDecoded;
++   out[4] = g.numFlushes; out[5] = g.numTexturesDecoded; out[6] = g.numReadbacks; out[7] = g.numBlockingReadbacks;
++   out[8] = g.numUploads; out[9] = g.numBlockTransfers; out[10] = g.numCopiesForShaderBlend + g.numCopiesForSelfTex; out[11] = g.numFBOsCreated;
++   out[12] = (double)g_kr_emu_wait_us.load(); out[13] = (double)g_kr_render_wait_us.load(); out[14] = g.msProcessingDisplayLists;
++   // cumulative: vblanks per flip = 1 (60 fps game) or 2 (30 fps game). gpuStats.numFlips counts every flip; __DisplayGetFlipCount() only the drawn ones.
++   out[15] = __DisplayGetNumVblanks(); out[16] = gpuStats.numFlips;
++}
 +
  void retro_set_audio_sample_batch(retro_audio_sample_batch_t cb) { audio_batch_cb = cb; }
  void retro_set_audio_sample(retro_audio_sample_t cb) { (void)cb; }
  void retro_set_input_poll(retro_input_poll_t cb) { input_poll_cb = cb; }
-@@ -1475,11 +1480,13 @@ namespace Libretro
+@@ -1360,6 +1391,7 @@ namespace Libretro
+    static std::thread emuThread;
+    static void EmuFrame()
+    {
++      PSP_UpdateDebugStats(g_kr_debug_stats);  // KudsRocket patch (perf probe): per-frame reset + copy of gpuStats
+       ctx->SetRenderTarget();
+       Draw::DrawContext *draw = ctx->GetDrawContext();
+       if (draw) {
+@@ -1475,11 +1507,13 @@ namespace Libretro
  
        emuThreadState = EmuThreadState::PAUSE_REQUESTED;
  
@@ -307,7 +430,7 @@ index 3b2f103..e49dcfa 100644
     }
  
  } // namespace Libretro
-@@ -2048,24 +2055,15 @@ inline int16_t Clamp16(int32_t sample) {
+@@ -2048,24 +2082,15 @@ inline int16_t Clamp16(int32_t sample) {
  
  void System_AudioPushSamples(const int32_t *audio, int numSamples, float volume) {
     // We ignore volume here, because it's handled by libretro presumably.

@@ -1,5 +1,5 @@
 // src/version.ts
-var APP_VERSION = "v0.1.29-2026-10-15";
+var APP_VERSION = "v0.1.30-2026-10-15";
 
 // assets/icons.svg
 var icons_default = '<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none">\n<!--\n  13 icons extracted from the family icon library (../20260708 SVG Icons/icons.svg) by extract-icons.py \u2014 do not hand-edit; re-run the script instead.\n  Family SVG Icons \u2014 MIT License, Copyright (c) 2026 fangzhangmnm.\n  Contains work derived from (per-icon provenance in data-src):\n    Feather Icons \u2014 MIT License, Copyright (c) 2013-2023 Cole Bemis \xB7 https://github.com/feathericons/feather\n-->\n  <!-- media -->\n  <!-- pause \u2014 \u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="pause" data-cat="media" data-src="own" data-note="\u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="3.2"><path d="M8.3 5.5 V18.5"/><path d="M15.7 5.5 V18.5"/></g></symbol>\n  <!-- play \u2014 \u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="play" data-cat="media" data-src="own" data-note="\u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 5.4 L18.8 12 L8.2 18.6 Z" fill="currentColor"/></symbol>\n  <!-- fast-forward \u2014 \u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="fast-forward" data-cat="media" data-src="own" data-note="\u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.4 6.8 L10.9 12 L4.4 17.2 Z" fill="currentColor"/><path d="M13.1 6.8 L19.6 12 L13.1 17.2 Z" fill="currentColor"/></symbol>\n  <!-- volume \u2014 \u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009) -->\n  <symbol id="volume" data-cat="media" data-src="own" data-note="\u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 10.3 H8.7 L12.6 6.6 V17.4 L8.7 13.7 H5.5 Z" fill="currentColor"/><path d="M15.13 9.73 A3.4 3.4 0 0 1 15.13 14.27"/><path d="M16.36 7.19 A6.1 6.1 0 0 1 16.36 16.81"/></symbol>\n  <!-- file -->\n  <!-- floppy-disk \u2014 \u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3 -->\n  <symbol id="floppy-disk" data-cat="file" data-src="feather:save" data-note="\u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13l3 3v13a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 17 8 17 3"/></symbol>\n  <!-- folder-open \u2014 \u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF -->\n  <symbol id="folder-open" data-cat="file" data-src="own" data-note="\u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18 V7 a2 2 0 0 1 2 -2 h4 l2 2 h6 a2 2 0 0 1 2 2 v1.8"/><path d="M3 18 L6.4 10.8 H21.6 L18.2 18 Z"/></symbol>\n  <!-- hierarchy -->\n  <!-- lock \u2014 \u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D -->\n  <symbol id="lock" data-cat="hierarchy" data-src="own" data-note="\u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10" width="13" height="11"/><path d="M8.8 10 V6.5 a3.2 3.2 0 0 1 6.4 0 V10"/></symbol>\n  <!-- common -->\n  <!-- x \u2014 \u53C9 -->\n  <symbol id="x" data-cat="common" data-src="own" data-note="\u53C9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 L17.5 17.5 M17.5 6.5 L6.5 17.5"/></symbol>\n  <!-- cloud -->\n  <!-- cloud \u2014 \u4E91 -->\n  <symbol id="cloud" data-cat="cloud" data-src="feather:cloud" data-note="\u4E91" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>\n  <!-- viewport -->\n  <!-- maximize-viewport \u2014 \u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55) -->\n  <symbol id="maximize-viewport" data-cat="viewport" data-src="own" data-note="\u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934 --> <polyline points="4 9 4 4 9 4"/> <polyline points="20 9 20 4 15 4"/> <polyline points="4 15 4 20 9 20"/> <polyline points="20 15 20 20 15 20"/></symbol>\n  <!-- ui -->\n  <!-- more \u2014 \u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00) -->\n  <symbol id="more" data-cat="ui" data-src="own" data-note="\u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/></symbol>\n  <!-- keyboard \u2014 \u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49) -->\n  <symbol id="keyboard" data-cat="ui" data-src="own" data-note="\u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="7.2" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="7.2" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><path d="M8.6 15.6 H15.4"/></symbol>\n  <!-- menu \u2014 \u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17) -->\n  <symbol id="menu" data-cat="ui" data-src="own" data-note="\u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"></line> <line x1="4" y1="12" x2="20" y2="12"></line> <line x1="4" y1="17" x2="20" y2="17"></line></symbol>\n</svg>\n';
@@ -172,6 +172,8 @@ var BUTTON = { cross: 0, square: 1, select: 2, start: 3, up: 4, down: 5, left: 6
 var bit = (b) => 1 << BUTTON[b];
 var PACE_MODES = { wall: 0, audio: 1, vsync: 2 };
 var MEMSTICK_DIR = "/saves/PSP/SAVEDATA";
+var PERF_WORDS = 40;
+var clamp01 = (x) => x < 0 ? 0 : x > 1 ? 1 : x;
 var RUNNING_FRAMES = 2;
 var loopAge = (v) => v <= 0 ? -1 : v > 1e11 ? Date.now() - v : performance.now() - v;
 var SNAPSHOT_FRAMES = 60;
@@ -199,6 +201,13 @@ var CoreSession = class _CoreSession {
   pace = { mean: 0, sd: 0, max: 0, late: 0, bunched: 0, frameMs: 0, frameMsSd: 0 };
   perRefresh = { last: performance.now(), seq: 0, dts: [], counts: [0, 0, 0], hz: 0, shown: [0, 0, 0] };
   startedAt = performance.now();
+  perfBuf = 0;
+  perfPrev = null;
+  perf = null;
+  /** 核 stderr 最近几十行（只留像报错 / 诊断的）：日志面板要的。 */
+  stderrTail = [];
+  /** 显卡名（核起 GL 时问浏览器的；软件渲染 / 老核 = 空）。 */
+  glRenderer = "";
   static async start(opts) {
     const { default: createKrCore } = await import(new URL(`${opts.coreDir}kr-core.mjs`, location.href).href);
     let session2 = null;
@@ -243,7 +252,10 @@ var CoreSession = class _CoreSession {
         }
       }],
       print: (s) => console.log(s),
-      printErr: (s) => console.warn(s)
+      printErr: (s) => {
+        console.warn(s);
+        session2?.noteStderr(s);
+      }
     });
     session2 = new _CoreSession(core, opts);
     session2.init();
@@ -254,6 +266,7 @@ var CoreSession = class _CoreSession {
     const { core, opts } = this;
     if (opts.pacing) core._kr_set_pacing(PACE_MODES[opts.pacing]);
     this.paceBuf = core._malloc(8 * 8);
+    this.perfBuf = core._malloc(PERF_WORDS * 8);
     const tellSize = () => {
       const r = opts.glCanvas.getBoundingClientRect(), dpr = devicePixelRatio || 1;
       core._kr_set_display_size(Math.round(r.width * dpr), Math.round(r.height * dpr));
@@ -339,6 +352,17 @@ var CoreSession = class _CoreSession {
     if (x || y) this.opts.onInput?.();
     this.core._kr_set_analog(Math.round(x * 32767), Math.round(y * 32767));
   }
+  noteStderr(s) {
+    const m = /^\[kr\] GL renderer: (.*)$/.exec(s);
+    if (m) this.glRenderer = m[1].trim();
+    if (!/error|fail|shader|\[kr\]/i.test(s)) return;
+    this.stderrTail.push(s.length > 200 ? s.slice(0, 200) + "\u2026" : s);
+    if (this.stderrTail.length > 40) this.stderrTail.shift();
+  }
+  /** 核 stderr 里最近的报错 / 诊断行（最多 40 行）。 */
+  coreLog() {
+    return this.stderrTail;
+  }
   /** 核堆用了多少字节（工具栏「内存」；老核没有这个导出 → 0）。核的堆固定 768 MB、不增长。 */
   heapUsed() {
     return this.core._kr_heap_used ? this.core._kr_heap_used() : 0;
@@ -411,6 +435,15 @@ var CoreSession = class _CoreSession {
   }
   setSpeed(x) {
     this.core._kr_set_speed(x);
+  }
+  // ── 画 30 帧（移动设备默认；user 10-14「移动设备上应该限速30吧」）：游戏逻辑仍 60，只对本身 60 帧的游戏少画一半（核按 vblank / flip 比判断，30 帧的游戏不再折半）──
+  cap30 = false;
+  setFrameCap30(on) {
+    this.cap30 = on;
+    if (this.core._kr_set_frameskip_floor) this.core._kr_set_frameskip_floor(on ? 1 : 0);
+  }
+  get frameCap30() {
+    return this.cap30;
   }
   // ── 快照（核线程在帧边界做，暂停中也能做）──
   waitSeq(getSeq, before, timeoutMs = 2e4) {
@@ -525,6 +558,7 @@ var CoreSession = class _CoreSession {
     const frames = core._kr_stat_frames();
     const fw = this.fpsWindow;
     if (now - fw.t >= 1e3) {
+      const dtMs = now - fw.t, ranFrames = frames - fw.frames;
       const emuMs = core._kr_stat_emu_ms();
       fw.fps = (frames - fw.frames) * 1e3 / (now - fw.t);
       fw.speed = (emuMs - fw.emuMs) / (now - fw.t);
@@ -539,6 +573,45 @@ var CoreSession = class _CoreSession {
       core._kr_pace_stats(this.paceBuf);
       const f = core.HEAPF64.subarray(this.paceBuf >> 3, (this.paceBuf >> 3) + 8);
       this.pace = { mean: f[1], sd: f[2], max: f[3], late: f[4], bunched: f[5], frameMs: f[6], frameMsSd: f[7] };
+      if (core._kr_perf_stats) {
+        core._kr_perf_stats(this.perfBuf);
+        const p = core.HEAPF64.slice(this.perfBuf >> 3, (this.perfBuf >> 3) + PERF_WORDS);
+        const q = this.perfPrev;
+        if (q) {
+          const d = (i) => p[i] - q[i];
+          const drawn = Math.max(1, f[0]), ran = Math.max(1, ranFrames);
+          const per = (i) => d(i) / drawn;
+          const emuWaitMs = d(34) / 1e3, renderWaitMs = d(35) / 1e3;
+          this.perf = {
+            emuBusy: clamp01(1 - emuWaitMs / dtMs),
+            submitBusy: clamp01((d(0) - renderWaitMs) / dtMs),
+            runMsPerFrame: d(0) / ran,
+            runMaxMs: p[1],
+            presentMs: per(2),
+            draws: per(3),
+            tex: per(4),
+            texPx: per(5),
+            texMs: per(6),
+            buf: per(7),
+            bufBytes: per(8),
+            bufMs: per(9),
+            read: per(10),
+            readMs: per(11),
+            getErr: per(12),
+            sync: per(13),
+            syncMs: per(14),
+            prog: per(15),
+            fbo: per(16),
+            map: per(17),
+            mapMs: per(18),
+            blit: per(19),
+            glError: p[20],
+            glErrors: p[21],
+            ppsspp: { drawCalls: p[22], vertexDecodes: p[23], vertsSubmitted: p[24], vertsDecoded: p[25], flushes: p[26], texturesDecoded: p[27], readbacks: p[28], blockingReadbacks: p[29], uploads: p[30], blockTransfers: p[31], copies: p[32], fbosCreated: p[33], listMs: p[36] }
+          };
+        }
+        this.perfPrev = p;
+      }
       const sorted = this.perRefresh.dts.slice().sort((a, b) => a - b);
       this.perRefresh.hz = sorted.length ? 1e3 / sorted[sorted.length >> 1] : 0;
       this.perRefresh.shown = this.perRefresh.counts;
@@ -580,7 +653,13 @@ var CoreSession = class _CoreSession {
       outputLatencyMs: ((ac2.outputLatency || 0) + (ac2.baseLatency || 0)) * 1e3,
       paused: this.paused,
       gameSpeed: this.speed,
-      seconds: (now - this.startedAt) / 1e3
+      seconds: (now - this.startedAt) / 1e3,
+      /** 画 30 帧：要的 / 此刻真在生效（游戏本身 60 帧才生效）/ 核估的游戏本身帧率（0 = 还没量到）。 */
+      frameCap: { want: this.cap30, active: core._kr_frameskip_floor_active ? core._kr_frameskip_floor_active() > 0 : false, nativeFps: core._kr_native_fps ? core._kr_native_fps() : 0 },
+      /** 性能读数（每秒一个窗口；第一秒 / 老核 = null）。 */
+      perf: this.perf,
+      glRenderer: this.glRenderer,
+      coreLog: () => this.coreLog()
     };
   }
   // ── 记忆棒（游戏内存档）：核的文件系统在主线程，直接读 ──
@@ -6615,11 +6694,11 @@ function state() {
   if (first) {
     const elapsed = performance.now() - first.startedAt;
     const more = flights.size > 1 ? `\uFF08\u8FD8\u6709 ${flights.size - 1} \u4E2A\u6392\u7740\uFF09` : "";
-    const pct = first.done != null && first.bytes ? ` ${Math.floor(first.done / first.bytes * 100)}%` : "";
+    const pct2 = first.done != null && first.bytes ? ` ${Math.floor(first.done / first.bytes * 100)}%` : "";
     const fraction = first.done != null ? first.done / first.bytes : null;
     const stuck = elapsed > STUCK_MS && (first.done == null || first.done === 0 || first.bytes < 64 * 2 ** 20);
-    if (stuck) return { kind: "stuck", text: `\u5361\u4F4F\u4E86\uFF1F${first.label} \u5DF2\u7ECF${first.verb}\u4E86 ${secs(first.startedAt)}${pct}${more}`, fraction };
-    return { kind: "busy", text: `\u6B63\u5728${first.verb} ${first.label} ${mb(first.bytes)}${pct} \xB7 ${secs(first.startedAt)}${more}`, fraction };
+    if (stuck) return { kind: "stuck", text: `\u5361\u4F4F\u4E86\uFF1F${first.label} \u5DF2\u7ECF${first.verb}\u4E86 ${secs(first.startedAt)}${pct2}${more}`, fraction };
+    return { kind: "busy", text: `\u6B63\u5728${first.verb} ${first.label} ${mb(first.bytes)}${pct2} \xB7 ${secs(first.startedAt)}${more}`, fraction };
   }
   if (problem) return { kind: "bad", text: problem.text };
   if (softProblem && pending > 0) return { kind: "pending", text: softProblem.text };
@@ -10667,7 +10746,7 @@ async function play(prepare, resume) {
     onInput: () => activity?.input(performance.now()),
     media: disc.media,
     ext: disc.ext,
-    coreDir: "./dist/core-de23f161e6bc/",
+    coreDir: "./dist/core-589a1ccb156c/",
     glCanvas: $("gl"),
     softCanvas: $("screen"),
     audioContext: audioContext(),
@@ -10677,6 +10756,7 @@ async function play(prepare, resume) {
     memstickTimes
   });
   if (resume) session.setHold(true);
+  session.setFrameCap30(defaultFrameCap30());
   if (disc.identifier) {
     try {
       appState().setItem("lastDisc", disc.identifier);
@@ -11173,6 +11253,10 @@ function openMenu() {
         item(softKeys?.visible ? "\u6536\u8D77\u5C4F\u5E55\u8F6F\u952E" : "\u5C4F\u5E55\u8F6F\u952E", "\u89E6\u5C4F / \u5C04\u7EBF\u70B9", toggleSoftKeys, softKeys?.visible ?? false),
         item(document.fullscreenElement ? "\u9000\u51FA\u5168\u5C4F" : "\u5168\u5C4F", "Alt+Enter \xB7 \u53CC\u51FB\u753B\u9762", toggleFullscreen),
         item(s.isMuted ? "\u53D6\u6D88\u9759\u97F3" : `\u97F3\u91CF ${Math.round(s.volume * 100)}`, "M \u9759\u97F3", openVolume, s.isMuted),
+        item(s.frameCap30 ? "\u53EA\u753B 30 \u5E27\uFF08\u7701\u7535\uFF09" : "\u753B\u6EE1 60 \u5E27", s.frameCap30 ? "\u6E38\u620F\u672C\u8EAB 60 \u5E27\u65F6\u5C11\u753B\u4E00\u534A\uFF1B\u903B\u8F91\u4E0D\u53D8" : "\u79FB\u52A8\u8BBE\u5907\u9ED8\u8BA4\u53EA\u753B 30", () => {
+          s.setFrameCap30(!s.frameCap30);
+          renderToolbar();
+        }, s.frameCap30),
         item($("status").hidden ? "\u7EDF\u8BA1\u8BE6\u60C5" : "\u6536\u8D77\u7EDF\u8BA1", "\u5E27\u8282\u594F \xB7 \u58F0\u97F3 \xB7 \u8BFB\u76D8 \xB7 \u624B\u67C4", () => {
           $("status").hidden = !$("status").hidden;
         }),
@@ -11349,6 +11433,11 @@ function setFast(on) {
   session.setSpeed(on ? FAST_FORWARD : 1);
   renderToolbar();
 }
+function defaultFrameCap30() {
+  const forced = params.get("cap");
+  if (forced === "0" || forced === "1") return forced === "1";
+  return navigator.maxTouchPoints > 0 || /OculusBrowser|Quest|Android|Mobile/i.test(navigator.userAgent);
+}
 var softKeysChoice = "auto";
 var hardwareSeen = false;
 function toggleSoftKeys() {
@@ -11523,6 +11612,8 @@ function pollGamepads(s) {
 }
 var statusAt = 0;
 var lastFrameAt = performance.now();
+var perfLogAt = 0;
+var perfLogged = 0;
 function frame() {
   if (!session) return;
   pollGamepads(session);
@@ -11537,14 +11628,32 @@ function frame() {
     statusAt = now;
     renderHud();
     if (!$("status").hidden) $("status").textContent = statusText();
+    if (!perfLogAt) perfLogAt = now;
+    if (!session.paused && document.visibilityState === "visible" && now - perfLogAt > (perfLogged ? 12e4 : 1e4)) {
+      perfLogAt = now;
+      perfLogged++;
+      const s = session.stats();
+      logEvent("info", `\u6027\u80FD\uFF1A${s.fps.toFixed(0)} fps \xB7 \u901F\u5EA6 ${pct(s.speed)} \xB7 ${s.renderer} \xB7 ${perfLines(s).join(" \xB7 ")}${s.coreLog().length ? ` \xB7 \u6838 stderr\uFF1A${s.coreLog().slice(-3).join(" | ")}` : ""}`);
+    }
   }
   requestAnimationFrame(frame);
+}
+var pct = (x) => `${(x * 100).toFixed(0)}%`;
+function perfLines(s) {
+  const p = s.perf;
+  if (!p) return ["\u6838\u7EBF\u7A0B\uFF1A\u8FD8\u6CA1\u6709\u8BFB\u6570\uFF08\u521A\u8D77 / \u8001\u6838\uFF09"];
+  const who = p.emuBusy > 0.85 ? "\u6A21\u62DF\u7EBF\u7A0B\uFF08CPU\uFF1A\u89E3\u91CA\u5668 / \u9876\u70B9\u89E3\u7801\uFF09" : p.submitBusy > 0.7 ? "\u63D0\u4EA4\u7EBF\u7A0B\uFF08GL \u8C03\u7528\u592A\u591A / \u592A\u8D35\uFF09" : s.fps < 50 ? "\u6D4F\u89C8\u5668 / GPU / \u6392\u7A0B\uFF08\u4E24\u6761\u7EBF\u7A0B\u90FD\u4E0D\u7D27\uFF09" : "\u90FD\u4E0D\u7D27";
+  return [
+    `\u6838\u7EBF\u7A0B\uFF1A\u6A21\u62DF ${pct(p.emuBusy)} \u5FD9 \xB7 \u63D0\u4EA4 ${pct(p.submitBusy)} \u5FD9\uFF08retro_run \u5747 ${p.runMsPerFrame.toFixed(1)} / \u6700\u957F ${p.runMaxMs.toFixed(0)} ms \xB7 \u4E0A\u5C4F ${p.presentMs.toFixed(2)} ms\uFF09\xB7 \u74F6\u9888\uFF1A${who}${p.glErrors ? ` \xB7 GL \u9519\u8BEF 0x${p.glError.toString(16)} \xD7${p.glErrors}` : ""}${s.glRenderer ? ` \xB7 ${s.glRenderer}` : ""}`,
+    `\u6BCF\u5E27 GL\uFF1A\u753B ${p.draws.toFixed(0)} \u6B21 \xB7 \u6362\u7A0B\u5E8F ${p.prog.toFixed(0)} \xB7 \u8D34\u56FE ${p.tex.toFixed(1)}\uFF08${(p.texPx / 1e3).toFixed(0)}k px\uFF0C${p.texMs.toFixed(2)} ms\uFF09\xB7 \u7F13\u51B2 ${p.buf.toFixed(1)}\uFF08${(p.bufBytes / 1024).toFixed(0)} KB\uFF0C${p.bufMs.toFixed(2)} ms\uFF09\xB7 map ${p.map.toFixed(1)}\uFF08${p.mapMs.toFixed(2)} ms\uFF09\xB7 \u56DE\u8BFB ${p.read.toFixed(1)}\uFF08${p.readMs.toFixed(2)} ms\uFF09\xB7 \u540C\u6B65 ${p.sync.toFixed(1)}\uFF08${p.syncMs.toFixed(2)} ms\uFF09\xB7 blit ${p.blit.toFixed(1)} \xB7 PPSSPP\uFF1Adraw ${p.ppsspp.drawCalls} \xB7 \u9876\u70B9 ${p.ppsspp.vertsSubmitted}\uFF08\u89E3\u7801 ${p.ppsspp.vertsDecoded}\uFF09\xB7 \u8D34\u56FE\u89E3\u7801 ${p.ppsspp.texturesDecoded} \xB7 \u56DE\u8BFB ${p.ppsspp.readbacks} \xB7 \u62F7\u8D1D ${p.ppsspp.copies} \xB7 \u663E\u793A\u5217\u8868 ${p.ppsspp.listMs.toFixed(1)} ms`
+  ];
 }
 function statusText() {
   const s = session.stats();
   return [
     `${APP_VERSION} \xB7 ${s.fps.toFixed(1)} fps \xB7 \u901F\u5EA6 ${(s.speed * 100).toFixed(0)}% \xB7 ${s.renderer} \xB7 \u9650\u901F\uFF1A${s.pacing}${s.paused ? " \xB7 \u6682\u505C\u4E2D" : ""}${s.gameSpeed > 1 ? ` \xB7 \u5FEB\u8FDB \xD7${s.gameSpeed}` : ""}`,
-    `\u753B\u9762\u8282\u594F\uFF1A\u51FA\u5E27\u95F4\u9694 ${s.pace.mean.toFixed(1)} \xB1 ${s.pace.sd.toFixed(1)} ms \xB7 \u6700\u957F ${s.pace.max.toFixed(0)} ms \xB7 \u8DF3\u5E27 ${["\u5173", "\u6BCF 2 \u5E27\u753B 1", "\u6BCF 3 \u5E27\u753B 1"][s.frameskip]} \xB7 \u8FFD\u8FDB\u5EA6 ${s.catchup} \u5E27 \xB7 \u91CD\u65B0\u5BF9\u9F50 ${s.reanchors} \u6B21`,
+    `\u753B\u9762\u8282\u594F\uFF1A\u51FA\u5E27\u95F4\u9694 ${s.pace.mean.toFixed(1)} \xB1 ${s.pace.sd.toFixed(1)} ms \xB7 \u6700\u957F ${s.pace.max.toFixed(0)} ms \xB7 \u8DF3\u5E27 ${["\u5173", "\u6BCF 2 \u5E27\u753B 1", "\u6BCF 3 \u5E27\u753B 1"][s.frameskip]} \xB7 \u8FFD\u8FDB\u5EA6 ${s.catchup} \u5E27 \xB7 \u91CD\u65B0\u5BF9\u9F50 ${s.reanchors} \u6B21 \xB7 \u753B 30 \u5E27\uFF1A${s.frameCap.want ? s.frameCap.active ? "\u751F\u6548\uFF08\u6E38\u620F\u672C\u8EAB 60 \u5E27\uFF09" : `\u5F85\u547D\uFF08\u6E38\u620F\u672C\u8EAB ${s.frameCap.nativeFps ? s.frameCap.nativeFps.toFixed(0) + " \u5E27" : "\u8FD8\u6CA1\u91CF\u5230"}\uFF09` : "\u5173"}`,
+    ...perfLines(s),
     `\u663E\u793A\u5668 \u2248 ${s.displayHz.toFixed(0)} Hz \xB7 \u6BCF\u6B21\u5237\u65B0\u770B\u5230\u65B0\u5E27\uFF1A0 \u5F20 ${s.perRefresh[0]} \xB7 1 \u5F20 ${s.perRefresh[1]} \xB7 2 \u5F20\u4EE5\u4E0A ${s.perRefresh[2]}\uFF08\u6BCF\u79D2\uFF09`,
     `\u76D8\uFF1A\u8FD9\u4E00\u79D2 ${(s.netBps / 1024).toFixed(0)} KB/s \xB7 \u7B49\u8BFB\u76D8 ${s.netWaitMs.toFixed(0)} ms/s${s.netInflight ? `\uFF08\u6B63\u5728\u7B49 ${s.netInflight} \u4E2A\uFF09` : ""} \xB7 \u7D2F\u8BA1 ${(s.bytesFetched / 2 ** 20).toFixed(1)} MB / ${s.mediaReads} \u6B21`,
     `\u58F0\u97F3\uFF1A${s.audioState} \xB7 \u7F13\u51B2 ${s.audioFillMs.toFixed(0)} ms \xB7 \u8F93\u51FA\u5EF6\u8FDF ${s.outputLatencyMs.toFixed(0)} ms \xB7 \u6B20\u8F7D\u7D2F\u8BA1 ${s.audioUnderrunMs.toFixed(0)} ms \xB7 \u4E22\u5F03 ${s.audioDropped}`,
@@ -11972,4 +12081,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-29a0474b916f.mjs.map
+//# sourceMappingURL=kudsrocket-29171bc7945b.mjs.map
