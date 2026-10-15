@@ -1,5 +1,5 @@
 // src/version.ts
-var APP_VERSION = "v0.1.13-2026-10-14";
+var APP_VERSION = "v0.1.19-2026-10-15";
 
 // assets/icons.svg
 var icons_default = '<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none">\n<!--\n  13 icons extracted from the family icon library (../20260708 SVG Icons/icons.svg) by extract-icons.py \u2014 do not hand-edit; re-run the script instead.\n  Family SVG Icons \u2014 MIT License, Copyright (c) 2026 fangzhangmnm.\n  Contains work derived from (per-icon provenance in data-src):\n    Feather Icons \u2014 MIT License, Copyright (c) 2013-2023 Cole Bemis \xB7 https://github.com/feathericons/feather\n-->\n  <!-- media -->\n  <!-- pause \u2014 \u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="pause" data-cat="media" data-src="own" data-note="\u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="3.2"><path d="M8.3 5.5 V18.5"/><path d="M15.7 5.5 V18.5"/></g></symbol>\n  <!-- play \u2014 \u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="play" data-cat="media" data-src="own" data-note="\u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 5.4 L18.8 12 L8.2 18.6 Z" fill="currentColor"/></symbol>\n  <!-- fast-forward \u2014 \u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="fast-forward" data-cat="media" data-src="own" data-note="\u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.4 6.8 L10.9 12 L4.4 17.2 Z" fill="currentColor"/><path d="M13.1 6.8 L19.6 12 L13.1 17.2 Z" fill="currentColor"/></symbol>\n  <!-- volume \u2014 \u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009) -->\n  <symbol id="volume" data-cat="media" data-src="own" data-note="\u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 10.3 H8.7 L12.6 6.6 V17.4 L8.7 13.7 H5.5 Z" fill="currentColor"/><path d="M15.13 9.73 A3.4 3.4 0 0 1 15.13 14.27"/><path d="M16.36 7.19 A6.1 6.1 0 0 1 16.36 16.81"/></symbol>\n  <!-- file -->\n  <!-- floppy-disk \u2014 \u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3 -->\n  <symbol id="floppy-disk" data-cat="file" data-src="feather:save" data-note="\u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13l3 3v13a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 17 8 17 3"/></symbol>\n  <!-- folder-open \u2014 \u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF -->\n  <symbol id="folder-open" data-cat="file" data-src="own" data-note="\u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18 V7 a2 2 0 0 1 2 -2 h4 l2 2 h6 a2 2 0 0 1 2 2 v1.8"/><path d="M3 18 L6.4 10.8 H21.6 L18.2 18 Z"/></symbol>\n  <!-- hierarchy -->\n  <!-- lock \u2014 \u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D -->\n  <symbol id="lock" data-cat="hierarchy" data-src="own" data-note="\u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10" width="13" height="11"/><path d="M8.8 10 V6.5 a3.2 3.2 0 0 1 6.4 0 V10"/></symbol>\n  <!-- common -->\n  <!-- x \u2014 \u53C9 -->\n  <symbol id="x" data-cat="common" data-src="own" data-note="\u53C9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 L17.5 17.5 M17.5 6.5 L6.5 17.5"/></symbol>\n  <!-- cloud -->\n  <!-- cloud \u2014 \u4E91 -->\n  <symbol id="cloud" data-cat="cloud" data-src="feather:cloud" data-note="\u4E91" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>\n  <!-- viewport -->\n  <!-- maximize-viewport \u2014 \u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55) -->\n  <symbol id="maximize-viewport" data-cat="viewport" data-src="own" data-note="\u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934 --> <polyline points="4 9 4 4 9 4"/> <polyline points="20 9 20 4 15 4"/> <polyline points="4 15 4 20 9 20"/> <polyline points="20 15 20 20 15 20"/></symbol>\n  <!-- ui -->\n  <!-- more \u2014 \u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00) -->\n  <symbol id="more" data-cat="ui" data-src="own" data-note="\u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/></symbol>\n  <!-- keyboard \u2014 \u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49) -->\n  <symbol id="keyboard" data-cat="ui" data-src="own" data-note="\u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="7.2" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="7.2" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><path d="M8.6 15.6 H15.4"/></symbol>\n  <!-- menu \u2014 \u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17) -->\n  <symbol id="menu" data-cat="ui" data-src="own" data-note="\u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"></line> <line x1="4" y1="12" x2="20" y2="12"></line> <line x1="4" y1="17" x2="20" y2="17"></line></symbol>\n</svg>\n';
@@ -79,11 +79,22 @@ function mountOverlays() {
     for (const back of Array.from(document.querySelectorAll(".sheet-back"))) host.append(back);
   });
 }
-function askPassword(title, hint = "") {
+var rememberChoice = false;
+function takeRememberChoice() {
+  const v = rememberChoice;
+  rememberChoice = false;
+  return v;
+}
+function askPassword(title, hint = "", opts = {}) {
+  rememberChoice = false;
   return sheet((done) => {
     const input = h("input", { type: "password", autocomplete: "off", spellcheck: "false" });
+    const remember = opts.offerRemember ? h("input", { type: "checkbox" }) : null;
     const submit = () => {
-      if (input.value) done(input.value);
+      if (input.value) {
+        rememberChoice = !!remember?.checked;
+        done(input.value);
+      }
     };
     input.addEventListener("keydown", (e) => {
       if (e.key === "Enter") {
@@ -95,6 +106,7 @@ function askPassword(title, hint = "") {
       h("h2", {}, title),
       hint ? h("p", { class: "hint" }, hint) : null,
       input,
+      remember ? h("label", { class: "remember-row" }, remember, h("span", {}, "\u5728\u8FD9\u53F0\u8BBE\u5907\u4E0A\u8BB0\u4F4F"), h("span", { class: "hint" }, "\u80FD\u89E3\u9501\u8FD9\u53F0\u8BBE\u5907\u7684\u4EBA\u5C31\u80FD\u6253\u5F00\u4F60\u7684\u4E1C\u897F")) : null,
       h(
         "div",
         { class: "row" },
@@ -160,6 +172,7 @@ var BUTTON = { cross: 0, square: 1, select: 2, start: 3, up: 4, down: 5, left: 6
 var bit = (b) => 1 << BUTTON[b];
 var PACE_MODES = { wall: 0, audio: 1, vsync: 2 };
 var MEMSTICK_DIR = "/saves/PSP/SAVEDATA";
+var RUNNING_FRAMES = 2;
 var CoreSession = class _CoreSession {
   constructor(core, opts) {
     this.opts = opts;
@@ -375,11 +388,19 @@ var CoreSession = class _CoreSession {
       poll();
     });
   }
-  /** 存 / 读之前等核真正跑起来（跑过 60 帧 ≈ 1 秒）：刚启动时 PPSSPP 的模拟线程还在「已请求启动」，上游 EmuThreadPause 遇到这个状态直接返回，
+  /** 存 / 读之前等核真正跑起来（出过 RUNNING_FRAMES 帧）：刚启动时 PPSSPP 的模拟线程还在「已请求启动」，上游 EmuThreadPause 遇到这个状态直接返回，
    *  存 / 恢复和刚起步的模拟线程撞在一起会把核卡死（10-14 流程测试抓到：「从上次开始」一开盘就读档 → core did not answer）。 */
   async whenRunning() {
+    const t0 = performance.now(), f0 = this.stats().frames;
+    try {
+      await this.whenRunningInner();
+    } finally {
+      console.info(`[resume] whenRunning waited ${(performance.now() - t0).toFixed(0)} ms (frames ${f0} \u2192 ${this.stats().frames})`);
+    }
+  }
+  async whenRunningInner() {
     const t0 = performance.now();
-    while (this.core._kr_stat_frames() < 60) {
+    while (this.core._kr_stat_frames() < RUNNING_FRAMES) {
       if (performance.now() - t0 > 3e4) throw new Error("core is not running yet");
       await new Promise((r) => setTimeout(r, 50));
     }
@@ -3172,9 +3193,9 @@ function createIdbCache(dbName) {
       return;
     const p = _db;
     _db = null;
-    void p?.then((db2) => {
+    void p?.then((db3) => {
       try {
-        db2.close();
+        db3.close();
       } catch {
       }
     }).catch(() => {
@@ -3201,19 +3222,19 @@ function createIdbCache(dbName) {
       };
       r.onsuccess = () => {
         clearTimeout(timer2);
-        const db2 = r.result;
-        db2.onclose = () => {
+        const db3 = r.result;
+        db3.onclose = () => {
           dropConnection(p);
         };
-        db2.onversionchange = () => {
-          db2.close();
+        db3.onversionchange = () => {
+          db3.close();
           dropConnection(p);
         };
         if (_db !== p) {
-          db2.close();
+          db3.close();
           return;
         }
-        resolve(db2);
+        resolve(db3);
       };
       r.onerror = () => {
         clearTimeout(timer2);
@@ -3230,7 +3251,7 @@ function createIdbCache(dbName) {
     _win?.removeEventListener("pageshow", _onPageShow);
     dropConnection(null);
   }
-  function tx2(mode, run, op = "tx") {
+  function tx3(mode, run, op = "tx") {
     if (_suspended)
       return Promise.reject(new IdbSuspendedError(`${mode} ${op}`));
     return txOnce(mode, run, op).catch((e) => {
@@ -3246,8 +3267,8 @@ function createIdbCache(dbName) {
   }
   function txOnce(mode, run, op) {
     const conn = openDb();
-    return conn.then((db2) => new Promise((resolve, reject) => {
-      const t = db2.transaction(STORE, mode);
+    return conn.then((db3) => new Promise((resolve, reject) => {
+      const t = db3.transaction(STORE, mode);
       const ms = _idbOpTimeoutMs;
       const rec = { t, mode, suspended: false };
       _active.add(rec);
@@ -3304,25 +3325,25 @@ function createIdbCache(dbName) {
   return {
     close,
     get(name) {
-      return tx2("readonly", (s) => {
+      return tx3("readonly", (s) => {
         const r = s.get(name);
         return () => r.result;
       }, "get");
     },
     put(name, rec) {
-      return tx2("readwrite", (s) => {
+      return tx3("readwrite", (s) => {
         s.put(rec, name);
         return () => void 0;
       }, "put");
     },
     del(name) {
-      return tx2("readwrite", (s) => {
+      return tx3("readwrite", (s) => {
         s.delete(name);
         return () => void 0;
       }, "del");
     },
     keys() {
-      return tx2("readonly", (s) => {
+      return tx3("readonly", (s) => {
         const r = s.getAllKeys();
         return () => r.result.filter((k) => typeof k === "string");
       }, "keys");
@@ -3330,7 +3351,7 @@ function createIdbCache(dbName) {
     /** 按 key 前缀汇总占用（单事务 cursor 走一遍；`Blob.size` 是引用属性，**不把字节读进内存**）。
      *  只返两个标量，不返任何名字 —— 拿不到清单，故**不能**当全库列举用（那是被否决的退化设计）。 */
     usage(prefix) {
-      return tx2("readonly", (s) => {
+      return tx3("readonly", (s) => {
         let bytes = 0, count = 0;
         const c = s.openCursor();
         c.onsuccess = () => {
@@ -3351,7 +3372,7 @@ function createIdbCache(dbName) {
     },
     /** 原子改名(同一事务 get→put 新→del 旧):trash/restore/backup 用。源不存在则 noop。 */
     rename(from, to) {
-      return tx2("readwrite", (s) => {
+      return tx3("readwrite", (s) => {
         const g = s.get(from);
         g.onsuccess = () => {
           const v = g.result;
@@ -6301,6 +6322,12 @@ function subscribe(cb) {
   };
 }
 var inFlight = () => !!local || flights.size > 0;
+function inFlightFresh() {
+  if (local) return true;
+  const now = performance.now();
+  for (const f of flights.values()) if (now - Math.max(f.startedAt, f.progressAt ?? f.startedAt) < 9e4) return true;
+  return false;
+}
 function whenIdle() {
   if (!inFlight()) return Promise.resolve();
   return new Promise((resolve) => {
@@ -6340,6 +6367,7 @@ function track(label, bytes, run, verb = "\u4F20") {
     else netBytes.down += delta;
     f.done = done;
     if (total) f.bytes = total;
+    f.progressAt = performance.now();
     const now = performance.now();
     if (now - lastPaint > 200 || done === total) {
       lastPaint = now;
@@ -6357,6 +6385,11 @@ function track(label, bytes, run, verb = "\u4F20") {
       problem = null;
       doneUntil = performance.now() + 3e3;
       logEvent("info", `${label} \u5B58\u5728\u8FD9\u53F0\u8BBE\u5907\uFF08\u6CA1\u767B\u5F55\uFF0C\u4E0D\u4F20\uFF09`);
+    } else if (r.reason === "not-attempted") {
+      problem = null;
+      doneUntil = performance.now() + 3e3;
+      logEvent("info", `${label} \u5B58\u5728\u8FD9\u53F0\u8BBE\u5907\u4E86\uFF08\u9501\u5C4F / \u540E\u53F0\u4E0D\u4F20\uFF0C\u56DE\u6765\u81EA\u52A8\u4F20\uFF09`);
+      retryHook?.();
     } else if (r.reason === "error" || r.reason === "deferred") {
       softProblem = { text: `${label} \u6CA1\u4F20\u4E0A\u53BB\uFF08\u7F51\u7EDC\uFF1F\uFF09\uFF1A\u5B58\u5728\u8FD9\u53F0\u8BBE\u5907\u4E86\uFF0C\u4F1A\u81EA\u52A8\u518D\u4F20`, at: Date.now() };
       logEvent("warn", softProblem.text);
@@ -6434,10 +6467,14 @@ function render() {
 }
 
 // src/app/store-ui.ts
-var BACKGROUND_KEYS = /* @__PURE__ */ new Set(["sync.pushing", "file.renaming", "file.uploading"]);
+var BACKGROUND_KEYS = /* @__PURE__ */ new Set(["sync.pushing", "file.renaming", "file.uploading", "cloud.checking", "file.pulling"]);
 var stemOf = (identifier) => labelFor(identifier);
 var storeUI = {
-  busy: (label, fn, key) => key && BACKGROUND_KEYS.has(key) ? fn() : withBusy(label, fn),
+  busy: (label, fn, key) => {
+    if (!key || !BACKGROUND_KEYS.has(key)) return withBusy(label, fn);
+    if (key === "file.pulling") note(label, 3e4);
+    return fn();
+  },
   resolveConflict: async ({ name, occasion }) => {
     const choice = await sheet((done) => [
       h("h2", {}, "\u4E91\u7AEF\u548C\u8FD9\u53F0\u8BBE\u5907\u4E0A\u7684\u4E0D\u4E00\u6837"),
@@ -6591,7 +6628,19 @@ var CorruptDiscError = class extends Error {
 function normalizePassword(password) {
   return password.normalize("NFKC");
 }
+var derivedKeys = /* @__PURE__ */ new Map();
+var DERIVED_KEYS_MAX = 512;
 async function deriveKeys(password, salt, iterations) {
+  const cacheKey = `${iterations}:${Array.from(salt, (b) => b.toString(16).padStart(2, "0")).join("")}:${normalizePassword(password)}`;
+  const hit = derivedKeys.get(cacheKey);
+  if (hit) return hit;
+  const p = deriveKeysUncached(password, salt, iterations);
+  derivedKeys.set(cacheKey, p);
+  p.catch(() => derivedKeys.delete(cacheKey));
+  if (derivedKeys.size > DERIVED_KEYS_MAX) derivedKeys.delete(derivedKeys.keys().next().value);
+  return p;
+}
+async function deriveKeysUncached(password, salt, iterations) {
   const base = await crypto.subtle.importKey(
     "raw",
     new TextEncoder().encode(normalizePassword(password)),
@@ -7034,6 +7083,58 @@ async function inspectPantry(identifier) {
     throw e;
   }
 }
+
+// src/app/remember-password.ts
+var DB_NAME = "kudsrocket.remember";
+var STORE2 = "secret";
+var KEY2 = "password";
+var dbp = null;
+function db() {
+  dbp ??= new Promise((resolve, reject) => {
+    const req = indexedDB.open(DB_NAME, 1);
+    req.onupgradeneeded = () => {
+      req.result.createObjectStore(STORE2);
+    };
+    req.onsuccess = () => resolve(req.result);
+    req.onerror = () => reject(req.error);
+  });
+  dbp.catch(() => {
+    dbp = null;
+  });
+  return dbp;
+}
+async function tx(mode, body) {
+  const d = await db();
+  return new Promise((resolve, reject) => {
+    const t = d.transaction(STORE2, mode);
+    let result;
+    const req = body(t.objectStore(STORE2));
+    if (req) req.onsuccess = () => {
+      result = req.result;
+    };
+    t.oncomplete = () => resolve(result);
+    t.onerror = () => reject(t.error);
+    t.onabort = () => reject(t.error ?? new Error("remember-password transaction aborted"));
+  });
+}
+async function rememberPassword(password) {
+  const key = await crypto.subtle.generateKey({ name: "AES-GCM", length: 256 }, false, ["encrypt", "decrypt"]);
+  const iv = crypto.getRandomValues(new Uint8Array(12));
+  const ct = await crypto.subtle.encrypt({ name: "AES-GCM", iv }, key, new TextEncoder().encode(password));
+  const rec = { key, iv, ct };
+  await tx("readwrite", (s) => s.put(rec, KEY2));
+}
+async function recallPassword() {
+  const rec = await tx("readonly", (s) => s.get(KEY2)).catch(() => void 0);
+  if (!rec) return null;
+  try {
+    return new TextDecoder().decode(await crypto.subtle.decrypt({ name: "AES-GCM", iv: rec.iv }, rec.key, rec.ct));
+  } catch {
+    return null;
+  }
+}
+var hasRememberedPassword = async () => await tx("readonly", (s) => s.get(KEY2)).catch(() => void 0) != null;
+var forgetPassword = () => tx("readwrite", (s) => s.delete(KEY2)).then(() => void 0);
 
 // vendor/fflate/fflate.esm.js
 var u8 = Uint8Array;
@@ -8023,7 +8124,7 @@ function watchSlots(key, cb) {
   });
 }
 var foldersEnsured = /* @__PURE__ */ new Map();
-async function put(identifier, sealed) {
+async function put(identifier, sealed, opts = {}) {
   const store2 = getStore();
   const folder = identifier.replace(/\/[^/]*$/, "");
   let ensured = foldersEnsured.get(folder);
@@ -8033,7 +8134,7 @@ async function put(identifier, sealed) {
     ensured.catch(() => foldersEnsured.delete(folder));
   }
   await ensured;
-  return track(labelFor(identifier), sealed.length, (onProgress) => store2.file(identifier, { mode: "existing" }).save(new Blob([sealed]), { onProgress }));
+  return track(labelFor(identifier), sealed.length, (onProgress) => store2.file(identifier, { mode: "existing" }).save(new Blob([sealed]), { onProgress, tryPush: !opts.deferPush }));
 }
 async function clearLocalCopies(folders) {
   const store2 = getStore();
@@ -8068,11 +8169,15 @@ async function ensureLineage(identifier) {
   if (await f.isKeptOffline()) return true;
   return await f.open().catch(() => null) != null;
 }
+async function recheckAfterPush(identifier) {
+  const r = await getStore().file(identifier, { mode: "existing" }).pullIfClean();
+  return JSON.stringify(r);
+}
 var readSealed = (identifier) => get2(identifier);
 var putSealed = (identifier, sealed) => put(identifier, sealed);
-async function saveSnapshot(identifier, state2, meta, password) {
+async function saveSnapshot(identifier, state2, meta, password, opts = {}) {
   const thumb = meta.thumb ? btoa(Array.from(meta.thumb, (b) => String.fromCharCode(b)).join("")) : void 0;
-  return put(identifier, await sealBytes(password, state2, { salt: sessionSalt, compress: true, meta: { thumb, at: meta.at, auto: meta.auto, fp: meta.fp, t: meta.title } }));
+  return put(identifier, await sealBytes(password, state2, { salt: sessionSalt, compress: true, meta: { thumb, at: meta.at, auto: meta.auto, fp: meta.fp, t: meta.title } }), opts);
 }
 async function loadSnapshot(identifier, password) {
   const sealed = await get2(identifier);
@@ -8126,7 +8231,7 @@ var jamId = async (jar) => {
   return `${jarFolder(jar.k)}/${await sha16(seed)}${JAM_SUFFIX}`;
 };
 var describeJar = (jar) => jar.m === "shared" ? `\u5B58\u6863 ${jar.u}` : `\u5B58\u6863\uFF08\u8DDF\u6587\u4EF6 ${jar.u}\uFF09`;
-function listFolderOnce(folder, timeoutMs = 1e4) {
+function listFolderOnce(folder, timeoutMs = 1e4, waitForCloud = true) {
   return new Promise((resolve) => {
     let latest = { items: [], complete: false };
     let off = null;
@@ -8141,13 +8246,13 @@ function listFolderOnce(folder, timeoutMs = 1e4) {
     const timer2 = setTimeout(finish, timeoutMs);
     off = getStore().files.watchFolder(folder, (snap) => {
       latest = { items: snap.items.map((it) => ({ identifier: it.identifier, syncState: it.syncState, size: it.size, lastModified: it.lastModified })), complete: snap.complete };
-      if (snap.complete) finish();
+      if (snap.complete || !waitForCloud) finish();
     });
     if (settled) off();
   });
 }
-async function listJams(k, timeoutMs = 1e4) {
-  const { items, complete } = await listFolderOnce(jarFolder(k), timeoutMs);
+async function listJams(k, opts = {}) {
+  const { items, complete } = await listFolderOnce(jarFolder(k), opts.timeoutMs ?? 1e4, opts.waitForCloud ?? true);
   return { ids: items.map((it) => it.identifier).filter((id) => id.endsWith(JAM_SUFFIX)), complete };
 }
 var SYNC_TEXT = {
@@ -8219,11 +8324,11 @@ async function loadMemstick(k, password, ids, complete) {
   }
   return { files, dirs, complete, loaded, unreadable, duplicates, times };
 }
-async function saveSaveDir(jar, files, password) {
+async function saveSaveDir(jar, files, password, opts = {}) {
   const id = await jamId(jar);
   setLabel(id, describeJar(jar));
   const zip = zipSync(Object.fromEntries(files), { level: 0 });
-  return put(id, await sealBytes(password, zip, { salt: sessionSalt, meta: { jar, at: Date.now() } }));
+  return put(id, await sealBytes(password, zip, { salt: sessionSalt, meta: { jar, at: Date.now() } }), opts);
 }
 async function deleteSaveDir(jar) {
   const id = await jamId(jar);
@@ -8257,6 +8362,28 @@ async function restoreBin(item) {
   return r.status;
 }
 
+// src/app/deadline.ts
+function withDeadline(p, ms, onSettleLate) {
+  let timedOut = false;
+  let timer2 = 0;
+  const late = p.then((value) => {
+    if (timedOut) onSettleLate?.({ ok: true, value });
+    return value;
+  }, (error) => {
+    if (timedOut) onSettleLate?.({ ok: false, error });
+    throw error;
+  });
+  return Promise.race([
+    late.finally(() => clearTimeout(timer2)),
+    new Promise((resolve) => {
+      timer2 = window.setTimeout(() => {
+        timedOut = true;
+        resolve("timeout");
+      }, ms);
+    })
+  ]);
+}
+
 // src/app/resume.ts
 function pickNewest(cands) {
   let best = null;
@@ -8269,29 +8396,29 @@ function pickNewest(cands) {
 }
 
 // src/app/undo-guard.ts
-var DB_NAME = "kudsrocket.undo-guard";
-var STORE2 = "guards";
-var dbp = null;
-function db() {
-  dbp ??= new Promise((resolve, reject) => {
-    const req = indexedDB.open(DB_NAME, 1);
+var DB_NAME2 = "kudsrocket.undo-guard";
+var STORE3 = "guards";
+var dbp2 = null;
+function db2() {
+  dbp2 ??= new Promise((resolve, reject) => {
+    const req = indexedDB.open(DB_NAME2, 1);
     req.onupgradeneeded = () => {
-      req.result.createObjectStore(STORE2);
+      req.result.createObjectStore(STORE3);
     };
     req.onsuccess = () => resolve(req.result);
     req.onerror = () => reject(req.error);
   });
-  dbp.catch(() => {
-    dbp = null;
+  dbp2.catch(() => {
+    dbp2 = null;
   });
-  return dbp;
+  return dbp2;
 }
-async function tx(mode, body) {
-  const d = await db();
+async function tx2(mode, body) {
+  const d = await db2();
   return new Promise((resolve, reject) => {
-    const t = d.transaction(STORE2, mode);
+    const t = d.transaction(STORE3, mode);
     let result;
-    const req = body(t.objectStore(STORE2));
+    const req = body(t.objectStore(STORE3));
     if (req) req.onsuccess = () => {
       result = req.result;
     };
@@ -8300,13 +8427,13 @@ async function tx(mode, body) {
     t.onabort = () => reject(t.error ?? new Error("undo-guard transaction aborted"));
   });
 }
-var putGuard = (g) => tx("readwrite", (s) => s.put(g, g.kind));
+var putGuard = (g) => tx2("readwrite", (s) => s.put(g, g.kind));
 async function getGuard(kind, discKey2) {
-  const g = await tx("readonly", (s) => s.get(kind));
+  const g = await tx2("readonly", (s) => s.get(kind));
   return g && g.discKey === discKey2 ? g : void 0;
 }
 async function deleteGuard(kind, discKey2) {
-  if (await getGuard(kind, discKey2)) await tx("readwrite", (s) => s.delete(kind));
+  if (await getGuard(kind, discKey2)) await tx2("readwrite", (s) => s.delete(kind));
 }
 
 // src/disc/ppst.ts
@@ -8411,9 +8538,9 @@ var rzfh = function(dat, w) {
     if (flg & 8)
       err2(0);
     var bt = 6 - ss;
-    var db2 = df == 3 ? 4 : df;
-    var di = rb(dat, bt, db2);
-    bt += db2;
+    var db3 = df == 3 ? 4 : df;
+    var di = rb(dat, bt, db3);
+    bt += db3;
     var fsb = fcf ? 1 << fcf : ss;
     var fss = rb(dat, bt, fsb) + (fcf == 1 && 256);
     var ws = fss;
@@ -8960,6 +9087,7 @@ function decompress(dat, buf) {
 }
 
 // src/app/snapshots.ts
+var SAVE_DEADLINE_MS = 2e4;
 var fpSame = (saved, now) => !!saved && fpCompatible(saved, now);
 var slotLabel = (s) => `${s.kind === "s" ? "\u624B\u52A8" : "\u81EA\u52A8"} ${s.n}`;
 var Snapshots = class {
@@ -8967,6 +9095,7 @@ var Snapshots = class {
     this.session = session2;
     this.disc = disc;
     this.verbs = verbs;
+    this.onChange = onChange;
     void (async () => {
       const lg = await getGuard("load", disc.key).catch(() => void 0);
       if (lg && !this.undoLoadState) this.undoLoadState = { state: null, label: lg.label };
@@ -8974,19 +9103,7 @@ var Snapshots = class {
       if (sg && !this.undoSaveInfo) this.undoSaveInfo = { id: sg.id, label: sg.label, old: sg.old ? new Uint8Array(await sg.old.arrayBuffer()) : null, newAt: sg.newAt };
       onChange();
     })();
-    this.off = watchSlots(disc.key, (slots, all, complete) => {
-      this.slots = slots;
-      this.all = all;
-      for (const s of slots) setLabel(s.id, `\u5FEB\u7167\uFF08${slotLabel(s)}\uFF0C${disc.title}\uFF09`);
-      this.gotFrame = true;
-      for (const w of this.frameWaiters.splice(0)) w();
-      if (complete) {
-        this.listComplete = true;
-        for (const w of this.completeWaiters.splice(0)) w();
-      }
-      onChange();
-      if (complete) void this.tryHeal();
-    });
+    this.off = this.subscribe(onChange);
   }
   slots = [];
   all = [];
@@ -9017,22 +9134,48 @@ var Snapshots = class {
   /** 收到过任何一帧没有（本机帧也算）：没登录 / 离线续玩至少要等它，不然列表是空的（10-14 流程测试抓到：v0.1.6 起离线「继续」= 从头开始）。 */
   gotFrame = false;
   frameWaiters = [];
+  subscribe(onChange) {
+    return watchSlots(this.disc.key, (slots, all, complete) => {
+      this.slots = slots;
+      this.all = all;
+      for (const s of slots) setLabel(s.id, `\u5FEB\u7167\uFF08${slotLabel(s)}\uFF0C${this.disc.title}\uFF09`);
+      this.gotFrame = true;
+      for (const w of this.frameWaiters.splice(0)) w();
+      if (complete) {
+        this.listComplete = true;
+        for (const w of this.completeWaiters.splice(0)) w();
+      }
+      onChange();
+      if (complete) void this.tryHeal();
+    });
+  }
+  /** 重列一次（退订再订 = store 重新列云端）：打开快照面板、回到前台时调。游戏开着时 store 不会自己重列，别的设备后来存 / 补传的格子这一局看不到
+   *  （10-15 分析报告 §3：Quest 先开了游戏、iPad 回前台才补传的手动 1）。W-26。 */
+  refresh() {
+    const onChange = this.onChange;
+    this.off();
+    this.off = this.subscribe(onChange);
+  }
   /** 「接着玩」：等云端完整帧（waitCloud 时，最多 timeoutMs），再读每一格的元数据按存档时刻 at 选最新（resume.ts 的不变量）。
    *  partial = 没等到云端帧，选的是这台设备上看得到的最新一份。 */
   async newestForResume(opts) {
+    const t0 = performance.now();
     if (!this.gotFrame) {
       await Promise.race([new Promise((r) => this.frameWaiters.push(r)), new Promise((r) => setTimeout(r, 5e3))]);
     }
+    const tFrame = performance.now();
     if (opts.waitCloud && !this.listComplete) {
       await Promise.race([
         new Promise((r) => this.completeWaiters.push(r)),
         new Promise((r) => setTimeout(r, opts.timeoutMs ?? 1e4))
       ]);
     }
+    const tCloud = performance.now();
     const partial = opts.waitCloud && !this.listComplete;
     const filled = this.slots.filter((s) => s.savedAt);
     if (!filled.length) return null;
     const pw = await this.verbs.password("\u5FEB\u7167");
+    const tPw = performance.now();
     const cands = filled.map((s) => ({ item: s, savedAt: s.savedAt }));
     if (pw) {
       let next = 0;
@@ -9046,6 +9189,7 @@ var Snapshots = class {
       await Promise.all(Array.from({ length: Math.min(4, cands.length) }, worker));
     }
     const slot = pickNewest(cands);
+    console.info(`[resume] first frame ${(tFrame - t0).toFixed(0)} ms \xB7 cloud frame ${(tCloud - tFrame).toFixed(0)} ms \xB7 password ${(tPw - tCloud).toFixed(0)} ms \xB7 peek ${cands.length} slots ${(performance.now() - tPw).toFixed(0)} ms`);
     return slot ? { slot, partial } : null;
   }
   dispose() {
@@ -9112,12 +9256,25 @@ var Snapshots = class {
       }
       const id = crumbId(this.disc.key, kind, n);
       const at = Date.now();
-      const r = await saveSnapshot(id, state2, { thumb, at, auto, fp: this.disc.fp, title: this.disc.title }, pw);
+      const hidden = document.visibilityState === "hidden";
+      const r = await withDeadline(
+        saveSnapshot(id, state2, { thumb, at, auto, fp: this.disc.fp, title: this.disc.title }, pw, { deferPush: hidden }),
+        SAVE_DEADLINE_MS,
+        (late) => logEvent(late.ok ? "info" : "warn", late.ok ? `\u300C${label}\u300D\u90A3\u6B21\u8FDF\u5230\u7684\u4E0A\u4F20${late.value.pushed ? "\u4F20\u597D\u4E86" : "\u6CA1\u4F20\u4E0A\u53BB\uFF08\u4F1A\u7EED\u63A8\uFF09"}` : `\u300C${label}\u300D\u90A3\u6B21\u8FDF\u5230\u7684\u4E0A\u4F20\u51FA\u9519\uFF1A${String(late.error)}`)
+      );
+      if (r === "timeout") {
+        logEvent("warn", `\u5B58\u300C${label}\u300D${SAVE_DEADLINE_MS / 1e3} s \u8FD8\u6CA1\u7ED3\u675F\uFF1A\u5148\u653E\u5F00\uFF0C\u672C\u673A\u90A3\u4EFD\u4F1A\u843D\u4E0B\u3001\u4E91\u7AEF\u81EA\u52A8\u7EED\u63A8\uFF1B\u8FD9\u6B21\u4E0D\u7559\u64A4\u9500`);
+        this.verbs.say(`\u300C${label}\u300D\u4E0A\u4F20\u5F88\u6162\uFF0C\u5148\u653E\u5F00\u8BA9\u4F60\u80FD\u63A5\u7740\u5B58\uFF1B\u4F1A\u81EA\u52A8\u7EED\u4F20`, 6e3);
+        return;
+      }
       if (!auto) {
         this.undoSaveInfo = { id, label, old, newAt: at };
         putGuard({ kind: "save", discKey: this.disc.key, id, label, old: old ? new Blob([old]) : null, newAt: at, at }).catch((e) => console.warn("[undo-guard] save", e));
       }
-      if (r.pushed) tidyLocalSnapshots(this.slots).catch((e) => console.warn("[tidy]", e));
+      if (r.pushed) {
+        recheckAfterPush(id).then((v) => logEvent("info", `\u63A8\u5B8C\u590D\u6838 ${label}\uFF1A${v}`), (e) => logEvent("warn", `\u63A8\u5B8C\u590D\u6838 ${label} \u5931\u8D25\uFF1A${String(e)}`));
+        tidyLocalSnapshots(this.slots).catch((e) => console.warn("[tidy]", e));
+      }
     } finally {
       endLocal();
       this.busy = false;
@@ -9777,6 +9934,26 @@ function watchPantry() {
     renderLibrary();
   });
 }
+var remembered = false;
+function adoptPassword(pw) {
+  setPassword(pw);
+  if (!takeRememberChoice()) return;
+  rememberPassword(pw).then(() => {
+    remembered = true;
+    renderAccount();
+    say("\u8FD9\u53F0\u8BBE\u5907\u8BB0\u4F4F\u53E3\u4EE4\u4E86\uFF08\u4E3B\u9875\u4E0A\u80FD\u5FD8\u8BB0\uFF09");
+  }, (e) => banner(`\u6CA1\u8BB0\u4F4F\u53E3\u4EE4\uFF1A${errorText(e)}`));
+}
+async function forgetRemembered(why) {
+  await forgetPassword().catch((e) => console.warn("[remember]", e));
+  remembered = false;
+  renderAccount();
+  say(why);
+}
+var rememberRow = () => remembered ? [h("span", { class: "muted" }, "\xB7 \u8FD9\u53F0\u8BBE\u5907\u8BB0\u7740\u53E3\u4EE4"), h("button", { onclick: () => {
+  forgetRemembered("\u5DF2\u5FD8\u8BB0\u8FD9\u53F0\u8BBE\u5907\u8BB0\u7740\u7684\u53E3\u4EE4").catch(() => {
+  });
+} }, "\u5FD8\u8BB0\u53E3\u4EE4")] : [];
 function renderAccount() {
   const row = $("account");
   $("tools").hidden = !auth.isSignedIn();
@@ -9792,7 +9969,8 @@ function renderAccount() {
         await auth.signOut();
         renderAccount();
         renderLibrary();
-      } }, "\u9000\u51FA\u767B\u5F55")
+      } }, "\u9000\u51FA\u767B\u5F55"),
+      ...rememberRow()
     );
   } else {
     row.replaceChildren(
@@ -9800,7 +9978,8 @@ function renderAccount() {
         requestStoragePersistence().catch(() => {
         });
         auth.signIn().catch((e) => banner(`\u767B\u5F55\u5931\u8D25\uFF1A${errorText(e)}`));
-      } }, icon("cloud"), "\u767B\u5F55")
+      } }, icon("cloud"), "\u767B\u5F55"),
+      ...rememberRow()
     );
   }
 }
@@ -9892,9 +10071,9 @@ var saveManagerContext = {
   },
   password: () => getPassword(),
   async askPassword() {
-    const pw = await askPassword("\u8F93\u5165\u53E3\u4EE4", "\u8BFB\u5FEB\u7167 / \u5B58\u6863\u7684\u5143\u6570\u636E\u624D\u77E5\u9053\u662F\u54EA\u5F20\u76D8\u7684\u3002\u53E3\u4EE4\u53EA\u5728\u8FD9\u4E00\u9875\u91CC\u8BB0\u7740\u3002");
+    const pw = await askPassword("\u8F93\u5165\u53E3\u4EE4", "\u8BFB\u5FEB\u7167 / \u5B58\u6863\u7684\u5143\u6570\u636E\u624D\u77E5\u9053\u662F\u54EA\u5F20\u76D8\u7684\u3002", { offerRemember: true });
     if (pw) {
-      setPassword(pw);
+      adoptPassword(pw);
       unlockTitles().catch(() => {
       });
     }
@@ -9930,9 +10109,12 @@ async function offloadDisc(identifier) {
   }
 }
 async function unlockTitles() {
-  const pw = await askPassword("\u8F93\u5165\u53E3\u4EE4", "\u52A0\u5BC6\u76D8\u7684\u540D\u5B57\u8981\u53E3\u4EE4\u624D\u770B\u5F97\u89C1\u3002\u53E3\u4EE4\u53EA\u5728\u8FD9\u4E00\u9875\u91CC\u8BB0\u7740\uFF0C\u5173\u6389\u5C31\u5FD8\u3002");
-  if (!pw) return;
-  setPassword(pw);
+  let pw = getPassword();
+  if (!pw) {
+    pw = await askPassword("\u8F93\u5165\u53E3\u4EE4", "\u52A0\u5BC6\u76D8\u7684\u540D\u5B57\u8981\u53E3\u4EE4\u624D\u770B\u5F97\u89C1\u3002", { offerRemember: true });
+    if (!pw) return;
+    adoptPassword(pw);
+  }
   let wrong = 0;
   const todo = pantryItems.filter((it) => it.identifier.endsWith(".wafter") && !cards.has(it.identifier)).map((it) => it.identifier);
   let next = 0;
@@ -9966,11 +10148,19 @@ async function withPassword(open, what) {
   let hint = "";
   for (; ; ) {
     try {
-      return await open(pw);
+      const r = await open(pw);
+      if (pw) adoptPassword(pw);
+      return r;
     } catch (e) {
       if (!(e instanceof NeedPassword || e instanceof WrongPasswordError)) throw e;
-      if (e instanceof WrongPasswordError) hint = "\u53E3\u4EE4\u4E0D\u5BF9\uFF0C\u518D\u8BD5\u4E00\u6B21\u3002";
-      const got = await askPassword(`${what}\u662F\u52A0\u5BC6\u7684`, hint || "\u8F93\u5165\u53E3\u4EE4\u3002\u53E3\u4EE4\u53EA\u5728\u8FD9\u4E00\u9875\u91CC\u8BB0\u7740\uFF0C\u5173\u6389\u5C31\u5FD8\u3002");
+      if (e instanceof WrongPasswordError) {
+        hint = "\u53E3\u4EE4\u4E0D\u5BF9\uFF0C\u518D\u8BD5\u4E00\u6B21\u3002";
+        if (!pw && remembered) {
+          await forgetRemembered("\u8FD9\u53F0\u8BBE\u5907\u8BB0\u7740\u7684\u53E3\u4EE4\u6253\u4E0D\u5F00\u5B83\uFF0C\u5DF2\u5FD8\u8BB0");
+          hint = "\u8FD9\u53F0\u8BBE\u5907\u8BB0\u7740\u7684\u53E3\u4EE4\u6253\u4E0D\u5F00\u5B83\uFF08\u522B\u5904\u6362\u8FC7\u53E3\u4EE4\uFF1F\uFF09\uFF0C\u8F93\u4E00\u6B21\u65B0\u7684\u3002";
+        }
+      }
+      const got = await askPassword(`${what}\u662F\u52A0\u5BC6\u7684`, hint || "\u8F93\u5165\u53E3\u4EE4\u3002", { offerRemember: true });
       if (!got) return null;
       pw = got;
     }
@@ -9996,8 +10186,8 @@ function runPlay(prepare, resume) {
 async function ensurePassword(why) {
   const pw = getPassword();
   if (pw) return pw;
-  const got = await askPassword("\u8BBE\u4E2A\u53E3\u4EE4", `${why}\u90FD\u7528\u53E3\u4EE4\u52A0\u5BC6\u540E\u624D\u5B58\u8FDB OneDrive\u3002\u53E3\u4EE4\u53EA\u5728\u8FD9\u4E00\u9875\u91CC\u8BB0\u7740\uFF0C\u5173\u6389\u5C31\u5FD8\uFF1B\u4E0B\u6B21\u8981\u8F93\u540C\u4E00\u4E2A\u3002`);
-  if (got) setPassword(got);
+  const got = await askPassword("\u8BBE\u4E2A\u53E3\u4EE4", `${why}\u90FD\u7528\u53E3\u4EE4\u52A0\u5BC6\u540E\u624D\u5B58\u8FDB OneDrive\u3002\u4E0B\u6B21\u8981\u8F93\u540C\u4E00\u4E2A\u3002`, { offerRemember: true });
+  if (got) adoptPassword(got);
   return got;
 }
 var jamBlocked = false;
@@ -10010,7 +10200,8 @@ async function play(prepare, resume) {
   let memstick = /* @__PURE__ */ new Map();
   let memstickTimes = /* @__PURE__ */ new Map();
   say("\u6B63\u5728\u8BFB\u5B58\u6863\u2026", 3e4);
-  const listed = await listJams(PLATFORM_CODE.psp, auth.isSignedIn() ? 1e4 : 1500);
+  const cloudReachable = auth.isSignedIn() && navigator.onLine;
+  const listed = await listJams(PLATFORM_CODE.psp, { timeoutMs: 1e4, waitForCloud: cloudReachable });
   if (listed.ids.length) {
     const loaded = await withPassword(async (pw) => {
       const p = pw ?? getPassword();
@@ -10039,7 +10230,7 @@ async function play(prepare, resume) {
       banner("\u6CA1\u8BFB\u5B58\u6863\uFF1A\u8FD9\u6B21\u7A0B\u5E8F\u81EA\u5DF1\u5B58\u7684\u6863\u4E0D\u4F1A\u540C\u6B65\u5230 OneDrive\uFF08\u514D\u5F97\u76D6\u6389\u539F\u6765\u7684\uFF09\u3002", "warning");
     }
   } else say("\u8FD8\u6CA1\u6709\u5B58\u6863", 2e3);
-  if (auth.isSignedIn() && !listed.complete) banner("\u5B58\u6863\u7684\u4E91\u7AEF\u5217\u8868\u6CA1\u62FF\u5168\uFF08\u7F51\u7EDC\u6162\uFF1F\uFF09\uFF1A\u8FD9\u6B21\u53EF\u80FD\u770B\u4E0D\u5230\u522B\u7684\u8BBE\u5907\u4E0A\u7684\u65B0\u5B58\u6863\uFF1B\u65B0\u5B58\u7684\u6863\u548C\u4E91\u7AEF\u649E\u4E0A\u65F6\u4F1A\u8BA9\u4F60\u9009\u3002", "warning");
+  if (cloudReachable && !listed.complete) banner("\u5B58\u6863\u7684\u4E91\u7AEF\u5217\u8868\u6CA1\u62FF\u5168\uFF08\u7F51\u7EDC\u6162\uFF1F\uFF09\uFF1A\u8FD9\u6B21\u53EF\u80FD\u770B\u4E0D\u5230\u522B\u7684\u8BBE\u5907\u4E0A\u7684\u65B0\u5B58\u6863\uFF1B\u65B0\u5B58\u7684\u6863\u548C\u4E91\u7AEF\u649E\u4E0A\u65F6\u4F1A\u8BA9\u4F60\u9009\u3002", "warning");
   $("home").hidden = true;
   $("game").hidden = false;
   $("title").textContent = disc.title;
@@ -10068,11 +10259,15 @@ async function play(prepare, resume) {
     }
   }
   snaps = new Snapshots(session, disc, snapshotVerbs, () => {
+    if (slotsSheetOpen) renderSlots();
   });
   jamSigs = session.memstickDirs();
   setInterval(() => jamTick(false), JAM_POLL_MS);
   addEventListener("visibilitychange", () => {
-    if (document.visibilityState !== "hidden") return;
+    if (document.visibilityState !== "hidden") {
+      snaps?.refresh();
+      return;
+    }
     snaps?.onLeave().catch((e) => console.warn("[auto snapshot]", e));
     jamTick(true);
   });
@@ -10096,7 +10291,7 @@ function hideResumeCover() {
 async function resumeNewest() {
   say("\u6B63\u5728\u627E\u6700\u65B0\u7684\u5FEB\u7167\u2026", 3e4);
   if (!$("resume-cover").hidden) showResumeCover("\u6B63\u5728\u627E\u6700\u65B0\u7684\u5FEB\u7167\u2026");
-  const got = await snaps.newestForResume({ waitCloud: auth.isSignedIn() });
+  const got = await snaps.newestForResume({ waitCloud: auth.isSignedIn() && navigator.onLine });
   if (!$("resume-cover").hidden && got) showResumeCover(`\u6B63\u5728\u8BFB\u300C${slotLabel(got.slot)}\u300D\u2026`);
   if (!got) {
     say("\u8FD9\u5F20\u76D8\u8FD8\u6CA1\u6709\u5FEB\u7167\uFF0C\u4ECE\u5934\u5F00\u59CB");
@@ -10144,9 +10339,19 @@ async function jamTick(force) {
   jamSaving = true;
   try {
     let pushed = true, wrote = 0;
+    const hidden = document.visibilityState === "hidden";
     for (const dir of changed) {
       if (!await jamWritable(dir)) continue;
-      const r = await saveSaveDir(PSP_JAR(dir), session.readSaveDir(dir), pw);
+      const r = await withDeadline(
+        saveSaveDir(PSP_JAR(dir), session.readSaveDir(dir), pw, { deferPush: hidden }),
+        2e4,
+        (late) => logEvent(late.ok ? "info" : "warn", late.ok ? `\u5B58\u6863 ${dir} \u8FDF\u5230\u7684\u4E0A\u4F20${late.value.pushed ? "\u4F20\u597D\u4E86" : "\u6CA1\u4F20\u4E0A\u53BB\uFF08\u4F1A\u7EED\u63A8\uFF09"}` : `\u5B58\u6863 ${dir} \u8FDF\u5230\u7684\u4E0A\u4F20\u51FA\u9519\uFF1A${String(late.error)}`)
+      );
+      if (r === "timeout") {
+        logEvent("warn", `\u5B58\u6863 ${dir} 20 s \u8FD8\u6CA1\u5B58\u5B8C\uFF1A\u5148\u653E\u5F00\uFF08\u672C\u673A\u4F1A\u843D\u4E0B\u3001\u81EA\u52A8\u7EED\u63A8\uFF09\uFF0C\u4E0B\u6B21\u518D\u6838`);
+        pushed = false;
+        continue;
+      }
       jamSigs.set(dir, now.get(dir));
       pushed &&= r.pushed;
       wrote++;
@@ -10237,7 +10442,13 @@ async function restoreFromDevServer(name) {
   await session.restore(new Uint8Array(await r.arrayBuffer()));
   say(`\u5DF2\u8BFB\u5F00\u53D1\u5FEB\u7167 ${name}`);
 }
+var slotsSheetOpen = false;
 function openSlots() {
+  if (!snaps) return;
+  snaps.refresh();
+  renderSlots();
+}
+function renderSlots() {
   if (!snaps) return;
   const s = snaps;
   const when = (t) => t ? new Date(t).toLocaleString() : "";
@@ -10318,6 +10529,7 @@ function openSlots() {
     );
   };
   const foreign = s.foreign();
+  slotsSheetOpen = true;
   sheet((done) => {
     const builtManual = byAt(manual).map((slot) => row(slot, () => done()));
     const builtAuto = byAt(auto).map((slot) => row(slot, () => done()));
@@ -10378,6 +10590,8 @@ function openSlots() {
         h("button", { onclick: () => done() }, "\u5173\u95ED")
       )
     ];
+  }).then(() => {
+    slotsSheetOpen = false;
   });
 }
 function importPcSnapshot() {
@@ -10453,6 +10667,7 @@ function renderToolbar() {
     snapshotButton(),
     toolButton("menu", "\u83DC\u5355\uFF08\u6682\u505C / \u5FEB\u8FDB / \u8F6F\u952E / \u5168\u5C4F / \u97F3\u91CF / \u7EDF\u8BA1 / \u5B58\u6863\u7BA1\u7406 / \u9000\u51FA\uFF09", openMenu, "\u83DC\u5355")
   );
+  renderFsBar();
   $("paused-mark").hidden = !session.paused;
 }
 function openMenu() {
@@ -10506,11 +10721,16 @@ function renderHud() {
   el.title = st.netWaitMs > 300 ? `\u5728\u7B49\u8BFB\u76D8\uFF1A\u8FD9\u4E00\u79D2\u7B49\u4E86 ${st.netWaitMs.toFixed(0)} ms\uFF08\u7F51\u6162 / \u65AD\u4E86\uFF1B\u300C\u7F13\u5B58\u5168\u76D8\u300D\u540E\u5C31\u4E0D\u7B49\uFF09` : "\u5E27\u7387 \xB7 \u4E0B\u8F7D \xB7 \u4E0A\u4F20 \xB7 \u6838\u5185\u5B58\uFF08\u5DF2\u7528 / 768 MB\uFF09";
 }
 var syncState = { kind: "idle", text: "" };
-function snapshotButton() {
+function snapshotButton(id = "snapshot-btn") {
   const b = toolButton("floppy-disk", syncState.kind === "idle" ? "\u5FEB\u7167" : `\u5FEB\u7167 \xB7 ${syncState.text}`, openSlots, "\u5FEB\u7167");
   b.classList.add("smart", syncState.kind);
-  b.id = "snapshot-btn";
+  b.id = id;
   return b;
+}
+function renderFsBar() {
+  const bar = document.getElementById("fs-bar") ?? h("div", { id: "fs-bar" });
+  bar.replaceChildren(shotButton(), snapshotButton("fs-snapshot-btn"), toolButton("menu", "\u83DC\u5355\uFF08\u9000\u51FA\u5168\u5C4F\u5728\u8FD9\u91CC\uFF09", openMenu, "\u83DC\u5355"));
+  if (!bar.isConnected) $("stage").append(bar);
 }
 function toggleMute() {
   if (!session) return;
@@ -10645,9 +10865,20 @@ function setFast(on) {
   session.setSpeed(on ? FAST_FORWARD : 1);
   renderToolbar();
 }
+var softKeysChoice = "auto";
+var hardwareSeen = false;
 function toggleSoftKeys() {
+  softKeysChoice = "user";
   softKeys?.setVisible(!softKeys.visible);
   renderToolbar();
+}
+function hardwareInput(kind) {
+  if (hardwareSeen) return;
+  hardwareSeen = true;
+  if (softKeysChoice !== "auto" || !softKeys?.visible) return;
+  softKeys.setVisible(false);
+  renderToolbar();
+  say(`\u7528\u4E0A${kind}\u4E86\uFF0C\u5C4F\u5E55\u8F6F\u952E\u5148\u6536\u8D77\uFF08\u83DC\u5355\u91CC\u80FD\u518D\u6253\u5F00\uFF09`, 4e3);
 }
 function toggleFullscreen() {
   if (document.fullscreenElement) document.exitFullscreen().catch(() => {
@@ -10708,18 +10939,28 @@ function pollGamepads(s) {
     ay = keyAnalog.y;
   }
   const names = [];
+  let pressed = false;
   for (const gp of navigator.getGamepads?.() ?? []) {
     if (!gp || !gp.connected) continue;
     names.push(gp.id.slice(0, 40) + (gp.mapping === "standard" ? "" : "\uFF08\u975E\u6807\u51C6\u5E03\u5C40\uFF0C\u952E\u4F4D\u53EF\u80FD\u4E0D\u5BF9\uFF09"));
-    for (const [i, name] of PAD_MAP) if (gp.buttons[i]?.pressed) mask |= bit(name);
-    const x = gp.axes[0] ?? 0, y = gp.axes[1] ?? 0;
-    if (Math.hypot(x, y) > STICK_DEADZONE2 && Math.hypot(x, y) > Math.hypot(ax, ay)) {
-      ax = x;
-      ay = y;
+    for (const [i, name] of PAD_MAP) if (gp.buttons[i]?.pressed) {
+      mask |= bit(name);
+      pressed = true;
     }
-    mask |= rightStickMask(gp.axes[2] ?? 0, gp.axes[3] ?? 0);
+    const x = gp.axes[0] ?? 0, y = gp.axes[1] ?? 0;
+    if (Math.hypot(x, y) > STICK_DEADZONE2) {
+      pressed = true;
+      if (Math.hypot(x, y) > Math.hypot(ax, ay)) {
+        ax = x;
+        ay = y;
+      }
+    }
+    const rm = rightStickMask(gp.axes[2] ?? 0, gp.axes[3] ?? 0);
+    if (rm) pressed = true;
+    mask |= rm;
   }
   padInfo = names.join(" + ");
+  if (pressed) hardwareInput("\u624B\u67C4");
   s.setMask("pad", mask);
   s.setAnalog(ax, ay);
 }
@@ -10783,8 +11024,10 @@ function onKey(e, down) {
   }
   if (STICK_KEYS[e.code]) {
     e.preventDefault();
-    if (down) stickKeysDown.add(e.code);
-    else stickKeysDown.delete(e.code);
+    if (down) {
+      stickKeysDown.add(e.code);
+      hardwareInput("\u952E\u76D8");
+    } else stickKeysDown.delete(e.code);
     updateKeyAnalog(e.getModifierState?.("Shift") && e.location === 2 || rightShift);
     return;
   }
@@ -10825,6 +11068,7 @@ function onKey(e, down) {
   const b = KEYMAP[e.code];
   if (!b) return;
   e.preventDefault();
+  if (down) hardwareInput("\u952E\u76D8");
   const m = session.getMask("keyboard");
   session.setMask("keyboard", down ? m | bit(b) : m & ~bit(b));
 }
@@ -10968,7 +11212,7 @@ async function boot() {
     onPause: togglePause,
     onFast: (d) => setFast(d)
   });
-  if (matchMedia("(pointer: coarse)").matches) softKeys.setVisible(true);
+  softKeys.setVisible(true);
   $("stage").addEventListener("dblclick", (e) => {
     if (!e.target.closest(".softkeys .pk, .softkeys .dpad")) toggleFullscreen();
   });
@@ -10977,8 +11221,8 @@ async function boot() {
   addEventListener("blur", () => session?.setMask("keyboard", 0));
   subscribe((s) => {
     syncState = s;
-    const old = document.getElementById("snapshot-btn");
-    if (old && session) old.replaceWith(snapshotButton());
+    if (!session) return;
+    for (const id of ["snapshot-btn", "fs-snapshot-btn"]) document.getElementById(id)?.replaceWith(snapshotButton(id));
   });
   for (const t of ["gesturestart", "gesturechange"]) document.addEventListener(t, (e) => e.preventDefault(), { passive: false });
   const local2 = canWriteLocalFiles();
@@ -11022,6 +11266,14 @@ async function boot() {
     unlockTitles().catch((e) => banner(errorText(e)));
   });
   const store2 = getStore();
+  recallPassword().then((pw) => {
+    if (!pw) return;
+    setPassword(pw);
+    remembered = true;
+    renderAccount();
+    unlockTitles().catch(() => {
+    });
+  }, (e) => console.warn("[remember]", e));
   watchPantry();
   mount({ onClick: () => {
     openSaveManager(saveManagerContext).catch((e) => banner(errorText(e)));
@@ -11056,7 +11308,7 @@ async function boot() {
   });
   let pushing = false;
   const pushDirty = () => {
-    if (pushing || inFlight() || !auth.isSignedIn() || !navigator.onLine) return;
+    if (pushing || inFlightFresh() || !auth.isSignedIn() || !navigator.onLine) return;
     pushing = true;
     store2.files.dirty.pushAll().catch((e) => console.warn("[pushAll]", e)).finally(() => {
       pushing = false;
@@ -11117,6 +11369,9 @@ globalThis.kr = {
     autoSnapshot: () => snaps?.auto(),
     setTestPassword: (p) => setPassword(p),
     slots: () => snaps?.slots,
+    askPassword: () => ensurePassword("\u6D4B\u8BD5"),
+    hasPassword: () => getPassword() !== null,
+    remembered: () => hasRememberedPassword(),
     resumeNewest: () => resumeNewest().then((s) => s ? `${s.kind}${s.n}` : null),
     // 探针：同一局里反复「存 → 恢复」n 次，每步报耗时和帧数（查「恢复两次之后核不应答」）
     async stateCycle(n) {
@@ -11146,4 +11401,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-d57ae43584bf.mjs.map
+//# sourceMappingURL=kudsrocket-f07b137ec915.mjs.map
