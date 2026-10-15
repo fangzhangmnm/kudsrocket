@@ -1,5 +1,5 @@
 // src/version.ts
-var APP_VERSION = "v0.1.12-2026-10-14";
+var APP_VERSION = "v0.1.13-2026-10-14";
 
 // assets/icons.svg
 var icons_default = '<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none">\n<!--\n  13 icons extracted from the family icon library (../20260708 SVG Icons/icons.svg) by extract-icons.py \u2014 do not hand-edit; re-run the script instead.\n  Family SVG Icons \u2014 MIT License, Copyright (c) 2026 fangzhangmnm.\n  Contains work derived from (per-icon provenance in data-src):\n    Feather Icons \u2014 MIT License, Copyright (c) 2013-2023 Cole Bemis \xB7 https://github.com/feathericons/feather\n-->\n  <!-- media -->\n  <!-- pause \u2014 \u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="pause" data-cat="media" data-src="own" data-note="\u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="3.2"><path d="M8.3 5.5 V18.5"/><path d="M15.7 5.5 V18.5"/></g></symbol>\n  <!-- play \u2014 \u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="play" data-cat="media" data-src="own" data-note="\u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 5.4 L18.8 12 L8.2 18.6 Z" fill="currentColor"/></symbol>\n  <!-- fast-forward \u2014 \u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="fast-forward" data-cat="media" data-src="own" data-note="\u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.4 6.8 L10.9 12 L4.4 17.2 Z" fill="currentColor"/><path d="M13.1 6.8 L19.6 12 L13.1 17.2 Z" fill="currentColor"/></symbol>\n  <!-- volume \u2014 \u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009) -->\n  <symbol id="volume" data-cat="media" data-src="own" data-note="\u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 10.3 H8.7 L12.6 6.6 V17.4 L8.7 13.7 H5.5 Z" fill="currentColor"/><path d="M15.13 9.73 A3.4 3.4 0 0 1 15.13 14.27"/><path d="M16.36 7.19 A6.1 6.1 0 0 1 16.36 16.81"/></symbol>\n  <!-- file -->\n  <!-- floppy-disk \u2014 \u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3 -->\n  <symbol id="floppy-disk" data-cat="file" data-src="feather:save" data-note="\u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13l3 3v13a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 17 8 17 3"/></symbol>\n  <!-- folder-open \u2014 \u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF -->\n  <symbol id="folder-open" data-cat="file" data-src="own" data-note="\u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18 V7 a2 2 0 0 1 2 -2 h4 l2 2 h6 a2 2 0 0 1 2 2 v1.8"/><path d="M3 18 L6.4 10.8 H21.6 L18.2 18 Z"/></symbol>\n  <!-- hierarchy -->\n  <!-- lock \u2014 \u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D -->\n  <symbol id="lock" data-cat="hierarchy" data-src="own" data-note="\u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10" width="13" height="11"/><path d="M8.8 10 V6.5 a3.2 3.2 0 0 1 6.4 0 V10"/></symbol>\n  <!-- common -->\n  <!-- x \u2014 \u53C9 -->\n  <symbol id="x" data-cat="common" data-src="own" data-note="\u53C9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 L17.5 17.5 M17.5 6.5 L6.5 17.5"/></symbol>\n  <!-- cloud -->\n  <!-- cloud \u2014 \u4E91 -->\n  <symbol id="cloud" data-cat="cloud" data-src="feather:cloud" data-note="\u4E91" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>\n  <!-- viewport -->\n  <!-- maximize-viewport \u2014 \u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55) -->\n  <symbol id="maximize-viewport" data-cat="viewport" data-src="own" data-note="\u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934 --> <polyline points="4 9 4 4 9 4"/> <polyline points="20 9 20 4 15 4"/> <polyline points="4 15 4 20 9 20"/> <polyline points="20 15 20 20 15 20"/></symbol>\n  <!-- ui -->\n  <!-- more \u2014 \u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00) -->\n  <symbol id="more" data-cat="ui" data-src="own" data-note="\u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/></symbol>\n  <!-- keyboard \u2014 \u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49) -->\n  <symbol id="keyboard" data-cat="ui" data-src="own" data-note="\u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="7.2" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="7.2" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><path d="M8.6 15.6 H15.4"/></symbol>\n  <!-- menu \u2014 \u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17) -->\n  <symbol id="menu" data-cat="ui" data-src="own" data-note="\u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"></line> <line x1="4" y1="12" x2="20" y2="12"></line> <line x1="4" y1="17" x2="20" y2="17"></line></symbol>\n</svg>\n';
@@ -948,10 +948,10 @@ var reporter = null;
 function setStoreErrorReporter(fn) {
   reporter = fn;
 }
-function reportStoreError(err2, level = "error") {
-  if (err2?.name === "IdbSuspendedError" && level !== "log")
+function reportStoreError(err3, level = "error") {
+  if (err3?.name === "IdbSuspendedError" && level !== "log")
     level = "log";
-  reporter?.(err2, level);
+  reporter?.(err3, level);
 }
 
 // node_modules/@internal/store/dist/seal.js
@@ -1536,8 +1536,8 @@ function createDelete(cfg) {
       let r;
       try {
         r = await replayDelete(e.name, { baseEtag: e.baseEtag, deleteEventId: e.deleteEventId });
-      } catch (err2) {
-        reportStoreError(err2, "log");
+      } catch (err3) {
+        reportStoreError(err3, "log");
         remain.push(e);
         continue;
       }
@@ -3274,10 +3274,10 @@ function createIdbCache(dbName) {
           reject(new IdbSuspendedError(`${mode} ${op}`));
           return;
         }
-        const err2 = t.error ?? new DOMException(`idb ${mode} transaction aborted`, "AbortError");
-        if (err2.name === "QuotaExceededError")
-          reportStoreError(err2, "error");
-        reject(err2);
+        const err3 = t.error ?? new DOMException(`idb ${mode} transaction aborted`, "AbortError");
+        if (err3.name === "QuotaExceededError")
+          reportStoreError(err3, "error");
+        reject(err3);
       };
       t.onerror = fail;
       t.onabort = fail;
@@ -4077,7 +4077,7 @@ function createStore(config) {
     throw new Error("createStore: appId \u5FC5\u586B\u2014\u2014\u540C origin \u5144\u5F1F PWA \u9694\u79BB\u7684\u7EA2\u7EBF\uFF08\u6BCF\u4E2A app \u5EFA\u81EA\u5DF1\u7684 IDB \u5E93\uFF09");
   if (config.persistence !== "app-managed" && config.persistence !== "none")
     throw new Error('createStore: persistence \u5FC5\u586B\uFF08"app-managed" | "none"\uFF09\u2014\u2014persist() \u63A5\u7EBF\u5FC5\u987B\u663E\u5F0F\u8868\u6001\uFF082026-08-27 \u62CD\u677F\uFF0C\u89C1 persistence.ts\uFF09');
-  setStoreErrorReporter((err2, level) => ui.reportError(err2, level));
+  setStoreErrorReporter((err3, level) => ui.reportError(err3, level));
   if (config.persistence === "app-managed") {
     void queryStoragePersistence().then((st) => {
       if (st.supported && !st.persisted)
@@ -4243,7 +4243,7 @@ function createStore(config) {
     })();
   });
   const watcherOnError = /* @__PURE__ */ new WeakMap();
-  function emitFolderError(folder, err2, phase) {
+  function emitFolderError(folder, err3, phase) {
     const set2 = folderWatchers.get(folder);
     if (!set2)
       return;
@@ -4251,7 +4251,7 @@ function createStore(config) {
       const h2 = watcherOnError.get(cb);
       if (h2) {
         try {
-          h2(err2, phase);
+          h2(err3, phase);
         } catch (e) {
           ui.reportError(e);
         }
@@ -5230,9 +5230,9 @@ function _rangeHeader(offset, length) {
 async function downloadRangeFromUrl(downloadUrl, offset, length) {
   const r = await fetch(downloadUrl, { headers: { Range: _rangeHeader(offset, length) } });
   if (!r.ok && r.status !== 206) {
-    const err2 = new Error(`range download failed ${r.status}`);
-    err2.status = r.status;
-    throw err2;
+    const err3 = new Error(`range download failed ${r.status}`);
+    err3.status = r.status;
+    throw err3;
   }
   return await r.arrayBuffer();
 }
@@ -5267,10 +5267,10 @@ function createGraph(tokenSource) {
         detail = await response.text();
       } catch (_) {
       }
-      const err2 = new Error(`Graph ${method} ${pathOrUrl} \u2192 ${response.status}: ${detail}`);
-      err2.status = response.status;
-      err2.body = detail;
-      throw err2;
+      const err3 = new Error(`Graph ${method} ${pathOrUrl} \u2192 ${response.status}: ${detail}`);
+      err3.status = response.status;
+      err3.body = detail;
+      throw err3;
     }
     return response;
   }
@@ -5392,9 +5392,9 @@ function createGraph(tokenSource) {
         throw new CloudNetworkError(`Graph chunked upload PUT (${offset}-${end}/${total}): network fetch failed (${String(e)})`, e);
       }
       if (!r.ok && r.status !== 202) {
-        const err2 = new Error(`chunked upload failed ${r.status}`);
-        err2.status = r.status;
-        throw err2;
+        const err3 = new Error(`chunked upload failed ${r.status}`);
+        err3.status = r.status;
+        throw err3;
       }
       last = await r.json().then((j) => j).catch(() => null);
       offset = end + 1;
@@ -5638,10 +5638,10 @@ function _cacheLines(homeAccountId) {
   ];
 }
 function _logSilentFailure(where, account, e) {
-  const err2 = e;
+  const err3 = e;
   const hid = typeof account?.homeAccountId === "string" ? account.homeAccountId : "";
   const lines = [
-    `[auth] silent token renewal failed (${where}): name=${String(err2?.name ?? "?")} code=${String(err2?.errorCode ?? "?")} sub=${String(err2?.subError ?? "")} msg=${String(err2?.message ?? e).slice(0, 200)}`,
+    `[auth] silent token renewal failed (${where}): name=${String(err3?.name ?? "?")} code=${String(err3?.errorCode ?? "?")} sub=${String(err3?.subError ?? "")} msg=${String(err3?.message ?? e).slice(0, 200)}`,
     `  account=${hid ? hid.slice(0, 8) + "\u2026" : "(none)"} refreshTokensInCache=${String(countRefreshTokens(hid || void 0))} scopes=${SCOPES.join(" ")} now=${(/* @__PURE__ */ new Date()).toISOString()}`,
     ..._cacheLines(hid || void 0),
     `  msal-tail(${_msalTail.length}):`,
@@ -5655,8 +5655,8 @@ var INTERACTION_LATCH_MS = 6e4;
 var _inflight = /* @__PURE__ */ new Map();
 var _latched = /* @__PURE__ */ new Map();
 function _isInteractionRequired(e) {
-  const err2 = e;
-  return err2?.name === "InteractionRequiredAuthError" || /^(login_required|interaction_required|consent_required)$/.test(String(err2?.errorCode ?? ""));
+  const err3 = e;
+  return err3?.name === "InteractionRequiredAuthError" || /^(login_required|interaction_required|consent_required)$/.test(String(err3?.errorCode ?? ""));
 }
 function _clearLatch() {
   _latched.clear();
@@ -6027,11 +6027,11 @@ function createOneDriveProvider(config = {}) {
 // node_modules/@internal/encryption/dist/encryption.js
 var SEVENZ_MAGIC = [55, 122, 188, 175, 39, 28];
 var ZIP_MAGIC = [80, 75, 3, 4];
-function _startsWith(u82, sig) {
-  if (u82.length < sig.length)
+function _startsWith(u83, sig) {
+  if (u83.length < sig.length)
     return false;
   for (let i = 0; i < sig.length; i++)
-    if (u82[i] !== sig[i])
+    if (u83[i] !== sig[i])
       return false;
   return true;
 }
@@ -6052,8 +6052,8 @@ function makeGuid() {
   });
 }
 var _keyCache = /* @__PURE__ */ new Map();
-function _hex(u82) {
-  return [...u82].map((b) => b.toString(16).padStart(2, "0")).join("");
+function _hex(u83) {
+  return [...u83].map((b) => b.toString(16).padStart(2, "0")).join("");
 }
 async function _deriveKey(password, salt) {
   const cacheKey = `${password}\0${_hex(salt)}`;
@@ -6082,25 +6082,25 @@ async function encryptPeek(bytes, password) {
   out.set(ct, PEEK_HEADER_LEN);
   return out;
 }
-function scanEncPeekFromEnd(u82) {
-  const n = u82.length;
+function scanEncPeekFromEnd(u83) {
+  const n = u83.length;
   outer: for (let i = n - PEEK_HEADER_LEN; i >= 0; i--) {
     for (let k = 0; k < 8; k++)
-      if (u82[i + k] !== PEEK_MAGIC[k])
+      if (u83[i + k] !== PEEK_MAGIC[k])
         continue outer;
-    const ver = u82[i + 8];
+    const ver = u83[i + 8];
     if (ver !== PEEK_VER)
       continue;
-    const len = new DataView(u82.buffer, u82.byteOffset + i + 37, 4).getUint32(0, true);
+    const len = new DataView(u83.buffer, u83.byteOffset + i + 37, 4).getUint32(0, true);
     if (len < 16 || len > PEEK_MAX_LEN || i + PEEK_HEADER_LEN + len > n)
       continue;
     return {
       start: i,
       end: i + PEEK_HEADER_LEN + len,
       ver,
-      salt: u82.slice(i + 9, i + 25),
-      iv: u82.slice(i + 25, i + 37),
-      ct: u82.slice(i + PEEK_HEADER_LEN, i + PEEK_HEADER_LEN + len)
+      salt: u83.slice(i + 9, i + 25),
+      iv: u83.slice(i + 25, i + 37),
+      ct: u83.slice(i + PEEK_HEADER_LEN, i + PEEK_HEADER_LEN + len)
     };
   }
   return null;
@@ -6110,9 +6110,9 @@ async function decryptPeek(parsed, password) {
   try {
     return new Uint8Array(await globalThis.crypto.subtle.decrypt({ name: "AES-GCM", iv: parsed.iv }, key, parsed.ct));
   } catch {
-    const err2 = new Error("wrong password");
-    err2.code = "WRONG_PASSWORD";
-    throw err2;
+    const err3 = new Error("wrong password");
+    err3.code = "WRONG_PASSWORD";
+    throw err3;
   }
 }
 async function _tailBytes(blobOrBytes, window2 = PEEK_TAIL_WINDOW) {
@@ -6414,9 +6414,9 @@ function render() {
   if (bar) {
     bar.className = `syncbar ${s.kind}${s.fraction != null ? " known" : ""}`;
     bar.hidden = s.kind === "idle";
-    const fill = h("span", { class: "syncbar-fill" });
-    if (s.fraction != null) fill.style.width = `${Math.max(2, Math.min(100, s.fraction * 100)).toFixed(1)}%`;
-    bar.replaceChildren(h("span", { class: "syncbar-track" }, fill), h("span", { class: "syncbar-text" }, s.text));
+    const fill2 = h("span", { class: "syncbar-fill" });
+    if (s.fraction != null) fill2.style.width = `${Math.max(2, Math.min(100, s.fraction * 100)).toFixed(1)}%`;
+    bar.replaceChildren(h("span", { class: "syncbar-track" }, fill2), h("span", { class: "syncbar-text" }, s.text));
   }
   if (home) {
     home.className = `sync-home ${s.kind}`;
@@ -6454,25 +6454,25 @@ var storeUI = {
     logEvent("warn", `\u51B2\u7A81\uFF1A${stemOf(name)}\uFF08${occasion}\uFF09\u2192 ${{ keepMine: "\u7528\u8FD9\u53F0\u7684", takeCloud: "\u7528\u4E91\u7AEF\u7684", cancel: "\u5148\u4E0D\u7BA1" }[choice ?? "cancel"]}`);
     return choice ?? "cancel";
   },
-  reportError: (err2, level = "error") => {
-    if (err2?.message === "Not signed in") {
-      console.info("[store]", err2);
+  reportError: (err3, level = "error") => {
+    if (err3?.message === "Not signed in") {
+      console.info("[store]", err3);
       return;
     }
     if (level === "log") {
-      console.info("[store]", err2);
+      console.info("[store]", err3);
       return;
     }
     if (level === "info") {
-      note(errorText(err2));
+      note(errorText(err3));
       return;
     }
-    if (isNetworkError(err2)) {
-      networkHiccup(String(err2?.message ?? err2));
+    if (isNetworkError(err3)) {
+      networkHiccup(String(err3?.message ?? err3));
       return;
     }
-    logEvent(level === "warning" ? "warn" : "error", `store\uFF1A${errorText(err2)}`);
-    banner(errorText(err2), level);
+    logEvent(level === "warning" ? "warn" : "error", `store\uFF1A${errorText(err3)}`);
+    banner(errorText(err3), level);
   },
   onReplayStatus: ({ phase, name, done, total }) => {
     if (phase === "collision") banner(`${name ? stemOf(name) : ""}\uFF1A\u4E91\u7AEF\u5DF2\u7ECF\u6709\u540C\u540D\u7684\u4E86\uFF0C\u79BB\u7EBF\u65F6\u5B58\u7684\u8FD9\u4EFD\u6CA1\u4F20\u4E0A\u53BB`, "warning");
@@ -7527,7 +7527,7 @@ var wfblk = function(out, pos, dat) {
 var wblk = function(dat, out, final, syms, lf, df, eb, li, bs, bl, p) {
   wbits(out, p++, final);
   ++lf[256];
-  var _a2 = hTree(lf, 15), dlt = _a2.t, mlb = _a2.l;
+  var _a2 = hTree(lf, 15), dlt = _a2.t, mlb2 = _a2.l;
   var _b2 = hTree(df, 15), ddt = _b2.t, mdb = _b2.l;
   var _c = lc(dlt), lclt = _c.c, nlc = _c.n;
   var _d = lc(ddt), lcdt = _d.c, ndc = _d.n;
@@ -7548,7 +7548,7 @@ var wblk = function(dat, out, final, syms, lf, df, eb, li, bs, bl, p) {
   var lm, ll, dm, dl;
   wbits(out, p, 1 + (dtlen < ftlen)), p += 2;
   if (dtlen < ftlen) {
-    lm = hMap(dlt, mlb, 0), ll = dlt, dm = hMap(ddt, mdb, 0), dl = ddt;
+    lm = hMap(dlt, mlb2, 0), ll = dlt, dm = hMap(ddt, mdb, 0), dl = ddt;
     var llm = hMap(lct, mlcb, 0);
     wbits(out, p, nlc - 257);
     wbits(out, p + 5, ndc - 1);
@@ -8309,6 +8309,656 @@ async function deleteGuard(kind, discKey2) {
   if (await getGuard(kind, discKey2)) await tx("readwrite", (s) => s.delete(kind));
 }
 
+// src/disc/ppst.ts
+var PPST_COMPRESS = { none: 0, snappy: 1, zstd: 2 };
+var HEAD = 48;
+var TITLE = 128;
+var cstr = (b) => {
+  const end = b.indexOf(0);
+  return new TextDecoder().decode(end < 0 ? b : b.subarray(0, end));
+};
+function parsePpst(bytes) {
+  if (bytes.length < HEAD) throw new Error("not a PPSSPP savestate (too small)");
+  const dv = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+  const revision = dv.getInt32(0, true), compress = dv.getInt32(4, true), expected = dv.getUint32(8, true), uncompressedSize = dv.getUint32(12, true);
+  if (revision < 4 || revision > 64) throw new Error(`not a PPSSPP savestate (revision ${revision})`);
+  const head = HEAD + (revision >= 5 ? TITLE : 0);
+  if (head + expected !== bytes.length) throw new Error(`PPSSPP savestate size mismatch: header says ${expected}, file has ${bytes.length - head}`);
+  return {
+    revision,
+    compress,
+    uncompressedSize,
+    gitVersion: cstr(bytes.subarray(16, 48)),
+    title: revision >= 5 ? cstr(bytes.subarray(48, 48 + TITLE)) : "",
+    body: bytes.subarray(head)
+  };
+}
+function parsePpstName(name) {
+  const m = /^([A-Z0-9]+)_([0-9.]*)_(\d+)\.ppst$/i.exec(name.replace(/^.*[\\/]/, ""));
+  return m ? { id: m[1], version: m[2], slot: Number(m[3]) } : null;
+}
+
+// vendor/fzstd/fzstd.esm.js
+var ab = ArrayBuffer;
+var u82 = Uint8Array;
+var u162 = Uint16Array;
+var i16 = Int16Array;
+var i322 = Int32Array;
+var slc2 = function(v, s, e) {
+  if (u82.prototype.slice)
+    return u82.prototype.slice.call(v, s, e);
+  if (s == null || s < 0)
+    s = 0;
+  if (e == null || e > v.length)
+    e = v.length;
+  var n = new u82(e - s);
+  n.set(v.subarray(s, e));
+  return n;
+};
+var fill = function(v, n, s, e) {
+  if (u82.prototype.fill)
+    return u82.prototype.fill.call(v, n, s, e);
+  if (s == null || s < 0)
+    s = 0;
+  if (e == null || e > v.length)
+    e = v.length;
+  for (; s < e; ++s)
+    v[s] = n;
+  return v;
+};
+var cpw = function(v, t, s, e) {
+  if (u82.prototype.copyWithin)
+    return u82.prototype.copyWithin.call(v, t, s, e);
+  if (s == null || s < 0)
+    s = 0;
+  if (e == null || e > v.length)
+    e = v.length;
+  while (s < e) {
+    v[t++] = v[s++];
+  }
+};
+var ec2 = [
+  "invalid zstd data",
+  "window size too large (>2046MB)",
+  "invalid block type",
+  "FSE accuracy too high",
+  "match distance too far back",
+  "unexpected EOF"
+];
+var err2 = function(ind, msg, nt) {
+  var e = new Error(msg || ec2[ind]);
+  e.code = ind;
+  if (Error.captureStackTrace)
+    Error.captureStackTrace(e, err2);
+  if (!nt)
+    throw e;
+  return e;
+};
+var rb = function(d, b, n) {
+  var i = 0, o = 0;
+  for (; i < n; ++i)
+    o |= d[b++] << (i << 3);
+  return o;
+};
+var b42 = function(d, b) {
+  return (d[b] | d[b + 1] << 8 | d[b + 2] << 16 | d[b + 3] << 24) >>> 0;
+};
+var rzfh = function(dat, w) {
+  var n3 = dat[0] | dat[1] << 8 | dat[2] << 16;
+  if (n3 == 3126568 && dat[3] == 253) {
+    var flg = dat[4];
+    var ss = flg >> 5 & 1, cc = flg >> 2 & 1, df = flg & 3, fcf = flg >> 6;
+    if (flg & 8)
+      err2(0);
+    var bt = 6 - ss;
+    var db2 = df == 3 ? 4 : df;
+    var di = rb(dat, bt, db2);
+    bt += db2;
+    var fsb = fcf ? 1 << fcf : ss;
+    var fss = rb(dat, bt, fsb) + (fcf == 1 && 256);
+    var ws = fss;
+    if (!ss) {
+      var wb = 1 << 10 + (dat[5] >> 3);
+      ws = wb + (wb >> 3) * (dat[5] & 7);
+    }
+    if (ws > 2145386496)
+      err2(1);
+    var buf = new u82((w == 1 ? fss || ws : w ? 0 : ws) + 12);
+    buf[0] = 1, buf[4] = 4, buf[8] = 8;
+    return {
+      b: bt + fsb,
+      y: 0,
+      l: 0,
+      d: di,
+      w: w && w != 1 ? w : buf.subarray(12),
+      e: ws,
+      o: new i322(buf.buffer, 0, 3),
+      u: fss,
+      c: cc,
+      m: Math.min(131072, ws)
+    };
+  } else if ((n3 >> 4 | dat[3] << 20) == 25481893) {
+    return b42(dat, 4) + 8;
+  }
+  err2(0);
+};
+var msb = function(val) {
+  var bits2 = 0;
+  for (; 1 << bits2 <= val; ++bits2)
+    ;
+  return bits2 - 1;
+};
+var rfse = function(dat, bt, mal) {
+  var tpos = (bt << 3) + 4;
+  var al = (dat[bt] & 15) + 5;
+  if (al > mal)
+    err2(3);
+  var sz = 1 << al;
+  var probs = sz, sym = -1, re = -1, i = -1, ht = sz;
+  var buf = new ab(512 + (sz << 2));
+  var freq = new i16(buf, 0, 256);
+  var dstate = new u162(buf, 0, 256);
+  var nstate = new u162(buf, 512, sz);
+  var bb1 = 512 + (sz << 1);
+  var syms = new u82(buf, bb1, sz);
+  var nbits = new u82(buf, bb1 + sz);
+  while (sym < 255 && probs > 0) {
+    var bits2 = msb(probs + 1);
+    var cbt = tpos >> 3;
+    var msk = (1 << bits2 + 1) - 1;
+    var val = (dat[cbt] | dat[cbt + 1] << 8 | dat[cbt + 2] << 16) >> (tpos & 7) & msk;
+    var msk1fb = (1 << bits2) - 1;
+    var msv = msk - probs - 1;
+    var sval = val & msk1fb;
+    if (sval < msv)
+      tpos += bits2, val = sval;
+    else {
+      tpos += bits2 + 1;
+      if (val > msk1fb)
+        val -= msv;
+    }
+    freq[++sym] = --val;
+    if (val == -1) {
+      probs += val;
+      syms[--ht] = sym;
+    } else
+      probs -= val;
+    if (!val) {
+      do {
+        var rbt = tpos >> 3;
+        re = (dat[rbt] | dat[rbt + 1] << 8) >> (tpos & 7) & 3;
+        tpos += 2;
+        sym += re;
+      } while (re == 3);
+    }
+  }
+  if (sym > 255 || probs)
+    err2(0);
+  var sympos = 0;
+  var sstep = (sz >> 1) + (sz >> 3) + 3;
+  var smask = sz - 1;
+  for (var s = 0; s <= sym; ++s) {
+    var sf = freq[s];
+    if (sf < 1) {
+      dstate[s] = -sf;
+      continue;
+    }
+    for (i = 0; i < sf; ++i) {
+      syms[sympos] = s;
+      do {
+        sympos = sympos + sstep & smask;
+      } while (sympos >= ht);
+    }
+  }
+  if (sympos)
+    err2(0);
+  for (i = 0; i < sz; ++i) {
+    var ns = dstate[syms[i]]++;
+    var nb = nbits[i] = al - msb(ns);
+    nstate[i] = (ns << nb) - sz;
+  }
+  return [tpos + 7 >> 3, {
+    b: al,
+    s: syms,
+    n: nbits,
+    t: nstate
+  }];
+};
+var rhu = function(dat, bt) {
+  var i = 0, wc = -1;
+  var buf = new u82(292), hb = dat[bt];
+  var hw = buf.subarray(0, 256);
+  var rc = buf.subarray(256, 268);
+  var ri = new u162(buf.buffer, 268);
+  if (hb < 128) {
+    var _a2 = rfse(dat, bt + 1, 6), ebt = _a2[0], fdt2 = _a2[1];
+    bt += hb;
+    var epos = ebt << 3;
+    var lb = dat[bt];
+    if (!lb)
+      err2(0);
+    var st1 = 0, st2 = 0, btr1 = fdt2.b, btr2 = btr1;
+    var fpos = (++bt << 3) - 8 + msb(lb);
+    for (; ; ) {
+      fpos -= btr1;
+      if (fpos < epos)
+        break;
+      var cbt = fpos >> 3;
+      st1 += (dat[cbt] | dat[cbt + 1] << 8) >> (fpos & 7) & (1 << btr1) - 1;
+      hw[++wc] = fdt2.s[st1];
+      fpos -= btr2;
+      if (fpos < epos)
+        break;
+      cbt = fpos >> 3;
+      st2 += (dat[cbt] | dat[cbt + 1] << 8) >> (fpos & 7) & (1 << btr2) - 1;
+      hw[++wc] = fdt2.s[st2];
+      btr1 = fdt2.n[st1];
+      st1 = fdt2.t[st1];
+      btr2 = fdt2.n[st2];
+      st2 = fdt2.t[st2];
+    }
+    if (++wc > 255)
+      err2(0);
+  } else {
+    wc = hb - 127;
+    for (; i < wc; i += 2) {
+      var byte = dat[++bt];
+      hw[i] = byte >> 4;
+      hw[i + 1] = byte & 15;
+    }
+    ++bt;
+  }
+  var wes = 0;
+  for (i = 0; i < wc; ++i) {
+    var wt = hw[i];
+    if (wt > 11)
+      err2(0);
+    wes += wt && 1 << wt - 1;
+  }
+  var mb2 = msb(wes) + 1;
+  var ts = 1 << mb2;
+  var rem = ts - wes;
+  if (rem & rem - 1)
+    err2(0);
+  hw[wc++] = msb(rem) + 1;
+  for (i = 0; i < wc; ++i) {
+    var wt = hw[i];
+    ++rc[hw[i] = wt && mb2 + 1 - wt];
+  }
+  var hbuf = new u82(ts << 1);
+  var syms = hbuf.subarray(0, ts), nb = hbuf.subarray(ts);
+  ri[mb2] = 0;
+  for (i = mb2; i > 0; --i) {
+    var pv = ri[i];
+    fill(nb, i, pv, ri[i - 1] = pv + rc[i] * (1 << mb2 - i));
+  }
+  if (ri[0] != ts)
+    err2(0);
+  for (i = 0; i < wc; ++i) {
+    var bits2 = hw[i];
+    if (bits2) {
+      var code = ri[bits2];
+      fill(syms, i, code, ri[bits2] = code + (1 << mb2 - bits2));
+    }
+  }
+  return [bt, {
+    n: nb,
+    b: mb2,
+    s: syms
+  }];
+};
+var dllt = rfse(/* @__PURE__ */ new u82([
+  81,
+  16,
+  99,
+  140,
+  49,
+  198,
+  24,
+  99,
+  12,
+  33,
+  196,
+  24,
+  99,
+  102,
+  102,
+  134,
+  70,
+  146,
+  4
+]), 0, 6)[1];
+var dmlt = rfse(/* @__PURE__ */ new u82([
+  33,
+  20,
+  196,
+  24,
+  99,
+  140,
+  33,
+  132,
+  16,
+  66,
+  8,
+  33,
+  132,
+  16,
+  66,
+  8,
+  33,
+  68,
+  68,
+  68,
+  68,
+  68,
+  68,
+  68,
+  68,
+  36,
+  9
+]), 0, 6)[1];
+var doct = rfse(/* @__PURE__ */ new u82([
+  32,
+  132,
+  16,
+  66,
+  102,
+  70,
+  68,
+  68,
+  68,
+  68,
+  36,
+  73,
+  2
+]), 0, 5)[1];
+var b2bl = function(b, s) {
+  var len = b.length, bl = new i322(len);
+  for (var i = 0; i < len; ++i) {
+    bl[i] = s;
+    s += 1 << b[i];
+  }
+  return bl;
+};
+var llb = /* @__PURE__ */ new u82((/* @__PURE__ */ new i322([
+  0,
+  0,
+  0,
+  0,
+  16843009,
+  50528770,
+  134678020,
+  202050057,
+  269422093
+])).buffer, 0, 36);
+var llbl = /* @__PURE__ */ b2bl(llb, 0);
+var mlb = /* @__PURE__ */ new u82((/* @__PURE__ */ new i322([
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  16843009,
+  50528770,
+  117769220,
+  185207048,
+  252579084,
+  16
+])).buffer, 0, 53);
+var mlbl = /* @__PURE__ */ b2bl(mlb, 3);
+var dhu = function(dat, out, hu) {
+  var len = dat.length, ss = out.length, lb = dat[len - 1], msk = (1 << hu.b) - 1, eb = -hu.b;
+  if (!lb)
+    err2(0);
+  var st = 0, btr = hu.b, pos = (len << 3) - 8 + msb(lb) - btr, i = -1;
+  for (; pos > eb && i < ss; ) {
+    var cbt = pos >> 3;
+    var val = (dat[cbt] | dat[cbt + 1] << 8 | dat[cbt + 2] << 16) >> (pos & 7);
+    st = (st << btr | val) & msk;
+    out[++i] = hu.s[st];
+    pos -= btr = hu.n[st];
+  }
+  if (pos != eb || i + 1 != ss)
+    err2(0);
+};
+var dhu4 = function(dat, out, hu) {
+  var bt = 6;
+  var ss = out.length, sz1 = ss + 3 >> 2, sz2 = sz1 << 1, sz3 = sz1 + sz2;
+  dhu(dat.subarray(bt, bt += dat[0] | dat[1] << 8), out.subarray(0, sz1), hu);
+  dhu(dat.subarray(bt, bt += dat[2] | dat[3] << 8), out.subarray(sz1, sz2), hu);
+  dhu(dat.subarray(bt, bt += dat[4] | dat[5] << 8), out.subarray(sz2, sz3), hu);
+  dhu(dat.subarray(bt), out.subarray(sz3), hu);
+};
+var rzb = function(dat, st, out) {
+  var _a2;
+  var bt = st.b;
+  var b0 = dat[bt], btype = b0 >> 1 & 3;
+  st.l = b0 & 1;
+  var sz = b0 >> 3 | dat[bt + 1] << 5 | dat[bt + 2] << 13;
+  var ebt = (bt += 3) + sz;
+  if (btype == 1) {
+    if (bt >= dat.length)
+      return;
+    st.b = bt + 1;
+    if (out) {
+      fill(out, dat[bt], st.y, st.y += sz);
+      return out;
+    }
+    return fill(new u82(sz), dat[bt]);
+  }
+  if (ebt > dat.length)
+    return;
+  if (btype == 0) {
+    st.b = ebt;
+    if (out) {
+      out.set(dat.subarray(bt, ebt), st.y);
+      st.y += sz;
+      return out;
+    }
+    return slc2(dat, bt, ebt);
+  }
+  if (btype == 2) {
+    var b3 = dat[bt], lbt = b3 & 3, sf = b3 >> 2 & 3;
+    var lss = b3 >> 4, lcs = 0, s4 = 0;
+    if (lbt < 2) {
+      if (sf & 1)
+        lss |= dat[++bt] << 4 | (sf & 2 && dat[++bt] << 12);
+      else
+        lss = b3 >> 3;
+    } else {
+      s4 = sf;
+      if (sf < 2)
+        lss |= (dat[++bt] & 63) << 4, lcs = dat[bt] >> 6 | dat[++bt] << 2;
+      else if (sf == 2)
+        lss |= dat[++bt] << 4 | (dat[++bt] & 3) << 12, lcs = dat[bt] >> 2 | dat[++bt] << 6;
+      else
+        lss |= dat[++bt] << 4 | (dat[++bt] & 63) << 12, lcs = dat[bt] >> 6 | dat[++bt] << 2 | dat[++bt] << 10;
+    }
+    ++bt;
+    var buf = out ? out.subarray(st.y, st.y + st.m) : new u82(st.m);
+    var spl = buf.length - lss;
+    if (lbt == 0)
+      buf.set(dat.subarray(bt, bt += lss), spl);
+    else if (lbt == 1)
+      fill(buf, dat[bt++], spl);
+    else {
+      var hu = st.h;
+      if (lbt == 2) {
+        var hud = rhu(dat, bt);
+        lcs += bt - (bt = hud[0]);
+        st.h = hu = hud[1];
+      } else if (!hu)
+        err2(0);
+      (s4 ? dhu4 : dhu)(dat.subarray(bt, bt += lcs), buf.subarray(spl), hu);
+    }
+    var ns = dat[bt++];
+    if (ns) {
+      if (ns == 255)
+        ns = (dat[bt++] | dat[bt++] << 8) + 32512;
+      else if (ns > 127)
+        ns = ns - 128 << 8 | dat[bt++];
+      var scm = dat[bt++];
+      if (scm & 3)
+        err2(0);
+      var dts = [dmlt, doct, dllt];
+      for (var i = 2; i > -1; --i) {
+        var md = scm >> (i << 1) + 2 & 3;
+        if (md == 1) {
+          var rbuf = new u82([0, 0, dat[bt++]]);
+          dts[i] = {
+            s: rbuf.subarray(2, 3),
+            n: rbuf.subarray(0, 1),
+            t: new u162(rbuf.buffer, 0, 1),
+            b: 0
+          };
+        } else if (md == 2) {
+          _a2 = rfse(dat, bt, 9 - (i & 1)), bt = _a2[0], dts[i] = _a2[1];
+        } else if (md == 3) {
+          if (!st.t)
+            err2(0);
+          dts[i] = st.t[i];
+        }
+      }
+      var _b2 = st.t = dts, mlt = _b2[0], oct = _b2[1], llt = _b2[2];
+      var lb = dat[ebt - 1];
+      if (!lb)
+        err2(0);
+      var spos = (ebt << 3) - 8 + msb(lb) - llt.b, cbt = spos >> 3, oubt = 0;
+      var lst = (dat[cbt] | dat[cbt + 1] << 8) >> (spos & 7) & (1 << llt.b) - 1;
+      cbt = (spos -= oct.b) >> 3;
+      var ost = (dat[cbt] | dat[cbt + 1] << 8) >> (spos & 7) & (1 << oct.b) - 1;
+      cbt = (spos -= mlt.b) >> 3;
+      var mst = (dat[cbt] | dat[cbt + 1] << 8) >> (spos & 7) & (1 << mlt.b) - 1;
+      for (++ns; --ns; ) {
+        var llc = llt.s[lst];
+        var lbtr = llt.n[lst];
+        var mlc = mlt.s[mst];
+        var mbtr = mlt.n[mst];
+        var ofc = oct.s[ost];
+        var obtr = oct.n[ost];
+        cbt = (spos -= ofc) >> 3;
+        var ofp = 1 << ofc;
+        var off = ofp + ((dat[cbt] | dat[cbt + 1] << 8 | dat[cbt + 2] << 16 | dat[cbt + 3] << 24) >>> (spos & 7) & ofp - 1);
+        cbt = (spos -= mlb[mlc]) >> 3;
+        var ml = mlbl[mlc] + ((dat[cbt] | dat[cbt + 1] << 8 | dat[cbt + 2] << 16) >> (spos & 7) & (1 << mlb[mlc]) - 1);
+        cbt = (spos -= llb[llc]) >> 3;
+        var ll = llbl[llc] + ((dat[cbt] | dat[cbt + 1] << 8 | dat[cbt + 2] << 16) >> (spos & 7) & (1 << llb[llc]) - 1);
+        cbt = (spos -= lbtr) >> 3;
+        lst = llt.t[lst] + ((dat[cbt] | dat[cbt + 1] << 8) >> (spos & 7) & (1 << lbtr) - 1);
+        cbt = (spos -= mbtr) >> 3;
+        mst = mlt.t[mst] + ((dat[cbt] | dat[cbt + 1] << 8) >> (spos & 7) & (1 << mbtr) - 1);
+        cbt = (spos -= obtr) >> 3;
+        ost = oct.t[ost] + ((dat[cbt] | dat[cbt + 1] << 8) >> (spos & 7) & (1 << obtr) - 1);
+        if (off > 3) {
+          st.o[2] = st.o[1];
+          st.o[1] = st.o[0];
+          st.o[0] = off -= 3;
+        } else {
+          var idx = off - (ll != 0);
+          if (idx) {
+            off = idx == 3 ? st.o[0] - 1 : st.o[idx];
+            if (idx > 1)
+              st.o[2] = st.o[1];
+            st.o[1] = st.o[0];
+            st.o[0] = off;
+          } else
+            off = st.o[0];
+        }
+        for (var i = 0; i < ll; ++i) {
+          buf[oubt + i] = buf[spl + i];
+        }
+        oubt += ll, spl += ll;
+        var stin = oubt - off;
+        if (stin < 0) {
+          var len = -stin;
+          var bs = st.e + stin;
+          if (len > ml)
+            len = ml;
+          for (var i = 0; i < len; ++i) {
+            buf[oubt + i] = st.w[bs + i];
+          }
+          oubt += len, ml -= len, stin = 0;
+        }
+        for (var i = 0; i < ml; ++i) {
+          buf[oubt + i] = buf[stin + i];
+        }
+        oubt += ml;
+      }
+      if (oubt != spl) {
+        while (spl < buf.length) {
+          buf[oubt++] = buf[spl++];
+        }
+      } else
+        oubt = buf.length;
+      if (out)
+        st.y += oubt;
+      else
+        buf = slc2(buf, 0, oubt);
+    } else if (out) {
+      st.y += lss;
+      if (spl) {
+        for (var i = 0; i < lss; ++i) {
+          buf[i] = buf[spl + i];
+        }
+      }
+    } else if (spl)
+      buf = slc2(buf, spl);
+    st.b = ebt;
+    return buf;
+  }
+  err2(2);
+};
+var cct = function(bufs, ol) {
+  if (bufs.length == 1)
+    return bufs[0];
+  var buf = new u82(ol);
+  for (var i = 0, b = 0; i < bufs.length; ++i) {
+    var chk = bufs[i];
+    buf.set(chk, b);
+    b += chk.length;
+  }
+  return buf;
+};
+function decompress(dat, buf) {
+  var bufs = [], nb = +!buf;
+  var bt = 0, ol = 0;
+  for (; dat.length; ) {
+    var st = rzfh(dat, nb || buf);
+    if (typeof st == "object") {
+      if (nb) {
+        buf = null;
+        if (st.w.length == st.u) {
+          bufs.push(buf = st.w);
+          ol += st.u;
+        }
+      } else {
+        bufs.push(buf);
+        st.e = 0;
+      }
+      for (; !st.l; ) {
+        var blk = rzb(dat, st, buf);
+        if (!blk)
+          err2(5);
+        if (buf)
+          st.e = st.y;
+        else {
+          bufs.push(blk);
+          ol += blk.length;
+          cpw(st.w, 0, blk.length);
+          st.w.set(blk, st.w.length - blk.length);
+        }
+      }
+      bt = st.b + st.c * 4;
+    } else
+      bt = st;
+    dat = dat.subarray(bt);
+  }
+  return cct(bufs, ol);
+}
+
 // src/app/snapshots.ts
 var fpSame = (saved, now) => !!saved && fpCompatible(saved, now);
 var slotLabel = (s) => `${s.kind === "s" ? "\u624B\u52A8" : "\u81EA\u52A8"} ${s.n}`;
@@ -8468,6 +9118,44 @@ var Snapshots = class {
         putGuard({ kind: "save", discKey: this.disc.key, id, label, old: old ? new Blob([old]) : null, newAt: at, at }).catch((e) => console.warn("[undo-guard] save", e));
       }
       if (r.pushed) tidyLocalSnapshots(this.slots).catch((e) => console.warn("[tidy]", e));
+    } finally {
+      endLocal();
+      this.busy = false;
+    }
+  }
+  /** 导入 PC 版 PPSSPP 的快照（W-7）：存成**新的**一格手动快照，不覆盖任何格。added 20261014 by Claude Opus 5.5
+   *  放在哪 = 文件名里的盘号 + 版本算出的游戏身份代号（和开同一张盘算出来的一样）：是开着的这张盘 → 这张盘的格子、记上盘指纹（读档护栏照常）；
+   *  不是 → 先问人，导 = 放进那个游戏自己的快照里（开那张盘时看得到），不记指纹（不知道那张盘多大）。
+   *  存档时刻 = 那个文件的修改时间（PPSSPP 存的那一刻）；jpg = PPSSPP 同名截图，有就缩成缩略图（壳注入的 shrinkImage）。 */
+  async importPpst(ppst, jpg) {
+    const name = parsePpstName(ppst.name);
+    if (!name || !name.id) throw new Error(`\u300C${ppst.name}\u300D\u4E0D\u50CF PPSSPP \u7684\u5FEB\u7167\u6587\u4EF6\u540D\uFF08\u5E94\u8BE5\u662F \u76D8\u53F7_\u7248\u672C_\u683C.ppst\uFF09`);
+    const file = parsePpst(ppst.bytes);
+    let state2;
+    if (file.compress === PPST_COMPRESS.none) state2 = file.body;
+    else if (file.compress === PPST_COMPRESS.zstd) state2 = decompress(file.body);
+    else throw new Error("\u8FD9\u662F\u8001\u7248\u672C PPSSPP \u7684\u538B\u7F29\u683C\u5F0F\uFF08snappy\uFF09\uFF0C\u8BFB\u4E0D\u4E86\uFF1B\u5728 PC \u4E0A\u7528\u65B0\u7248 PPSSPP \u8BFB\u4E00\u6B21\u518D\u5B58\u4E00\u6B21");
+    if (state2.length !== file.uncompressedSize) throw new Error(`\u89E3\u5F00\u540E ${state2.length} \u5B57\u8282\uFF0C\u6587\u4EF6\u5934\u8BF4 ${file.uncompressedSize}\uFF1A\u6587\u4EF6\u53EF\u80FD\u574F\u4E86\uFF0C\u6CA1\u5BFC\u5165`);
+    const key = await gameKey({ k: PLATFORM_CODE.psp, id: name.id, v: name.version || void 0, size: 0 });
+    const here = key === this.disc.key;
+    const game = `${file.title || name.id}\uFF08${name.id}${name.version ? ` v${name.version}` : ""}\uFF09`;
+    if (!here && !await this.verbs.confirmImportElsewhere(game)) return;
+    if (this.busy) throw new Error("\u4E0A\u4E00\u4E2A\u5FEB\u7167\u8FD8\u5728\u5B58\uFF0C\u7B49\u4E00\u4E0B\u518D\u5BFC\u5165");
+    this.busy = true;
+    const n = here ? this.nextManualSlot().n : Math.max(0, ...this.all.filter((c) => c.key === key && c.kind === "s").map((c) => c.n)) + 1;
+    const label = slotLabel({ kind: "s", n });
+    beginLocal(`\u5BFC\u5165\u5FEB\u7167\u300C${label}\u300D`);
+    try {
+      const pw = await this.verbs.password("\u5BFC\u5165\u5FEB\u7167");
+      if (!pw) return;
+      let thumb;
+      if (jpg) try {
+        thumb = await this.verbs.shrinkImage(jpg);
+      } catch (e) {
+        console.warn("[thumb]", e);
+      }
+      await saveSnapshot(crumbId(key, "s", n), state2, { thumb, at: ppst.lastModified, auto: false, fp: here ? this.disc.fp : void 0, title: here ? this.disc.title : file.title || name.id }, pw);
+      this.verbs.say(`\u5DF2\u5BFC\u5165${here ? "" : `\u5230 ${game} \u7684\u5FEB\u7167\u91CC\uFF0C`}\u6210\u300C${label}\u300D\uFF08PPSSPP ${file.gitVersion} \u5B58\u4E8E ${new Date(ppst.lastModified).toLocaleString()}\uFF09`, 8e3);
     } finally {
       endLocal();
       this.busy = false;
@@ -8759,7 +9447,7 @@ async function openSaveManager(ctx) {
       } }, "\u5220")
     );
   };
-  const fill = async () => {
+  const fill2 = async () => {
     const pw = ctx.password();
     if (!pw) return;
     const queue = rows.filter((r) => !r.peeked);
@@ -8787,13 +9475,13 @@ async function openSaveManager(ctx) {
     flush();
   };
   render2();
-  void fill();
+  void fill2();
   await sheet((done) => {
     closeSheet = () => done();
     const unlock = ctx.password() ? null : h("button", { onclick: async () => {
       if (await ctx.askPassword()) {
         unlock.remove();
-        void fill();
+        void fill2();
       }
     } }, "\u8F93\u5165\u53E3\u4EE4\uFF0C\u770B\u662F\u54EA\u5F20\u76D8\u7684");
     return [
@@ -9490,17 +10178,29 @@ var canvasVerbs = {
     return new Uint8Array(await blob.arrayBuffer());
   }
 };
+async function thumbFrom(src, w, h2) {
+  const tw = Math.min(THUMB_W, w), th = Math.round(h2 * tw / w);
+  const dst = new OffscreenCanvas(tw, th);
+  const ctx = dst.getContext("2d");
+  ctx.imageSmoothingQuality = "high";
+  ctx.drawImage(src, 0, 0, tw, th);
+  return new Uint8Array(await (await dst.convertToBlob({ type: "image/jpeg", quality: 0.8 })).arrayBuffer());
+}
 var snapshotVerbs = {
   async encodeThumbnail(rgba, w, h2) {
     const src = new OffscreenCanvas(w, h2);
     src.getContext("2d").putImageData(new ImageData(new Uint8ClampedArray(rgba), w, h2), 0, 0);
-    const tw = Math.min(THUMB_W, w), th = Math.round(h2 * tw / w);
-    const dst = new OffscreenCanvas(tw, th);
-    const ctx = dst.getContext("2d");
-    ctx.imageSmoothingQuality = "high";
-    ctx.drawImage(src, 0, 0, tw, th);
-    return new Uint8Array(await (await dst.convertToBlob({ type: "image/jpeg", quality: 0.8 })).arrayBuffer());
+    return thumbFrom(src, w, h2);
   },
+  async shrinkImage(bytes) {
+    const bmp = await createImageBitmap(new Blob([bytes]));
+    try {
+      return await thumbFrom(bmp, bmp.width, bmp.height);
+    } finally {
+      bmp.close();
+    }
+  },
+  confirmImportElsewhere: (game) => confirmSheet("\u4E0D\u662F\u5F00\u7740\u7684\u8FD9\u5F20\u76D8\u7684\u5FEB\u7167", `\u8FD9\u4E2A\u5FEB\u7167\u662F ${game} \u7684\u3002\u5BFC\u5165\u7684\u8BDD\u653E\u8FDB\u90A3\u4E2A\u6E38\u620F\u81EA\u5DF1\u7684\u5FEB\u7167\u91CC\uFF0C\u5F00\u90A3\u5F20\u76D8\u65F6\u80FD\u770B\u5230\u3001\u80FD\u8BFB\u3002`, "\u5BFC\u5165\u5230\u90A3\u91CC", "\u4E0D\u5BFC\u5165"),
   password: (why) => ensurePassword(why),
   knownPassword: () => getPassword(),
   confirmMismatch: () => confirmSheet("\u8FD9\u4E2A\u5FEB\u7167\u50CF\u662F\u522B\u7684\u76D8\u5B58\u7684", "\u5B58\u5B83\u7684\u65F6\u5019\u7528\u7684\u4E0D\u662F\u8FD9\u5F20\u76D8\uFF08\u7F16\u53F7\u3001\u7248\u672C\u6216\u5927\u5C0F\u5BF9\u4E0D\u4E0A\uFF09\u3002\u786C\u8BFB\u53EF\u80FD\u8DD1\u98DE\uFF0C\u8BFB\u4E4B\u524D\u6700\u597D\u5148\u5B58\u4E00\u4EFD\u3002", "\u8FD8\u662F\u8BFB", "\u4E0D\u8BFB"),
@@ -9664,12 +10364,42 @@ function openSlots() {
         autoList
       )] : [],
       ...foreign.length ? [h("h3", {}, "\u522B\u7684\u5FEB\u7167"), h("div", { class: "slots" }, ...foreign.map((g) => foreignRow(g, () => done())))] : [],
-      h("div", { class: "row" }, h("button", { onclick: () => {
-        done();
-        openBins().catch((e) => banner(errorText(e)));
-      } }, "\u56DE\u6536\u7AD9 / \u5907\u4EFD\u7BB1"), h("button", { onclick: () => done() }, "\u5173\u95ED"))
+      h(
+        "div",
+        { class: "row" },
+        h("button", { title: "\u9009 PC \u7248 PPSSPP \u5B58\u7684 .ppst\uFF08\u53EF\u4EE5\u8FDE\u540C\u540D\u7684 .jpg \u622A\u56FE\u4E00\u8D77\u9009\uFF0C\u5F53\u7F29\u7565\u56FE\uFF09", onclick: () => {
+          done();
+          importPcSnapshot();
+        } }, "\u4ECE PC \u7248 PPSSPP \u5BFC\u5165\u2026"),
+        h("button", { onclick: () => {
+          done();
+          openBins().catch((e) => banner(errorText(e)));
+        } }, "\u56DE\u6536\u7AD9 / \u5907\u4EFD\u7BB1"),
+        h("button", { onclick: () => done() }, "\u5173\u95ED")
+      )
     ];
   });
+}
+function importPcSnapshot() {
+  if (!snaps) return;
+  const s = snaps;
+  const input = h("input", { type: "file", multiple: true });
+  input.addEventListener("change", async () => {
+    const files = Array.from(input.files ?? []);
+    const ppst = files.filter((f) => /\.ppst$/i.test(f.name) && !/\.undo\.ppst$/i.test(f.name));
+    if (ppst.length !== 1) {
+      banner(ppst.length ? "\u4E00\u6B21\u5BFC\u5165\u4E00\u4E2A .ppst\uFF08\u53EF\u4EE5\u8FDE\u540C\u540D\u7684 .jpg \u4E00\u8D77\u9009\uFF09" : "\u6CA1\u9009\u5230 .ppst \u6587\u4EF6\uFF08PPSSPP \u7684\u5FEB\u7167\u5728 PSP/PPSSPP_STATE \u6587\u4EF6\u5939\u91CC\uFF09", "warning");
+      return;
+    }
+    const p = ppst[0];
+    const jpg = files.find((f) => f.name.toLowerCase() === p.name.toLowerCase().replace(/\.ppst$/, ".jpg"));
+    try {
+      await s.importPpst({ name: p.name, bytes: new Uint8Array(await p.arrayBuffer()), lastModified: p.lastModified }, jpg ? new Uint8Array(await jpg.arrayBuffer()) : null);
+    } catch (e) {
+      banner(`\u6CA1\u5BFC\u5165\uFF1A${errorText(e)}`);
+    }
+  });
+  input.click();
 }
 function openForeign(g) {
   if (!snaps) return;
@@ -10416,4 +11146,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-d309bef57f64.mjs.map
+//# sourceMappingURL=kudsrocket-d57ae43584bf.mjs.map
