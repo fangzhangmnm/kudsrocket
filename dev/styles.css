@@ -87,6 +87,7 @@ button:disabled { opacity: .4; cursor: default; }
 .sheet .hint { color: var(--ink-soft); font-size: 13px; }
 .sheet input { font: inherit; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--line); background: #111; color: var(--ink); }
 .sheet .row { display: flex; justify-content: flex-end; gap: 8px; flex-wrap: wrap; }
+.remember-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; cursor: pointer; } .remember-row input { width: 18px; height: 18px; margin: 0; }
 .slots { display: grid; gap: 0; max-height: 60vh; overflow-y: auto; }
 .slot { display: grid; grid-template-columns: 96px 1fr auto; align-items: center; gap: 10px; padding: 6px 0; border-top: 1px solid var(--line); }
 .slot .thumb { width: 96px; aspect-ratio: 480 / 272; background: #000; border-radius: 4px; overflow: hidden; }
