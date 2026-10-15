@@ -1,5 +1,5 @@
 // src/version.ts
-var APP_VERSION = "v0.1.19-2026-10-15";
+var APP_VERSION = "v0.1.20-2026-10-15";
 
 // assets/icons.svg
 var icons_default = '<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none">\n<!--\n  13 icons extracted from the family icon library (../20260708 SVG Icons/icons.svg) by extract-icons.py \u2014 do not hand-edit; re-run the script instead.\n  Family SVG Icons \u2014 MIT License, Copyright (c) 2026 fangzhangmnm.\n  Contains work derived from (per-icon provenance in data-src):\n    Feather Icons \u2014 MIT License, Copyright (c) 2013-2023 Cole Bemis \xB7 https://github.com/feathericons/feather\n-->\n  <!-- media -->\n  <!-- pause \u2014 \u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="pause" data-cat="media" data-src="own" data-note="\u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="3.2"><path d="M8.3 5.5 V18.5"/><path d="M15.7 5.5 V18.5"/></g></symbol>\n  <!-- play \u2014 \u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="play" data-cat="media" data-src="own" data-note="\u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 5.4 L18.8 12 L8.2 18.6 Z" fill="currentColor"/></symbol>\n  <!-- fast-forward \u2014 \u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="fast-forward" data-cat="media" data-src="own" data-note="\u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.4 6.8 L10.9 12 L4.4 17.2 Z" fill="currentColor"/><path d="M13.1 6.8 L19.6 12 L13.1 17.2 Z" fill="currentColor"/></symbol>\n  <!-- volume \u2014 \u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009) -->\n  <symbol id="volume" data-cat="media" data-src="own" data-note="\u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 10.3 H8.7 L12.6 6.6 V17.4 L8.7 13.7 H5.5 Z" fill="currentColor"/><path d="M15.13 9.73 A3.4 3.4 0 0 1 15.13 14.27"/><path d="M16.36 7.19 A6.1 6.1 0 0 1 16.36 16.81"/></symbol>\n  <!-- file -->\n  <!-- floppy-disk \u2014 \u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3 -->\n  <symbol id="floppy-disk" data-cat="file" data-src="feather:save" data-note="\u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13l3 3v13a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 17 8 17 3"/></symbol>\n  <!-- folder-open \u2014 \u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF -->\n  <symbol id="folder-open" data-cat="file" data-src="own" data-note="\u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18 V7 a2 2 0 0 1 2 -2 h4 l2 2 h6 a2 2 0 0 1 2 2 v1.8"/><path d="M3 18 L6.4 10.8 H21.6 L18.2 18 Z"/></symbol>\n  <!-- hierarchy -->\n  <!-- lock \u2014 \u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D -->\n  <symbol id="lock" data-cat="hierarchy" data-src="own" data-note="\u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10" width="13" height="11"/><path d="M8.8 10 V6.5 a3.2 3.2 0 0 1 6.4 0 V10"/></symbol>\n  <!-- common -->\n  <!-- x \u2014 \u53C9 -->\n  <symbol id="x" data-cat="common" data-src="own" data-note="\u53C9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 L17.5 17.5 M17.5 6.5 L6.5 17.5"/></symbol>\n  <!-- cloud -->\n  <!-- cloud \u2014 \u4E91 -->\n  <symbol id="cloud" data-cat="cloud" data-src="feather:cloud" data-note="\u4E91" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>\n  <!-- viewport -->\n  <!-- maximize-viewport \u2014 \u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55) -->\n  <symbol id="maximize-viewport" data-cat="viewport" data-src="own" data-note="\u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934 --> <polyline points="4 9 4 4 9 4"/> <polyline points="20 9 20 4 15 4"/> <polyline points="4 15 4 20 9 20"/> <polyline points="20 15 20 20 15 20"/></symbol>\n  <!-- ui -->\n  <!-- more \u2014 \u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00) -->\n  <symbol id="more" data-cat="ui" data-src="own" data-note="\u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/></symbol>\n  <!-- keyboard \u2014 \u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49) -->\n  <symbol id="keyboard" data-cat="ui" data-src="own" data-note="\u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="7.2" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="7.2" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><path d="M8.6 15.6 H15.4"/></symbol>\n  <!-- menu \u2014 \u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17) -->\n  <symbol id="menu" data-cat="ui" data-src="own" data-note="\u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"></line> <line x1="4" y1="12" x2="20" y2="12"></line> <line x1="4" y1="17" x2="20" y2="17"></line></symbol>\n</svg>\n';
@@ -1211,6 +1211,7 @@ function createSafeResolve(cfg) {
 // node_modules/@internal/store/dist/push.js
 var passBusy = (_l, fn) => fn();
 var isConflict = (e) => !!e && (e.name === "CloudConflictError" || e.status === 412);
+var pushRetryDefaults = { maxAttempts: 5, backoffMs: 1e3 };
 function retriable(e) {
   const x = e;
   const s = x?.status;
@@ -1219,7 +1220,7 @@ function retriable(e) {
   return (s == null || s === 429 || s >= 500 && s <= 599) && x?.name !== "CloudConflictError" && x?.name !== "CloudNameCollisionError";
 }
 function createPush(cfg) {
-  const { cloud, head, seal, safeResolve, serialize, editVersion, busy = passBusy, maxAttempts = 4, backoffMs = 200, sleep = (ms) => new Promise((r) => setTimeout(r, ms)) } = cfg;
+  const { cloud, head, seal, safeResolve, serialize, editVersion, busy = passBusy, maxAttempts = pushRetryDefaults.maxAttempts, backoffMs = pushRetryDefaults.backoffMs, sleep = (ms) => new Promise((r) => setTimeout(r, ms)) } = cfg;
   async function doPush(name, { encode: encode2, getEditVersion = editVersion, onConflict, adopt, surfaceCollision = false, onProgress }) {
     const ifMatch = head.ifMatchFor(name);
     const v0 = getEditVersion();
@@ -1255,7 +1256,7 @@ function createPush(cfg) {
           }
           if (retriable(e) && attempt < maxAttempts) {
             lastErr = e;
-            await sleep(backoffMs * attempt);
+            await sleep(Math.min(backoffMs * 2 ** (attempt - 1), 15e3));
             continue;
           }
           throw e;
@@ -5237,6 +5238,12 @@ function createStore(config) {
 }
 
 // node_modules/@internal/store/dist/providers/graph.js
+var DEFAULT_GRAPH_TIMEOUTS = { meta: 3e4, chunk: 12e4, range: 6e4, blob: 15 * 6e4 };
+var graphTimeouts = { ...DEFAULT_GRAPH_TIMEOUTS };
+var graphSleep = (ms) => new Promise((r) => setTimeout(r, ms));
+var timed = (ms) => typeof AbortSignal !== "undefined" && typeof AbortSignal.timeout === "function" ? AbortSignal.timeout(ms) : void 0;
+var CHUNK_RETRY_MAX = 5;
+var chunkBackoffMs = (attempt) => Math.min(1e3 * 2 ** (attempt - 1), 16e3);
 var GRAPH_BASE = "https://graph.microsoft.com/v1.0";
 var SIMPLE_UPLOAD_LIMIT = 4 * 1024 * 1024;
 function encodeSeg(name) {
@@ -5249,7 +5256,12 @@ function _rangeHeader(offset, length) {
   return offset == null ? `bytes=-${length}` : `bytes=${offset}-${offset + length - 1}`;
 }
 async function downloadRangeFromUrl(downloadUrl, offset, length) {
-  const r = await fetch(downloadUrl, { headers: { Range: _rangeHeader(offset, length) } });
+  let r;
+  try {
+    r = await fetch(downloadUrl, { headers: { Range: _rangeHeader(offset, length) }, signal: timed(graphTimeouts.range) });
+  } catch (e) {
+    throw new CloudNetworkError(`range download: network fetch failed (${String(e)})`, e);
+  }
   if (!r.ok && r.status !== 206) {
     const err3 = new Error(`range download failed ${r.status}`);
     err3.status = r.status;
@@ -5257,7 +5269,11 @@ async function downloadRangeFromUrl(downloadUrl, offset, length) {
   }
   return await r.arrayBuffer();
 }
-function createGraph(tokenSource) {
+function createGraph(tokenSource, opts = {}) {
+  if (opts.timeouts)
+    graphTimeouts = { ...DEFAULT_GRAPH_TIMEOUTS, ...opts.timeouts };
+  if (opts.sleep)
+    graphSleep = opts.sleep;
   const getToken2 = () => {
     if (!tokenSource)
       throw new Error("graph token source missing (page: createOneDriveProvider; SW: createGraph(createBridgeTokenSource(dbName)))");
@@ -5266,7 +5282,7 @@ function createGraph(tokenSource) {
   async function graphFetch(method, pathOrUrl, { headers = {}, body = null } = {}) {
     const token = await getToken2();
     const url = pathOrUrl.startsWith("http") ? pathOrUrl : `${GRAPH_BASE}${pathOrUrl}`;
-    const init = { method, headers: { Authorization: `Bearer ${token}`, ...headers } };
+    const init = { method, headers: { Authorization: `Bearer ${token}`, ...headers }, signal: timed(graphTimeouts.meta) };
     if (body != null) {
       if (typeof body === "string" || body instanceof ArrayBuffer || ArrayBuffer.isView(body) || body instanceof Blob) {
         init.body = body;
@@ -5327,7 +5343,12 @@ function createGraph(tokenSource) {
   async function downloadItemBlob(itemId) {
     const dl = await getDownloadUrl(itemId);
     if (dl) {
-      const r2 = await fetch(dl);
+      let r2;
+      try {
+        r2 = await fetch(dl, { signal: timed(graphTimeouts.blob) });
+      } catch (e) {
+        throw new CloudNetworkError(`downloadUrl: network fetch failed (${String(e)})`, e);
+      }
       if (!r2.ok)
         throw new Error(`downloadUrl failed ${r2.status}`);
       return await r2.blob();
@@ -5393,9 +5414,45 @@ function createGraph(tokenSource) {
     const total = source.size;
     let offset = 0;
     let last = null;
+    let failures = 0;
+    const resumeFrom = async (why) => {
+      failures++;
+      if (failures > CHUNK_RETRY_MAX)
+        throw new CloudNetworkError(`Graph chunked upload ${path}: gave up after ${CHUNK_RETRY_MAX} retries at ${offset}/${total} (${why})`);
+      await graphSleep(chunkBackoffMs(failures));
+      let st;
+      try {
+        st = await fetch(uploadUrl, { signal: timed(graphTimeouts.meta) });
+      } catch (e) {
+        throw new CloudNetworkError(`Graph upload session status: network fetch failed (${String(e)})`, e);
+      }
+      if (!st.ok)
+        throw new CloudNetworkError(`Graph upload session ${path}: gone (${st.status}) after ${why}`);
+      const j = await st.json().catch(() => null);
+      const next = j?.nextExpectedRanges?.[0]?.split("-")[0];
+      const at = next != null ? Number(next) : NaN;
+      if (!Number.isFinite(at) || at < 0 || at > total)
+        throw new CloudNetworkError(`Graph upload session ${path}: no usable nextExpectedRanges after ${why}`);
+      return at;
+    };
+    const cancelSession = async () => {
+      try {
+        await fetch(uploadUrl, { method: "DELETE", signal: timed(graphTimeouts.meta) });
+      } catch (_) {
+      }
+    };
     onProgress?.(0, total);
     while (offset < total) {
       const end = Math.min(offset + CHUNK2, total) - 1;
+      if (end === total - 1 && eTag) {
+        const cur = await getItemByPath(path);
+        if (cur && cur.eTag && cur.eTag !== eTag) {
+          await cancelSession();
+          const err3 = new Error(`chunked upload ${path}: item changed during upload (If-Match ${eTag} \u2260 ${cur.eTag})`);
+          err3.status = 412;
+          throw err3;
+        }
+      }
       const chunk = await source.read(offset, end - offset + 1);
       if (chunk.length !== end - offset + 1)
         throw new Error(`[graph] chunk source short read at ${offset}: wanted ${end - offset + 1}, got ${chunk.length}`);
@@ -5407,16 +5464,23 @@ function createGraph(tokenSource) {
             "Content-Length": String(chunk.length),
             "Content-Range": `bytes ${offset}-${end}/${total}`
           },
-          body: chunk
+          body: chunk,
+          signal: timed(graphTimeouts.chunk)
         });
       } catch (e) {
-        throw new CloudNetworkError(`Graph chunked upload PUT (${offset}-${end}/${total}): network fetch failed (${String(e)})`, e);
+        offset = await resumeFrom(`network: ${String(e)}`);
+        continue;
       }
       if (!r.ok && r.status !== 202) {
+        if (r.status === 429 || r.status === 416 || r.status >= 500 && r.status <= 599) {
+          offset = await resumeFrom(`http ${r.status}`);
+          continue;
+        }
         const err3 = new Error(`chunked upload failed ${r.status}`);
         err3.status = r.status;
         throw err3;
       }
+      failures = 0;
       last = await r.json().then((j) => j).catch(() => null);
       offset = end + 1;
       onProgress?.(offset, total);
@@ -5519,7 +5583,7 @@ function createGraph(tokenSource) {
     for (let attempt = 1; attempt <= 170; attempt++) {
       let mr;
       try {
-        mr = await fetch(monitor);
+        mr = await fetch(monitor, { signal: timed(graphTimeouts.meta) });
       } catch (e) {
         throw new CloudNetworkError(`Graph copy monitor: network fetch failed (${String(e)})`, e);
       }
@@ -11401,4 +11465,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-f07b137ec915.mjs.map
+//# sourceMappingURL=kudsrocket-d6d4ba7c6187.mjs.map
