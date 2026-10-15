@@ -7,12 +7,13 @@
 <meta name="theme-color" content="#111111">
 <title>KudsRocket</title>
 <link rel="manifest" href="./manifest.webmanifest">
-<link rel="stylesheet" href="./styles.css?v=1c8f402b9d17">
+<link rel="stylesheet" href="./styles.css?v=4a39c4f1d0eb">
 </head>
 <body>
 <main id="home">
   <header class="home-head"><h1>KudsRocket</h1><button id="version" class="muted version"></button></header>
   <div id="account" class="account"></div>
+  <div id="sync-home" class="sync-home idle muted" hidden></div>
   <section class="library-head">
     <button id="unlock" hidden>输入口令</button>
     <button id="refresh" title="重新列一次 OneDrive 里的内容">刷新</button>
@@ -35,6 +36,7 @@
     <canvas id="gl" width="480" height="272"></canvas>
     <canvas id="screen" width="480" height="272" hidden></canvas>
     <div id="paused-mark" hidden>暂停中</div>
+    <div id="syncbar" class="syncbar idle" hidden></div>
   </div>
   <pre id="status" hidden></pre>
 </main>
@@ -43,6 +45,6 @@
 <div id="note" hidden></div>
 <div id="update" hidden></div>
 <div id="busy" hidden><span></span></div>
-<script type="module" src="./dist/kudsrocket-1c8f402b9d17.mjs"></script>
+<script type="module" src="./dist/kudsrocket-4a39c4f1d0eb.mjs"></script>
 </body>
 </html>

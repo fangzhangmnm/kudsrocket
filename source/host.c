@@ -795,7 +795,18 @@ static void run_one(void) {
   g_fm_n += 1; g_fm_sum += emu_ms; g_fm_sumsq += emu_ms * emu_ms;
 }
 
+// 看门狗：主循环挂在 rAF 上，页面一到后台 rAF 就停、frame() 不再被调，快照 / 读档请求就没人处理
+//   （10-14 user 真机：切后台那一刻的自动快照报「core did not answer in time」）。Worker 的定时器在后台照跑，
+//   所以这里每 250 ms 看一眼：rAF 停了超过 300 ms 就替它处理请求。和 frame() 在同一个线程的事件循环上，永远不并发。
+//   added 20261014 by Claude Fable 5.1
+static double g_last_frame_at = 0;
+static void watchdog(void *arg) {
+  (void)arg;
+  if (emscripten_get_now() - g_last_frame_at > 300.0) service_snapshots();
+}
+
 static void frame(void) {
+  g_last_frame_at = emscripten_get_now();
   int want = (g_pacing == 2 && kr_worker_has_raf()) ? EM_TIMING_RAF : EM_TIMING_SETIMMEDIATE;
   if (want != g_timing_mode) {
     emscripten_set_main_loop_timing(want, want == EM_TIMING_RAF ? 1 : 0);
@@ -906,6 +917,7 @@ int main(int argc, char **argv) {
     fprintf(stderr, "[kr] software rendering\n");
   }
   fprintf(stderr, "[kr] game loaded: %s (%lld bytes), %.3f fps, %.0f Hz\n", g_disc_path, (long long)g_disc_size, g_fps, g_rate);
+  emscripten_set_interval(watchdog, 250.0, NULL);
   emscripten_set_main_loop(frame, 0, 1);
   return 0;
 }

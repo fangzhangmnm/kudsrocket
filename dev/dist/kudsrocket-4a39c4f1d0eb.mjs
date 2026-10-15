@@ -1,5 +1,5 @@
 // src/version.ts
-var APP_VERSION = "v0.1.2-2026-10-14";
+var APP_VERSION = "v0.1.3-2026-10-14";
 
 // assets/icons.svg
 var icons_default = '<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none">\n<!--\n  12 icons extracted from the family icon library (../20260708 SVG Icons/icons.svg) by extract-icons.py \u2014 do not hand-edit; re-run the script instead.\n  Family SVG Icons \u2014 MIT License, Copyright (c) 2026 fangzhangmnm.\n  Contains work derived from (per-icon provenance in data-src):\n    Feather Icons \u2014 MIT License, Copyright (c) 2013-2023 Cole Bemis \xB7 https://github.com/feathericons/feather\n-->\n  <!-- media -->\n  <!-- pause \u2014 \u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="pause" data-cat="media" data-src="own" data-note="\u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="3.2"><path d="M8.3 5.5 V18.5"/><path d="M15.7 5.5 V18.5"/></g></symbol>\n  <!-- play \u2014 \u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="play" data-cat="media" data-src="own" data-note="\u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 5.4 L18.8 12 L8.2 18.6 Z" fill="currentColor"/></symbol>\n  <!-- fast-forward \u2014 \u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="fast-forward" data-cat="media" data-src="own" data-note="\u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.4 6.8 L10.9 12 L4.4 17.2 Z" fill="currentColor"/><path d="M13.1 6.8 L19.6 12 L13.1 17.2 Z" fill="currentColor"/></symbol>\n  <!-- file -->\n  <!-- floppy-disk \u2014 \u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3 -->\n  <symbol id="floppy-disk" data-cat="file" data-src="feather:save" data-note="\u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13l3 3v13a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 17 8 17 3"/></symbol>\n  <!-- folder-open \u2014 \u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF -->\n  <symbol id="folder-open" data-cat="file" data-src="own" data-note="\u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18 V7 a2 2 0 0 1 2 -2 h4 l2 2 h6 a2 2 0 0 1 2 2 v1.8"/><path d="M3 18 L6.4 10.8 H21.6 L18.2 18 Z"/></symbol>\n  <!-- hierarchy -->\n  <!-- lock \u2014 \u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D -->\n  <symbol id="lock" data-cat="hierarchy" data-src="own" data-note="\u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10" width="13" height="11"/><path d="M8.8 10 V6.5 a3.2 3.2 0 0 1 6.4 0 V10"/></symbol>\n  <!-- common -->\n  <!-- x \u2014 \u53C9 -->\n  <symbol id="x" data-cat="common" data-src="own" data-note="\u53C9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 L17.5 17.5 M17.5 6.5 L6.5 17.5"/></symbol>\n  <!-- cloud -->\n  <!-- cloud \u2014 \u4E91 -->\n  <symbol id="cloud" data-cat="cloud" data-src="feather:cloud" data-note="\u4E91" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>\n  <!-- viewport -->\n  <!-- maximize-viewport \u2014 \u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55) -->\n  <symbol id="maximize-viewport" data-cat="viewport" data-src="own" data-note="\u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934 --> <polyline points="4 9 4 4 9 4"/> <polyline points="20 9 20 4 15 4"/> <polyline points="4 15 4 20 9 20"/> <polyline points="20 15 20 20 15 20"/></symbol>\n  <!-- ui -->\n  <!-- more \u2014 \u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00) -->\n  <symbol id="more" data-cat="ui" data-src="own" data-note="\u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/></symbol>\n  <!-- keyboard \u2014 \u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49) -->\n  <symbol id="keyboard" data-cat="ui" data-src="own" data-note="\u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="7.2" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="7.2" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><path d="M8.6 15.6 H15.4"/></symbol>\n  <!-- missing -->\n  <!-- gamepad \u2014 \u7F3A\u56FE\u6807\u5360\u4F4D \u2014 gamepad \u5C1A\u672A\u8FDB icons.svg -->\n  <symbol data-missing="1" id="gamepad" data-cat="missing" data-src="own" data-note="\u7F3A\u56FE\u6807\u5360\u4F4D \u2014 gamepad \u5C1A\u672A\u8FDB icons.svg\uFF0C\u91CD\u8DD1 extract-icons.py \u53EF\u81EA\u52A8\u6362\u6210\u771F\u56FE\u6807" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2.5" stroke-dasharray="2.5 2.5" opacity="0.35"/></symbol>\n</svg>\n';
@@ -212,6 +212,14 @@ var CoreSession = class _CoreSession {
           const full = `${MEMSTICK_DIR}/${rel}`;
           M.FS.mkdirTree(full.replace(/\/[^/]*$/, ""));
           M.FS.writeFile(full, bytes);
+          const at = opts.memstickTimes?.get(rel.split("/")[0]);
+          if (at) {
+            try {
+              M.FS.utime(full, at, at);
+            } catch (e) {
+              console.warn("[memstick] utime", rel, e);
+            }
+          }
         }
       }],
       print: (s) => console.log(s),
@@ -319,11 +327,11 @@ var CoreSession = class _CoreSession {
     await this.waitSeq(() => core._kr_snap_seq(), before);
     const size = core._kr_snap_size();
     if (!size) throw new Error("core returned no state");
-    const state = core.HEAPU8.slice(core._kr_snap_ptr(), core._kr_snap_ptr() + size);
+    const state2 = core.HEAPU8.slice(core._kr_snap_ptr(), core._kr_snap_ptr() + size);
     core._kr_snap_free();
     const w = core._kr_thumb_w(), h2 = core._kr_thumb_h();
     const frame2 = w > 0 && h2 > 0 ? { rgba: core.HEAPU8.slice(core._kr_thumb_ptr(), core._kr_thumb_ptr() + w * h2 * 4), w, h: h2 } : null;
-    return { state, frame: frame2 };
+    return { state: state2, frame: frame2 };
   }
   async restore(bytes) {
     const { core } = this;
@@ -628,7 +636,7 @@ function createSubstrate() {
     }
   }
   function createCoalescer() {
-    let pending = null;
+    let pending2 = null;
     let inFlight = null;
     let startVer = 0;
     let doLocal = async () => {
@@ -650,9 +658,9 @@ function createSubstrate() {
           await doLocal();
       } finally {
         inFlight = null;
-        if (pending) {
-          const next = pending;
-          pending = null;
+        if (pending2) {
+          const next = pending2;
+          pending2 = null;
           _run(next);
         }
       }
@@ -666,10 +674,10 @@ function createSubstrate() {
       const shouldQueue = inFlight === "local" && type === "push" ? true : hasNewEdits;
       if (!shouldQueue)
         return;
-      if (type === "push" || pending !== "push")
-        pending = type;
+      if (type === "push" || pending2 !== "push")
+        pending2 = type;
     }
-    return { configure, request, state: () => ({ pending, inFlight, startVer }) };
+    return { configure, request, state: () => ({ pending: pending2, inFlight, startVer }) };
   }
   const session2 = createCoalescer();
   return { edits, session: session2, serialize, serialize2, drain };
@@ -914,7 +922,7 @@ function withStemTail(identifier, tail, ids) {
 
 // node_modules/@internal/store/dist/safe-resolve.js
 function createSafeResolve(cfg) {
-  const { cloud, local, head, localDirty = () => false, validateAdopt: validateAdopt2, unseal = (_n, blob) => Promise.resolve(blob), onReplacing = () => {
+  const { cloud, local: local2, head, localDirty = () => false, validateAdopt: validateAdopt2, unseal = (_n, blob) => Promise.resolve(blob), onReplacing = () => {
   }, looksEncrypted = () => Promise.resolve(false), serialize = (_n, fn) => fn() } = cfg;
   const editCount = (name) => head.editCount?.(name) ?? 0;
   async function safePull(name, { adopt, forceBackup = false, inChain = false } = {}) {
@@ -924,7 +932,7 @@ function createSafeResolve(cfg) {
       let backupName;
       if (forceBackup || head.isDirtyAnywhere(name) || localDirty() || head.seenBase(name) == null) {
         try {
-          backupName = await local.backup(name);
+          backupName = await local2.backup(name);
         } catch (e) {
           reportStoreError(e, "warning");
           return { ok: false, reason: "backup-failed", error: e };
@@ -943,13 +951,13 @@ function createSafeResolve(cfg) {
           if (!forceBackup)
             return { ok: false, reason: "edited-during-pull", backupName };
           try {
-            backupName = await local.backup(name);
+            backupName = await local2.backup(name);
           } catch (e) {
             reportStoreError(e, "warning");
             return { ok: false, reason: "backup-failed", backupName, error: e };
           }
         }
-        await local.save(name, r.blob);
+        await local2.save(name, r.blob);
         if (editCount(name) !== e1)
           return { ok: false, reason: "edited-during-pull", backupName };
         head.markSynced(name, r.item?.eTag ?? null);
@@ -1211,7 +1219,7 @@ async function restoreTargetName(orig, occupied, stamp14, fallbackMs, ids) {
 var passBusy3 = (_l, fn) => fn();
 var DELQ_KEY = "internal.pending_deletions";
 function createDelete(cfg) {
-  const { cloud, local, head, kv, busy: _busy = passBusy3 } = cfg;
+  const { cloud, local: local2, head, kv, busy: _busy = passBusy3 } = cfg;
   function readQueue() {
     try {
       const raw = kv.get(DELQ_KEY);
@@ -1238,13 +1246,13 @@ function createDelete(cfg) {
       return { status: "cancelled" };
     if (head.isDirtyAnywhere(name) && onDirtyWarn && !await onDirtyWarn({ name }))
       return { status: "cancelled" };
-    const localPresent = local ? await local.exists(name) : false;
+    const localPresent = local2 ? await local2.exists(name) : false;
     const deleteEventId = asideStamp(Date.now());
     if (!isOnline()) {
       const baseEtag = cloud.getETag(name);
       let trashKey = null;
       if (localPresent)
-        trashKey = await local.trash(name, deleteEventId);
+        trashKey = await local2.trash(name, deleteEventId);
       const queuedCloudDelete = baseEtag != null;
       if (queuedCloudDelete)
         enqueue(name, baseEtag, deleteEventId);
@@ -1265,16 +1273,16 @@ function createDelete(cfg) {
         if (localPresent) {
           if (wasDirty) {
             head.forget(name);
-            const trashKey = await local.trash(name, deleteEventId);
+            const trashKey = await local2.trash(name, deleteEventId);
             return { status: "trashed", where: "both", trashed, trashKey };
           }
-          await local.hardDelete(name);
+          await local2.hardDelete(name);
         }
         head.forget(name);
         return { status: "trashed", where: "cloud", trashed };
       }
       if (localPresent) {
-        const trashKey = await local.trash(name, deleteEventId);
+        const trashKey = await local2.trash(name, deleteEventId);
         head.forget(name);
         return { status: "trashed", where: "local", trashKey };
       }
@@ -1779,7 +1787,7 @@ function createCloudSync(cfg) {
 // node_modules/@internal/store/dist/identity.js
 var passBusy4 = (_l, fn) => fn();
 function createIdentity(cfg) {
-  const { cloud, local, head, doPush, serialize, serialize2, seal, busy: _busy = passBusy4, isOnline, deleteOffline, queueUpload, nameOccupied } = cfg;
+  const { cloud, local: local2, head, doPush, serialize, serialize2, seal, busy: _busy = passBusy4, isOnline, deleteOffline, queueUpload, nameOccupied } = cfg;
   const unseal = (name, blob) => seal ? seal.unsealForRead(name, blob) : Promise.resolve(blob);
   async function assertNameFree(newName, doCloud) {
     if (doCloud && nameOccupied) {
@@ -1787,7 +1795,7 @@ function createIdentity(cfg) {
         throw new CloudNameCollisionError(newName);
       return;
     }
-    if (local && await local.exists(newName))
+    if (local2 && await local2.exists(newName))
       throw new CloudNameCollisionError(newName);
   }
   async function probeOld(name) {
@@ -1805,22 +1813,22 @@ function createIdentity(cfg) {
     return serialize2(oldName, newName, () => busy("file.renaming", async () => {
       if (!skipOccupiedCheck)
         await assertNameFree(newName, doCloud);
-      const hasLocal = local ? await local.exists(oldName) : false;
+      const hasLocal = local2 ? await local2.exists(oldName) : false;
       let bytes = null;
       if (encode2)
         bytes = await toU8(await encode2());
       else if (hasLocal)
-        bytes = await toU8(await local.get(oldName));
+        bytes = await toU8(await local2.get(oldName));
       if (doCloud && isOnline && !isOnline() && deleteOffline && hasLocal) {
-        await local.save(newName, bytes);
+        await local2.save(newName, bytes);
         head.recordEdit(newName);
         queueUpload?.(newName);
         await deleteOffline(oldName);
         return { status: "renamed", where: "offline-move", newName };
       }
-      if (local && hasLocal) {
-        await local.save(newName, bytes);
-        await local.hardDelete(oldName);
+      if (local2 && hasLocal) {
+        await local2.save(newName, bytes);
+        await local2.hardDelete(oldName);
       }
       if (!doCloud) {
         head.forget(oldName);
@@ -1879,8 +1887,8 @@ function createIdentity(cfg) {
       const r = await cloud.pull(cloudName);
       if (!r)
         return { status: "absent" };
-      if (local)
-        await local.save(localName, r.blob);
+      if (local2)
+        await local2.save(localName, r.blob);
       head.markSynced(localName, r.item?.eTag ?? null);
       if (adopt) {
         const plain = await unseal(localName, r.blob);
@@ -1896,13 +1904,13 @@ function createIdentity(cfg) {
 // node_modules/@internal/store/dist/trash.js
 var passBusy5 = (_l, fn) => fn();
 function createTrash(cfg) {
-  const { cloud, local, head, busy: _busy = passBusy5 } = cfg;
+  const { cloud, local: local2, head, busy: _busy = passBusy5 } = cfg;
   async function restore(opts = {}) {
     const { fromCloud, cloudRef, targetName, trashKey, encrypted, busy = _busy } = opts;
     return busy("trash.restoring", async () => {
       let name = targetName || null, restoredLocal = false, restoredCloud = false;
-      if (trashKey && local) {
-        const n = await local.restore(trashKey);
+      if (trashKey && local2) {
+        const n = await local2.restore(trashKey);
         if (n) {
           name = n;
           restoredLocal = true;
@@ -1926,8 +1934,8 @@ function createTrash(cfg) {
     if (confirm && !await confirm({ title: "\u5F7B\u5E95\u5220\u9664", body: "\u4E0D\u53EF\u6062\u590D", danger: true }))
       return { status: "cancelled" };
     return busy("trash.purging", async () => {
-      if (trashKey && local && local.purgeTrash)
-        await local.purgeTrash(trashKey);
+      if (trashKey && local2 && local2.purgeTrash)
+        await local2.purgeTrash(trashKey);
       if (cloudRef != null)
         await cloud.purge(cloudRef);
       return { status: "purged" };
@@ -1939,10 +1947,10 @@ function createTrash(cfg) {
       let purged = 0;
       const failed = [];
       const errMsg = (e) => String(e?.message || e);
-      if (scope !== "cloud" && local && local.listTrash && local.purgeTrash) {
-        for (const t of await local.listTrash()) {
+      if (scope !== "cloud" && local2 && local2.listTrash && local2.purgeTrash) {
+        for (const t of await local2.listTrash()) {
           try {
-            await local.purgeTrash(t.trashKey);
+            await local2.purgeTrash(t.trashKey);
             purged++;
           } catch (e) {
             reportStoreError(e, "warning");
@@ -1980,10 +1988,10 @@ function createTrash(cfg) {
       let purged = 0;
       const failed = [];
       const errMsg = (e) => String(e?.message || e);
-      if (scope !== "cloud" && local && local.listBackup && local.purgeTrash) {
-        for (const b of await local.listBackup()) {
+      if (scope !== "cloud" && local2 && local2.listBackup && local2.purgeTrash) {
+        for (const b of await local2.listBackup()) {
           try {
-            await local.purgeTrash(b.trashKey);
+            await local2.purgeTrash(b.trashKey);
             purged++;
           } catch (e) {
             reportStoreError(e, "warning");
@@ -2029,11 +2037,11 @@ var OffloadIllegalError = class extends Error {
   }
 };
 function createOffload(cfg) {
-  const { cloud, local, head, isOnline } = cfg;
+  const { cloud, local: local2, head, isOnline } = cfg;
   const serialize = cfg.serialize ?? ((_n, fn) => Promise.resolve().then(fn));
   async function offload(name) {
     return serialize(name, async () => {
-      if (!await local.exists(name))
+      if (!await local2.exists(name))
         return;
       if (head.isDirtyAnywhere(name))
         throw new OffloadIllegalError(name, "dirty");
@@ -2051,7 +2059,7 @@ function createOffload(cfg) {
         throw new OffloadIllegalError(name, "incomplete");
       if (head.isDirtyAnywhere(name))
         throw new OffloadIllegalError(name, "dirty");
-      await local.hardDelete(name);
+      await local2.hardDelete(name);
       head.forget(name);
     });
   }
@@ -2077,7 +2085,7 @@ function classifyCloudGone(localNames, cloudNameSet, opts) {
   return { demote };
 }
 function createReconcile(cfg) {
-  const { cloud, local, head, pending, isOnline, activeIdentifier: activeFileNameFn } = cfg;
+  const { cloud, local: local2, head, pending: pending2, isOnline, activeIdentifier: activeFileNameFn } = cfg;
   const isHiddenAny = (n) => isHidden(n) || !!cfg.hidden?.(n);
   const now = cfg.now || (() => Date.now());
   const skipName = (opt) => opt ?? activeFileNameFn?.() ?? void 0;
@@ -2086,8 +2094,8 @@ function createReconcile(cfg) {
       return { demoted: [] };
     localNames = localNames.filter((n) => !isHiddenAny(n));
     for (const name of localNames) {
-      if (pending.isPending(name) && (cloudNames.has(name) || head.isDirtyAnywhere(name)))
-        pending.clear(name);
+      if (pending2.isPending(name) && (cloudNames.has(name) || head.isDirtyAnywhere(name)))
+        pending2.clear(name);
     }
     const { demote } = classifyCloudGone(localNames, cloudNames, {
       seenBase: (n) => head.seenBase(n),
@@ -2098,12 +2106,12 @@ function createReconcile(cfg) {
     });
     const demoted = [];
     for (const name of demote) {
-      if (!pending.seenGone(name, now()))
+      if (!pending2.seenGone(name, now()))
         continue;
-      await local.trash(name, asideStamp(now()));
+      await local2.trash(name, asideStamp(now()));
       cloud.clearState(name);
       head.forget(name);
-      pending.clear(name);
+      pending2.clear(name);
       demoted.push(name);
     }
     return { demoted };
@@ -2119,7 +2127,7 @@ function createReconcile(cfg) {
     if (!authoritative)
       return { demoted: [] };
     const cloudNames = new Set(all.files.map((f) => f.name ?? f.path));
-    return converge(await local.appKeys(), cloudNames, authoritative, skipName(opts.activeFileName));
+    return converge(await local2.appKeys(), cloudNames, authoritative, skipName(opts.activeFileName));
   }
   async function reconcileFolder(folder, opts = {}) {
     if (isOnline && !isOnline())
@@ -2132,7 +2140,7 @@ function createReconcile(cfg) {
       return { demoted: [] };
     const cloudNames = new Set(res.files.map((f) => f.name ?? f.path));
     const prefix = folder ? `${folder}/` : "";
-    const localNames = (await local.appKeys()).filter((k) => {
+    const localNames = (await local2.appKeys()).filter((k) => {
       if (folder && !k.startsWith(prefix))
         return false;
       const rest = k.slice(prefix.length);
@@ -2324,16 +2332,16 @@ var shallowCopy = (v) => Array.isArray(v) ? [...v] : v && typeof v === "object" 
 var valueOf = (e) => e.value;
 var isTombstone = (e) => valueOf(e) === null;
 function createCollection(cfg) {
-  const { cloud, name, isOnline, syncDelayMs = 1500, now = () => Date.now(), manual = false, local, localWriteDelayMs = 400, getInitData } = cfg;
+  const { cloud, name, isOnline, syncDelayMs = 1500, now = () => Date.now(), manual = false, local: local2, localWriteDelayMs = 400, getInitData } = cfg;
   const flow = createFolderFlow({ cloud, name, encode, decode, isOnline });
   let env = emptyFolder();
-  let timer = null;
+  let timer2 = null;
   let ready = false;
-  const listeners = /* @__PURE__ */ new Set();
+  const listeners2 = /* @__PURE__ */ new Set();
   let _firing = false;
   const _queued = [];
   function emit(changed) {
-    if (!changed.length || !listeners.size)
+    if (!changed.length || !listeners2.size)
       return;
     if (_firing) {
       _queued.push(...changed);
@@ -2343,7 +2351,7 @@ function createCollection(cfg) {
     try {
       let batch = changed;
       while (batch.length) {
-        for (const cb of listeners) {
+        for (const cb of listeners2) {
           try {
             cb(batch);
           } catch (e) {
@@ -2364,7 +2372,7 @@ function createCollection(cfg) {
     return m;
   };
   const fireChanged = (before) => {
-    if (!listeners.size)
+    if (!listeners2.size)
       return;
     const after = snapshotValues();
     const changed = [];
@@ -2391,13 +2399,13 @@ function createCollection(cfg) {
     return null;
   }
   async function hydrateLocal() {
-    if (!local || hydrated)
+    if (!local2 || hydrated)
       return;
     hydrated = true;
     try {
-      idbHad = await local.exists(localKey);
+      idbHad = await local2.exists(localKey);
       if (idbHad) {
-        const cached = parseFolderBlob(await bytesOf(await local.get(localKey)) ?? new Uint8Array(0));
+        const cached = parseFolderBlob(await bytesOf(await local2.get(localKey)) ?? new Uint8Array(0));
         if (cached)
           env = mergeFolders(env, cached);
       }
@@ -2412,7 +2420,7 @@ function createCollection(cfg) {
     }
   }
   function scheduleLocalWrite() {
-    if (!local || localTimer != null)
+    if (!local2 || localTimer != null)
       return;
     localTimer = setTimeout(() => {
       localTimer = null;
@@ -2420,20 +2428,20 @@ function createCollection(cfg) {
     }, localWriteDelayMs);
   }
   function writeLocalNow() {
-    if (!local)
+    if (!local2)
       return Promise.resolve({ ok: true });
     clearLocalTimer();
     const snap = encode(env);
-    localChain = localChain.then(() => local.save(localKey, snap).then(() => ({ ok: true }))).catch((e) => {
+    localChain = localChain.then(() => local2.save(localKey, snap).then(() => ({ ok: true }))).catch((e) => {
       reportStoreError(e, "warning");
       return { ok: false, error: e };
     });
     return localChain;
   }
   function clearTimer() {
-    if (timer != null) {
-      clearTimeout(timer);
-      timer = null;
+    if (timer2 != null) {
+      clearTimeout(timer2);
+      timer2 = null;
     }
   }
   function scheduleSync() {
@@ -2442,8 +2450,8 @@ function createCollection(cfg) {
     if (manual)
       return;
     clearTimer();
-    timer = setTimeout(() => {
-      timer = null;
+    timer2 = setTimeout(() => {
+      timer2 = null;
       void sync();
     }, syncDelayMs);
   }
@@ -2546,9 +2554,9 @@ function createCollection(cfg) {
       if (ids.includes(a))
         b();
     } : a;
-    listeners.add(cb);
+    listeners2.add(cb);
     return () => {
-      listeners.delete(cb);
+      listeners2.delete(cb);
     };
   }
   function flushLocal() {
@@ -2593,14 +2601,14 @@ var toMs = (v) => {
 };
 function createListing(cfg) {
   const isHiddenAny = (n) => isHidden(n) || !!cfg.hidden?.(n);
-  const { cloud, local, head, pendingFolders, isPendingGone, pendingFolderDeletions } = cfg;
+  const { cloud, local: local2, head, pendingFolders, isPendingGone, pendingFolderDeletions } = cfg;
   function classifyPath(path, cf, hasLocal, cloudReachable, absenceAuthoritative, localStat) {
     const hasCloud = cf != null;
     const seen = head.seenBase(path);
     const everSynced = seen != null;
     const cloudMoved = hasCloud && cf.eTag !== seen;
     const dirty = head.isDirtyAnywhere(path);
-    const syncState = classifySyncState({
+    const syncState2 = classifySyncState({
       hasLocal,
       hasCloud,
       everSynced,
@@ -2611,14 +2619,14 @@ function createListing(cfg) {
       pendingGone: isPendingGone?.(path)
     });
     const lastModified = dirty ? localStat?.updatedAt ?? cf?.lastModified : cf?.lastModified ?? localStat?.updatedAt;
-    return { identifier: path, syncState, size: cf?.size ?? localStat?.size, lastModified };
+    return { identifier: path, syncState: syncState2, size: cf?.size ?? localStat?.size, lastModified };
   }
   async function statLocal(keys) {
     const m = /* @__PURE__ */ new Map();
-    if (!local.stat)
+    if (!local2.stat)
       return m;
     await Promise.all([...keys].map(async (k) => {
-      const s = await local.stat(k);
+      const s = await local2.stat(k);
       if (s)
         m.set(k, s);
     }));
@@ -2640,7 +2648,7 @@ function createListing(cfg) {
     }
     const localDirect = /* @__PURE__ */ new Set();
     const subfolders = /* @__PURE__ */ new Set();
-    for (const k of await local.appKeys()) {
+    for (const k of await local2.appKeys()) {
       if (folder && !k.startsWith(prefix))
         continue;
       const rest = k.slice(prefix.length);
@@ -2705,7 +2713,7 @@ function createListing(cfg) {
         continue;
       cloudMap.set(c.name, { eTag: c.eTag, size: c.size, lastModified: toMs(c.lastModifiedDateTime) });
     }
-    const localSet = new Set((await local.appKeys()).filter((k) => !isHiddenAny(k)));
+    const localSet = new Set((await local2.appKeys()).filter((k) => !isHiddenAny(k)));
     const paths = /* @__PURE__ */ new Set();
     for (const p of cloudMap.keys())
       paths.add(p);
@@ -2732,7 +2740,7 @@ function createListing(cfg) {
 // node_modules/@internal/store/dist/upload-queue.js
 var UPQ_KEY = "internal.pending_uploads";
 function createUploadReplay(cfg) {
-  const { kv, local, head, isOnline, serialize, pushLocal, policy, confirm, onStatus } = cfg;
+  const { kv, local: local2, head, isOnline, serialize, pushLocal, policy, confirm, onStatus } = cfg;
   function readQueue() {
     try {
       const v = JSON.parse(kv.get(UPQ_KEY) ?? "[]");
@@ -2776,7 +2784,7 @@ function createUploadReplay(cfg) {
     let pushed = 0;
     for (const name of q) {
       const r = await serialize(name, async () => {
-        if (!await local.exists(name))
+        if (!await local2.exists(name))
           return "gone";
         if (!head.isDirtyAnywhere(name) || head.seenBase(name) != null)
           return "synced";
@@ -2943,7 +2951,7 @@ function createIdbCache(dbName) {
     const ms = _idbOpTimeoutMs;
     const p = new Promise((resolve, reject) => {
       const r = indexedDB.open(dbName, 1);
-      const timer = setTimeout(() => {
+      const timer2 = setTimeout(() => {
         dropConnection(p);
         reject(new IdbTimeoutError("open", ms));
       }, ms);
@@ -2954,7 +2962,7 @@ function createIdbCache(dbName) {
         reportStoreError(new Error(`[idb] open blocked by another connection (versionchange pending): ${dbName}`), "log");
       };
       r.onsuccess = () => {
-        clearTimeout(timer);
+        clearTimeout(timer2);
         const db = r.result;
         db.onclose = () => {
           dropConnection(p);
@@ -2970,7 +2978,7 @@ function createIdbCache(dbName) {
         resolve(db);
       };
       r.onerror = () => {
-        clearTimeout(timer);
+        clearTimeout(timer2);
         dropConnection(p);
         reject(r.error);
       };
@@ -3006,7 +3014,7 @@ function createIdbCache(dbName) {
       const rec = { t, mode, suspended: false };
       _active.add(rec);
       let failed = false;
-      const timer = setTimeout(() => {
+      const timer2 = setTimeout(() => {
         if (failed)
           return;
         failed = true;
@@ -3022,7 +3030,7 @@ function createIdbCache(dbName) {
         if (failed)
           return;
         failed = true;
-        clearTimeout(timer);
+        clearTimeout(timer2);
         _active.delete(rec);
         if (rec.suspended) {
           reject(new IdbSuspendedError(`${mode} ${op}`));
@@ -3040,14 +3048,14 @@ function createIdbCache(dbName) {
         finish = run(t.objectStore(STORE));
       } catch (e) {
         failed = true;
-        clearTimeout(timer);
+        clearTimeout(timer2);
         _active.delete(rec);
         reject(e);
         t.abort();
         return;
       }
       t.oncomplete = () => {
-        clearTimeout(timer);
+        clearTimeout(timer2);
         _active.delete(rec);
         if (failed)
           return;
@@ -3632,10 +3640,10 @@ function localStorageMigrationKv() {
     keys: () => Object.keys(ls)
   };
 }
-async function runStoreMigrations(appId, databaseId, log) {
+async function runStoreMigrations(appId, databaseId, log2) {
   const ns = storeNamespace(appId, databaseId);
   const kv = namespacedKv(localStorageMigrationKv(), ns.root);
-  await runMigrations({ kv, ns, log });
+  await runMigrations({ kv, ns, log: log2 });
 }
 
 // node_modules/@internal/store/dist/zip-peek.js
@@ -3840,11 +3848,11 @@ function createStore(config) {
   const ns = storeNamespace(appId, databaseId);
   const kv = namespacedKv(rawKv, ns.root);
   const ids = createIdentifiers(config.docKinds);
-  const local = config.local ?? createLocalCache(ns.dbName, { identifiers: ids });
+  const local2 = config.local ?? createLocalCache(ns.dbName, { identifiers: ids });
   const collectionLocal = config.local ?? createCollectionCache(ns.dbName);
   const rawOnline = config.isOnline ?? (() => globalThis.navigator?.onLine !== false);
-  const signedIn = config.signedIn ?? (() => true);
-  const isOnline = () => rawOnline() && signedIn();
+  const signedIn2 = config.signedIn ?? (() => true);
+  const isOnline = () => rawOnline() && signedIn2();
   const getPassword2 = config.crypt?.getPassword ?? config.getPassword ?? (() => null);
   if (!config.encryption)
     throw new Error("createStore: config.encryption is required (pass createEncryption(), codec-less is fine) \u2014 no substitutes");
@@ -3863,10 +3871,10 @@ function createStore(config) {
     keyPrefix: "files"
   });
   const migrationReady = config.skipMigration || !globalThis.localStorage ? Promise.resolve() : runStoreMigrations(appId, databaseId);
-  const offloadMod = createOffload({ cloud, local, head, isOnline, serialize: sub.serialize });
+  const offloadMod = createOffload({ cloud, local: local2, head, isOnline, serialize: sub.serialize });
   const CLOUD_GONE_GRACE_MS = 24 * 3600 * 1e3;
   const pendingGone = createPendingGone(kv, config.cloudGoneGraceMs ?? CLOUD_GONE_GRACE_MS);
-  const reconcileMod = createReconcile({ cloud, local, head, pending: pendingGone, isOnline, activeIdentifier: config.activeIdentifier, hidden: config.hidden });
+  const reconcileMod = createReconcile({ cloud, local: local2, head, pending: pendingGone, isOnline, activeIdentifier: config.activeIdentifier, hidden: config.hidden });
   const stagingStore = config.staging ?? createStagingStore(ns.dbName);
   const toU8Raw = async (raw) => raw instanceof Uint8Array ? raw : raw instanceof ArrayBuffer ? new Uint8Array(raw) : new Uint8Array(await raw.arrayBuffer());
   const sessions = createDownloadSessions({
@@ -3879,11 +3887,11 @@ function createStore(config) {
     range: async (item, offset, length) => toU8Raw(await provider.downloadRange(item.ref, offset, length)),
     // promote 落地：对齐 identity.acquire 语义（serialize 锁 + markSynced）；已有副本/dirty 绝不覆盖（§A）。
     adoptLocal: (name, blob, etag) => sub.serialize(name, async () => {
-      if (await local.exists(name))
+      if (await local2.exists(name))
         return false;
       if (head.isDirtyAnywhere(name))
         return false;
-      await local.save(name, blob);
+      await local2.save(name, blob);
       head.markSynced(name, etag);
       notifyFolderOf(name);
       return true;
@@ -3978,8 +3986,8 @@ function createStore(config) {
     await del.drainDeleteQueue();
     await drainFolderDeletions();
   }
-  const listing = createListing({ cloud, local, head, pendingFolders: readPending, isPendingGone: (p) => pendingGone.isPending(p), pendingFolderDeletions: readFolderDel, hidden: config.hidden });
-  const ctxNow = () => ({ signedIn: signedIn(), online: rawOnline() });
+  const listing = createListing({ cloud, local: local2, head, pendingFolders: readPending, isPendingGone: (p) => pendingGone.isPending(p), pendingFolderDeletions: readFolderDel, hidden: config.hidden });
+  const ctxNow = () => ({ signedIn: signedIn2(), online: rawOnline() });
   const LOCAL_CTX = { signedIn: false, online: false };
   const folderWatchers = /* @__PURE__ */ new Map();
   const unAuth = provider.onAuthChanged?.((ev) => {
@@ -3987,7 +3995,7 @@ function createStore(config) {
       return;
     void (async () => {
       try {
-        await local.clearDirIndexCache?.();
+        await local2.clearDirIndexCache?.();
       } catch (e) {
         ui.reportError(e, "log");
       }
@@ -4013,10 +4021,10 @@ function createStore(config) {
   }
   const SNAP_V = 1;
   async function readDirIndexCache(folder) {
-    if (!local.getDirIndexCache)
+    if (!local2.getDirIndexCache)
       return null;
     try {
-      const raw = await local.getDirIndexCache(folder);
+      const raw = await local2.getDirIndexCache(folder);
       if (!raw)
         return null;
       const p = JSON.parse(raw);
@@ -4029,11 +4037,11 @@ function createStore(config) {
     }
   }
   function writeDirIndexCache(folder, live) {
-    if (!local.putDirIndexCache || !live.complete)
+    if (!local2.putDirIndexCache || !live.complete)
       return;
     const files = live.files.filter((c) => !isHidden(c.name)).map((c) => ({ name: c.name, eTag: c.eTag, size: c.size, lastModified: toMs(c.lastModifiedDateTime), id: c.ref }));
     const folders = live.folders.filter((f) => !isHidden(f));
-    void local.putDirIndexCache(folder, JSON.stringify({ v: SNAP_V, folder, savedAt: Date.now(), files, folders })).catch((e) => ui.reportError(e, "log"));
+    void local2.putDirIndexCache(folder, JSON.stringify({ v: SNAP_V, folder, savedAt: Date.now(), files, folders })).catch((e) => ui.reportError(e, "log"));
   }
   function emitFolder(folder, snap) {
     if (snap.folder !== folder) {
@@ -4131,7 +4139,7 @@ function createStore(config) {
     };
   }
   async function nameOccupied(name) {
-    if (await local.exists(name))
+    if (await local2.exists(name))
       return "local";
     if (isOnline()) {
       try {
@@ -4147,13 +4155,13 @@ function createStore(config) {
     pack: (o) => enc.packContainer({ dataBytes: o.dataBytes, fileName: o.fileName, ext: o.ext, peek: o.peek, password: o.password }),
     unpack: (blob, pw) => enc.unpackContainer(blob, pw),
     getPassword: getPassword2,
-    getPrev: (n) => local.get(n),
+    getPrev: (n) => local2.get(n),
     makePeek: config.crypt?.makePeek
     // 明文→peek（app 域，如 ora 缩略图）；不给 → 容器无 peek
   });
   const safeResolve = createSafeResolve({
     cloud,
-    local,
+    local: local2,
     head,
     localDirty: () => sub.edits.localDirty(),
     serialize: sub.serialize,
@@ -4175,7 +4183,7 @@ function createStore(config) {
   }
   const pushBg = createPush({ cloud, head, seal, safeResolve, serialize: sub.serialize, editVersion: () => sub.edits.version(), busy: (_l, fn) => fn() });
   async function pushLocalBytes(name) {
-    const blob = await local.get(name);
+    const blob = await local2.get(name);
     if (!blob)
       return { status: "no-local" };
     const atRest = await toU8(blob instanceof Blob ? blob : new Blob([blob]));
@@ -4183,7 +4191,7 @@ function createStore(config) {
   }
   const uploadReplay = createUploadReplay({
     kv,
-    local,
+    local: local2,
     head,
     isOnline,
     serialize: sub.serialize,
@@ -4193,10 +4201,10 @@ function createStore(config) {
     onStatus: ui.onReplayStatus
   });
   const fresh = createFreshness({ cloud, head, safeResolve, busy: busyT });
-  const del = createDelete({ cloud, local, head, kv, busy: busyT });
+  const del = createDelete({ cloud, local: local2, head, kv, busy: busyT });
   const identity = createIdentity({
     cloud,
-    local,
+    local: local2,
     head,
     doPush: pushMod.doPush,
     serialize: sub.serialize,
@@ -4213,10 +4221,10 @@ function createStore(config) {
     nameOccupied
     // 唯一占用检查（assertNameFree 据此抛）
   });
-  const trashMod = createTrash({ cloud, local, head, busy: busyT });
+  const trashMod = createTrash({ cloud, local: local2, head, busy: busyT });
   async function aggregateBox(box) {
     const cloudItems = await (box === "trash" ? cloud.listTrash() : cloud.listBackup());
-    const localItems = box === "trash" ? local.listTrash ? await local.listTrash() : [] : local.listBackup ? await local.listBackup() : [];
+    const localItems = box === "trash" ? local2.listTrash ? await local2.listTrash() : [] : local2.listBackup ? await local2.listBackup() : [];
     let live = /* @__PURE__ */ new Set();
     if (box === "trash" && localItems.length && isOnline()) {
       const all = await cloud.listAll().catch(() => null);
@@ -4263,11 +4271,11 @@ function createStore(config) {
     return { ok: true, where: r.where, oldKept: r.oldKept, oldUnknown: r.oldUnknown, oldCloudOrphan: r.oldCloudOrphan, cloudDeferred: r.cloudDeferred, oldName: from };
   });
   const onConflictFor = (occasion) => async ({ name }) => {
-    return ui.resolveConflict({ name, local: await local.get(name), cloud: null, occasion });
+    return ui.resolveConflict({ name, local: await local2.get(name), cloud: null, occasion });
   };
   const onConflict = onConflictFor("push");
   async function encTailBytes(name, n, tryCloud) {
-    const blob = await local.get(name);
+    const blob = await local2.get(name);
     if (blob) {
       const b = blob instanceof Blob ? blob : new Blob([blob]);
       return b.slice(Math.max(0, b.size - n));
@@ -4279,7 +4287,7 @@ function createStore(config) {
     return null;
   }
   async function openPeekSource(name, n, source) {
-    const blob = source === "cloud" ? null : await local.get(name);
+    const blob = source === "cloud" ? null : await local2.get(name);
     if (blob) {
       const b = blob instanceof Blob ? blob : new Blob([blob]);
       const total = b.size;
@@ -4327,7 +4335,7 @@ function createStore(config) {
         }
       }
     }
-    const full = await local.get(name);
+    const full = await local2.get(name);
     if (!full)
       return false;
     try {
@@ -4338,7 +4346,7 @@ function createStore(config) {
     }
   }
   async function encIsEncrypted(name) {
-    const blob = await local.get(name);
+    const blob = await local2.get(name);
     return blob ? enc.looksEncryptedContainer(blob instanceof Blob ? blob : new Blob([blob])) : false;
   }
   async function encSwap(name, bytes, online, encrypted) {
@@ -4346,7 +4354,7 @@ function createStore(config) {
     const tracked = prevEtag != null;
     if (tracked && !online())
       return { status: "offline" };
-    await local.save(name, bytes);
+    await local2.save(name, bytes);
     if (!tracked)
       return { status: "swapped" };
     try {
@@ -4364,7 +4372,7 @@ function createStore(config) {
   }
   async function encEncrypt(name, online) {
     return busyK("file.encrypting", { name }, () => sub.serialize(name, async () => {
-      const blob = await local.get(name);
+      const blob = await local2.get(name);
       if (!blob)
         return { status: "no-local" };
       const asBlob = blob instanceof Blob ? blob : new Blob([blob]);
@@ -4389,7 +4397,7 @@ function createStore(config) {
   }
   async function encDecrypt(name, online) {
     return busyK("file.decrypting", { name }, () => sub.serialize(name, async () => {
-      const blob = await local.get(name);
+      const blob = await local2.get(name);
       if (!blob)
         return { status: "no-local" };
       const asBlob = blob instanceof Blob ? blob : new Blob([blob]);
@@ -4407,7 +4415,7 @@ function createStore(config) {
     if (!newPassword)
       throw new Error(`rekey: newPassword required (${name})`);
     return busyK("file.rekeying", { name }, () => sub.serialize(name, async () => {
-      const blob = await local.get(name);
+      const blob = await local2.get(name);
       if (!blob)
         return { status: "no-local" };
       const asBlob = blob instanceof Blob ? blob : new Blob([blob]);
@@ -4433,7 +4441,7 @@ function createStore(config) {
   function makeRaw(name, mode = "existing") {
     let _createChecked = mode !== "new";
     const readLocal = async () => {
-      const blob = await local.get(name);
+      const blob = await local2.get(name);
       if (!blob)
         return null;
       const asBlob = blob instanceof Blob ? blob : new Blob([blob]);
@@ -4454,7 +4462,7 @@ function createStore(config) {
         cancelFolderDeletionForDescendant(name);
         const plain = await toU8(bytes);
         const sealed = await seal.sealForWrite(name, plain);
-        const receipt = await sub.serialize(name, () => local.save(name, sealed, opts?.hint, "user-save"));
+        const receipt = await sub.serialize(name, () => local2.save(name, sealed, opts?.hint, "user-save"));
         if (receipt && typeof receipt === "object" && receipt.foreignOverwrite) {
           reportStoreError(new Error(`local overwrite conflict: "${name}" was written by another tab (rev ${receipt.foreignOverwrite.foreignRev}); their bytes were ${receipt.foreignOverwrite.backedUp ? "backed up before overwrite" : "overwritten (recent copy already in backup)"}`), "warning");
         }
@@ -4479,7 +4487,7 @@ function createStore(config) {
       },
       async open() {
         await migrationReady;
-        if (await local.exists(name)) {
+        if (await local2.exists(name)) {
           const esc = isOnline() ? ui.offlineEscape?.() : void 0;
           try {
             await fresh.open(name, {
@@ -4519,7 +4527,7 @@ function createStore(config) {
         await migrationReady;
         const n = Math.max(0, Math.floor(o.bytesLength));
         if (o.source !== "cloud") {
-          const blob = await local.get(name);
+          const blob = await local2.get(name);
           if (blob) {
             const b = blob instanceof Blob ? blob : new Blob([blob]);
             if (await enc.looksEncryptedContainer(b))
@@ -4552,7 +4560,7 @@ function createStore(config) {
       reupload() {
         roGuard("reupload");
         return busyK("file.reuploading", void 0, async () => {
-          if (!await local.exists(name))
+          if (!await local2.exists(name))
             return { status: "no-local" };
           pendingGone.clear(name);
           head.forget(name);
@@ -4566,7 +4574,7 @@ function createStore(config) {
         });
       },
       isKeptOffline() {
-        return local.exists(name);
+        return local2.exists(name);
       },
       // 有本地副本 = 已留作离线（无 LRU、无独立 pin flag）
       stagingCoverage() {
@@ -4574,7 +4582,7 @@ function createStore(config) {
       },
       // A5 透明面：只读账本，零网络（离线徽章/护栏用）
       async keepOffline(opts) {
-        if (await local.exists(name))
+        if (await local2.exists(name))
           return;
         const runOnce = async () => {
           if (!isOnline()) {
@@ -4617,7 +4625,7 @@ function createStore(config) {
       },
       async openStream() {
         await migrationReady;
-        const blob = await local.get(name);
+        const blob = await local2.get(name);
         if (blob) {
           const b = blob instanceof Blob ? blob : new Blob([blob]);
           return {
@@ -4669,7 +4677,7 @@ function createStore(config) {
       },
       // at-rest 密文字节原样（内容盲、不解壳、不碰密码）。非加密件 / 无本地副本 → null。
       async getEncryptedBlob() {
-        const blob = await local.get(name);
+        const blob = await local2.get(name);
         if (!blob)
           return null;
         const asBlob = blob instanceof Blob ? blob : new Blob([blob]);
@@ -4723,7 +4731,7 @@ function createStore(config) {
   const _scaffoldNames = /* @__PURE__ */ new Set();
   const _scaffoldEnsured = /* @__PURE__ */ new Set();
   async function ensureScaffold() {
-    if (!isOnline() || !signedIn() || _scaffoldEnsured.size >= _scaffoldNames.size)
+    if (!isOnline() || !signedIn2() || _scaffoldEnsured.size >= _scaffoldNames.size)
       return;
     await migrationReady;
     try {
@@ -4845,7 +4853,7 @@ function createStore(config) {
       /** 本地已缓存文件的总占用（字节 + 件数），给 app 显示「本地存了多少」。**口径**：只量本库 files 分区，
        *  **不含** trash/backup/collections 分区、app 自己别的 IDB 库、纯云端未缓存的作品。
        *  ⚠ **只返两个标量、永不返名字** —— 它不是、也不能变成全库列举（列举唯一面 = watchFolder）。 */
-      usage: () => local.usage(),
+      usage: () => local2.usage(),
       /** 确保文件夹存在。**离线也能建**（本地登记 + 回线 drainOfflineQueue 补建）。 */
       ensureFolder: (path) => {
         roGuard("ensureFolder");
@@ -4866,7 +4874,7 @@ function createStore(config) {
         return busyK("folder.deleting", void 0, async () => {
           assertValidFileName(path, appId);
           const prefix = `${path}/`;
-          if ((await local.appKeys()).some((k) => k.startsWith(prefix)))
+          if ((await local2.appKeys()).some((k) => k.startsWith(prefix)))
             throw new Error(`\u6587\u4EF6\u5939\u975E\u7A7A\uFF08\u672C\u5730\u6709\u6587\u4EF6\uFF09\uFF0C\u62D2\u7EDD\u5220\u9664\uFF1A${path}`);
           const wasPending = readPending().includes(path);
           clearPendingFolder(path);
@@ -4936,8 +4944,8 @@ function createStore(config) {
       folderWatchers.clear();
       if (opts?.drain !== false)
         await sub.drain();
-      local.close?.();
-      if (collectionLocal !== local)
+      local2.close?.();
+      if (collectionLocal !== local2)
         collectionLocal.close?.();
       stagingStore.close?.();
     }
@@ -5429,10 +5437,10 @@ function loadScript(url) {
       if (done)
         return;
       done = true;
-      clearTimeout(timer);
+      clearTimeout(timer2);
       fn();
     };
-    const timer = setTimeout(() => settle(() => {
+    const timer2 = setTimeout(() => settle(() => {
       s.remove();
       reject(new Error(`timeout loading ${url}`));
     }), SCRIPT_LOAD_TIMEOUT_MS);
@@ -5951,7 +5959,7 @@ var AUTO_EVERY_MS = 10 * 6e4;
 var AUTO_MIN_GAP_MS = 3e4;
 var THUMB_W = 240;
 var PLATFORM_CODE = { psp: "wafer" };
-var JAM_POLL_MS = 2e3;
+var JAM_POLL_MS = 1e3;
 var FAST_FORWARD = 3;
 
 // src/app/labels.ts
@@ -5967,6 +5975,122 @@ function labelFor(identifier) {
   if (identifier.startsWith("jars/")) return "\u6E38\u620F\u5B58\u6863";
   if (identifier.startsWith("pantry/")) return "\u76D8";
   return identifier.replace(/^.*\//, "");
+}
+
+// src/app/sync-status.ts
+var STUCK_MS = 45e3;
+var LOG_MAX = 300;
+var flights = /* @__PURE__ */ new Map();
+var nextId = 1;
+var pending = 0;
+var problem = null;
+var local = null;
+var doneUntil = 0;
+var log = [];
+var onClick = null;
+var signedIn = () => true;
+var timer = 0;
+var listeners = /* @__PURE__ */ new Set();
+function subscribe(cb) {
+  listeners.add(cb);
+  cb(state());
+  return () => {
+    listeners.delete(cb);
+  };
+}
+function beginLocal(label) {
+  local = { label, startedAt: performance.now() };
+  render();
+}
+function endLocal() {
+  local = null;
+  render();
+}
+var mb = (n) => n >= 2 ** 20 ? `${(n / 2 ** 20).toFixed(1)} MB` : `${(n / 1024).toFixed(0)} KB`;
+var secs = (t0) => `${((performance.now() - t0) / 1e3).toFixed(0)} s`;
+function logEvent(level, text) {
+  log.push({ at: Date.now(), level, text });
+  if (log.length > LOG_MAX) log.shift();
+  (level === "info" ? console.info : console.warn)("[sync]", text);
+  render();
+}
+function track(label, bytes, p) {
+  const id = nextId++;
+  const f = { id, label, bytes, startedAt: performance.now() };
+  flights.set(id, f);
+  logEvent("info", `\u5F00\u59CB\u4F20 ${label}\uFF08${mb(bytes)}\uFF09`);
+  return p.then((r) => {
+    flights.delete(id);
+    if (r.pushed) {
+      problem = null;
+      doneUntil = performance.now() + 3e3;
+      logEvent("info", `\u4F20\u597D\u4E86 ${label}\uFF0C\u7528\u4E86 ${secs(f.startedAt)}`);
+    } else if (!signedIn()) {
+      problem = null;
+      doneUntil = performance.now() + 3e3;
+      logEvent("info", `${label} \u5B58\u5728\u8FD9\u53F0\u8BBE\u5907\uFF08\u6CA1\u767B\u5F55\uFF0C\u4E0D\u4F20\uFF09`);
+    } else {
+      problem = { text: `${label} \u6CA1\u4F20\u4E0A\u53BB\uFF08${r.reason ?? "\u539F\u56E0\u4E0D\u660E"}\uFF09`, at: Date.now() };
+      logEvent("warn", problem.text);
+    }
+    return r;
+  }, (e) => {
+    flights.delete(id);
+    problem = { text: `${label} \u51FA\u9519\uFF1A${errorText(e)}`, at: Date.now() };
+    logEvent("error", problem.text);
+    throw e;
+  });
+}
+function setPending(n) {
+  pending = n;
+  render();
+}
+function dumpLog() {
+  return log.map((e) => `${new Date(e.at).toLocaleTimeString()} ${e.level === "info" ? " " : e.level === "warn" ? "!" : "\u2716"} ${e.text}`).join("\n") || "\uFF08\u8FD8\u6CA1\u6709\u8BB0\u5F55\uFF09";
+}
+function mount(opts) {
+  onClick = opts.onClick;
+  signedIn = opts.signedIn;
+  for (const id of ["syncbar", "sync-home"]) $(id).addEventListener("click", () => onClick?.());
+  render();
+}
+function state() {
+  if (local) return { kind: "saving", text: `\u6B63\u5728\u5B58 ${local.label}\u2026` };
+  const first = flights.values().next().value;
+  if (first) {
+    const elapsed = performance.now() - first.startedAt;
+    const more = flights.size > 1 ? `\uFF08\u8FD8\u6709 ${flights.size - 1} \u4E2A\u6392\u7740\uFF09` : "";
+    if (elapsed > STUCK_MS) return { kind: "stuck", text: `\u5361\u4F4F\u4E86\uFF1F${first.label} \u5DF2\u7ECF\u4F20\u4E86 ${secs(first.startedAt)}${more}` };
+    return { kind: "busy", text: `\u6B63\u5728\u4F20 ${first.label} ${mb(first.bytes)} \xB7 ${secs(first.startedAt)}${more}` };
+  }
+  if (problem) return { kind: "bad", text: problem.text };
+  if (performance.now() < doneUntil) return signedIn() ? { kind: "done", text: "\u4F20\u597D\u4E86" } : { kind: "local", text: "\u5B58\u5728\u8FD9\u53F0\u8BBE\u5907\u4E86\uFF08\u6CA1\u767B\u5F55\uFF0C\u4E0D\u4F20\uFF09" };
+  if (!signedIn()) return pending > 0 ? { kind: "local", text: `${pending} \u4E2A\u53EA\u5728\u8FD9\u53F0\u8BBE\u5907\uFF08\u767B\u5F55\u540E\u518D\u4F20\uFF09` } : { kind: "idle", text: "\u6CA1\u767B\u5F55\uFF1A\u5B58\u6863\u53EA\u5728\u8FD9\u53F0\u8BBE\u5907" };
+  if (pending > 0) return { kind: "pending", text: `${pending} \u4E2A\u6CA1\u4F20\u4E0A\u53BB / \u8981\u5904\u7406` };
+  return { kind: "idle", text: "\u4E91\u7AEF\uFF1A\u5DF2\u540C\u6B65" };
+}
+function render() {
+  const s = state();
+  for (const cb of listeners) cb(s);
+  const bar = document.getElementById("syncbar"), home = document.getElementById("sync-home");
+  if (bar) {
+    bar.className = `syncbar ${s.kind}`;
+    bar.hidden = s.kind === "idle";
+    bar.replaceChildren(h("span", { class: "syncbar-track" }, h("span", { class: "syncbar-fill" })), h("span", { class: "syncbar-text" }, s.text));
+  }
+  if (home) {
+    home.className = `sync-home ${s.kind}`;
+    home.hidden = false;
+    home.textContent = s.text;
+  }
+  const live = local || flights.size || performance.now() < doneUntil;
+  if (live && !timer) timer = window.setInterval(() => {
+    if (!(local || flights.size || performance.now() < doneUntil)) {
+      clearInterval(timer);
+      timer = 0;
+    }
+    render();
+  }, 1e3);
 }
 
 // src/app/store-ui.ts
@@ -5987,6 +6111,7 @@ var storeUI = {
         h("button", { class: "primary", onclick: () => done("keepMine") }, "\u7528\u8FD9\u53F0\u7684")
       )
     ], { dismissable: false });
+    logEvent("warn", `\u51B2\u7A81\uFF1A${stemOf(name)}\uFF08${occasion}\uFF09\u2192 ${{ keepMine: "\u7528\u8FD9\u53F0\u7684", takeCloud: "\u7528\u4E91\u7AEF\u7684", cancel: "\u5148\u4E0D\u7BA1" }[choice ?? "cancel"]}`);
     return choice ?? "cancel";
   },
   reportError: (err2, level = "error") => {
@@ -6002,7 +6127,7 @@ var storeUI = {
       note(errorText(err2));
       return;
     }
-    console.warn("[store]", err2);
+    logEvent(level === "warning" ? "warn" : "error", `store\uFF1A${errorText(err2)}`);
     banner(errorText(err2), level);
   },
   onReplayStatus: ({ phase, name, done, total }) => {
@@ -6021,9 +6146,12 @@ function setActiveIdentifier(id) {
 }
 async function validateAdopt(plain) {
   if (plain.size < 64) return false;
-  const tail = new Uint8Array(await plain.slice(plain.size - 64).arrayBuffer());
-  const head = new TextDecoder().decode(tail.subarray(0, 4)), end = new TextDecoder().decode(tail.subarray(60, 64));
-  return head === "KRD1" && end === "KRD1";
+  const dec = new TextDecoder();
+  const block = async (off) => new Uint8Array(await plain.slice(off, off + 64).arrayBuffer());
+  const head = await block(0);
+  if (dec.decode(head.subarray(0, 4)) === "KRD2" && dec.decode(head.subarray(60, 64)) === "KRD2") return true;
+  const tail = await block(plain.size - 64);
+  return dec.decode(tail.subarray(0, 4)) === "KRD1" && dec.decode(tail.subarray(60, 64)) === "KRD1";
 }
 var store = null;
 function getStore() {
@@ -6055,8 +6183,12 @@ function getStore() {
 
 // src/disc/crypt.ts
 var MAGIC = "KRD1";
+var MAGIC2 = "KRD2";
 var TRAILER_BYTES = 64;
+var HEADER_BYTES = 64;
 var DEFAULT_ITERATIONS = 6e5;
+var DEFAULT_META_CAP = 4096;
+var HEAD_PEEK_BYTES = HEADER_BYTES + 64 * 1024;
 var KDF_PBKDF2_SHA256 = 1;
 var BLOCK = 16;
 var NotADiscError = class extends Error {
@@ -6115,13 +6247,15 @@ async function ctrAt(key, nonce, offset, bytes) {
     bytes
   ));
 }
-function encodeTrailer(t) {
-  const out = new Uint8Array(TRAILER_BYTES);
+function encodeParams(t) {
+  const out = new Uint8Array(HEADER_BYTES);
   const dv = new DataView(out.buffer);
-  const magic = new TextEncoder().encode(MAGIC);
+  const magic = new TextEncoder().encode(t.layout === "head" ? MAGIC2 : MAGIC);
+  if (t.layout === "head" && (t.metaCap % BLOCK !== 0 || t.metaCap / BLOCK > 65535 || t.metaCap < t.metaBytes)) throw new RangeError("bad metaCap");
   out.set(magic, 0);
   dv.setUint8(4, 1);
   dv.setUint8(5, KDF_PBKDF2_SHA256);
+  dv.setUint16(6, t.layout === "head" ? t.metaCap / BLOCK : 0);
   dv.setUint32(8, t.iterations);
   out.set(t.salt, 12);
   out.set(t.nonce, 28);
@@ -6131,22 +6265,33 @@ function encodeTrailer(t) {
   out.set(magic, 60);
   return out;
 }
-function decodeTrailer(bytes) {
-  if (bytes.length !== TRAILER_BYTES) throw new NotADiscError();
+function decodeParams(bytes) {
+  if (bytes.length !== HEADER_BYTES) throw new NotADiscError();
   const dec = new TextDecoder();
-  if (dec.decode(bytes.subarray(0, 4)) !== MAGIC || dec.decode(bytes.subarray(60, 64)) !== MAGIC) throw new NotADiscError();
+  const m0 = dec.decode(bytes.subarray(0, 4)), m1 = dec.decode(bytes.subarray(60, 64));
+  const layout = m0 === MAGIC2 ? "head" : m0 === MAGIC ? "tail" : (() => {
+    throw new NotADiscError();
+  })();
+  if (m1 !== m0) throw new NotADiscError();
   const dv = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
   if (dv.getUint8(4) !== 1) throw new NotADiscError(`unsupported KRD version ${dv.getUint8(4)}`);
   if (dv.getUint8(5) !== KDF_PBKDF2_SHA256) throw new NotADiscError(`unsupported KDF id ${dv.getUint8(5)}`);
   const bodyBytes = dv.getBigUint64(52);
   if (bodyBytes > BigInt(Number.MAX_SAFE_INTEGER)) throw new CorruptDiscError("body length out of range");
+  const metaBytes = dv.getUint32(48);
+  const metaCap = layout === "head" ? dv.getUint16(6) * BLOCK : metaBytes;
+  if (layout === "head" && metaCap < metaBytes) throw new CorruptDiscError("metadata larger than its reserved area");
   return {
     iterations: dv.getUint32(8),
     salt: bytes.slice(12, 28),
     nonce: bytes.slice(28, 36),
     metaIv: bytes.slice(36, 48),
-    metaBytes: dv.getUint32(48),
-    bodyBytes: Number(bodyBytes)
+    metaBytes,
+    bodyBytes: Number(bodyBytes),
+    metaCap,
+    layout,
+    metaOffset: layout === "head" ? HEADER_BYTES : Number(bodyBytes),
+    bodyOffset: layout === "head" ? HEADER_BYTES + metaCap : 0
   };
 }
 function random(n) {
@@ -6166,11 +6311,15 @@ function cachedKeys(password, salt, iterations) {
 async function beginDisc(password, opts = {}) {
   const iterations = opts.iterations ?? DEFAULT_ITERATIONS;
   const salt = opts.salt ?? random(16), nonce = random(8);
+  const layout = opts.layout ?? "head";
+  const metaCap = layout === "head" ? Math.ceil((opts.metaCap ?? DEFAULT_META_CAP) / BLOCK) * BLOCK : 0;
   if (salt.length !== 16) throw new RangeError("salt must be 16 bytes");
+  if (layout === "head" && (metaCap < BLOCK || metaCap / BLOCK > 65535)) throw new RangeError("metaCap out of range");
   const keys = opts.salt ? await cachedKeys(password, salt, iterations) : await deriveKeys(password, salt, iterations);
   let offset = 0;
   let tailSeen = false;
   return {
+    headBytes: layout === "head" ? HEADER_BYTES + metaCap : 0,
     async encrypt(plain) {
       if (tailSeen) throw new RangeError("only the last chunk may have a length that is not a multiple of 16");
       if (plain.length % BLOCK !== 0) tailSeen = true;
@@ -6186,7 +6335,14 @@ async function beginDisc(password, opts = {}) {
         keys.meta,
         new TextEncoder().encode(JSON.stringify(meta))
       ));
-      const trailer = encodeTrailer({ iterations, salt, nonce, metaIv, metaBytes: sealed.length, bodyBytes: offset });
+      if (layout === "head") {
+        if (sealed.length > metaCap) throw new RangeError(`metadata (${sealed.length} bytes) exceeds the reserved ${metaCap} bytes`);
+        const head = new Uint8Array(HEADER_BYTES + metaCap);
+        head.set(encodeParams({ iterations, salt, nonce, metaIv, metaBytes: sealed.length, bodyBytes: offset, metaCap, layout }), 0);
+        head.set(sealed, HEADER_BYTES);
+        return head;
+      }
+      const trailer = encodeParams({ iterations, salt, nonce, metaIv, metaBytes: sealed.length, bodyBytes: offset, metaCap: sealed.length, layout });
       const tail = new Uint8Array(sealed.length + TRAILER_BYTES);
       tail.set(sealed, 0);
       tail.set(trailer, sealed.length);
@@ -6194,18 +6350,35 @@ async function beginDisc(password, opts = {}) {
     }
   };
 }
+function metaCapFor(meta) {
+  const n = new TextEncoder().encode(JSON.stringify(meta)).length + 16 + 256;
+  return Math.max(DEFAULT_META_CAP, Math.ceil(n / BLOCK) * BLOCK);
+}
 async function peekDisc(source) {
-  if (source.size < TRAILER_BYTES) throw new NotADiscError();
-  const t = decodeTrailer(await source.read(source.size - TRAILER_BYTES, TRAILER_BYTES));
-  if (t.bodyBytes + t.metaBytes + TRAILER_BYTES !== source.size) {
+  if (source.size < HEADER_BYTES) throw new NotADiscError();
+  const head = await source.read(0, HEADER_BYTES);
+  let t;
+  if (new TextDecoder().decode(head.subarray(0, 4)) === MAGIC2) {
+    t = decodeParams(head);
+    if (t.layout !== "head" || HEADER_BYTES + t.metaCap + t.bodyBytes !== source.size) {
+      throw new CorruptDiscError(`length mismatch: header says ${HEADER_BYTES}+${t.metaCap}+${t.bodyBytes}, file has ${source.size}`);
+    }
+    return t;
+  }
+  t = decodeParams(await source.read(source.size - TRAILER_BYTES, TRAILER_BYTES));
+  if (t.layout !== "tail" || t.bodyBytes + t.metaBytes + TRAILER_BYTES !== source.size) {
     throw new CorruptDiscError(`length mismatch: trailer says ${t.bodyBytes}+${t.metaBytes}+${TRAILER_BYTES}, file has ${source.size}`);
   }
   return t;
 }
-async function openDisc(source, password) {
-  const t = await peekDisc(source);
+async function openHead(head, password) {
+  if (head.length < HEADER_BYTES || new TextDecoder().decode(head.subarray(0, 4)) !== MAGIC2) return null;
+  const t = decodeParams(head.subarray(0, HEADER_BYTES));
+  if (t.layout !== "head" || head.length < HEADER_BYTES + t.metaBytes) return null;
   const keys = await cachedKeys(password, t.salt, t.iterations);
-  const sealed = await source.read(t.bodyBytes, t.metaBytes);
+  return { params: t, meta: await decryptMeta(keys, t, head.subarray(HEADER_BYTES, HEADER_BYTES + t.metaBytes)) };
+}
+async function decryptMeta(keys, t, sealed) {
   let meta;
   try {
     meta = JSON.parse(new TextDecoder().decode(
@@ -6214,8 +6387,14 @@ async function openDisc(source, password) {
   } catch {
     throw new WrongPasswordError();
   }
-  if (meta.v !== 1 || meta.size !== t.bodyBytes) throw new CorruptDiscError("metadata does not match trailer");
-  const size = t.bodyBytes;
+  if (meta.v !== 1 || meta.size !== t.bodyBytes) throw new CorruptDiscError("metadata does not match the parameter block");
+  return meta;
+}
+async function openDisc(source, password) {
+  const t = await peekDisc(source);
+  const keys = await cachedKeys(password, t.salt, t.iterations);
+  const meta = await decryptMeta(keys, t, await source.read(t.metaOffset, t.metaBytes));
+  const size = t.bodyBytes, base = t.bodyOffset;
   return {
     size,
     meta,
@@ -6224,7 +6403,7 @@ async function openDisc(source, password) {
       const end = Math.max(start, Math.min(size, offset + length));
       if (end === start) return new Uint8Array(0);
       const aligned = start - start % BLOCK;
-      const cipher = await source.read(aligned, end - aligned);
+      const cipher = await source.read(base + aligned, end - aligned);
       if (cipher.length !== end - aligned) throw new CorruptDiscError(`short read at ${aligned}: wanted ${end - aligned}, got ${cipher.length}`);
       const plain = await ctrAt(keys.body, t.nonce, aligned, cipher);
       return plain.subarray(start - aligned);
@@ -6243,12 +6422,13 @@ var deflateRaw = (bytes) => pipe(bytes, new CompressionStream("deflate-raw"));
 var inflateRaw = (bytes) => pipe(bytes, new DecompressionStream("deflate-raw"));
 async function sealBytes(password, plain, opts = {}) {
   const payload = opts.compress ? await deflateRaw(plain) : plain;
-  const w = await beginDisc(password, { salt: opts.salt });
+  const meta = { ...opts.meta, ...opts.compress ? { z: "deflate-raw" } : {}, sha256: await sha256Hex(payload) };
+  const w = await beginDisc(password, { salt: opts.salt, metaCap: metaCapFor({ v: 1, size: payload.length, ...meta }) });
   const body = await w.encrypt(payload);
-  const tail = await w.finish({ ...opts.meta, ...opts.compress ? { z: "deflate-raw" } : {}, sha256: await sha256Hex(payload) });
-  const out = new Uint8Array(body.length + tail.length);
-  out.set(body, 0);
-  out.set(tail, body.length);
+  const head = await w.finish(meta);
+  const out = new Uint8Array(head.length + body.length);
+  out.set(head, 0);
+  out.set(body, head.length);
   return out;
 }
 async function unsealBytes(password, sealed) {
@@ -6363,11 +6543,15 @@ async function unwrap(src, name, password) {
     original = opened.meta.name ?? "game.iso";
     media = opened;
   }
-  const label = await readDiscLabel(media);
-  const fp = { k: PLATFORM_CODE.psp, size: media.size, ...label?.id ? { id: label.id } : {}, ...label?.version ? { v: label.version } : {} };
+  const fp = await fingerprintOf(media, opened?.meta.fp);
   const keyFromGame = !!fp.id;
   const key = keyFromGame ? await gameKey(fp) : await discKey(stemOf2(name));
   return { media, ext: extOf(original), title: stemOf2(original), fp, key, keyFromGame };
+}
+async function fingerprintOf(media, fromMeta) {
+  if (fromMeta?.k && fromMeta.size === media.size) return fromMeta;
+  const label = await readDiscLabel(media);
+  return { k: PLATFORM_CODE.psp, size: media.size, ...label?.id ? { id: label.id } : {}, ...label?.version ? { v: label.version } : {} };
 }
 async function fromLocalFile(file, password) {
   const src = { size: file.size, read: async (o, n) => new Uint8Array(await file.slice(o, o + n).arrayBuffer()) };
@@ -6396,24 +6580,34 @@ async function fromPantry(identifier, password) {
 async function inspectPantry(identifier) {
   const encrypted = identifier.endsWith(".wafter");
   if (encrypted && !sessionPassword) return null;
-  const stream = await getStore().file(identifier, { mode: "existing" }).openStream();
-  if (!stream) return null;
+  const f = getStore().file(identifier, { mode: "existing" });
+  const card = async (name, fp) => ({ title: stemOf2(name), fp, key: fp.id ? await gameKey(fp) : await discKey(stemOf2(identifier)) });
   try {
-    const src = { size: stream.totalSize, read: (o, n) => stream.read(o, n) };
-    let media = src, name = identifier;
     if (encrypted) {
-      const opened = await openDisc(src, sessionPassword);
-      media = opened;
-      name = opened.meta.name ?? identifier;
+      const head = await f.getHead({ bytesLength: HEAD_PEEK_BYTES, source: "local" }).catch(() => null);
+      if (head) {
+        const got = await openHead(new Uint8Array(await head.arrayBuffer()), sessionPassword);
+        if (got?.meta.fp?.k) return card(got.meta.name ?? identifier, got.meta.fp);
+      }
     }
-    const label = await readDiscLabel(media);
-    const fp = { k: PLATFORM_CODE.psp, size: media.size, ...label?.id ? { id: label.id } : {}, ...label?.version ? { v: label.version } : {} };
-    return { title: stemOf2(name), fp, key: fp.id ? await gameKey(fp) : await discKey(stemOf2(identifier)) };
+    const stream = await f.openStream();
+    if (!stream) return null;
+    try {
+      const src = { size: stream.totalSize, read: (o, n) => stream.read(o, n) };
+      let media = src, name = identifier, metaFp;
+      if (encrypted) {
+        const opened = await openDisc(src, sessionPassword);
+        media = opened;
+        name = opened.meta.name ?? identifier;
+        metaFp = opened.meta.fp;
+      }
+      return card(name, await fingerprintOf(media, metaFp));
+    } finally {
+      stream.close();
+    }
   } catch (e) {
     if (e instanceof WrongPasswordError) return null;
     throw e;
-  } finally {
-    stream.close();
   }
 }
 
@@ -6522,26 +6716,26 @@ for (i = 0; i < 32768; ++i) {
 }
 var x;
 var i;
-var hMap = function(cd, mb, r) {
+var hMap = function(cd, mb2, r) {
   var s = cd.length;
   var i = 0;
-  var l = new u16(mb);
+  var l = new u16(mb2);
   for (; i < s; ++i) {
     if (cd[i])
       ++l[cd[i] - 1];
   }
-  var le = new u16(mb);
-  for (i = 1; i < mb; ++i) {
+  var le = new u16(mb2);
+  for (i = 1; i < mb2; ++i) {
     le[i] = le[i - 1] + l[i - 1] << 1;
   }
   var co;
   if (r) {
-    co = new u16(1 << mb);
-    var rvb = 15 - mb;
+    co = new u16(1 << mb2);
+    var rvb = 15 - mb2;
     for (i = 0; i < s; ++i) {
       if (cd[i]) {
         var sv = i << 4 | cd[i];
-        var r_1 = mb - cd[i];
+        var r_1 = mb2 - cd[i];
         var v = le[cd[i] - 1]++ << r_1;
         for (var m = v | (1 << r_1) - 1; v <= m; ++v) {
           co[rev[v] >> rvb] = sv;
@@ -6785,7 +6979,7 @@ var wbits16 = function(d, p, v) {
   d[o + 1] |= v >> 8;
   d[o + 2] |= v >> 16;
 };
-var hTree = function(d, mb) {
+var hTree = function(d, mb2) {
   var t = [];
   for (var i = 0; i < d.length; ++i) {
     if (d[i])
@@ -6818,36 +7012,36 @@ var hTree = function(d, mb) {
   }
   var tr = new u16(maxSym + 1);
   var mbt = ln(t[i1 - 1], tr, 0);
-  if (mbt > mb) {
+  if (mbt > mb2) {
     var i = 0, dt = 0;
-    var lft = mbt - mb, cst = 1 << lft;
+    var lft = mbt - mb2, cst = 1 << lft;
     t2.sort(function(a, b) {
       return tr[b.s] - tr[a.s] || a.f - b.f;
     });
     for (; i < s; ++i) {
       var i2_1 = t2[i].s;
-      if (tr[i2_1] > mb) {
+      if (tr[i2_1] > mb2) {
         dt += cst - (1 << mbt - tr[i2_1]);
-        tr[i2_1] = mb;
+        tr[i2_1] = mb2;
       } else
         break;
     }
     dt >>= lft;
     while (dt > 0) {
       var i2_2 = t2[i].s;
-      if (tr[i2_2] < mb)
-        dt -= 1 << mb - tr[i2_2]++ - 1;
+      if (tr[i2_2] < mb2)
+        dt -= 1 << mb2 - tr[i2_2]++ - 1;
       else
         ++i;
     }
     for (; i >= 0 && dt; --i) {
       var i2_3 = t2[i].s;
-      if (tr[i2_3] == mb) {
+      if (tr[i2_3] == mb2) {
         --tr[i2_3];
         ++dt;
       }
     }
-    mbt = mb;
+    mbt = mb2;
   }
   return { t: new u8(tr), l: mbt };
 };
@@ -7387,7 +7581,7 @@ function parseCrumbId(id) {
   const m = CRUMB_RE.exec(id);
   return m ? { key: m[1], kind: m[2], n: Number(m[3]) } : null;
 }
-var isLocal = (syncState) => syncState !== "cloud-only";
+var isLocal = (syncState2) => syncState2 !== "cloud-only";
 function watchSlots(key, cb) {
   return getStore().files.watchFolder(CRUMBS, (snap) => {
     const all = [];
@@ -7404,10 +7598,18 @@ function watchSlots(key, cb) {
     cb([...manual, ...autos], all, snap.complete);
   });
 }
+var foldersEnsured = /* @__PURE__ */ new Map();
 async function put(identifier, sealed) {
   const store2 = getStore();
-  await store2.files.ensureFolder(identifier.replace(/\/[^/]*$/, ""));
-  return store2.file(identifier, { mode: "existing" }).save(new Blob([sealed]));
+  const folder = identifier.replace(/\/[^/]*$/, "");
+  let ensured = foldersEnsured.get(folder);
+  if (!ensured) {
+    ensured = store2.files.ensureFolder(folder);
+    foldersEnsured.set(folder, ensured);
+    ensured.catch(() => foldersEnsured.delete(folder));
+  }
+  await ensured;
+  return track(labelFor(identifier), sealed.length, store2.file(identifier, { mode: "existing" }).save(new Blob([sealed])));
 }
 async function get(identifier) {
   const store2 = getStore();
@@ -7415,9 +7617,9 @@ async function get(identifier) {
   const blob = await store2.file(identifier, { mode: "existing" }).open();
   return blob ? new Uint8Array(await blob.arrayBuffer()) : null;
 }
-async function saveSnapshot(identifier, state, meta, password) {
+async function saveSnapshot(identifier, state2, meta, password) {
   const thumb = meta.thumb ? btoa(Array.from(meta.thumb, (b) => String.fromCharCode(b)).join("")) : void 0;
-  return put(identifier, await sealBytes(password, state, { salt: sessionSalt, compress: true, meta: { thumb, at: meta.at, auto: meta.auto, fp: meta.fp, t: meta.title } }));
+  return put(identifier, await sealBytes(password, state2, { salt: sessionSalt, compress: true, meta: { thumb, at: meta.at, auto: meta.auto, fp: meta.fp, t: meta.title } }));
 }
 async function loadSnapshot(identifier, password) {
   const sealed = await get(identifier);
@@ -7426,13 +7628,22 @@ async function loadSnapshot(identifier, password) {
   return { state: plain, meta };
 }
 async function peekMeta(identifier, password) {
-  const stream = await getStore().file(identifier, { mode: "existing" }).openStream();
+  const f = getStore().file(identifier, { mode: "existing" });
+  const head = await f.getHead({ bytesLength: HEAD_PEEK_BYTES, source: "local" }).catch(() => null);
+  if (head) {
+    const got = await openHead(new Uint8Array(await head.arrayBuffer()), password);
+    if (got) return got.meta;
+  }
+  const stream = await f.openStream();
   if (!stream) return null;
   try {
     return (await openDisc({ size: stream.totalSize, read: (o, n) => stream.read(o, n) }, password)).meta;
   } finally {
     stream.close();
   }
+}
+async function renameJam(from, to) {
+  return (await getStore().file(from, { mode: "existing" }).tryMove(to)).ok;
 }
 var peekSnapshot = peekMeta;
 async function moveSnapshot(from, to) {
@@ -7470,11 +7681,11 @@ function listFolderOnce(folder, timeoutMs = 1e4) {
     const finish = () => {
       if (settled) return;
       settled = true;
-      clearTimeout(timer);
+      clearTimeout(timer2);
       queueMicrotask(() => off?.());
       resolve(latest);
     };
-    const timer = setTimeout(finish, timeoutMs);
+    const timer2 = setTimeout(finish, timeoutMs);
     off = getStore().files.watchFolder(folder, (snap) => {
       latest = { items: snap.items.map((it) => ({ identifier: it.identifier, syncState: it.syncState, size: it.size, lastModified: it.lastModified })), complete: snap.complete };
       if (snap.complete) finish();
@@ -7497,16 +7708,16 @@ var SYNC_TEXT = {
   "float": "\u53EA\u5728\u8FD9\u53F0\u8BBE\u5907\uFF0C\u4ECE\u6CA1\u4F20\u8FC7",
   "local-only": "\u53EA\u5728\u8FD9\u53F0\u8BBE\u5907"
 };
-var needsAttention = (syncState) => !["synced", "cloud-only", "local-only"].includes(syncState);
-async function nudge(identifier, syncState) {
+var needsAttention = (syncState2) => !["synced", "cloud-only", "local-only"].includes(syncState2);
+async function nudge(identifier, syncState2) {
   const f = getStore().file(identifier, { mode: "existing" });
-  if (syncState === "newer-on-cloud") {
+  if (syncState2 === "newer-on-cloud") {
     await f.pullIfClean();
     return "\u5DF2\u6362\u6210\u4E91\u7AEF\u90A3\u4EFD";
   }
-  const local = await f.open();
-  if (!local) return "\u8FD9\u53F0\u8BBE\u5907\u4E0A\u6CA1\u6709\u5B83\u7684\u526F\u672C";
-  const r = await f.save(local);
+  const local2 = await f.open();
+  if (!local2) return "\u8FD9\u53F0\u8BBE\u5907\u4E0A\u6CA1\u6709\u5B83\u7684\u526F\u672C";
+  const r = await f.save(local2);
   if (r.pushed) return "\u4F20\u4E0A\u53BB\u4E86";
   return r.reason === "cancelled" || r.resolution ? `\u8FD9\u6B21\u6CA1\u4F20\uFF08${r.resolution ?? r.reason}\uFF09` : `\u8FD8\u6CA1\u4F20\u4E0A\u53BB\uFF08${r.reason ?? "\u770B\u6A2A\u6761"}\uFF09`;
 }
@@ -7531,7 +7742,7 @@ async function loadMemstick(k, password, ids, complete) {
           unreadable.add(id);
           continue;
         }
-        got.set(id, { dir, entries });
+        got.set(id, { dir, entries, at: meta.at });
       } catch (e) {
         if (e instanceof WrongPasswordError) wrongPassword++;
         else console.warn("[memstick]", id, e);
@@ -7544,15 +7755,16 @@ async function loadMemstick(k, password, ids, complete) {
   const owners = /* @__PURE__ */ new Map();
   for (const [id, { dir }] of got) owners.set(dir, [...owners.get(dir) ?? [], id]);
   const duplicates = new Map([...owners].filter(([, v]) => v.length > 1));
-  const files = /* @__PURE__ */ new Map(), dirs = /* @__PURE__ */ new Set(), loaded = /* @__PURE__ */ new Map();
-  for (const [id, { dir, entries }] of got) {
+  const files = /* @__PURE__ */ new Map(), dirs = /* @__PURE__ */ new Set(), loaded = /* @__PURE__ */ new Map(), times = /* @__PURE__ */ new Map();
+  for (const [id, { dir, entries, at }] of got) {
     setLabel(id, describeJar({ k, m: "shared", u: dir }));
     if (duplicates.has(dir)) continue;
     loaded.set(id, dir);
     dirs.add(dir);
+    if (at) times.set(dir, at);
     for (const [path, bytes] of Object.entries(entries)) files.set(path, bytes);
   }
-  return { files, dirs, complete, loaded, unreadable, duplicates };
+  return { files, dirs, complete, loaded, unreadable, duplicates, times };
 }
 async function saveSaveDir(jar, files, password) {
   const id = await jamId(jar);
@@ -7641,8 +7853,10 @@ var Snapshots = class {
       throw new Error("\u4E0A\u4E00\u4E2A\u5FEB\u7167\u8FD8\u5728\u5B58\uFF0C\u7B49\u4E00\u4E0B\u518D\u5B58");
     }
     this.busy = true;
+    let label = slotLabel({ kind, n });
+    beginLocal(`${auto ? "\u81EA\u52A8\u5FEB\u7167" : `\u5FEB\u7167\u300C${label}\u300D`}`);
     try {
-      const { state, frame: frame2 } = await this.session.snapshot();
+      const { state: state2, frame: frame2 } = await this.session.snapshot();
       this.playedSinceSnap = 0;
       const pw = auto ? this.verbs.knownPassword() ?? await this.verbs.password("\u5FEB\u7167") : await this.verbs.password("\u5FEB\u7167");
       if (!pw) return;
@@ -7652,8 +7866,6 @@ var Snapshots = class {
       } catch (e) {
         console.warn("[thumb]", e);
       }
-      let label = slotLabel({ kind, n });
-      if (!auto) this.verbs.say(`\u6B63\u5728\u5B58\u300C${label}\u300D\u2026`, 6e4);
       await this.tryHeal();
       if (this.adopted.has(crumbId(this.disc.key, kind, n))) {
         if (!auto) {
@@ -7663,12 +7875,12 @@ var Snapshots = class {
         const alt = this.pickAutoSlot();
         if (!alt) return;
         n = alt.n;
+        label = slotLabel({ kind, n });
       }
-      const r = await saveSnapshot(crumbId(this.disc.key, kind, n), state, { thumb, at: Date.now(), auto, fp: this.disc.fp, title: this.disc.title }, pw);
-      label = slotLabel({ kind, n });
-      this.verbs.say(`${auto ? "\u81EA\u52A8\u5FEB\u7167" : `\u5DF2\u5B58\u300C${label}\u300D`}${r.pushed ? "\uFF0C\u5DF2\u4F20\u5230 OneDrive" : "\uFF0C\u5148\u5B58\u5728\u8FD9\u53F0\u8BBE\u5907\uFF0C\u8054\u7F51\u767B\u5F55\u540E\u81EA\u52A8\u4F20"}`);
+      const r = await saveSnapshot(crumbId(this.disc.key, kind, n), state2, { thumb, at: Date.now(), auto, fp: this.disc.fp, title: this.disc.title }, pw);
       if (r.pushed) tidyLocalSnapshots(this.slots).catch((e) => console.warn("[tidy]", e));
     } finally {
+      endLocal();
       this.busy = false;
     }
   }
@@ -7772,107 +7984,9 @@ var Snapshots = class {
 };
 
 // src/app/panels.ts
+var fmtTs = (ts) => ts && ts.length >= 12 ? `${ts.slice(0, 4)}-${ts.slice(4, 6)}-${ts.slice(6, 8)} ${ts.slice(8, 10)}:${ts.slice(10, 12)}` : "";
 var fmtWhen = (t) => t ? new Date(t).toLocaleString() : "";
 var fmtSize = (n) => n ? n >= 2 ** 20 ? `${(n / 2 ** 20).toFixed(1)} MB` : `${(n / 1024).toFixed(0)} KB` : "";
-function describe(it, meta, ctx) {
-  const when = meta?.at ?? null;
-  const c = parseCrumbId(it.identifier);
-  if (c) {
-    const game = meta?.t ?? ctx.titleByKey(c.key) ?? (meta?.fp?.id ? `${meta.fp.id}${meta.fp.v ? ` v${meta.fp.v}` : ""}` : null);
-    return { name: `\u5FEB\u7167 ${c.kind === "s" ? "\u624B\u52A8" : "\u81EA\u52A8"} ${c.n}${game ? ` \xB7 ${game}` : ""}`, when };
-  }
-  const dir = meta?.jar?.u;
-  if (dir) {
-    const t = ctx.titleByDir(dir);
-    return { name: `\u5B58\u6863 ${dir}${t ? ` \xB7 ${t}` : ""}`, when };
-  }
-  return { name: labelFor(it.identifier), when };
-}
-var detailLine = (it, when) => [when ? fmtWhen(when) : it.lastModified ? `${fmtWhen(it.lastModified)}\uFF08\u6587\u4EF6\u65F6\u95F4\uFF09` : "\u65F6\u95F4\u4E0D\u660E", SYNC_TEXT[it.syncState] ?? it.syncState, fmtSize(it.size)].filter(Boolean).join(" \xB7 ");
-async function openSaveManager(ctx) {
-  let jars, crumbs, complete;
-  try {
-    const [j, c] = await withBusy("\u6B63\u5728\u5217\u5B58\u6863\u2026", () => Promise.all([listFolderOnce(jarFolder(PLATFORM_CODE.psp), 8e3), listFolderOnce(CRUMBS, 8e3)]));
-    jars = j.items;
-    crumbs = c.items;
-    complete = j.complete && c.complete;
-  } catch (e) {
-    banner(`\u5217\u4E0D\u51FA\u5B58\u6863\uFF1A${errorText(e)}`);
-    return;
-  }
-  const all = [...jars, ...crumbs].sort((a, b) => (b.lastModified ?? 0) - (a.lastModified ?? 0));
-  const todo = all.filter((it) => needsAttention(it.syncState)), fine = all.filter((it) => !needsAttention(it.syncState));
-  const rowEls = /* @__PURE__ */ new Map();
-  let cancelled = false;
-  const fill = async () => {
-    const pw = ctx.password();
-    if (!pw) return;
-    const queue = all.slice();
-    const worker = async () => {
-      while (queue.length && !cancelled) {
-        const it = queue.shift();
-        const els = rowEls.get(it.identifier);
-        if (!els) continue;
-        const meta = await peekMeta(it.identifier, pw).catch(() => null);
-        const d = describe(it, meta, ctx);
-        els.name.textContent = d.name;
-        els.detail.textContent = detailLine(it, d.when);
-      }
-    };
-    await Promise.all(Array.from({ length: 4 }, worker));
-  };
-  await sheet((done) => {
-    const row = (it) => {
-      const name = h("span", { class: "slot-name" }, labelFor(it.identifier));
-      const detail = h("span", { class: "muted" }, detailLine(it, null));
-      rowEls.set(it.identifier, { name, detail });
-      return h(
-        "div",
-        { class: "bin-row" },
-        h("div", { class: "slot-text" }, name, detail),
-        needsAttention(it.syncState) ? h("button", { class: "primary", onclick: async () => {
-          done();
-          try {
-            note(await nudge(it.identifier, it.syncState), 6e3);
-          } catch (e) {
-            banner(`\u6CA1\u5904\u7406\u6210\uFF1A${errorText(e)}`);
-          }
-        } }, it.syncState === "newer-on-cloud" ? "\u62C9\u4E91\u7AEF\u7684" : "\u63A8\u4E00\u628A") : null,
-        h("button", { title: "\u79FB\u5230\u56DE\u6536\u7AD9", onclick: async () => {
-          done();
-          try {
-            if (await deleteJam(it.identifier)) note("\u5DF2\u79FB\u5230\u56DE\u6536\u7AD9");
-          } catch (e) {
-            banner(`\u6CA1\u80FD\u79FB\u5230\u56DE\u6536\u7AD9\uFF1A${errorText(e)}`);
-          }
-        } }, "\u5220")
-      );
-    };
-    const unlock = ctx.password() ? null : h("button", { onclick: async () => {
-      if (await ctx.askPassword()) {
-        unlock.remove();
-        void fill();
-      }
-    } }, "\u8F93\u5165\u53E3\u4EE4\uFF0C\u770B\u662F\u54EA\u4E2A\u6E38\u620F");
-    void fill();
-    return [
-      h("h2", {}, "\u5B58\u6863\u7BA1\u7406"),
-      h("p", { class: "hint" }, `${complete ? "" : "\u4E91\u7AEF\u5217\u8868\u6CA1\u62FF\u5168\uFF08\u6CA1\u767B\u5F55 / \u7F51\u7EDC\u6162\uFF09\uFF0C\u770B\u5230\u7684\u53EF\u80FD\u4E0D\u5168\u3002"}\u300C\u63A8\u4E00\u628A\u300D= \u628A\u8FD9\u53F0\u7684\u90A3\u4EFD\u518D\u4F20\u4E00\u6B21\uFF1A\u4E91\u7AEF\u4E5F\u6539\u8FC7\u5C31\u4F1A\u8BA9\u4F60\u9009\uFF0C\u8F93\u7684\u8FDB\u5907\u4EFD\u7BB1\u3002`),
-      unlock,
-      h("h3", {}, todo.length ? `\u8981\u5904\u7406\u7684\uFF08${todo.length}\uFF09` : "\u6CA1\u6709\u8981\u5904\u7406\u7684"),
-      todo.length ? h("div", { class: "bins" }, ...todo.map(row)) : null,
-      h("h3", {}, `\u6B63\u5E38\u7684\uFF08${fine.length}\uFF09`),
-      fine.length ? h("div", { class: "bins" }, ...fine.map(row)) : h("p", { class: "muted" }, "\u7A7A\u7684\u3002"),
-      h("div", { class: "row" }, h("button", { onclick: () => {
-        done();
-        openBins().catch((e) => banner(errorText(e)));
-      } }, "\u56DE\u6536\u7AD9 / \u5907\u4EFD\u7BB1"), h("button", { onclick: () => done() }, "\u5173\u95ED"))
-    ].filter(Boolean);
-  }).finally(() => {
-    cancelled = true;
-  });
-}
-var fmtTs = (ts) => ts && ts.length >= 12 ? `${ts.slice(0, 4)}-${ts.slice(4, 6)}-${ts.slice(6, 8)} ${ts.slice(8, 10)}:${ts.slice(10, 12)}` : "";
 var sideText = { local: "\u53EA\u5728\u8FD9\u53F0\u8BBE\u5907", cloud: "\u53EA\u5728\u4E91\u7AEF", both: "\u4E24\u8FB9\u90FD\u6709" };
 async function openBins() {
   let items;
@@ -7910,7 +8024,167 @@ async function openBins() {
     ];
   });
 }
-async function resolveDuplicates(duplicates, peek) {
+function gameOf(r, ctx) {
+  const c = parseCrumbId(r.it.identifier);
+  if (c) return r.meta?.t ?? ctx.titleByKey(c.key) ?? (r.meta?.fp?.id ? `${r.meta.fp.id}${r.meta.fp.v ? ` v${r.meta.fp.v}` : ""}` : `\u4EE3\u53F7 ${c.key.slice(0, 8)}\u2026`);
+  const dir = r.meta?.jar?.u;
+  if (dir) return ctx.titleByDir(dir) ?? dir.slice(0, 9);
+  return r.peeked ? "\u522B\u7684" : "\u2026";
+}
+function nameOf(r) {
+  const c = parseCrumbId(r.it.identifier);
+  if (c) return `\u5FEB\u7167 ${c.kind === "s" ? "\u624B\u52A8" : "\u81EA\u52A8"} ${c.n}`;
+  const dir = r.meta?.jar?.u;
+  return dir ? `\u5B58\u6863 ${dir}` : labelFor(r.it.identifier);
+}
+var whenOf = (r) => r.meta?.at ?? r.it.lastModified ?? 0;
+var whenText = (r) => r.meta?.at ? fmtWhen(r.meta.at) : r.it.lastModified ? `${fmtWhen(r.it.lastModified)}\uFF08\u6587\u4EF6\u65F6\u95F4\uFF09` : "\u65F6\u95F4\u4E0D\u660E";
+async function openSaveManager(ctx) {
+  let jars, crumbs, complete;
+  try {
+    const [j, c] = await withBusy("\u6B63\u5728\u5217\u5B58\u6863\u2026", () => Promise.all([listFolderOnce(jarFolder(PLATFORM_CODE.psp), 8e3), listFolderOnce(CRUMBS, 8e3)]));
+    jars = j.items;
+    crumbs = c.items;
+    complete = j.complete && c.complete;
+  } catch (e) {
+    banner(`\u5217\u4E0D\u51FA\u5B58\u6863\uFF1A${errorText(e)}`);
+    return;
+  }
+  const only = ctx.only;
+  const rows = [...jars, ...crumbs].filter((it) => {
+    const c = parseCrumbId(it.identifier);
+    return !only || !c || c.key === only.key;
+  }).map((it) => ({ it, meta: null, peeked: false }));
+  let cancelled = false, peeking = 0;
+  const body = h("div", { class: "sm-body" });
+  let closeSheet = () => {
+  };
+  const render2 = () => {
+    const visible = rows.filter((r) => !(only && r.meta?.jar && !(only.discId && r.meta.jar.u.toUpperCase().startsWith(only.discId.toUpperCase()))));
+    const todo = visible.filter((r) => needsAttention(r.it.syncState)).sort((a, b) => whenOf(b) - whenOf(a));
+    const groups = /* @__PURE__ */ new Map();
+    for (const r of visible) groups.set(gameOf(r, ctx), [...groups.get(gameOf(r, ctx)) ?? [], r]);
+    const sections = [...groups].map(([g, rs]) => [g, rs.sort((a, b) => whenOf(b) - whenOf(a))]).sort((a, b) => whenOf(b[1][0]) - whenOf(a[1][0]));
+    body.replaceChildren(
+      h("h3", {}, todo.length ? `\u8981\u5904\u7406\u7684\uFF08${todo.length}\uFF09` : "\u6CA1\u6709\u8981\u5904\u7406\u7684"),
+      ...todo.length ? [h("div", { class: "bins" }, ...todo.map((r) => row(r, true)))] : [],
+      ...peeking ? [h("p", { class: "muted" }, `\u6B63\u5728\u8BFB\u540D\u5B57\u548C\u65F6\u95F4\u2026\uFF08\u8FD8\u6709 ${peeking} \u6761\uFF09`)] : [],
+      ...sections.flatMap(([g, rs]) => [h("h3", {}, `${g}\uFF08${rs.length}\uFF09`), h("div", { class: "bins" }, ...rs.map((r) => row(r, false)))]),
+      ...visible.length ? [] : [h("p", { class: "muted" }, "\u7A7A\u7684\u3002")]
+    );
+  };
+  const row = (r, inTodo) => {
+    const c = parseCrumbId(r.it.identifier);
+    const thumb = c ? h("div", { class: "thumb small" }, r.meta?.thumb ? h("img", { src: `data:image/jpeg;base64,${r.meta.thumb}`, alt: "" }) : null) : null;
+    const canLoad = c && ctx.loadSnapshot && c.key === ctx.loadSnapshot.key && r.it.syncState !== "cloud-only" ? ctx.loadSnapshot : null;
+    return h(
+      "div",
+      { class: `bin-row${needsAttention(r.it.syncState) ? " attention" : ""}` },
+      thumb,
+      h(
+        "div",
+        { class: "slot-text" },
+        h("span", { class: "slot-name" }, inTodo ? `${nameOf(r)} \xB7 ${gameOf(r, ctx)}` : nameOf(r)),
+        h("span", { class: "muted" }, [whenText(r), SYNC_TEXT[r.it.syncState] ?? r.it.syncState, fmtSize(r.it.size)].filter(Boolean).join(" \xB7 "))
+      ),
+      needsAttention(r.it.syncState) ? h("button", { class: "primary", onclick: async () => {
+        closeSheet();
+        try {
+          note(await nudge(r.it.identifier, r.it.syncState), 6e3);
+        } catch (e) {
+          banner(`\u6CA1\u5904\u7406\u6210\uFF1A${errorText(e)}`);
+        }
+      } }, r.it.syncState === "newer-on-cloud" ? "\u62C9\u4E91\u7AEF\u7684" : "\u63A8\u4E00\u628A") : null,
+      canLoad ? h("button", { class: "primary", onclick: () => {
+        closeSheet();
+        canLoad.load(r.it.identifier, c.kind, c.n);
+      } }, "\u8BFB") : null,
+      h("button", { title: "\u79FB\u5230\u56DE\u6536\u7AD9", onclick: async () => {
+        closeSheet();
+        try {
+          if (await deleteJam(r.it.identifier)) note("\u5DF2\u79FB\u5230\u56DE\u6536\u7AD9");
+        } catch (e) {
+          banner(`\u6CA1\u80FD\u79FB\u5230\u56DE\u6536\u7AD9\uFF1A${errorText(e)}`);
+        }
+      } }, "\u5220")
+    );
+  };
+  const fill = async () => {
+    const pw = ctx.password();
+    if (!pw) return;
+    const queue = rows.filter((r) => !r.peeked);
+    peeking = queue.length;
+    render2();
+    let dirty = false;
+    const flush = () => {
+      if (dirty && !cancelled) {
+        dirty = false;
+        render2();
+      }
+    };
+    const ticker = setInterval(flush, 400);
+    const worker = async () => {
+      while (queue.length && !cancelled) {
+        const r = queue.shift();
+        r.meta = await peekMeta(r.it.identifier, pw).catch(() => null);
+        r.peeked = true;
+        peeking--;
+        dirty = true;
+      }
+    };
+    await Promise.all(Array.from({ length: 4 }, worker));
+    clearInterval(ticker);
+    flush();
+  };
+  render2();
+  void fill();
+  await sheet((done) => {
+    closeSheet = () => done();
+    const unlock = ctx.password() ? null : h("button", { onclick: async () => {
+      if (await ctx.askPassword()) {
+        unlock.remove();
+        void fill();
+      }
+    } }, "\u8F93\u5165\u53E3\u4EE4\uFF0C\u770B\u662F\u54EA\u4E2A\u6E38\u620F");
+    return [
+      h("h2", {}, only ? `\u5B58\u6863\u7BA1\u7406 \xB7 ${only.title}` : "\u5B58\u6863\u7BA1\u7406"),
+      h("p", { class: "hint" }, `${complete ? "" : "\u4E91\u7AEF\u5217\u8868\u6CA1\u62FF\u5168\uFF08\u6CA1\u767B\u5F55 / \u7F51\u7EDC\u6162\uFF09\uFF0C\u770B\u5230\u7684\u53EF\u80FD\u4E0D\u5168\u3002"}\u300C\u63A8\u4E00\u628A\u300D= \u628A\u8FD9\u53F0\u7684\u90A3\u4EFD\u518D\u4F20\u4E00\u6B21\uFF1A\u4E91\u7AEF\u4E5F\u6539\u8FC7\u5C31\u4F1A\u8BA9\u4F60\u9009\uFF0C\u8F93\u7684\u8FDB\u5907\u4EFD\u7BB1\u3002`),
+      unlock,
+      body,
+      h(
+        "div",
+        { class: "row" },
+        h("button", { onclick: () => {
+          done();
+          openBins().catch((e) => banner(errorText(e)));
+        } }, "\u56DE\u6536\u7AD9 / \u5907\u4EFD\u7BB1"),
+        h("button", { onclick: () => {
+          done();
+          openLog();
+        } }, "\u540C\u6B65\u65E5\u5FD7"),
+        h("button", { onclick: () => done() }, "\u5173\u95ED")
+      )
+    ].filter(Boolean);
+  }).finally(() => {
+    cancelled = true;
+  });
+}
+function openLog() {
+  const text = dumpLog();
+  void sheet((done) => [
+    h("h2", {}, "\u540C\u6B65\u65E5\u5FD7\uFF08\u8FD9\u4E00\u9875\uFF09"),
+    h("pre", { class: "log" }, text),
+    h(
+      "div",
+      { class: "row" },
+      h("button", { onclick: () => {
+        navigator.clipboard?.writeText(text).then(() => note("\u5DF2\u590D\u5236"), () => note("\u590D\u5236\u4E0D\u4E86\uFF0C\u624B\u52A8\u9009\u4E2D\u590D\u5236"));
+      } }, "\u590D\u5236"),
+      h("button", { onclick: () => done() }, "\u5173\u95ED")
+    )
+  ]);
+}
+async function resolveDuplicates(duplicates, peek, standardId) {
   let changed = false;
   for (const [dir, ids] of duplicates) {
     const infos = await Promise.all(ids.map(async (id) => ({ id, meta: await peek(id).catch(() => null) })));
@@ -7924,7 +8198,7 @@ async function resolveDuplicates(duplicates, peek) {
           "div",
           { class: "slot-text" },
           h("span", { class: "slot-name" }, labelFor(id)),
-          h("span", { class: "muted" }, `${id.replace(/^.*\//, "").slice(0, 8)}\u2026 \xB7 ${meta?.size ? `${(meta.size / 1024).toFixed(0)} KB` : ""}`)
+          h("span", { class: "muted" }, [meta?.at ? fmtWhen(meta.at) : "\u65F6\u95F4\u4E0D\u660E", `${id.replace(/^.*\//, "").slice(0, 8)}\u2026`, meta?.size ? `${(meta.size / 1024).toFixed(0)} KB` : ""].filter(Boolean).join(" \xB7 "))
         ),
         h("button", { class: "primary", onclick: () => done(id) }, "\u7559\u8FD9\u4EFD")
       ))),
@@ -7937,6 +8211,15 @@ async function resolveDuplicates(duplicates, peek) {
         if (await deleteJam(id)) changed = true;
       } catch (e) {
         banner(`\u6CA1\u80FD\u79FB\u5230\u56DE\u6536\u7AD9\uFF1A${errorText(e)}`);
+      }
+    }
+    const std = await standardId(dir);
+    if (keep !== std) {
+      try {
+        if (await renameJam(keep, std)) changed = true;
+        else banner(`\u300C${dir}\u300D\u7559\u4E0B\u7684\u90A3\u7F50\u6CA1\u80FD\u6539\u56DE\u6807\u51C6\u540D\uFF08\u76EE\u6807\u8FD8\u88AB\u5360\u7740\uFF09\uFF1A\u4E0B\u6B21\u5F00\u76D8\u53EF\u80FD\u8FD8\u8981\u518D\u9009\u4E00\u6B21\u3002`, "warning");
+      } catch (e) {
+        banner(`\u6539\u540D\u5931\u8D25\uFF1A${errorText(e)}`);
       }
     }
   }
@@ -7967,15 +8250,19 @@ async function writeAll(out, body) {
   }
 }
 async function encryptToLocal(input, password, out, p) {
+  const src = { size: input.size, read: async (o, n) => new Uint8Array(await input.slice(o, o + n).arrayBuffer()) };
+  const label = await readDiscLabel(src);
+  const fp = { k: PLATFORM_CODE.psp, size: input.size, ...label?.id ? { id: label.id } : {}, ...label?.version ? { v: label.version } : {} };
   const writer = await beginDisc(password);
   await writeAll(out, async (w) => {
+    await w.write(new Uint8Array(writer.headBytes));
     for (let off = 0; off < input.size; off += CHUNK) {
       if (p.cancelled) throw new Cancelled();
       const plain = new Uint8Array(await input.slice(off, off + CHUNK).arrayBuffer());
       await w.write(await writer.encrypt(plain));
       p.update(Math.min(off + CHUNK, input.size), input.size);
     }
-    await w.write(await writer.finish({ name: input.name }));
+    await w.write({ type: "write", position: 0, data: await writer.finish({ name: input.name, fp }) });
   });
 }
 async function openForDecrypt(input, password) {
@@ -8128,13 +8415,15 @@ function renderLibrary() {
   }
   for (const d of discs) {
     const t = titles.get(d.identifier) ?? (d.identifier.endsWith(".wafter") ? null : stemOf2(d.identifier));
-    const local = d.syncState !== "cloud-only";
+    const local2 = d.syncState !== "cloud-only";
     rows.push(h(
       "div",
       { class: "disc-row" },
       h(
         "button",
-        { class: "disc", onclick: () => playFromPantry(d.identifier, false) },
+        { class: "disc", onclick: () => {
+          discMenu(d.identifier).catch((e) => banner(errorText(e)));
+        } },
         t ? null : icon("lock"),
         h(
           "span",
@@ -8142,14 +8431,14 @@ function renderLibrary() {
           h("span", {}, t ?? stemOf2(d.identifier)),
           t && t !== stemOf2(d.identifier) ? h("span", { class: "sub muted" }, stemOf2(d.identifier) + (d.identifier.match(/\.[^.]*$/)?.[0] ?? "")) : null
         ),
-        h("span", { class: "muted" }, `${gb(d.size)}${local ? " \xB7 \u672C\u673A" : ""}`)
+        h("span", { class: "muted" }, `${gb(d.size)}${local2 ? " \xB7 \u672C\u673A" : ""}`)
       ),
       // 留一份在这台设备（离线能玩、不等网）/ 移除本机副本（云端那份不动）。user 10-14「可以加一个手动cache的功能」
       h("button", {
         class: "icon-btn",
-        title: local ? "\u79FB\u9664\u8FD9\u53F0\u8BBE\u5907\u4E0A\u7684\u526F\u672C\uFF08\u4E91\u7AEF\u4E0D\u52A8\uFF09" : "\u628A\u8FD9\u5F20\u76D8\u6574\u4E2A\u7559\u5728\u8FD9\u53F0\u8BBE\u5907\u4E0A\uFF08\u79BB\u7EBF\u4E5F\u80FD\u73A9\uFF09",
-        onclick: () => local ? offloadDisc(d.identifier) : keepDisc(d.identifier)
-      }, icon(local ? "x" : "cloud"))
+        title: local2 ? "\u79FB\u9664\u8FD9\u53F0\u8BBE\u5907\u4E0A\u7684\u526F\u672C\uFF08\u4E91\u7AEF\u4E0D\u52A8\uFF09" : "\u628A\u8FD9\u5F20\u76D8\u6574\u4E2A\u7559\u5728\u8FD9\u53F0\u8BBE\u5907\u4E0A\uFF08\u79BB\u7EBF\u4E5F\u80FD\u73A9\uFF09",
+        onclick: () => local2 ? offloadDisc(d.identifier) : keepDisc(d.identifier)
+      }, icon(local2 ? "x" : "cloud"))
     ));
   }
   if (!discs.length && auth.isSignedIn()) {
@@ -8168,7 +8457,27 @@ function renderLibrary() {
   list.replaceChildren(...rows);
   $("unlock").hidden = !locked;
 }
+async function discMenu(identifier) {
+  const card = cards.get(identifier);
+  const title = card?.title ?? (identifier.endsWith(".wafter") ? "\u8FD9\u5F20\u76D8" : stemOf2(identifier));
+  const choice = await sheet((done) => [
+    h("h2", {}, title),
+    h(
+      "div",
+      { class: "menu" },
+      h("button", { class: "primary", onclick: () => done("resume") }, "\u4ECE\u4E0A\u6B21\u5F00\u59CB\uFF08\u8BFB\u6700\u65B0\u7684\u5FEB\u7167\uFF09"),
+      h("button", { onclick: () => done("fresh") }, "\u4ECE\u5934\u73A9\uFF08\u4E0D\u8BFB\u5FEB\u7167\uFF09"),
+      h("button", { onclick: () => done("saves") }, "\u5B58\u6863\u7BA1\u7406"),
+      h("button", { onclick: () => done(null) }, "\u53D6\u6D88")
+    )
+  ]);
+  if (choice === "resume" || choice === "fresh") playFromPantry(identifier, choice === "resume");
+  else if (choice === "saves") await openSaveManager({ ...saveManagerContext, only: card ? { title: card.title, key: card.key, discId: card.fp.id } : void 0 });
+}
 var saveManagerContext = {
+  get loadSnapshot() {
+    return current && snaps ? { key: current.key, load: (id, kind, n) => loadFrom({ id, kind, n }) } : void 0;
+  },
   password: () => getPassword(),
   async askPassword() {
     const pw = await askPassword("\u8F93\u5165\u53E3\u4EE4", "\u8BFB\u5FEB\u7167 / \u5B58\u6863\u7684\u5143\u6570\u636E\u624D\u77E5\u9053\u662F\u54EA\u4E2A\u6E38\u620F\u3002\u53E3\u4EE4\u53EA\u5728\u8FD9\u4E00\u9875\u91CC\u8BB0\u7740\u3002");
@@ -8279,6 +8588,7 @@ async function play(prepare, resume) {
   if (!disc) return;
   current = disc;
   let memstick = /* @__PURE__ */ new Map();
+  let memstickTimes = /* @__PURE__ */ new Map();
   say("\u6B63\u5728\u8BFB\u8BB0\u5FC6\u68D2\u2026", 3e4);
   const listed = await listJams(PLATFORM_CODE.psp, auth.isSignedIn() ? 1e4 : 1500);
   if (listed.ids.length) {
@@ -8292,11 +8602,12 @@ async function play(prepare, resume) {
     if (loaded) {
       memstickInfo = loaded;
       memstick = loaded.files;
+      memstickTimes = loaded.times;
       say(`\u8BB0\u5FC6\u68D2\uFF1A${loaded.dirs.size} \u4E2A\u5B58\u6863`);
       if (loaded.unreadable.size) banner(`${loaded.unreadable.size} \u7F50\u5B58\u6863\u8FD9\u6B21\u6CA1\u8BFB\u8FDB\u6765\uFF08\u62FF\u4E0D\u5230\u3001\u53E3\u4EE4\u4E0D\u662F\u8FD9\u4E2A\u3001\u6216\u5185\u5BB9\u574F\u4E86\uFF09\uFF1A\u5B83\u4EEC\u5BF9\u5E94\u7684\u5B58\u6863\u8FD9\u4E00\u5C40\u4E0D\u4F1A\u88AB\u8986\u76D6\u3002`, "warning");
       if (loaded.duplicates.size) {
         const pw = getPassword();
-        const changed = await resolveDuplicates(loaded.duplicates, (id) => peekSnapshot(id, pw).then((m) => m && { at: m.at, size: m.size }));
+        const changed = await resolveDuplicates(loaded.duplicates, (id) => peekSnapshot(id, pw).then((m) => m && { at: m.at, size: m.size }), (dir) => jamId(PSP_JAR(dir)));
         if (changed) {
           banner("\u5B58\u6863\u6574\u7406\u597D\u4E86\uFF0C\u91CD\u65B0\u5F00\u8FD9\u5F20\u76D8\u5C31\u4F1A\u8BFB\u8FDB\u6765\u3002", "warning");
           return;
@@ -8316,13 +8627,14 @@ async function play(prepare, resume) {
   session = await CoreSession.start({
     media: disc.media,
     ext: disc.ext,
-    coreDir: "./dist/core-0bd947d151cb/",
+    coreDir: "./dist/core-4a2a574dc397/",
     glCanvas: $("gl"),
     softCanvas: $("screen"),
     audioContext: audioContext(),
     lowLatency: params.get("lowlatency") !== "0",
     pacing: params.get("pace") === "wall" ? "wall" : params.get("pace") === "audio" ? "audio" : void 0,
-    memstick
+    memstick,
+    memstickTimes
   });
   if (disc.identifier) {
     try {
@@ -8406,7 +8718,7 @@ async function jamTick(force) {
       jamSigs.delete(dir);
       wrote++;
     }
-    if (wrote) say(pushed ? "\u6E38\u620F\u5B58\u6863\u5DF2\u540C\u6B65\u5230 OneDrive" : "\u6E38\u620F\u5B58\u6863\u5DF2\u5B58\u5728\u8FD9\u53F0\u8BBE\u5907\uFF08\u8054\u7F51\u767B\u5F55\u540E\u81EA\u52A8\u4F20\u4E0A\u53BB\uFF09");
+    if (wrote && !pushed) console.info("[jam] saved locally, upload pending");
   } catch (e) {
     jamRetryAt = performance.now() + 3e4;
     banner(`\u6E38\u620F\u5B58\u6863\u6CA1\u5B58\u4E0A\uFF1A${errorText(e)}\uFF0830 \u79D2\u540E\u518D\u8BD5\uFF09`);
@@ -8589,7 +8901,7 @@ function renderToolbar() {
     h("span", { id: "title-wrap" }, $("title")),
     pauseBtn,
     ffBtn,
-    toolButton("floppy-disk", "\u5FEB\u7167", openSlots),
+    snapshotButton(),
     padBtn,
     toolButton("maximize-viewport", "\u5168\u5C4F\uFF08Alt+Enter / \u53CC\u51FB\u753B\u9762\uFF09", toggleFullscreen),
     toolButton("more", "\u7EDF\u8BA1", () => {
@@ -8600,6 +8912,13 @@ function renderToolbar() {
     toolButton("x", "\u9000\u51FA\u8FD9\u5F20\u76D8", quit)
   );
   $("paused-mark").hidden = !paused;
+}
+var syncState = { kind: "idle", text: "" };
+function snapshotButton() {
+  const b = toolButton("floppy-disk", syncState.kind === "idle" ? "\u5FEB\u7167" : `\u5FEB\u7167 \xB7 ${syncState.text}`, openSlots);
+  b.classList.add("smart", syncState.kind);
+  b.id = "snapshot-btn";
+  return b;
 }
 function togglePause() {
   if (!session) return;
@@ -8621,15 +8940,28 @@ function toggleFullscreen() {
   else $("stage").requestFullscreen({ navigationUI: "hide" }).catch((e) => say(`\u5168\u5C4F\u5931\u8D25\uFF1A${errorText(e)}`));
 }
 async function quit() {
-  const ok = await confirmSheet("\u9000\u51FA\uFF1F", "\u9000\u51FA\u524D\u4F1A\u5B58\u4E00\u4EFD\u81EA\u52A8\u5FEB\u7167\uFF1B\u6E38\u620F\u81EA\u5DF1\u5B58\u7684\u6863\u4E5F\u4F1A\u540C\u6B65\u3002", "\u9000\u51FA");
+  const ok = await confirmSheet("\u9000\u51FA\uFF1F", "\u6E38\u620F\u81EA\u5DF1\u5B58\u7684\u6863\u4F1A\u5148\u540C\u6B65\u5B8C\u518D\u9000\u51FA\uFF1B\u4E0D\u4F1A\u81EA\u52A8\u5B58\u5FEB\u7167\u3002", "\u9000\u51FA");
   if (!ok) return;
+  let leaveNow = false;
+  const status = h("p", { class: "muted" }, syncState.text || "\u6B63\u5728\u540C\u6B65\u2026");
+  const off = subscribe((s) => {
+    status.textContent = s.text || "\u6B63\u5728\u540C\u6B65\u2026";
+  });
+  const closing = sheet((done) => [
+    h("h2", {}, "\u6B63\u5728\u9000\u51FA\u2026"),
+    status,
+    h("div", { class: "row" }, h("button", { onclick: () => done("leave") }, "\u4E0D\u7B49\u4E86\uFF0C\u76F4\u63A5\u9000\u51FA"))
+  ], { dismissable: false }).then((v) => {
+    if (v === "leave") {
+      leaveNow = true;
+      location.reload();
+    }
+  });
   try {
-    await snaps?.onLeave();
-  } catch (e) {
-    banner(`\u81EA\u52A8\u5FEB\u7167\u6CA1\u5B58\u4E0A\uFF1A${errorText(e)}`);
-    return;
+    if (!leaveNow) await jamTick(true);
+  } finally {
+    off();
   }
-  await jamTick(true);
   location.reload();
 }
 var PAD_MAP = [
@@ -8838,10 +9170,15 @@ async function boot() {
   addEventListener("keydown", (e) => onKey(e, true));
   addEventListener("keyup", (e) => onKey(e, false));
   addEventListener("blur", () => session?.setMask("keyboard", 0));
+  subscribe((s) => {
+    syncState = s;
+    const old = document.getElementById("snapshot-btn");
+    if (old && session) old.replaceWith(snapshotButton());
+  });
   for (const t of ["gesturestart", "gesturechange"]) document.addEventListener(t, (e) => e.preventDefault(), { passive: false });
-  const local = canWriteLocalFiles();
-  for (const id of ["make-wafter", "unwrap-wafter"]) $(id).disabled = !local;
-  $("tools-hint").hidden = local;
+  const local2 = canWriteLocalFiles();
+  for (const id of ["make-wafter", "unwrap-wafter"]) $(id).disabled = !local2;
+  $("tools-hint").hidden = local2;
   $("make-wafter").addEventListener("click", () => {
     makeWafer().catch(toolErr);
   });
@@ -8862,6 +9199,16 @@ async function boot() {
   });
   const store2 = getStore();
   watchPantry();
+  mount({ onClick: () => {
+    openSaveManager(saveManagerContext).catch((e) => banner(errorText(e)));
+  }, signedIn: () => auth.isSignedIn() });
+  const pendingBy = /* @__PURE__ */ new Map();
+  const countPending = (folder) => store2.files.watchFolder(folder, (snap) => {
+    pendingBy.set(folder, snap.items.filter((it) => needsAttention(it.syncState)).length);
+    setPending([...pendingBy.values()].reduce((a, b) => a + b, 0));
+  });
+  countPending(jarFolder(PLATFORM_CODE.psp));
+  countPending(CRUMBS);
   $("refresh").addEventListener("click", () => watchPantry());
   const refocus = () => {
     if (!session && auth.isSignedIn() && document.visibilityState === "visible") watchPantry();
@@ -8917,4 +9264,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-1c8f402b9d17.mjs.map
+//# sourceMappingURL=kudsrocket-4a39c4f1d0eb.mjs.map
