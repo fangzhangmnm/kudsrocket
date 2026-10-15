@@ -6,6 +6,9 @@
 }
 * { box-sizing: border-box; }
 html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); font: 15px/1.5 system-ui, sans-serif; }
+/* 防误缩放：双击不放大（捏合由 main.ts 拦 gesturestart；viewport 也禁了缩放） */
+html { touch-action: manipulation; -webkit-text-size-adjust: 100%; }
+body { -webkit-tap-highlight-color: transparent; }
 body { overscroll-behavior: none; }
 button { display: inline-flex; align-items: center; gap: 6px; font: inherit; color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 8px 14px; cursor: pointer; }
 button:hover { border-color: var(--ink-soft); }
@@ -23,7 +26,9 @@ button:disabled { opacity: .4; cursor: default; }
 .disc { display: flex; align-items: center; gap: 12px; text-align: left; padding: 14px 16px; width: 100%; }
 .disc .title { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 16px; }
 .disc.continue { border-color: var(--accent); }
-.local { padding-top: 8px; border-top: 1px solid var(--line); }
+.tools { padding-top: 12px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.tools p { flex-basis: 100%; margin: 0; font-size: 13px; }
+.sheet progress { width: 100%; }
 
 /* ── 游戏 ── */
 #game { position: fixed; inset: 0; display: grid; grid-template-rows: var(--tool) 1fr; }
@@ -76,7 +81,12 @@ button:disabled { opacity: .4; cursor: default; }
 .sheet .hint { color: var(--ink-soft); font-size: 13px; }
 .sheet input { font: inherit; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--line); background: #111; color: var(--ink); }
 .sheet .row { display: flex; justify-content: flex-end; gap: 8px; flex-wrap: wrap; }
-.slot { display: grid; grid-template-columns: auto 1fr auto auto; align-items: center; gap: 8px; padding: 6px 0; border-top: 1px solid var(--line); }
+.slots { display: grid; gap: 0; max-height: 60vh; overflow-y: auto; }
+.slot { display: grid; grid-template-columns: 96px 1fr auto; align-items: center; gap: 10px; padding: 6px 0; border-top: 1px solid var(--line); }
+.slot .thumb { width: 96px; aspect-ratio: 480 / 272; background: #000; border-radius: 4px; overflow: hidden; }
+.slot .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.slot-text { display: grid; min-width: 0; }
+.slot-buttons { display: flex; gap: 6px; }
 .slot.current .slot-name { color: var(--accent); }
 #banners { position: fixed; top: 8px; left: 50%; transform: translateX(-50%); width: min(640px, calc(100% - 16px)); display: grid; gap: 6px; z-index: 60; }
 .banner { display: flex; align-items: center; gap: 8px; padding: 8px 8px 8px 14px; border-radius: 8px; background: #3a1d1d; border: 1px solid var(--err); }

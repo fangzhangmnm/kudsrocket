@@ -1,5 +1,5 @@
 // src/version.ts
-var APP_VERSION = "v0.1.0-2026-10-14";
+var APP_VERSION = "v0.1.1-2026-10-14";
 
 // assets/icons.svg
 var icons_default = '<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none">\n<!--\n  12 icons extracted from the family icon library (../20260708 SVG Icons/icons.svg) by extract-icons.py \u2014 do not hand-edit; re-run the script instead.\n  Family SVG Icons \u2014 MIT License, Copyright (c) 2026 fangzhangmnm.\n  Contains work derived from (per-icon provenance in data-src):\n    Feather Icons \u2014 MIT License, Copyright (c) 2013-2023 Cole Bemis \xB7 https://github.com/feathericons/feather\n-->\n  <!-- media -->\n  <!-- pause \u2014 \u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="pause" data-cat="media" data-src="own" data-note="\u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="3.2"><path d="M8.3 5.5 V18.5"/><path d="M15.7 5.5 V18.5"/></g></symbol>\n  <!-- play \u2014 \u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="play" data-cat="media" data-src="own" data-note="\u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 5.4 L18.8 12 L8.2 18.6 Z" fill="currentColor"/></symbol>\n  <!-- fast-forward \u2014 \u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="fast-forward" data-cat="media" data-src="own" data-note="\u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.4 6.8 L10.9 12 L4.4 17.2 Z" fill="currentColor"/><path d="M13.1 6.8 L19.6 12 L13.1 17.2 Z" fill="currentColor"/></symbol>\n  <!-- file -->\n  <!-- floppy-disk \u2014 \u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3 -->\n  <symbol id="floppy-disk" data-cat="file" data-src="feather:save" data-note="\u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13l3 3v13a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 17 8 17 3"/></symbol>\n  <!-- folder-open \u2014 \u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF -->\n  <symbol id="folder-open" data-cat="file" data-src="own" data-note="\u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18 V7 a2 2 0 0 1 2 -2 h4 l2 2 h6 a2 2 0 0 1 2 2 v1.8"/><path d="M3 18 L6.4 10.8 H21.6 L18.2 18 Z"/></symbol>\n  <!-- hierarchy -->\n  <!-- lock \u2014 \u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D -->\n  <symbol id="lock" data-cat="hierarchy" data-src="own" data-note="\u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10" width="13" height="11"/><path d="M8.8 10 V6.5 a3.2 3.2 0 0 1 6.4 0 V10"/></symbol>\n  <!-- common -->\n  <!-- x \u2014 \u53C9 -->\n  <symbol id="x" data-cat="common" data-src="own" data-note="\u53C9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 L17.5 17.5 M17.5 6.5 L6.5 17.5"/></symbol>\n  <!-- cloud -->\n  <!-- cloud \u2014 \u4E91 -->\n  <symbol id="cloud" data-cat="cloud" data-src="feather:cloud" data-note="\u4E91" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>\n  <!-- viewport -->\n  <!-- maximize-viewport \u2014 \u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55) -->\n  <symbol id="maximize-viewport" data-cat="viewport" data-src="own" data-note="\u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934 --> <polyline points="4 9 4 4 9 4"/> <polyline points="20 9 20 4 15 4"/> <polyline points="4 15 4 20 9 20"/> <polyline points="20 15 20 20 15 20"/></symbol>\n  <!-- ui -->\n  <!-- more \u2014 \u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00) -->\n  <symbol id="more" data-cat="ui" data-src="own" data-note="\u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/></symbol>\n  <!-- keyboard \u2014 \u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49) -->\n  <symbol id="keyboard" data-cat="ui" data-src="own" data-note="\u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="7.2" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="7.2" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><path d="M8.6 15.6 H15.4"/></symbol>\n  <!-- missing -->\n  <!-- gamepad \u2014 \u7F3A\u56FE\u6807\u5360\u4F4D \u2014 gamepad \u5C1A\u672A\u8FDB icons.svg -->\n  <symbol data-missing="1" id="gamepad" data-cat="missing" data-src="own" data-note="\u7F3A\u56FE\u6807\u5360\u4F4D \u2014 gamepad \u5C1A\u672A\u8FDB icons.svg\uFF0C\u91CD\u8DD1 extract-icons.py \u53EF\u81EA\u52A8\u6362\u6210\u771F\u56FE\u6807" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2.5" stroke-dasharray="2.5 2.5" opacity="0.35"/></symbol>\n</svg>\n';
@@ -283,6 +283,7 @@ var CoreSession = class _CoreSession {
       poll();
     });
   }
+  /** 存整机状态；同一帧的画面（RGBA，左上角原点）一起交出来给缩略图用（取不到 = null）。 */
   async snapshot() {
     const { core } = this;
     const before = core._kr_snap_seq();
@@ -290,9 +291,11 @@ var CoreSession = class _CoreSession {
     await this.waitSeq(() => core._kr_snap_seq(), before);
     const size = core._kr_snap_size();
     if (!size) throw new Error("core returned no state");
-    const bytes = core.HEAPU8.slice(core._kr_snap_ptr(), core._kr_snap_ptr() + size);
+    const state = core.HEAPU8.slice(core._kr_snap_ptr(), core._kr_snap_ptr() + size);
     core._kr_snap_free();
-    return bytes;
+    const w = core._kr_thumb_w(), h2 = core._kr_thumb_h();
+    const frame2 = w > 0 && h2 > 0 ? { rgba: core.HEAPU8.slice(core._kr_thumb_ptr(), core._kr_thumb_ptr() + w * h2 * 4), w, h: h2 } : null;
+    return { state, frame: frame2 };
   }
   async restore(bytes) {
     const { core } = this;
@@ -5047,11 +5050,11 @@ function createGraph(tokenSource) {
       headers: eTag ? { "If-Match": eTag } : void 0
     });
     const { uploadUrl } = await sessR.json();
-    const CHUNK = 5 * 1024 * 1024;
+    const CHUNK2 = 5 * 1024 * 1024;
     let offset = 0;
     let last = null;
     while (offset < blob.size) {
-      const end = Math.min(offset + CHUNK, blob.size) - 1;
+      const end = Math.min(offset + CHUNK2, blob.size) - 1;
       const chunk = blob.slice(offset, end + 1);
       let r;
       try {
@@ -5904,6 +5907,11 @@ var DISC_SUFFIXES = [".wafter", ".iso", ".cso"];
 var CRUMB_SUFFIX = ".crumb";
 var JAM_SUFFIX = ".jam";
 var SLOTS = 4;
+var AUTO_SLOTS = 4;
+var AUTO_EVERY_MS = 10 * 6e4;
+var AUTO_MIN_GAP_MS = 3e4;
+var THUMB_W = 240;
+var PLATFORM_CODE = { psp: "wafer" };
 var JAM_POLL_MS = 2e3;
 var FAST_FORWARD = 3;
 
@@ -6178,7 +6186,7 @@ async function sha256Hex(bytes) {
 async function sealBytes(password, plain, opts = {}) {
   const w = await beginDisc(password, { salt: opts.salt });
   const body = await w.encrypt(plain);
-  const tail = await w.finish({ ...opts.name ? { name: opts.name } : {}, sha256: await sha256Hex(plain) });
+  const tail = await w.finish({ ...opts.meta, sha256: await sha256Hex(plain) });
   const out = new Uint8Array(body.length + tail.length);
   out.set(body, 0);
   out.set(tail, body.length);
@@ -6189,6 +6197,61 @@ async function unsealBytes(password, sealed) {
   const plain = await disc.read(0, disc.size);
   if (disc.meta.sha256 && disc.meta.sha256 !== await sha256Hex(plain)) throw new CorruptDiscError("content does not match its recorded sha256");
   return { plain, meta: disc.meta };
+}
+
+// src/disc/sfo.ts
+var SECTOR = 2048;
+async function readDir(src, lba, size) {
+  const buf = await src.read(lba * SECTOR, Math.min(size, 64 * SECTOR));
+  const out = [];
+  let i = 0;
+  while (i < buf.length) {
+    const len = buf[i];
+    if (len === 0) {
+      i = (Math.floor(i / SECTOR) + 1) * SECTOR;
+      continue;
+    }
+    if (i + 33 > buf.length) break;
+    const dv = new DataView(buf.buffer, buf.byteOffset + i, len);
+    const nameLen = buf[i + 32];
+    const name = new TextDecoder().decode(buf.subarray(i + 33, i + 33 + nameLen)).replace(/;1$/, "");
+    out.push({ name, lba: dv.getUint32(2, true), size: dv.getUint32(10, true), isDir: (buf[i + 25] & 2) !== 0 });
+    i += len;
+  }
+  return out;
+}
+function parseSfo(b) {
+  const dv = new DataView(b.buffer, b.byteOffset, b.byteLength);
+  if (dv.getUint32(0, false) !== 5264198) return {};
+  const keyTable = dv.getUint32(8, true), dataTable = dv.getUint32(12, true), count = dv.getUint32(16, true);
+  const out = {};
+  const dec = new TextDecoder();
+  for (let n = 0; n < count && 20 + n * 16 + 16 <= b.length; n++) {
+    const e = 20 + n * 16;
+    const keyOff = dv.getUint16(e, true), fmt = dv.getUint16(e + 2, true), len = dv.getUint32(e + 4, true), dataOff = dv.getUint32(e + 12, true);
+    const k0 = keyTable + keyOff;
+    const key = dec.decode(b.subarray(k0, b.indexOf(0, k0)));
+    if (fmt === 516 || fmt === 4) out[key] = dec.decode(b.subarray(dataTable + dataOff, dataTable + dataOff + len)).replace(/\0+$/, "");
+  }
+  return out;
+}
+async function readDiscLabel(src) {
+  try {
+    if (src.size < 17 * SECTOR) return null;
+    const pvd = await src.read(16 * SECTOR, SECTOR);
+    if (pvd[0] !== 1 || new TextDecoder().decode(pvd.subarray(1, 6)) !== "CD001") return null;
+    const root = new DataView(pvd.buffer, pvd.byteOffset + 156, 34);
+    const top = await readDir(src, root.getUint32(2, true), root.getUint32(10, true));
+    const game = top.find((e) => e.isDir && e.name === "PSP_GAME");
+    if (!game) return null;
+    const sfo = (await readDir(src, game.lba, game.size)).find((e) => !e.isDir && e.name === "PARAM.SFO");
+    if (!sfo || sfo.size > 64 * 1024) return null;
+    const kv = parseSfo(await src.read(sfo.lba * SECTOR, sfo.size));
+    if (!kv.DISC_ID) return null;
+    return { id: kv.DISC_ID, version: kv.DISC_VERSION, title: kv.TITLE };
+  } catch {
+    return null;
+  }
 }
 
 // src/app/discs.ts
@@ -6222,13 +6285,18 @@ async function isEncrypted(src) {
   }
 }
 async function unwrap(src, name, password) {
-  if (!await isEncrypted(src)) return { media: src, ext: extOf(name), title: stemOf2(name), opened: null };
-  const pw = password ?? sessionPassword;
-  if (!pw) throw new NeedPassword();
-  const opened = await openDisc(src, pw);
-  sessionPassword = pw;
-  const original = opened.meta.name ?? "game.iso";
-  return { media: opened, ext: extOf(original), title: stemOf2(original), opened };
+  let media = src, original = name, opened = null;
+  if (await isEncrypted(src)) {
+    const pw = password ?? sessionPassword;
+    if (!pw) throw new NeedPassword();
+    opened = await openDisc(src, pw);
+    sessionPassword = pw;
+    original = opened.meta.name ?? "game.iso";
+    media = opened;
+  }
+  const label = await readDiscLabel(media);
+  const fp = { k: PLATFORM_CODE.psp, size: media.size, ...label?.id ? { id: label.id } : {}, ...label?.version ? { v: label.version } : {} };
+  return { media, ext: extOf(original), title: stemOf2(original), opened, fp };
 }
 async function fromLocalFile(file, password) {
   const src = { size: file.size, read: async (o, n) => new Uint8Array(await file.slice(o, o + n).arrayBuffer()) };
@@ -7222,11 +7290,24 @@ function unzipSync(data, opts) {
 
 // src/app/saves.ts
 var sessionSalt = crypto.getRandomValues(new Uint8Array(16));
-var crumbId = (key, slot) => `${CRUMBS}/${key}-s${slot}${CRUMB_SUFFIX}`;
+var crumbId = (key, kind, n) => `${CRUMBS}/${key}-${kind}${n}${CRUMB_SUFFIX}`;
+var CRUMB_RE = new RegExp(`^${CRUMBS}/([0-9a-f]{16})-([sa])([0-9]+)\\${CRUMB_SUFFIX}$`);
+function parseCrumbId(id) {
+  const m = CRUMB_RE.exec(id);
+  return m ? { key: m[1], kind: m[2], n: Number(m[3]) } : null;
+}
 function watchSlots(key, cb) {
   return getStore().files.watchFolder(CRUMBS, (snap) => {
     const byId = new Map(snap.items.map((it) => [it.identifier, it.lastModified ?? Date.now()]));
-    cb(Array.from({ length: SLOTS }, (_, i) => ({ slot: i + 1, savedAt: byId.get(crumbId(key, i + 1)) ?? null })));
+    const mk = (kind, n) => {
+      const id = crumbId(key, kind, n);
+      return { id, kind, n, savedAt: byId.get(id) ?? null };
+    };
+    cb(
+      [...Array.from({ length: SLOTS }, (_, i) => mk("s", i + 1)), ...Array.from({ length: AUTO_SLOTS }, (_, i) => mk("a", i + 1))],
+      snap.items.map((it) => it.identifier),
+      snap.complete
+    );
   });
 }
 async function put(identifier, sealed) {
@@ -7241,12 +7322,28 @@ async function get(identifier) {
   const blob = await store2.file(identifier, { mode: "existing" }).open();
   return blob ? new Uint8Array(await blob.arrayBuffer()) : null;
 }
-async function saveSlot(key, slot, state, password) {
-  return put(crumbId(key, slot), await sealBytes(password, state, { salt: sessionSalt }));
+async function saveSnapshot(identifier, state, meta, password) {
+  const thumb = meta.thumb ? btoa(Array.from(meta.thumb, (b) => String.fromCharCode(b)).join("")) : void 0;
+  return put(identifier, await sealBytes(password, state, { salt: sessionSalt, meta: { thumb, at: meta.at, auto: meta.auto, fp: meta.fp } }));
 }
-async function loadSlot(key, slot, password) {
-  const sealed = await get(crumbId(key, slot));
-  return sealed ? (await unsealBytes(password, sealed)).plain : null;
+async function loadSnapshot(identifier, password) {
+  const sealed = await get(identifier);
+  if (!sealed) return null;
+  const { plain, meta } = await unsealBytes(password, sealed);
+  return { state: plain, meta };
+}
+async function peekSnapshot(identifier, password) {
+  const stream = await getStore().file(identifier, { mode: "existing" }).openStream();
+  if (!stream) return null;
+  try {
+    return (await openDisc({ size: stream.totalSize, read: (o, n) => stream.read(o, n) }, password)).meta;
+  } finally {
+    stream.close();
+  }
+}
+async function moveSnapshot(from, to) {
+  const r = await getStore().file(from, { mode: "existing" }).tryMove(to);
+  return r.ok;
 }
 var jamId = async (dir) => `${JARS}/${await sha16(`savedata:${dir}`)}${JAM_SUFFIX}`;
 function listJams(timeoutMs = 1e4) {
@@ -7298,6 +7395,221 @@ async function deleteSaveDir(dir) {
   if (await store2.files.occupied(id)) await store2.file(id, { mode: "existing" }).delete();
 }
 
+// src/app/snapshots.ts
+function fpCompatible(saved, now) {
+  if (!saved) return true;
+  if (saved.k !== now.k || saved.size !== now.size) return false;
+  if (saved.id && now.id && (saved.id !== now.id || (saved.v ?? "") !== (now.v ?? ""))) return false;
+  return true;
+}
+var fpSame = (saved, now) => !!saved && fpCompatible(saved, now);
+var slotLabel = (s) => `${s.kind === "s" ? "\u624B\u52A8" : "\u81EA\u52A8"} ${s.n}`;
+var Snapshots = class {
+  constructor(session2, disc, verbs, onChange) {
+    this.session = session2;
+    this.disc = disc;
+    this.verbs = verbs;
+    this.off = watchSlots(disc.key, (slots, all, complete) => {
+      this.slots = slots;
+      this.all = all;
+      onChange();
+      if (complete) void this.tryHeal();
+    });
+  }
+  slots = [];
+  all = [];
+  busy = false;
+  playedSinceSnap = 0;
+  metaCache = /* @__PURE__ */ new Map();
+  healTried = false;
+  /** 这一页自愈接过来的格子：不许被这一页接下来的存档盖掉。 */
+  adopted = /* @__PURE__ */ new Set();
+  off;
+  dispose() {
+    this.off();
+  }
+  /** 自愈只试一次，但要等到「列表完整 + 这一页有口令」（明文盘一开始没有口令，第一次存快照时才有）。 */
+  tryHeal() {
+    if (this.healTried || !this.verbs.knownPassword()) return Promise.resolve();
+    this.healTried = true;
+    return this.heal().catch((e) => console.warn("[heal]", e));
+  }
+  newest() {
+    return this.slots.filter((s) => s.savedAt).sort((a, b) => b.savedAt - a.savedAt)[0] ?? null;
+  }
+  /** 存一格。auto = 自动存的（存不了就算了，不打扰人）。 */
+  async save(kind, n, auto = false) {
+    if (this.busy) {
+      if (auto) return;
+      throw new Error("\u4E0A\u4E00\u4E2A\u5FEB\u7167\u8FD8\u5728\u5B58\uFF0C\u7B49\u4E00\u4E0B\u518D\u5B58");
+    }
+    this.busy = true;
+    try {
+      const { state, frame: frame2 } = await this.session.snapshot();
+      this.playedSinceSnap = 0;
+      const pw = auto ? this.verbs.knownPassword() ?? await this.verbs.password("\u5FEB\u7167") : await this.verbs.password("\u5FEB\u7167");
+      if (!pw) return;
+      let thumb;
+      try {
+        if (frame2) thumb = await this.verbs.encodeThumbnail(frame2.rgba, frame2.w, frame2.h);
+      } catch (e) {
+        console.warn("[thumb]", e);
+      }
+      let label = slotLabel({ kind, n });
+      if (!auto) this.verbs.say(`\u6B63\u5728\u5B58\u300C${label}\u300D\u2026`, 6e4);
+      await this.tryHeal();
+      if (this.adopted.has(crumbId(this.disc.key, kind, n))) {
+        if (!auto) {
+          this.verbs.say(`\u521A\u63A5\u4E0A\u7684\u5FEB\u7167\u653E\u5728\u300C${label}\u300D\uFF0C\u6CA1\u8986\u76D6\u5B83\u3002\u6362\u4E00\u683C\u518D\u5B58\u3002`, 8e3);
+          return;
+        }
+        const alt = this.pickAutoSlot();
+        if (!alt) return;
+        n = alt.n;
+      }
+      const r = await saveSnapshot(crumbId(this.disc.key, kind, n), state, { thumb, at: Date.now(), auto, fp: this.disc.fp }, pw);
+      label = slotLabel({ kind, n });
+      this.verbs.say(`${auto ? "\u81EA\u52A8\u5FEB\u7167" : `\u5DF2\u5B58\u300C${label}\u300D`}${r.pushed ? "\uFF0C\u5DF2\u4F20\u5230 OneDrive" : "\uFF0C\u5148\u5B58\u5728\u8FD9\u53F0\u8BBE\u5907\uFF0C\u8054\u7F51\u767B\u5F55\u540E\u81EA\u52A8\u4F20"}`);
+    } finally {
+      this.busy = false;
+    }
+  }
+  /** 自动快照：先填空格，满了覆盖最旧的（刚接上的不算）。 */
+  async auto() {
+    await this.tryHeal();
+    const target = this.pickAutoSlot();
+    if (target) await this.save("a", target.n, true);
+  }
+  pickAutoSlot() {
+    const autos = this.slots.filter((s) => s.kind === "a" && !this.adopted.has(s.id));
+    return autos.find((s) => !s.savedAt) ?? autos.slice().sort((a, b) => a.savedAt - b.savedAt)[0] ?? null;
+  }
+  /** 每次刷新调：playing = 没暂停、页面在前台。玩够 AUTO_EVERY_MS 就自动存。 */
+  tick(dtMs, playing) {
+    if (!playing || dtMs > 1e3) return;
+    this.playedSinceSnap += dtMs;
+    if (this.playedSinceSnap >= AUTO_EVERY_MS) this.auto().catch((e) => console.warn("[auto snapshot]", e));
+  }
+  /** 切到后台 / 退出前：离上次快照玩过一阵了就存一份。 */
+  async onLeave() {
+    if (this.playedSinceSnap >= AUTO_MIN_GAP_MS) await this.auto();
+  }
+  /** 读一格。指纹对不上先问人；人说不读就返回 false。 */
+  async load(slot) {
+    const pw = await this.verbs.password("\u5FEB\u7167");
+    if (!pw) return false;
+    const got = await loadSnapshot(slot.id, pw);
+    if (!got) {
+      this.verbs.say(`\u300C${slotLabel(slot)}\u300D\u662F\u7A7A\u7684`);
+      return false;
+    }
+    if (!fpCompatible(got.meta.fp, this.disc.fp) && !await this.verbs.confirmMismatch()) return false;
+    await this.session.restore(got.state);
+    this.playedSinceSnap = 0;
+    this.verbs.say(`\u5DF2\u8BFB\u300C${slotLabel(slot)}\u300D`);
+    return true;
+  }
+  /** 面板上的缩略图 / 时间：只读文件尾。这一页没口令就不读（不为了看缩略图去问人）。 */
+  peek(slot) {
+    const pw = this.verbs.knownPassword();
+    if (!pw || !slot.savedAt) return Promise.resolve(null);
+    const k = `${slot.id}@${slot.savedAt}`;
+    let p = this.metaCache.get(k);
+    if (!p) {
+      p = peekSnapshot(slot.id, pw).catch(() => null);
+      this.metaCache.set(k, p);
+    }
+    return p;
+  }
+  /** 孤儿自愈：这张盘一格快照都没有时，看看 crumbs/ 里有没有「主人已经不在食品柜里」、指纹又对得上的快照
+   *  （原来那份文件改了名、或重新导入过）。有就问人，人同意才搬过来（不替人猜）。 */
+  async heal() {
+    if (this.slots.some((s) => s.savedAt)) return;
+    const pw = this.verbs.knownPassword();
+    if (!pw) return;
+    const live = await this.verbs.liveKeys();
+    const groups = /* @__PURE__ */ new Map();
+    for (const id of this.all) {
+      const c = parseCrumbId(id);
+      if (!c || c.key === this.disc.key || live.has(c.key)) continue;
+      groups.set(c.key, [...groups.get(c.key) ?? [], { id, kind: c.kind, n: c.n }]);
+    }
+    let best = null;
+    for (const items of groups.values()) {
+      for (const it of items) {
+        const meta = await peekSnapshot(it.id, pw).catch(() => null);
+        if (!meta) continue;
+        if (fpSame(meta.fp, this.disc.fp) && (!best || (meta.at ?? 0) > best.at)) best = { items, at: meta.at ?? 0 };
+        break;
+      }
+    }
+    if (!best || !await this.verbs.confirmAdopt(best.items.length, best.at || null)) return;
+    let moved = 0;
+    for (const it of best.items) {
+      const to = crumbId(this.disc.key, it.kind, it.n);
+      if (!await moveSnapshot(it.id, to)) continue;
+      moved++;
+      this.adopted.add(to);
+      const slot = this.slots.find((s) => s.id === to);
+      if (slot) slot.savedAt ??= Date.now();
+    }
+    this.verbs.say(`\u63A5\u4E0A\u4E86 ${moved} \u4E2A\u5FEB\u7167`);
+  }
+};
+
+// src/app/disc-tools.ts
+var CHUNK = 8 * 2 ** 20;
+var canWriteLocalFiles = () => typeof globalThis.showSaveFilePicker === "function" && typeof globalThis.showOpenFilePicker === "function";
+var Cancelled = class extends Error {
+  constructor() {
+    super("cancelled");
+    this.name = "Cancelled";
+  }
+};
+function randomStem() {
+  return Array.from(crypto.getRandomValues(new Uint8Array(8)), (b) => b.toString(16).padStart(2, "0")).join("");
+}
+async function writeAll(out, body) {
+  const w = await out.createWritable();
+  try {
+    await body(w);
+    await w.close();
+  } catch (e) {
+    await w.abort().catch(() => {
+    });
+    throw e;
+  }
+}
+async function encryptToLocal(input, password, out, p) {
+  const writer = await beginDisc(password);
+  await writeAll(out, async (w) => {
+    for (let off = 0; off < input.size; off += CHUNK) {
+      if (p.cancelled) throw new Cancelled();
+      const plain = new Uint8Array(await input.slice(off, off + CHUNK).arrayBuffer());
+      await w.write(await writer.encrypt(plain));
+      p.update(Math.min(off + CHUNK, input.size), input.size);
+    }
+    await w.write(await writer.finish({ name: input.name }));
+  });
+}
+async function openForDecrypt(input, password) {
+  const src = { size: input.size, read: async (o, n) => new Uint8Array(await input.slice(o, o + n).arrayBuffer()) };
+  const disc = await openDisc(src, password);
+  return {
+    name: disc.meta.name ?? `${input.name.replace(/\.[^.]*$/, "")}.iso`,
+    size: disc.size,
+    async write(out, p) {
+      await writeAll(out, async (w) => {
+        for (let off = 0; off < disc.size; off += CHUNK) {
+          if (p.cancelled) throw new Cancelled();
+          await w.write(await disc.read(off, CHUNK));
+          p.update(Math.min(off + CHUNK, disc.size), disc.size);
+        }
+      });
+    }
+  };
+}
+
 // src/app/main.ts
 var params = new URLSearchParams(location.search);
 var DEV_SERVER = /^(127\.0\.0\.1|localhost)$/.test(location.hostname);
@@ -7327,8 +7639,8 @@ var session = null;
 var current = null;
 var ac = null;
 var softKeys = null;
-var currentSlot = 1;
-var slots = [];
+var snaps = null;
+var currentSlot = null;
 var lastNote = "";
 var titles = /* @__PURE__ */ new Map();
 function audioContext() {
@@ -7343,6 +7655,7 @@ var pantryItems = [];
 var pantryComplete = false;
 function renderAccount() {
   const row = $("account");
+  $("tools").hidden = !auth.isSignedIn();
   if (!auth.isAuthConfigured()) {
     row.replaceChildren();
     return;
@@ -7496,7 +7809,7 @@ async function play(prepare, resume) {
   session = await CoreSession.start({
     media: disc.media,
     ext: disc.ext,
-    coreDir: "./dist/core-7b77a439ff6e/",
+    coreDir: "./dist/core-0bd947d151cb/",
     glCanvas: $("gl"),
     softCanvas: $("screen"),
     audioContext: audioContext(),
@@ -7511,13 +7824,16 @@ async function play(prepare, resume) {
       console.warn(e);
     }
   }
-  watchSlots(disc.key, (s) => {
-    slots = s;
+  snaps = new Snapshots(session, disc, snapshotVerbs, () => {
+    if (snaps) currentSlot ??= snaps.slots[0] ?? null;
   });
+  currentSlot ??= snaps.slots[0] ?? null;
   jamSigs = session.memstickDirs();
   setInterval(() => jamTick(false), JAM_POLL_MS);
   addEventListener("visibilitychange", () => {
-    if (document.visibilityState === "hidden") jamTick(true);
+    if (document.visibilityState !== "hidden") return;
+    snaps?.onLeave().catch((e) => console.warn("[auto snapshot]", e));
+    jamTick(true);
   });
   requestAnimationFrame(frame);
   renderToolbar();
@@ -7526,14 +7842,14 @@ async function play(prepare, resume) {
   else if (resume) resumeNewest().catch((e) => banner(`\u8BFB\u5FEB\u7167\u5931\u8D25\uFF1A${errorText(e)}`));
 }
 async function resumeNewest() {
-  for (let i = 0; i < 50 && !slots.some((s) => s.savedAt); i++) await new Promise((r) => setTimeout(r, 100));
-  const newest = slots.filter((s) => s.savedAt).sort((a, b) => b.savedAt - a.savedAt)[0];
+  for (let i = 0; i < 50 && !snaps?.newest(); i++) await new Promise((r) => setTimeout(r, 100));
+  const newest = snaps?.newest();
   if (!newest) {
     say("\u8FD9\u5F20\u76D8\u8FD8\u6CA1\u6709\u5FEB\u7167\uFF0C\u4ECE\u5934\u5F00\u59CB");
     return;
   }
-  currentSlot = newest.slot;
-  await loadFromSlot(newest.slot);
+  if (newest.kind === "s") currentSlot = newest;
+  await snaps.load(newest);
 }
 var jamSigs = /* @__PURE__ */ new Map();
 var jamPending = /* @__PURE__ */ new Map();
@@ -7576,34 +7892,45 @@ async function jamTick(force) {
     jamSaving = false;
   }
 }
-async function saveToSlot(slot) {
-  if (!session || !current) return;
-  const t0 = performance.now();
-  const state = await session.snapshot();
-  const pw = await ensurePassword("\u5FEB\u7167");
-  if (!pw) return;
-  say(`\u6B63\u5728\u5B58\u683C ${slot}\u2026`, 6e4);
-  const r = await saveSlot(current.key, slot, state, pw);
-  currentSlot = slot;
-  say(`\u5DF2\u5B58\u683C ${slot}\uFF08${(state.length / 2 ** 20).toFixed(0)} MB\uFF0C${((performance.now() - t0) / 1e3).toFixed(1)} \u79D2\uFF09${r.pushed ? "\uFF0C\u5DF2\u4F20\u5230 OneDrive" : "\uFF0C\u5148\u5B58\u5728\u8FD9\u53F0\u8BBE\u5907\uFF0C\u8054\u7F51\u767B\u5F55\u540E\u81EA\u52A8\u4F20"}`);
+var snapshotVerbs = {
+  async encodeThumbnail(rgba, w, h2) {
+    const src = new OffscreenCanvas(w, h2);
+    src.getContext("2d").putImageData(new ImageData(new Uint8ClampedArray(rgba), w, h2), 0, 0);
+    const tw = Math.min(THUMB_W, w), th = Math.round(h2 * tw / w);
+    const dst = new OffscreenCanvas(tw, th);
+    const ctx = dst.getContext("2d");
+    ctx.imageSmoothingQuality = "high";
+    ctx.drawImage(src, 0, 0, tw, th);
+    return new Uint8Array(await (await dst.convertToBlob({ type: "image/jpeg", quality: 0.8 })).arrayBuffer());
+  },
+  password: (why) => ensurePassword(why),
+  knownPassword: () => getPassword(),
+  confirmMismatch: () => confirmSheet("\u8FD9\u4E2A\u5FEB\u7167\u50CF\u662F\u522B\u7684\u76D8\u5B58\u7684", "\u5B58\u5B83\u7684\u65F6\u5019\u7528\u7684\u4E0D\u662F\u8FD9\u5F20\u76D8\uFF08\u7F16\u53F7\u3001\u7248\u672C\u6216\u5927\u5C0F\u5BF9\u4E0D\u4E0A\uFF09\u3002\u786C\u8BFB\u53EF\u80FD\u8DD1\u98DE\uFF0C\u8BFB\u4E4B\u524D\u6700\u597D\u5148\u5B58\u4E00\u4EFD\u3002", "\u8FD8\u662F\u8BFB", "\u4E0D\u8BFB"),
+  confirmAdopt: (count, at) => confirmSheet(
+    "\u627E\u5230\u8FD9\u5F20\u76D8\u7684\u5FEB\u7167\u4E86\uFF1F",
+    `\u6709 ${count} \u4E2A\u5FEB\u7167\u770B\u7740\u662F\u8FD9\u5F20\u76D8\u7684${at ? `\uFF08\u6700\u65B0\u7684\u5B58\u4E8E ${new Date(at).toLocaleString()}\uFF09` : ""}\uFF0C\u539F\u6765\u90A3\u4EFD\u6587\u4EF6\u53EF\u80FD\u6539\u4E86\u540D\u6216\u91CD\u65B0\u5BFC\u5165\u8FC7\u3002\u63A5\u5230\u8FD9\u5F20\u76D8\u4E0A\u5417\uFF1F`,
+    "\u63A5\u4E0A",
+    "\u4E0D\u7528"
+  ),
+  async liveKeys() {
+    const keys = /* @__PURE__ */ new Set();
+    for (const it of pantryItems) if (DISC_SUFFIXES.some((x) => it.identifier.toLowerCase().endsWith(x))) keys.add(await discKey(stemOf2(it.identifier)));
+    return keys;
+  },
+  say: (text, ms) => say(text, ms)
+};
+function saveTo(slot) {
+  snaps?.save(slot.kind, slot.n).then(() => {
+    currentSlot = slot;
+  }, (e) => banner(`\u5B58\u5FEB\u7167\u5931\u8D25\uFF1A${errorText(e)}`));
 }
-async function loadFromSlot(slot) {
-  if (!session || !current) return;
-  const key = current.key;
-  const state = await withPassword(async (pw) => {
-    const p = pw ?? getPassword();
-    if (!p) throw new NeedPassword();
-    const s = await loadSlot(key, slot, p);
-    if (pw) setPassword(pw);
-    return s;
-  }, "\u5FEB\u7167");
-  if (!state) {
-    say(`\u683C ${slot} \u662F\u7A7A\u7684`);
-    return;
-  }
-  await session.restore(state);
-  currentSlot = slot;
-  say(`\u5DF2\u8BFB\u683C ${slot}`);
+function loadFrom(slot) {
+  snaps?.load(slot).then((ok) => {
+    if (ok && slot.kind === "s") currentSlot = slot;
+  }, (e) => {
+    if (e instanceof WrongPasswordError) banner("\u5FEB\u7167\u7684\u53E3\u4EE4\u548C\u8FD9\u4E00\u9875\u8BB0\u7740\u7684\u53E3\u4EE4\u4E0D\u4E00\u6837\uFF0C\u8BFB\u4E0D\u4E86\u3002");
+    else banner(`\u8BFB\u5FEB\u7167\u5931\u8D25\uFF1A${errorText(e)}`);
+  });
 }
 async function restoreFromDevServer(name) {
   const r = await fetch(`/__dev/state/${encodeURIComponent(name)}`);
@@ -7612,27 +7939,37 @@ async function restoreFromDevServer(name) {
   say(`\u5DF2\u8BFB\u5F00\u53D1\u5FEB\u7167 ${name}`);
 }
 function openSlots() {
+  if (!snaps) return;
+  const s = snaps;
   const when = (t) => t ? new Date(t).toLocaleString() : "\u7A7A";
+  const row = (slot, done) => {
+    const thumb = h("div", { class: "thumb" });
+    s.peek(slot).then((m) => {
+      if (m?.thumb) thumb.append(h("img", { src: `data:image/jpeg;base64,${m.thumb}`, alt: "" }));
+    });
+    return h(
+      "div",
+      { class: `slot${slot.id === currentSlot?.id ? " current" : ""}` },
+      thumb,
+      h("div", { class: "slot-text" }, h("span", { class: "slot-name" }, slotLabel(slot)), h("span", { class: "muted" }, when(slot.savedAt))),
+      h(
+        "div",
+        { class: "slot-buttons" },
+        slot.kind === "s" ? h("button", { onclick: () => {
+          done();
+          saveTo(slot);
+        } }, "\u5B58\u5230\u8FD9\u91CC") : null,
+        h("button", { class: "primary", disabled: !slot.savedAt, onclick: () => {
+          done();
+          loadFrom(slot);
+        } }, "\u8BFB")
+      )
+    );
+  };
   sheet((done) => [
     h("h2", {}, "\u5FEB\u7167"),
-    h("p", { class: "hint" }, "\u6574\u673A\u72B6\u6001\uFF0C\u968F\u65F6\u5B58\u968F\u65F6\u8BFB\uFF08F2 \u5B58\u3001F4 \u8BFB\u5F53\u524D\u683C\uFF09\u3002\u6E38\u620F\u81EA\u5DF1\u5B58\u7684\u6863\u53E6\u5916\u81EA\u52A8\u540C\u6B65\uFF0C\u4E0D\u7528\u7BA1\u3002"),
-    ...Array.from({ length: SLOTS }, (_, i) => {
-      const s = slots[i] ?? { slot: i + 1, savedAt: null };
-      return h(
-        "div",
-        { class: `slot${s.slot === currentSlot ? " current" : ""}` },
-        h("span", { class: "slot-name" }, `\u683C ${s.slot}`),
-        h("span", { class: "muted" }, when(s.savedAt)),
-        h("button", { onclick: () => {
-          done();
-          saveToSlot(s.slot).catch((e) => banner(`\u5B58\u5FEB\u7167\u5931\u8D25\uFF1A${errorText(e)}`));
-        } }, "\u5B58\u5230\u8FD9\u683C"),
-        h("button", { class: "primary", disabled: !s.savedAt, onclick: () => {
-          done();
-          loadFromSlot(s.slot).catch((e) => banner(`\u8BFB\u5FEB\u7167\u5931\u8D25\uFF1A${errorText(e)}`));
-        } }, "\u8BFB\u8FD9\u683C")
-      );
-    }),
+    h("p", { class: "hint" }, "\u81EA\u52A8\u5FEB\u7167\uFF1A\u5207\u5230\u540E\u53F0\u3001\u9000\u51FA\u3001\u6BCF\u73A9 10 \u5206\u949F\u5404\u5B58\u4E00\u4EFD\uFF0C\u8F6E\u6D41\u7528 4 \u683C\u3002\u6E38\u620F\u81EA\u5DF1\u5B58\u7684\u6863\u53E6\u5916\u81EA\u52A8\u540C\u6B65\u3002"),
+    h("div", { class: "slots" }, ...s.slots.map((slot) => row(slot, () => done()))),
     h("div", { class: "row" }, h("button", { onclick: () => done() }, "\u5173\u95ED"))
   ]);
 }
@@ -7687,8 +8024,14 @@ function toggleFullscreen() {
   else $("stage").requestFullscreen({ navigationUI: "hide" }).catch((e) => say(`\u5168\u5C4F\u5931\u8D25\uFF1A${errorText(e)}`));
 }
 async function quit() {
-  const ok = await confirmSheet("\u9000\u51FA\u8FD9\u5F20\u76D8\uFF1F", "\u6CA1\u5B58\u7684\u5FEB\u7167\u4F1A\u4E22\uFF1B\u6E38\u620F\u81EA\u5DF1\u5B58\u7684\u6863\u5DF2\u7ECF\u81EA\u52A8\u540C\u6B65\u3002", "\u9000\u51FA");
+  const ok = await confirmSheet("\u9000\u51FA\uFF1F", "\u9000\u51FA\u524D\u4F1A\u5B58\u4E00\u4EFD\u81EA\u52A8\u5FEB\u7167\uFF1B\u6E38\u620F\u81EA\u5DF1\u5B58\u7684\u6863\u4E5F\u4F1A\u540C\u6B65\u3002", "\u9000\u51FA");
   if (!ok) return;
+  try {
+    await snaps?.onLeave();
+  } catch (e) {
+    banner(`\u81EA\u52A8\u5FEB\u7167\u6CA1\u5B58\u4E0A\uFF1A${errorText(e)}`);
+    return;
+  }
   await jamTick(true);
   location.reload();
 }
@@ -7728,11 +8071,14 @@ function pollGamepads(s) {
   s.setAnalog(ax, ay);
 }
 var statusAt = 0;
+var lastFrameAt = performance.now();
 function frame() {
   if (!session) return;
   pollGamepads(session);
   session.tick();
   const now = performance.now();
+  snaps?.tick(now - lastFrameAt, !session.paused && document.visibilityState === "visible");
+  lastFrameAt = now;
   if (!$("status").hidden && now - statusAt > 250) {
     statusAt = now;
     $("status").textContent = statusText();
@@ -7772,12 +8118,12 @@ function onKey(e, down) {
     }
     if (e.code === "F2") {
       e.preventDefault();
-      saveToSlot(currentSlot).catch((err2) => banner(`\u5B58\u5FEB\u7167\u5931\u8D25\uFF1A${errorText(err2)}`));
+      if (currentSlot) saveTo(currentSlot);
       return;
     }
     if (e.code === "F4") {
       e.preventDefault();
-      loadFromSlot(currentSlot).catch((err2) => banner(`\u8BFB\u5FEB\u7167\u5931\u8D25\uFF1A${errorText(err2)}`));
+      if (currentSlot) loadFrom(currentSlot);
       return;
     }
   }
@@ -7787,6 +8133,89 @@ function onKey(e, down) {
   const m = session.getMask("keyboard");
   session.setMask("keyboard", down ? m | bit(b) : m & ~bit(b));
 }
+function progressSheet(title) {
+  let cancelled = false;
+  let finish = () => {
+  };
+  const bar = h("progress", { max: "1", value: "0" });
+  const text = h("span", { class: "muted" }, "");
+  sheet((done) => {
+    finish = done;
+    return [
+      h("h2", {}, title),
+      bar,
+      text,
+      h("div", { class: "row" }, h("button", { onclick: () => {
+        cancelled = true;
+      } }, "\u53D6\u6D88"))
+    ];
+  }, { dismissable: false });
+  const t0 = performance.now();
+  return {
+    p: {
+      update(d, total) {
+        bar.value = d / total;
+        const mbs = d / 2 ** 20 / ((performance.now() - t0) / 1e3);
+        text.textContent = `${(d / 2 ** 30).toFixed(2)} / ${(total / 2 ** 30).toFixed(2)} GB \xB7 ${mbs.toFixed(0)} MB/s`;
+      },
+      get cancelled() {
+        return cancelled;
+      }
+    },
+    close: () => finish(null)
+  };
+}
+async function askNewPassword() {
+  for (; ; ) {
+    const a = await askPassword("\u8BBE\u53E3\u4EE4", "\u4EE5\u540E\u6253\u5F00\u8981\u7528\u540C\u4E00\u4E2A\u53E3\u4EE4\u3002\u53E3\u4EE4\u4E0D\u5B58\uFF0C\u5FD8\u4E86\u5C31\u6253\u4E0D\u5F00\u3002");
+    if (!a) return null;
+    const b = await askPassword("\u518D\u8F93\u4E00\u6B21", "\u786E\u8BA4\u521A\u624D\u7684\u53E3\u4EE4\u3002");
+    if (b === null) return null;
+    if (a === b) return a;
+    banner("\u4E24\u6B21\u8F93\u5165\u4E0D\u4E00\u6837\uFF0C\u518D\u6765\u4E00\u6B21\u3002", "warning");
+  }
+}
+async function makeWafer() {
+  const [handle] = await showOpenFilePicker();
+  const input = await handle.getFile();
+  const pw = await askNewPassword();
+  if (!pw) return;
+  const out = await showSaveFilePicker({ suggestedName: `${randomStem()}.wafter` });
+  const ui = progressSheet("\u6B63\u5728\u52A0\u5BC6\u2026");
+  try {
+    await encryptToLocal(input, pw, out, ui.p);
+    say(`\u505A\u597D\u4E86\uFF1A${out.name}\u3002\u653E\u8FDB OneDrive \u672C app \u6587\u4EF6\u5939\u7684 ${PANTRY}/ \u5C31\u80FD\u5728\u5217\u8868\u91CC\u770B\u5230\u3002`, 1e4);
+  } catch (e) {
+    if (e instanceof Cancelled) say("\u53D6\u6D88\u4E86\uFF0C\u6CA1\u7559\u4E0B\u534A\u6210\u54C1");
+    else throw e;
+  } finally {
+    ui.close();
+  }
+}
+async function unwrapWafer() {
+  const [handle] = await showOpenFilePicker({ types: [{ description: "wafter", accept: { "application/octet-stream": [".wafter"] } }] });
+  const input = await handle.getFile();
+  const opened = await withPassword(async (pw) => {
+    const p = pw ?? getPassword();
+    if (!p) throw new NeedPassword();
+    return openForDecrypt(input, p);
+  }, "\u8FD9\u4E2A\u6587\u4EF6");
+  if (!opened) return;
+  const out = await showSaveFilePicker({ suggestedName: opened.name });
+  const ui = progressSheet("\u6B63\u5728\u89E3\u5BC6\u2026");
+  try {
+    await opened.write(out, ui.p);
+    say(`\u89E3\u597D\u4E86\uFF1A${out.name}`, 6e3);
+  } catch (e) {
+    if (e instanceof Cancelled) say("\u53D6\u6D88\u4E86\uFF0C\u6CA1\u7559\u4E0B\u534A\u6210\u54C1");
+    else throw e;
+  } finally {
+    ui.close();
+  }
+}
+var toolErr = (e) => {
+  if (e?.name !== "AbortError") banner(errorText(e));
+};
 async function boot() {
   mountIcons();
   $("version").textContent = APP_VERSION;
@@ -7802,6 +8231,16 @@ async function boot() {
   addEventListener("keydown", (e) => onKey(e, true));
   addEventListener("keyup", (e) => onKey(e, false));
   addEventListener("blur", () => session?.setMask("keyboard", 0));
+  for (const t of ["gesturestart", "gesturechange"]) document.addEventListener(t, (e) => e.preventDefault(), { passive: false });
+  const local = canWriteLocalFiles();
+  for (const id of ["make-wafter", "unwrap-wafter"]) $(id).disabled = !local;
+  $("tools-hint").hidden = local;
+  $("make-wafter").addEventListener("click", () => {
+    makeWafer().catch(toolErr);
+  });
+  $("unwrap-wafter").addEventListener("click", () => {
+    unwrapWafer().catch(toolErr);
+  });
   const fileInput = $("local-file");
   $("open-local").addEventListener("click", () => {
     audioContext();
@@ -7851,13 +8290,15 @@ globalThis.kr = {
     session.setMask("test", 0);
   },
   inputMask: () => session ? session.inputMask() : 0,
-  snapshot: async () => session ? (await session.snapshot()).length : 0,
+  snapshot: async () => session ? (await session.snapshot()).state.length : 0,
   restoreFromServer: restoreFromDevServer,
   started: () => session !== null,
   pause: (p) => {
     session?.setPaused(p);
     renderToolbar();
   },
+  // 只在本机开发服务器上有：自动快照、测试口令（测试一律用假口令）
+  ...DEV_SERVER ? { autoSnapshot: () => snaps?.auto(), setTestPassword: (p) => setPassword(p), slots: () => snaps?.slots } : {},
   speed: (x) => {
     session?.setSpeed(x);
     renderToolbar();
@@ -7867,4 +8308,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-cfa1f9e98d45.mjs.map
+//# sourceMappingURL=kudsrocket-f15d1de32ba5.mjs.map

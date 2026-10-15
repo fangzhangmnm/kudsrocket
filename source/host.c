@@ -663,9 +663,50 @@ EMSCRIPTEN_KEEPALIVE void kr_request_restore(uint8_t *ptr, double size) { g_rest
 EMSCRIPTEN_KEEPALIVE unsigned kr_restore_seq(void) { return g_restore_seq; }
 EMSCRIPTEN_KEEPALIVE int kr_restore_ok(void) { return g_restore_ok; }
 
+// 快照顺手取一张当前画面（给快照格的缩略图）：RGBA、左上角原点，最大 FRAME_MAX。主线程在 g_snap_seq 变了以后从 kr_thumb_* 拷走。
+static uint8_t g_thumb[FRAME_MAX_W * FRAME_MAX_H * 4];
+static int g_thumb_w = 0, g_thumb_h = 0;
+EMSCRIPTEN_KEEPALIVE uint8_t *kr_thumb_ptr(void) { return g_thumb; }
+EMSCRIPTEN_KEEPALIVE int kr_thumb_w(void) { return g_thumb_w; }
+EMSCRIPTEN_KEEPALIVE int kr_thumb_h(void) { return g_thumb_h; }
+
+static void capture_thumb(void) {
+  int w = g_frame_w, h = g_frame_h;
+  g_thumb_w = g_thumb_h = 0;
+  if (w <= 0 || h <= 0 || w > FRAME_MAX_W || h > FRAME_MAX_H) return;
+  if (g_hw_active) {
+    // 从核的离屏帧缓冲读回（帧边界上，核没在画）。动到的 GL 状态读完原样放回：PPSSPP 自己记着这些状态。
+    GLint pack_buf = 0, row_len = 0, align = 4;
+    glGetIntegerv(GL_PIXEL_PACK_BUFFER_BINDING, &pack_buf);
+    glGetIntegerv(GL_PACK_ROW_LENGTH, &row_len);
+    glGetIntegerv(GL_PACK_ALIGNMENT, &align);
+    glBindBuffer(GL_PIXEL_PACK_BUFFER, 0);
+    glPixelStorei(GL_PACK_ROW_LENGTH, 0);
+    glPixelStorei(GL_PACK_ALIGNMENT, 4);
+    glBindFramebuffer(GL_READ_FRAMEBUFFER, g_fbo);
+    static uint8_t tmp[FRAME_MAX_W * FRAME_MAX_H * 4];
+    glReadPixels(0, 0, w, h, GL_RGBA, GL_UNSIGNED_BYTE, tmp);
+    glBindFramebuffer(GL_FRAMEBUFFER, g_fbo);
+    glBindBuffer(GL_PIXEL_PACK_BUFFER, (GLuint)pack_buf);
+    glPixelStorei(GL_PACK_ROW_LENGTH, row_len);
+    glPixelStorei(GL_PACK_ALIGNMENT, align);
+    for (int y = 0; y < h; y++) memcpy(g_thumb + (size_t)y * w * 4, tmp + (size_t)(h - 1 - y) * w * 4, (size_t)w * 4); // GL 左下角原点 → 翻过来
+    // PSP 帧缓冲的 alpha 常是 0（游戏拿它当模板位用）：缩略图一律不透明，否则编出来是黑的
+    for (size_t i = 3, n = (size_t)w * h * 4; i < n; i += 4) g_thumb[i] = 255;
+  } else {
+    const uint8_t *src = (const uint8_t *)g_frame; // XRGB8888，内存里是 B,G,R,X
+    for (size_t i = 0, n = (size_t)w * h; i < n; i++) {
+      g_thumb[i * 4] = src[i * 4 + 2]; g_thumb[i * 4 + 1] = src[i * 4 + 1]; g_thumb[i * 4 + 2] = src[i * 4]; g_thumb[i * 4 + 3] = 255;
+    }
+  }
+  g_thumb_w = w;
+  g_thumb_h = h;
+}
+
 static void service_snapshots(void) {
   if (g_req_snapshot) {
     g_req_snapshot = 0;
+    capture_thumb();
     size_t size = retro_serialize_size();
     uint8_t *buf = size ? malloc(size) : NULL;
     if (buf && retro_serialize(buf, size)) {
