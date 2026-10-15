@@ -7,7 +7,7 @@
 <meta name="theme-color" content="#111111">
 <title>KudsRocket</title>
 <link rel="manifest" href="./manifest.webmanifest">
-<link rel="stylesheet" href="./styles.css?v=3f351c081b79">
+<link rel="stylesheet" href="./styles.css?v=f0536890f232">
 </head>
 <body>
 <main id="home">
@@ -34,7 +34,7 @@
 </main>
 
 <main id="game" hidden>
-  <div id="toolbar" class="toolbar"><span id="title"></span></div>
+  <div id="toolbar" class="toolbar"><span id="title"></span><span id="hud" class="hud muted"></span></div>
   <!-- #gl 在核启动时以 OffscreenCanvas 交给核线程（GPU 渲染）；#screen 是软件渲染兜底，主线程画 -->
   <div id="stage">
     <canvas id="gl" width="480" height="272"></canvas>
@@ -49,6 +49,6 @@
 <div id="note" hidden></div>
 <div id="update" hidden></div>
 <div id="busy" hidden><span></span></div>
-<script type="module" src="./dist/kudsrocket-3f351c081b79.mjs"></script>
+<script type="module" src="./dist/kudsrocket-f0536890f232.mjs"></script>
 </body>
 </html>

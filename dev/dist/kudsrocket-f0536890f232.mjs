@@ -1,8 +1,8 @@
 // src/version.ts
-var APP_VERSION = "v0.1.8-2026-10-14";
+var APP_VERSION = "v0.1.9-2026-10-14";
 
 // assets/icons.svg
-var icons_default = '<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none">\n<!--\n  12 icons extracted from the family icon library (../20260708 SVG Icons/icons.svg) by extract-icons.py \u2014 do not hand-edit; re-run the script instead.\n  Family SVG Icons \u2014 MIT License, Copyright (c) 2026 fangzhangmnm.\n  Contains work derived from (per-icon provenance in data-src):\n    Feather Icons \u2014 MIT License, Copyright (c) 2013-2023 Cole Bemis \xB7 https://github.com/feathericons/feather\n-->\n  <!-- media -->\n  <!-- pause \u2014 \u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="pause" data-cat="media" data-src="own" data-note="\u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="3.2"><path d="M8.3 5.5 V18.5"/><path d="M15.7 5.5 V18.5"/></g></symbol>\n  <!-- play \u2014 \u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="play" data-cat="media" data-src="own" data-note="\u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 5.4 L18.8 12 L8.2 18.6 Z" fill="currentColor"/></symbol>\n  <!-- fast-forward \u2014 \u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="fast-forward" data-cat="media" data-src="own" data-note="\u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.4 6.8 L10.9 12 L4.4 17.2 Z" fill="currentColor"/><path d="M13.1 6.8 L19.6 12 L13.1 17.2 Z" fill="currentColor"/></symbol>\n  <!-- volume \u2014 \u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009) -->\n  <symbol id="volume" data-cat="media" data-src="own" data-note="\u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 10.3 H8.7 L12.6 6.6 V17.4 L8.7 13.7 H5.5 Z" fill="currentColor"/><path d="M15.13 9.73 A3.4 3.4 0 0 1 15.13 14.27"/><path d="M16.36 7.19 A6.1 6.1 0 0 1 16.36 16.81"/></symbol>\n  <!-- file -->\n  <!-- floppy-disk \u2014 \u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3 -->\n  <symbol id="floppy-disk" data-cat="file" data-src="feather:save" data-note="\u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13l3 3v13a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 17 8 17 3"/></symbol>\n  <!-- folder-open \u2014 \u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF -->\n  <symbol id="folder-open" data-cat="file" data-src="own" data-note="\u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18 V7 a2 2 0 0 1 2 -2 h4 l2 2 h6 a2 2 0 0 1 2 2 v1.8"/><path d="M3 18 L6.4 10.8 H21.6 L18.2 18 Z"/></symbol>\n  <!-- hierarchy -->\n  <!-- lock \u2014 \u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D -->\n  <symbol id="lock" data-cat="hierarchy" data-src="own" data-note="\u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10" width="13" height="11"/><path d="M8.8 10 V6.5 a3.2 3.2 0 0 1 6.4 0 V10"/></symbol>\n  <!-- common -->\n  <!-- x \u2014 \u53C9 -->\n  <symbol id="x" data-cat="common" data-src="own" data-note="\u53C9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 L17.5 17.5 M17.5 6.5 L6.5 17.5"/></symbol>\n  <!-- cloud -->\n  <!-- cloud \u2014 \u4E91 -->\n  <symbol id="cloud" data-cat="cloud" data-src="feather:cloud" data-note="\u4E91" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>\n  <!-- viewport -->\n  <!-- maximize-viewport \u2014 \u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55) -->\n  <symbol id="maximize-viewport" data-cat="viewport" data-src="own" data-note="\u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934 --> <polyline points="4 9 4 4 9 4"/> <polyline points="20 9 20 4 15 4"/> <polyline points="4 15 4 20 9 20"/> <polyline points="20 15 20 20 15 20"/></symbol>\n  <!-- ui -->\n  <!-- more \u2014 \u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00) -->\n  <symbol id="more" data-cat="ui" data-src="own" data-note="\u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/></symbol>\n  <!-- keyboard \u2014 \u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49) -->\n  <symbol id="keyboard" data-cat="ui" data-src="own" data-note="\u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="7.2" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="7.2" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><path d="M8.6 15.6 H15.4"/></symbol>\n</svg>\n';
+var icons_default = '<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none">\n<!--\n  13 icons extracted from the family icon library (../20260708 SVG Icons/icons.svg) by extract-icons.py \u2014 do not hand-edit; re-run the script instead.\n  Family SVG Icons \u2014 MIT License, Copyright (c) 2026 fangzhangmnm.\n  Contains work derived from (per-icon provenance in data-src):\n    Feather Icons \u2014 MIT License, Copyright (c) 2013-2023 Cole Bemis \xB7 https://github.com/feathericons/feather\n-->\n  <!-- media -->\n  <!-- pause \u2014 \u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="pause" data-cat="media" data-src="own" data-note="\u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="3.2"><path d="M8.3 5.5 V18.5"/><path d="M15.7 5.5 V18.5"/></g></symbol>\n  <!-- play \u2014 \u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="play" data-cat="media" data-src="own" data-note="\u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 5.4 L18.8 12 L8.2 18.6 Z" fill="currentColor"/></symbol>\n  <!-- fast-forward \u2014 \u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="fast-forward" data-cat="media" data-src="own" data-note="\u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.4 6.8 L10.9 12 L4.4 17.2 Z" fill="currentColor"/><path d="M13.1 6.8 L19.6 12 L13.1 17.2 Z" fill="currentColor"/></symbol>\n  <!-- volume \u2014 \u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009) -->\n  <symbol id="volume" data-cat="media" data-src="own" data-note="\u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 10.3 H8.7 L12.6 6.6 V17.4 L8.7 13.7 H5.5 Z" fill="currentColor"/><path d="M15.13 9.73 A3.4 3.4 0 0 1 15.13 14.27"/><path d="M16.36 7.19 A6.1 6.1 0 0 1 16.36 16.81"/></symbol>\n  <!-- file -->\n  <!-- floppy-disk \u2014 \u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3 -->\n  <symbol id="floppy-disk" data-cat="file" data-src="feather:save" data-note="\u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13l3 3v13a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 17 8 17 3"/></symbol>\n  <!-- folder-open \u2014 \u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF -->\n  <symbol id="folder-open" data-cat="file" data-src="own" data-note="\u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18 V7 a2 2 0 0 1 2 -2 h4 l2 2 h6 a2 2 0 0 1 2 2 v1.8"/><path d="M3 18 L6.4 10.8 H21.6 L18.2 18 Z"/></symbol>\n  <!-- hierarchy -->\n  <!-- lock \u2014 \u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D -->\n  <symbol id="lock" data-cat="hierarchy" data-src="own" data-note="\u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10" width="13" height="11"/><path d="M8.8 10 V6.5 a3.2 3.2 0 0 1 6.4 0 V10"/></symbol>\n  <!-- common -->\n  <!-- x \u2014 \u53C9 -->\n  <symbol id="x" data-cat="common" data-src="own" data-note="\u53C9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 L17.5 17.5 M17.5 6.5 L6.5 17.5"/></symbol>\n  <!-- cloud -->\n  <!-- cloud \u2014 \u4E91 -->\n  <symbol id="cloud" data-cat="cloud" data-src="feather:cloud" data-note="\u4E91" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>\n  <!-- viewport -->\n  <!-- maximize-viewport \u2014 \u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55) -->\n  <symbol id="maximize-viewport" data-cat="viewport" data-src="own" data-note="\u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934 --> <polyline points="4 9 4 4 9 4"/> <polyline points="20 9 20 4 15 4"/> <polyline points="4 15 4 20 9 20"/> <polyline points="20 15 20 20 15 20"/></symbol>\n  <!-- ui -->\n  <!-- more \u2014 \u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00) -->\n  <symbol id="more" data-cat="ui" data-src="own" data-note="\u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/></symbol>\n  <!-- keyboard \u2014 \u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49) -->\n  <symbol id="keyboard" data-cat="ui" data-src="own" data-note="\u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="7.2" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="7.2" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><path d="M8.6 15.6 H15.4"/></symbol>\n  <!-- menu \u2014 \u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17) -->\n  <symbol id="menu" data-cat="ui" data-src="own" data-note="\u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"></line> <line x1="4" y1="12" x2="20" y2="12"></line> <line x1="4" y1="17" x2="20" y2="17"></line></symbol>\n</svg>\n';
 
 // src/app/ui.ts
 var $ = (id) => {
@@ -296,6 +296,10 @@ var CoreSession = class _CoreSession {
     if (x || y) this.opts.onInput?.();
     this.core._kr_set_analog(Math.round(x * 32767), Math.round(y * 32767));
   }
+  /** 核堆用了多少字节（工具栏「内存」；老核没有这个导出 → 0）。核的堆固定 768 MB、不增长。 */
+  heapUsed() {
+    return this.core._kr_heap_used ? this.core._kr_heap_used() : 0;
+  }
   /** 这一局读过的盘上字节并集的大小（核 mark_seen；挂机判定的进展信号）。老核没有这个导出 → 0。 */
   discSeenBytes() {
     return this.core._kr_disc_seen_bytes ? this.core._kr_disc_seen_bytes() : 0;
@@ -523,12 +527,11 @@ var CoreSession = class _CoreSession {
 // src/app/softkeys.ts
 var FACE = [["triangle", "tri"], ["square", "sq"], ["circle", "ci"], ["cross", "cr"]];
 var STICK_DEADZONE = 0.12;
-function mountSoftKeys(host, onMask, onAnalog = () => {
-}) {
+function mountSoftKeys(host, on) {
   const keys = /* @__PURE__ */ new Map();
-  const key = (name, cls, label) => {
-    const el = h("div", { class: `pk ${cls}`, "data-k": name }, label);
-    keys.set(name, el);
+  const key = (id, bits2, cls, label) => {
+    const el = h("div", { class: `pk ${cls}`, "data-k": id }, label);
+    keys.set(id, { el, bits: bits2 });
     return el;
   };
   const dpad = h(
@@ -539,18 +542,26 @@ function mountSoftKeys(host, onMask, onAnalog = () => {
     h("i", { class: "arm left" }),
     h("i", { class: "arm right" })
   );
-  const face = h("div", { class: "face" }, ...FACE.map(([n, c]) => key(n, `fb ${c}`, h("i", { class: `sym ${c}` }))));
-  const knob = h("i", { class: "knob" });
-  const stick = h("div", { class: "stick" }, knob);
+  const face = h("div", { class: "face" }, ...FACE.map(([n, c]) => key(n, bit(n), `fb ${c}`, h("i", { class: `sym ${c}` }))));
+  const mkStick = (side) => {
+    const knob = h("i", { class: "knob" });
+    return { el: h("div", { class: `stick ${side}` }, knob), knob };
+  };
+  const sticks = { left: mkStick("left"), right: mkStick("right") };
+  const pauseKey = h("div", { class: "pk small sys", "data-sys": "pause", title: "\u6682\u505C / \u7EE7\u7EED" }, "\u6682\u505C");
+  const fastKey = h("div", { class: "pk small sys", "data-sys": "fast", title: "\u6309\u4F4F\u5FEB\u8FDB" }, "\u5FEB\u8FDB");
   const layer = h(
     "div",
     { class: "softkeys", hidden: true },
-    key("l", "shoulder l", "L"),
-    key("r", "shoulder r", "R"),
+    key("lt", bit("l"), "shoulder lt", "LT"),
+    key("l", bit("l"), "shoulder l", "L"),
+    key("r", bit("r"), "shoulder r", "R"),
+    key("rt", bit("r"), "shoulder rt", "RT"),
+    sticks.left.el,
     dpad,
-    stick,
+    sticks.right.el,
     face,
-    h("div", { class: "mid" }, key("select", "small", "SELECT"), key("start", "small", "START"))
+    h("div", { class: "mid" }, pauseKey, key("select", bit("select"), "small", "SELECT"), key("start", bit("start"), "small", "START"), fastKey)
   );
   host.append(layer);
   const pointers = /* @__PURE__ */ new Map();
@@ -560,18 +571,21 @@ function mountSoftKeys(host, onMask, onAnalog = () => {
     for (const v of pointers.values()) m |= v;
     if (m === shown) return;
     shown = m;
-    for (const [n, el] of keys) el.classList.toggle("on", (m & bit(n)) !== 0);
+    for (const [, k] of keys) k.el.classList.toggle("on", false);
+    for (const [id, k] of keys) if ([...pointers.values()].some((v) => v === k.bits && pointerKey.get(id))) k.el.classList.add("on");
     for (const d of ["up", "down", "left", "right"]) dpad.querySelector(`.${d}`).classList.toggle("on", (m & bit(d)) !== 0);
-    onMask(m);
+    on.onMask(m);
   };
+  const pointerKey = /* @__PURE__ */ new Map();
+  const pointerOn = /* @__PURE__ */ new Map();
   const hit = (x, y) => {
     const r = dpad.getBoundingClientRect();
     const pad2 = r.width * 0.15;
     if (x >= r.left - pad2 && x <= r.right + pad2 && y >= r.top - pad2 && y <= r.bottom + pad2) {
       const dx = x - (r.left + r.width / 2), dy = y - (r.top + r.height / 2);
-      if (Math.hypot(dx, dy) < r.width * 0.12) return 0;
+      if (Math.hypot(dx, dy) < r.width * 0.12) return { bits: 0, id: null };
       const sector = (Math.round(Math.atan2(dy, dx) / (Math.PI / 4)) + 8) % 8;
-      return [
+      return { bits: [
         bit("right"),
         bit("right") | bit("down"),
         bit("down"),
@@ -580,17 +594,28 @@ function mountSoftKeys(host, onMask, onAnalog = () => {
         bit("left") | bit("up"),
         bit("up"),
         bit("up") | bit("right")
-      ][sector];
+      ][sector], id: null };
     }
-    for (const [n, el] of keys) {
-      const k = el.getBoundingClientRect();
-      if (x >= k.left - 4 && x <= k.right + 4 && y >= k.top - 4 && y <= k.bottom + 4) return bit(n);
+    for (const [id, k] of keys) {
+      const b = k.el.getBoundingClientRect();
+      if (x >= b.left - 4 && x <= b.right + 4 && y >= b.top - 4 && y <= b.bottom + 4) return { bits: k.bits, id };
     }
-    return 0;
+    return { bits: 0, id: null };
   };
-  let stickPointer = null;
-  const stickMove = (x, y) => {
-    const r = stick.getBoundingClientRect();
+  const setPointer = (pid, x, y) => {
+    const prev = pointerOn.get(pid);
+    if (prev) pointerKey.set(prev, false);
+    const got = hit(x, y);
+    pointers.set(pid, got.bits);
+    pointerOn.set(pid, got.id);
+    if (got.id) pointerKey.set(got.id, true);
+    shown = -1;
+    publish();
+  };
+  const stickPointer = { left: null, right: null };
+  const stickMove = (side, x, y) => {
+    const s = sticks[side];
+    const r = s.el.getBoundingClientRect();
     const rad = r.width / 2;
     let dx = (x - (r.left + rad)) / rad, dy = (y - (r.top + rad)) / rad;
     const len = Math.hypot(dx, dy);
@@ -598,46 +623,78 @@ function mountSoftKeys(host, onMask, onAnalog = () => {
       dx /= len;
       dy /= len;
     }
-    knob.style.transform = `translate(${(dx * 50).toFixed(1)}%, ${(dy * 50).toFixed(1)}%)`;
-    stick.classList.add("on");
-    onAnalog(Math.hypot(dx, dy) < STICK_DEADZONE ? 0 : dx, Math.hypot(dx, dy) < STICK_DEADZONE ? 0 : dy);
+    s.knob.style.transform = `translate(${(dx * 50).toFixed(1)}%, ${(dy * 50).toFixed(1)}%)`;
+    s.el.classList.add("on");
+    const dead = Math.hypot(dx, dy) < STICK_DEADZONE;
+    (side === "left" ? on.onLeftStick : on.onRightStick)(dead ? 0 : dx, dead ? 0 : dy);
   };
-  const stickRelease = () => {
-    stickPointer = null;
-    knob.style.transform = "";
-    stick.classList.remove("on");
-    onAnalog(0, 0);
+  const stickRelease = (side) => {
+    stickPointer[side] = null;
+    sticks[side].knob.style.transform = "";
+    sticks[side].el.classList.remove("on");
+    (side === "left" ? on.onLeftStick : on.onRightStick)(0, 0);
   };
+  const sideOf = (pid) => stickPointer.left === pid ? "left" : stickPointer.right === pid ? "right" : null;
+  let fastPointer = null;
   layer.addEventListener("pointerdown", (e) => {
-    if (e.target.closest(".stick")) {
-      if (stickPointer !== null) return;
+    const t = e.target;
+    const st = t.closest(".stick");
+    if (st) {
+      const side = st.classList.contains("right") ? "right" : "left";
+      if (stickPointer[side] !== null) return;
       e.preventDefault();
       layer.setPointerCapture(e.pointerId);
-      stickPointer = e.pointerId;
-      stickMove(e.clientX, e.clientY);
+      stickPointer[side] = e.pointerId;
+      stickMove(side, e.clientX, e.clientY);
       return;
     }
-    if (!e.target.closest(".pk, .dpad")) return;
+    const sys = t.closest("[data-sys]")?.dataset.sys;
+    if (sys === "pause") {
+      e.preventDefault();
+      on.onPause();
+      return;
+    }
+    if (sys === "fast") {
+      e.preventDefault();
+      layer.setPointerCapture(e.pointerId);
+      fastPointer = e.pointerId;
+      fastKey.classList.add("on");
+      on.onFast(true);
+      return;
+    }
+    if (!t.closest(".pk, .dpad")) return;
     e.preventDefault();
     layer.setPointerCapture(e.pointerId);
-    pointers.set(e.pointerId, hit(e.clientX, e.clientY));
-    publish();
+    setPointer(e.pointerId, e.clientX, e.clientY);
   });
   layer.addEventListener("pointermove", (e) => {
-    if (e.pointerId === stickPointer) {
-      stickMove(e.clientX, e.clientY);
+    const side = sideOf(e.pointerId);
+    if (side) {
+      stickMove(side, e.clientX, e.clientY);
       return;
     }
     if (!pointers.has(e.pointerId)) return;
-    pointers.set(e.pointerId, hit(e.clientX, e.clientY));
-    publish();
+    setPointer(e.pointerId, e.clientX, e.clientY);
   });
   const release = (e) => {
-    if (e.pointerId === stickPointer) {
-      stickRelease();
+    const side = sideOf(e.pointerId);
+    if (side) {
+      stickRelease(side);
       return;
     }
-    if (pointers.delete(e.pointerId)) publish();
+    if (e.pointerId === fastPointer) {
+      fastPointer = null;
+      fastKey.classList.remove("on");
+      on.onFast(false);
+      return;
+    }
+    const id = pointerOn.get(e.pointerId);
+    if (id) pointerKey.set(id, false);
+    pointerOn.delete(e.pointerId);
+    if (pointers.delete(e.pointerId)) {
+      shown = -1;
+      publish();
+    }
   };
   layer.addEventListener("pointerup", release);
   layer.addEventListener("pointercancel", release);
@@ -649,8 +706,16 @@ function mountSoftKeys(host, onMask, onAnalog = () => {
       layer.hidden = !v;
       if (!v) {
         pointers.clear();
+        pointerOn.clear();
+        pointerKey.clear();
+        shown = -1;
         publish();
-        if (stickPointer !== null) stickRelease();
+        for (const side of ["left", "right"]) if (stickPointer[side] !== null) stickRelease(side);
+        if (fastPointer !== null) {
+          fastPointer = null;
+          fastKey.classList.remove("on");
+          on.onFast(false);
+        }
       }
     },
     get visible() {
@@ -6183,6 +6248,7 @@ var pending = 0;
 var problem = null;
 var local = null;
 var doneUntil = 0;
+var netBytes = { up: 0, down: 0 };
 var softProblem = null;
 var retryHook = null;
 function networkHiccup(detail) {
@@ -6248,6 +6314,9 @@ function track(label, bytes, run, verb = "\u4F20") {
   logEvent("info", `\u5F00\u59CB\u4F20 ${label}\uFF08${mb(bytes)}\uFF09`);
   let lastPaint = 0;
   const p = run((done, total) => {
+    const delta = Math.max(0, done - (f.done ?? 0));
+    if (f.verb === "\u4F20") netBytes.up += delta;
+    else netBytes.down += delta;
     f.done = done;
     if (total) f.bytes = total;
     const now = performance.now();
@@ -8962,6 +9031,7 @@ var softKeys = null;
 var snaps = null;
 var activity = null;
 var softAnalog = { x: 0, y: 0 };
+var softRight = { x: 0, y: 0 };
 var currentSlot = null;
 var lastNote = "";
 var cards = /* @__PURE__ */ new Map();
@@ -9257,7 +9327,7 @@ async function play(prepare, resume) {
     onInput: () => activity?.input(performance.now()),
     media: disc.media,
     ext: disc.ext,
-    coreDir: "./dist/core-6918e4e31b8d/",
+    coreDir: "./dist/core-a4308d6eac3e/",
     glCanvas: $("gl"),
     softCanvas: $("screen"),
     audioContext: audioContext(),
@@ -9565,45 +9635,73 @@ function toolButton(name, title, onclick, label) {
 }
 function renderToolbar() {
   if (!session) return;
-  const paused = session.paused, fast = session.speed > 1;
   const bar = $("toolbar");
-  const pauseBtn = toolButton(paused ? "play" : "pause", paused ? "\u7EE7\u7EED\uFF08P\uFF09" : "\u6682\u505C\uFF08P\uFF09", togglePause);
-  const ffBtn = toolButton("fast-forward", fast ? "\u6062\u590D\u6B63\u5E38\u901F\u5EA6\uFF08Tab\uFF09" : `\u5FEB\u8FDB \xD7${FAST_FORWARD}\uFF08\u6309\u4F4F Tab\uFF09`, () => setFast(!fast));
-  ffBtn.classList.toggle("on", fast);
-  const padBtn = toolButton("gamepad", "\u5C4F\u5E55\u8F6F\u952E", toggleSoftKeys, "\u8F6F\u952E");
-  padBtn.classList.toggle("on", softKeys?.visible ?? false);
-  bar.replaceChildren(...[
+  bar.replaceChildren(
     h("span", { id: "title-wrap" }, $("title")),
-    pauseBtn,
-    ffBtn,
-    snapshotButton(),
-    padBtn,
-    toolButton("maximize-viewport", "\u5168\u5C4F\uFF08Alt+Enter / \u53CC\u51FB\u753B\u9762\uFF09", toggleFullscreen),
-    volumeButton(),
-    shotButton(),
-    current?.identifier && pantryItems.find((it) => it.identifier === current.identifier)?.syncState === "cloud-only" ? toolButton("cloud", "\u7F13\u5B58\u5168\u76D8\uFF1A\u6574\u5F20\u7559\u5728\u8FD9\u53F0\u8BBE\u5907\uFF08\u79BB\u7EBF\u4E5F\u80FD\u6253\u5F00\uFF0C\u4E0D\u518D\u7B49\u7F51\uFF09", () => {
-      cacheWholeDisc(current.identifier).catch((e) => banner(errorText(e)));
-    }, "\u7F13\u5B58\u5168\u76D8") : null,
-    toolButton("more", "\u7EDF\u8BA1", () => {
-      $("status").hidden = !$("status").hidden;
-    }),
+    $("hud"),
     h("span", { class: "muted ver", title: "\u7248\u672C" }, APP_VERSION),
-    // 版本水印：更新有没有生效，看这里（家族规矩：一直在屏幕上，不藏菜单里）
-    toolButton("x", "\u9000\u51FA\u8FD9\u5F20\u76D8", quit)
-  ].filter((x) => !!x));
-  $("paused-mark").hidden = !paused;
+    // 有空就显示（user 10-14「有多余的空可以显示版本号」）；窄屏 CSS 藏起来，☰ 里一直有
+    shotButton(),
+    snapshotButton(),
+    toolButton("menu", "\u83DC\u5355\uFF08\u6682\u505C / \u5FEB\u8FDB / \u8F6F\u952E / \u5168\u5C4F / \u97F3\u91CF / \u7EDF\u8BA1 / \u5B58\u6863\u7BA1\u7406 / \u9000\u51FA\uFF09", openMenu, "\u83DC\u5355")
+  );
+  $("paused-mark").hidden = !session.paused;
+}
+function openMenu() {
+  if (!session) return;
+  const s = session;
+  const item = (label, hint, fn, on = false) => h("button", { class: `menu-item${on ? " on" : ""}`, onclick: () => {
+    done?.();
+    fn();
+  } }, h("span", {}, label), h("span", { class: "muted" }, hint));
+  let done = null;
+  void sheet((close) => {
+    done = () => close();
+    return [
+      h("h2", {}, current?.title ?? "\u83DC\u5355"),
+      h("p", { class: "muted" }, APP_VERSION),
+      h(
+        "div",
+        { class: "menu-list" },
+        item(s.paused ? "\u7EE7\u7EED" : "\u6682\u505C", "P \xB7 Esc", togglePause, s.paused),
+        item(s.speed > 1 ? "\u6062\u590D\u6B63\u5E38\u901F\u5EA6" : `\u5FEB\u8FDB \xD7${FAST_FORWARD}`, "\u6309\u4F4F Tab \xB7 ` \u5207\u6362", () => setFast(!(s.speed > 1)), s.speed > 1),
+        item(softKeys?.visible ? "\u6536\u8D77\u5C4F\u5E55\u8F6F\u952E" : "\u5C4F\u5E55\u8F6F\u952E", "\u89E6\u5C4F / \u5C04\u7EBF\u70B9", toggleSoftKeys, softKeys?.visible ?? false),
+        item(document.fullscreenElement ? "\u9000\u51FA\u5168\u5C4F" : "\u5168\u5C4F", "Alt+Enter \xB7 \u53CC\u51FB\u753B\u9762", toggleFullscreen),
+        item(s.isMuted ? "\u53D6\u6D88\u9759\u97F3" : `\u97F3\u91CF ${Math.round(s.volume * 100)}`, "M \u9759\u97F3", openVolume, s.isMuted),
+        item($("status").hidden ? "\u7EDF\u8BA1\u8BE6\u60C5" : "\u6536\u8D77\u7EDF\u8BA1", "\u5E27\u8282\u594F \xB7 \u58F0\u97F3 \xB7 \u8BFB\u76D8 \xB7 \u624B\u67C4", () => {
+          $("status").hidden = !$("status").hidden;
+        }),
+        item("\u5B58\u6863\u7BA1\u7406", "\u8FD9\u5F20\u76D8\u7684\u5FEB\u7167\u548C\u5B58\u6863", () => {
+          openSaveManager({ ...saveManagerContext, only: current ? { title: current.title, key: current.key, discId: current.fp.id } : void 0 }).catch((e) => banner(errorText(e)));
+        }),
+        item("\u9000\u51FA\u8FD9\u5F20\u76D8", "\u5B58\u6863\u4F1A\u5148\u540C\u6B65\u5B8C", () => {
+          quit().catch((e) => banner(errorText(e)));
+        })
+      ),
+      h("div", { class: "row" }, h("button", { onclick: () => close() }, "\u5173\u95ED"))
+    ];
+  });
+}
+var hudPrev = { t: performance.now(), up: 0, down: 0 };
+function renderHud() {
+  if (!session) return;
+  const st = session.stats();
+  const now = performance.now(), dt = (now - hudPrev.t) / 1e3;
+  const up = (netBytes.up - hudPrev.up) / dt, down = st.netBps + (netBytes.down - hudPrev.down) / dt;
+  hudPrev = { t: now, up: netBytes.up, down: netBytes.down };
+  const rate = (b) => b >= 2 ** 20 ? `${(b / 2 ** 20).toFixed(1)}M` : b >= 1024 ? `${(b / 1024).toFixed(0)}K` : `${b.toFixed(0)}`;
+  const heap = session.heapUsed();
+  const js = performance.memory?.usedJSHeapSize;
+  const el = $("hud");
+  el.textContent = `${st.fps.toFixed(0)} fps \xB7 \u2193${rate(down)} \u2191${rate(up)} \xB7 ${heap ? `${(heap / 2 ** 20).toFixed(0)}/768M` : "\u2014"}${js ? ` \xB7 JS ${(js / 2 ** 20).toFixed(0)}M` : ""}`;
+  el.classList.toggle("waiting", st.netWaitMs > 300);
+  el.title = st.netWaitMs > 300 ? `\u5728\u7B49\u8BFB\u76D8\uFF1A\u8FD9\u4E00\u79D2\u7B49\u4E86 ${st.netWaitMs.toFixed(0)} ms\uFF08\u7F51\u6162 / \u65AD\u4E86\uFF1B\u300C\u7F13\u5B58\u5168\u76D8\u300D\u540E\u5C31\u4E0D\u7B49\uFF09` : "\u5E27\u7387 \xB7 \u4E0B\u8F7D \xB7 \u4E0A\u4F20 \xB7 \u6838\u5185\u5B58\uFF08\u5DF2\u7528 / 768 MB\uFF09";
 }
 var syncState = { kind: "idle", text: "" };
 function snapshotButton() {
-  const b = toolButton("floppy-disk", syncState.kind === "idle" ? "\u5FEB\u7167" : `\u5FEB\u7167 \xB7 ${syncState.text}`, openSlots);
+  const b = toolButton("floppy-disk", syncState.kind === "idle" ? "\u5FEB\u7167" : `\u5FEB\u7167 \xB7 ${syncState.text}`, openSlots, "\u5FEB\u7167");
   b.classList.add("smart", syncState.kind);
   b.id = "snapshot-btn";
-  return b;
-}
-function volumeButton() {
-  const muted = session?.isMuted ?? false;
-  const b = toolButton("volume", muted ? "\u5DF2\u9759\u97F3\uFF08M \u5207\u6362\uFF09" : `\u97F3\u91CF ${Math.round((session?.volume ?? 1) * 100)}\uFF08M \u9759\u97F3\uFF09`, openVolume);
-  b.classList.toggle("muted-on", muted);
   return b;
 }
 function toggleMute() {
@@ -9792,8 +9890,15 @@ var PAD_MAP = [
 ];
 var STICK_DEADZONE2 = 0.12;
 var padInfo = "";
+function rightStickMask(x, y) {
+  return (x < -0.5 ? bit("left") : 0) | (x > 0.5 ? bit("right") : 0) | (y < -0.5 ? bit("up") : 0) | (y > 0.5 ? bit("down") : 0);
+}
 function pollGamepads(s) {
-  let mask = 0, ax = softAnalog.x, ay = softAnalog.y;
+  let mask = rightStickMask(softRight.x, softRight.y), ax = softAnalog.x, ay = softAnalog.y;
+  if (Math.hypot(keyAnalog.x, keyAnalog.y) > Math.hypot(ax, ay)) {
+    ax = keyAnalog.x;
+    ay = keyAnalog.y;
+  }
   const names = [];
   for (const gp of navigator.getGamepads?.() ?? []) {
     if (!gp || !gp.connected) continue;
@@ -9804,6 +9909,7 @@ function pollGamepads(s) {
       ax = x;
       ay = y;
     }
+    mask |= rightStickMask(gp.axes[2] ?? 0, gp.axes[3] ?? 0);
   }
   padInfo = names.join(" + ");
   s.setMask("pad", mask);
@@ -9821,9 +9927,10 @@ function frame() {
     snaps?.tick(activity.tick(now - lastFrameAt, now, { visible: document.visibilityState === "visible", paused: session.paused }));
   }
   lastFrameAt = now;
-  if (!$("status").hidden && now - statusAt > 250) {
+  if (now - statusAt > 500) {
     statusAt = now;
-    $("status").textContent = statusText();
+    renderHud();
+    if (!$("status").hidden) $("status").textContent = statusText();
   }
   requestAnimationFrame(frame);
 }
@@ -9837,10 +9944,23 @@ function statusText() {
     `\u58F0\u97F3\uFF1A${s.audioState} \xB7 \u7F13\u51B2 ${s.audioFillMs.toFixed(0)} ms \xB7 \u8F93\u51FA\u5EF6\u8FDF ${s.outputLatencyMs.toFixed(0)} ms \xB7 \u6B20\u8F7D\u7D2F\u8BA1 ${s.audioUnderrunMs.toFixed(0)} ms \xB7 \u4E22\u5F03 ${s.audioDropped}`,
     `\u624B\u67C4\uFF1A${padInfo || "\u6CA1\u68C0\u6D4B\u5230\uFF08\u63D2\u4E0A\u540E\u5728\u9875\u9762\u4E0A\u6309\u4E00\u4E0B\u624B\u67C4\u6309\u952E\uFF09"}`,
     `\u6D3B\u52A8\uFF1A${activity ? { playing: "\u8FD0\u884C\u4E2D", idle: "\u6302\u673A\uFF08\u81EA\u52A8\u5FEB\u7167\u4E0D\u8BA1\u65F6\uFF09", away: "\u540E\u53F0 / \u6682\u505C" }[activity.state(performance.now(), { visible: document.visibilityState === "visible", paused: s.paused })] : "\u2014"} \xB7 \u8BFB\u8FC7\u7684\u76D8 ${(session.discSeenBytes() / 2 ** 20).toFixed(1)} MB \xB7 \u8FD9\u6B21\u8FD0\u884C ${((activity?.playedMs ?? 0) / 6e4).toFixed(1)} \u5206\u949F`,
-    `\u952E\u76D8\uFF1A\u65B9\u5411\u952E \xB7 X \u25CB \xB7 Z \xD7 \xB7 A \u25A1 \xB7 S \u25B3 \xB7 Q/W L/R \xB7 \u56DE\u8F66 Start \xB7 \u7A7A\u683C Select \xB7 P \u6682\u505C \xB7 M \u9759\u97F3 \xB7 \u6309\u4F4F Tab \u5FEB\u8FDB \xB7 F2 \u5B58 / F4 \u8BFB\u5F53\u524D\u683C`
+    `\u952E\u76D8\uFF08\u540C PPSSPP \u9ED8\u8BA4\uFF09\uFF1A\u65B9\u5411\u952E \u5341\u5B57 \xB7 I/J/K/L \u6447\u6746\uFF08\u53F3 Shift \u8F7B\u63A8\uFF09\xB7 X \u25CB \xB7 Z \xD7 \xB7 A \u25A1 \xB7 S \u25B3 \xB7 Q/W L/R \xB7 \u7A7A\u683C Start \xB7 V / \u56DE\u8F66 Select \xB7 Esc / P \u6682\u505C \xB7 \u6309\u4F4F Tab \u5FEB\u8FDB \xB7 \` \u5FEB\u8FDB\u5F00\u5173 \xB7 M \u9759\u97F3 \xB7 F2 \u5B58 / F4 \u8BFB\u5F53\u524D\u683C`
   ].join("\n");
 }
-var KEYMAP = { ArrowUp: "up", ArrowDown: "down", ArrowLeft: "left", ArrowRight: "right", KeyX: "circle", KeyZ: "cross", KeyA: "square", KeyS: "triangle", Enter: "start", Space: "select", KeyQ: "l", KeyW: "r" };
+var KEYMAP = { ArrowUp: "up", ArrowDown: "down", ArrowLeft: "left", ArrowRight: "right", KeyX: "circle", KeyZ: "cross", KeyA: "square", KeyS: "triangle", Space: "start", KeyV: "select", Enter: "select", KeyQ: "l", KeyW: "r" };
+var STICK_KEYS = { KeyI: [0, -1], KeyK: [0, 1], KeyJ: [-1, 0], KeyL: [1, 0] };
+var stickKeysDown = /* @__PURE__ */ new Set();
+var keyAnalog = { x: 0, y: 0 };
+function updateKeyAnalog(lightly) {
+  let x = 0, y = 0;
+  for (const k of stickKeysDown) {
+    x += STICK_KEYS[k][0];
+    y += STICK_KEYS[k][1];
+  }
+  const len = Math.hypot(x, y) || 1, mag = lightly ? 0.5 : 1;
+  keyAnalog = { x: x / len * mag, y: y / len * mag };
+}
+var rightShift = false;
 function onKey(e, down) {
   if (!session || isSheetOpen()) return;
   if (down && e.code === "Enter" && e.altKey) {
@@ -9853,10 +9973,27 @@ function onKey(e, down) {
     if (!e.repeat) setFast(down);
     return;
   }
+  if (STICK_KEYS[e.code]) {
+    e.preventDefault();
+    if (down) stickKeysDown.add(e.code);
+    else stickKeysDown.delete(e.code);
+    updateKeyAnalog(e.getModifierState?.("Shift") && e.location === 2 || rightShift);
+    return;
+  }
+  if (e.code === "ShiftRight") {
+    rightShift = down;
+    updateKeyAnalog(down);
+    return;
+  }
   if (down && !e.repeat) {
-    if (e.code === "KeyP") {
+    if (e.code === "KeyP" || e.code === "Escape") {
       e.preventDefault();
       togglePause();
+      return;
+    }
+    if (e.code === "Backquote") {
+      e.preventDefault();
+      setFast(!(session.speed > 1));
       return;
     }
     if (e.code === "KeyM") {
@@ -10012,8 +10149,16 @@ async function boot() {
     $("library").replaceChildren(h("p", {}, "\u8FD9\u4E2A\u6D4F\u89C8\u5668\u7528\u4E0D\u4E86\uFF08\u8DE8\u6E90\u9694\u79BB\u6CA1\u751F\u6548\uFF09\u3002\u8BF7\u6362\u6700\u65B0\u7248\u7684 Chrome / Edge / Safari\u3002"));
     return;
   }
-  softKeys = mountSoftKeys($("stage"), (m) => session?.setMask("soft", m), (x, y) => {
-    softAnalog = { x, y };
+  softKeys = mountSoftKeys($("stage"), {
+    onMask: (m) => session?.setMask("soft", m),
+    onLeftStick: (x, y) => {
+      softAnalog = { x, y };
+    },
+    onRightStick: (x, y) => {
+      softRight = { x, y };
+    },
+    onPause: togglePause,
+    onFast: (d) => setFast(d)
   });
   if (matchMedia("(pointer: coarse)").matches) softKeys.setVisible(true);
   $("stage").addEventListener("dblclick", (e) => {
@@ -10193,4 +10338,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-3f351c081b79.mjs.map
+//# sourceMappingURL=kudsrocket-f0536890f232.mjs.map

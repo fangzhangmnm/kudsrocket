@@ -98,7 +98,7 @@ button:disabled { opacity: .4; cursor: default; }
 #busy span { padding: 10px 18px; border-radius: 10px; background: var(--panel); border: 1px solid var(--line); }
 [hidden] { display: none !important; }
 /* 竖屏：画面在上、软键在下 → L / R 放到十字键和四个键上方（不叠在画面上） */
-@media (orientation: portrait) { .shoulder { top: auto; bottom: calc(var(--u) * 3.5); } }
+
 /* 游戏库一行 = 盘按钮 + 留本机 / 移除；标题下一行小字是 OneDrive 里的文件名（W-8）。added 20261014 by Claude Fable 5.1 */
 .disc-row { display: flex; align-items: stretch; gap: 6px; }
 .disc-row .disc { flex: 1; min-width: 0; }
@@ -148,11 +148,20 @@ button:disabled { opacity: .4; cursor: default; }
 /* 真进度：条子不再无限滑动 */
 .syncbar.known .syncbar-fill { animation: none; transition: width .2s linear; }
 .tools select { font: inherit; background: var(--panel); color: var(--ink); border: 1px solid var(--line); border-radius: 6px; padding: 4px 6px; }
-/* 软键摇杆（W-13）：横屏在十字键上方；竖屏在十字键右边（上方是 L / R）。added 20261014 by Claude Opus 5.5 */
-.softkeys .stick { pointer-events: auto; touch-action: none; position: absolute; left: calc(var(--u) * .7); bottom: calc(var(--u) * 3.6); width: calc(var(--u) * 2.1); height: calc(var(--u) * 2.1); border-radius: 50%; background: rgba(255,255,255,.06); border: 1.5px solid rgba(255,255,255,.22); display: grid; place-items: center; }
+/* 软键（照标准手柄做全）：LT · L 在左上，R · RT 在右上；左摇杆在十字键上方、右摇杆在四键上方；中间一排 暂停 · SELECT · START · 快进。
+   竖屏：画面在上、键在下 → 肩键挪到摇杆上方。edited 20261014 by Claude Opus 5.5 */
+.shoulder.lt { left: calc(var(--u) * .3); }
+.shoulder.l { left: calc(var(--u) * 2.6); }
+.shoulder.r { right: calc(var(--u) * 2.6); left: auto; }
+.shoulder.rt { right: calc(var(--u) * .3); }
+.softkeys .stick { pointer-events: auto; touch-action: none; position: absolute; bottom: calc(var(--u) * 3.6); width: calc(var(--u) * 2.1); height: calc(var(--u) * 2.1); border-radius: 50%; background: rgba(255,255,255,.06); border: 1.5px solid rgba(255,255,255,.22); display: grid; place-items: center; }
+.softkeys .stick.left { left: calc(var(--u) * .7); }
+.softkeys .stick.right { right: calc(var(--u) * .7); }
 .softkeys .stick .knob { width: 46%; height: 46%; border-radius: 50%; background: rgba(255,255,255,.18); border: 1.5px solid rgba(255,255,255,.4); transition: transform .06s linear; }
 .softkeys .stick.on .knob { background: rgba(122,162,255,.45); border-color: rgba(122,162,255,.9); transition: none; }
-@media (orientation: portrait) { .softkeys .stick { left: calc(var(--u) * 3.3); bottom: calc(var(--u) * 1.2); width: calc(var(--u) * 1.8); height: calc(var(--u) * 1.8); } }
+.mid .pk.sys { color: rgba(255,255,255,.6); }
+.mid .pk { pointer-events: auto; touch-action: none; }
+@media (orientation: portrait) { .softkeys .shoulder { top: auto; bottom: calc(var(--u) * 6.1); } }
 /* 音量 / 截图 */
 .icon-btn.muted-on { color: var(--warn); }
 .volume-row input[type=range] { flex: 1; }
@@ -168,3 +177,14 @@ button:disabled { opacity: .4; cursor: default; }
 .seg button.on { background: var(--accent); color: #000; }
 /* 游戏界面里横条在工具栏下面，不盖住按钮（10-14 无头测试抓到：报错横条把快照按钮盖住了）。全屏时横条挂在 #stage 里，那里没有工具栏。 */
 body:has(#game:not([hidden])) > #banners { top: calc(var(--tool) + 6px); }
+
+/* 工具栏：名字吃掉剩下的宽度；性能读数；按钮带文字（窄屏只留图标 / 字更小）。等读盘 = 红。 */
+.toolbar #title-wrap { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hud { font: 12px/1 ui-monospace, monospace; white-space: nowrap; padding: 0 6px; }
+.hud.waiting { color: var(--err); }
+.toolbar .icon-btn .label { font-size: 13px; }
+.menu-list { display: grid; gap: 6px; }
+.menu-item { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 14px; }
+.menu-item.on { border-color: var(--accent); }
+@media (max-width: 520px) { .hud { font-size: 10px; padding: 0 2px; } }
+@media (max-width: 900px) { .toolbar .ver { display: none; } }
