@@ -1,5 +1,5 @@
 // src/version.ts
-var APP_VERSION = "v0.1.16-2026-10-15";
+var APP_VERSION = "v0.1.17-2026-10-15";
 
 // assets/icons.svg
 var icons_default = '<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none">\n<!--\n  13 icons extracted from the family icon library (../20260708 SVG Icons/icons.svg) by extract-icons.py \u2014 do not hand-edit; re-run the script instead.\n  Family SVG Icons \u2014 MIT License, Copyright (c) 2026 fangzhangmnm.\n  Contains work derived from (per-icon provenance in data-src):\n    Feather Icons \u2014 MIT License, Copyright (c) 2013-2023 Cole Bemis \xB7 https://github.com/feathericons/feather\n-->\n  <!-- media -->\n  <!-- pause \u2014 \u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="pause" data-cat="media" data-src="own" data-note="\u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="3.2"><path d="M8.3 5.5 V18.5"/><path d="M15.7 5.5 V18.5"/></g></symbol>\n  <!-- play \u2014 \u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="play" data-cat="media" data-src="own" data-note="\u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 5.4 L18.8 12 L8.2 18.6 Z" fill="currentColor"/></symbol>\n  <!-- fast-forward \u2014 \u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="fast-forward" data-cat="media" data-src="own" data-note="\u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.4 6.8 L10.9 12 L4.4 17.2 Z" fill="currentColor"/><path d="M13.1 6.8 L19.6 12 L13.1 17.2 Z" fill="currentColor"/></symbol>\n  <!-- volume \u2014 \u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009) -->\n  <symbol id="volume" data-cat="media" data-src="own" data-note="\u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 10.3 H8.7 L12.6 6.6 V17.4 L8.7 13.7 H5.5 Z" fill="currentColor"/><path d="M15.13 9.73 A3.4 3.4 0 0 1 15.13 14.27"/><path d="M16.36 7.19 A6.1 6.1 0 0 1 16.36 16.81"/></symbol>\n  <!-- file -->\n  <!-- floppy-disk \u2014 \u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3 -->\n  <symbol id="floppy-disk" data-cat="file" data-src="feather:save" data-note="\u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13l3 3v13a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 17 8 17 3"/></symbol>\n  <!-- folder-open \u2014 \u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF -->\n  <symbol id="folder-open" data-cat="file" data-src="own" data-note="\u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18 V7 a2 2 0 0 1 2 -2 h4 l2 2 h6 a2 2 0 0 1 2 2 v1.8"/><path d="M3 18 L6.4 10.8 H21.6 L18.2 18 Z"/></symbol>\n  <!-- hierarchy -->\n  <!-- lock \u2014 \u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D -->\n  <symbol id="lock" data-cat="hierarchy" data-src="own" data-note="\u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10" width="13" height="11"/><path d="M8.8 10 V6.5 a3.2 3.2 0 0 1 6.4 0 V10"/></symbol>\n  <!-- common -->\n  <!-- x \u2014 \u53C9 -->\n  <symbol id="x" data-cat="common" data-src="own" data-note="\u53C9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 L17.5 17.5 M17.5 6.5 L6.5 17.5"/></symbol>\n  <!-- cloud -->\n  <!-- cloud \u2014 \u4E91 -->\n  <symbol id="cloud" data-cat="cloud" data-src="feather:cloud" data-note="\u4E91" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>\n  <!-- viewport -->\n  <!-- maximize-viewport \u2014 \u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55) -->\n  <symbol id="maximize-viewport" data-cat="viewport" data-src="own" data-note="\u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934 --> <polyline points="4 9 4 4 9 4"/> <polyline points="20 9 20 4 15 4"/> <polyline points="4 15 4 20 9 20"/> <polyline points="20 15 20 20 15 20"/></symbol>\n  <!-- ui -->\n  <!-- more \u2014 \u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00) -->\n  <symbol id="more" data-cat="ui" data-src="own" data-note="\u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/></symbol>\n  <!-- keyboard \u2014 \u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49) -->\n  <symbol id="keyboard" data-cat="ui" data-src="own" data-note="\u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="7.2" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="7.2" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><path d="M8.6 15.6 H15.4"/></symbol>\n  <!-- menu \u2014 \u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17) -->\n  <symbol id="menu" data-cat="ui" data-src="own" data-note="\u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"></line> <line x1="4" y1="12" x2="20" y2="12"></line> <line x1="4" y1="17" x2="20" y2="17"></line></symbol>\n</svg>\n';
@@ -6313,6 +6313,12 @@ function subscribe(cb) {
   };
 }
 var inFlight = () => !!local || flights.size > 0;
+function inFlightFresh() {
+  if (local) return true;
+  const now = performance.now();
+  for (const f of flights.values()) if (now - Math.max(f.startedAt, f.progressAt ?? f.startedAt) < 9e4) return true;
+  return false;
+}
 function whenIdle() {
   if (!inFlight()) return Promise.resolve();
   return new Promise((resolve) => {
@@ -6352,6 +6358,7 @@ function track(label, bytes, run, verb = "\u4F20") {
     else netBytes.down += delta;
     f.done = done;
     if (total) f.bytes = total;
+    f.progressAt = performance.now();
     const now = performance.now();
     if (now - lastPaint > 200 || done === total) {
       lastPaint = now;
@@ -6369,6 +6376,11 @@ function track(label, bytes, run, verb = "\u4F20") {
       problem = null;
       doneUntil = performance.now() + 3e3;
       logEvent("info", `${label} \u5B58\u5728\u8FD9\u53F0\u8BBE\u5907\uFF08\u6CA1\u767B\u5F55\uFF0C\u4E0D\u4F20\uFF09`);
+    } else if (r.reason === "not-attempted") {
+      problem = null;
+      doneUntil = performance.now() + 3e3;
+      logEvent("info", `${label} \u5B58\u5728\u8FD9\u53F0\u8BBE\u5907\u4E86\uFF08\u9501\u5C4F / \u540E\u53F0\u4E0D\u4F20\uFF0C\u56DE\u6765\u81EA\u52A8\u4F20\uFF09`);
+      retryHook?.();
     } else if (r.reason === "error" || r.reason === "deferred") {
       softProblem = { text: `${label} \u6CA1\u4F20\u4E0A\u53BB\uFF08\u7F51\u7EDC\uFF1F\uFF09\uFF1A\u5B58\u5728\u8FD9\u53F0\u8BBE\u5907\u4E86\uFF0C\u4F1A\u81EA\u52A8\u518D\u4F20`, at: Date.now() };
       logEvent("warn", softProblem.text);
@@ -6446,10 +6458,14 @@ function render() {
 }
 
 // src/app/store-ui.ts
-var BACKGROUND_KEYS = /* @__PURE__ */ new Set(["sync.pushing", "file.renaming", "file.uploading"]);
+var BACKGROUND_KEYS = /* @__PURE__ */ new Set(["sync.pushing", "file.renaming", "file.uploading", "cloud.checking", "file.pulling"]);
 var stemOf = (identifier) => labelFor(identifier);
 var storeUI = {
-  busy: (label, fn, key) => key && BACKGROUND_KEYS.has(key) ? fn() : withBusy(label, fn),
+  busy: (label, fn, key) => {
+    if (!key || !BACKGROUND_KEYS.has(key)) return withBusy(label, fn);
+    if (key === "file.pulling") note(label, 3e4);
+    return fn();
+  },
   resolveConflict: async ({ name, occasion }) => {
     const choice = await sheet((done) => [
       h("h2", {}, "\u4E91\u7AEF\u548C\u8FD9\u53F0\u8BBE\u5907\u4E0A\u7684\u4E0D\u4E00\u6837"),
@@ -8087,7 +8103,7 @@ function watchSlots(key, cb) {
   });
 }
 var foldersEnsured = /* @__PURE__ */ new Map();
-async function put(identifier, sealed) {
+async function put(identifier, sealed, opts = {}) {
   const store2 = getStore();
   const folder = identifier.replace(/\/[^/]*$/, "");
   let ensured = foldersEnsured.get(folder);
@@ -8097,7 +8113,7 @@ async function put(identifier, sealed) {
     ensured.catch(() => foldersEnsured.delete(folder));
   }
   await ensured;
-  return track(labelFor(identifier), sealed.length, (onProgress) => store2.file(identifier, { mode: "existing" }).save(new Blob([sealed]), { onProgress }));
+  return track(labelFor(identifier), sealed.length, (onProgress) => store2.file(identifier, { mode: "existing" }).save(new Blob([sealed]), { onProgress, tryPush: !opts.deferPush }));
 }
 async function clearLocalCopies(folders) {
   const store2 = getStore();
@@ -8138,9 +8154,9 @@ async function recheckAfterPush(identifier) {
 }
 var readSealed = (identifier) => get2(identifier);
 var putSealed = (identifier, sealed) => put(identifier, sealed);
-async function saveSnapshot(identifier, state2, meta, password) {
+async function saveSnapshot(identifier, state2, meta, password, opts = {}) {
   const thumb = meta.thumb ? btoa(Array.from(meta.thumb, (b) => String.fromCharCode(b)).join("")) : void 0;
-  return put(identifier, await sealBytes(password, state2, { salt: sessionSalt, compress: true, meta: { thumb, at: meta.at, auto: meta.auto, fp: meta.fp, t: meta.title } }));
+  return put(identifier, await sealBytes(password, state2, { salt: sessionSalt, compress: true, meta: { thumb, at: meta.at, auto: meta.auto, fp: meta.fp, t: meta.title } }), opts);
 }
 async function loadSnapshot(identifier, password) {
   const sealed = await get2(identifier);
@@ -8287,11 +8303,11 @@ async function loadMemstick(k, password, ids, complete) {
   }
   return { files, dirs, complete, loaded, unreadable, duplicates, times };
 }
-async function saveSaveDir(jar, files, password) {
+async function saveSaveDir(jar, files, password, opts = {}) {
   const id = await jamId(jar);
   setLabel(id, describeJar(jar));
   const zip = zipSync(Object.fromEntries(files), { level: 0 });
-  return put(id, await sealBytes(password, zip, { salt: sessionSalt, meta: { jar, at: Date.now() } }));
+  return put(id, await sealBytes(password, zip, { salt: sessionSalt, meta: { jar, at: Date.now() } }), opts);
 }
 async function deleteSaveDir(jar) {
   const id = await jamId(jar);
@@ -8323,6 +8339,28 @@ async function restoreBin(item) {
     encrypted: item.raw.encrypted
   });
   return r.status;
+}
+
+// src/app/deadline.ts
+function withDeadline(p, ms, onSettleLate) {
+  let timedOut = false;
+  let timer2 = 0;
+  const late = p.then((value) => {
+    if (timedOut) onSettleLate?.({ ok: true, value });
+    return value;
+  }, (error) => {
+    if (timedOut) onSettleLate?.({ ok: false, error });
+    throw error;
+  });
+  return Promise.race([
+    late.finally(() => clearTimeout(timer2)),
+    new Promise((resolve) => {
+      timer2 = window.setTimeout(() => {
+        timedOut = true;
+        resolve("timeout");
+      }, ms);
+    })
+  ]);
 }
 
 // src/app/resume.ts
@@ -9028,6 +9066,7 @@ function decompress(dat, buf) {
 }
 
 // src/app/snapshots.ts
+var SAVE_DEADLINE_MS = 2e4;
 var fpSame = (saved, now) => !!saved && fpCompatible(saved, now);
 var slotLabel = (s) => `${s.kind === "s" ? "\u624B\u52A8" : "\u81EA\u52A8"} ${s.n}`;
 var Snapshots = class {
@@ -9180,7 +9219,17 @@ var Snapshots = class {
       }
       const id = crumbId(this.disc.key, kind, n);
       const at = Date.now();
-      const r = await saveSnapshot(id, state2, { thumb, at, auto, fp: this.disc.fp, title: this.disc.title }, pw);
+      const hidden = document.visibilityState === "hidden";
+      const r = await withDeadline(
+        saveSnapshot(id, state2, { thumb, at, auto, fp: this.disc.fp, title: this.disc.title }, pw, { deferPush: hidden }),
+        SAVE_DEADLINE_MS,
+        (late) => logEvent(late.ok ? "info" : "warn", late.ok ? `\u300C${label}\u300D\u90A3\u6B21\u8FDF\u5230\u7684\u4E0A\u4F20${late.value.pushed ? "\u4F20\u597D\u4E86" : "\u6CA1\u4F20\u4E0A\u53BB\uFF08\u4F1A\u7EED\u63A8\uFF09"}` : `\u300C${label}\u300D\u90A3\u6B21\u8FDF\u5230\u7684\u4E0A\u4F20\u51FA\u9519\uFF1A${String(late.error)}`)
+      );
+      if (r === "timeout") {
+        logEvent("warn", `\u5B58\u300C${label}\u300D${SAVE_DEADLINE_MS / 1e3} s \u8FD8\u6CA1\u7ED3\u675F\uFF1A\u5148\u653E\u5F00\uFF0C\u672C\u673A\u90A3\u4EFD\u4F1A\u843D\u4E0B\u3001\u4E91\u7AEF\u81EA\u52A8\u7EED\u63A8\uFF1B\u8FD9\u6B21\u4E0D\u7559\u64A4\u9500`);
+        this.verbs.say(`\u300C${label}\u300D\u4E0A\u4F20\u5F88\u6162\uFF0C\u5148\u653E\u5F00\u8BA9\u4F60\u80FD\u63A5\u7740\u5B58\uFF1B\u4F1A\u81EA\u52A8\u7EED\u4F20`, 6e3);
+        return;
+      }
       if (!auto) {
         this.undoSaveInfo = { id, label, old, newAt: at };
         putGuard({ kind: "save", discKey: this.disc.key, id, label, old: old ? new Blob([old]) : null, newAt: at, at }).catch((e) => console.warn("[undo-guard] save", e));
@@ -10248,9 +10297,19 @@ async function jamTick(force) {
   jamSaving = true;
   try {
     let pushed = true, wrote = 0;
+    const hidden = document.visibilityState === "hidden";
     for (const dir of changed) {
       if (!await jamWritable(dir)) continue;
-      const r = await saveSaveDir(PSP_JAR(dir), session.readSaveDir(dir), pw);
+      const r = await withDeadline(
+        saveSaveDir(PSP_JAR(dir), session.readSaveDir(dir), pw, { deferPush: hidden }),
+        2e4,
+        (late) => logEvent(late.ok ? "info" : "warn", late.ok ? `\u5B58\u6863 ${dir} \u8FDF\u5230\u7684\u4E0A\u4F20${late.value.pushed ? "\u4F20\u597D\u4E86" : "\u6CA1\u4F20\u4E0A\u53BB\uFF08\u4F1A\u7EED\u63A8\uFF09"}` : `\u5B58\u6863 ${dir} \u8FDF\u5230\u7684\u4E0A\u4F20\u51FA\u9519\uFF1A${String(late.error)}`)
+      );
+      if (r === "timeout") {
+        logEvent("warn", `\u5B58\u6863 ${dir} 20 s \u8FD8\u6CA1\u5B58\u5B8C\uFF1A\u5148\u653E\u5F00\uFF08\u672C\u673A\u4F1A\u843D\u4E0B\u3001\u81EA\u52A8\u7EED\u63A8\uFF09\uFF0C\u4E0B\u6B21\u518D\u6838`);
+        pushed = false;
+        continue;
+      }
       jamSigs.set(dir, now.get(dir));
       pushed &&= r.pushed;
       wrote++;
@@ -11198,7 +11257,7 @@ async function boot() {
   });
   let pushing = false;
   const pushDirty = () => {
-    if (pushing || inFlight() || !auth.isSignedIn() || !navigator.onLine) return;
+    if (pushing || inFlightFresh() || !auth.isSignedIn() || !navigator.onLine) return;
     pushing = true;
     store2.files.dirty.pushAll().catch((e) => console.warn("[pushAll]", e)).finally(() => {
       pushing = false;
@@ -11291,4 +11350,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-de94189f4a5a.mjs.map
+//# sourceMappingURL=kudsrocket-1b64c330b349.mjs.map
