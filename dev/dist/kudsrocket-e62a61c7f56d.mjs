@@ -1,5 +1,5 @@
 // src/version.ts
-var APP_VERSION = "v0.1.35-2026-10-16";
+var APP_VERSION = "v0.1.36-2026-10-16";
 
 // assets/icons.svg
 var icons_default = '<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none">\n<!--\n  14 icons extracted from the family icon library (../20260708 SVG Icons/icons.svg) by extract-icons.py \u2014 do not hand-edit; re-run the script instead.\n  Family SVG Icons \u2014 MIT License, Copyright (c) 2026 fangzhangmnm.\n  Contains work derived from (per-icon provenance in data-src):\n    Feather Icons \u2014 MIT License, Copyright (c) 2013-2023 Cole Bemis \xB7 https://github.com/feathericons/feather\n-->\n  <!-- media -->\n  <!-- pause \u2014 \u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="pause" data-cat="media" data-src="own" data-note="\u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="3.2"><path d="M8.3 5.5 V18.5"/><path d="M15.7 5.5 V18.5"/></g></symbol>\n  <!-- play \u2014 \u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="play" data-cat="media" data-src="own" data-note="\u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 5.4 L18.8 12 L8.2 18.6 Z" fill="currentColor"/></symbol>\n  <!-- fast-forward \u2014 \u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="fast-forward" data-cat="media" data-src="own" data-note="\u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.4 6.8 L10.9 12 L4.4 17.2 Z" fill="currentColor"/><path d="M13.1 6.8 L19.6 12 L13.1 17.2 Z" fill="currentColor"/></symbol>\n  <!-- volume \u2014 \u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009) -->\n  <symbol id="volume" data-cat="media" data-src="own" data-note="\u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 10.3 H8.7 L12.6 6.6 V17.4 L8.7 13.7 H5.5 Z" fill="currentColor"/><path d="M15.13 9.73 A3.4 3.4 0 0 1 15.13 14.27"/><path d="M16.36 7.19 A6.1 6.1 0 0 1 16.36 16.81"/></symbol>\n  <!-- file -->\n  <!-- floppy-disk \u2014 \u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3 -->\n  <symbol id="floppy-disk" data-cat="file" data-src="feather:save" data-note="\u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13l3 3v13a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 17 8 17 3"/></symbol>\n  <!-- folder-open \u2014 \u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF -->\n  <symbol id="folder-open" data-cat="file" data-src="own" data-note="\u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18 V7 a2 2 0 0 1 2 -2 h4 l2 2 h6 a2 2 0 0 1 2 2 v1.8"/><path d="M3 18 L6.4 10.8 H21.6 L18.2 18 Z"/></symbol>\n  <!-- hierarchy -->\n  <!-- lock \u2014 \u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D -->\n  <symbol id="lock" data-cat="hierarchy" data-src="own" data-note="\u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10" width="13" height="11"/><path d="M8.8 10 V6.5 a3.2 3.2 0 0 1 6.4 0 V10"/></symbol>\n  <!-- common -->\n  <!-- x \u2014 \u53C9 -->\n  <symbol id="x" data-cat="common" data-src="own" data-note="\u53C9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 L17.5 17.5 M17.5 6.5 L6.5 17.5"/></symbol>\n  <!-- cloud -->\n  <!-- cloud \u2014 \u4E91 -->\n  <symbol id="cloud" data-cat="cloud" data-src="feather:cloud" data-note="\u4E91" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>\n  <!-- viewport -->\n  <!-- maximize-viewport \u2014 \u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55) -->\n  <symbol id="maximize-viewport" data-cat="viewport" data-src="own" data-note="\u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934 --> <polyline points="4 9 4 4 9 4"/> <polyline points="20 9 20 4 15 4"/> <polyline points="4 15 4 20 9 20"/> <polyline points="20 15 20 20 15 20"/></symbol>\n  <!-- picture-in-picture \u2014 \u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1) -->\n  <symbol id="picture-in-picture" data-cat="viewport" data-src="own" data-note="\u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u5927\u6846\uFF08\u4E3B\u753B\u5E03\uFF09+ \u5185\u5D4C\u5C0F\u7A97\uFF08\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1\uFF09\u2014\u2014 picture-in-picture \u9690\u55BB --> <rect x="3" y="4" width="18" height="14" rx="2"/> <rect x="12" y="10" width="7" height="5" rx="1"/></symbol>\n  <!-- ui -->\n  <!-- more \u2014 \u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00) -->\n  <symbol id="more" data-cat="ui" data-src="own" data-note="\u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/></symbol>\n  <!-- keyboard \u2014 \u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49) -->\n  <symbol id="keyboard" data-cat="ui" data-src="own" data-note="\u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="7.2" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="7.2" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><path d="M8.6 15.6 H15.4"/></symbol>\n  <!-- menu \u2014 \u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17) -->\n  <symbol id="menu" data-cat="ui" data-src="own" data-note="\u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"></line> <line x1="4" y1="12" x2="20" y2="12"></line> <line x1="4" y1="17" x2="20" y2="17"></line></symbol>\n</svg>\n';
@@ -6777,20 +6777,14 @@ function render() {
 // src/app/store-ui.ts
 var BACKGROUND_KEYS = /* @__PURE__ */ new Set(["sync.pushing", "file.renaming", "file.uploading", "cloud.checking", "file.pulling"]);
 var stemOf = (identifier) => labelFor(identifier);
-var presetResolution = /* @__PURE__ */ new Map();
 var storeUI = {
   busy: (label, fn, key) => {
     if (!key || !BACKGROUND_KEYS.has(key)) return withBusy(label, fn);
     if (key === "file.pulling") note(label, 3e4);
     return fn();
   },
+  // 这张面是唯一能决定「用哪份」的地方：app 代码不许替人回答（10-16 user「禁止越狱」；v0.1.33–0.1.35 的 presetResolution 已删）。
   resolveConflict: async ({ name, occasion }) => {
-    const preset = presetResolution.get(name);
-    if (preset && occasion === "push") {
-      presetResolution.delete(name);
-      logEvent("warn", `\u51B2\u7A81\uFF1A${stemOf(name)}\uFF08push\uFF09\u2192 ${preset === "keepMine" ? "\u7528\u8FD9\u53F0\u7684" : "\u7528\u4E91\u7AEF\u7684"}\uFF08\u5B58\u6863\u7BA1\u7406\u91CC\u9009\u597D\u7684\uFF09`);
-      return preset;
-    }
     const choice = await sheet((done) => [
       h("h2", {}, "\u4E91\u7AEF\u548C\u8FD9\u53F0\u8BBE\u5907\u4E0A\u7684\u4E0D\u4E00\u6837"),
       h("p", {}, `${stemOf(name)}\uFF1A\u4E91\u7AEF\u90A3\u4EFD\u548C\u8FD9\u53F0\u8BBE\u5907\u4E0A\u8981\u5B58\u7684\u8FD9\u4EFD\u4E0D\u662F\u540C\u4E00\u4E2A\u7248\u672C\uFF08\u522B\u7684\u8BBE\u5907\u5B58\u8FC7\uFF0C\u6216\u8005\u8FD9\u53F0\u6CA1\u8BFB\u5230\u8FC7\u4E91\u7AEF\u90A3\u4EFD\uFF09\u3002`),
@@ -8656,44 +8650,19 @@ async function uploadLog(text) {
 async function dropStaleLocal(identifier) {
   await getStore().file(identifier, { mode: "existing" }).offload();
 }
-var takeCloudOf = (f) => {
-  const t = f.takeCloud;
-  return typeof t === "function" ? t.bind(f) : null;
-};
-var canTakeCloud = () => takeCloudOf(getStore().file(LOG_SLOT, { mode: "existing" })) !== null;
-var TAKE_CLOUD_FAIL = {
-  "no-local": "\u8FD9\u53F0\u8BBE\u5907\u4E0A\u6CA1\u6709\u5B83\u7684\u526F\u672C",
-  "offline": "\u73B0\u5728\u79BB\u7EBF",
-  "cloud-vanished": "\u4E91\u7AEF\u6CA1\u6709\u8FD9\u4EFD",
-  "backup-failed": "\u8FD9\u53F0\u7684\u90A3\u4EFD\u6CA1\u80FD\u5148\u8FDB\u5907\u4EFD\u7BB1\uFF0C\u6240\u4EE5\u6CA1\u52A8",
-  "invalid-cloud-bytes": "\u4E91\u7AEF\u90A3\u4EFD\u6821\u9A8C\u4E0D\u8FC7\uFF0C\u6CA1\u52A8",
-  "edited-during-pull": "\u62C9\u53D6\u9014\u4E2D\u8FD9\u53F0\u53C8\u5B58\u4E86\u4E00\u6B21\uFF0C\u6CA1\u52A8"
-};
-async function nudge(identifier, syncState2, choice) {
+async function nudge(identifier, syncState2) {
   const f = getStore().file(identifier, { mode: "existing" });
   if (syncState2 === "newer-on-cloud") {
     await f.pullIfClean();
     return "\u5DF2\u6362\u6210\u4E91\u7AEF\u90A3\u4EFD";
   }
-  const take = choice === "takeCloud" ? takeCloudOf(f) : null;
-  if (take) {
-    const r2 = await take();
-    return r2.ok ? "\u5DF2\u6362\u6210\u4E91\u7AEF\u90A3\u4EFD\uFF08\u8FD9\u53F0\u7684\u90A3\u4EFD\u8FDB\u4E86\u5907\u4EFD\u7BB1\uFF09" : `\u6CA1\u6362\u6210\uFF1A${TAKE_CLOUD_FAIL[r2.reason ?? ""] ?? r2.reason ?? "\u539F\u56E0\u4E0D\u660E"}`;
-  }
   const local2 = await f.open();
   if (!local2) return "\u8FD9\u53F0\u8BBE\u5907\u4E0A\u6CA1\u6709\u5B83\u7684\u526F\u672C";
-  presetResolution.delete(identifier);
-  if (choice) presetResolution.set(identifier, choice);
-  let r;
-  try {
-    r = await f.save(local2);
-  } finally {
-    presetResolution.delete(identifier);
-  }
+  const r = await f.save(local2);
   if (r.resolution === "takeCloud") return "\u5DF2\u6362\u6210\u4E91\u7AEF\u90A3\u4EFD\uFF08\u8FD9\u53F0\u7684\u90A3\u4EFD\u8FDB\u4E86\u5907\u4EFD\u7BB1\uFF09";
   if (r.resolution === "keepMine") return "\u5DF2\u7528\u8FD9\u53F0\u7684\u8986\u76D6\u4E91\u7AEF\uFF08\u4E91\u7AEF\u90A3\u4EFD\u8FDB\u4E86\u5907\u4EFD\u7BB1\uFF09";
-  if (r.pushed) return choice === "takeCloud" ? "\u4E91\u7AEF\u90A3\u4EFD\u548C\u8FD9\u53F0\u7684\u57FA\u51C6\u4E00\u6837\u3001\u6CA1\u649E\u4E0A\u51B2\u7A81\uFF1A\u8FD9\u53F0\u7684\u4F20\u4E0A\u53BB\u4E86\uFF08\u6CA1\u6709\u522B\u7684\u7248\u672C\u53EF\u6362\uFF09" : "\u4F20\u4E0A\u53BB\u4E86";
-  return r.reason === "cancelled" ? "\u8FD9\u6B21\u6CA1\u4F20\uFF08\u5148\u4E0D\u7BA1\uFF09" : `\u8FD8\u6CA1\u4F20\u4E0A\u53BB\uFF08${r.reason ?? "\u770B\u6A2A\u6761"}\uFF09`;
+  if (r.pushed) return "\u4F20\u4E0A\u53BB\u4E86";
+  return r.reason === "cancelled" ? "\u8FD9\u6B21\u6CA1\u52A8\uFF08\u53D6\u6D88\uFF09" : `\u8FD8\u6CA1\u4F20\u4E0A\u53BB\uFF08${r.reason ?? "\u770B\u6A2A\u6761"}\uFF09`;
 }
 async function loadMemstick(k, password, ids, complete) {
   const got = /* @__PURE__ */ new Map();
@@ -10045,10 +10014,10 @@ async function openSaveManager(ctx) {
       ...visible.length ? [] : [h("p", { class: "muted" }, "\u7A7A\u7684\u3002")]
     );
   };
-  const act = (r, label, choice, primary, title) => h("button", { class: primary ? "primary" : "", title, onclick: async () => {
+  const act = (r, label, primary, title) => h("button", { class: primary ? "primary" : "", title, onclick: async () => {
     closeSheet();
     try {
-      note(await nudge(r.it.identifier, r.it.syncState, choice), 8e3);
+      note(await nudge(r.it.identifier, r.it.syncState), 8e3);
     } catch (e) {
       banner(`\u6CA1\u5904\u7406\u6210\uFF1A${errorText(e)}`);
     }
@@ -10056,22 +10025,13 @@ async function openSaveManager(ctx) {
   const attentionButtons = (r) => {
     switch (r.it.syncState) {
       case "newer-on-cloud":
-        return [act(r, "\u6362\u6210\u4E91\u7AEF\u7684", void 0, true, "\u8FD9\u53F0\u7684\u526F\u672C\u662F\u5E72\u51C0\u7684\uFF1A\u76F4\u63A5\u6362\u6210\u4E91\u7AEF\u90A3\u4EFD")];
-      // 要处理的行一律二选一：「用云端的」/「用这台的」（user 10-16「为什么就不能用云端和用本机二选一呢」「默认云端才是 authority」）。
-      //   冲突 = 两边都改过；没传上去 = 云端没变、这台有改动——「用这台的」就是传上去，「用云端的」靠库 0.17.3 的 takeCloud（老库没有就只剩「用这台的」）。
-      //   云端没有这份（float / ghost / pendingGone）：没有云端那份可用，只能传上去。
+        return [act(r, "\u6362\u6210\u4E91\u7AEF\u7684", true, "\u8FD9\u53F0\u7684\u526F\u672C\u662F\u5E72\u51C0\u7684\uFF1A\u76F4\u63A5\u6362\u6210\u4E91\u7AEF\u90A3\u4EFD")];
       case "conflict":
-        return [
-          act(r, "\u7528\u4E91\u7AEF\u7684", "takeCloud", true, "\u653E\u5F03\u8FD9\u53F0\u7684\u6539\u52A8\uFF0C\u6362\u6210\u4E91\u7AEF\u90A3\u4EFD\uFF1B\u8FD9\u53F0\u7684\u90A3\u4EFD\u8FDB\u5907\u4EFD\u7BB1"),
-          act(r, "\u7528\u8FD9\u53F0\u7684", "keepMine", false, "\u7528\u8FD9\u53F0\u7684\u8986\u76D6\u4E91\u7AEF\uFF1B\u4E91\u7AEF\u90A3\u4EFD\u8FDB\u5907\u4EFD\u7BB1")
-        ];
+        return [act(r, "\u5904\u7406\u2026", true, "\u5F39\u51FA\u9009\u62E9\u9762\uFF1A\u672C\u5730\u8986\u76D6\u4E91\u7AEF / \u4E91\u7AEF\u8986\u76D6\u672C\u5730 / \u53D6\u6D88\u3002\u4E24\u8FB9\u90FD\u4E0D\u4F1A\u4E22\uFF0C\u8F93\u7684\u8FDB\u5907\u4EFD\u7BB1")];
       case "unpushed":
-        return [
-          ...canTakeCloud() ? [act(r, "\u7528\u4E91\u7AEF\u7684", "takeCloud", false, "\u653E\u5F03\u8FD9\u53F0\u6CA1\u4F20\u4E0A\u53BB\u7684\u6539\u52A8\uFF0C\u6362\u6210\u4E91\u7AEF\u90A3\u4EFD\uFF1B\u8FD9\u53F0\u7684\u90A3\u4EFD\u8FDB\u5907\u4EFD\u7BB1")] : [],
-          act(r, "\u7528\u8FD9\u53F0\u7684", "keepMine", true, "\u628A\u8FD9\u53F0\u7684\u4F20\u4E0A\u4E91\uFF08\u4E91\u7AEF\u90A3\u4EFD\u6CA1\u53D8\u8FC7\uFF09")
-        ];
+        return [act(r, "\u4F20\u4E0A\u53BB", true, "\u4E91\u7AEF\u90A3\u4EFD\u6CA1\u53D8\u8FC7\uFF1A\u628A\u8FD9\u53F0\u7684\u4F20\u4E0A\u53BB")];
       default:
-        return [act(r, "\u4F20\u4E0A\u53BB", "keepMine", true, "\u4E91\u7AEF\u6CA1\u6709\u8FD9\u4EFD\uFF1A\u628A\u8FD9\u53F0\u7684\u4F20\u4E0A\u53BB")];
+        return [act(r, "\u4F20\u4E0A\u53BB", true, "\u4E91\u7AEF\u6CA1\u6709\u8FD9\u4EFD\uFF1A\u628A\u8FD9\u53F0\u7684\u4F20\u4E0A\u53BB")];
     }
   };
   const row = (r, inTodo) => {
@@ -10097,7 +10057,7 @@ async function openSaveManager(ctx) {
       // 10-16 user「冲突的时候不要放删除按钮」：要处理的行不放「删掉」（那里只二选一）；正常行照旧。
       needsAttention(r.it.syncState) ? null : h("button", { title: "\u5220\u6389\u8FD9\u4EFD\uFF1A\u4E91\u7AEF\u90A3\u4EFD\u548C\u8FD9\u53F0\u8BBE\u5907\u4E0A\u7684\u526F\u672C\u90FD\u79FB\u5230\u56DE\u6536\u7AD9", onclick: async () => {
         closeSheet();
-        const ok = await confirmSheet("\u5220\u6389\u8FD9\u4EFD\uFF1F", `${nameOf(r)}\uFF1A\u4E91\u7AEF\u90A3\u4EFD\u548C\u8FD9\u53F0\u8BBE\u5907\u4E0A\u7684\u526F\u672C\u90FD\u4F1A\u79FB\u5230\u56DE\u6536\u7AD9\uFF08\u4E3B\u9875\u300C\u56DE\u6536\u7AD9 / \u5907\u4EFD\u7BB1\u300D\u80FD\u6062\u590D\uFF09\u3002\u53EA\u662F\u60F3\u653E\u5F03\u8FD9\u53F0\u8BBE\u5907\u4E0A\u7684\u6539\u52A8\uFF1F\u90A3\u4E0D\u662F\u8FD9\u4E2A\u6309\u94AE\u2014\u2014\u90A3\u4E00\u884C\u7684\u300C\u7528\u4E91\u7AEF\u7684\u300D\u624D\u662F\u3002`, "\u79FB\u5230\u56DE\u6536\u7AD9");
+        const ok = await confirmSheet("\u5220\u6389\u8FD9\u4EFD\uFF1F", `${nameOf(r)}\uFF1A\u4E91\u7AEF\u90A3\u4EFD\u548C\u8FD9\u53F0\u8BBE\u5907\u4E0A\u7684\u526F\u672C\u90FD\u4F1A\u79FB\u5230\u56DE\u6536\u7AD9\uFF08\u4E3B\u9875\u300C\u56DE\u6536\u7AD9 / \u5907\u4EFD\u7BB1\u300D\u80FD\u6062\u590D\uFF09\u3002\u53EA\u662F\u60F3\u653E\u5F03\u8FD9\u53F0\u8BBE\u5907\u4E0A\u7684\u6539\u52A8\uFF1F\u90A3\u4E0D\u662F\u8FD9\u4E2A\u6309\u94AE\u2014\u2014\u8981\u5904\u7406\u90A3\u4E00\u884C\u7684\u300C\u5904\u7406\u2026\u300D\u4F1A\u5F39\u9009\u62E9\u9762\u3002`, "\u79FB\u5230\u56DE\u6536\u7AD9");
         if (!ok) return;
         try {
           if (await deleteJam(r.it.identifier)) note("\u5DF2\u79FB\u5230\u56DE\u6536\u7AD9");
@@ -12418,4 +12378,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-ba39574096f1.mjs.map
+//# sourceMappingURL=kudsrocket-e62a61c7f56d.mjs.map
