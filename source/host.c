@@ -732,6 +732,9 @@ EMSCRIPTEN_KEEPALIVE unsigned kr_frameskip(void) { return g_frameskip_now; }
 // ───────────── 核选项 / 环境 ─────────────
 // CPU 核：默认 IR 解释器（10-15 起；上游补丁让 wasm 真的读这个选项）；启动参数 cpu=interp 退回经典解释器（慢 3 倍，排查某张盘在 IR 下的问题用）
 static const char *g_cpu_core = "IR JIT";
+// 蒙皮算在哪：PPSSPP 默认软件蒙皮（CPU 算、好合批）；CPU 是瓶颈的设备（Quest 怪猎主城 10-16 日志：模拟线程 100% 忙、每帧解码 9 万顶点）试试交给 GPU 顶点着色器。
+//   启动参数 skin=gpu → "disabled"。先量后定默认（perf-probe --url skin=gpu）。added 20261016 by Claude Fable 5.1
+static const char *g_sw_skinning = "enabled";
 static const struct { const char *key, *value; } g_options[] = {
   {"ppsspp_cpu_core", "IR JIT"}, // 实际值看 g_cpu_core（environment() 里）
   // 快内存 = 读写 PSP 地址不检查（IR 的 IRPassSimplify 会把 ValidateAddress 全删掉）。wasm 的堆只有 768 MB、没有保护页：游戏碰一个坏地址就是
@@ -765,6 +768,7 @@ static bool environment(unsigned cmd, void *data) {
       struct retro_variable *var = data;
       if (!strcmp(var->key, "ppsspp_software_rendering")) { var->value = g_gl ? "disabled" : "enabled"; return true; }
       if (!strcmp(var->key, "ppsspp_cpu_core")) { var->value = g_cpu_core; return true; }
+      if (!strcmp(var->key, "ppsspp_software_skinning")) { var->value = g_sw_skinning; return true; }
       if (!strcmp(var->key, "ppsspp_frameskip")) { var->value = "disabled"; return true; } // 运行中由 kr_ppsspp_set_frameskip 改
       for (size_t i = 0; i < sizeof(g_options) / sizeof(g_options[0]); i++)
         if (!strcmp(var->key, g_options[i].key)) { var->value = g_options[i].value; return true; }
@@ -1139,6 +1143,7 @@ int main(int argc, char **argv) {
   for (int i = 3; i < argc; i++) {
     if (!strcmp(argv[i], "lowlatency")) g_want_desync = true;
     if (!strcmp(argv[i], "cpu=interp")) g_cpu_core = "Interpreter";
+    if (!strcmp(argv[i], "skin=gpu")) g_sw_skinning = "disabled";
   }
   fprintf(stderr, "[kr] cpu core: %s\n", g_cpu_core);
   for (int i = 0; i < KR_CACHE_BLOCKS; i++) g_cache[i].block = -1;
