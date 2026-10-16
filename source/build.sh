@@ -45,15 +45,19 @@ for s in glDrawElements glDrawArrays glTexImage2D glTexSubImage2D glCompressedTe
 done
 # 默认保留 wasm 函数名（--profiling-funcs，+1 MB，行为不变）：浏览器的 CPU 采样（iPad Safari 检查器 / Quest 远程调试 / private/tests/perf-probe.ts --profile）
 #   能认出核里的函数——10-15 就是这样抓到上游把 wasm 钉死在慢解释器上的。KR_NO_SYMBOLS=1 去掉。
+# LTO（10-16 起）：KR_LTO=1 时编译 host.c 与链接都带 -flto（库 .bc 要先用 CPUFLAGS=-flto 重编：
+#   emmake make -B platform=emscripten TARGET_ARCH=wasm32 WITH_DYNAREC=0 CPUFLAGS=-flto -j12）。user 10-16「为什么不能把 obvious 的优化比如编译之类的做了」。
+lto=""
+[ "${KR_LTO:-0}" = "1" ] && lto="-flto"
 prof="--profiling-funcs"
 [ "${KR_NO_SYMBOLS:-0}" = "1" ] && prof=""
 
 # host.c 是 C：先用 emcc 编成 .o；核里是 C++，链接交给 em++ 才会带上 C++ 标准库
-emcc -c "$here/host.c" -o "$assets/host.o" -I"$PPSSPP_SRC/libretro/libretro-common/include" -O3 -pthread -msimd128
+emcc -c "$here/host.c" -o "$assets/host.o" -I"$PPSSPP_SRC/libretro/libretro-common/include" -O3 -pthread -msimd128 $lto
 # shellcheck disable=SC2086
 em++ "$assets/host.o" "$assets/libppsspp_libretro.a" \
   "$ff/libavformat.a" "$ff/libavcodec.a" "$ff/libswscale.a" "$ff/libswresample.a" "$ff/libavutil.a" \
-  -O3 -pthread -msimd128 $wrap $prof \
+  -O3 -pthread -msimd128 $lto $wrap $prof \
   -sPROXY_TO_PTHREAD=1 -sPTHREAD_POOL_SIZE=12 \
   -sMODULARIZE=1 -sEXPORT_ES6=1 -sEXPORT_NAME=createKrCore -sENVIRONMENT=web,worker \
   -sINITIAL_MEMORY=768MB -sALLOW_MEMORY_GROWTH=0 \
