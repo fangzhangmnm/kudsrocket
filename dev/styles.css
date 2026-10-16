@@ -224,6 +224,14 @@ body:has(#game:not([hidden])) > #note { top: calc(env(safe-area-inset-top) + var
 .menu-item { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 14px; }
 .menu-item.on { border-color: var(--accent); }
 @media (max-width: 520px) { .hud { font-size: 10px; padding: 0 2px; } }
-@media (max-width: 900px) { .toolbar .ver { display: none; } }
+@media (max-width: 900px) { .toolbar .ver, .toolbar .pip-btn { display: none; } }   /* 窄屏：版本号、小窗按钮让位（小窗在 ☰ 里还有，Alt+P 也行） */
 /* 「从上次开始」读档好之前的盖层（不先放开场再跳变） */
 #resume-cover { position: absolute; inset: 0; background: #000; color: var(--ink-soft); display: grid; place-items: center; font-size: 15px; z-index: 4; }
+
+/* ── 小窗（Document PiP，src/app/pip.ts）：#stage 搬进小窗时铺满它；主页面原位留一块占位。added 20261016 by Claude Fable 5.1 ── */
+.pip-body { margin: 0; background: #000; overflow: hidden; }
+#stage.pip { position: fixed; inset: 0; }
+#pip-bar { display: none; position: absolute; top: 4px; left: 50%; transform: translateX(-50%); gap: 2px; padding: 2px 4px; border-radius: 10px; background: rgba(10,10,10,.78); border: 1px solid #222; z-index: 6; opacity: .35; transition: opacity .15s; }
+#stage.pip #pip-bar { display: flex; }
+#stage.pip:hover #pip-bar, #stage.pip #pip-bar:focus-within { opacity: 1; }
+.pip-placeholder { display: grid; place-content: center; justify-items: center; gap: 10px; background: #000; color: var(--ink-soft); }

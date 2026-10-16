@@ -1,8 +1,8 @@
 // src/version.ts
-var APP_VERSION = "v0.1.33-2026-10-15";
+var APP_VERSION = "v0.1.34-2026-10-16";
 
 // assets/icons.svg
-var icons_default = '<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none">\n<!--\n  13 icons extracted from the family icon library (../20260708 SVG Icons/icons.svg) by extract-icons.py \u2014 do not hand-edit; re-run the script instead.\n  Family SVG Icons \u2014 MIT License, Copyright (c) 2026 fangzhangmnm.\n  Contains work derived from (per-icon provenance in data-src):\n    Feather Icons \u2014 MIT License, Copyright (c) 2013-2023 Cole Bemis \xB7 https://github.com/feathericons/feather\n-->\n  <!-- media -->\n  <!-- pause \u2014 \u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="pause" data-cat="media" data-src="own" data-note="\u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="3.2"><path d="M8.3 5.5 V18.5"/><path d="M15.7 5.5 V18.5"/></g></symbol>\n  <!-- play \u2014 \u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="play" data-cat="media" data-src="own" data-note="\u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 5.4 L18.8 12 L8.2 18.6 Z" fill="currentColor"/></symbol>\n  <!-- fast-forward \u2014 \u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="fast-forward" data-cat="media" data-src="own" data-note="\u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.4 6.8 L10.9 12 L4.4 17.2 Z" fill="currentColor"/><path d="M13.1 6.8 L19.6 12 L13.1 17.2 Z" fill="currentColor"/></symbol>\n  <!-- volume \u2014 \u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009) -->\n  <symbol id="volume" data-cat="media" data-src="own" data-note="\u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 10.3 H8.7 L12.6 6.6 V17.4 L8.7 13.7 H5.5 Z" fill="currentColor"/><path d="M15.13 9.73 A3.4 3.4 0 0 1 15.13 14.27"/><path d="M16.36 7.19 A6.1 6.1 0 0 1 16.36 16.81"/></symbol>\n  <!-- file -->\n  <!-- floppy-disk \u2014 \u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3 -->\n  <symbol id="floppy-disk" data-cat="file" data-src="feather:save" data-note="\u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13l3 3v13a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 17 8 17 3"/></symbol>\n  <!-- folder-open \u2014 \u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF -->\n  <symbol id="folder-open" data-cat="file" data-src="own" data-note="\u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18 V7 a2 2 0 0 1 2 -2 h4 l2 2 h6 a2 2 0 0 1 2 2 v1.8"/><path d="M3 18 L6.4 10.8 H21.6 L18.2 18 Z"/></symbol>\n  <!-- hierarchy -->\n  <!-- lock \u2014 \u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D -->\n  <symbol id="lock" data-cat="hierarchy" data-src="own" data-note="\u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10" width="13" height="11"/><path d="M8.8 10 V6.5 a3.2 3.2 0 0 1 6.4 0 V10"/></symbol>\n  <!-- common -->\n  <!-- x \u2014 \u53C9 -->\n  <symbol id="x" data-cat="common" data-src="own" data-note="\u53C9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 L17.5 17.5 M17.5 6.5 L6.5 17.5"/></symbol>\n  <!-- cloud -->\n  <!-- cloud \u2014 \u4E91 -->\n  <symbol id="cloud" data-cat="cloud" data-src="feather:cloud" data-note="\u4E91" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>\n  <!-- viewport -->\n  <!-- maximize-viewport \u2014 \u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55) -->\n  <symbol id="maximize-viewport" data-cat="viewport" data-src="own" data-note="\u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934 --> <polyline points="4 9 4 4 9 4"/> <polyline points="20 9 20 4 15 4"/> <polyline points="4 15 4 20 9 20"/> <polyline points="20 15 20 20 15 20"/></symbol>\n  <!-- ui -->\n  <!-- more \u2014 \u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00) -->\n  <symbol id="more" data-cat="ui" data-src="own" data-note="\u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/></symbol>\n  <!-- keyboard \u2014 \u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49) -->\n  <symbol id="keyboard" data-cat="ui" data-src="own" data-note="\u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="7.2" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="7.2" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><path d="M8.6 15.6 H15.4"/></symbol>\n  <!-- menu \u2014 \u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17) -->\n  <symbol id="menu" data-cat="ui" data-src="own" data-note="\u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"></line> <line x1="4" y1="12" x2="20" y2="12"></line> <line x1="4" y1="17" x2="20" y2="17"></line></symbol>\n</svg>\n';
+var icons_default = '<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none">\n<!--\n  14 icons extracted from the family icon library (../20260708 SVG Icons/icons.svg) by extract-icons.py \u2014 do not hand-edit; re-run the script instead.\n  Family SVG Icons \u2014 MIT License, Copyright (c) 2026 fangzhangmnm.\n  Contains work derived from (per-icon provenance in data-src):\n    Feather Icons \u2014 MIT License, Copyright (c) 2013-2023 Cole Bemis \xB7 https://github.com/feathericons/feather\n-->\n  <!-- media -->\n  <!-- pause \u2014 \u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="pause" data-cat="media" data-src="own" data-note="\u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="3.2"><path d="M8.3 5.5 V18.5"/><path d="M15.7 5.5 V18.5"/></g></symbol>\n  <!-- play \u2014 \u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="play" data-cat="media" data-src="own" data-note="\u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 5.4 L18.8 12 L8.2 18.6 Z" fill="currentColor"/></symbol>\n  <!-- fast-forward \u2014 \u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="fast-forward" data-cat="media" data-src="own" data-note="\u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.4 6.8 L10.9 12 L4.4 17.2 Z" fill="currentColor"/><path d="M13.1 6.8 L19.6 12 L13.1 17.2 Z" fill="currentColor"/></symbol>\n  <!-- volume \u2014 \u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009) -->\n  <symbol id="volume" data-cat="media" data-src="own" data-note="\u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 10.3 H8.7 L12.6 6.6 V17.4 L8.7 13.7 H5.5 Z" fill="currentColor"/><path d="M15.13 9.73 A3.4 3.4 0 0 1 15.13 14.27"/><path d="M16.36 7.19 A6.1 6.1 0 0 1 16.36 16.81"/></symbol>\n  <!-- file -->\n  <!-- floppy-disk \u2014 \u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3 -->\n  <symbol id="floppy-disk" data-cat="file" data-src="feather:save" data-note="\u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13l3 3v13a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 17 8 17 3"/></symbol>\n  <!-- folder-open \u2014 \u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF -->\n  <symbol id="folder-open" data-cat="file" data-src="own" data-note="\u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18 V7 a2 2 0 0 1 2 -2 h4 l2 2 h6 a2 2 0 0 1 2 2 v1.8"/><path d="M3 18 L6.4 10.8 H21.6 L18.2 18 Z"/></symbol>\n  <!-- hierarchy -->\n  <!-- lock \u2014 \u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D -->\n  <symbol id="lock" data-cat="hierarchy" data-src="own" data-note="\u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10" width="13" height="11"/><path d="M8.8 10 V6.5 a3.2 3.2 0 0 1 6.4 0 V10"/></symbol>\n  <!-- common -->\n  <!-- x \u2014 \u53C9 -->\n  <symbol id="x" data-cat="common" data-src="own" data-note="\u53C9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 L17.5 17.5 M17.5 6.5 L6.5 17.5"/></symbol>\n  <!-- cloud -->\n  <!-- cloud \u2014 \u4E91 -->\n  <symbol id="cloud" data-cat="cloud" data-src="feather:cloud" data-note="\u4E91" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>\n  <!-- viewport -->\n  <!-- maximize-viewport \u2014 \u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55) -->\n  <symbol id="maximize-viewport" data-cat="viewport" data-src="own" data-note="\u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934 --> <polyline points="4 9 4 4 9 4"/> <polyline points="20 9 20 4 15 4"/> <polyline points="4 15 4 20 9 20"/> <polyline points="20 15 20 20 15 20"/></symbol>\n  <!-- picture-in-picture \u2014 \u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1) -->\n  <symbol id="picture-in-picture" data-cat="viewport" data-src="own" data-note="\u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u5927\u6846\uFF08\u4E3B\u753B\u5E03\uFF09+ \u5185\u5D4C\u5C0F\u7A97\uFF08\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1\uFF09\u2014\u2014 picture-in-picture \u9690\u55BB --> <rect x="3" y="4" width="18" height="14" rx="2"/> <rect x="12" y="10" width="7" height="5" rx="1"/></symbol>\n  <!-- ui -->\n  <!-- more \u2014 \u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00) -->\n  <symbol id="more" data-cat="ui" data-src="own" data-note="\u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/></symbol>\n  <!-- keyboard \u2014 \u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49) -->\n  <symbol id="keyboard" data-cat="ui" data-src="own" data-note="\u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="7.2" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="7.2" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><path d="M8.6 15.6 H15.4"/></symbol>\n  <!-- menu \u2014 \u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17) -->\n  <symbol id="menu" data-cat="ui" data-src="own" data-note="\u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"></line> <line x1="4" y1="12" x2="20" y2="12"></line> <line x1="4" y1="17" x2="20" y2="17"></line></symbol>\n</svg>\n';
 
 // src/app/ui.ts
 var $ = (id) => {
@@ -270,12 +270,8 @@ var CoreSession = class _CoreSession {
     if (opts.pacing) core._kr_set_pacing(PACE_MODES[opts.pacing]);
     this.paceBuf = core._malloc(8 * 8);
     this.perfBuf = core._malloc(PERF_WORDS * 8);
-    const tellSize = () => {
-      const r = opts.glCanvas.getBoundingClientRect(), dpr = devicePixelRatio || 1;
-      core._kr_set_display_size(Math.round(r.width * dpr), Math.round(r.height * dpr));
-    };
-    new ResizeObserver(tellSize).observe(opts.glCanvas);
-    tellSize();
+    new ResizeObserver(() => this.notifyDisplaySize()).observe(opts.glCanvas);
+    this.notifyDisplaySize();
   }
   audioHooked = false;
   audioNode = null;
@@ -415,6 +411,13 @@ var CoreSession = class _CoreSession {
     await this.waitSeq(() => core._kr_frame_shot_seq(), before, 5e3);
     const w = core._kr_thumb_w(), h2 = core._kr_thumb_h();
     return w > 0 && h2 > 0 ? { rgba: core.HEAPU8.slice(core._kr_thumb_ptr(), core._kr_thumb_ptr() + w * h2 * 4), w, h: h2 } : null;
+  }
+  /** 把画布的实际显示像素告诉核（核在 GPU 里按整数倍放大）。ResizeObserver 自动调；画布搬进小窗（别的 document、别的 devicePixelRatio，
+   *  主窗口的 ResizeObserver 看不见它）时宿主在小窗 resize 里手动调。 */
+  notifyDisplaySize() {
+    const c = this.opts.glCanvas;
+    const r = c.getBoundingClientRect(), dpr = (c.ownerDocument.defaultView ?? window).devicePixelRatio || 1;
+    this.core._kr_set_display_size(Math.round(r.width * dpr), Math.round(r.height * dpr));
   }
   inputMask() {
     return this.core._kr_get_input();
@@ -6792,12 +6795,13 @@ var storeUI = {
       h("h2", {}, "\u4E91\u7AEF\u548C\u8FD9\u53F0\u8BBE\u5907\u4E0A\u7684\u4E0D\u4E00\u6837"),
       h("p", {}, `${stemOf(name)}\uFF1A\u4E91\u7AEF\u90A3\u4EFD\u548C\u8FD9\u53F0\u8BBE\u5907\u4E0A\u8981\u5B58\u7684\u8FD9\u4EFD\u4E0D\u662F\u540C\u4E00\u4E2A\u7248\u672C\uFF08\u522B\u7684\u8BBE\u5907\u5B58\u8FC7\uFF0C\u6216\u8005\u8FD9\u53F0\u6CA1\u8BFB\u5230\u8FC7\u4E91\u7AEF\u90A3\u4EFD\uFF09\u3002`),
       h("p", { class: "hint" }, occasion === "push" ? "\u300C\u7528\u8FD9\u53F0\u7684\u300D= \u7528\u8FD9\u53F0\u7684\u8986\u76D6\u4E91\u7AEF\uFF0C\u4E91\u7AEF\u90A3\u4EFD\u79FB\u5230\u5907\u4EFD\u7BB1\uFF1B\u300C\u7528\u4E91\u7AEF\u7684\u300D= \u8FD9\u53F0\u7684\u79FB\u5230\u5907\u4EFD\u7BB1\uFF0C\u6362\u6210\u4E91\u7AEF\u90A3\u4EFD\u3002\u4E24\u8FB9\u90FD\u4E0D\u4F1A\u4E22\uFF0C\u5907\u4EFD\u7BB1\u91CC\u80FD\u627E\u56DE\u3002" : "\u73B0\u5728\u5148\u6253\u5F00\u8FD9\u53F0\u8BBE\u5907\u4E0A\u7684\uFF1B\u300C\u7528\u4E91\u7AEF\u7684\u300D= \u8FD9\u53F0\u7684\u79FB\u5230\u5907\u4EFD\u7BB1\uFF0C\u6362\u6210\u4E91\u7AEF\u90A3\u4EFD\u3002"),
+      // 主按钮 = 用云端的（user 2026-10-16「默认云端才是 authority」「我不想让本机的旧脏数据覆盖云端」；两边都进备份箱，选错也找得回）
       h(
         "div",
         { class: "row" },
         h("button", { onclick: () => done("cancel") }, "\u5148\u4E0D\u7BA1"),
-        h("button", { onclick: () => done("takeCloud") }, "\u7528\u4E91\u7AEF\u7684"),
-        h("button", { class: "primary", onclick: () => done("keepMine") }, "\u7528\u8FD9\u53F0\u7684")
+        h("button", { onclick: () => done("keepMine") }, "\u7528\u8FD9\u53F0\u7684"),
+        h("button", { class: "primary", onclick: () => done("takeCloud") }, "\u7528\u4E91\u7AEF\u7684")
       )
     ], { dismissable: false });
     logEvent("warn", `\u51B2\u7A81\uFF1A${stemOf(name)}\uFF08${occasion}\uFF09\u2192 ${{ keepMine: "\u7528\u8FD9\u53F0\u7684", takeCloud: "\u7528\u4E91\u7AEF\u7684", cancel: "\u5148\u4E0D\u7BA1" }[choice ?? "cancel"]}`);
@@ -8652,11 +8656,29 @@ async function uploadLog(text) {
 async function dropStaleLocal(identifier) {
   await getStore().file(identifier, { mode: "existing" }).offload();
 }
+var takeCloudOf = (f) => {
+  const t = f.takeCloud;
+  return typeof t === "function" ? t.bind(f) : null;
+};
+var canTakeCloud = () => takeCloudOf(getStore().file(LOG_SLOT, { mode: "existing" })) !== null;
+var TAKE_CLOUD_FAIL = {
+  "no-local": "\u8FD9\u53F0\u8BBE\u5907\u4E0A\u6CA1\u6709\u5B83\u7684\u526F\u672C",
+  "offline": "\u73B0\u5728\u79BB\u7EBF",
+  "cloud-vanished": "\u4E91\u7AEF\u6CA1\u6709\u8FD9\u4EFD",
+  "backup-failed": "\u8FD9\u53F0\u7684\u90A3\u4EFD\u6CA1\u80FD\u5148\u8FDB\u5907\u4EFD\u7BB1\uFF0C\u6240\u4EE5\u6CA1\u52A8",
+  "invalid-cloud-bytes": "\u4E91\u7AEF\u90A3\u4EFD\u6821\u9A8C\u4E0D\u8FC7\uFF0C\u6CA1\u52A8",
+  "edited-during-pull": "\u62C9\u53D6\u9014\u4E2D\u8FD9\u53F0\u53C8\u5B58\u4E86\u4E00\u6B21\uFF0C\u6CA1\u52A8"
+};
 async function nudge(identifier, syncState2, choice) {
   const f = getStore().file(identifier, { mode: "existing" });
   if (syncState2 === "newer-on-cloud") {
     await f.pullIfClean();
     return "\u5DF2\u6362\u6210\u4E91\u7AEF\u90A3\u4EFD";
+  }
+  const take = choice === "takeCloud" ? takeCloudOf(f) : null;
+  if (take) {
+    const r2 = await take();
+    return r2.ok ? "\u5DF2\u6362\u6210\u4E91\u7AEF\u90A3\u4EFD\uFF08\u8FD9\u53F0\u7684\u90A3\u4EFD\u8FDB\u4E86\u5907\u4EFD\u7BB1\uFF09" : `\u6CA1\u6362\u6210\uFF1A${TAKE_CLOUD_FAIL[r2.reason ?? ""] ?? r2.reason ?? "\u539F\u56E0\u4E0D\u660E"}`;
   }
   const local2 = await f.open();
   if (!local2) return "\u8FD9\u53F0\u8BBE\u5907\u4E0A\u6CA1\u6709\u5B83\u7684\u526F\u672C";
@@ -8759,6 +8781,14 @@ async function restoreBin(item) {
   });
   return r.status;
 }
+
+// src/app/presence.ts
+var pipActive = false;
+function setPipActive(on) {
+  pipActive = on;
+}
+var inForeground = () => document.visibilityState === "visible" || pipActive;
+var inBackground = () => !inForeground();
 
 // src/app/deadline.ts
 function withDeadline(p, ms, onSettleLate) {
@@ -9657,7 +9687,7 @@ var Snapshots = class {
       }
       const id = crumbId(this.disc.key, kind, n);
       const at = Date.now();
-      const hidden = document.visibilityState === "hidden";
+      const hidden = inBackground();
       const r = await withDeadline(
         saveSnapshot(id, state2, { thumb, at, auto, fp: this.disc.fp, title: this.disc.title }, pw, { deferPush: hidden }),
         SAVE_DEADLINE_MS,
@@ -10027,13 +10057,18 @@ async function openSaveManager(ctx) {
     switch (r.it.syncState) {
       case "newer-on-cloud":
         return [act(r, "\u6362\u6210\u4E91\u7AEF\u7684", void 0, true, "\u8FD9\u53F0\u7684\u526F\u672C\u662F\u5E72\u51C0\u7684\uFF1A\u76F4\u63A5\u6362\u6210\u4E91\u7AEF\u90A3\u4EFD")];
+      // 冲突：主按钮 = 用云端的（user 10-16「默认云端才是 authority」「我不想让本机的旧脏数据覆盖云端」）。没传上去（云端没变）：主按钮还是传上去——
+      //   那是网络抖了一下的常态，这台的进度云端还没有；但也给「用云端的」（库 0.17.3 的 takeCloud，老库没有就不露），user 10-16「我要云端的」。
       case "conflict":
         return [
-          act(r, "\u7528\u8FD9\u53F0\u7684", "keepMine", true, "\u7528\u8FD9\u53F0\u7684\u8986\u76D6\u4E91\u7AEF\uFF1B\u4E91\u7AEF\u90A3\u4EFD\u8FDB\u5907\u4EFD\u7BB1"),
-          act(r, "\u7528\u4E91\u7AEF\u7684", "takeCloud", false, "\u653E\u5F03\u8FD9\u53F0\u7684\u6539\u52A8\uFF0C\u6362\u6210\u4E91\u7AEF\u90A3\u4EFD\uFF1B\u8FD9\u53F0\u7684\u90A3\u4EFD\u8FDB\u5907\u4EFD\u7BB1")
+          act(r, "\u7528\u4E91\u7AEF\u7684", "takeCloud", true, "\u653E\u5F03\u8FD9\u53F0\u7684\u6539\u52A8\uFF0C\u6362\u6210\u4E91\u7AEF\u90A3\u4EFD\uFF1B\u8FD9\u53F0\u7684\u90A3\u4EFD\u8FDB\u5907\u4EFD\u7BB1"),
+          act(r, "\u7528\u8FD9\u53F0\u7684", "keepMine", false, "\u7528\u8FD9\u53F0\u7684\u8986\u76D6\u4E91\u7AEF\uFF1B\u4E91\u7AEF\u90A3\u4EFD\u8FDB\u5907\u4EFD\u7BB1")
         ];
       default:
-        return [act(r, "\u4F20\u4E0A\u53BB\uFF08\u7528\u8FD9\u53F0\u7684\uFF09", "keepMine", true, "\u628A\u8FD9\u53F0\u7684\u4F20\u4E0A\u4E91\uFF1B\u8981\u662F\u4E91\u7AEF\u4E5F\u6539\u8FC7\uFF0C\u4E91\u7AEF\u90A3\u4EFD\u8FDB\u5907\u4EFD\u7BB1")];
+        return [
+          act(r, "\u4F20\u4E0A\u53BB\uFF08\u7528\u8FD9\u53F0\u7684\uFF09", "keepMine", true, "\u628A\u8FD9\u53F0\u7684\u4F20\u4E0A\u4E91\uFF1B\u8981\u662F\u4E91\u7AEF\u4E5F\u6539\u8FC7\uFF0C\u4E91\u7AEF\u90A3\u4EFD\u8FDB\u5907\u4EFD\u7BB1"),
+          ...r.it.syncState === "unpushed" && canTakeCloud() ? [act(r, "\u7528\u4E91\u7AEF\u7684", "takeCloud", false, "\u653E\u5F03\u8FD9\u53F0\u6CA1\u4F20\u4E0A\u53BB\u7684\u6539\u52A8\uFF0C\u6362\u6210\u4E91\u7AEF\u90A3\u4EFD\uFF1B\u8FD9\u53F0\u7684\u90A3\u4EFD\u8FDB\u5907\u4EFD\u7BB1")] : []
+        ];
     }
   };
   const row = (r, inTodo) => {
@@ -10058,7 +10093,7 @@ async function openSaveManager(ctx) {
       // 10-15 user：00:54 那两份（自动 1 / 手动 1）就是在这里按的「删」——以为删的是这台没传上去的副本，其实云端那份一起进了回收站。先确认、说清楚。
       h("button", { title: "\u5220\u6389\u8FD9\u4EFD\uFF1A\u4E91\u7AEF\u90A3\u4EFD\u548C\u8FD9\u53F0\u8BBE\u5907\u4E0A\u7684\u526F\u672C\u90FD\u79FB\u5230\u56DE\u6536\u7AD9", onclick: async () => {
         closeSheet();
-        const ok = await confirmSheet("\u5220\u6389\u8FD9\u4EFD\uFF1F", `${nameOf(r)}\uFF1A\u4E91\u7AEF\u90A3\u4EFD\u548C\u8FD9\u53F0\u8BBE\u5907\u4E0A\u7684\u526F\u672C\u90FD\u4F1A\u79FB\u5230\u56DE\u6536\u7AD9\uFF08\u4E3B\u9875\u300C\u56DE\u6536\u7AD9 / \u5907\u4EFD\u7BB1\u300D\u80FD\u6062\u590D\uFF09\u3002\u53EA\u662F\u60F3\u653E\u5F03\u8FD9\u53F0\u8BBE\u5907\u4E0A\u7684\u6539\u52A8\uFF1F\u90A3\u4E0D\u662F\u8FD9\u4E2A\u6309\u94AE\u2014\u2014\u548C\u4E91\u7AEF\u51B2\u7A81\u7684\u90A3\u884C\u6709\u300C\u7528\u4E91\u7AEF\u7684\u300D\u3002`, "\u79FB\u5230\u56DE\u6536\u7AD9");
+        const ok = await confirmSheet("\u5220\u6389\u8FD9\u4EFD\uFF1F", `${nameOf(r)}\uFF1A\u4E91\u7AEF\u90A3\u4EFD\u548C\u8FD9\u53F0\u8BBE\u5907\u4E0A\u7684\u526F\u672C\u90FD\u4F1A\u79FB\u5230\u56DE\u6536\u7AD9\uFF08\u4E3B\u9875\u300C\u56DE\u6536\u7AD9 / \u5907\u4EFD\u7BB1\u300D\u80FD\u6062\u590D\uFF09\u3002\u53EA\u662F\u60F3\u653E\u5F03\u8FD9\u53F0\u8BBE\u5907\u4E0A\u7684\u6539\u52A8\uFF1F\u90A3\u4E0D\u662F\u8FD9\u4E2A\u6309\u94AE\u2014\u2014\u90A3\u4E00\u884C\u7684\u300C\u7528\u4E91\u7AEF\u7684\u300D\u624D\u662F\u3002`, "\u79FB\u5230\u56DE\u6536\u7AD9");
         if (!ok) return;
         try {
           if (await deleteJam(r.it.identifier)) note("\u5DF2\u79FB\u5230\u56DE\u6536\u7AD9");
@@ -10363,6 +10398,80 @@ function createStallDetector(opts) {
   };
 }
 
+// src/app/pip.ts
+var api = () => globalThis.documentPictureInPicture ?? null;
+var pipSupported = () => typeof api()?.requestWindow === "function";
+function copyStyles(from, to) {
+  for (const sheet2 of Array.from(from.styleSheets)) {
+    try {
+      const css = Array.from(sheet2.cssRules).map((r) => r.cssText).join("\n");
+      const style = to.createElement("style");
+      style.textContent = css;
+      to.head.append(style);
+    } catch {
+      if (!sheet2.href) continue;
+      const link = to.createElement("link");
+      link.rel = "stylesheet";
+      link.href = sheet2.href;
+      to.head.append(link);
+    }
+  }
+}
+function createPip(stage, host) {
+  let win = null;
+  let hole = null;
+  const home = stage.ownerDocument;
+  const restore = () => {
+    if (!win) return;
+    const w = win;
+    win = null;
+    if (hole) {
+      hole.replaceWith(stage);
+      hole = null;
+    }
+    stage.classList.remove("pip");
+    host.onLeave();
+    try {
+      w.close();
+    } catch {
+    }
+  };
+  const open = async () => {
+    const a = api();
+    if (!a || win) return false;
+    const r = stage.getBoundingClientRect();
+    const width = Math.round(Math.min(Math.max(r.width / 2, 320), 720));
+    const w = await a.requestWindow({ width, height: Math.round(width * 272 / 480) });
+    const d = w.document;
+    d.title = home.title;
+    copyStyles(home, d);
+    const sprite = home.querySelector("body > svg");
+    if (sprite) d.body.prepend(sprite.cloneNode(true));
+    d.body.classList.add("pip-body");
+    hole = host.placeholder();
+    stage.replaceWith(hole);
+    stage.classList.add("pip");
+    d.body.append(stage);
+    win = w;
+    w.addEventListener("pagehide", restore);
+    host.onEnter(w);
+    return true;
+  };
+  return {
+    get supported() {
+      return pipSupported();
+    },
+    get active() {
+      return win != null;
+    },
+    get window() {
+      return win;
+    },
+    open,
+    close: restore
+  };
+}
+
 // src/app/main.ts
 var params = new URLSearchParams(location.search);
 var DEV_SERVER = /^(127\.0\.0\.1|localhost)$/.test(location.hostname);
@@ -10433,6 +10542,65 @@ var ac = null;
 var softKeys = null;
 var snaps = null;
 var activity = null;
+var stageEl = $("stage");
+var pausedMarkEl = $("paused-mark");
+var resumeCoverEl = $("resume-cover");
+var pip = createPip(stageEl, {
+  onEnter(win) {
+    setPipActive(true);
+    win.addEventListener("keydown", (e) => onKey(e, true));
+    win.addEventListener("keyup", (e) => onKey(e, false));
+    win.addEventListener("blur", () => session?.setMask("keyboard", 0));
+    win.addEventListener("resize", () => session?.notifyDisplaySize());
+    session?.notifyDisplaySize();
+    renderPipBar(true);
+    startFrameLoop();
+    renderToolbar();
+    logEvent("info", `\u5C0F\u7A97\uFF1A\u753B\u9762\u642C\u8FDB\u7F6E\u9876\u5C0F\u7A97\uFF08${win.innerWidth}\xD7${win.innerHeight}\uFF09`);
+  },
+  onLeave() {
+    setPipActive(false);
+    renderPipBar(false);
+    session?.notifyDisplaySize();
+    startFrameLoop();
+    renderToolbar();
+    logEvent("info", "\u5C0F\u7A97\uFF1A\u753B\u9762\u642C\u56DE\u9875\u9762");
+  },
+  placeholder: () => h("div", { class: "pip-placeholder" }, h("p", {}, "\u753B\u9762\u5728\u5C0F\u7A97\u91CC"), h("button", { class: "primary", onclick: () => pip.close() }, "\u6536\u56DE"))
+});
+async function togglePip() {
+  if (pip.active) {
+    pip.close();
+    return;
+  }
+  if (!pip.supported) {
+    say("\u8FD9\u4E2A\u6D4F\u89C8\u5668\u6CA1\u6709\u5C0F\u7A97\uFF08\u8981\u684C\u9762\u7248 Chrome / Edge\uFF09", 4e3);
+    return;
+  }
+  if (!session) return;
+  if (document.fullscreenElement) await document.exitFullscreen().catch(() => {
+  });
+  try {
+    if (!await pip.open()) say("\u5C0F\u7A97\u6CA1\u5F00\u8D77\u6765", 3e3);
+  } catch (e) {
+    say(`\u5C0F\u7A97\u6CA1\u5F00\u8D77\u6765\uFF1A${errorText(e)}`, 5e3);
+    logEvent("warn", `\u5C0F\u7A97\u5931\u8D25\uFF1A${errorText(e)}`);
+  }
+}
+function renderPipBar(on) {
+  stageEl.querySelector("#pip-bar")?.remove();
+  if (!on) return;
+  stageEl.append(h(
+    "div",
+    { id: "pip-bar" },
+    toolButton("floppy-disk", "\u5B58\u5FEB\u7167\uFF08F2 \u90A3\u4E00\u683C\uFF09", () => {
+      const t = quickSlot(true);
+      if (t) saveTo(t);
+    }, "\u5FEB\u7167"),
+    toolButton("keyboard", "\u5C4F\u5E55\u8F6F\u952E", toggleSoftKeys, "\u8F6F\u952E"),
+    toolButton("picture-in-picture", "\u6536\u56DE\u5230\u9875\u9762", () => pip.close(), "\u6536\u56DE")
+  ));
+}
 var softAnalog = { x: 0, y: 0 };
 var softRight = { x: 0, y: 0 };
 var currentSlot = null;
@@ -10876,6 +11044,10 @@ async function play(prepare, resume) {
   setInterval(() => jamTick(false), JAM_POLL_MS);
   addEventListener("visibilitychange", () => {
     if (!session) return;
+    if (pip.active) {
+      logEvent("info", `\u4E3B\u9875\u9762${document.visibilityState === "hidden" ? "\u5207\u5230\u540E\u53F0" : "\u56DE\u5230\u524D\u53F0"}\uFF1A\u753B\u9762\u5728\u5C0F\u7A97\u91CC\uFF0C\u6838\u7167\u8DD1`);
+      return;
+    }
     if (document.visibilityState !== "hidden") {
       const s0 = session.stats();
       const f0 = s0.frames;
@@ -10906,28 +11078,28 @@ async function play(prepare, resume) {
     snaps?.onLeave().catch((e) => console.warn("[auto snapshot]", e));
     jamTick(true);
   });
-  requestAnimationFrame(frame);
+  startFrameLoop();
   renderToolbar();
   const autoState = params.get("state");
   if (autoState && DEV_SERVER) restoreFromDevServer(autoState).catch((e) => say(`\u8BFB\u5FEB\u7167\u5931\u8D25\uFF1A${errorText(e)}`));
   else if (resume) resumeNewest().catch((e) => banner(`\u8BFB\u5FEB\u7167\u5931\u8D25\uFF1A${errorText(e)}`)).finally(() => hideResumeCover());
 }
 function showResumeCover(text) {
-  const c = $("resume-cover");
+  const c = resumeCoverEl;
   c.textContent = text;
   c.hidden = false;
 }
 function hideResumeCover() {
   setTimeout(() => {
-    $("resume-cover").hidden = true;
+    resumeCoverEl.hidden = true;
     session?.setHold(false);
   }, 300);
 }
 async function resumeNewest() {
   say("\u6B63\u5728\u627E\u6700\u65B0\u7684\u5FEB\u7167\u2026", 3e4);
-  if (!$("resume-cover").hidden) showResumeCover("\u6B63\u5728\u627E\u6700\u65B0\u7684\u5FEB\u7167\u2026");
+  if (!resumeCoverEl.hidden) showResumeCover("\u6B63\u5728\u627E\u6700\u65B0\u7684\u5FEB\u7167\u2026");
   const got = await snaps.newestForResume({ waitCloud: auth.isSignedIn() && navigator.onLine });
-  if (!$("resume-cover").hidden && got) showResumeCover(`\u6B63\u5728\u8BFB\u300C${slotLabel(got.slot)}\u300D\u2026`);
+  if (!resumeCoverEl.hidden && got) showResumeCover(`\u6B63\u5728\u8BFB\u300C${slotLabel(got.slot)}\u300D\u2026`);
   if (!got) {
     say("\u8FD9\u5F20\u76D8\u8FD8\u6CA1\u6709\u5FEB\u7167\uFF0C\u4ECE\u5934\u5F00\u59CB");
     return null;
@@ -10974,7 +11146,7 @@ async function jamTick(force) {
   jamSaving = true;
   try {
     let pushed = true, wrote = 0;
-    const hidden = document.visibilityState === "hidden";
+    const hidden = inBackground();
     for (const dir of changed) {
       if (!await jamWritable(dir)) continue;
       const r = await withDeadline(
@@ -11343,10 +11515,12 @@ function renderToolbar() {
     // 有空就显示（user 10-14「有多余的空可以显示版本号」）；窄屏 CSS 藏起来，☰ 里一直有
     shotButton(),
     snapshotButton(),
+    ...pip.supported ? [pipButton()] : [],
+    // 只有桌面版 Chrome / Edge 有 Document PiP；没有的浏览器不露入口
     toolButton("menu", "\u83DC\u5355\uFF08\u6682\u505C / \u5FEB\u8FDB / \u8F6F\u952E / \u5168\u5C4F / \u97F3\u91CF / \u7EDF\u8BA1 / \u5B58\u6863\u7BA1\u7406 / \u9000\u51FA\uFF09", openMenu, "\u83DC\u5355")
   );
   renderFsBar();
-  $("paused-mark").hidden = !session.paused;
+  pausedMarkEl.hidden = !session.paused;
 }
 function openMenu() {
   if (!session) return;
@@ -11368,6 +11542,10 @@ function openMenu() {
         item(s.speed > 1 ? "\u6062\u590D\u6B63\u5E38\u901F\u5EA6" : `\u5FEB\u8FDB \xD7${FAST_FORWARD}`, "\u6309\u4F4F Tab \xB7 ` \u5207\u6362", () => setFast(!(s.speed > 1)), s.speed > 1),
         item(softKeys?.visible ? "\u6536\u8D77\u5C4F\u5E55\u8F6F\u952E" : "\u5C4F\u5E55\u8F6F\u952E", "\u89E6\u5C4F / \u5C04\u7EBF\u70B9", toggleSoftKeys, softKeys?.visible ?? false),
         item(document.fullscreenElement ? "\u9000\u51FA\u5168\u5C4F" : "\u5168\u5C4F", "Alt+Enter \xB7 \u53CC\u51FB\u753B\u9762", toggleFullscreen),
+        ...pip.supported ? [item(pip.active ? "\u6536\u56DE\u5C0F\u7A97" : "\u5C0F\u7A97", "Alt+P \xB7 \u7F6E\u9876\u7684\u5C0F\u753B\u9762\uFF0C\u8FB9\u770B\u8FB9\u505A\u522B\u7684", () => {
+          togglePip().catch(() => {
+          });
+        }, pip.active)] : [],
         item(s.isMuted ? "\u53D6\u6D88\u9759\u97F3" : `\u97F3\u91CF ${Math.round(s.volume * 100)}`, "M \u9759\u97F3", openVolume, s.isMuted),
         item(s.frameCap30 ? "\u53EA\u753B 30 \u5E27\uFF08\u7701\u7535\uFF09" : "\u753B\u6EE1 60 \u5E27", s.frameCap30 ? "\u6E38\u620F\u672C\u8EAB 60 \u5E27\u65F6\u5C11\u753B\u4E00\u534A\uFF1B\u903B\u8F91\u4E0D\u53D8" : "\u79FB\u52A8\u8BBE\u5907\u9ED8\u8BA4\u53EA\u753B 30", () => {
           s.setFrameCap30(!s.frameCap30);
@@ -11415,10 +11593,19 @@ function snapshotButton(id = "snapshot-btn") {
   b.id = id;
   return b;
 }
+function pipButton() {
+  const b = toolButton("picture-in-picture", pip.active ? "\u6536\u56DE\u5C0F\u7A97\uFF08Alt+P\uFF09" : "\u5C0F\u7A97\uFF1A\u7F6E\u9876\u7684\u5C0F\u753B\u9762\uFF0C\u8FB9\u770B\u8FB9\u505A\u522B\u7684\uFF08Alt+P\uFF09", () => {
+    togglePip().catch(() => {
+    });
+  });
+  b.classList.add("pip-btn");
+  b.classList.toggle("on", pip.active);
+  return b;
+}
 function renderFsBar() {
   const bar = document.getElementById("fs-bar") ?? h("div", { id: "fs-bar" });
   bar.replaceChildren(shotButton(), snapshotButton("fs-snapshot-btn"), toolButton("menu", "\u83DC\u5355\uFF08\u9000\u51FA\u5168\u5C4F\u5728\u8FD9\u91CC\uFF09", openMenu, "\u83DC\u5355"));
-  if (!bar.isConnected) $("stage").append(bar);
+  if (!bar.isConnected) stageEl.append(bar);
 }
 function toggleMute() {
   if (!session) return;
@@ -11574,15 +11761,19 @@ function hardwareInput(kind) {
   say(`\u7528\u4E0A${kind}\u4E86\uFF0C\u5C4F\u5E55\u8F6F\u952E\u5148\u6536\u8D77\uFF08\u83DC\u5355\u91CC\u80FD\u518D\u6253\u5F00\uFF09`, 4e3);
 }
 function toggleFullscreen() {
+  if (pip.active) {
+    say("\u753B\u9762\u5728\u5C0F\u7A97\u91CC\uFF0C\u6CA1\u6709\u5168\u5C4F\uFF1B\u5148\u300C\u6536\u56DE\u300D", 3e3);
+    return;
+  }
   if (document.fullscreenElement) document.exitFullscreen().catch(() => {
   });
-  else $("stage").requestFullscreen({ navigationUI: "hide" }).catch((e) => say(`\u5168\u5C4F\u5931\u8D25\uFF1A${errorText(e)}`));
+  else stageEl.requestFullscreen({ navigationUI: "hide" }).catch((e) => say(`\u5168\u5C4F\u5931\u8D25\uFF1A${errorText(e)}`));
 }
 var stall = createStallDetector({ stallMs: 3e3, armFrames: 2 });
 var stallSheetOpen = false;
 function feedStall(now, st) {
   if (!session) return;
-  const v = stall.feed({ now, frames: st.frames, visible: document.visibilityState === "visible", paused: session.paused, held: session.isHeld, waitingDisc: st.netInflight > 0 });
+  const v = stall.feed({ now, frames: st.frames, visible: inForeground(), paused: session.paused, held: session.isHeld, waitingDisc: st.netInflight > 0 });
   if (v === "stalled" && !stallSheetOpen) {
     logEvent("error", `\u6838\u6CA1\u53CD\u5E94\uFF1A${(stall.stalledForMs(now) / 1e3).toFixed(0)} s \u6CA1\u51FA\u5E27\uFF08\u58F0\u97F3 ${audioContext().state}\uFF0C\u8FFD\u8FDB\u5EA6 ${st.catchup}\uFF0C\u91CD\u951A ${st.reanchors}\uFF0C\u5FAA\u73AF ${st.loopAgeMs < 0 ? "?" : `${st.loopAgeMs.toFixed(0)} ms \u524D`}\uFF0C\u81EA\u6551 ${st.loopRescues}\uFF0CGL ${st.glLost ? "\u4E22\u4E86" : "\u5728"}/\u6062\u590D ${st.glRestores}\uFF09`);
     openStallSheet();
@@ -11738,14 +11929,19 @@ function perfSoon() {
   perfLogAt = performance.now() - (perfLogged ? 11e4 : 0);
 }
 var pausedByHide = false;
-function frame() {
-  if (!session) return;
+var frameGen = 0;
+function startFrameLoop() {
+  const gen = ++frameGen;
+  (pip.window ?? window).requestAnimationFrame(() => frame(gen));
+}
+function frame(gen) {
+  if (gen !== frameGen || !session) return;
   pollGamepads(session);
   session.tick();
   const now = performance.now();
   if (activity) {
     activity.discSeen(session.discSeenBytes(), now);
-    snaps?.tick(activity.tick(now - lastFrameAt, now, { visible: document.visibilityState === "visible", paused: session.paused }));
+    snaps?.tick(activity.tick(now - lastFrameAt, now, { visible: inForeground(), paused: session.paused }));
   }
   lastFrameAt = now;
   if (now - statusAt > 500) {
@@ -11753,14 +11949,14 @@ function frame() {
     renderHud();
     if (!$("status").hidden) $("status").textContent = statusText();
     if (!perfLogAt) perfLogAt = now;
-    if (!session.paused && document.visibilityState === "visible" && now - perfLogAt > (perfLogged ? 12e4 : 1e4)) {
+    if (!session.paused && inForeground() && now - perfLogAt > (perfLogged ? 12e4 : 1e4)) {
       perfLogAt = now;
       perfLogged++;
       const s = session.stats();
       logEvent("info", `\u6027\u80FD\uFF1A${s.fps.toFixed(0)} fps \xB7 \u901F\u5EA6 ${pct(s.speed)} \xB7 ${s.renderer} \xB7 ${perfLines(s).join(" \xB7 ")}${s.coreLog().length ? ` \xB7 \u6838 stderr\uFF1A${s.coreLog().slice(-3).join(" | ")}` : ""}`);
     }
   }
-  requestAnimationFrame(frame);
+  (pip.window ?? window).requestAnimationFrame(() => frame(gen));
 }
 var pct = (x) => `${(x * 100).toFixed(0)}%`;
 function perfLines(s) {
@@ -11786,7 +11982,7 @@ function statusText() {
     `\u76D8\uFF1A\u8FD9\u4E00\u79D2 ${(s.netBps / 1024).toFixed(0)} KB/s \xB7 \u7B49\u8BFB\u76D8 ${s.netWaitMs.toFixed(0)} ms/s${s.netInflight ? `\uFF08\u6B63\u5728\u7B49 ${s.netInflight} \u4E2A\uFF09` : ""} \xB7 \u7D2F\u8BA1 ${(s.bytesFetched / 2 ** 20).toFixed(1)} MB / ${s.mediaReads} \u6B21`,
     `\u58F0\u97F3\uFF1A${s.audioState} \xB7 \u7F13\u51B2 ${s.audioFillMs.toFixed(0)} ms \xB7 \u8F93\u51FA\u5EF6\u8FDF ${s.outputLatencyMs.toFixed(0)} ms \xB7 \u6B20\u8F7D\u7D2F\u8BA1 ${s.audioUnderrunMs.toFixed(0)} ms \xB7 \u4E22\u5F03 ${s.audioDropped}`,
     `\u624B\u67C4\uFF1A${padInfo || "\u6CA1\u68C0\u6D4B\u5230\uFF08\u63D2\u4E0A\u540E\u5728\u9875\u9762\u4E0A\u6309\u4E00\u4E0B\u624B\u67C4\u6309\u952E\uFF09"}`,
-    `\u6D3B\u52A8\uFF1A${activity ? { playing: "\u8FD0\u884C\u4E2D", idle: "\u6302\u673A\uFF08\u81EA\u52A8\u5FEB\u7167\u4E0D\u8BA1\u65F6\uFF09", away: "\u540E\u53F0 / \u6682\u505C" }[activity.state(performance.now(), { visible: document.visibilityState === "visible", paused: s.paused })] : "\u2014"} \xB7 \u8BFB\u8FC7\u7684\u76D8 ${(session.discSeenBytes() / 2 ** 20).toFixed(1)} MB \xB7 \u8FD9\u6B21\u8FD0\u884C ${((activity?.playedMs ?? 0) / 6e4).toFixed(1)} \u5206\u949F`,
+    `\u6D3B\u52A8\uFF1A${activity ? { playing: "\u8FD0\u884C\u4E2D", idle: "\u6302\u673A\uFF08\u81EA\u52A8\u5FEB\u7167\u4E0D\u8BA1\u65F6\uFF09", away: "\u540E\u53F0 / \u6682\u505C" }[activity.state(performance.now(), { visible: inForeground(), paused: s.paused })] : "\u2014"} \xB7 \u8BFB\u8FC7\u7684\u76D8 ${(session.discSeenBytes() / 2 ** 20).toFixed(1)} MB \xB7 \u8FD9\u6B21\u8FD0\u884C ${((activity?.playedMs ?? 0) / 6e4).toFixed(1)} \u5206\u949F`,
     `\u952E\u76D8\uFF08\u540C PPSSPP \u9ED8\u8BA4\uFF09\uFF1A\u65B9\u5411\u952E \u5341\u5B57 \xB7 I/J/K/L \u6447\u6746\uFF08\u53F3 Shift \u8F7B\u63A8\uFF09\xB7 X \u25CB \xB7 Z \xD7 \xB7 A \u25A1 \xB7 S \u25B3 \xB7 Q/W L/R \xB7 \u7A7A\u683C Start \xB7 V / \u56DE\u8F66 Select \xB7 Esc / P \u6682\u505C \xB7 \u6309\u4F4F Tab \u5FEB\u8FDB \xB7 \` \u5FEB\u8FDB\u5F00\u5173 \xB7 M \u9759\u97F3 \xB7 F2 \u5B58 / F4 \u8BFB\u5F53\u524D\u683C`
   ].join("\n");
 }
@@ -11809,6 +12005,12 @@ function onKey(e, down) {
   if (down && e.code === "Enter" && e.altKey) {
     e.preventDefault();
     toggleFullscreen();
+    return;
+  }
+  if (down && e.code === "KeyP" && e.altKey) {
+    e.preventDefault();
+    if (!e.repeat) togglePip().catch(() => {
+    });
     return;
   }
   if (e.code === "Tab") {
@@ -11995,7 +12197,7 @@ async function boot() {
     $("library").replaceChildren(h("p", {}, "\u8FD9\u4E2A\u6D4F\u89C8\u5668\u7528\u4E0D\u4E86\uFF08\u8DE8\u6E90\u9694\u79BB\u6CA1\u751F\u6548\uFF09\u3002\u8BF7\u6362\u6700\u65B0\u7248\u7684 Chrome / Edge / Safari\u3002"));
     return;
   }
-  softKeys = mountSoftKeys($("stage"), {
+  softKeys = mountSoftKeys(stageEl, {
     onMask: (m) => session?.setMask("soft", m),
     onLeftStick: (x, y) => {
       softAnalog = { x, y };
@@ -12007,7 +12209,7 @@ async function boot() {
     onFast: (d) => setFast(d)
   });
   softKeys.setVisible(true);
-  $("stage").addEventListener("dblclick", (e) => {
+  stageEl.addEventListener("dblclick", (e) => {
     if (!e.target.closest(".softkeys .pk, .softkeys .dpad")) toggleFullscreen();
   });
   addEventListener("keydown", (e) => onKey(e, true));
@@ -12212,4 +12414,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-e83191dfca25.mjs.map
+//# sourceMappingURL=kudsrocket-617a28599304.mjs.map
