@@ -777,6 +777,9 @@ static int g_cull_off = 0, g_force_sw = 0;
 // GL 诊断（启动参数 glcheck=1；W-34 Quest 上空之轨迹持续 GL 错误 0x502、PC 一次没有）：给 WebGL 上下文每个方法套一层「调完立刻 getError」，
 //   每种「函数 + 错误码」第一次出现记函数名、参数、当时读 / 画帧缓冲的状态（最多 30 条）；每 30 s 记一次累计。每 60 帧只抽一帧逐个查（逐个查很慢）。只排查用。added 20261017 by Claude Opus 5.5
 static int g_glcheck = 0;
+// 藏 WebGL 扩展（只测试用，启动参数 hideext=名字,名字）：让 PC 走设备上没有某扩展的那条路。W-34：PC 有 EXT_depth_clamp、Quest 没有，
+//   PPSSPP 据此一个走「精确深度」一个不走——不藏就在 PC 上复现不了 Quest 的错。added 20261017 by Claude Opus 5.5
+static char g_hideext[256];
 // 核选项覆盖（设置面板，src/app/settings-model.ts）：启动参数 opt:key=value → 这张表；GET_VARIABLE 先查它（app 自己管的几项除外）。
 //   拒绝名单在这里再挡一道（页面那边也藏了）：联网（家规黄线区）、整盘读进内存（硬规矩）、渲染方式 / 跳帧 / 排程（app 管）。added 20261017 by Claude Opus 5.5
 #define KR_OPT_MAX 48
@@ -1024,6 +1027,14 @@ EM_JS(void, kr_gl_caps_query, (int handle, char *out, int cap), {
   var n = Math.min(s.length, cap - 1), i;
   for (i = 0; i < n; i++) { var ch = s.charCodeAt(i); HEAPU8[out + i] = ch < 128 ? ch : 63; }
   HEAPU8[out + n] = 0;
+});
+EM_JS(void, kr_gl_hide_ext, (int handle, const char *list), {
+  var c = GL.contexts[handle]; if (!c || !c.GLctx) return;
+  var t = "", i; for (i = list; HEAPU8[i]; i++) t += String.fromCharCode(HEAPU8[i]);   // 只有 ASCII（页面那边已滤成 [A-Za-z0-9_,]）
+  var g = c.GLctx, hide = t.split(",").filter(function (n) { return n; });
+  var sup = g.getSupportedExtensions.bind(g), get = g.getExtension.bind(g);   // 和 emscripten 自己藏坏的半浮点扩展同一个办法（libwebgl.js disableHalfFloatExtensionIfBroken）
+  g.getSupportedExtensions = function () { return (sup() || []).filter(function (n) { return hide.indexOf(n) < 0; }); };
+  g.getExtension = function (n) { return hide.indexOf(n) >= 0 ? null : get(n); };
 });
 EM_JS(void, kr_glcheck_install, (int handle), {
   var c = GL.contexts[handle]; if (!c || !c.GLctx) return;
@@ -1366,6 +1377,7 @@ int main(int argc, char **argv) {
     if (!strcmp(argv[i], "render=sw")) g_force_sw = 1;
     if (!strcmp(argv[i], "glcheck=1")) g_glcheck = 1;
     if (!strcmp(argv[i], "tap=0")) g_tap_off = 1;
+    if (!strncmp(argv[i], "hideext=", 8)) snprintf(g_hideext, sizeof g_hideext, "%s", argv[i] + 8);
     if (!strncmp(argv[i], "opt:", 4)) opt_add(argv[i] + 4);
   }
   fprintf(stderr, "[kr] cpu core: %s\n", g_cpu_core);
@@ -1398,6 +1410,7 @@ int main(int argc, char **argv) {
     int w = av.geometry.max_width ? (int)av.geometry.max_width : 480, h = av.geometry.max_height ? (int)av.geometry.max_height : 272;
     gl_make_fbo(w, h);
     glBindFramebuffer(GL_FRAMEBUFFER, g_fbo);
+    if (g_hideext[0]) { kr_gl_hide_ext((int)g_gl, g_hideext); fprintf(stderr, "[kr] GL extensions hidden (test): %s\n", g_hideext); }   // 在 PPSSPP 查扩展（context_reset）之前
     if (g_hw.context_reset) g_hw.context_reset();
     g_hw_active = 1;
     kr_gl_hook_events((int)g_gl, (int *)&g_gl_lost, (int *)&g_gl_restored);

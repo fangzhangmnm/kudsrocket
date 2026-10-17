@@ -320,6 +320,25 @@ index 9c0c469..fbbe89d 100644
  	http::Client http(nullptr);
  	bool cancelled = false;
 Submodule ext/aemu_postoffice contains modified content
+diff --git a/GPU/GLES/GPU_GLES.cpp b/GPU/GLES/GPU_GLES.cpp
+index 307ad5e..a18f31a 100644
+--- a/GPU/GLES/GPU_GLES.cpp
++++ b/GPU/GLES/GPU_GLES.cpp
+@@ -138,6 +138,14 @@ GPU_GLES::~GPU_GLES() {
+ u32 GPU_GLES::CheckGPUFeatures() const {
+ 	u32 features = GPUCommonHW::CheckGPUFeatures();
+ 
++#ifdef __EMSCRIPTEN__
++	// KudsRocket: WebGL rejects depthRange(near, far) with near > far (INVALID_OPERATION; GLES allows it), so the
++	// non-accurate path, which puts the PSP's inverted Z scale into the depth range, silently keeps a stale range and
++	// 3D geometry fails the depth test. Same reason D3D11 always forces accurate depth. Without depth clamp
++	// (Quest's WebGL has no EXT_depth_clamp) nothing else turned this on.
++	features |= GPU_USE_ACCURATE_DEPTH;
++#endif
++
+ 	features |= GPU_USE_16BIT_FORMATS;
+ 
+ 	if (gl_extensions.GLES3 || !gl_extensions.IsGLES)
 diff --git a/ext/aemu_postoffice/client/sock_impl_linux.c b/ext/aemu_postoffice/client/sock_impl_linux.c
 index 4a44f53..a6ac5b7 100644
 --- a/ext/aemu_postoffice/client/sock_impl_linux.c
