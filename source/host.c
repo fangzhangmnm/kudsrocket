@@ -501,6 +501,7 @@ static int cadence_deferring(void);          // 现在是不是「攒着到节�
 
 static void pace_tick_1s(void); // 排程自检（定义在主循环那节）
 static void cadence_tick_1s(void); // 上屏节拍重算（同上）
+static void glcheck_tick_1s(void); // GL 诊断：每秒把新出现的错误吐进 stderr（定义在主循环那节）
 // 每秒一次的杂务（核线程、帧边界上）：GL 有没有报错（核自己只在 debug 构建里查）；游戏本身是 30 还是 60 帧；排程自检。
 static void pf_tick_1s(void) {
   double now = PF_NOW();
@@ -525,6 +526,7 @@ static void pf_tick_1s(void) {
   }
   pace_tick_1s();
   cadence_tick_1s();
+  glcheck_tick_1s();
 }
 // out[0..21] 本文件的累计量；out[22..36] = kr_ppsspp_gpu_stats。只有 run_max（最长一趟 retro_run）读一次清一次。
 EMSCRIPTEN_KEEPALIVE void kr_perf_stats(double *out) {
@@ -754,6 +756,9 @@ static const char *g_sw_skinning = "enabled";
 // 画面兼容开关（W-34 / W-37 设备排查，added 20261017 by Claude Opus 5.5）：启动参数 cull=0 → 关掉 PPSSPP 的顶点范围剔除（物件被误剔的老毛病）；
 //   render=sw → 不建 WebGL、强制软件渲染（慢但不经 GPU：GPU 那条路有问题时画面对不对的金标准）。页面 ☰「画面兼容」拼网址参数重新载入。
 static int g_cull_off = 0, g_force_sw = 0;
+// GL 诊断（启动参数 glcheck=1；W-34 Quest 上空之轨迹持续 GL 错误 0x502、PC 一次没有）：给 WebGL 上下文每个方法套一层「调完立刻 getError」，
+//   每种「函数 + 错误码」第一次出现记函数名、参数、当时读 / 画帧缓冲的状态（最多 30 条）；每 30 s 记一次累计。每 60 帧只抽一帧逐个查（逐个查很慢）。只排查用。added 20261017 by Claude Opus 5.5
+static int g_glcheck = 0;
 static const struct { const char *key, *value; } g_options[] = {
   {"ppsspp_cpu_core", "IR JIT"}, // 实际值看 g_cpu_core（environment() 里）
   // 快内存 = 读写 PSP 地址不检查（IR 的 IRPassSimplify 会把 ValidateAddress 全删掉）。wasm 的堆只有 768 MB、没有保护页：游戏碰一个坏地址就是
@@ -979,6 +984,67 @@ EM_JS(void, kr_gl_caps_query, (int handle, char *out, int cap), {
   for (i = 0; i < n; i++) { var ch = s.charCodeAt(i); HEAPU8[out + i] = ch < 128 ? ch : 63; }
   HEAPU8[out + n] = 0;
 });
+EM_JS(void, kr_glcheck_install, (int handle), {
+  var c = GL.contexts[handle]; if (!c || !c.GLctx) return;
+  var g = c.GLctx; if (g.__krWrapped) return; g.__krWrapped = true;
+  var q = GL.krGlErrQ = [], counts = GL.krGlErrCounts = {};
+  var proto = Object.getPrototypeOf(g), realGetError = proto.getError;
+  var skip = { getError: 1, isContextLost: 1, getExtension: 1, getSupportedExtensions: 1, getContextAttributes: 1 };
+  var fbInfo = function () {
+    try {
+      var st = function (t) { var s = proto.checkFramebufferStatus.call(g, t); return s === g.FRAMEBUFFER_COMPLETE ? "ok" : "0x" + s.toString(16); };
+      var rb = proto.getParameter.call(g, g.READ_FRAMEBUFFER_BINDING), db = proto.getParameter.call(g, g.DRAW_FRAMEBUFFER_BINDING);
+      var prog = proto.getParameter.call(g, g.CURRENT_PROGRAM);
+      var linked = prog ? proto.getProgramParameter.call(g, prog, g.LINK_STATUS) : "none";
+      return "read " + (rb ? "fbo" : "canvas") + "/" + st(g.READ_FRAMEBUFFER) + " draw " + (db ? "fbo" : "canvas") + "/" + st(g.DRAW_FRAMEBUFFER) + " prog " + (prog ? (linked ? "linked" : "NOT-linked") : "none");
+    } catch (e) { return "?"; }
+  };
+  Object.getOwnPropertyNames(proto).forEach(function (name) {
+    var d = Object.getOwnPropertyDescriptor(proto, name);
+    if (!d || typeof d.value !== "function" || skip[name] || name === "constructor") return;
+    var orig = d.value;
+    g[name] = function () {
+      var r = orig.apply(g, arguments);
+      if (!GL.krCheckArmed) return r;   // 抽样：只在被选中的那一帧逐个查（每个调用都查太慢：PC 上空轨掉到 2 fps）
+      var e = realGetError.call(g);
+      if (e) {
+        var key = name + " 0x" + e.toString(16);
+        counts[key] = (counts[key] || 0) + 1;
+        if (counts[key] === 1 && q.length < 30) {
+          var a = [];
+          for (var i = 0; i < arguments.length && i < 11; i++) { var v = arguments[i]; a.push(typeof v === "number" ? (v > 255 ? "0x" + v.toString(16) : String(v)) : v === null ? "null" : typeof v === "object" ? (v.constructor && v.constructor.name || "obj") : String(v)); }
+          q.push(key + " (" + a.join(",") + ") | " + fbInfo());
+        }
+      }
+      return r;
+    };
+  });
+});
+EM_JS(void, kr_glcheck_arm, (int on), { GL.krCheckArmed = !!on; });
+EM_JS(int, kr_glcheck_drain, (char *out, int cap), {
+  var q = GL.krGlErrQ; if (!q || !q.length) return 0;
+  var s = String(q.shift()), n = Math.min(s.length, cap - 1), i;
+  for (i = 0; i < n; i++) { var ch = s.charCodeAt(i); HEAPU8[out + i] = ch < 128 ? ch : 63; }
+  HEAPU8[out + n] = 0; return 1;
+});
+EM_JS(int, kr_glcheck_counts, (char *out, int cap), {
+  var c = GL.krGlErrCounts; if (!c) return 0;
+  var keys = Object.keys(c); if (!keys.length) return 0;
+  var s = keys.map(function (k) { return k + "×" + c[k]; }).join(", "), n = Math.min(s.length, cap - 1), i;
+  for (i = 0; i < n; i++) { var ch = s.charCodeAt(i); HEAPU8[out + i] = ch < 128 ? ch : 63; }
+  HEAPU8[out + n] = 0; return 1;
+});
+static double g_glcheck_sum_at = 0;
+static unsigned g_glcheck_runs = 0;
+static atomic_int g_glcheck_selftest = 0;   // 测试口子：下一趟被抽中的帧里故意发一个非法调用（PC 上本来没错可抓，用它证明诊断真的抓得到）
+EMSCRIPTEN_KEEPALIVE void kr_glcheck_selftest(void) { atomic_store(&g_glcheck_selftest, 1); }   // 每 60 趟 retro_run 挑一趟逐个调用查错（持续性的错每帧都有，一帧就抓得到）
+static void glcheck_tick_1s(void) {
+  if (!g_glcheck) return;
+  static char line[700];
+  while (kr_glcheck_drain(line, (int)sizeof line)) fprintf(stderr, "[kr] GL err first: %s\n", line);
+  double now = emscripten_get_now();
+  if (now - g_glcheck_sum_at >= 30000.0) { g_glcheck_sum_at = now; if (kr_glcheck_counts(line, (int)sizeof line)) fprintf(stderr, "[kr] GL err counts: %s\n", line); }
+}
 // 回读 / 块传输 / 拷贝的累计次数（W-37 怪猎胜利截图：游戏抓画面那一下 PPSSPP 有没有去显卡把画面读回来）。按模拟帧去重累加（vblank 数变了才算新的一帧）。
 static double g_tot_readbacks = 0, g_tot_blocking = 0, g_tot_transfers = 0, g_tot_copies = 0, g_tot_vb = -1;
 static void gpu_totals_tick(void) {
@@ -1098,7 +1164,11 @@ static void run_one(void) {
   service_snapshots();
   uint64_t produced_before = g_audio_produced;
   double pf_t0 = PF_NOW();
+  int armed = g_glcheck && (g_glcheck_runs++ % 60) == 0;
+  if (armed) kr_glcheck_arm(1);
   retro_run();
+  if (armed && atomic_exchange(&g_glcheck_selftest, 0)) glBindTexture(0x1234, 0);   // 非法 target → INVALID_ENUM，应被记成「bindTexture 0x500」
+  if (armed) kr_glcheck_arm(0);
   gpu_totals_tick();
   double pf_dt = PF_NOW() - pf_t0;
   g_pf_run_ms += pf_dt;
@@ -1241,6 +1311,7 @@ int main(int argc, char **argv) {
     if (!strncmp(argv[i], "cadence=", 8)) kr_set_present_every_force(atoi(argv[i] + 8));
     if (!strcmp(argv[i], "cull=0")) g_cull_off = 1;
     if (!strcmp(argv[i], "render=sw")) g_force_sw = 1;
+    if (!strcmp(argv[i], "glcheck=1")) g_glcheck = 1;
   }
   fprintf(stderr, "[kr] cpu core: %s\n", g_cpu_core);
   for (int i = 0; i < KR_CACHE_BLOCKS; i++) g_cache[i].block = -1;
@@ -1277,6 +1348,7 @@ int main(int argc, char **argv) {
     kr_gl_hook_events((int)g_gl, (int *)&g_gl_lost, (int *)&g_gl_restored);
     kr_gl_renderer_query((int)g_gl, g_gl_renderer, (int)sizeof g_gl_renderer);
     { static char caps[640]; caps[0] = 0; kr_gl_caps_query((int)g_gl, caps, (int)sizeof caps); fprintf(stderr, "[kr] GL caps: %s\n", caps); }
+    if (g_glcheck) { kr_glcheck_install((int)g_gl); g_glcheck_sum_at = emscripten_get_now(); fprintf(stderr, "[kr] GL check on (glcheck=1): every WebGL call is followed by getError\n"); }
     fprintf(stderr, "[kr] GPU rendering: WebGL2, framebuffer %dx%d\n", w, h);
     fprintf(stderr, "[kr] GL renderer: %s\n", g_gl_renderer[0] ? g_gl_renderer : "(unknown)");
   } else {
