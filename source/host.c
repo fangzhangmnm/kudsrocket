@@ -759,6 +759,8 @@ static int16_t input_state(unsigned port, unsigned device, unsigned index, unsig
 // 直接改 PPSSPP 的跳帧数（补丁里的 kr_ppsspp_set_frameskip）——经 GET_VARIABLE_UPDATE 改会让核整套重读选项，
 // 在 GL 多线程模式下卡死（10-14 实测；对照：一开始就固定跳帧、中途不改，不卡）。
 void kr_ppsspp_set_frameskip(int n);
+void kr_ppsspp_set_fastforward(int on);   // 上游补丁：告诉 PPSSPP 正在快进，它自己的 60 帧限速就不睡（10-17 ff-smoke：不告诉它，8× 实际只跑 1.07×）
+static int g_ff_told = 0;
 static int g_frameskip_want = 0, g_frameskip_told = 0;
 static atomic_uint g_frameskip_now = 0;
 EMSCRIPTEN_KEEPALIVE unsigned kr_frameskip(void) { return g_frameskip_now; }
@@ -1117,7 +1119,7 @@ static _Atomic int g_paused = 0;
 static double g_speed = 1.0;
 EMSCRIPTEN_KEEPALIVE void kr_set_paused(int p) { g_paused = p; }
 EMSCRIPTEN_KEEPALIVE int kr_get_paused(void) { return g_paused; }
-EMSCRIPTEN_KEEPALIVE void kr_set_speed(double x) { g_speed = x >= 0.25 && x <= 8 ? x : 1.0; }
+EMSCRIPTEN_KEEPALIVE void kr_set_speed(double x) { g_speed = x >= 0.25 && x <= 10 ? x : 1.0; }   // 快进上限设置最高 ×10
 EMSCRIPTEN_KEEPALIVE double kr_get_speed(void) { return g_speed; }
 
 static double g_anchor_speed = 1.0;
@@ -1184,6 +1186,10 @@ static void apply_frameskip(double d, double e) {
   else if (d < e * 0.25) want = 0;
   int floor_now = kr_frameskip_floor_active();
   if (want < floor_now) want = floor_now;
+  // 快进时自适应跳帧（user 10-17「对，自适应跳帧」；照上游 PPSSPP 手机默认的 SKIP_FLIP）：速度 s → 跳 ceil(s) − 1 帧（最多 8），上屏大约保持游戏本身的帧率，
+  //   跳过的帧 PPSSPP 连顶点解码和画都省掉——弱设备（Quest 上模拟线程的大头就是这些）才快得起来。快进结束：落回 2 以内，之后照欠账慢慢降。added 20261017 by Claude Opus 5.5
+  if (g_speed > 1.0) { int ff = (int)ceil(g_speed) - 1; if (ff > 8) ff = 8; if (want < ff) want = ff; }
+  else if (want > 2) want = 2;
   g_frameskip_want = want;
   g_frameskip_now = want;
   if (g_frameskip_want != g_frameskip_told) { kr_ppsspp_set_frameskip(g_frameskip_want); g_frameskip_told = g_frameskip_want; }
@@ -1277,6 +1283,7 @@ static void frame(void) {
   }
   if (g_paused) { service_snapshots(); g_anchor_real = 0; return; } // 继续时重新锚定，不补回暂停的时间
   if (g_anchor_real == 0 || g_anchor_speed != g_speed) reanchor();
+  { int ff = g_speed > 1.0; if (ff != g_ff_told) { kr_ppsspp_set_fastforward(ff); g_ff_told = ff; } }   // 核线程上告诉 PPSSPP（它在模拟线程里读）
   const double e = g_frame_ms_avg;
 
   // 顺滑（?pace=audio）：等 AudioWorklet 播掉一些再跑；声音时钟卡住超过 50 ms 就退回时间对齐
@@ -1291,7 +1298,8 @@ static void frame(void) {
   }
 
   double d = debt_ms();
-  if (d > e * 5.5) { reanchor(); d = 0; atomic_fetch_add(&g_reanchors, 1); }
+  // 落后太多就认了（重新对齐）。门槛跟着速度放宽：快进 8× 时一趟刷新就欠 8 帧，固定 5.5 帧的门槛会每趟都清零、一帧都不补（10-17 ff-smoke 抓到：8× 实际只跑 105%）
+  if (d > e * 5.5 * (g_speed > 1.0 ? g_speed : 1.0)) { reanchor(); d = 0; atomic_fetch_add(&g_reanchors, 1); }
 
   if (g_timing_mode == EM_TIMING_RAF) {
     // 跟屏幕：这次刷新跑几帧。
@@ -1319,7 +1327,13 @@ static void frame(void) {
       //   （13.9 ms 一趟、16.7 ms 一帧），拿它比半帧阈值 = 光靠节拍就把跳帧开开关关（10-16 Quest 日志：模拟线程只 47% 忙却跳帧 1、23 fps、出帧间隔 ±17.6 ms）。
       apply_frameskip(d - n * e, e);
     }
-    for (int i = 0; i < n; i++) { run_one(); if (i > 0) atomic_fetch_add(&g_catchup_runs, 1); }
+    // 快进时按时间预算跑：一趟刷新里塞得进几帧跑几帧（预算 ≈ 0.9 次刷新），塞不下的欠账由「落后太多就认了」吸收——弱设备快进时 worker 照样每次刷新都让出来（不卡界面、不卡输入）
+    double budget = g_speed > 1.0 ? (g_vs_dt > 0 ? g_vs_dt * 0.9 : 15.0) : 1e9;
+    for (int i = 0; i < n; i++) {
+      run_one();
+      if (i > 0) atomic_fetch_add(&g_catchup_runs, 1);
+      if (i + 1 < n && emscripten_get_now() - now > budget) break;
+    }
     present_if_due();
     return;
   }

@@ -511,7 +511,7 @@ index 6bdb4ef..1f71ff8 100644
  ifneq (,$(findstring x86,$(TARGET_ARCH)))
  	COREFLAGS += -DHAVE_SYSCTLBYNAME
 diff --git a/libretro/libretro.cpp b/libretro/libretro.cpp
-index 3b2f103..7f55d60 100644
+index 3b2f103..2be4b31 100644
 --- a/libretro/libretro.cpp
 +++ b/libretro/libretro.cpp
 @@ -547,7 +547,13 @@ static void check_variables(CoreParameter &coreParam)
@@ -529,7 +529,7 @@ index 3b2f103..7f55d60 100644
  #endif
  
     var.key = "ppsspp_fast_memory";
-@@ -1170,6 +1176,31 @@ static void check_variables(CoreParameter &coreParam)
+@@ -1170,6 +1176,34 @@ static void check_variables(CoreParameter &coreParam)
     set_variable_visibility();
  }
  
@@ -537,6 +537,9 @@ index 3b2f103..7f55d60 100644
 +// RETRO_ENVIRONMENT_GET_VARIABLE_UPDATE mid-game re-runs all of check_variables, which hangs with the GL emu thread.
 +// The frontend calls this between retro_run() calls (it only writes an int the emu thread reads at the next flip).
 +extern "C" void kr_ppsspp_set_frameskip(int n) { g_Config.iFrameSkip = n; }
++// KudsRocket patch (fast-forward): tell PPSSPP the frontend is fast-forwarding, so its own frame timing stops sleeping to 60 fps
++// (FrameTimingThrottled() == false). Without it the host can pace as fast as it likes and the core still waits each frame -> 1x.
++extern "C" void kr_ppsspp_set_fastforward(int on) { PSP_CoreParameter().fastForward = on != 0; }
 +// KudsRocket patch (perf probe): collect gpuStats (numDrawCalls etc.) even without PPSSPP's UI overlay (EmuScreen drives
 +// PSP_UpdateDebugStats in the desktop app; the libretro build never calls it). Counters only; nothing is drawn.
 +static bool g_kr_debug_stats = false;
@@ -561,7 +564,7 @@ index 3b2f103..7f55d60 100644
  void retro_set_audio_sample_batch(retro_audio_sample_batch_t cb) { audio_batch_cb = cb; }
  void retro_set_audio_sample(retro_audio_sample_t cb) { (void)cb; }
  void retro_set_input_poll(retro_input_poll_t cb) { input_poll_cb = cb; }
-@@ -1360,6 +1391,7 @@ namespace Libretro
+@@ -1360,6 +1394,7 @@ namespace Libretro
     static std::thread emuThread;
     static void EmuFrame()
     {
@@ -569,7 +572,7 @@ index 3b2f103..7f55d60 100644
        ctx->SetRenderTarget();
        Draw::DrawContext *draw = ctx->GetDrawContext();
        if (draw) {
-@@ -1475,11 +1507,13 @@ namespace Libretro
+@@ -1475,11 +1510,13 @@ namespace Libretro
  
        emuThreadState = EmuThreadState::PAUSE_REQUESTED;
  
@@ -588,7 +591,7 @@ index 3b2f103..7f55d60 100644
     }
  
  } // namespace Libretro
-@@ -2048,24 +2082,15 @@ inline int16_t Clamp16(int32_t sample) {
+@@ -2048,24 +2085,15 @@ inline int16_t Clamp16(int32_t sample) {
  
  void System_AudioPushSamples(const int32_t *audio, int numSamples, float volume) {
     // We ignore volume here, because it's handled by libretro presumably.

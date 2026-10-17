@@ -1,5 +1,5 @@
 // src/version.ts
-var APP_VERSION = "v0.1.55-2026-10-17";
+var APP_VERSION = "v0.1.56-2026-10-17";
 
 // assets/icons.svg
 var icons_default = '<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none">\n<!--\n  14 icons extracted from the family icon library (../20260708 SVG Icons/icons.svg) by extract-icons.py \u2014 do not hand-edit; re-run the script instead.\n  Family SVG Icons \u2014 MIT License, Copyright (c) 2026 fangzhangmnm.\n  Contains work derived from (per-icon provenance in data-src):\n    Feather Icons \u2014 MIT License, Copyright (c) 2013-2023 Cole Bemis \xB7 https://github.com/feathericons/feather\n-->\n  <!-- media -->\n  <!-- pause \u2014 \u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="pause" data-cat="media" data-src="own" data-note="\u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="3.2"><path d="M8.3 5.5 V18.5"/><path d="M15.7 5.5 V18.5"/></g></symbol>\n  <!-- play \u2014 \u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="play" data-cat="media" data-src="own" data-note="\u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 5.4 L18.8 12 L8.2 18.6 Z" fill="currentColor"/></symbol>\n  <!-- fast-forward \u2014 \u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="fast-forward" data-cat="media" data-src="own" data-note="\u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.4 6.8 L10.9 12 L4.4 17.2 Z" fill="currentColor"/><path d="M13.1 6.8 L19.6 12 L13.1 17.2 Z" fill="currentColor"/></symbol>\n  <!-- volume \u2014 \u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009) -->\n  <symbol id="volume" data-cat="media" data-src="own" data-note="\u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 10.3 H8.7 L12.6 6.6 V17.4 L8.7 13.7 H5.5 Z" fill="currentColor"/><path d="M15.13 9.73 A3.4 3.4 0 0 1 15.13 14.27"/><path d="M16.36 7.19 A6.1 6.1 0 0 1 16.36 16.81"/></symbol>\n  <!-- file -->\n  <!-- floppy-disk \u2014 \u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3 -->\n  <symbol id="floppy-disk" data-cat="file" data-src="feather:save" data-note="\u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13l3 3v13a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 17 8 17 3"/></symbol>\n  <!-- folder-open \u2014 \u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF -->\n  <symbol id="folder-open" data-cat="file" data-src="own" data-note="\u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18 V7 a2 2 0 0 1 2 -2 h4 l2 2 h6 a2 2 0 0 1 2 2 v1.8"/><path d="M3 18 L6.4 10.8 H21.6 L18.2 18 Z"/></symbol>\n  <!-- hierarchy -->\n  <!-- lock \u2014 \u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D -->\n  <symbol id="lock" data-cat="hierarchy" data-src="own" data-note="\u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10" width="13" height="11"/><path d="M8.8 10 V6.5 a3.2 3.2 0 0 1 6.4 0 V10"/></symbol>\n  <!-- common -->\n  <!-- x \u2014 \u53C9 -->\n  <symbol id="x" data-cat="common" data-src="own" data-note="\u53C9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 L17.5 17.5 M17.5 6.5 L6.5 17.5"/></symbol>\n  <!-- cloud -->\n  <!-- cloud \u2014 \u4E91 -->\n  <symbol id="cloud" data-cat="cloud" data-src="feather:cloud" data-note="\u4E91" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>\n  <!-- viewport -->\n  <!-- maximize-viewport \u2014 \u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55) -->\n  <symbol id="maximize-viewport" data-cat="viewport" data-src="own" data-note="\u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934 --> <polyline points="4 9 4 4 9 4"/> <polyline points="20 9 20 4 15 4"/> <polyline points="4 15 4 20 9 20"/> <polyline points="20 15 20 20 15 20"/></symbol>\n  <!-- picture-in-picture \u2014 \u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1) -->\n  <symbol id="picture-in-picture" data-cat="viewport" data-src="own" data-note="\u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u5927\u6846\uFF08\u4E3B\u753B\u5E03\uFF09+ \u5185\u5D4C\u5C0F\u7A97\uFF08\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1\uFF09\u2014\u2014 picture-in-picture \u9690\u55BB --> <rect x="3" y="4" width="18" height="14" rx="2"/> <rect x="12" y="10" width="7" height="5" rx="1"/></symbol>\n  <!-- ui -->\n  <!-- more \u2014 \u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00) -->\n  <symbol id="more" data-cat="ui" data-src="own" data-note="\u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/></symbol>\n  <!-- keyboard \u2014 \u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49) -->\n  <symbol id="keyboard" data-cat="ui" data-src="own" data-note="\u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="7.2" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="7.2" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><path d="M8.6 15.6 H15.4"/></symbol>\n  <!-- menu \u2014 \u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17) -->\n  <symbol id="menu" data-cat="ui" data-src="own" data-note="\u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"></line> <line x1="4" y1="12" x2="20" y2="12"></line> <line x1="4" y1="17" x2="20" y2="17"></line></symbol>\n</svg>\n';
@@ -6731,7 +6731,6 @@ var PLATFORM_CODE = { psp: "wafer" };
 var JAM_POLL_MS = 1e3;
 var ACTIVITY_INPUT_WINDOW_MS = 2 * 6e4;
 var ACTIVITY_PROGRESS_WINDOW_MS = 2 * 6e4;
-var FAST_FORWARD = 3;
 
 // src/app/labels.ts
 var labels = /* @__PURE__ */ new Map();
@@ -10743,6 +10742,7 @@ var APP_SETTINGS = [
     apply: "now",
     layer: "app"
   },
+  { id: "app.ffcap", section: "pacing", label: "\u5FEB\u8FDB\u4E0A\u9650", hint: "\u6309\u4F4F\u5FEB\u8FDB / RT \u6309\u5230\u5E95\u65F6\u6700\u591A\u8DD1\u51E0\u500D\uFF08\u8BBE\u5907\u8DD1\u4E0D\u5230\u5C31\u8DD1\u5230\u5B83\u7684\u6781\u9650\uFF1B\u5FEB\u8FDB\u65F6\u81EA\u52A8\u591A\u8DF3\u5E27\uFF09", choices: [2, 3, 4, 5, 8, 10].map((x) => ({ value: String(x), label: x === 8 ? "\xD78\uFF08\u9ED8\u8BA4\uFF09" : `\xD7${x}` })), def: "8", apply: "now", layer: "app" },
   { id: "app.pacing", section: "pacing", label: "\u6392\u7A0B", hint: "\u8DDF\u5C4F\u5E55 = \u8DDF\u663E\u793A\u5668\u5237\u65B0\u8D70\uFF1B\u8DDF\u58F0\u97F3 = \u987A\u6ED1\u4E0D\u7206\u97F3\uFF08\u5EF6\u8FDF\u9AD8\uFF09\uFF1B\u5899\u949F = \u6838\u81EA\u5DF1\u8BA1\u65F6", choices: [{ value: "vsync", label: "\u8DDF\u5C4F\u5E55" }, { value: "audio", label: "\u8DDF\u58F0\u97F3\uFF08\u987A\u6ED1\uFF09" }, { value: "wall", label: "\u5899\u949F" }], def: "vsync", apply: "now", layer: "app" },
   { id: "app.tap", section: "controls", label: "\u6309\u4E0B\u9501\u5B58", hint: "\u5FEB\u901F\u8FDE\u6309\u6BCF\u4E00\u4E0B\u90FD\u8BA9\u6E38\u620F\u770B\u5230\uFF08\u81F3\u5C11\u6309\u4F4F 2 \u5E27\u3001\u677E\u5F00 2 \u5E27\uFF09", choices: OFF_ON("\u5173", "\u5F00\uFF08\u9ED8\u8BA4\uFF09"), def: "enabled", apply: "now", layer: "app" },
   { id: "app.render", section: "compat", label: "\u8F6F\u4EF6\u6E32\u67D3", hint: "\u5B8C\u5168\u4E0D\u7528\u663E\u5361\uFF1A\u5F88\u6162\uFF0C\u4F46\u753B\u9762\u662F\u5BF9\u7684\u2014\u2014\u5224\u65AD\u662F\u4E0D\u662F\u663E\u5361\u90A3\u6761\u8DEF\u7684\u95EE\u9898", choices: OFF_ON(), def: "disabled", apply: "reload", layer: "app" },
@@ -10789,6 +10789,19 @@ function presetOf(k, deviceCap30) {
     if (p.pacing === k.pacing && p.audioTargetMs === k.audioTargetMs && p.audioMaxMs === k.audioMaxMs && p.latencyHint === k.latencyHint && cap === k.cap30) return id;
   }
   return "custom";
+}
+
+// src/app/speed.ts
+var TRIGGER_DEADZONE = 0.2;
+var ANALOG_MAX = 4;
+var FULL_PRESS = 0.95;
+var DEFAULT_FF_CAP = 8;
+function triggerSpeed(value, cap = DEFAULT_FF_CAP) {
+  const v = Math.max(0, (value - TRIGGER_DEADZONE) / (1 - TRIGGER_DEADZONE));
+  if (v <= 0) return 1;
+  if (value >= FULL_PRESS) return cap;
+  const s = 1 + (Math.min(ANALOG_MAX, cap) - 1) * (v / ((FULL_PRESS - TRIGGER_DEADZONE) / (1 - TRIGGER_DEADZONE)));
+  return Math.min(cap, Math.round(s * 4) / 4);
 }
 
 // src/app/settings-panel.ts
@@ -11650,7 +11663,7 @@ async function play(prepare, resume) {
     onInput: () => activity?.input(performance.now()),
     media: disc.media,
     ext: disc.ext,
-    coreDir: "./dist/core-14b747b61f16/",
+    coreDir: "./dist/core-466a09e4eac0/",
     glCanvas: $("gl"),
     softCanvas: $("screen"),
     audioContext: audioContext(),
@@ -12207,7 +12220,7 @@ function openMenu() {
         }, pip.active)] : [],
         item(softKeys?.visible ? "\u6536\u8D77\u5C4F\u5E55\u8F6F\u952E" : "\u5C4F\u5E55\u8F6F\u952E", "\u89E6\u5C4F / \u5C04\u7EBF\u70B9", toggleSoftKeys, softKeys?.visible ?? false),
         item(s.isMuted ? "\u53D6\u6D88\u9759\u97F3" : `\u97F3\u91CF ${Math.round(s.volume * 100)}`, "M \u9759\u97F3", openVolume, s.isMuted),
-        item(s.speed > 1 ? "\u6062\u590D\u6B63\u5E38\u901F\u5EA6" : `\u5FEB\u8FDB \xD7${FAST_FORWARD}`, "\u6309\u4F4F Tab \xB7 ` \u5207\u6362", () => setFast(!(s.speed > 1)), s.speed > 1)
+        item(ffOn ? "\u6062\u590D\u6B63\u5E38\u901F\u5EA6" : `\u5FEB\u8FDB\uFF08\u6700\u5FEB \xD7${ffCap}\uFF09`, "\u624B\u67C4\u6309\u4F4F RT\uFF08\u6309\u4E00\u534A\u6309\u6DF1\u6D45\uFF09\xB7 \u6309\u4F4F Tab \xB7 ` \u5207\u6362", () => setFast(!ffOn), ffOn)
       ),
       h("h3", {}, "\u66F4\u591A"),
       h(
@@ -12252,6 +12265,8 @@ function settingsHost() {
           return s.frameCap30 ? "enabled" : "disabled";
         case "app.pacing":
           return s.pacingMode();
+        case "app.ffcap":
+          return String(ffCap);
         case "app.preset": {
           const now = presetOf({ pacing: s.pacingMode(), audioTargetMs: s.audioBufferMs.target, audioMaxMs: s.audioBufferMs.max, latencyHint, cap30: s.frameCap30 }, defaultFrameCap30());
           return now === "act" && lastPreset === "mus" ? "mus" : now;
@@ -12278,6 +12293,10 @@ function settingsHost() {
           break;
         case "app.preset":
           applyPreset(v);
+          break;
+        case "app.ffcap":
+          ffCap = Number(v) || DEFAULT_FF_CAP;
+          applySpeed();
           break;
         case "app.tap":
           s.setTapOff(v === "disabled");
@@ -12459,10 +12478,20 @@ function togglePause() {
   session.setPaused(!session.paused);
   renderToolbar();
 }
-function setFast(on) {
+var ffOn = false;
+var rtSpeed = 1;
+var ffCap = DEFAULT_FF_CAP;
+function applySpeed() {
   if (!session) return;
-  session.setSpeed(on ? FAST_FORWARD : 1);
-  renderToolbar();
+  const want = Math.max(ffOn ? ffCap : 1, rtSpeed);
+  if (session.speed !== want) {
+    session.setSpeed(want);
+    renderToolbar();
+  }
+}
+function setFast(on) {
+  ffOn = on;
+  applySpeed();
 }
 function defaultFrameCap30() {
   const forced = params.get("cap");
@@ -12599,8 +12628,6 @@ var PAD_MAP = [
   [3, "triangle"],
   [4, "l"],
   [5, "r"],
-  [6, "l"],
-  [7, "r"],
   [8, "select"],
   [9, "start"],
   [12, "up"],
@@ -12647,6 +12674,29 @@ function pollGamepads(s) {
     mask |= rm;
   }
   padInfo = names.join(" + ");
+  {
+    let lt = 0, rt = 0, r3 = false, home = false;
+    for (const gp of navigator.getGamepads?.() ?? []) {
+      if (!gp || !gp.connected || gp.mapping !== "standard") continue;
+      lt = Math.max(lt, gp.buttons[6]?.value ?? 0);
+      rt = Math.max(rt, gp.buttons[7]?.value ?? (gp.buttons[7]?.pressed ? 1 : 0));
+      r3 ||= !!gp.buttons[11]?.pressed;
+      home ||= !!gp.buttons[16]?.pressed;
+    }
+    const ltDown = padLtDown ? lt > 0.3 : lt > 0.5;
+    if (ltDown && !padLtDown) togglePause();
+    if (home && !padHome) togglePause();
+    if (r3 && !padR3) setFast(!ffOn);
+    padLtDown = ltDown;
+    padHome = home;
+    padR3 = r3;
+    const rs = s.paused ? 1 : triggerSpeed(rt, ffCap);
+    if (rs !== rtSpeed) {
+      rtSpeed = rs;
+      applySpeed();
+    }
+    if (ltDown || r3 || home || rt > TRIGGER_DEADZONE) pressed = true;
+  }
   if (pressed) hardwareInput("\u624B\u67C4");
   s.setMask("pad", mask);
   s.setAnalog(ax, ay);
@@ -12662,6 +12712,9 @@ function pollGamepads(s) {
   }
 }
 var comboHeld = false;
+var padLtDown = false;
+var padHome = false;
+var padR3 = false;
 var padLastTs = /* @__PURE__ */ new Map();
 var padTsChanges = 0;
 var padTsAtBurst = 0;
@@ -12747,6 +12800,7 @@ function statusText() {
     `\u58F0\u97F3\uFF1A${s.audioState} \xB7 \u7F13\u51B2 ${s.audioFillMs.toFixed(0)} ms \xB7 \u8F93\u51FA\u5EF6\u8FDF ${s.outputLatencyMs.toFixed(0)} ms \xB7 \u6B20\u8F7D\u7D2F\u8BA1 ${s.audioUnderrunMs.toFixed(0)} ms \xB7 \u4E22\u5F03 ${s.audioDropped}`,
     `\u624B\u67C4\uFF1A${padInfo || (IS_QUEST ? `\u6CA1\u68C0\u6D4B\u5230\u3002Quest \u53EF\u80FD\u6B63\u62FF\u624B\u67C4\u5F53\u5149\u6807\u7528\uFF08\u7F51\u9875\u770B\u4E0D\u5230\uFF09\uFF1A${QUEST_PAD_HOWTO}\u3002Xbox \u624B\u67C4\u6700\u7A33` : "\u6CA1\u68C0\u6D4B\u5230\uFF08\u63D2\u4E0A\u540E\u5728\u9875\u9762\u4E0A\u6309\u4E00\u4E0B\u624B\u67C4\u6309\u952E\uFF09")}`,
     `\u6D3B\u52A8\uFF1A${activity ? { playing: "\u8FD0\u884C\u4E2D", idle: "\u6302\u673A\uFF08\u81EA\u52A8\u5FEB\u7167\u4E0D\u8BA1\u65F6\uFF09", away: "\u540E\u53F0 / \u6682\u505C" }[activity.state(performance.now(), { visible: inForeground(), paused: s.paused })] : "\u2014"} \xB7 \u8BFB\u8FC7\u7684\u76D8 ${(session.discSeenBytes() / 2 ** 20).toFixed(1)} MB \xB7 \u8FD9\u6B21\u8FD0\u884C ${((activity?.playedMs ?? 0) / 6e4).toFixed(1)} \u5206\u949F`,
+    `\u624B\u67C4\uFF08\u540C PPSSPP Xbox \u9ED8\u8BA4\uFF09\uFF1AA \xD7 \xB7 B \u25CB \xB7 X \u25A1 \xB7 Y \u25B3 \xB7 LB/RB L/R \xB7 LT \u6682\u505C \xB7 RT \u5FEB\u8FDB\uFF08\u6309\u4E00\u534A\u6309\u6DF1\u6D45 1\u20134\xD7\uFF0C\u6309\u5230\u5E95 \xD7${ffCap}\uFF09\xB7 \u53F3\u6447\u6746\u6309\u4E0B \u5FEB\u8FDB\u5F00\u5173 \xB7 \u5DE6\u6447\u6746 \u6447\u6746 \xB7 \u53F3\u6447\u6746 \u5341\u5B57`,
     `\u952E\u76D8\uFF08\u540C PPSSPP \u9ED8\u8BA4\uFF09\uFF1A\u65B9\u5411\u952E \u5341\u5B57 \xB7 I/J/K/L \u6447\u6746\uFF08\u53F3 Shift \u8F7B\u63A8\uFF09\xB7 X \u25CB \xB7 Z \xD7 \xB7 A \u25A1 \xB7 S \u25B3 \xB7 Q/W L/R \xB7 \u7A7A\u683C Start \xB7 V / \u56DE\u8F66 Select \xB7 Esc / P \u6682\u505C \xB7 \u6309\u4F4F Tab \u5FEB\u8FDB \xB7 \` \u5FEB\u8FDB\u5F00\u5173 \xB7 M \u9759\u97F3 \xB7 F2 \u5B58 / F4 \u8BFB\u5F53\u524D\u683C`
   ].join("\n");
 }
@@ -13382,6 +13436,8 @@ globalThis.kr = {
   },
   inputMask: () => session ? session.inputMask() : 0,
   snapshot: async () => session ? (await session.snapshot()).state.length : 0,
+  /** 手柄这一路此刻按着的 PSP 键位（测试：按住 RT 时不该有 R）。 */
+  padMask: () => session?.getMask("pad") ?? 0,
   /** GL 诊断自测：核在下一趟抽查帧里故意发一个非法调用（要用 ?glcheck=1 开盘）。 */
   glSelfTest: () => session?.core?._kr_glcheck_selftest?.(),
   /** 开发期：把这一刻存成 private/states/<name>（经开发服务器 POST /__dev/state/；之后 ?state=<name> 从这里起跑）。added 20261017 by Claude Opus 5.5 */
@@ -13449,4 +13505,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-11608ae4c45b.mjs.map
+//# sourceMappingURL=kudsrocket-2c5c731ff586.mjs.map
