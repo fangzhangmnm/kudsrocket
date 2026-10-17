@@ -7,7 +7,7 @@
 <meta name="theme-color" content="#111111">
 <title>KudsRocket</title>
 <link rel="manifest" href="./manifest.webmanifest">
-<link rel="stylesheet" href="./styles.css?v=6a77ae6f97f0">
+<link rel="stylesheet" href="./styles.css?v=6f1c9e346952">
 </head>
 <body>
 <main id="home">
@@ -24,6 +24,8 @@
     <button id="upload-wafter" title="选一个本机文件，边加密边传进 OneDrive，不留本机副本（iPad / Quest 也能用）">上传盘…</button>
     <button id="make-wafter">做加密盘…</button>
     <button id="unwrap-wafter">解密盘…</button>
+    <button id="pack-saves" title="把 PPSSPP 记忆棒里的存档（SAVEDATA 文件夹或 zip）装进云端：云端没有的新建，一样的跳过，不一样的不动">存档装罐…</button>
+    <button id="unpack-saves" title="把云端的存档解成 PPSSPP 能用的 SAVEDATA，打成 zip 下载">存档解罐…</button>
     <button id="clear-cache" title="放掉所有已同步的本机副本（没传上去的不动）">清本机缓存</button>
     <label class="muted">暂存区上限 <select id="staging-cap"></select></label>
     <button id="force-update" title="清掉这个 app 自己的离线壳缓存并重新载入">强制更新</button>
@@ -50,6 +52,6 @@
 <div id="note" hidden></div>
 <div id="update" hidden></div>
 <div id="busy" hidden><span></span></div>
-<script type="module" src="./dist/kudsrocket-6a77ae6f97f0.mjs"></script>
+<script type="module" src="./dist/kudsrocket-6f1c9e346952.mjs"></script>
 </body>
 </html>

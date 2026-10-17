@@ -1,5 +1,5 @@
 // src/version.ts
-var APP_VERSION = "v0.1.49-2026-10-17";
+var APP_VERSION = "v0.1.50-2026-10-17";
 
 // assets/icons.svg
 var icons_default = '<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none">\n<!--\n  14 icons extracted from the family icon library (../20260708 SVG Icons/icons.svg) by extract-icons.py \u2014 do not hand-edit; re-run the script instead.\n  Family SVG Icons \u2014 MIT License, Copyright (c) 2026 fangzhangmnm.\n  Contains work derived from (per-icon provenance in data-src):\n    Feather Icons \u2014 MIT License, Copyright (c) 2013-2023 Cole Bemis \xB7 https://github.com/feathericons/feather\n-->\n  <!-- media -->\n  <!-- pause \u2014 \u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="pause" data-cat="media" data-src="own" data-note="\u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="3.2"><path d="M8.3 5.5 V18.5"/><path d="M15.7 5.5 V18.5"/></g></symbol>\n  <!-- play \u2014 \u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="play" data-cat="media" data-src="own" data-note="\u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 5.4 L18.8 12 L8.2 18.6 Z" fill="currentColor"/></symbol>\n  <!-- fast-forward \u2014 \u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="fast-forward" data-cat="media" data-src="own" data-note="\u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.4 6.8 L10.9 12 L4.4 17.2 Z" fill="currentColor"/><path d="M13.1 6.8 L19.6 12 L13.1 17.2 Z" fill="currentColor"/></symbol>\n  <!-- volume \u2014 \u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009) -->\n  <symbol id="volume" data-cat="media" data-src="own" data-note="\u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 10.3 H8.7 L12.6 6.6 V17.4 L8.7 13.7 H5.5 Z" fill="currentColor"/><path d="M15.13 9.73 A3.4 3.4 0 0 1 15.13 14.27"/><path d="M16.36 7.19 A6.1 6.1 0 0 1 16.36 16.81"/></symbol>\n  <!-- file -->\n  <!-- floppy-disk \u2014 \u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3 -->\n  <symbol id="floppy-disk" data-cat="file" data-src="feather:save" data-note="\u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13l3 3v13a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 17 8 17 3"/></symbol>\n  <!-- folder-open \u2014 \u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF -->\n  <symbol id="folder-open" data-cat="file" data-src="own" data-note="\u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18 V7 a2 2 0 0 1 2 -2 h4 l2 2 h6 a2 2 0 0 1 2 2 v1.8"/><path d="M3 18 L6.4 10.8 H21.6 L18.2 18 Z"/></symbol>\n  <!-- hierarchy -->\n  <!-- lock \u2014 \u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D -->\n  <symbol id="lock" data-cat="hierarchy" data-src="own" data-note="\u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10" width="13" height="11"/><path d="M8.8 10 V6.5 a3.2 3.2 0 0 1 6.4 0 V10"/></symbol>\n  <!-- common -->\n  <!-- x \u2014 \u53C9 -->\n  <symbol id="x" data-cat="common" data-src="own" data-note="\u53C9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 L17.5 17.5 M17.5 6.5 L6.5 17.5"/></symbol>\n  <!-- cloud -->\n  <!-- cloud \u2014 \u4E91 -->\n  <symbol id="cloud" data-cat="cloud" data-src="feather:cloud" data-note="\u4E91" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>\n  <!-- viewport -->\n  <!-- maximize-viewport \u2014 \u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55) -->\n  <symbol id="maximize-viewport" data-cat="viewport" data-src="own" data-note="\u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934 --> <polyline points="4 9 4 4 9 4"/> <polyline points="20 9 20 4 15 4"/> <polyline points="4 15 4 20 9 20"/> <polyline points="20 15 20 20 15 20"/></symbol>\n  <!-- picture-in-picture \u2014 \u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1) -->\n  <symbol id="picture-in-picture" data-cat="viewport" data-src="own" data-note="\u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u5927\u6846\uFF08\u4E3B\u753B\u5E03\uFF09+ \u5185\u5D4C\u5C0F\u7A97\uFF08\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1\uFF09\u2014\u2014 picture-in-picture \u9690\u55BB --> <rect x="3" y="4" width="18" height="14" rx="2"/> <rect x="12" y="10" width="7" height="5" rx="1"/></symbol>\n  <!-- ui -->\n  <!-- more \u2014 \u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00) -->\n  <symbol id="more" data-cat="ui" data-src="own" data-note="\u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/></symbol>\n  <!-- keyboard \u2014 \u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49) -->\n  <symbol id="keyboard" data-cat="ui" data-src="own" data-note="\u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="7.2" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="7.2" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><path d="M8.6 15.6 H15.4"/></symbol>\n  <!-- menu \u2014 \u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17) -->\n  <symbol id="menu" data-cat="ui" data-src="own" data-note="\u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"></line> <line x1="4" y1="12" x2="20" y2="12"></line> <line x1="4" y1="17" x2="20" y2="17"></line></symbol>\n</svg>\n';
@@ -8634,6 +8634,125 @@ function unzipSync(data, opts) {
   return files;
 }
 
+// src/app/save-scan.ts
+function groupSaveDirs(files) {
+  const norm = files.map((f) => ({ ...f, path: f.path.replace(/\\/g, "/").replace(/^\/+/, "") }));
+  const roots = /* @__PURE__ */ new Map();
+  for (const f of norm) {
+    const m = /^(?:(.*)\/)?([^/]+)\/PARAM\.SFO$/i.exec(f.path);
+    if (!m) continue;
+    const full = m[1] ? `${m[1]}/${m[2]}` : m[2];
+    const prev = roots.get(m[2]);
+    if (prev && prev !== full) throw new Error(`\u5B58\u6863\u76EE\u5F55 ${m[2]} \u5728\u9009\u6765\u7684\u4E1C\u897F\u91CC\u6709\u4E24\u4EFD\uFF08${prev} \u548C ${full}\uFF09\u2014\u2014\u53EA\u9009\u4E00\u4EFD SAVEDATA`);
+    roots.set(m[2], full);
+  }
+  const out = [];
+  for (const [dir, full] of roots) {
+    const files2 = /* @__PURE__ */ new Map();
+    let newest = 0;
+    for (const f of norm) {
+      if (!f.path.startsWith(full + "/")) continue;
+      files2.set(`${dir}/${f.path.slice(full.length + 1)}`, f);
+      newest = Math.max(newest, f.mtime);
+    }
+    out.push({ dir, game: gameOf(dir), files: files2, newest });
+  }
+  return out.sort((a, b) => a.dir.localeCompare(b.dir));
+}
+var gameOf = (dir) => /^[A-Z]{4}\d{5}/.test(dir) ? dir.slice(0, 9) : dir;
+function sfoInfo(bytes) {
+  if (!bytes || bytes.length < 20) return {};
+  const v = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+  if (v.getUint32(0, true) !== 1179865088) return {};
+  const keyTab = v.getUint32(8, true), dataTab = v.getUint32(12, true), n = v.getUint32(16, true);
+  const out = {};
+  for (let i = 0; i < n && 20 + i * 16 + 16 <= bytes.length; i++) {
+    const e = 20 + i * 16;
+    const kOff = v.getUint16(e, true), fmt = v.getUint16(e + 2, true), len = v.getUint32(e + 4, true), dOff = v.getUint32(e + 12, true);
+    let end = keyTab + kOff;
+    while (end < bytes.length && bytes[end]) end++;
+    const key = new TextDecoder().decode(bytes.subarray(keyTab + kOff, end));
+    if (fmt !== 516) continue;
+    const s = new TextDecoder().decode(bytes.subarray(dataTab + dOff, Math.min(bytes.length, dataTab + dOff + len))).replace(/\0+$/, "").replace(/\s+/g, " ").trim();
+    if (key === "TITLE") out.title = s;
+    else if (key === "SAVEDATA_TITLE") out.saveTitle = s;
+    else if (key === "SAVEDATA_DETAIL") out.detail = s;
+  }
+  return out;
+}
+function sameEntries(a, b) {
+  const ka = Object.keys(a).sort(), kb = Object.keys(b).sort();
+  if (ka.length !== kb.length || ka.some((k, i) => k !== kb[i])) return false;
+  return ka.every((k) => a[k].length === b[k].length && a[k].every((x, i) => x === b[k][i]));
+}
+function differingFiles(mine, cloud) {
+  const keys = [.../* @__PURE__ */ new Set([...Object.keys(mine), ...Object.keys(cloud)])].sort();
+  const eq = (x, y) => x.length === y.length && x.every((b, i) => b === y[i]);
+  return keys.filter((k) => !mine[k] || !cloud[k] || !eq(mine[k], cloud[k])).map((k) => k.split("/").slice(1).join("/") + (!mine[k] ? "\uFF08\u53EA\u5728\u4E91\u7AEF\uFF09" : !cloud[k] ? "\uFF08\u53EA\u5728\u8FD9\u8FB9\uFF09" : ""));
+}
+function groupByGame(dirs) {
+  const m = /* @__PURE__ */ new Map();
+  for (const d of dirs) {
+    const g = m.get(d.game) ?? { game: d.game, title: "", dirs: [], newest: 0 };
+    g.dirs.push(d.dir);
+    g.newest = Math.max(g.newest, d.newest);
+    if (!g.title && d.title) g.title = d.title;
+    m.set(d.game, g);
+  }
+  return [...m.values()].sort((a, b) => b.newest - a.newest);
+}
+
+// src/app/jar-import.ts
+async function runImport(items, password, onEach, io) {
+  const { ids, complete } = await io.list();
+  if (!complete) throw new Error("\u6CA1\u62FF\u5230\u4E91\u7AEF\u5B8C\u6574\u7684\u5B58\u6863\u5217\u8868\uFF08\u6CA1\u767B\u5F55 / \u79BB\u7EBF / \u7F51\u7EDC\u6162\uFF09\u3002\u5148\u4E0D\u88C5\uFF1A\u4E0D\u7136\u53EF\u80FD\u65B0\u5EFA\u51FA\u548C\u4E91\u7AEF\u91CD\u590D\u7684\u7F50\u3002");
+  const existing = new Set(ids);
+  const plan = await Promise.all(items.map(async (it) => ({ it, id: await io.idOf(it.dir) })));
+  const probe = plan.find((p) => existing.has(p.id))?.id ?? ids[0];
+  if (probe) {
+    const sealed = await io.get(probe);
+    if (sealed) await unsealBytes(password, sealed);
+  }
+  const out = [];
+  for (const { it, id } of plan) {
+    let r;
+    try {
+      const mineAt = Math.max(0, ...Object.values(it.mtimes));
+      if (existing.has(id)) {
+        const sealed = await io.get(id);
+        if (!sealed) throw new Error("\u4E91\u7AEF\u5217\u8868\u91CC\u6709\uFF0C\u4F46\u8BFB\u4E0D\u5230");
+        const { plain, meta } = await unsealBytes(password, sealed);
+        const cloud = unzipSync(plain);
+        r = sameEntries(it.entries, cloud) ? { dir: it.dir, status: "same" } : { dir: it.dir, status: "differ", mineAt, cloudAt: meta.at, differ: differingFiles(it.entries, cloud) };
+      } else {
+        const zip = zipSync(Object.fromEntries(Object.entries(it.entries).map(([p, b]) => [p, [b, { mtime: new Date(it.mtimes[p] ?? mineAt) }]])), { level: 0 });
+        await io.put(id, await sealBytes(password, zip, { salt: io.salt, meta: { jar: { k: io.k, m: "shared", u: it.dir }, at: mineAt } }), it.dir);
+        const back = await io.get(id);
+        if (!back) throw new Error("\u5199\u5B8C\u8BFB\u4E0D\u56DE\u6765");
+        const { plain, meta } = await unsealBytes(password, back);
+        if (meta.jar?.u !== it.dir || !sameEntries(it.entries, unzipSync(plain))) throw new Error("\u5199\u5B8C\u8BFB\u56DE\u6765\u548C\u6E90\u6587\u4EF6\u4E0D\u4E00\u6837");
+        r = { dir: it.dir, status: "new" };
+      }
+    } catch (e) {
+      if (e instanceof WrongPasswordError) throw e;
+      r = { dir: it.dir, status: "error", error: e instanceof Error ? e.message : String(e) };
+    }
+    out.push(r);
+    onEach(out.length, r);
+  }
+  return out;
+}
+function exportSaveDirs(files, times, dirs) {
+  const want = new Set(dirs);
+  const entries = {};
+  for (const [path, bytes] of files) {
+    const dir = path.split("/")[0];
+    if (!want.has(dir)) continue;
+    entries[`SAVEDATA/${path}`] = [bytes, { mtime: new Date(times.get(dir) ?? Date.now()) }];
+  }
+  return zipSync(entries, { level: 0 });
+}
+
 // src/app/saves.ts
 var sessionSalt = crypto.getRandomValues(new Uint8Array(16));
 var HISTORY_KEEP = 3;
@@ -8938,6 +9057,20 @@ async function restoreBin(item) {
     encrypted: item.raw.encrypted
   });
   return r.status;
+}
+function importSaveDirs(items, password, onEach) {
+  const k = PLATFORM_CODE.psp;
+  return runImport(items, password, onEach, {
+    list: () => listJams(k, { timeoutMs: 2e4, waitForCloud: true }),
+    idOf: (dir) => jamId({ k, m: "shared", u: dir }),
+    get: get2,
+    put: (id, sealed, dir) => {
+      setLabel(id, describeJar({ k, m: "shared", u: dir }));
+      return put(id, sealed);
+    },
+    salt: sessionSalt,
+    k
+  });
 }
 
 // src/app/presence.ts
@@ -10154,7 +10287,7 @@ async function openBins(titleByKey) {
     ];
   });
 }
-function gameOf(r, ctx) {
+function gameOf2(r, ctx) {
   const c = parseCrumbId(r.it.identifier);
   if (c) return r.meta?.t ?? ctx.titleByKey(c.key) ?? (r.meta?.fp?.id ? `${r.meta.fp.id}${r.meta.fp.v ? ` v${r.meta.fp.v}` : ""}` : `\u4EE3\u53F7 ${c.key.slice(0, 8)}\u2026`);
   const dir = r.meta?.jar?.u;
@@ -10193,7 +10326,7 @@ async function openSaveManager(ctx) {
     const visible = rows.filter((r) => !(only && r.meta?.jar && !(only.discId && r.meta.jar.u.toUpperCase().startsWith(only.discId.toUpperCase()))));
     const todo = visible.filter((r) => needsAttention(r.it.syncState)).sort((a, b) => whenOf(b) - whenOf(a));
     const groups = /* @__PURE__ */ new Map();
-    for (const r of visible) groups.set(gameOf(r, ctx), [...groups.get(gameOf(r, ctx)) ?? [], r]);
+    for (const r of visible) groups.set(gameOf2(r, ctx), [...groups.get(gameOf2(r, ctx)) ?? [], r]);
     const sections = [...groups].map(([g, rs]) => [g, rs.sort((a, b) => whenOf(b) - whenOf(a))]).sort((a, b) => whenOf(b[1][0]) - whenOf(a[1][0]));
     body.replaceChildren(
       h("h3", {}, todo.length ? `\u8981\u5904\u7406\u7684\uFF08${todo.length}\uFF09` : "\u6CA1\u6709\u8981\u5904\u7406\u7684"),
@@ -10223,7 +10356,7 @@ async function openSaveManager(ctx) {
       h(
         "div",
         { class: "slot-text" },
-        h("span", { class: "slot-name" }, inTodo ? `${nameOf(r)} \xB7 ${gameOf(r, ctx)}` : nameOf(r)),
+        h("span", { class: "slot-name" }, inTodo ? `${nameOf(r)} \xB7 ${gameOf2(r, ctx)}` : nameOf(r)),
         h("span", { class: "muted" }, [whenText(r), SYNC_TEXT[r.it.syncState] ?? r.it.syncState, fmtSize(r.it.size)].filter(Boolean).join(" \xB7 "))
       ),
       ...needsAttention(r.it.syncState) ? attentionButtons(r) : [],
@@ -12540,6 +12673,165 @@ async function unwrapWafer() {
     ui.close();
   }
 }
+var fmtWhen2 = (t) => t ? new Date(t).toLocaleString() : "\u4E0D\u77E5\u9053";
+function pickFiles(opts) {
+  return new Promise((resolve) => {
+    const input = h("input", { type: "file", hidden: "", ...opts.accept ? { accept: opts.accept } : {} });
+    if (opts.folder) {
+      input.setAttribute("webkitdirectory", "");
+      input.multiple = true;
+    }
+    input.addEventListener("change", () => {
+      resolve(input.files?.length ? [...input.files] : null);
+      input.remove();
+    });
+    input.addEventListener("cancel", () => {
+      resolve(null);
+      input.remove();
+    });
+    document.body.append(input);
+    input.click();
+  });
+}
+async function pickSaveSource() {
+  const how = await sheet((done) => [
+    h("h2", {}, "\u5B58\u6863\u88C5\u7F50\uFF1A\u4ECE\u54EA\u91CC\u6765"),
+    h("p", { class: "muted" }, "\u9009 PPSSPP \u8BB0\u5FC6\u68D2\u91CC\u7684 SAVEDATA \u6587\u4EF6\u5939\uFF08\u9009\u4E0A\u4E00\u5C42\u7684 PSP \u4E5F\u884C\uFF09\uFF0C\u6216\u8005\u5B83\u7684 zip\u3002\u6587\u4EF6\u5939\u8981\u7528\u7535\u8111\u4E0A\u7684 Chrome / Edge\uFF1Bzip \u54EA\u53F0\u8BBE\u5907\u90FD\u80FD\u9009\uFF08zip \u91CC\u7684\u6587\u4EF6\u65F6\u95F4\u8BFB\u4E0D\u51FA\u6765\uFF0C\u5B58\u6863\u65F6\u523B\u6309 zip \u6587\u4EF6\u7684\u65F6\u95F4\u7B97\uFF09\u3002"),
+    h("div", { class: "row" }, h("button", { onclick: () => done(null) }, "\u53D6\u6D88"), h("button", { onclick: () => done("zip") }, "\u9009 zip\u2026"), h("button", { class: "primary", onclick: () => done("folder") }, "\u9009\u6587\u4EF6\u5939\u2026"))
+  ]);
+  if (!how) return null;
+  if (how === "folder") {
+    const files = await pickFiles({ folder: true });
+    return files && files.map((f) => ({ path: f.webkitRelativePath || f.name, mtime: f.lastModified, read: async () => new Uint8Array(await f.arrayBuffer()) }));
+  }
+  const [zip] = await pickFiles({ folder: false, accept: ".zip,application/zip" }) ?? [];
+  if (!zip) return null;
+  const entries = unzipSync(new Uint8Array(await zip.arrayBuffer()));
+  return Object.entries(entries).filter(([p]) => !p.endsWith("/")).map(([path, bytes]) => ({ path, mtime: zip.lastModified, read: async () => bytes }));
+}
+function chooseGames(title, hint, groups, verb) {
+  const want = /* @__PURE__ */ new Set();
+  return sheet((done) => {
+    const rows = h("div", { class: "menu-list" });
+    const go = h("button", { class: "primary", onclick: () => done(new Set(want)) });
+    const draw = () => {
+      rows.replaceChildren(...groups.map((g) => h(
+        "button",
+        { class: `menu-item${want.has(g.game) ? " on" : ""}`, onclick: () => {
+          if (want.has(g.game)) want.delete(g.game);
+          else want.add(g.game);
+          draw();
+        } },
+        h("span", {}, `${want.has(g.game) ? "\u2713 " : ""}${g.title || g.game}`),
+        h("span", { class: "muted" }, `${g.game} \xB7 ${g.dirs.length} \u4E2A\u5B58\u6863\u76EE\u5F55 \xB7 \u6700\u8FD1 ${fmtWhen2(g.newest)}`)
+      )));
+      const n = groups.filter((g) => want.has(g.game)).reduce((s, g) => s + g.dirs.length, 0);
+      go.textContent = n ? `${verb}\uFF08${n} \u4E2A\u5B58\u6863\u76EE\u5F55\uFF09` : verb;
+      go.disabled = !n;
+    };
+    draw();
+    return [h("h2", {}, title), h("p", { class: "muted" }, hint), rows, h("div", { class: "row" }, h("button", { onclick: () => done(null) }, "\u53D6\u6D88"), go)];
+  });
+}
+function countSheet(title, total) {
+  const bar = h("progress", { max: String(total), value: "0" });
+  const text = h("span", { class: "muted" }, "");
+  let finish = () => {
+  };
+  void sheet((done) => {
+    finish = done;
+    return [h("h2", {}, title), bar, text];
+  }, { dismissable: false });
+  return { set(done, line) {
+    bar.value = done;
+    text.textContent = `${done} / ${total} \xB7 ${line}`;
+  }, close: () => finish(null) };
+}
+async function packSaves() {
+  const files = await pickSaveSource();
+  if (!files) return;
+  let dirs;
+  try {
+    dirs = groupSaveDirs(files);
+  } catch (e) {
+    banner(errorText(e), "warning");
+    return;
+  }
+  if (!dirs.length) {
+    banner("\u6CA1\u627E\u5230\u5B58\u6863\u76EE\u5F55\uFF08\u6BCF\u4E2A\u5B58\u6863\u76EE\u5F55\u91CC\u90FD\u6709\u4E00\u4E2A PARAM.SFO\uFF09\u3002\u9009 PPSSPP \u7684 PSP/SAVEDATA \u6587\u4EF6\u5939\uFF0C\u6216\u8005\u5B83\u7684 zip\u3002", "warning");
+    return;
+  }
+  const titled = await Promise.all(dirs.map(async (d) => {
+    const p = d.files.get(`${d.dir}/PARAM.SFO`);
+    return { ...d, title: p ? sfoInfo(await p.read()).title : void 0 };
+  }));
+  const chosen = await chooseGames("\u5B58\u6863\u88C5\u7F50\uFF1A\u88C5\u54EA\u51E0\u4E2A\u6E38\u620F", `\u627E\u5230 ${dirs.length} \u4E2A\u5B58\u6863\u76EE\u5F55\u3002\u4E91\u7AEF\u6CA1\u6709\u7684\u65B0\u5EFA\uFF1B\u5DF2\u7ECF\u6709\u3001\u5185\u5BB9\u4E00\u6837\u7684\u8DF3\u8FC7\uFF1B\u5DF2\u7ECF\u6709\u3001\u5185\u5BB9\u4E0D\u4E00\u6837\u7684\u4E0D\u52A8\uFF0C\u6700\u540E\u5217\u51FA\u6765\u7ED9\u4F60\u5B9A\u3002`, groupByGame(titled), "\u88C5\u7F50");
+  if (!chosen?.size) return;
+  const picked = titled.filter((d) => chosen.has(d.game));
+  const items = await Promise.all(picked.map(async (d) => {
+    const entries = {}, mtimes = {};
+    for (const [k, f] of d.files) {
+      entries[k] = await f.read();
+      mtimes[k] = f.mtime;
+    }
+    return { dir: d.dir, entries, mtimes };
+  }));
+  logEvent("info", `\u5B58\u6863\u88C5\u7F50\uFF1A\u5F00\u59CB\uFF08${[...chosen].join(" \xB7 ")}\uFF0C${items.length} \u4E2A\u76EE\u5F55\uFF09`);
+  let ui = null;
+  const results = await withPassword(async (pw) => {
+    const p = pw ?? getPassword();
+    if (!p) throw new NeedPassword();
+    ui = countSheet("\u6B63\u5728\u88C5\u7F50\u2026", items.length);
+    try {
+      return await importSaveDirs(items, p, (done, r) => ui.set(done, `${r.dir}\uFF1A${{ new: "\u65B0\u5EFA", same: "\u4E00\u6837\uFF0C\u8DF3\u8FC7", differ: "\u4E0D\u4E00\u6837\uFF0C\u6CA1\u52A8", error: "\u51FA\u9519" }[r.status]}`));
+    } finally {
+      ui.close();
+      ui = null;
+    }
+  }, "\u5B58\u6863");
+  if (!results) return;
+  const by = (s) => results.filter((r) => r.status === s);
+  for (const r of results) logEvent(r.status === "error" || r.status === "differ" ? "warn" : "info", `\u5B58\u6863\u88C5\u7F50\uFF1A${r.dir} \u2192 ${r.status === "new" ? "\u65B0\u5EFA" : r.status === "same" ? "\u4E00\u6837\uFF0C\u8DF3\u8FC7" : r.status === "differ" ? `\u4E0D\u4E00\u6837\uFF0C\u6CA1\u52A8\uFF08\u8FD9\u8FB9 ${fmtWhen2(r.mineAt)} / \u4E91\u7AEF ${fmtWhen2(r.cloudAt)}\uFF1B${r.differ.join("\u3001")}\uFF09` : `\u51FA\u9519\uFF1A${r.error}`}`);
+  void sheet((close) => [
+    h("h2", {}, "\u5B58\u6863\u88C5\u7F50\uFF1A\u7ED3\u679C"),
+    h("p", {}, `\u65B0\u5EFA ${by("new").length} \xB7 \u4E00\u6837\u8DF3\u8FC7 ${by("same").length} \xB7 \u4E0D\u4E00\u6837\u6CA1\u52A8 ${by("differ").length}${by("error").length ? ` \xB7 \u51FA\u9519 ${by("error").length}` : ""}`),
+    ...by("differ").length ? [
+      h("p", { class: "hint" }, "\u4E0B\u9762\u8FD9\u4E9B\u4E91\u7AEF\u5DF2\u7ECF\u6709\u3001\u5185\u5BB9\u548C\u8FD9\u8FB9\u4E0D\u4E00\u6837\uFF0C\u4E00\u4E2A\u5B57\u8282\u90FD\u6CA1\u52A8\uFF08\u4E0D\u66FF\u4F60\u731C\u54EA\u8FB9\u65B0\uFF09\u3002\u8981\u7528\u54EA\u4E00\u4EFD\u544A\u8BC9\u6211\uFF0C\u6216\u8005\u5728\u6E38\u620F\u91CC\u8BFB\u6863\u540E\u518D\u5B58\u4E00\u6B21\u3002"),
+      h("div", { class: "menu-list" }, ...results.filter((r) => r.status === "differ").map((r) => h("div", { class: "menu-item" }, h("span", {}, r.dir), h("span", { class: "muted" }, `\u8FD9\u8FB9 ${fmtWhen2(r.mineAt)} \xB7 \u4E91\u7AEF ${fmtWhen2(r.cloudAt)} \xB7 \u4E0D\u540C\uFF1A${r.differ.join("\u3001")}`))))
+    ] : [],
+    ...by("error").length ? [h("div", { class: "menu-list" }, ...results.filter((r) => r.status === "error").map((r) => h("div", { class: "menu-item" }, h("span", {}, r.dir), h("span", { class: "muted" }, r.error))))] : [],
+    h("div", { class: "row" }, h("button", { class: "primary", onclick: () => close() }, "\u597D"))
+  ]);
+}
+async function unpackSaves() {
+  const k = PLATFORM_CODE.psp;
+  const { ids, complete } = await listJams(k, { timeoutMs: 2e4, waitForCloud: true });
+  if (!ids.length) {
+    banner("\u4E91\u7AEF\u8FD8\u6CA1\u6709\u5B58\u6863\u3002", "warning");
+    return;
+  }
+  const stick = await withPassword(async (pw) => {
+    const p = pw ?? getPassword();
+    if (!p) throw new NeedPassword();
+    return loadMemstick(k, p, ids, complete);
+  }, "\u5B58\u6863");
+  if (!stick) return;
+  const dirs = [...stick.dirs].map((dir) => ({ dir, game: gameOf(dir), newest: stick.times.get(dir) ?? 0, title: sfoInfo(stick.files.get(`${dir}/PARAM.SFO`)).title }));
+  const skipped = stick.unreadable.size + [...stick.duplicates.values()].reduce((s, v) => s + v.length, 0);
+  const chosen = await chooseGames("\u5B58\u6863\u89E3\u7F50\uFF1A\u89E3\u54EA\u51E0\u4E2A\u6E38\u620F", `\u4E91\u7AEF ${ids.length} \u7F50${complete ? "" : "\uFF08\u4E91\u7AEF\u5217\u8868\u6CA1\u62FF\u5168\uFF0C\u53EF\u80FD\u7F3A\u51E0\u7F50\uFF09"}${skipped ? `\uFF1B${skipped} \u7F50\u6253\u4E0D\u5F00\u6216\u91CD\u590D\uFF0C\u6CA1\u5217\u51FA\u6765` : ""}\u3002\u6253\u6210\u4E00\u4E2A zip \u4E0B\u8F7D\uFF1A\u91CC\u9762\u662F SAVEDATA/<\u5B58\u6863\u76EE\u5F55>/\u2026\uFF0C\u89E3\u538B\u8FDB PPSSPP \u7684 memstick/PSP/ \u5C31\u80FD\u7528\uFF08\u540C\u540D\u76EE\u5F55\u4F1A\u88AB\u76D6\uFF0C\u5148\u5907\u4EFD\uFF09\u3002`, groupByGame(dirs), "\u6253\u5305\u4E0B\u8F7D");
+  if (!chosen?.size) return;
+  const want = dirs.filter((d) => chosen.has(d.game)).map((d) => d.dir);
+  const zip = await exportSaveDirs(stick.files, stick.times, want);
+  const stamp2 = (/* @__PURE__ */ new Date()).toISOString().slice(0, 16).replace(/[-:T]/g, "");
+  const url = URL.createObjectURL(new Blob([zip], { type: "application/zip" }));
+  const a = h("a", { href: url, download: `saves-${stamp2}.zip` });
+  document.body.append(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 6e4);
+  logEvent("info", `\u5B58\u6863\u89E3\u7F50\uFF1A${[...chosen].join(" \xB7 ")}\uFF0C${want.length} \u4E2A\u76EE\u5F55 \u2192 saves-${stamp2}.zip\uFF08${(zip.length / 1024).toFixed(0)} KB\uFF09`);
+  say(`\u6253\u5305\u597D\u4E86\uFF1A${want.length} \u4E2A\u5B58\u6863\u76EE\u5F55\uFF08saves-${stamp2}.zip\uFF09`, 6e3);
+}
 var toolErr = (e) => {
   if (e?.name !== "AbortError") banner(errorText(e));
 };
@@ -12646,6 +12938,12 @@ async function boot() {
   });
   $("unwrap-wafter").addEventListener("click", () => {
     unwrapWafer().catch(toolErr);
+  });
+  $("pack-saves").addEventListener("click", () => {
+    packSaves().catch(toolErr);
+  });
+  $("unpack-saves").addEventListener("click", () => {
+    unpackSaves().catch(toolErr);
   });
   const fileInput = $("local-file");
   $("open-local").addEventListener("click", () => {
@@ -12820,4 +13118,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-6a77ae6f97f0.mjs.map
+//# sourceMappingURL=kudsrocket-6f1c9e346952.mjs.map
