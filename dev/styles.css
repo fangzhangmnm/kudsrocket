@@ -235,3 +235,14 @@ body:has(#game:not([hidden])) > #note { top: calc(env(safe-area-inset-top) + var
 #stage.pip #pip-bar { display: flex; }
 #stage.pip:hover #pip-bar, #stage.pip #pip-bar:focus-within { opacity: 1; }
 .pip-placeholder { display: grid; place-content: center; justify-items: center; gap: 10px; background: #000; color: var(--ink-soft); }
+/* 设置面板（settings-panel.ts，added 20261017 by Claude Opus 5.5）：一节一节往下排，每项「名字 · 下拉」一行、说明在下 */
+.setting-nav { display: flex; flex-wrap: wrap; gap: 6px; position: sticky; top: -18px; background: var(--panel); padding: 6px 0; z-index: 1; }
+.setting-nav button { padding: 6px 10px; font-size: 13px; }
+.setting-section { display: grid; gap: 4px; }
+.setting-row { display: grid; grid-template-columns: 1fr minmax(9em, 45%); align-items: center; gap: 4px 10px; padding: 6px 0; border-top: 1px solid var(--line); }
+.setting-row label { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px; }
+.setting-tag { font-size: 11px; color: var(--ink-soft); border: 1px solid var(--line); border-radius: 6px; padding: 0 5px; }
+.setting-select { width: 100%; min-height: 34px; }
+.setting-hint { grid-column: 1 / -1; font-size: 12px; margin: 0; }
+.menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.menu-grid button { padding: 14px 8px; font-size: 15px; }

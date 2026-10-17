@@ -734,6 +734,8 @@ static _Atomic unsigned g_tap_in[16];
 static uint32_t g_eff_input = 0;
 static int g_tap_off = 0;
 EMSCRIPTEN_KEEPALIVE void kr_input_tap(int bit) { if (bit >= 0 && bit < 16) atomic_fetch_add(&g_tap_in[bit], 1); }
+EMSCRIPTEN_KEEPALIVE void kr_set_tap_off(int off) { g_tap_off = off ? 1 : 0; }   // 设置面板「按下锁存」即时开关
+EMSCRIPTEN_KEEPALIVE int kr_tap_off(void) { return g_tap_off; }
 EMSCRIPTEN_KEEPALIVE void kr_input_stats(double *out) { out[0] = g_tap.received; out[1] = g_tap.played; out[2] = g_tap.dropped; }
 static void input_poll(void) {
   uint32_t live = g_input;
@@ -773,6 +775,27 @@ static int g_cull_off = 0, g_force_sw = 0;
 // GL 诊断（启动参数 glcheck=1；W-34 Quest 上空之轨迹持续 GL 错误 0x502、PC 一次没有）：给 WebGL 上下文每个方法套一层「调完立刻 getError」，
 //   每种「函数 + 错误码」第一次出现记函数名、参数、当时读 / 画帧缓冲的状态（最多 30 条）；每 30 s 记一次累计。每 60 帧只抽一帧逐个查（逐个查很慢）。只排查用。added 20261017 by Claude Opus 5.5
 static int g_glcheck = 0;
+// 核选项覆盖（设置面板，src/app/settings-model.ts）：启动参数 opt:key=value → 这张表；GET_VARIABLE 先查它（app 自己管的几项除外）。
+//   拒绝名单在这里再挡一道（页面那边也藏了）：联网（家规黄线区）、整盘读进内存（硬规矩）、渲染方式 / 跳帧 / 排程（app 管）。added 20261017 by Claude Opus 5.5
+#define KR_OPT_MAX 48
+static char g_opt_key[KR_OPT_MAX][64], g_opt_val[KR_OPT_MAX][48];
+static int g_opt_n = 0;
+static int opt_denied(const char *k) {
+  static const char *deny[] = { "ppsspp_enable_wlan", "ppsspp_change_mac_address", "ppsspp_wlan_channel", "ppsspp_enable_builtin_pro_ad_hoc_server", "ppsspp_change_pro_ad_hoc_server_address",
+    "ppsspp_pro_ad_hoc_server_address", "ppsspp_enable_upnp", "ppsspp_upnp_use_original_port", "ppsspp_port_offset", "ppsspp_minimum_timeout", "ppsspp_forced_first_connect",
+    "ppsspp_cache_iso", "ppsspp_software_rendering", "ppsspp_frameskip", "ppsspp_auto_frameskip", "ppsspp_backend", "ppsspp_fast_memory", "ppsspp_cheats", "ppsspp_texture_replacement" };
+  for (size_t i = 0; i < sizeof deny / sizeof deny[0]; i++) if (!strncmp(k, deny[i], strlen(deny[i]))) return 1;
+  return 0;
+}
+static void opt_add(const char *kv) {
+  const char *eq = strchr(kv, '=');
+  if (!eq || g_opt_n >= KR_OPT_MAX || eq - kv >= 64 || strlen(eq + 1) >= 48) return;
+  char key[64]; memcpy(key, kv, (size_t)(eq - kv)); key[eq - kv] = 0;
+  if (opt_denied(key)) { fprintf(stderr, "[kr] option refused: %s\n", key); return; }
+  strcpy(g_opt_key[g_opt_n], key); strcpy(g_opt_val[g_opt_n], eq + 1); g_opt_n++;
+  fprintf(stderr, "[kr] option: %s=%s\n", key, eq + 1);
+}
+static const char *opt_get(const char *k) { for (int i = 0; i < g_opt_n; i++) if (!strcmp(g_opt_key[i], k)) return g_opt_val[i]; return NULL; }
 static const struct { const char *key, *value; } g_options[] = {
   {"ppsspp_cpu_core", "IR JIT"}, // 实际值看 g_cpu_core（environment() 里）
   // 快内存 = 读写 PSP 地址不检查（IR 的 IRPassSimplify 会把 ValidateAddress 全删掉）。wasm 的堆只有 768 MB、没有保护页：游戏碰一个坏地址就是
@@ -805,10 +828,12 @@ static bool environment(unsigned cmd, void *data) {
     case RETRO_ENVIRONMENT_GET_VARIABLE: {
       struct retro_variable *var = data;
       if (!strcmp(var->key, "ppsspp_software_rendering")) { var->value = g_gl ? "disabled" : "enabled"; return true; }
+      if (!strcmp(var->key, "ppsspp_frameskip")) { var->value = "disabled"; return true; } // 运行中由 kr_ppsspp_set_frameskip 改
+      if (!strcmp(var->key, "ppsspp_auto_frameskip")) { var->value = "disabled"; return true; }
+      { const char *o = opt_get(var->key); if (o) { var->value = o; return true; } }   // 设置面板的覆盖（拒绝名单在 opt_add 里已经挡掉）
       if (!strcmp(var->key, "ppsspp_cpu_core")) { var->value = g_cpu_core; return true; }
       if (!strcmp(var->key, "ppsspp_software_skinning")) { var->value = g_sw_skinning; return true; }
       if (!strcmp(var->key, "ppsspp_disable_range_culling")) { var->value = g_cull_off ? "enabled" : "disabled"; return true; }
-      if (!strcmp(var->key, "ppsspp_frameskip")) { var->value = "disabled"; return true; } // 运行中由 kr_ppsspp_set_frameskip 改
       for (size_t i = 0; i < sizeof(g_options) / sizeof(g_options[0]); i++)
         if (!strcmp(var->key, g_options[i].key)) { var->value = g_options[i].value; return true; }
       return false;
@@ -1327,6 +1352,7 @@ int main(int argc, char **argv) {
     if (!strcmp(argv[i], "render=sw")) g_force_sw = 1;
     if (!strcmp(argv[i], "glcheck=1")) g_glcheck = 1;
     if (!strcmp(argv[i], "tap=0")) g_tap_off = 1;
+    if (!strncmp(argv[i], "opt:", 4)) opt_add(argv[i] + 4);
   }
   fprintf(stderr, "[kr] cpu core: %s\n", g_cpu_core);
   for (int i = 0; i < KR_CACHE_BLOCKS; i++) g_cache[i].block = -1;

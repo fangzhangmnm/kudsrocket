@@ -1,5 +1,5 @@
 // src/version.ts
-var APP_VERSION = "v0.1.52-2026-10-17";
+var APP_VERSION = "v0.1.53-2026-10-17";
 
 // assets/icons.svg
 var icons_default = '<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none">\n<!--\n  14 icons extracted from the family icon library (../20260708 SVG Icons/icons.svg) by extract-icons.py \u2014 do not hand-edit; re-run the script instead.\n  Family SVG Icons \u2014 MIT License, Copyright (c) 2026 fangzhangmnm.\n  Contains work derived from (per-icon provenance in data-src):\n    Feather Icons \u2014 MIT License, Copyright (c) 2013-2023 Cole Bemis \xB7 https://github.com/feathericons/feather\n-->\n  <!-- media -->\n  <!-- pause \u2014 \u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="pause" data-cat="media" data-src="own" data-note="\u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="3.2"><path d="M8.3 5.5 V18.5"/><path d="M15.7 5.5 V18.5"/></g></symbol>\n  <!-- play \u2014 \u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="play" data-cat="media" data-src="own" data-note="\u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 5.4 L18.8 12 L8.2 18.6 Z" fill="currentColor"/></symbol>\n  <!-- fast-forward \u2014 \u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="fast-forward" data-cat="media" data-src="own" data-note="\u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.4 6.8 L10.9 12 L4.4 17.2 Z" fill="currentColor"/><path d="M13.1 6.8 L19.6 12 L13.1 17.2 Z" fill="currentColor"/></symbol>\n  <!-- volume \u2014 \u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009) -->\n  <symbol id="volume" data-cat="media" data-src="own" data-note="\u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 10.3 H8.7 L12.6 6.6 V17.4 L8.7 13.7 H5.5 Z" fill="currentColor"/><path d="M15.13 9.73 A3.4 3.4 0 0 1 15.13 14.27"/><path d="M16.36 7.19 A6.1 6.1 0 0 1 16.36 16.81"/></symbol>\n  <!-- file -->\n  <!-- floppy-disk \u2014 \u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3 -->\n  <symbol id="floppy-disk" data-cat="file" data-src="feather:save" data-note="\u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13l3 3v13a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 17 8 17 3"/></symbol>\n  <!-- folder-open \u2014 \u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF -->\n  <symbol id="folder-open" data-cat="file" data-src="own" data-note="\u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18 V7 a2 2 0 0 1 2 -2 h4 l2 2 h6 a2 2 0 0 1 2 2 v1.8"/><path d="M3 18 L6.4 10.8 H21.6 L18.2 18 Z"/></symbol>\n  <!-- hierarchy -->\n  <!-- lock \u2014 \u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D -->\n  <symbol id="lock" data-cat="hierarchy" data-src="own" data-note="\u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10" width="13" height="11"/><path d="M8.8 10 V6.5 a3.2 3.2 0 0 1 6.4 0 V10"/></symbol>\n  <!-- common -->\n  <!-- x \u2014 \u53C9 -->\n  <symbol id="x" data-cat="common" data-src="own" data-note="\u53C9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 L17.5 17.5 M17.5 6.5 L6.5 17.5"/></symbol>\n  <!-- cloud -->\n  <!-- cloud \u2014 \u4E91 -->\n  <symbol id="cloud" data-cat="cloud" data-src="feather:cloud" data-note="\u4E91" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>\n  <!-- viewport -->\n  <!-- maximize-viewport \u2014 \u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55) -->\n  <symbol id="maximize-viewport" data-cat="viewport" data-src="own" data-note="\u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934 --> <polyline points="4 9 4 4 9 4"/> <polyline points="20 9 20 4 15 4"/> <polyline points="4 15 4 20 9 20"/> <polyline points="20 15 20 20 15 20"/></symbol>\n  <!-- picture-in-picture \u2014 \u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1) -->\n  <symbol id="picture-in-picture" data-cat="viewport" data-src="own" data-note="\u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u5927\u6846\uFF08\u4E3B\u753B\u5E03\uFF09+ \u5185\u5D4C\u5C0F\u7A97\uFF08\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1\uFF09\u2014\u2014 picture-in-picture \u9690\u55BB --> <rect x="3" y="4" width="18" height="14" rx="2"/> <rect x="12" y="10" width="7" height="5" rx="1"/></symbol>\n  <!-- ui -->\n  <!-- more \u2014 \u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00) -->\n  <symbol id="more" data-cat="ui" data-src="own" data-note="\u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/></symbol>\n  <!-- keyboard \u2014 \u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49) -->\n  <symbol id="keyboard" data-cat="ui" data-src="own" data-note="\u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="7.2" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="7.2" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><path d="M8.6 15.6 H15.4"/></symbol>\n  <!-- menu \u2014 \u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17) -->\n  <symbol id="menu" data-cat="ui" data-src="own" data-note="\u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"></line> <line x1="4" y1="12" x2="20" y2="12"></line> <line x1="4" y1="17" x2="20" y2="17"></line></symbol>\n</svg>\n';
@@ -178,9 +178,9 @@ var RUNNING_FRAMES = 2;
 var loopAge = (v) => v <= 0 ? -1 : v > 1e11 ? Date.now() - v : performance.now() - v;
 var SNAPSHOT_FRAMES = 60;
 var CoreSession = class _CoreSession {
-  constructor(core, opts) {
+  constructor(core2, opts) {
     this.opts = opts;
-    this.core = core;
+    this.core = core2;
     this.ac = opts.audioContext;
     this.ctx2d = opts.softCanvas.getContext("2d");
   }
@@ -215,7 +215,7 @@ var CoreSession = class _CoreSession {
     const { default: createKrCore } = await import(new URL(`${opts.coreDir}kr-core.mjs`, location.href).href);
     let session2 = null;
     const media = opts.media;
-    const core = await createKrCore({
+    const core2 = await createKrCore({
       krMedia: {
         size: media.size,
         read: async (offset, length) => {
@@ -236,7 +236,7 @@ var CoreSession = class _CoreSession {
           }
         }
       },
-      arguments: [`/disc/game${opts.ext}`, String(media.size), ...opts.lowLatency ? ["lowlatency"] : [], ...opts.cpuCore === "interp" ? ["cpu=interp"] : [], ...opts.skinning === "gpu" ? ["skin=gpu"] : [], ...opts.presentEvery ? [`cadence=${opts.presentEvery}`] : [], ...opts.cullOff ? ["cull=0"] : [], ...opts.forceSoftware ? ["render=sw"] : [], ...opts.glCheck ? ["glcheck=1"] : [], ...opts.tapOff ? ["tap=0"] : []],
+      arguments: [`/disc/game${opts.ext}`, String(media.size), ...opts.lowLatency ? ["lowlatency"] : [], ...opts.cpuCore === "interp" ? ["cpu=interp"] : [], ...opts.skinning === "gpu" ? ["skin=gpu"] : [], ...opts.presentEvery ? [`cadence=${opts.presentEvery}`] : [], ...opts.cullOff ? ["cull=0"] : [], ...opts.forceSoftware ? ["render=sw"] : [], ...opts.glCheck ? ["glcheck=1"] : [], ...opts.tapOff ? ["tap=0"] : [], ...opts.coreOptions ?? []],
       locateFile: (path) => new URL(`${opts.coreDir}${path}`, location.href).href,
       preRun: [(M) => {
         if (!opts.memstick?.size) return;
@@ -260,16 +260,16 @@ var CoreSession = class _CoreSession {
         session2?.noteStderr(s);
       }
     });
-    session2 = new _CoreSession(core, opts);
+    session2 = new _CoreSession(core2, opts);
     session2.init();
     await session2.startAudio();
     return session2;
   }
   init() {
-    const { core, opts } = this;
-    if (opts.pacing) core._kr_set_pacing(PACE_MODES[opts.pacing]);
-    this.paceBuf = core._malloc(8 * 8);
-    this.perfBuf = core._malloc(PERF_WORDS * 8);
+    const { core: core2, opts } = this;
+    if (opts.pacing) core2._kr_set_pacing(PACE_MODES[opts.pacing]);
+    this.paceBuf = core2._malloc(8 * 8);
+    this.perfBuf = core2._malloc(PERF_WORDS * 8);
     new ResizeObserver(() => this.notifyDisplaySize()).observe(opts.glCanvas);
     this.notifyDisplaySize();
   }
@@ -293,24 +293,24 @@ var CoreSession = class _CoreSession {
     old.close().catch(() => {
     });
     this.ac = fresh;
-    const { core } = this;
-    Atomics.store(core.HEAP32, core._kr_audio_r_ptr() >> 2, Atomics.load(core.HEAP32, core._kr_audio_w_ptr() >> 2));
+    const { core: core2 } = this;
+    Atomics.store(core2.HEAP32, core2._kr_audio_r_ptr() >> 2, Atomics.load(core2.HEAP32, core2._kr_audio_w_ptr() >> 2));
     await this.startAudio();
   }
   async startAudio() {
-    const { core, ac: ac2 } = this;
+    const { core: core2, ac: ac2 } = this;
     await ac2.audioWorklet.addModule(new URL("./audio-worklet.js", location.href));
     const node = new AudioWorkletNode(ac2, "kr-audio", {
       numberOfInputs: 0,
       outputChannelCount: [2],
       processorOptions: {
-        buffer: core.HEAPU8.buffer,
-        ringPtr: core._kr_audio_ring(),
-        ringFrames: core._kr_audio_ring_frames(),
-        wPtr: core._kr_audio_w_ptr(),
-        rPtr: core._kr_audio_r_ptr(),
-        underrunPtr: core._kr_audio_underrun_ptr(),
-        coreRate: core._kr_audio_rate(),
+        buffer: core2.HEAPU8.buffer,
+        ringPtr: core2._kr_audio_ring(),
+        ringFrames: core2._kr_audio_ring_frames(),
+        wPtr: core2._kr_audio_w_ptr(),
+        rPtr: core2._kr_audio_r_ptr(),
+        underrunPtr: core2._kr_audio_underrun_ptr(),
+        coreRate: core2._kr_audio_rate(),
         targetFrames: 2048
         // ≈ 46 ms；对齐模式下核那边的硬上限是 3584（≈ 81 ms）
       }
@@ -349,6 +349,13 @@ var CoreSession = class _CoreSession {
     if (rising || falling) this.noteEdges(rising, falling, source);
   }
   prevAll = 0;
+  /** 按下锁存（W-38）即时开关；老核没有这个导出 → 改不了。 */
+  get tapOff() {
+    return this.core._kr_tap_off ? this.core._kr_tap_off() === 1 : false;
+  }
+  setTapOff(off) {
+    this.core._kr_set_tap_off?.(off ? 1 : 0);
+  }
   // ── 连按测量（W-38）：页面看到的按下 / 按住多久 / 松开多久，和核放出去的点按对账；一串停下 1 s 后由 takeBurst 交出一次 ──
   burst = null;
   inputStatsBuf = 0;
@@ -408,7 +415,7 @@ var CoreSession = class _CoreSession {
   noteStderr(s) {
     const m = /^\[kr\] GL renderer: (.*)$/.exec(s);
     if (m) this.glRenderer = m[1].trim();
-    if (/error|fail|could not|incomplete|invalid|GL caps|GL check|GL err|forced|disabled \(cull/i.test(s) && !/SCENET|sceUtility|mac address/i.test(s) && !this.coreErrorsSeen.has(s) && this.coreErrorsSeen.size < 40) {
+    if (/error|fail|could not|incomplete|invalid|GL caps|GL check|GL err|forced|disabled \(cull|\[kr\] option/i.test(s) && !/SCENET|sceUtility|mac address/i.test(s) && !this.coreErrorsSeen.has(s) && this.coreErrorsSeen.size < 40) {
       this.coreErrorsSeen.add(s);
       this.opts.onCoreError?.(s.length > 300 ? s.slice(0, 300) + "\u2026" : s);
     }
@@ -472,13 +479,13 @@ var CoreSession = class _CoreSession {
   }
   // ── 截图（W-14）：核只抓一帧（不序列化整机状态），原生大小 RGBA、左上角原点 ──
   async captureFrame() {
-    const { core } = this;
-    if (!core._kr_request_frame) return null;
-    const before = core._kr_frame_shot_seq();
-    core._kr_request_frame();
-    await this.waitSeq(() => core._kr_frame_shot_seq(), before, 5e3);
-    const w = core._kr_thumb_w(), h2 = core._kr_thumb_h();
-    return w > 0 && h2 > 0 ? { rgba: core.HEAPU8.slice(core._kr_thumb_ptr(), core._kr_thumb_ptr() + w * h2 * 4), w, h: h2 } : null;
+    const { core: core2 } = this;
+    if (!core2._kr_request_frame) return null;
+    const before = core2._kr_frame_shot_seq();
+    core2._kr_request_frame();
+    await this.waitSeq(() => core2._kr_frame_shot_seq(), before, 5e3);
+    const w = core2._kr_thumb_w(), h2 = core2._kr_thumb_h();
+    return w > 0 && h2 > 0 ? { rgba: core2.HEAPU8.slice(core2._kr_thumb_ptr(), core2._kr_thumb_ptr() + w * h2 * 4), w, h: h2 } : null;
   }
   /** 把画布的实际显示像素告诉核（核在 GPU 里按整数倍放大）。ResizeObserver 自动调；画布搬进小窗（别的 document、别的 devicePixelRatio，
    *  主窗口的 ResizeObserver 看不见它）时宿主在小窗 resize 里手动调。 */
@@ -579,33 +586,33 @@ var CoreSession = class _CoreSession {
   /** 存整机状态；同一帧的画面（RGBA，左上角原点）一起交出来给缩略图用（取不到 = null）。 */
   async snapshot() {
     await this.whenRunning(SNAPSHOT_FRAMES);
-    const { core } = this;
-    const before = core._kr_snap_seq();
-    core._kr_request_snapshot();
-    await this.waitSeq(() => core._kr_snap_seq(), before);
-    const size = core._kr_snap_size();
+    const { core: core2 } = this;
+    const before = core2._kr_snap_seq();
+    core2._kr_request_snapshot();
+    await this.waitSeq(() => core2._kr_snap_seq(), before);
+    const size = core2._kr_snap_size();
     if (!size) throw new Error("core returned no state");
-    const state2 = core.HEAPU8.slice(core._kr_snap_ptr(), core._kr_snap_ptr() + size);
-    core._kr_snap_free();
-    const w = core._kr_thumb_w(), h2 = core._kr_thumb_h();
-    const frame2 = w > 0 && h2 > 0 ? { rgba: core.HEAPU8.slice(core._kr_thumb_ptr(), core._kr_thumb_ptr() + w * h2 * 4), w, h: h2 } : null;
+    const state2 = core2.HEAPU8.slice(core2._kr_snap_ptr(), core2._kr_snap_ptr() + size);
+    core2._kr_snap_free();
+    const w = core2._kr_thumb_w(), h2 = core2._kr_thumb_h();
+    const frame2 = w > 0 && h2 > 0 ? { rgba: core2.HEAPU8.slice(core2._kr_thumb_ptr(), core2._kr_thumb_ptr() + w * h2 * 4), w, h: h2 } : null;
     return { state: state2, frame: frame2 };
   }
   async restore(bytes) {
     await this.whenRunning();
-    const { core } = this;
-    const ptr = core._malloc(bytes.length);
+    const { core: core2 } = this;
+    const ptr = core2._malloc(bytes.length);
     if (!ptr) throw new Error(`core out of memory: cannot allocate ${(bytes.length / 2 ** 20).toFixed(0)} MB to restore a state`);
-    core.HEAPU8.set(bytes, ptr);
-    const before = core._kr_restore_seq();
-    core._kr_request_restore(ptr, bytes.length);
-    await this.waitSeq(() => core._kr_restore_seq(), before);
-    if (!core._kr_restore_ok()) throw new Error("core rejected the state");
+    core2.HEAPU8.set(bytes, ptr);
+    const before = core2._kr_restore_seq();
+    core2._kr_request_restore(ptr, bytes.length);
+    await this.waitSeq(() => core2._kr_restore_seq(), before);
+    if (!core2._kr_restore_ok()) throw new Error("core rejected the state");
   }
   // ── 画面（每次显示器刷新调一次）──
   tick() {
-    const { core, opts } = this;
-    const seq = core._kr_frame_seq();
+    const { core: core2, opts } = this;
+    const seq = core2._kr_frame_seq();
     const now = performance.now();
     this.perRefresh.dts.push(now - this.perRefresh.last);
     this.perRefresh.last = now;
@@ -613,13 +620,13 @@ var CoreSession = class _CoreSession {
     this.perRefresh.seq = seq;
     if (!this.hwChecked && seq > 0) {
       this.hwChecked = true;
-      const hw = core._kr_hw_active() === 1;
+      const hw = core2._kr_hw_active() === 1;
       opts.glCanvas.hidden = !hw;
       opts.softCanvas.hidden = hw;
     }
-    if (seq !== this.lastSeq && !core._kr_hw_active()) {
+    if (seq !== this.lastSeq && !core2._kr_hw_active()) {
       this.lastSeq = seq;
-      const w = core._kr_frame_w(), h2 = core._kr_frame_h();
+      const w = core2._kr_frame_w(), h2 = core2._kr_frame_h();
       if (w > 0 && h2 > 0) {
         const c = opts.softCanvas;
         if (c.width !== w || c.height !== h2) {
@@ -628,7 +635,7 @@ var CoreSession = class _CoreSession {
           this.image = null;
         }
         this.image ??= this.ctx2d.createImageData(w, h2);
-        const src = core.HEAPU8.subarray(core._kr_frame_ptr(), core._kr_frame_ptr() + w * h2 * 4);
+        const src = core2.HEAPU8.subarray(core2._kr_frame_ptr(), core2._kr_frame_ptr() + w * h2 * 4);
         const dst = this.image.data;
         for (let i = 0; i < src.length; i += 4) {
           dst[i] = src[i + 2];
@@ -642,13 +649,13 @@ var CoreSession = class _CoreSession {
   }
   // ── 统计（状态栏和自动化测试用）──
   stats() {
-    const { core, ac: ac2 } = this;
+    const { core: core2, ac: ac2 } = this;
     const now = performance.now();
-    const frames = core._kr_stat_frames();
+    const frames = core2._kr_stat_frames();
     const fw = this.fpsWindow;
     if (now - fw.t >= 1e3) {
       const dtMs = now - fw.t, ranFrames = frames - fw.frames;
-      const emuMs = core._kr_stat_emu_ms();
+      const emuMs = core2._kr_stat_emu_ms();
       fw.fps = (frames - fw.frames) * 1e3 / (now - fw.t);
       fw.speed = (emuMs - fw.emuMs) / (now - fw.t);
       const n = this.net;
@@ -659,17 +666,17 @@ var CoreSession = class _CoreSession {
       fw.t = now;
       fw.frames = frames;
       fw.emuMs = emuMs;
-      core._kr_pace_stats(this.paceBuf);
-      const f = core.HEAPF64.subarray(this.paceBuf >> 3, (this.paceBuf >> 3) + 8);
+      core2._kr_pace_stats(this.paceBuf);
+      const f = core2.HEAPF64.subarray(this.paceBuf >> 3, (this.paceBuf >> 3) + 8);
       this.pace = { mean: f[1], sd: f[2], max: f[3], late: f[4], bunched: f[5], frameMs: f[6], frameMsSd: f[7] };
       {
-        const c = core._kr_catchup_runs(), r = core._kr_reanchors();
+        const c = core2._kr_catchup_runs(), r = core2._kr_reanchors();
         this.win = { catchupPerSec: (c - this.winPrev.catchup) * 1e3 / dtMs, reanchorsPerSec: (r - this.winPrev.reanchors) * 1e3 / dtMs, ranFrames };
         this.winPrev = { catchup: c, reanchors: r };
       }
-      if (core._kr_perf_stats) {
-        core._kr_perf_stats(this.perfBuf);
-        const p = core.HEAPF64.slice(this.perfBuf >> 3, (this.perfBuf >> 3) + PERF_WORDS);
+      if (core2._kr_perf_stats) {
+        core2._kr_perf_stats(this.perfBuf);
+        const p = core2.HEAPF64.slice(this.perfBuf >> 3, (this.perfBuf >> 3) + PERF_WORDS);
         const q = this.perfPrev;
         if (q) {
           const d = (i) => p[i] - q[i];
@@ -712,8 +719,8 @@ var CoreSession = class _CoreSession {
       this.perRefresh.dts = [];
       this.perRefresh.counts = [0, 0, 0];
     }
-    const pacing = core._kr_get_pacing();
-    const autoWall = core._kr_pacing_auto_wall ? core._kr_pacing_auto_wall() === 1 : false;
+    const pacing = core2._kr_get_pacing();
+    const autoWall = core2._kr_pacing_auto_wall ? core2._kr_pacing_auto_wall() === 1 : false;
     return {
       /** 核自己量到 worker 的 rAF 慢、这一局改了墙钟（设的仍是跟屏幕）。 */
       autoWall,
@@ -723,27 +730,27 @@ var CoreSession = class _CoreSession {
       pace: this.pace,
       displayHz: this.perRefresh.hz,
       perRefresh: this.perRefresh.shown,
-      pacing: autoWall ? "\u5899\u949F\uFF08\u8BBE\u7684\u662F\u8DDF\u5C4F\u5E55\uFF1B\u6838\u91CF\u5230 rAF \u6162\uFF0C\u81EA\u52A8\u5207\uFF09" : ["\u5899\u949F", "\u58F0\u97F3", "\u8DDF\u5C4F\u5E55"][pacing] + (pacing === 2 ? ["\uFF08\u6309\u65F6\u95F4\u5BF9\u9F50\uFF09", "\uFF08\u6BCF\u5237\u65B0 1 \u5E27\uFF09"][core._kr_vsync_lock()] : ""),
-      catchup: core._kr_catchup_runs(),
-      reanchors: core._kr_reanchors(),
+      pacing: autoWall ? "\u5899\u949F\uFF08\u8BBE\u7684\u662F\u8DDF\u5C4F\u5E55\uFF1B\u6838\u91CF\u5230 rAF \u6162\uFF0C\u81EA\u52A8\u5207\uFF09" : ["\u5899\u949F", "\u58F0\u97F3", "\u8DDF\u5C4F\u5E55"][pacing] + (pacing === 2 ? ["\uFF08\u6309\u65F6\u95F4\u5BF9\u9F50\uFF09", "\uFF08\u6BCF\u5237\u65B0 1 \u5E27\uFF09"][core2._kr_vsync_lock()] : ""),
+      catchup: core2._kr_catchup_runs(),
+      reanchors: core2._kr_reanchors(),
       /** 现在实际按哪种排程跑（核自己改成墙钟也算 wall）。 */
       pacingMode: autoWall ? "wall" : ["wall", "audio", "vsync"][pacing],
       /** 核线程 rAF 的间隔（EMA，ms；0 = 不是跟屏幕排程）：Safari 把 worker 的 rAF 压慢时这里 > 16.7。 */
-      vsyncDt: core._kr_vsync_dt(),
+      vsyncDt: core2._kr_vsync_dt(),
       /** 上屏节拍（cadence.h）：跟屏幕排程下每几次刷新上屏一帧；1 = 每次。72 Hz 屏放 30 帧的游戏 → 3（24 fps 匀速，不然每帧交替占 2 / 3 次刷新 = 抖）。老核 = 1。 */
-      presentEvery: core._kr_present_every ? core._kr_present_every() : 1,
+      presentEvery: core2._kr_present_every ? core2._kr_present_every() : 1,
       /** 这一局累计（按模拟帧）：PPSSPP 去显卡读回画面几次（阻塞的几次）、块传输几次、帧缓冲拷贝几次。W-37：游戏抓画面那一下有没有回读。老核 = null。 */
       gpuTotals: this.gpuTotals(),
       win: this.win,
       /** 核的帧循环多久没被调用了（ms；-1 = 老核不知道）。大 = 循环死了（rAF 没人调）；小而帧数不走 = 卡在 retro_run 里。 */
-      loopAgeMs: core._kr_loop_last_ms ? loopAge(core._kr_loop_last_ms()) : -1,
-      loopRescues: core._kr_loop_rescues ? core._kr_loop_rescues() : 0,
-      glLost: core._kr_gl_state ? (core._kr_gl_state() & 1) === 1 : false,
-      glRestores: core._kr_gl_state ? core._kr_gl_state() >> 1 : 0,
-      frameskip: core._kr_frameskip(),
-      renderer: core._kr_hw_active() ? "GPU\uFF08WebGL2\uFF09" + ["", " \xB7 \u4F4E\u5EF6\u8FDF\u753B\u5E03\uFF1A\u6D4F\u89C8\u5668\u91C7\u7EB3", " \xB7 \u4F4E\u5EF6\u8FDF\u753B\u5E03\uFF1A\u6D4F\u89C8\u5668\u6CA1\u91C7\u7EB3"][core._kr_desync_state()] : "\u8F6F\u4EF6\u6E32\u67D3",
-      bytesFetched: core._kr_stat_bytes_fetched(),
-      readsWaiting: core._kr_stat_reads_waiting(),
+      loopAgeMs: core2._kr_loop_last_ms ? loopAge(core2._kr_loop_last_ms()) : -1,
+      loopRescues: core2._kr_loop_rescues ? core2._kr_loop_rescues() : 0,
+      glLost: core2._kr_gl_state ? (core2._kr_gl_state() & 1) === 1 : false,
+      glRestores: core2._kr_gl_state ? core2._kr_gl_state() >> 1 : 0,
+      frameskip: core2._kr_frameskip(),
+      renderer: core2._kr_hw_active() ? "GPU\uFF08WebGL2\uFF09" + ["", " \xB7 \u4F4E\u5EF6\u8FDF\u753B\u5E03\uFF1A\u6D4F\u89C8\u5668\u91C7\u7EB3", " \xB7 \u4F4E\u5EF6\u8FDF\u753B\u5E03\uFF1A\u6D4F\u89C8\u5668\u6CA1\u91C7\u7EB3"][core2._kr_desync_state()] : "\u8F6F\u4EF6\u6E32\u67D3",
+      bytesFetched: core2._kr_stat_bytes_fetched(),
+      readsWaiting: core2._kr_stat_reads_waiting(),
       mediaReads: this.mediaReads,
       /** 这一秒读盘拿到的字节 / 秒。 */
       netBps: this.net.bps,
@@ -752,16 +759,16 @@ var CoreSession = class _CoreSession {
       netInflight: this.net.inflight,
       audioState: ac2.state,
       audioClock: ac2.currentTime,
-      audioRead: core.HEAP32[core._kr_audio_r_ptr() >> 2],
-      audioFillMs: core._kr_audio_fill() / 44.1,
-      audioUnderrunMs: core.HEAP32[core._kr_audio_underrun_ptr() >> 2] / 44.1,
-      audioDropped: core._kr_audio_dropped(),
+      audioRead: core2.HEAP32[core2._kr_audio_r_ptr() >> 2],
+      audioFillMs: core2._kr_audio_fill() / 44.1,
+      audioUnderrunMs: core2.HEAP32[core2._kr_audio_underrun_ptr() >> 2] / 44.1,
+      audioDropped: core2._kr_audio_dropped(),
       outputLatencyMs: ((ac2.outputLatency || 0) + (ac2.baseLatency || 0)) * 1e3,
       paused: this.paused,
       gameSpeed: this.speed,
       seconds: (now - this.startedAt) / 1e3,
       /** 画 30 帧：要的 / 此刻真在生效（游戏本身 60 帧才生效）/ 核估的游戏本身帧率（0 = 还没量到）。 */
-      frameCap: { want: this.cap30, active: core._kr_frameskip_floor_active ? core._kr_frameskip_floor_active() > 0 : false, nativeFps: core._kr_native_fps ? core._kr_native_fps() : 0 },
+      frameCap: { want: this.cap30, active: core2._kr_frameskip_floor_active ? core2._kr_frameskip_floor_active() > 0 : false, nativeFps: core2._kr_native_fps ? core2._kr_native_fps() : 0 },
       /** 性能读数（每秒一个窗口；第一秒 / 老核 = null）。 */
       perf: this.perf,
       glRenderer: this.glRenderer,
@@ -10647,6 +10654,194 @@ function createQuestInputAdvisor() {
   };
 }
 
+// src/app/settings-model.ts
+var SECTIONS = [
+  { id: "picture", title: "\u753B\u9762", hint: "\u4E0A\u5C4F\u8282\u594F\u3001\u5206\u8FA8\u7387\u3001\u8D34\u56FE" },
+  { id: "pacing", title: "\u8282\u594F", hint: "\u8DDF\u5C4F\u5E55\u8FD8\u662F\u8DDF\u949F\u3001\u6A21\u62DF\u901F\u5EA6\u3001\u8BFB\u76D8\u65F6\u5E8F" },
+  { id: "controls", title: "\u64CD\u4F5C", hint: "\u6309\u952E\u3001\u6447\u6746\u3001\u786E\u8BA4\u952E" },
+  { id: "system", title: "\u6A21\u62DF\u5668", hint: "CPU \u6838\u5FC3\u3001\u6E38\u620F\u8BED\u8A00\u3001\u673A\u578B" },
+  { id: "compat", title: "\u517C\u5BB9", hint: "\u753B\u9762\u7F3A\u4E1C\u897F / \u5361\u7684\u65F6\u5019\u5BF9\u7167\u7528" },
+  { id: "diag", title: "\u8BCA\u65AD", hint: "\u7EDF\u8BA1\u3001\u663E\u5361\u8C03\u7528\u67E5\u9519" }
+];
+var OFF_ON = (off = "\u5173", on = "\u5F00") => [{ value: "disabled", label: off }, { value: "enabled", label: on }];
+var core = (id, section, label, choices, def, hint) => ({ id, section, label, hint, choices, def, apply: "reload", layer: "core" });
+var PPSSPP_OPTIONS = [
+  // 画面
+  core("ppsspp_internal_resolution", "picture", "\u5185\u90E8\u5206\u8FA8\u7387", [1, 2, 3, 4].map((k) => ({ value: `${480 * k}x${272 * k}`, label: `${k}\xD7\uFF08${480 * k}\xD7${272 * k}\uFF09` })), "480x272", "PSP \u539F\u751F\u662F 1\xD7\u3002\u624B\u673A / Quest \u4E0A 1\xD7 \u5C31\u597D\uFF0C\u8D8A\u9AD8\u8D8A\u5403\u663E\u5361"),
+  core("ppsspp_texture_filtering", "picture", "\u8D34\u56FE\u8FC7\u6EE4", [{ value: "Auto", label: "\u81EA\u52A8" }, { value: "Nearest", label: "\u6700\u8FD1\u90BB\uFF08\u50CF\u7D20\u611F\uFF09" }, { value: "Linear", label: "\u7EBF\u6027\uFF08\u67D4\u4E00\u70B9\uFF09" }, { value: "Auto max quality", label: "\u81EA\u52A8\xB7\u6700\u9AD8\u8D28\u91CF" }], "Auto"),
+  core("ppsspp_texture_scaling_level", "picture", "\u8D34\u56FE\u653E\u5927", [{ value: "disabled", label: "\u5173" }, { value: "2x", label: "2\xD7" }, { value: "3x", label: "3\xD7" }, { value: "4x", label: "4\xD7" }, { value: "5x", label: "5\xD7" }], "disabled", "\u5728 CPU \u4E0A\u653E\u5927\u8D34\u56FE\uFF1A\u5F88\u5403 CPU\uFF0CQuest \u4E0A\u522B\u5F00"),
+  core("ppsspp_texture_scaling_type", "picture", "\u8D34\u56FE\u653E\u5927\u7B97\u6CD5", [{ value: "xbrz", label: "xBRZ" }, { value: "hybrid", label: "Hybrid" }, { value: "bicubic", label: "Bicubic" }, { value: "hybrid_bicubic", label: "Hybrid + Bicubic" }], "xbrz", "\u300C\u8D34\u56FE\u653E\u5927\u300D\u5F00\u7740\u624D\u6709\u7528"),
+  core("ppsspp_texture_shader", "picture", "\u8D34\u56FE\u653E\u5927\uFF08\u663E\u5361\uFF09", [{ value: "disabled", label: "\u5173" }, { value: "2xBRZ", label: "Tex2xBRZ" }, { value: "4xBRZ", label: "Tex4xBRZ" }, { value: "MMPX", label: "MMPX" }], "disabled"),
+  core("ppsspp_texture_anisotropic_filtering", "picture", "\u5404\u5411\u5F02\u6027\u8FC7\u6EE4", [{ value: "disabled", label: "\u5173" }, { value: "2x", label: "2\xD7" }, { value: "4x", label: "4\xD7" }, { value: "8x", label: "8\xD7" }, { value: "16x", label: "16\xD7" }], "16x"),
+  core("ppsspp_smart_2d_texture_filtering", "picture", "\u667A\u80FD 2D \u8D34\u56FE\u8FC7\u6EE4", OFF_ON(), "disabled"),
+  core("ppsspp_texture_deposterize", "picture", "\u8D34\u56FE\u53BB\u8272\u9636", OFF_ON(), "disabled"),
+  // 节奏
+  core("ppsspp_locked_cpu_speed", "pacing", "\u9501\u5B9A PSP \u7684 CPU \u9891\u7387", [{ value: "disabled", label: "\u4E0D\u9501\uFF08\u7167\u6E38\u620F\uFF09" }, ...["222MHz", "266MHz", "333MHz", "444MHz", "555MHz", "666MHz"].map((v) => ({ value: v, label: v }))], "disabled", "\u6709\u7684\u6E38\u620F\u8D85\u9891\u624D\u4E0D\u5361\uFF1B\u6A21\u62DF\u8D77\u6765\u66F4\u91CD"),
+  core("ppsspp_io_timing_method", "pacing", "\u8BFB\u76D8\u65F6\u5E8F", [{ value: "Fast", label: "\u5FEB" }, { value: "Host", label: "\u8DDF\u4E3B\u673A" }, { value: "Simulate UMD delays", label: "\u6A21\u62DF UMD \u5EF6\u8FDF" }], "Fast", "\u4E2A\u522B\u6E38\u620F\u8BFB\u76D8\u592A\u5FEB\u4F1A\u51FA\u9519\uFF0C\u624D\u7528\u300C\u6A21\u62DF UMD \u5EF6\u8FDF\u300D"),
+  // 操作
+  core("ppsspp_button_preference", "controls", "\u7CFB\u7EDF\u786E\u8BA4\u952E", [{ value: "Circle", label: "\u25CB\uFF08\u65E5\u7248\u4E60\u60EF\uFF09" }, { value: "Cross", label: "\xD7\uFF08\u6B27\u7F8E\u4E60\u60EF\uFF09" }], "Cross", "\u53EA\u7BA1 PSP \u7CFB\u7EDF\u5BF9\u8BDD\u6846\uFF08\u5B58\u6863\u3001\u8BFB\u6863\u90A3\u79CD\uFF09\uFF1B\u6E38\u620F\u5185\u6309\u952E\u5404\u6E38\u620F\u81EA\u5DF1\u5B9A"),
+  core("ppsspp_analog_deadzone", "controls", "\u6447\u6746\u6B7B\u533A", ["0.0", "0.05", "0.10", "0.15", "0.20", "0.25", "0.30"].map((v) => ({ value: v, label: `${Math.round(Number(v) * 100)}%` })), "0.0"),
+  core("ppsspp_analog_is_circular", "controls", "\u6447\u6746\u5706\u5F62\u8865\u507F", OFF_ON(), "disabled", "\u624B\u67C4\u6447\u6746\u662F\u5706\u5F62\u884C\u7A0B\u65F6\u5F00\uFF0C\u659C\u5411\u80FD\u63A8\u5230\u5E95"),
+  // 模拟器
+  core("ppsspp_cpu_core", "system", "CPU \u6838\u5FC3", [{ value: "IR JIT", label: "IR \u89E3\u91CA\u5668\uFF08\u9ED8\u8BA4\uFF09" }, { value: "Interpreter", label: "\u7ECF\u5178\u89E3\u91CA\u5668\uFF08\u6162 3 \u500D\uFF0C\u6392\u67E5\u7528\uFF09" }], "IR JIT", "\u7F51\u9875\u91CC\u6CA1\u6709 JIT"),
+  core("ppsspp_language", "system", "\u6E38\u620F\u8BED\u8A00", [
+    ["Automatic", "\u81EA\u52A8"],
+    ["Japanese", "\u65E5\u8BED"],
+    ["English", "\u82F1\u8BED"],
+    ["Chinese Simplified", "\u7B80\u4F53\u4E2D\u6587"],
+    ["Chinese Traditional", "\u7E41\u4F53\u4E2D\u6587"],
+    ["Korean", "\u97E9\u8BED"],
+    ["French", "\u6CD5\u8BED"],
+    ["Spanish", "\u897F\u73ED\u7259\u8BED"],
+    ["German", "\u5FB7\u8BED"],
+    ["Italian", "\u610F\u5927\u5229\u8BED"],
+    ["Dutch", "\u8377\u5170\u8BED"],
+    ["Portuguese", "\u8461\u8404\u7259\u8BED"],
+    ["Russian", "\u4FC4\u8BED"]
+  ].map(([value, label]) => ({ value, label })), "Automatic", "PSP \u7CFB\u7EDF\u8BED\u8A00\uFF1A\u652F\u6301\u591A\u8BED\u8A00\u7684\u6E38\u620F\u6309\u5B83\u9009"),
+  core("ppsspp_psp_model", "system", "PSP \u578B\u53F7", [{ value: "psp_2000_3000", label: "PSP-2000 / 3000" }, { value: "psp_1000", label: "PSP-1000" }], "psp_2000_3000", "1000 \u578B\u5185\u5B58\u5C11\uFF0C\u4E2A\u522B\u8001\u6E38\u620F\u8981\u5B83"),
+  // 兼容
+  core("ppsspp_software_skinning", "compat", "CPU \u8499\u76AE", OFF_ON("\u5173\uFF08\u4EA4\u7ED9\u663E\u5361\uFF0C\u9ED8\u8BA4\uFF09", "\u5F00"), "disabled", "\u5E26\u9AA8\u9ABC\u7684\u6A21\u578B\u5728 CPU \u4E0A\u7B97"),
+  core("ppsspp_disable_range_culling", "compat", "\u5173\u8303\u56F4\u5254\u9664", OFF_ON(), "disabled", "\u4E0D\u8BA9\u663E\u5361\u63D0\u524D\u4E22\u6389\u300C\u770B\u8D77\u6765\u5728\u753B\u9762\u5916\u300D\u7684\u9876\u70B9"),
+  core("ppsspp_gpu_hardware_transform", "compat", "\u786C\u4EF6\u53D8\u6362", OFF_ON("\u5173\uFF08\u8F6F\u4EF6\u53D8\u6362\uFF09", "\u5F00\uFF08\u9ED8\u8BA4\uFF09"), "enabled"),
+  core("ppsspp_hardware_tesselation", "compat", "\u786C\u4EF6\u66F2\u9762\u7EC6\u5206", OFF_ON(), "disabled"),
+  core("ppsspp_spline_quality", "compat", "\u66F2\u9762\u8D28\u91CF", [{ value: "Low", label: "\u4F4E" }, { value: "Medium", label: "\u4E2D" }, { value: "High", label: "\u9AD8" }], "High"),
+  core("ppsspp_skip_buffer_effects", "compat", "\u8DF3\u8FC7\u7F13\u51B2\u6548\u679C", OFF_ON(), "disabled", "\u5FEB\uFF0C\u4F46\u6709\u7684\u6E38\u620F\u4F1A\u4EC0\u4E48\u90FD\u753B\u4E0D\u51FA\u6765"),
+  core("ppsspp_skip_gpu_readbacks", "compat", "\u8DF3\u8FC7\u663E\u5361\u56DE\u8BFB", OFF_ON(), "disabled", "\u5FEB\uFF0C\u4F46\u6E38\u620F\u300C\u6293\u753B\u9762\u300D\uFF08\u6BD4\u5982\u8FC7\u5173\u7167\u7247\uFF09\u4F1A\u662F\u65E7\u7684"),
+  core("ppsspp_lazy_texture_caching", "compat", "\u61D2\u8D34\u56FE\u7F13\u5B58", OFF_ON(), "disabled", "\u5FEB\uFF0C\u4E2A\u522B\u6E38\u620F\u6587\u5B57\u4F1A\u51FA\u9519"),
+  core("ppsspp_lower_resolution_for_effects", "compat", "\u7279\u6548\u964D\u5206\u8FA8\u7387", [{ value: "disabled", label: "\u5173" }, { value: "Safe", label: "\u4FDD\u5B88" }, { value: "Balanced", label: "\u5747\u8861" }, { value: "Aggressive", label: "\u6FC0\u8FDB" }], "disabled")
+];
+var HIDDEN = [
+  { match: /^ppsspp_(enable_wlan|change_mac_address\d+|wlan_channel|enable_builtin_pro_ad_hoc_server|change_pro_ad_hoc_server_address|pro_ad_hoc_server_address\d+|enable_upnp|upnp_use_original_port|port_offset|minimum_timeout|forced_first_connect)$/, why: "\u8054\u7F51\uFF1A\u5BB6\u89C4\u9EC4\u7EBF\u533A\uFF0C\u4E0D\u8FDE\u5916\u90E8\u670D\u52A1" },
+  { match: /^ppsspp_cache_iso$/, why: "\u6574\u5F20\u76D8\u8BFB\u8FDB\u5185\u5B58\uFF1A\u786C\u89C4\u77E9\uFF0C\u6574\u5F20\u5149\u76D8\u6C38\u8FDC\u4E0D\u8FDB\u5185\u5B58" },
+  { match: /^ppsspp_(software_rendering|frameskip|frameskiptype|auto_frameskip|frame_duplication|detect_vsync_swap_interval|force_lag_sync|inflight_frames)$/, why: "\u6E32\u67D3\u65B9\u5F0F\u3001\u8DF3\u5E27\u3001\u6392\u7A0B\u7531 app \u7BA1\uFF08\u6392\u7A0B / \u4E0A\u5C4F\u8282\u62CD / \u8F6F\u4EF6\u6E32\u67D3\u5728 app \u5C42\uFF09" },
+  { match: /^ppsspp_backend$/, why: "\u7F51\u9875\u91CC\u53EA\u6709 WebGL2" },
+  { match: /^ppsspp_(cheats|texture_replacement)$/, why: "\u8981\u5916\u90E8\u6587\u4EF6\uFF08\u91D1\u624B\u6307 / \u8D34\u56FE\u5305\uFF09\uFF0C\u8FD8\u6CA1\u63A5" },
+  { match: /^ppsspp_fast_memory$/, why: "wasm \u4E0B\u5FC5\u987B\u5173\uFF08\u574F\u5730\u5740\u4F1A\u8BA9\u6574\u4E2A\u6838\u5D29\uFF0Cv0.1.32\uFF09" },
+  { match: /^ppsspp_(ignore_bad_memory_access|memstick_inserted)$/, why: "\u5FC5\u987B\u5F00\u7740\uFF1A\u5173\u4E86\u6E38\u620F\u8BFB\u4E0D\u5230\u5B58\u6863 / \u78B0\u5230\u574F\u5730\u5740\u6574\u4E2A\u6838\u5C31\u505C" },
+  { match: /^ppsspp_(mulitsample_level|cropto16x9|analog_sensitivity)$/, why: "\u8FD8\u6CA1\u5728\u7F51\u9875\u91CC\u9A8C\u8FC7 / \u7528\u4E0D\u4E0A\uFF0C\u7B49\u9700\u8981\u518D\u9732" }
+];
+var isHidden2 = (key) => HIDDEN.some((h2) => h2.match.test(key));
+var APP_SETTINGS = [
+  { id: "app.cadence", section: "picture", label: "\u4E0A\u5C4F\u8282\u62CD", hint: "72 Hz \u5C4F\u653E 30 \u5E27\u6E38\u620F\u7684\u53D6\u820D\uFF1A\u81EA\u52A8 = \u6BCF 3 \u6B21\u5237\u65B0 1 \u5E27\uFF08\u5300\uFF09", choices: [{ value: "0", label: "\u81EA\u52A8" }, { value: "1", label: "\u6BCF\u6B21\u5237\u65B0\u90FD\u4E0A" }, { value: "2", label: "\u6BCF 2 \u6B21\u5237\u65B0" }, { value: "3", label: "\u6BCF 3 \u6B21\u5237\u65B0" }], def: "0", apply: "now", layer: "app" },
+  { id: "app.cap30", section: "picture", label: "\u53EA\u753B 30 \u5E27", hint: "\u6E38\u620F\u672C\u8EAB 60 \u5E27\u65F6\u5C11\u753B\u4E00\u534A\uFF0C\u903B\u8F91\u7167\u5E38\uFF08\u79FB\u52A8\u8BBE\u5907\u9ED8\u8BA4\u5F00\uFF09", choices: OFF_ON("\u753B\u6EE1 60", "\u53EA\u753B 30"), def: "auto", apply: "now", layer: "app" },
+  { id: "app.pacing", section: "pacing", label: "\u6392\u7A0B", hint: "\u8DDF\u5C4F\u5E55 = \u8DDF\u663E\u793A\u5668\u5237\u65B0\u8D70\uFF1B\u5899\u949F = \u6838\u81EA\u5DF1\u8BA1\u65F6", choices: [{ value: "vsync", label: "\u8DDF\u5C4F\u5E55" }, { value: "wall", label: "\u5899\u949F" }], def: "vsync", apply: "now", layer: "app" },
+  { id: "app.tap", section: "controls", label: "\u6309\u4E0B\u9501\u5B58", hint: "\u5FEB\u901F\u8FDE\u6309\u6BCF\u4E00\u4E0B\u90FD\u8BA9\u6E38\u620F\u770B\u5230\uFF08\u81F3\u5C11\u6309\u4F4F 2 \u5E27\u3001\u677E\u5F00 2 \u5E27\uFF09", choices: OFF_ON("\u5173", "\u5F00\uFF08\u9ED8\u8BA4\uFF09"), def: "enabled", apply: "now", layer: "app" },
+  { id: "app.render", section: "compat", label: "\u8F6F\u4EF6\u6E32\u67D3", hint: "\u5B8C\u5168\u4E0D\u7528\u663E\u5361\uFF1A\u5F88\u6162\uFF0C\u4F46\u753B\u9762\u662F\u5BF9\u7684\u2014\u2014\u5224\u65AD\u662F\u4E0D\u662F\u663E\u5361\u90A3\u6761\u8DEF\u7684\u95EE\u9898", choices: OFF_ON(), def: "disabled", apply: "reload", layer: "app" },
+  { id: "app.stats", section: "diag", label: "\u7EDF\u8BA1\u8BE6\u60C5", hint: "\u753B\u9762\u4E0A\u53E0\u4E00\u5757\u5E27\u8282\u594F / \u58F0\u97F3 / \u8BFB\u76D8 / \u624B\u67C4\u7684\u8BFB\u6570", choices: OFF_ON(), def: "disabled", apply: "now", layer: "app" },
+  { id: "app.glcheck", section: "diag", label: "GL \u8BCA\u65AD", hint: "\u62BD\u6837\u67E5\u6BCF\u4E2A\u663E\u5361\u8C03\u7528\uFF0C\u7B2C\u4E00\u6B21\u51FA\u9519\u7684\u5199\u8FDB\u65E5\u5FD7\uFF08\u6162\u4E00\u70B9\uFF09", choices: OFF_ON(), def: "disabled", apply: "reload", layer: "app" }
+];
+var APP_RELOAD_PARAMS = { "app.render": ["render", "sw"], "app.glcheck": ["glcheck", "1"] };
+var VALID = new Map(PPSSPP_OPTIONS.map((d) => [d.id, new Set(d.choices.map((c) => c.value))]));
+function readCoreOverrides(params2) {
+  const out = /* @__PURE__ */ new Map();
+  if (params2.get("skin") === "cpu") out.set("ppsspp_software_skinning", "enabled");
+  if (params2.get("cull") === "0") out.set("ppsspp_disable_range_culling", "enabled");
+  if (params2.get("cpu") === "interp") out.set("ppsspp_cpu_core", "Interpreter");
+  for (const part of (params2.get("o") ?? "").split(";")) {
+    const i = part.indexOf(":");
+    if (i <= 0) continue;
+    const key = decodeURIComponent(part.slice(0, i)), value = decodeURIComponent(part.slice(i + 1));
+    if (isHidden2(key) || !VALID.get(key)?.has(value)) continue;
+    out.set(key, value);
+  }
+  return out;
+}
+function writeCoreOverrides(params2, overrides) {
+  const q = new URLSearchParams(params2);
+  q.delete("skin");
+  q.delete("cull");
+  q.delete("cpu");
+  const parts = [...overrides].filter(([k, v]) => PPSSPP_OPTIONS.find((d) => d.id === k)?.def !== v && !isHidden2(k) && VALID.get(k)?.has(v)).sort(([a], [b]) => a.localeCompare(b)).map(([k, v]) => `${encodeURIComponent(k)}:${encodeURIComponent(v)}`);
+  if (parts.length) q.set("o", parts.join(";"));
+  else q.delete("o");
+  return q;
+}
+var coreOptionArgs = (overrides) => [...overrides].filter(([k, v]) => !isHidden2(k) && VALID.get(k)?.has(v)).map(([k, v]) => `opt:${k}=${v}`);
+
+// src/app/settings-panel.ts
+function activeReloadSettings(params2) {
+  const ov = readCoreOverrides(params2);
+  const core2 = PPSSPP_OPTIONS.filter((d) => ov.has(d.id) && ov.get(d.id) !== d.def).map((d) => `${d.label}\uFF1A${d.choices.find((c) => c.value === ov.get(d.id))?.label ?? ov.get(d.id)}`);
+  const app = Object.entries(APP_RELOAD_PARAMS).filter(([, [k, v]]) => params2.get(k) === v).map(([id]) => APP_SETTINGS.find((d) => d.id === id).label);
+  return [...app, ...core2];
+}
+function openSettings(host, focus, draft) {
+  const start = readCoreOverrides(host.params);
+  const appReloadStart = new Map(Object.entries(APP_RELOAD_PARAMS).map(([id, [k, v]]) => [id, host.params.get(k) === v ? "enabled" : "disabled"]));
+  const core2 = new Map(draft?.core ?? start);
+  const appReload = new Map(draft?.appReload ?? appReloadStart);
+  const valueOf2 = (d) => d.layer === "core" ? core2.get(d.id) ?? d.def : d.apply === "reload" ? appReload.get(d.id) : host.get(d.id);
+  const pending2 = () => {
+    const keys = /* @__PURE__ */ new Set([...core2.keys(), ...start.keys()]);
+    let n = 0;
+    for (const k of keys) if ((core2.get(k) ?? PPSSPP_OPTIONS.find((d) => d.id === k)?.def) !== (start.get(k) ?? PPSSPP_OPTIONS.find((d) => d.id === k)?.def)) n++;
+    for (const [k, v] of appReload) if (appReloadStart.get(k) !== v) n++;
+    return n;
+  };
+  void sheet((close) => {
+    const go = h("button", { class: "primary" });
+    const refresh = () => {
+      const n = pending2();
+      go.hidden = !n;
+      go.textContent = `\u7528\u8FD9\u4E9B\u8BBE\u7F6E\u91CD\u65B0\u8F7D\u5165\uFF08${n} \u9879\uFF09`;
+    };
+    const row = (d) => {
+      const sel = h(
+        "select",
+        { class: "setting-select", "aria-label": d.label },
+        ...d.choices.map((c) => h("option", { value: c.value, ...c.value === valueOf2(d) ? { selected: "" } : {} }, c.label))
+      );
+      sel.addEventListener("change", () => {
+        if (d.layer === "core") {
+          if (sel.value === d.def) core2.delete(d.id);
+          else core2.set(d.id, sel.value);
+        } else if (d.apply === "reload") appReload.set(d.id, sel.value);
+        else {
+          host.set(d.id, sel.value);
+          host.log(`\u8BBE\u7F6E\uFF1A${d.label} \u2192 ${d.choices.find((c) => c.value === sel.value)?.label ?? sel.value}`);
+        }
+        refresh();
+      });
+      return h(
+        "div",
+        { class: "setting-row" },
+        h("label", {}, h("span", {}, d.label), d.apply === "reload" ? h("span", { class: "setting-tag" }, "\u91CD\u65B0\u8F7D\u5165\u751F\u6548") : null),
+        sel,
+        d.hint ? h("p", { class: "muted setting-hint" }, d.hint) : null
+      );
+    };
+    const all = [...APP_SETTINGS, ...PPSSPP_OPTIONS];
+    const sections = SECTIONS.map((s) => {
+      const items = all.filter((d) => d.section === s.id);
+      return h("section", { class: "setting-section", id: `settings-${s.id}` }, h("h3", {}, `${s.title}`, h("span", { class: "muted" }, ` \xB7 ${s.hint}`)), ...items.map(row));
+    });
+    const nav = h("div", { class: "setting-nav" }, ...SECTIONS.map((s) => h("button", { onclick: () => document.getElementById(`settings-${s.id}`)?.scrollIntoView({ block: "start", behavior: "smooth" }) }, s.title)));
+    go.addEventListener("click", () => {
+      let q = writeCoreOverrides(host.params, core2);
+      for (const [id, [k, v]] of Object.entries(APP_RELOAD_PARAMS)) {
+        if (appReload.get(id) === "enabled") q.set(k, v);
+        else if (q.get(k) === v) q.delete(k);
+      }
+      host.log(`\u8BBE\u7F6E\uFF1A\u91CD\u65B0\u8F7D\u5165\uFF08${activeReloadSettings(q).join(" \xB7 ") || "\u5168\u90E8\u9ED8\u8BA4"}\uFF09`);
+      host.reload(q.toString());
+    });
+    const reset = h("button", { onclick: () => {
+      close();
+      openSettings(host, focus, { core: /* @__PURE__ */ new Map(), appReload: new Map([...appReload.keys()].map((k) => [k, "disabled"])) });
+    } }, "\u8981\u91CD\u65B0\u8F7D\u5165\u7684\u5168\u90E8\u6062\u590D\u9ED8\u8BA4");
+    refresh();
+    if (focus) queueMicrotask(() => document.getElementById(`settings-${focus}`)?.scrollIntoView({ block: "start" }));
+    return [
+      h("h2", {}, "\u8BBE\u7F6E"),
+      h("p", { class: "hint" }, "\u9009\u4E86\u5C31\u751F\u6548\u7684\u5F53\u573A\u5C31\u53D8\u3002\u6807\u7740\u300C\u91CD\u65B0\u8F7D\u5165\u751F\u6548\u300D\u7684\u5148\u5728\u8FD9\u91CC\u6539\u597D\uFF0C\u6700\u540E\u70B9\u5E95\u4E0B\u7684\u6309\u94AE\u4E00\u8D77\u751F\u6548\u2014\u2014\u8FD9\u4E9B\u53EA\u5728\u8FD9\u4E00\u6B21\u6253\u5F00\u91CC\u6709\u6548\uFF08\u8981\u4E0D\u8981\u8BB0\u4F4F\u3001\u6309\u8BBE\u5907\u8FD8\u662F\u6309\u6E38\u620F\u8BB0\uFF0C\u7B49\u4F60\u5B9A\uFF09\u3002"),
+      nav,
+      ...sections,
+      h("div", { class: "row" }, h("button", { onclick: () => close() }, "\u5173\u95ED"), reset, go)
+    ];
+  });
+}
+
 // src/app/disc-tools.ts
 var CHUNK = 8 * 2 ** 20;
 var canWriteLocalFiles = () => typeof globalThis.showSaveFilePicker === "function" && typeof globalThis.showOpenFilePicker === "function";
@@ -11429,7 +11624,7 @@ async function play(prepare, resume) {
     onInput: () => activity?.input(performance.now()),
     media: disc.media,
     ext: disc.ext,
-    coreDir: "./dist/core-243ef0cf5f94/",
+    coreDir: "./dist/core-14b747b61f16/",
     glCanvas: $("gl"),
     softCanvas: $("screen"),
     audioContext: audioContext(),
@@ -11443,6 +11638,7 @@ async function play(prepare, resume) {
     forceSoftware: params.get("render") === "sw",
     glCheck: params.get("glcheck") === "1",
     tapOff: params.get("tap") === "0",
+    coreOptions: coreOptionArgs(readCoreOverrides(params)),
     onCoreError: (line) => logEvent("warn", `\u6838\uFF1A${line}`),
     skinning: params.get("skin") === "cpu" ? "cpu" : "gpu",
     // 10-16 默认 GPU 蒙皮：PC 量过模拟线程 28%→25% 忙、顶点缓冲 2.4→1.4 MB/帧（wasm 没有 JIT 顶点解码器，软件蒙皮不划算）；?skin=cpu 退回
@@ -11452,8 +11648,8 @@ async function play(prepare, resume) {
   if (resume) session.setHold(true);
   session.setFrameCap30(defaultFrameCap30());
   {
-    const on = compatActive();
-    if (on.length) logEvent("info", `\u753B\u9762\u517C\u5BB9\u5F00\u5173\uFF1A${on.join(" \xB7 ")}`);
+    const on = activeReloadSettings(params);
+    if (on.length) logEvent("info", `\u8FD9\u6B21\u6253\u5F00\u7684\u8BBE\u7F6E\uFF1A${on.join(" \xB7 ")}`);
   }
   if (disc.identifier) {
     try {
@@ -11950,11 +12146,16 @@ function renderToolbar() {
 function openMenu() {
   if (!session) return;
   const s = session;
+  let done = null;
   const item = (label, hint, fn, on = false) => h("button", { class: `menu-item${on ? " on" : ""}`, onclick: () => {
     done?.();
     fn();
   } }, h("span", {}, label), h("span", { class: "muted" }, hint));
-  let done = null;
+  const big = (label, fn, on = false) => h("button", { class: on ? "primary" : "", onclick: () => {
+    done?.();
+    fn();
+  } }, label);
+  const changed = activeReloadSettings(params);
   void sheet((close) => {
     done = () => close();
     return [
@@ -11962,36 +12163,31 @@ function openMenu() {
       h("p", { class: "muted" }, APP_VERSION),
       h(
         "div",
+        { class: "menu-grid" },
+        big(s.paused ? "\u7EE7\u7EED" : "\u6682\u505C", togglePause, s.paused),
+        big("\u5FEB\u7167\u2026", openSlots),
+        big("\u5B58\u6863\u7BA1\u7406\u2026", () => {
+          openSaveManager({ ...saveManagerContext, only: current ? { title: current.title, key: current.key, discId: current.fp.id } : void 0 }).catch((e) => banner(errorText(e)));
+        })
+      ),
+      h("h3", {}, "\u8FD9\u53F0\u8BBE\u5907"),
+      h(
+        "div",
         { class: "menu-list" },
-        item(s.paused ? "\u7EE7\u7EED" : "\u6682\u505C", "P \xB7 Esc", togglePause, s.paused),
-        item(s.speed > 1 ? "\u6062\u590D\u6B63\u5E38\u901F\u5EA6" : `\u5FEB\u8FDB \xD7${FAST_FORWARD}`, "\u6309\u4F4F Tab \xB7 ` \u5207\u6362", () => setFast(!(s.speed > 1)), s.speed > 1),
-        item(softKeys?.visible ? "\u6536\u8D77\u5C4F\u5E55\u8F6F\u952E" : "\u5C4F\u5E55\u8F6F\u952E", "\u89E6\u5C4F / \u5C04\u7EBF\u70B9", toggleSoftKeys, softKeys?.visible ?? false),
         item(document.fullscreenElement ? "\u9000\u51FA\u5168\u5C4F" : "\u5168\u5C4F", "Alt+Enter \xB7 \u53CC\u51FB\u753B\u9762", toggleFullscreen),
         ...pip.supported ? [item(pip.active ? "\u6536\u56DE\u5C0F\u7A97" : "\u5C0F\u7A97", "Alt+P \xB7 \u7F6E\u9876\u7684\u5C0F\u753B\u9762\uFF0C\u8FB9\u770B\u8FB9\u505A\u522B\u7684", () => {
           togglePip().catch(() => {
           });
         }, pip.active)] : [],
+        item(softKeys?.visible ? "\u6536\u8D77\u5C4F\u5E55\u8F6F\u952E" : "\u5C4F\u5E55\u8F6F\u952E", "\u89E6\u5C4F / \u5C04\u7EBF\u70B9", toggleSoftKeys, softKeys?.visible ?? false),
         item(s.isMuted ? "\u53D6\u6D88\u9759\u97F3" : `\u97F3\u91CF ${Math.round(s.volume * 100)}`, "M \u9759\u97F3", openVolume, s.isMuted),
-        item(s.frameCap30 ? "\u53EA\u753B 30 \u5E27\uFF08\u7701\u7535\uFF09" : "\u753B\u6EE1 60 \u5E27", s.frameCap30 ? "\u6E38\u620F\u672C\u8EAB 60 \u5E27\u65F6\u5C11\u753B\u4E00\u534A\uFF1B\u903B\u8F91\u4E0D\u53D8" : "\u79FB\u52A8\u8BBE\u5907\u9ED8\u8BA4\u53EA\u753B 30", () => {
-          s.setFrameCap30(!s.frameCap30);
-          renderToolbar();
-        }, s.frameCap30),
-        item(s.pacingMode() === "wall" ? "\u6392\u7A0B\uFF1A\u5899\u949F \u2192 \u8DDF\u5C4F\u5E55" : "\u6392\u7A0B\uFF1A\u8DDF\u5C4F\u5E55 \u2192 \u5899\u949F", "\u8DDF\u5C4F\u5E55 = \u8DDF\u663E\u793A\u5668\u5237\u65B0\u8D70\uFF0872 Hz \u5C4F\u653E 30 \u5E27\u6E38\u620F\u65F6\u6309\u56FA\u5B9A\u8282\u62CD\u4E0A\u5C4F\uFF09\uFF1B\u5899\u949F = \u6838\u81EA\u5DF1\u8BA1\u65F6\uFF08\u5E27\u7387\u6570\u5B57\u9AD8\uFF0C\u5237\u65B0\u7387\u9664\u4E0D\u5C3D\u65F6\u753B\u9762\u6296\uFF09", () => {
-          s.setPacing(s.pacingMode() === "wall" ? "vsync" : "wall");
-          renderToolbar();
-        }, s.pacingMode() === "wall"),
-        item(`\u4E0A\u5C4F\u8282\u62CD\uFF1A${cadenceLabel(s)}`, "72 Hz \u5C4F\u653E 30 \u5E27\u7684\u4E09\u79CD\u53D6\u820D\uFF0C\u5207\u7740\u770B\u54EA\u79CD\u987A\uFF1A\u81EA\u52A8 = \u6BCF 3 \u6B21\u5237\u65B0 1 \u5E27\uFF0824 \u5300\u3001\u6BCF 5 \u5E27\u4E22 1\uFF09\xB7 \u6BCF 2 \u6B21 = 36 \u683C\uFF08\u6BCF 6 \u5E27\u91CD\u590D 1\uFF09\xB7 \u6BCF\u6B21 = 30 \u5E27\uFF08\u505C\u7559 2 / 3 \u4EA4\u66FF\uFF09\u3002\u5899\u949F\u6392\u7A0B\u4E0B\u65E0\u6548", () => {
-          const order = [0, 1, 2, 3];
-          s.setPresentEveryForce(order[(order.indexOf(s.presentEveryForce()) + 1) % 4]);
-          renderToolbar();
-        }, s.presentEveryForce() !== 0),
-        item($("status").hidden ? "\u7EDF\u8BA1\u8BE6\u60C5" : "\u6536\u8D77\u7EDF\u8BA1", "\u5E27\u8282\u594F \xB7 \u58F0\u97F3 \xB7 \u8BFB\u76D8 \xB7 \u624B\u67C4", () => {
-          $("status").hidden = !$("status").hidden;
-        }),
-        item("\u5B58\u6863\u7BA1\u7406", "\u8FD9\u5F20\u76D8\u7684\u5FEB\u7167\u548C\u5B58\u6863", () => {
-          openSaveManager({ ...saveManagerContext, only: current ? { title: current.title, key: current.key, discId: current.fp.id } : void 0 }).catch((e) => banner(errorText(e)));
-        }),
-        item("\u753B\u9762\u517C\u5BB9\u2026", compatActive().length ? `\u5F00\u7740\uFF1A${compatActive().join(" \xB7 ")}` : "\u753B\u9762\u7F3A\u4E1C\u897F\u65F6\u5BF9\u7167\u7528\uFF08\u91CD\u65B0\u8F7D\u5165\u751F\u6548\uFF09", openCompat, compatActive().length > 0),
+        item(s.speed > 1 ? "\u6062\u590D\u6B63\u5E38\u901F\u5EA6" : `\u5FEB\u8FDB \xD7${FAST_FORWARD}`, "\u6309\u4F4F Tab \xB7 ` \u5207\u6362", () => setFast(!(s.speed > 1)), s.speed > 1)
+      ),
+      h("h3", {}, "\u66F4\u591A"),
+      h(
+        "div",
+        { class: "menu-list" },
+        item("\u8BBE\u7F6E\u2026", changed.length ? `\u8FD9\u6B21\u6253\u5F00\u6539\u7740\uFF1A${changed.join(" \xB7 ")}` : "\u753B\u9762 \xB7 \u8282\u594F \xB7 \u64CD\u4F5C \xB7 \u6A21\u62DF\u5668 \xB7 \u517C\u5BB9 \xB7 \u8BCA\u65AD", () => openSettings(settingsHost()), changed.length > 0),
         item("\u65E5\u5FD7", "\u9ED1\u5323\u5B50\uFF08\u8DE8\u91CD\u8F7D\uFF09", openLog),
         item("\u9000\u51FA\u8FD9\u5F20\u76D8", "\u5B58\u6863\u4F1A\u5148\u540C\u6B65\u5B8C", () => {
           quit().catch((e) => banner(errorText(e)));
@@ -12001,53 +12197,53 @@ function openMenu() {
     ];
   });
 }
-function cadenceLabel(s) {
-  const f = s.presentEveryForce(), now = s.stats().presentEvery;
-  return f === 0 ? `\u81EA\u52A8\uFF08\u73B0\u5728\u6BCF ${now} \u6B21\u5237\u65B0 1 \u5E27\uFF09` : f === 1 ? "\u6BCF\u6B21\u5237\u65B0\u90FD\u4E0A\uFF08eager\uFF09" : `\u6BCF ${f} \u6B21\u5237\u65B0 1 \u5E27`;
-}
-var COMPAT = [
-  { key: "skin", off: "cpu", label: "CPU \u8499\u76AE", hint: "\u5E26\u9AA8\u9ABC\u7684\u6A21\u578B\uFF08\u4EBA\u7269\u3001\u90E8\u5206\u7269\u4EF6\uFF09\u5728 CPU \u4E0A\u7B97\uFF0C\u4E0D\u4EA4\u7ED9\u663E\u5361\uFF0810-16 \u8D77\u9ED8\u8BA4\u4EA4\u7ED9\u663E\u5361\uFF09" },
-  { key: "cull", off: "0", label: "\u5173\u8303\u56F4\u5254\u9664", hint: "\u4E0D\u8BA9 PPSSPP \u5728\u663E\u5361\u91CC\u63D0\u524D\u4E22\u6389\u300C\u770B\u8D77\u6765\u5728\u753B\u9762\u5916\u300D\u7684\u9876\u70B9" },
-  { key: "render", off: "sw", label: "\u8F6F\u4EF6\u6E32\u67D3", hint: "\u5B8C\u5168\u4E0D\u7528\u663E\u5361\uFF1A\u5F88\u6162\uFF0C\u4F46\u753B\u9762\u662F\u5BF9\u7684\u2014\u2014\u62FF\u6765\u5224\u65AD\u662F\u4E0D\u662F\u663E\u5361\u90A3\u6761\u8DEF\u7684\u95EE\u9898" },
-  { key: "glcheck", off: "1", label: "GL \u8BCA\u65AD", hint: "\u6BCF\u4E2A\u663E\u5361\u8C03\u7528\u540E\u90FD\u67E5\u4E00\u6B21\u9519\uFF0C\u7B2C\u4E00\u6B21\u51FA\u9519\u65F6\u628A\u662F\u54EA\u4E2A\u8C03\u7528\u8BB0\u8FDB\u9ED1\u5323\u5B50\uFF08\u4F1A\u6162\u4E00\u70B9\uFF0C\u53EA\u6392\u67E5\u7528\uFF09" }
-];
-function compatActive() {
-  return COMPAT.filter((c) => params.get(c.key) === c.off).map((c) => c.label);
-}
-function openCompat() {
-  const want = new Map(COMPAT.map((c) => [c.key, params.get(c.key) === c.off]));
-  void sheet((close) => {
-    const rows = h("div", { class: "menu-list" });
-    const draw = () => rows.replaceChildren(...COMPAT.map((c) => h(
-      "button",
-      { class: `menu-item${want.get(c.key) ? " on" : ""}`, onclick: () => {
-        want.set(c.key, !want.get(c.key));
-        draw();
-      } },
-      h("span", {}, `${want.get(c.key) ? "\u2713 " : ""}${c.label}`),
-      h("span", { class: "muted" }, c.hint)
-    )));
-    draw();
-    return [
-      h("h2", {}, "\u753B\u9762\u517C\u5BB9"),
-      h("p", { class: "muted" }, "\u753B\u9762\u7F3A\u4E1C\u897F\uFF08\u4EBA\u7269\u3001\u7269\u4EF6\u4E0D\u89C1\uFF09\u65F6\u4E00\u6B21\u5F00\u4E00\u4E2A\u5BF9\u7167\u3002\u91CD\u65B0\u8F7D\u5165\u540E\u518D\u70B9\u8FD9\u5F20\u76D8\u3001\u9009\u300C\u4ECE\u4E0A\u6B21\u5F00\u59CB\u300D\uFF1B\u9ED1\u5323\u5B50\u4F1A\u8BB0\u4E0B\u5F00\u4E86\u54EA\u4E2A\u3002"),
-      rows,
-      h(
-        "div",
-        { class: "row" },
-        h("button", { onclick: () => close() }, "\u53D6\u6D88"),
-        h("button", { class: "primary", onclick: () => {
-          const q = new URLSearchParams(location.search);
-          for (const c of COMPAT) {
-            if (want.get(c.key)) q.set(c.key, c.off);
-            else if (q.get(c.key) === c.off) q.delete(c.key);
-          }
-          logEvent("info", `\u753B\u9762\u517C\u5BB9\uFF1A\u91CD\u65B0\u8F7D\u5165\uFF08${COMPAT.filter((c) => want.get(c.key)).map((c) => c.label).join(" \xB7 ") || "\u5168\u5173"}\uFF09`);
-          location.search = q.toString();
-        } }, "\u7528\u8FD9\u4E9B\u5F00\u5173\u91CD\u65B0\u8F7D\u5165")
-      )
-    ];
-  });
+function settingsHost() {
+  return {
+    params,
+    get(id) {
+      const s = session;
+      if (!s) return "";
+      switch (id) {
+        case "app.cadence":
+          return String(s.presentEveryForce());
+        case "app.cap30":
+          return s.frameCap30 ? "enabled" : "disabled";
+        case "app.pacing":
+          return s.pacingMode() === "wall" ? "wall" : "vsync";
+        case "app.tap":
+          return s.tapOff ? "disabled" : "enabled";
+        case "app.stats":
+          return $("status").hidden ? "disabled" : "enabled";
+      }
+      return "";
+    },
+    set(id, v) {
+      const s = session;
+      if (!s) return;
+      switch (id) {
+        case "app.cadence":
+          s.setPresentEveryForce(Number(v));
+          break;
+        case "app.cap30":
+          s.setFrameCap30(v === "enabled");
+          break;
+        case "app.pacing":
+          s.setPacing(v === "wall" ? "wall" : "vsync");
+          break;
+        case "app.tap":
+          s.setTapOff(v === "disabled");
+          break;
+        case "app.stats":
+          $("status").hidden = v !== "enabled";
+          break;
+      }
+      renderToolbar();
+    },
+    log: (text) => logEvent("info", text),
+    reload: (search) => {
+      location.search = search;
+    }
+  };
 }
 var hudPrev = { t: performance.now(), up: 0, down: 0 };
 function renderHud() {
@@ -13198,4 +13394,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-a2fc5cd51e7a.mjs.map
+//# sourceMappingURL=kudsrocket-d574f1f7309b.mjs.map
