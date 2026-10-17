@@ -1,5 +1,5 @@
 // src/version.ts
-var APP_VERSION = "v0.1.45-2026-10-17";
+var APP_VERSION = "v0.1.46-2026-10-17";
 
 // assets/icons.svg
 var icons_default = '<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none">\n<!--\n  14 icons extracted from the family icon library (../20260708 SVG Icons/icons.svg) by extract-icons.py \u2014 do not hand-edit; re-run the script instead.\n  Family SVG Icons \u2014 MIT License, Copyright (c) 2026 fangzhangmnm.\n  Contains work derived from (per-icon provenance in data-src):\n    Feather Icons \u2014 MIT License, Copyright (c) 2013-2023 Cole Bemis \xB7 https://github.com/feathericons/feather\n-->\n  <!-- media -->\n  <!-- pause \u2014 \u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="pause" data-cat="media" data-src="own" data-note="\u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="3.2"><path d="M8.3 5.5 V18.5"/><path d="M15.7 5.5 V18.5"/></g></symbol>\n  <!-- play \u2014 \u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="play" data-cat="media" data-src="own" data-note="\u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 5.4 L18.8 12 L8.2 18.6 Z" fill="currentColor"/></symbol>\n  <!-- fast-forward \u2014 \u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="fast-forward" data-cat="media" data-src="own" data-note="\u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.4 6.8 L10.9 12 L4.4 17.2 Z" fill="currentColor"/><path d="M13.1 6.8 L19.6 12 L13.1 17.2 Z" fill="currentColor"/></symbol>\n  <!-- volume \u2014 \u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009) -->\n  <symbol id="volume" data-cat="media" data-src="own" data-note="\u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 10.3 H8.7 L12.6 6.6 V17.4 L8.7 13.7 H5.5 Z" fill="currentColor"/><path d="M15.13 9.73 A3.4 3.4 0 0 1 15.13 14.27"/><path d="M16.36 7.19 A6.1 6.1 0 0 1 16.36 16.81"/></symbol>\n  <!-- file -->\n  <!-- floppy-disk \u2014 \u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3 -->\n  <symbol id="floppy-disk" data-cat="file" data-src="feather:save" data-note="\u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13l3 3v13a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 17 8 17 3"/></symbol>\n  <!-- folder-open \u2014 \u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF -->\n  <symbol id="folder-open" data-cat="file" data-src="own" data-note="\u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18 V7 a2 2 0 0 1 2 -2 h4 l2 2 h6 a2 2 0 0 1 2 2 v1.8"/><path d="M3 18 L6.4 10.8 H21.6 L18.2 18 Z"/></symbol>\n  <!-- hierarchy -->\n  <!-- lock \u2014 \u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D -->\n  <symbol id="lock" data-cat="hierarchy" data-src="own" data-note="\u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10" width="13" height="11"/><path d="M8.8 10 V6.5 a3.2 3.2 0 0 1 6.4 0 V10"/></symbol>\n  <!-- common -->\n  <!-- x \u2014 \u53C9 -->\n  <symbol id="x" data-cat="common" data-src="own" data-note="\u53C9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 L17.5 17.5 M17.5 6.5 L6.5 17.5"/></symbol>\n  <!-- cloud -->\n  <!-- cloud \u2014 \u4E91 -->\n  <symbol id="cloud" data-cat="cloud" data-src="feather:cloud" data-note="\u4E91" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>\n  <!-- viewport -->\n  <!-- maximize-viewport \u2014 \u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55) -->\n  <symbol id="maximize-viewport" data-cat="viewport" data-src="own" data-note="\u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934 --> <polyline points="4 9 4 4 9 4"/> <polyline points="20 9 20 4 15 4"/> <polyline points="4 15 4 20 9 20"/> <polyline points="20 15 20 20 15 20"/></symbol>\n  <!-- picture-in-picture \u2014 \u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1) -->\n  <symbol id="picture-in-picture" data-cat="viewport" data-src="own" data-note="\u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u5927\u6846\uFF08\u4E3B\u753B\u5E03\uFF09+ \u5185\u5D4C\u5C0F\u7A97\uFF08\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1\uFF09\u2014\u2014 picture-in-picture \u9690\u55BB --> <rect x="3" y="4" width="18" height="14" rx="2"/> <rect x="12" y="10" width="7" height="5" rx="1"/></symbol>\n  <!-- ui -->\n  <!-- more \u2014 \u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00) -->\n  <symbol id="more" data-cat="ui" data-src="own" data-note="\u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/></symbol>\n  <!-- keyboard \u2014 \u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49) -->\n  <symbol id="keyboard" data-cat="ui" data-src="own" data-note="\u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="7.2" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="7.2" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><path d="M8.6 15.6 H15.4"/></symbol>\n  <!-- menu \u2014 \u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17) -->\n  <symbol id="menu" data-cat="ui" data-src="own" data-note="\u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"></line> <line x1="4" y1="12" x2="20" y2="12"></line> <line x1="4" y1="17" x2="20" y2="17"></line></symbol>\n</svg>\n';
@@ -10300,6 +10300,88 @@ async function resolveDuplicates(duplicates, peek, standardId) {
   return changed;
 }
 
+// src/app/quest-input.ts
+var COMBO_WINDOW_MS = 5e3;
+var GAZE_CONFIRM_MS = 2500;
+function isTypingKey(code) {
+  return /^Key[A-Z]$|^Digit\d$|^Numpad\d$|^Space$/.test(code);
+}
+var QUEST_PAD_HOWTO = "\u624B\u67C4\u4E0A\u540C\u65F6\u6309 View + Menu\uFF08\u4E2D\u95F4\u4E24\u4E2A\u5C0F\u952E\uFF09\uFF0C\u6216\u8005 \u8BBE\u7F6E \u203A \u8BBE\u5907 \u203A \u6E38\u620F\u624B\u67C4 \u5173\u6389\u300C\u4F7F\u7528\u6CE8\u89C6\u5149\u6807\u300D";
+function createQuestInputAdvisor() {
+  let padsNow = 0;
+  let padsEverSeen = false;
+  let comboAt = -Infinity;
+  let typingSeen = false;
+  let navSince = -1;
+  let wheels = 0;
+  const given = /* @__PURE__ */ new Set();
+  const combo = () => {
+    if (given.has("combo")) return null;
+    given.add("combo");
+    given.add("gaze");
+    return {
+      reason: "combo",
+      text: `\u624B\u67C4\u88AB Quest \u6536\u8D70\u4E86\uFF1A\u521A\u624D\u540C\u65F6\u6309\u4E86 Start + Select\uFF0C\u90A3\u6B63\u662F Quest \u7684\u300C\u6CE8\u89C6\u5149\u6807\u300D\u5F00\u5173\uFF08View + Menu\uFF09\u3002\u518D\u540C\u65F6\u6309\u4E00\u6B21\u5C31\u56DE\u6765`,
+      log: "Quest \u8F93\u5165\uFF1ASelect + Start \u540C\u6309\u540E\u624B\u67C4\u4ECE Gamepad API \u6D88\u5931 \u2192 \u5224\u4E3A\u7CFB\u7EDF\u6CE8\u89C6\u5149\u6807\u5F00\u5173\uFF08View + Menu\uFF09\uFF0C\u5DF2\u63D0\u793A"
+    };
+  };
+  const gaze = () => {
+    if (given.has("gaze")) return null;
+    given.add("gaze");
+    return {
+      reason: "gaze",
+      text: `\u6536\u5230\u7684\u662F\u65B9\u5411\u952E / \u56DE\u8F66\uFF0C\u4E0D\u662F\u624B\u67C4\u3002\u5982\u679C\u4F60\u624B\u4E0A\u662F\u624B\u67C4\uFF1AQuest \u6B63\u62FF\u5B83\u5F53\u5149\u6807\u7528\uFF0C\u7F51\u9875\u770B\u4E0D\u5230\u3002${QUEST_PAD_HOWTO}`,
+      log: `Quest \u8F93\u5165\uFF1AGamepad API \u6CA1\u6709\u624B\u67C4\uFF0C\u5374\u6765\u4E86\u53EA\u6709\u5BFC\u822A\u952E\u7684\u952E\u76D8\u8F93\u5165\uFF08${GAZE_CONFIRM_MS / 1e3} s \u5185\u6CA1\u6709\u6253\u5B57\u952E\uFF1B\u6EDA\u8F6E ${wheels} \u6B21\uFF09\u2192 \u5224\u4E3A\u6CE8\u89C6\u5149\u6807\u6A21\u5F0F\u7684\u624B\u67C4\uFF0C\u5DF2\u63D0\u793A`
+    };
+  };
+  return {
+    feed(s) {
+      switch (s.kind) {
+        case "pads": {
+          const before = padsNow;
+          padsNow = s.count;
+          if (s.count > 0) {
+            padsEverSeen = true;
+            navSince = -1;
+            return null;
+          }
+          if (before > 0 && s.now - comboAt < COMBO_WINDOW_MS) return combo();
+          return null;
+        }
+        case "combo":
+          comboAt = s.now;
+          return null;
+        case "wheel":
+          wheels++;
+          return null;
+        case "key":
+          if (isTypingKey(s.code)) {
+            typingSeen = true;
+            navSince = -1;
+            return null;
+          }
+          if (padsNow > 0 || typingSeen) return null;
+          if (s.now - comboAt < COMBO_WINDOW_MS && padsEverSeen) return combo();
+          if (navSince < 0) navSince = s.now;
+          return null;
+        case "tick":
+          if (navSince >= 0 && !typingSeen && padsNow === 0 && s.now - navSince >= GAZE_CONFIRM_MS) {
+            navSince = -1;
+            return gaze();
+          }
+          return null;
+      }
+    },
+    /** 真键盘玩家：按过打字键就不再拿导航键当证据（main.ts 也拿它决定要不要收起软键）。 */
+    get typingSeen() {
+      return typingSeen;
+    },
+    get wheels() {
+      return wheels;
+    }
+  };
+}
+
 // src/app/disc-tools.ts
 var CHUNK = 8 * 2 ** 20;
 var canWriteLocalFiles = () => typeof globalThis.showSaveFilePicker === "function" && typeof globalThis.showOpenFilePicker === "function";
@@ -11974,9 +12056,11 @@ function pollGamepads(s) {
   }
   const names = [];
   let pressed = false;
+  let combo = false;
   for (const gp of navigator.getGamepads?.() ?? []) {
     if (!gp || !gp.connected) continue;
     names.push(gp.id.slice(0, 40) + (gp.mapping === "standard" ? "" : "\uFF08\u975E\u6807\u51C6\u5E03\u5C40\uFF0C\u952E\u4F4D\u53EF\u80FD\u4E0D\u5BF9\uFF09"));
+    if (gp.buttons[8]?.pressed && gp.buttons[9]?.pressed) combo = true;
     for (const [i, name] of PAD_MAP) if (gp.buttons[i]?.pressed) {
       mask |= bit(name);
       pressed = true;
@@ -11997,7 +12081,18 @@ function pollGamepads(s) {
   if (pressed) hardwareInput("\u624B\u67C4");
   s.setMask("pad", mask);
   s.setAnalog(ax, ay);
+  if (questAdvisor) {
+    const now = performance.now();
+    if (combo && !comboHeld) {
+      logEvent("info", "\u624B\u67C4\uFF1ASelect + Start \u540C\u65F6\u6309\u4E0B\uFF08Quest \u4E0A\u8FD9\u5C31\u662F View + Menu = \u7CFB\u7EDF\u300C\u6CE8\u89C6\u5149\u6807\u300D\u5F00\u5173\uFF09");
+      questFeed({ kind: "combo", now });
+    }
+    comboHeld = combo;
+    questFeed({ kind: "pads", count: names.length, now });
+    questFeed({ kind: "tick", now });
+  }
 }
+var comboHeld = false;
 var statusAt = 0;
 var lastFrameAt = performance.now();
 var perfLogAt = 0;
@@ -12030,7 +12125,7 @@ function frame(gen) {
       perfLogAt = now;
       perfLogged++;
       const s = session.stats();
-      logEvent("info", `\u6027\u80FD\uFF1A${s.fps.toFixed(0)} fps \xB7 \u901F\u5EA6 ${pct(s.speed)} \xB7 ${s.renderer} \xB7 ${perfLines(s).join(" \xB7 ")} \xB7 \u624B\u67C4\uFF1A${padInfo || "Gamepad API \u6CA1\u770B\u5230\u624B\u67C4"}${s.coreLog().length ? ` \xB7 \u6838 stderr\uFF1A${s.coreLog().slice(-3).join(" | ")}` : ""}`);
+      logEvent("info", `\u6027\u80FD\uFF1A${s.fps.toFixed(0)} fps \xB7 \u901F\u5EA6 ${pct(s.speed)} \xB7 ${s.renderer} \xB7 ${perfLines(s).join(" \xB7 ")} \xB7 \u624B\u67C4\uFF1A${padInfo || "Gamepad API \u6CA1\u770B\u5230\u624B\u67C4"}${questAdvisor ? ` \xB7 \u6EDA\u8F6E ${questAdvisor.wheels} \u6B21` : ""}${s.coreLog().length ? ` \xB7 \u6838 stderr\uFF1A${s.coreLog().slice(-3).join(" | ")}` : ""}`);
     }
   }
   (pip.window ?? window).requestAnimationFrame(() => frame(gen));
@@ -12105,6 +12200,13 @@ var KEYMAP = {
 };
 var STICK_KEYS = { KeyI: [0, -1], KeyK: [0, 1], KeyJ: [-1, 0], KeyL: [1, 0], PadLUp: [0, -1], PadLDown: [0, 1], PadLRight: [1, 0], PadLLeft: [-1, 0] };
 var IS_QUEST = /\bQuest\b|OculusBrowser/.test(navigator.userAgent);
+var questAdvisor = IS_QUEST ? createQuestInputAdvisor() : null;
+function questFeed(sig) {
+  const adv = questAdvisor?.feed(sig);
+  if (!adv) return;
+  logEvent("info", adv.log);
+  say(adv.text, 15e3);
+}
 var PAD_KEYCODES = {
   195: "PadA",
   196: "PadB",
@@ -12156,8 +12258,12 @@ var rightShift = false;
 function onKey(e, down) {
   if (!session || isSheetOpen()) return;
   const code = keyCodeOf(e);
-  if (down && !e.repeat) noteKey(e, code);
+  if (down && !e.repeat) {
+    noteKey(e, code);
+    questFeed({ kind: "key", code, now: performance.now() });
+  }
   const kind = code.startsWith("Pad") ? "\u624B\u67C4" : "\u952E\u76D8";
+  const counts = !(IS_QUEST && kind === "\u952E\u76D8" && !isTypingKey(code) && !questAdvisor?.typingSeen);
   if (down && e.code === "Enter" && e.altKey) {
     e.preventDefault();
     toggleFullscreen();
@@ -12178,7 +12284,7 @@ function onKey(e, down) {
     e.preventDefault();
     if (down) {
       stickKeysDown.add(code);
-      hardwareInput(kind);
+      if (counts) hardwareInput(kind);
     } else stickKeysDown.delete(code);
     updateKeyAnalog(e.getModifierState?.("Shift") && e.location === 2 || rightShift);
     return;
@@ -12220,7 +12326,7 @@ function onKey(e, down) {
   const b = KEYMAP[code];
   if (!b) return;
   e.preventDefault();
-  if (down) hardwareInput(kind);
+  if (down && counts) hardwareInput(kind);
   const m = session.getMask("keyboard");
   session.setMask("keyboard", down ? m | bit(b) : m & ~bit(b));
 }
@@ -12373,6 +12479,9 @@ async function boot() {
   addEventListener("gamepadconnected", (e) => logEvent("info", `\u624B\u67C4\u63A5\u5165\uFF08Gamepad API\uFF09\uFF1A${padLine(e.gamepad)}`));
   addEventListener("gamepaddisconnected", (e) => logEvent("info", `\u624B\u67C4\u62D4\u51FA\uFF08Gamepad API\uFF09\uFF1A${padLine(e.gamepad)}`));
   addEventListener("keyup", (e) => onKey(e, false));
+  if (questAdvisor) addEventListener("wheel", () => {
+    if (session) questFeed({ kind: "wheel", now: performance.now() });
+  }, { passive: true });
   addEventListener("blur", () => session?.setMask("keyboard", 0));
   subscribe((s) => {
     syncState = s;
@@ -12573,4 +12682,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-469934a3044f.mjs.map
+//# sourceMappingURL=kudsrocket-bfdc0a844343.mjs.map
