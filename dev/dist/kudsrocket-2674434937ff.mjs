@@ -1,5 +1,5 @@
 // src/version.ts
-var APP_VERSION = "v0.1.43-2026-10-16";
+var APP_VERSION = "v0.1.44-2026-10-16";
 
 // assets/icons.svg
 var icons_default = '<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none">\n<!--\n  14 icons extracted from the family icon library (../20260708 SVG Icons/icons.svg) by extract-icons.py \u2014 do not hand-edit; re-run the script instead.\n  Family SVG Icons \u2014 MIT License, Copyright (c) 2026 fangzhangmnm.\n  Contains work derived from (per-icon provenance in data-src):\n    Feather Icons \u2014 MIT License, Copyright (c) 2013-2023 Cole Bemis \xB7 https://github.com/feathericons/feather\n-->\n  <!-- media -->\n  <!-- pause \u2014 \u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="pause" data-cat="media" data-src="own" data-note="\u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="3.2"><path d="M8.3 5.5 V18.5"/><path d="M15.7 5.5 V18.5"/></g></symbol>\n  <!-- play \u2014 \u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="play" data-cat="media" data-src="own" data-note="\u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 5.4 L18.8 12 L8.2 18.6 Z" fill="currentColor"/></symbol>\n  <!-- fast-forward \u2014 \u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="fast-forward" data-cat="media" data-src="own" data-note="\u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.4 6.8 L10.9 12 L4.4 17.2 Z" fill="currentColor"/><path d="M13.1 6.8 L19.6 12 L13.1 17.2 Z" fill="currentColor"/></symbol>\n  <!-- volume \u2014 \u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009) -->\n  <symbol id="volume" data-cat="media" data-src="own" data-note="\u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 10.3 H8.7 L12.6 6.6 V17.4 L8.7 13.7 H5.5 Z" fill="currentColor"/><path d="M15.13 9.73 A3.4 3.4 0 0 1 15.13 14.27"/><path d="M16.36 7.19 A6.1 6.1 0 0 1 16.36 16.81"/></symbol>\n  <!-- file -->\n  <!-- floppy-disk \u2014 \u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3 -->\n  <symbol id="floppy-disk" data-cat="file" data-src="feather:save" data-note="\u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13l3 3v13a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 17 8 17 3"/></symbol>\n  <!-- folder-open \u2014 \u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF -->\n  <symbol id="folder-open" data-cat="file" data-src="own" data-note="\u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18 V7 a2 2 0 0 1 2 -2 h4 l2 2 h6 a2 2 0 0 1 2 2 v1.8"/><path d="M3 18 L6.4 10.8 H21.6 L18.2 18 Z"/></symbol>\n  <!-- hierarchy -->\n  <!-- lock \u2014 \u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D -->\n  <symbol id="lock" data-cat="hierarchy" data-src="own" data-note="\u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10" width="13" height="11"/><path d="M8.8 10 V6.5 a3.2 3.2 0 0 1 6.4 0 V10"/></symbol>\n  <!-- common -->\n  <!-- x \u2014 \u53C9 -->\n  <symbol id="x" data-cat="common" data-src="own" data-note="\u53C9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 L17.5 17.5 M17.5 6.5 L6.5 17.5"/></symbol>\n  <!-- cloud -->\n  <!-- cloud \u2014 \u4E91 -->\n  <symbol id="cloud" data-cat="cloud" data-src="feather:cloud" data-note="\u4E91" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>\n  <!-- viewport -->\n  <!-- maximize-viewport \u2014 \u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55) -->\n  <symbol id="maximize-viewport" data-cat="viewport" data-src="own" data-note="\u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934 --> <polyline points="4 9 4 4 9 4"/> <polyline points="20 9 20 4 15 4"/> <polyline points="4 15 4 20 9 20"/> <polyline points="20 15 20 20 15 20"/></symbol>\n  <!-- picture-in-picture \u2014 \u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1) -->\n  <symbol id="picture-in-picture" data-cat="viewport" data-src="own" data-note="\u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u5927\u6846\uFF08\u4E3B\u753B\u5E03\uFF09+ \u5185\u5D4C\u5C0F\u7A97\uFF08\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1\uFF09\u2014\u2014 picture-in-picture \u9690\u55BB --> <rect x="3" y="4" width="18" height="14" rx="2"/> <rect x="12" y="10" width="7" height="5" rx="1"/></symbol>\n  <!-- ui -->\n  <!-- more \u2014 \u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00) -->\n  <symbol id="more" data-cat="ui" data-src="own" data-note="\u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/></symbol>\n  <!-- keyboard \u2014 \u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49) -->\n  <symbol id="keyboard" data-cat="ui" data-src="own" data-note="\u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="7.2" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="7.2" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><path d="M8.6 15.6 H15.4"/></symbol>\n  <!-- menu \u2014 \u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17) -->\n  <symbol id="menu" data-cat="ui" data-src="own" data-note="\u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"></line> <line x1="4" y1="12" x2="20" y2="12"></line> <line x1="4" y1="17" x2="20" y2="17"></line></symbol>\n</svg>\n';
@@ -236,7 +236,7 @@ var CoreSession = class _CoreSession {
           }
         }
       },
-      arguments: [`/disc/game${opts.ext}`, String(media.size), ...opts.lowLatency ? ["lowlatency"] : [], ...opts.cpuCore === "interp" ? ["cpu=interp"] : [], ...opts.skinning === "gpu" ? ["skin=gpu"] : []],
+      arguments: [`/disc/game${opts.ext}`, String(media.size), ...opts.lowLatency ? ["lowlatency"] : [], ...opts.cpuCore === "interp" ? ["cpu=interp"] : [], ...opts.skinning === "gpu" ? ["skin=gpu"] : [], ...opts.presentEvery ? [`cadence=${opts.presentEvery}`] : []],
       locateFile: (path) => new URL(`${opts.coreDir}${path}`, location.href).href,
       preRun: [(M) => {
         if (!opts.memstick?.size) return;
@@ -651,8 +651,12 @@ var CoreSession = class _CoreSession {
       pacing: autoWall ? "\u5899\u949F\uFF08\u8BBE\u7684\u662F\u8DDF\u5C4F\u5E55\uFF1B\u6838\u91CF\u5230 rAF \u6162\uFF0C\u81EA\u52A8\u5207\uFF09" : ["\u5899\u949F", "\u58F0\u97F3", "\u8DDF\u5C4F\u5E55"][pacing] + (pacing === 2 ? ["\uFF08\u6309\u65F6\u95F4\u5BF9\u9F50\uFF09", "\uFF08\u6BCF\u5237\u65B0 1 \u5E27\uFF09"][core._kr_vsync_lock()] : ""),
       catchup: core._kr_catchup_runs(),
       reanchors: core._kr_reanchors(),
+      /** 现在实际按哪种排程跑（核自己改成墙钟也算 wall）。 */
+      pacingMode: autoWall ? "wall" : ["wall", "audio", "vsync"][pacing],
       /** 核线程 rAF 的间隔（EMA，ms；0 = 不是跟屏幕排程）：Safari 把 worker 的 rAF 压慢时这里 > 16.7。 */
       vsyncDt: core._kr_vsync_dt(),
+      /** 上屏节拍（cadence.h）：跟屏幕排程下每几次刷新上屏一帧；1 = 每次。72 Hz 屏放 30 帧的游戏 → 3（24 fps 匀速，不然每帧交替占 2 / 3 次刷新 = 抖）。老核 = 1。 */
+      presentEvery: core._kr_present_every ? core._kr_present_every() : 1,
       win: this.win,
       /** 核的帧循环多久没被调用了（ms；-1 = 老核不知道）。大 = 循环死了（rAF 没人调）；小而帧数不走 = 卡在 retro_run 里。 */
       loopAgeMs: core._kr_loop_last_ms ? loopAge(core._kr_loop_last_ms()) : -1,
@@ -11071,13 +11075,15 @@ async function play(prepare, resume) {
     onInput: () => activity?.input(performance.now()),
     media: disc.media,
     ext: disc.ext,
-    coreDir: "./dist/core-a13f398ca92a/",
+    coreDir: "./dist/core-f0cc51f88e74/",
     glCanvas: $("gl"),
     softCanvas: $("screen"),
     audioContext: audioContext(),
     lowLatency: params.get("lowlatency") !== "0",
     pacing: params.get("pace") === "wall" ? "wall" : params.get("pace") === "audio" ? "audio" : void 0,
     cpuCore: params.get("cpu") === "interp" ? "interp" : void 0,
+    presentEvery: Number(params.get("cadence")) || 0,
+    // 诊断：强制上屏节拍（见 CoreSession opts）
     skinning: params.get("skin") === "cpu" ? "cpu" : "gpu",
     // 10-16 默认 GPU 蒙皮：PC 量过模拟线程 28%→25% 忙、顶点缓冲 2.4→1.4 MB/帧（wasm 没有 JIT 顶点解码器，软件蒙皮不划算）；?skin=cpu 退回
     memstick,
@@ -11606,7 +11612,7 @@ function openMenu() {
           s.setFrameCap30(!s.frameCap30);
           renderToolbar();
         }, s.frameCap30),
-        item(s.pacingMode() === "wall" ? "\u6392\u7A0B\uFF1A\u5899\u949F \u2192 \u8DDF\u5C4F\u5E55" : "\u6392\u7A0B\uFF1A\u8DDF\u5C4F\u5E55 \u2192 \u5899\u949F", "\u5E27\u7387\u4F4E\u4F46\u6838\u4E0D\u5FD9\u65F6\u6362\u4E00\u79CD\u5BF9\u7167\uFF08\u8BCA\u65AD\u7528\uFF09", () => {
+        item(s.pacingMode() === "wall" ? "\u6392\u7A0B\uFF1A\u5899\u949F \u2192 \u8DDF\u5C4F\u5E55" : "\u6392\u7A0B\uFF1A\u8DDF\u5C4F\u5E55 \u2192 \u5899\u949F", "\u8DDF\u5C4F\u5E55 = \u8DDF\u663E\u793A\u5668\u5237\u65B0\u8D70\uFF0872 Hz \u5C4F\u653E 30 \u5E27\u6E38\u620F\u65F6\u6309\u56FA\u5B9A\u8282\u62CD\u4E0A\u5C4F\uFF09\uFF1B\u5899\u949F = \u6838\u81EA\u5DF1\u8BA1\u65F6\uFF08\u5E27\u7387\u6570\u5B57\u9AD8\uFF0C\u5237\u65B0\u7387\u9664\u4E0D\u5C3D\u65F6\u753B\u9762\u6296\uFF09", () => {
           s.setPacing(s.pacingMode() === "wall" ? "vsync" : "wall");
           renderToolbar();
         }, s.pacingMode() === "wall"),
@@ -12008,7 +12014,7 @@ function frame(gen) {
       perfLogAt = now;
       perfLogged++;
       const s = session.stats();
-      logEvent("info", `\u6027\u80FD\uFF1A${s.fps.toFixed(0)} fps \xB7 \u901F\u5EA6 ${pct(s.speed)} \xB7 ${s.renderer} \xB7 ${perfLines(s).join(" \xB7 ")}${s.coreLog().length ? ` \xB7 \u6838 stderr\uFF1A${s.coreLog().slice(-3).join(" | ")}` : ""}`);
+      logEvent("info", `\u6027\u80FD\uFF1A${s.fps.toFixed(0)} fps \xB7 \u901F\u5EA6 ${pct(s.speed)} \xB7 ${s.renderer} \xB7 ${perfLines(s).join(" \xB7 ")} \xB7 \u624B\u67C4\uFF1A${padInfo || "Gamepad API \u6CA1\u770B\u5230\u624B\u67C4"}${s.coreLog().length ? ` \xB7 \u6838 stderr\uFF1A${s.coreLog().slice(-3).join(" | ")}` : ""}`);
     }
   }
   (pip.window ?? window).requestAnimationFrame(() => frame(gen));
@@ -12019,11 +12025,17 @@ function perfLines(s) {
   if (!p) return ["\u6838\u7EBF\u7A0B\uFF1A\u8FD8\u6CA1\u6709\u8BFB\u6570\uFF08\u521A\u8D77 / \u8001\u6838\uFF09"];
   if (s.win.ranFrames === 0) return [`\u6838\u7EBF\u7A0B\uFF1A\u8FD9\u4E00\u79D2\u6CA1\u8DD1\u5E27\uFF08${s.paused ? "\u6682\u505C\u4E2D" : "\u6838\u6CA1\u5728\u8DD1"}\uFF09${s.glRenderer ? ` \xB7 ${s.glRenderer}` : ""}`];
   const capText = s.frameCap.want ? s.frameCap.active ? "\u751F\u6548" : `\u5F85\u547D\uFF08\u672C\u8EAB ${s.frameCap.nativeFps ? s.frameCap.nativeFps.toFixed(0) + " \u5E27" : "\u672A\u91CF"}\uFF09` : "\u5173";
-  const rafSlow = s.vsyncDt > 21;
-  const who = p.emuBusy > 0.85 ? "\u6A21\u62DF\u7EBF\u7A0B\uFF08CPU\uFF1A\u89E3\u91CA\u5668 / \u9876\u70B9\u89E3\u7801\uFF09" : p.submitBusy > 0.7 ? "\u63D0\u4EA4\u7EBF\u7A0B\uFF08GL \u8C03\u7528\u592A\u591A / \u592A\u8D35\uFF09" : s.fps < 50 && rafSlow ? `\u6392\u7A0B\uFF08\u6838\u7684 rAF \u88AB\u538B\u6162\u5230 ${s.vsyncDt.toFixed(0)} ms\uFF1AGPU \u8FDB\u7A0B\u8DDF\u4E0D\u4E0A\u6216\u6D4F\u89C8\u5668\u8282\u6D41\u2014\u2014\u2630 \u5207\u300C\u5899\u949F\u300D\u5BF9\u7167\uFF09` : s.fps < 50 ? "\u6D4F\u89C8\u5668 / GPU\uFF08\u4E24\u6761\u7EBF\u7A0B\u90FD\u4E0D\u7D27\u3001rAF \u4E5F\u51C6\u65F6\uFF09" : "\u90FD\u4E0D\u7D27";
+  const nativeShown = s.frameCap.nativeFps ? s.frameCap.nativeFps / (s.frameCap.active ? 2 : 1) : 0;
+  const shownTarget = s.presentEvery > 1 && s.displayHz ? s.displayHz / s.presentEvery : nativeShown || 60;
+  const onPace = s.fps >= shownTarget * 0.9 && s.speed > 0.95;
+  const rafSlow = s.pacingMode === "vsync" && s.vsyncDt > 21;
+  const who = p.emuBusy > 0.85 ? "\u6A21\u62DF\u7EBF\u7A0B\uFF08CPU\uFF1A\u89E3\u91CA\u5668 / \u9876\u70B9\u89E3\u7801\uFF09" : p.submitBusy > 0.7 ? "\u63D0\u4EA4\u7EBF\u7A0B\uFF08GL \u8C03\u7528\u592A\u591A / \u592A\u8D35\uFF09" : onPace ? "\u90FD\u4E0D\u7D27" : rafSlow ? `\u6392\u7A0B\uFF08\u6838\u7684 rAF \u88AB\u538B\u6162\u5230 ${s.vsyncDt.toFixed(0)} ms\uFF1AGPU \u8FDB\u7A0B\u8DDF\u4E0D\u4E0A\u6216\u6D4F\u89C8\u5668\u8282\u6D41\u2014\u2014\u2630 \u5207\u300C\u5899\u949F\u300D\u5BF9\u7167\uFF09` : "\u6D4F\u89C8\u5668 / GPU\uFF08\u4E24\u6761\u7EBF\u7A0B\u90FD\u4E0D\u7D27\u3001rAF \u4E5F\u51C6\u65F6\uFF09";
+  const ratio = s.displayHz && nativeShown ? s.displayHz / nativeShown : 0;
+  const uneven = ratio > 1.5 && Math.abs(ratio - Math.round(ratio)) > 0.05 * ratio;
+  const cadence = s.presentEvery > 1 ? ` \xB7 \u4E0A\u5C4F\u8282\u62CD\uFF1A\u6BCF ${s.presentEvery} \u6B21\u5237\u65B0 1 \u5E27\uFF08${(s.displayHz / s.presentEvery).toFixed(0)} fps \u5300\u901F\uFF1B${s.displayHz.toFixed(0)} Hz \u5C4F\u9664\u4E0D\u5C3D ${nativeShown.toFixed(0)} \u5E27\uFF0C\u591A\u51FA\u7684\u5E27\u4E22\u6389\u4E0D\u91CD\u590D\uFF09` : uneven ? ` \xB7 \u8282\u594F\uFF1A${s.displayHz.toFixed(0)} Hz \u5C4F\u653E ${nativeShown.toFixed(0)} \u5E27\u7684\u6E38\u620F\u9664\u4E0D\u5C3D\u2014\u2014\u6BCF\u5E27\u4EA4\u66FF\u5360 ${Math.floor(ratio)} / ${Math.ceil(ratio)} \u6B21\u5237\u65B0\uFF08\u770B\u7740\u6296\uFF1B\u8DDF\u5C4F\u5E55\u6392\u7A0B\u4F1A\u6309\u56FA\u5B9A\u8282\u62CD\u4E0A\u5C4F\uFF09` : "";
   return [
     `\u6838\u7EBF\u7A0B\uFF1A\u6A21\u62DF ${pct(p.emuBusy)} \u5FD9 \xB7 \u63D0\u4EA4 ${pct(p.submitBusy)} \u5FD9\uFF08retro_run \u5747 ${p.runMsPerFrame.toFixed(1)} / \u6700\u957F ${p.runMaxMs.toFixed(0)} ms \xB7 \u4E0A\u5C4F ${p.presentMs.toFixed(2)} ms\uFF09\xB7 \u74F6\u9888\uFF1A${who}${p.glErrors ? ` \xB7 GL \u9519\u8BEF 0x${p.glError.toString(16)} \xD7${p.glErrors}` : ""}${s.glRenderer ? ` \xB7 ${s.glRenderer}` : ""}`,
-    `\u6392\u7A0B\uFF1A${s.pacing} \xB7 \u6838 rAF \u95F4\u9694 ${s.vsyncDt ? s.vsyncDt.toFixed(1) + " ms" : "\u2014"} \xB7 \u51FA\u5E27\u95F4\u9694 ${s.pace.mean.toFixed(1)} \xB1 ${s.pace.sd.toFixed(1)} / \u6700\u957F ${s.pace.max.toFixed(0)} ms \xB7 \u8FFD\u8FDB\u5EA6 ${s.win.catchupPerSec.toFixed(0)} \u5E27/s \xB7 \u91CD\u951A ${s.win.reanchorsPerSec.toFixed(1)}/s \xB7 \u8DF3\u5E27 ${s.frameskip} \xB7 \u753B 30 \u5E27\uFF1A${capText} \xB7 \u4E3B\u7EBF\u7A0B ${s.displayHz.toFixed(0)} Hz\uFF08\u6BCF\u6B21\u5237\u65B0\u65B0\u5E27 0/1/2+\uFF1A${s.perRefresh.join("/")}\uFF09`,
+    `\u6392\u7A0B\uFF1A${s.pacing} \xB7 \u6838 rAF \u95F4\u9694 ${s.vsyncDt ? s.vsyncDt.toFixed(1) + " ms" : "\u2014"} \xB7 \u51FA\u5E27\u95F4\u9694 ${s.pace.mean.toFixed(1)} \xB1 ${s.pace.sd.toFixed(1)} / \u6700\u957F ${s.pace.max.toFixed(0)} ms \xB7 \u8FFD\u8FDB\u5EA6 ${s.win.catchupPerSec.toFixed(0)} \u5E27/s \xB7 \u91CD\u951A ${s.win.reanchorsPerSec.toFixed(1)}/s \xB7 \u8DF3\u5E27 ${s.frameskip} \xB7 \u753B 30 \u5E27\uFF1A${capText} \xB7 \u4E3B\u7EBF\u7A0B ${s.displayHz.toFixed(0)} Hz\uFF08\u6BCF\u6B21\u5237\u65B0\u65B0\u5E27 0/1/2+\uFF1A${s.perRefresh.join("/")}\uFF09${cadence}`,
     `\u6BCF\u5E27 GL\uFF1A\u753B ${p.draws.toFixed(0)} \u6B21 \xB7 \u6362\u7A0B\u5E8F ${p.prog.toFixed(0)} \xB7 \u8D34\u56FE ${p.tex.toFixed(1)}\uFF08${(p.texPx / 1e3).toFixed(0)}k px\uFF0C${p.texMs.toFixed(2)} ms\uFF09\xB7 \u7F13\u51B2 ${p.buf.toFixed(1)}\uFF08${(p.bufBytes / 1024).toFixed(0)} KB\uFF0C${p.bufMs.toFixed(2)} ms\uFF09\xB7 map ${p.map.toFixed(1)}\uFF08${p.mapMs.toFixed(2)} ms\uFF09\xB7 \u56DE\u8BFB ${p.read.toFixed(1)}\uFF08${p.readMs.toFixed(2)} ms\uFF09\xB7 \u540C\u6B65 ${p.sync.toFixed(1)}\uFF08${p.syncMs.toFixed(2)} ms\uFF09\xB7 blit ${p.blit.toFixed(1)} \xB7 PPSSPP\uFF1Adraw ${p.ppsspp.drawCalls} \xB7 \u9876\u70B9 ${p.ppsspp.vertsSubmitted}\uFF08\u89E3\u7801 ${p.ppsspp.vertsDecoded}\uFF09\xB7 \u8D34\u56FE\u89E3\u7801 ${p.ppsspp.texturesDecoded} \xB7 \u56DE\u8BFB ${p.ppsspp.readbacks} \xB7 \u62F7\u8D1D ${p.ppsspp.copies} \xB7 \u663E\u793A\u5217\u8868 ${p.ppsspp.listMs.toFixed(1)} ms`
   ];
 }
@@ -12041,8 +12053,77 @@ function statusText() {
     `\u952E\u76D8\uFF08\u540C PPSSPP \u9ED8\u8BA4\uFF09\uFF1A\u65B9\u5411\u952E \u5341\u5B57 \xB7 I/J/K/L \u6447\u6746\uFF08\u53F3 Shift \u8F7B\u63A8\uFF09\xB7 X \u25CB \xB7 Z \xD7 \xB7 A \u25A1 \xB7 S \u25B3 \xB7 Q/W L/R \xB7 \u7A7A\u683C Start \xB7 V / \u56DE\u8F66 Select \xB7 Esc / P \u6682\u505C \xB7 \u6309\u4F4F Tab \u5FEB\u8FDB \xB7 \` \u5FEB\u8FDB\u5F00\u5173 \xB7 M \u9759\u97F3 \xB7 F2 \u5B58 / F4 \u8BFB\u5F53\u524D\u683C`
   ].join("\n");
 }
-var KEYMAP = { ArrowUp: "up", ArrowDown: "down", ArrowLeft: "left", ArrowRight: "right", KeyX: "circle", KeyZ: "cross", KeyA: "square", KeyS: "triangle", Space: "start", KeyV: "select", Enter: "select", KeyQ: "l", KeyW: "r" };
-var STICK_KEYS = { KeyI: [0, -1], KeyK: [0, 1], KeyJ: [-1, 0], KeyL: [1, 0] };
+var KEYMAP = {
+  ArrowUp: "up",
+  ArrowDown: "down",
+  ArrowLeft: "left",
+  ArrowRight: "right",
+  KeyX: "circle",
+  KeyZ: "cross",
+  KeyA: "square",
+  KeyS: "triangle",
+  Space: "start",
+  KeyV: "select",
+  Enter: "select",
+  KeyQ: "l",
+  KeyW: "r",
+  // 手柄当键盘来的（下面 PAD_KEYCODES 翻出来的假 code）：A × · B ○ · X □ · Y △ · 肩键 / 扳机 L R · 十字 · Menu Start · View Select · 右摇杆四向 → 十字
+  PadA: "cross",
+  PadB: "circle",
+  PadX: "square",
+  PadY: "triangle",
+  PadRB: "r",
+  PadLB: "l",
+  PadLT: "l",
+  PadRT: "r",
+  PadUp: "up",
+  PadDown: "down",
+  PadLeft: "left",
+  PadRight: "right",
+  PadMenu: "start",
+  PadView: "select",
+  PadRUp: "up",
+  PadRDown: "down",
+  PadRRight: "right",
+  PadRLeft: "left"
+};
+var STICK_KEYS = { KeyI: [0, -1], KeyK: [0, 1], KeyJ: [-1, 0], KeyL: [1, 0], PadLUp: [0, -1], PadLDown: [0, 1], PadLRight: [1, 0], PadLLeft: [-1, 0] };
+var PAD_KEYCODES = {
+  195: "PadA",
+  196: "PadB",
+  197: "PadX",
+  198: "PadY",
+  199: "PadRB",
+  200: "PadLB",
+  201: "PadLT",
+  202: "PadRT",
+  203: "PadUp",
+  204: "PadDown",
+  205: "PadLeft",
+  206: "PadRight",
+  207: "PadMenu",
+  208: "PadView",
+  211: "PadLUp",
+  212: "PadLDown",
+  213: "PadLRight",
+  214: "PadLLeft",
+  215: "PadRUp",
+  216: "PadRDown",
+  217: "PadRRight",
+  218: "PadRLeft"
+};
+function keyCodeOf(e) {
+  return e.code && e.code !== "Unidentified" ? e.code : PAD_KEYCODES[e.keyCode] ?? "";
+}
+var seenKeys = /* @__PURE__ */ new Set();
+function noteKey(e, code) {
+  if (seenKeys.size >= 16) return;
+  const sig = `${e.code}|${e.keyCode}|${e.location}`;
+  if (seenKeys.has(sig)) return;
+  seenKeys.add(sig);
+  const mapped = KEYMAP[code] ? `\u2192 ${KEYMAP[code]}` : STICK_KEYS[code] ? "\u2192 \u6447\u6746" : "\xB7 \u6CA1\u6620\u5C04\u5230 PSP \u952E";
+  logEvent("info", `\u8F93\u5165\uFF1A\u952E code=${e.code || "(\u7A7A)"} key=${e.key.length > 1 ? e.key : "(\u5B57\u7B26)"} keyCode=${e.keyCode} location=${e.location}${code !== e.code ? ` \u2192 ${code}` : ""} ${mapped}`);
+}
 var stickKeysDown = /* @__PURE__ */ new Set();
 var keyAnalog = { x: 0, y: 0 };
 function updateKeyAnalog(lightly) {
@@ -12057,6 +12138,9 @@ function updateKeyAnalog(lightly) {
 var rightShift = false;
 function onKey(e, down) {
   if (!session || isSheetOpen()) return;
+  const code = keyCodeOf(e);
+  if (down && !e.repeat) noteKey(e, code);
+  const kind = code.startsWith("Pad") ? "\u624B\u67C4" : "\u952E\u76D8";
   if (down && e.code === "Enter" && e.altKey) {
     e.preventDefault();
     toggleFullscreen();
@@ -12073,12 +12157,12 @@ function onKey(e, down) {
     if (!e.repeat) setFast(down);
     return;
   }
-  if (STICK_KEYS[e.code]) {
+  if (STICK_KEYS[code]) {
     e.preventDefault();
     if (down) {
-      stickKeysDown.add(e.code);
-      hardwareInput("\u952E\u76D8");
-    } else stickKeysDown.delete(e.code);
+      stickKeysDown.add(code);
+      hardwareInput(kind);
+    } else stickKeysDown.delete(code);
     updateKeyAnalog(e.getModifierState?.("Shift") && e.location === 2 || rightShift);
     return;
   }
@@ -12116,10 +12200,10 @@ function onKey(e, down) {
       return;
     }
   }
-  const b = KEYMAP[e.code];
+  const b = KEYMAP[code];
   if (!b) return;
   e.preventDefault();
-  if (down) hardwareInput("\u952E\u76D8");
+  if (down) hardwareInput(kind);
   const m = session.getMask("keyboard");
   session.setMask("keyboard", down ? m | bit(b) : m & ~bit(b));
 }
@@ -12268,6 +12352,9 @@ async function boot() {
     if (!e.target.closest(".softkeys .pk, .softkeys .dpad")) toggleFullscreen();
   });
   addEventListener("keydown", (e) => onKey(e, true));
+  const padLine = (g) => `${g.id.slice(0, 60)} \xB7 mapping=${g.mapping || "(\u975E\u6807\u51C6)"} \xB7 ${g.buttons.length} \u952E ${g.axes.length} \u8F74`;
+  addEventListener("gamepadconnected", (e) => logEvent("info", `\u624B\u67C4\u63A5\u5165\uFF08Gamepad API\uFF09\uFF1A${padLine(e.gamepad)}`));
+  addEventListener("gamepaddisconnected", (e) => logEvent("info", `\u624B\u67C4\u62D4\u51FA\uFF08Gamepad API\uFF09\uFF1A${padLine(e.gamepad)}`));
   addEventListener("keyup", (e) => onKey(e, false));
   addEventListener("blur", () => session?.setMask("keyboard", 0));
   subscribe((s) => {
@@ -12469,4 +12556,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-53c436cd6689.mjs.map
+//# sourceMappingURL=kudsrocket-2674434937ff.mjs.map

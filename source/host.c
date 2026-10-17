@@ -26,6 +26,7 @@
 #include <emscripten/html5.h>
 #include <GLES3/gl3.h>
 #include <libretro.h>
+#include "cadence.h"
 #include <pthread.h>
 #include <stdarg.h>
 #include <stdatomic.h>
@@ -486,7 +487,18 @@ EMSCRIPTEN_KEEPALIVE void kr_set_frameskip_floor(int n) { g_frameskip_floor = n 
 EMSCRIPTEN_KEEPALIVE int kr_frameskip_floor_active(void) { return g_native60 ? g_frameskip_floor : 0; }
 EMSCRIPTEN_KEEPALIVE double kr_native_fps(void) { return atomic_load(&g_native_fps); }
 
+// 上屏节拍（cadence.h；10-16 Quest 72 Hz × 30 帧抖）：k > 1 = 跟屏幕排程下每 k 次刷新才把离屏帧缓冲 blit 到画布，中间的帧丢掉、不重复显示。
+//   核线程每秒按量到的刷新间隔 + 游戏帧率重算（cadence_tick_1s）；video_refresh 在 k > 1 时只记「有新帧」，frame() 在该上屏的那趟末尾统一上屏。
+static atomic_int g_present_every = 1;
+static unsigned g_tick = 0;                  // 跟屏幕排程下 frame() 跑了几趟（rAF 一趟 = 一次刷新）
+static int g_hw_pending = 0;                 // 核画好了一帧还没上屏（只在 k > 1 时用）
+static unsigned g_hw_w = 0, g_hw_h = 0;
+EMSCRIPTEN_KEEPALIVE int kr_present_every(void) { return atomic_load(&g_present_every); }
+static atomic_int g_present_force = 0;        // 启动参数 cadence=N：强制节拍（PC 60 Hz 屏上验这条上屏路径用；0 = 自动）
+static int cadence_deferring(void);          // 现在是不是「攒着到节拍再上屏」（定义在主循环那节：要看排程状态）
+
 static void pace_tick_1s(void); // 排程自检（定义在主循环那节）
+static void cadence_tick_1s(void); // 上屏节拍重算（同上）
 // 每秒一次的杂务（核线程、帧边界上）：GL 有没有报错（核自己只在 debug 构建里查）；游戏本身是 30 还是 60 帧；排程自检。
 static void pf_tick_1s(void) {
   double now = PF_NOW();
@@ -510,6 +522,7 @@ static void pf_tick_1s(void) {
     atomic_store(&g_native_fps, 60.0 / (ratio < 1 ? 1 : ratio));
   }
   pace_tick_1s();
+  cadence_tick_1s();
 }
 // out[0..21] 本文件的累计量；out[22..36] = kr_ppsspp_gpu_stats。只有 run_max（最长一趟 retro_run）读一次清一次。
 EMSCRIPTEN_KEEPALIVE void kr_perf_stats(double *out) {
@@ -628,10 +641,11 @@ EMSCRIPTEN_KEEPALIVE int kr_stat_reads_waiting(void) { return (int)g_reads_waiti
 
 static void video_refresh(const void *data, unsigned width, unsigned height, size_t pitch) {
   if (data == RETRO_HW_FRAME_BUFFER_VALID) {
-    gl_present(width, height);
     g_frame_w = (int)width;
     g_frame_h = (int)height;
     atomic_fetch_add(&g_frame_seq, 1);
+    if (cadence_deferring()) { g_hw_pending = 1; g_hw_w = width; g_hw_h = height; return; } // 到节拍那趟再上屏（frame() 末尾）
+    gl_present(width, height);
     return;
   }
   if (!data) return;
@@ -957,7 +971,7 @@ static atomic_int g_vs_lock = 0;                 // 0 = 按时间累计；1 = �
 static atomic_uint g_catchup_runs = 0;           // 为追进度多跑的帧（累计）
 static atomic_uint g_reanchors = 0;              // 落后太多认了的次数（累计）
 EMSCRIPTEN_KEEPALIVE int kr_vsync_lock(void) { return g_vs_lock; }
-EMSCRIPTEN_KEEPALIVE double kr_vsync_dt(void) { return g_vs_dt; }
+EMSCRIPTEN_KEEPALIVE double kr_vsync_dt(void) { return g_timing_mode == EM_TIMING_RAF ? g_vs_dt : 0; } // 不是跟屏幕排程就是 0（10-16 Quest 日志：切了墙钟还显示开页那一下的 70 ms）
 EMSCRIPTEN_KEEPALIVE unsigned kr_catchup_runs(void) { return g_catchup_runs; }
 EMSCRIPTEN_KEEPALIVE unsigned kr_reanchors(void) { return g_reanchors; }
 EMSCRIPTEN_KEEPALIVE double kr_frame_ms_avg(void) { return g_frame_ms_avg; }
@@ -990,6 +1004,56 @@ EMSCRIPTEN_KEEPALIVE void kr_frame_ms_stats(double *out) {
 
 // 跟屏幕排程下、没暂停、rAF 的间隔连着 2 秒比游戏一帧长 25% 以上 = 浏览器在压 worker 的 rAF（不是核算不动：那种情况 retro_run 自己会长）→ 这一局改墙钟。
 //   参照的是 g_frame_ms_avg（30 帧的游戏一趟 ≈ 33 ms；rAF 33 ms 对它刚好不算慢）。
+static int cadence_deferring(void) { return g_timing_mode == EM_TIMING_RAF && atomic_load(&g_present_every) > 1; }
+// 上屏节拍每秒重算（核线程，pf_tick_1s 里）：只在跟屏幕排程、正常速度、没被核自己改成墙钟、跳帧没因为算不动而开着的时候才 > 1。
+static void cadence_tick_1s(void) {
+  int k = 1;
+  double nfps = atomic_load(&g_native_fps);
+  if (g_timing_mode == EM_TIMING_RAF && g_pacing == 2 && !atomic_load(&g_pacing_auto_wall) && g_speed == 1.0 && !g_paused && g_vs_dt > 0 && nfps > 0) {
+    int skip = (int)atomic_load(&g_frameskip_now), floor_now = kr_frameskip_floor_active();
+    if (skip <= floor_now) {                     // 算得动（跳帧只有「只画 30 帧」那个下限）才谈节拍；算不动时 k = 1，每帧能画出来就上
+      double shown_fps = nfps / (floor_now + 1); // 「只画 30 帧」开着的 60 帧游戏，上屏的是 30
+      k = kr_cadence_k(g_vs_dt, 1000.0 / shown_fps);
+    }
+  }
+  int force = atomic_load(&g_present_force);
+  if (force > 0 && g_timing_mode == EM_TIMING_RAF && g_pacing == 2 && !atomic_load(&g_pacing_auto_wall) && !g_paused) k = force;
+  int old = atomic_exchange(&g_present_every, k);
+  if (old != k) {
+    if (k == 1) g_hw_pending = 0;              // 回到每帧直接上屏：攒着的那帧让下一帧盖掉
+    fprintf(stderr, "[kr] present cadence: every %d refresh(es) (display %.1f ms/tick, game %.1f fps)\n", k, g_vs_dt, nfps);
+  }
+}
+// 上屏节拍 k > 1：该上屏的这趟刷新末尾，把核最近画好的那帧 blit 到画布；不该上屏的趟什么都不画，画布就还显示上一帧（每帧恒定占 k 次刷新）。
+//   这是在 retro_run 之外动 GL 绑定，所以读 / 写帧缓冲绑定先存后还（PPSSPP 自己记着它绑的是哪个）。
+static void present_deferred(void) {
+  GLint read_fb = 0, draw_fb = 0;
+  glGetIntegerv(GL_READ_FRAMEBUFFER_BINDING, &read_fb);
+  glGetIntegerv(GL_DRAW_FRAMEBUFFER_BINDING, &draw_fb);
+  gl_present(g_hw_w, g_hw_h);
+  glBindFramebuffer(GL_READ_FRAMEBUFFER, (GLuint)read_fb);
+  glBindFramebuffer(GL_DRAW_FRAMEBUFFER, (GLuint)draw_fb);
+  g_hw_pending = 0;
+}
+static void present_if_due(void) {
+  int k = atomic_load(&g_present_every);
+  if (k <= 1 || !g_hw_pending) return;
+  if (g_tick % (unsigned)k) return;
+  present_deferred();
+}
+// 跳帧：落后半帧以上每两帧画一帧，两帧以上每三帧画一帧；追到落后不足 1/4 帧才恢复（滞后，免得来回切）。d = 拿来判的欠账（ms），e = 一帧（ms）
+static void apply_frameskip(double d, double e) {
+  int want = g_frameskip_want;
+  if (d > e * 2.0) want = 2;
+  else if (d > e * 0.5) want = want > 1 ? want : 1;
+  else if (d < e * 0.25) want = 0;
+  int floor_now = kr_frameskip_floor_active();
+  if (want < floor_now) want = floor_now;
+  g_frameskip_want = want;
+  g_frameskip_now = want;
+  if (g_frameskip_want != g_frameskip_told) { kr_ppsspp_set_frameskip(g_frameskip_want); g_frameskip_told = g_frameskip_want; }
+}
+
 static void pace_tick_1s(void) {
   if (g_pacing != 2 || g_timing_mode != EM_TIMING_RAF || g_paused || g_vs_dt <= 0 || atomic_load(&g_pacing_auto_wall)) { g_raf_slow_secs = 0; return; }
   if (g_vs_dt > g_frame_ms_avg * 1.25) {
@@ -1047,9 +1111,12 @@ static void frame(void) {
   atomic_store(&g_loop_last, g_last_frame_at);
   int want = (g_pacing == 2 && !atomic_load(&g_pacing_auto_wall) && kr_worker_has_raf() && g_last_frame_at >= g_raf_hold_until) ? EM_TIMING_RAF : EM_TIMING_SETIMMEDIATE;
   if (want != g_timing_mode) {
+    if (g_hw_pending) present_deferred();          // 攒着的那帧先上屏，别丢在换排程的缝里
     emscripten_set_main_loop_timing(want, want == EM_TIMING_RAF ? 1 : 0);
     g_timing_mode = want;
     g_anchor_real = 0;
+    g_vs_last = 0; g_vs_dt = 0;                    // rAF 间隔重新量（墙钟下读数 = 0，别留着旧值误导判词）
+    atomic_store(&g_present_every, 1);             // 节拍下一秒按新排程重算
   }
   // B) WebGL 上下文丢了：告诉核一次 context_destroy（停掉模拟线程、放掉 GL 对象），之后不跑帧；浏览器恢复了 → 重建我们的 FBO、context_reset（DeviceRestore）接着跑
   if (g_hw_accepted && atomic_load(&g_gl_lost)) {
@@ -1085,18 +1152,6 @@ static void frame(void) {
 
   double d = debt_ms();
   if (d > e * 5.5) { reanchor(); d = 0; atomic_fetch_add(&g_reanchors, 1); }
-  // 跳帧：落后半帧以上每两帧画一帧，两帧以上每三帧画一帧；追到落后不足 1/4 帧才恢复（滞后，免得来回切）
-  {
-    int want = g_frameskip_want;
-    if (d > e * 2.0) want = 2;
-    else if (d > e * 0.5) want = want > 1 ? want : 1;
-    else if (d < e * 0.25) want = 0;
-    int floor_now = kr_frameskip_floor_active();
-    if (want < floor_now) want = floor_now;
-    g_frameskip_want = want;
-    g_frameskip_now = want;
-    if (g_frameskip_want != g_frameskip_told) { kr_ppsspp_set_frameskip(g_frameskip_want); g_frameskip_told = g_frameskip_want; }
-  }
 
   if (g_timing_mode == EM_TIMING_RAF) {
     // 跟屏幕：这次刷新跑几帧。
@@ -1104,24 +1159,32 @@ static void frame(void) {
     double dt = g_vs_last ? now - g_vs_last : 0;
     g_vs_last = now;
     if (dt > 0 && dt < 100) g_vs_dt = g_vs_dt ? g_vs_dt * 0.95 + dt * 0.05 : dt;
+    g_tick++;
     int n;
     if (g_speed == 1.0 && g_vs_dt > 0 && fabs(g_vs_dt - e) < e * 0.01) {
       // 刷新率 ≈ 帧率：每次刷新一帧；错过一次刷新（落后超过 3/4 帧）就补一帧（PPSSPP 跳过它的绘制）。
       // 60 Hz 对 59.94 帧的 0.1% 漂移持续吸收（重新锚定），不攒成每隔几十秒一顿；声音那边按水位微调吸收速度差。
       g_vs_lock = 1;
       n = d > e * 0.75 ? 2 : (d < -e * 0.75 ? 0 : 1);
-      if (n == 1) { run_one(); reanchor(); return; }
+      apply_frameskip(d, e);
+      if (n == 1) { run_one(); reanchor(); present_if_due(); return; }
     } else {
-      // 对不上（如 120 / 144 Hz，或快进）：按时间对齐四舍五入，最多补 3 帧（快进时按倍数放宽）
+      // 对不上（72 / 90 / 120 / 144 Hz，或快进）：按时间对齐四舍五入，最多补 3 帧（快进时按倍数放宽）
       g_vs_lock = 0;
       n = (int)floor((d + e * 0.5) / e);
       int cap = 3 * (int)ceil(g_speed);
       if (n < 0) n = 0;
       if (n > cap) n = cap;
+      // 跳帧按「跑完这趟该跑的 n 帧之后还欠多少」判，不按跑之前的欠账：72 Hz 放 60 帧逻辑的节拍里，跑之前的欠账本来就在 −1/3 … +4/3 帧之间来回
+      //   （13.9 ms 一趟、16.7 ms 一帧），拿它比半帧阈值 = 光靠节拍就把跳帧开开关关（10-16 Quest 日志：模拟线程只 47% 忙却跳帧 1、23 fps、出帧间隔 ±17.6 ms）。
+      apply_frameskip(d - n * e, e);
     }
     for (int i = 0; i < n; i++) { run_one(); if (i > 0) atomic_fetch_add(&g_catchup_runs, 1); }
+    present_if_due();
     return;
   }
+
+  apply_frameskip(d, e);
 
   // 墙钟：超前就睡到点；落后就直接跑（下一趟再看还欠多少，欠就接着跑——PPSSPP 跳过这些帧的绘制）
   if (d < 0) {
@@ -1144,6 +1207,7 @@ int main(int argc, char **argv) {
     if (!strcmp(argv[i], "lowlatency")) g_want_desync = true;
     if (!strcmp(argv[i], "cpu=interp")) g_cpu_core = "Interpreter";
     if (!strcmp(argv[i], "skin=gpu")) g_sw_skinning = "disabled";
+    if (!strncmp(argv[i], "cadence=", 8)) { int k = atoi(argv[i] + 8); atomic_store(&g_present_force, k < 0 ? 0 : k > 8 ? 8 : k); }
   }
   fprintf(stderr, "[kr] cpu core: %s\n", g_cpu_core);
   for (int i = 0; i < KR_CACHE_BLOCKS; i++) g_cache[i].block = -1;
