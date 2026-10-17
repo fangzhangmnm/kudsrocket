@@ -1,5 +1,5 @@
 // src/version.ts
-var APP_VERSION = "v0.1.43-2026-10-16";
+var APP_VERSION = "v0.1.57-2026-10-17";
 
 // assets/icons.svg
 var icons_default = '<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none">\n<!--\n  14 icons extracted from the family icon library (../20260708 SVG Icons/icons.svg) by extract-icons.py \u2014 do not hand-edit; re-run the script instead.\n  Family SVG Icons \u2014 MIT License, Copyright (c) 2026 fangzhangmnm.\n  Contains work derived from (per-icon provenance in data-src):\n    Feather Icons \u2014 MIT License, Copyright (c) 2013-2023 Cole Bemis \xB7 https://github.com/feathericons/feather\n-->\n  <!-- media -->\n  <!-- pause \u2014 \u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="pause" data-cat="media" data-src="own" data-note="\u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="3.2"><path d="M8.3 5.5 V18.5"/><path d="M15.7 5.5 V18.5"/></g></symbol>\n  <!-- play \u2014 \u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="play" data-cat="media" data-src="own" data-note="\u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 5.4 L18.8 12 L8.2 18.6 Z" fill="currentColor"/></symbol>\n  <!-- fast-forward \u2014 \u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="fast-forward" data-cat="media" data-src="own" data-note="\u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.4 6.8 L10.9 12 L4.4 17.2 Z" fill="currentColor"/><path d="M13.1 6.8 L19.6 12 L13.1 17.2 Z" fill="currentColor"/></symbol>\n  <!-- volume \u2014 \u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009) -->\n  <symbol id="volume" data-cat="media" data-src="own" data-note="\u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 10.3 H8.7 L12.6 6.6 V17.4 L8.7 13.7 H5.5 Z" fill="currentColor"/><path d="M15.13 9.73 A3.4 3.4 0 0 1 15.13 14.27"/><path d="M16.36 7.19 A6.1 6.1 0 0 1 16.36 16.81"/></symbol>\n  <!-- file -->\n  <!-- floppy-disk \u2014 \u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3 -->\n  <symbol id="floppy-disk" data-cat="file" data-src="feather:save" data-note="\u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13l3 3v13a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 17 8 17 3"/></symbol>\n  <!-- folder-open \u2014 \u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF -->\n  <symbol id="folder-open" data-cat="file" data-src="own" data-note="\u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18 V7 a2 2 0 0 1 2 -2 h4 l2 2 h6 a2 2 0 0 1 2 2 v1.8"/><path d="M3 18 L6.4 10.8 H21.6 L18.2 18 Z"/></symbol>\n  <!-- hierarchy -->\n  <!-- lock \u2014 \u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D -->\n  <symbol id="lock" data-cat="hierarchy" data-src="own" data-note="\u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10" width="13" height="11"/><path d="M8.8 10 V6.5 a3.2 3.2 0 0 1 6.4 0 V10"/></symbol>\n  <!-- common -->\n  <!-- x \u2014 \u53C9 -->\n  <symbol id="x" data-cat="common" data-src="own" data-note="\u53C9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 L17.5 17.5 M17.5 6.5 L6.5 17.5"/></symbol>\n  <!-- cloud -->\n  <!-- cloud \u2014 \u4E91 -->\n  <symbol id="cloud" data-cat="cloud" data-src="feather:cloud" data-note="\u4E91" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>\n  <!-- viewport -->\n  <!-- maximize-viewport \u2014 \u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55) -->\n  <symbol id="maximize-viewport" data-cat="viewport" data-src="own" data-note="\u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934 --> <polyline points="4 9 4 4 9 4"/> <polyline points="20 9 20 4 15 4"/> <polyline points="4 15 4 20 9 20"/> <polyline points="20 15 20 20 15 20"/></symbol>\n  <!-- picture-in-picture \u2014 \u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1) -->\n  <symbol id="picture-in-picture" data-cat="viewport" data-src="own" data-note="\u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u5927\u6846\uFF08\u4E3B\u753B\u5E03\uFF09+ \u5185\u5D4C\u5C0F\u7A97\uFF08\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1\uFF09\u2014\u2014 picture-in-picture \u9690\u55BB --> <rect x="3" y="4" width="18" height="14" rx="2"/> <rect x="12" y="10" width="7" height="5" rx="1"/></symbol>\n  <!-- ui -->\n  <!-- more \u2014 \u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00) -->\n  <symbol id="more" data-cat="ui" data-src="own" data-note="\u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/></symbol>\n  <!-- keyboard \u2014 \u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49) -->\n  <symbol id="keyboard" data-cat="ui" data-src="own" data-note="\u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="7.2" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="7.2" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><path d="M8.6 15.6 H15.4"/></symbol>\n  <!-- menu \u2014 \u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17) -->\n  <symbol id="menu" data-cat="ui" data-src="own" data-note="\u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"></line> <line x1="4" y1="12" x2="20" y2="12"></line> <line x1="4" y1="17" x2="20" y2="17"></line></symbol>\n</svg>\n';
@@ -178,9 +178,9 @@ var RUNNING_FRAMES = 2;
 var loopAge = (v) => v <= 0 ? -1 : v > 1e11 ? Date.now() - v : performance.now() - v;
 var SNAPSHOT_FRAMES = 60;
 var CoreSession = class _CoreSession {
-  constructor(core, opts) {
+  constructor(core2, opts) {
     this.opts = opts;
-    this.core = core;
+    this.core = core2;
     this.ac = opts.audioContext;
     this.ctx2d = opts.softCanvas.getContext("2d");
   }
@@ -215,7 +215,7 @@ var CoreSession = class _CoreSession {
     const { default: createKrCore } = await import(new URL(`${opts.coreDir}kr-core.mjs`, location.href).href);
     let session2 = null;
     const media = opts.media;
-    const core = await createKrCore({
+    const core2 = await createKrCore({
       krMedia: {
         size: media.size,
         read: async (offset, length) => {
@@ -236,7 +236,7 @@ var CoreSession = class _CoreSession {
           }
         }
       },
-      arguments: [`/disc/game${opts.ext}`, String(media.size), ...opts.lowLatency ? ["lowlatency"] : [], ...opts.cpuCore === "interp" ? ["cpu=interp"] : [], ...opts.skinning === "gpu" ? ["skin=gpu"] : []],
+      arguments: [`/disc/game${opts.ext}`, String(media.size), ...opts.lowLatency ? ["lowlatency"] : [], ...opts.cpuCore === "interp" ? ["cpu=interp"] : [], ...opts.skinning === "gpu" ? ["skin=gpu"] : [], ...opts.presentEvery ? [`cadence=${opts.presentEvery}`] : [], ...opts.cullOff ? ["cull=0"] : [], ...opts.forceSoftware ? ["render=sw"] : [], ...opts.glCheck ? ["glcheck=1"] : [], ...opts.tapOff ? ["tap=0"] : [], ...opts.hideExt ? [`hideext=${opts.hideExt}`] : [], ...opts.coreOptions ?? []],
       locateFile: (path) => new URL(`${opts.coreDir}${path}`, location.href).href,
       preRun: [(M) => {
         if (!opts.memstick?.size) return;
@@ -260,16 +260,16 @@ var CoreSession = class _CoreSession {
         session2?.noteStderr(s);
       }
     });
-    session2 = new _CoreSession(core, opts);
+    session2 = new _CoreSession(core2, opts);
     session2.init();
     await session2.startAudio();
     return session2;
   }
   init() {
-    const { core, opts } = this;
-    if (opts.pacing) core._kr_set_pacing(PACE_MODES[opts.pacing]);
-    this.paceBuf = core._malloc(8 * 8);
-    this.perfBuf = core._malloc(PERF_WORDS * 8);
+    const { core: core2, opts } = this;
+    if (opts.pacing) core2._kr_set_pacing(PACE_MODES[opts.pacing]);
+    this.paceBuf = core2._malloc(8 * 8);
+    this.perfBuf = core2._malloc(PERF_WORDS * 8);
     new ResizeObserver(() => this.notifyDisplaySize()).observe(opts.glCanvas);
     this.notifyDisplaySize();
   }
@@ -293,24 +293,24 @@ var CoreSession = class _CoreSession {
     old.close().catch(() => {
     });
     this.ac = fresh;
-    const { core } = this;
-    Atomics.store(core.HEAP32, core._kr_audio_r_ptr() >> 2, Atomics.load(core.HEAP32, core._kr_audio_w_ptr() >> 2));
+    const { core: core2 } = this;
+    Atomics.store(core2.HEAP32, core2._kr_audio_r_ptr() >> 2, Atomics.load(core2.HEAP32, core2._kr_audio_w_ptr() >> 2));
     await this.startAudio();
   }
   async startAudio() {
-    const { core, ac: ac2 } = this;
+    const { core: core2, ac: ac2 } = this;
     await ac2.audioWorklet.addModule(new URL("./audio-worklet.js", location.href));
     const node = new AudioWorkletNode(ac2, "kr-audio", {
       numberOfInputs: 0,
       outputChannelCount: [2],
       processorOptions: {
-        buffer: core.HEAPU8.buffer,
-        ringPtr: core._kr_audio_ring(),
-        ringFrames: core._kr_audio_ring_frames(),
-        wPtr: core._kr_audio_w_ptr(),
-        rPtr: core._kr_audio_r_ptr(),
-        underrunPtr: core._kr_audio_underrun_ptr(),
-        coreRate: core._kr_audio_rate(),
+        buffer: core2.HEAPU8.buffer,
+        ringPtr: core2._kr_audio_ring(),
+        ringFrames: core2._kr_audio_ring_frames(),
+        wPtr: core2._kr_audio_w_ptr(),
+        rPtr: core2._kr_audio_r_ptr(),
+        underrunPtr: core2._kr_audio_underrun_ptr(),
+        coreRate: core2._kr_audio_rate(),
         targetFrames: 2048
         // ≈ 46 ms；对齐模式下核那边的硬上限是 3584（≈ 81 ms）
       }
@@ -342,7 +342,76 @@ var CoreSession = class _CoreSession {
     if (mask) this.opts.onInput?.();
     let all = 0;
     for (const m of this.masks.values()) all |= m;
-    this.core._kr_set_input(all >>> 0);
+    all >>>= 0;
+    this.core._kr_set_input(all);
+    const rising = all & ~this.prevAll, falling = this.prevAll & ~all;
+    this.prevAll = all;
+    if (rising || falling) this.noteEdges(rising, falling, source);
+  }
+  prevAll = 0;
+  /** 声音缓冲（W-4 方案用）：顺滑模式的目标水位、对齐模式的上限，毫秒（页面记着自己设的；没设过 = 核的默认 46 / 81 ms）。 */
+  audioBufferMs = { target: 46, max: 81 };
+  setAudioBuffer(targetMs, maxMs) {
+    const f = (ms) => Math.round(ms / 1e3 * 44100);
+    this.core._kr_audio_set_target(f(targetMs));
+    this.core._kr_audio_set_max(f(maxMs));
+    this.audioBufferMs = { target: targetMs, max: maxMs };
+  }
+  /** 按下锁存（W-38）即时开关；老核没有这个导出 → 改不了。 */
+  get tapOff() {
+    return this.core._kr_tap_off ? this.core._kr_tap_off() === 1 : false;
+  }
+  setTapOff(off) {
+    this.core._kr_set_tap_off?.(off ? 1 : 0);
+  }
+  // ── 连按测量（W-38）：页面看到的按下 / 按住多久 / 松开多久，和核放出去的点按对账；一串停下 1 s 后由 takeBurst 交出一次 ──
+  burst = null;
+  inputStatsBuf = 0;
+  /** 核的锁存累计：收到几下、放出几下、排满丢掉几下（老核 = null）。 */
+  inputStats() {
+    const c = this.core;
+    if (!c._kr_input_stats) return null;
+    if (!this.inputStatsBuf) this.inputStatsBuf = c._malloc(3 * 8);
+    c._kr_input_stats(this.inputStatsBuf);
+    const b = this.inputStatsBuf >> 3;
+    return { received: c.HEAPF64[b], played: c.HEAPF64[b + 1], dropped: c.HEAPF64[b + 2] };
+  }
+  noteEdges(rising, falling, source) {
+    const now = performance.now();
+    for (let b = 0; b < 16; b++) if (rising >>> b & 1) this.core._kr_input_tap?.(b);
+    if (rising && (!this.burst || now - this.burst.last > 600)) {
+      const st = this.inputStats();
+      this.burst = { n: 0, start: now, last: now, minHold: Infinity, minGap: Infinity, source, coreRecv: st?.received ?? 0, corePlayed: st?.played ?? 0, coreDropped: st?.dropped ?? 0, downAt: /* @__PURE__ */ new Map(), upAt: /* @__PURE__ */ new Map() };
+    }
+    const B = this.burst;
+    if (!B) return;
+    for (let b = 0; b < 16; b++) {
+      if (rising >>> b & 1) {
+        B.n++;
+        const up = B.upAt.get(b);
+        if (up !== void 0) B.minGap = Math.min(B.minGap, now - up);
+        B.downAt.set(b, now);
+      }
+      if (falling >>> b & 1) {
+        const d = B.downAt.get(b);
+        if (d !== void 0) B.minHold = Math.min(B.minHold, now - d);
+        B.upAt.set(b, now);
+      }
+    }
+    B.last = now;
+  }
+  /** 现在有一串连按正在记（主线程据此决定要不要重设「这一串期间」的手柄计数起点）。 */
+  takeBurstPending() {
+    return this.burst !== null;
+  }
+  /** 一串连按（≥ 3 下）停下 1 s 之后交出一次统计，否则 null。 */
+  takeBurst(now) {
+    const B = this.burst;
+    if (!B || now - B.last < 1e3) return null;
+    this.burst = null;
+    if (B.n < 3) return null;
+    const st = this.inputStats();
+    return { n: B.n, ms: B.last - B.start, minHold: B.minHold, minGap: B.minGap, source: B.source, coreRecv: (st?.received ?? 0) - B.coreRecv, corePlayed: (st?.played ?? 0) - B.corePlayed, coreDropped: (st?.dropped ?? 0) - B.coreDropped };
   }
   getMask(source) {
     return this.masks.get(source) ?? 0;
@@ -354,9 +423,23 @@ var CoreSession = class _CoreSession {
   noteStderr(s) {
     const m = /^\[kr\] GL renderer: (.*)$/.exec(s);
     if (m) this.glRenderer = m[1].trim();
+    if (/error|fail|could not|incomplete|invalid|GL caps|GL check|GL err|forced|disabled \(cull|\[kr\] option/i.test(s) && !/SCENET|sceUtility|mac address/i.test(s) && !this.coreErrorsSeen.has(s) && this.coreErrorsSeen.size < 40) {
+      this.coreErrorsSeen.add(s);
+      this.opts.onCoreError?.(s.length > 300 ? s.slice(0, 300) + "\u2026" : s);
+    }
     if (!/error|fail|shader|\[kr\]/i.test(s)) return;
     this.stderrTail.push(s.length > 200 ? s.slice(0, 200) + "\u2026" : s);
     if (this.stderrTail.length > 40) this.stderrTail.shift();
+  }
+  coreErrorsSeen = /* @__PURE__ */ new Set();
+  gpuTotalsBuf = 0;
+  gpuTotals() {
+    const c = this.core;
+    if (!c._kr_gpu_totals) return null;
+    if (!this.gpuTotalsBuf) this.gpuTotalsBuf = c._malloc(4 * 8);
+    c._kr_gpu_totals(this.gpuTotalsBuf);
+    const b = this.gpuTotalsBuf >> 3;
+    return { readbacks: c.HEAPF64[b], blocking: c.HEAPF64[b + 1], transfers: c.HEAPF64[b + 2], copies: c.HEAPF64[b + 3] };
   }
   /** 核 stderr 里最近的报错 / 诊断行（最多 40 行）。 */
   coreLog() {
@@ -404,13 +487,13 @@ var CoreSession = class _CoreSession {
   }
   // ── 截图（W-14）：核只抓一帧（不序列化整机状态），原生大小 RGBA、左上角原点 ──
   async captureFrame() {
-    const { core } = this;
-    if (!core._kr_request_frame) return null;
-    const before = core._kr_frame_shot_seq();
-    core._kr_request_frame();
-    await this.waitSeq(() => core._kr_frame_shot_seq(), before, 5e3);
-    const w = core._kr_thumb_w(), h2 = core._kr_thumb_h();
-    return w > 0 && h2 > 0 ? { rgba: core.HEAPU8.slice(core._kr_thumb_ptr(), core._kr_thumb_ptr() + w * h2 * 4), w, h: h2 } : null;
+    const { core: core2 } = this;
+    if (!core2._kr_request_frame) return null;
+    const before = core2._kr_frame_shot_seq();
+    core2._kr_request_frame();
+    await this.waitSeq(() => core2._kr_frame_shot_seq(), before, 5e3);
+    const w = core2._kr_thumb_w(), h2 = core2._kr_thumb_h();
+    return w > 0 && h2 > 0 ? { rgba: core2.HEAPU8.slice(core2._kr_thumb_ptr(), core2._kr_thumb_ptr() + w * h2 * 4), w, h: h2 } : null;
   }
   /** 把画布的实际显示像素告诉核（核在 GPU 里按整数倍放大）。ResizeObserver 自动调；画布搬进小窗（别的 document、别的 devicePixelRatio，
    *  主窗口的 ResizeObserver 看不见它）时宿主在小窗 resize 里手动调。 */
@@ -449,6 +532,13 @@ var CoreSession = class _CoreSession {
   pacingMode() {
     const v = this.core._kr_get_pacing();
     return v === 0 ? "wall" : v === 1 ? "audio" : "vsync";
+  }
+  /** 上屏节拍强制值：0 = 自动（核按刷新率 / 游戏帧率算，72 Hz × 30 帧 → 3）；1 = 每次刷新都上（eager，停留 2 / 3 交替）；2 / 3 = 每 2 / 3 次刷新一帧。运行中可切，核下一秒生效。 */
+  setPresentEveryForce(k) {
+    this.core._kr_set_present_every_force?.(k);
+  }
+  presentEveryForce() {
+    return this.core._kr_present_every_force ? this.core._kr_present_every_force() : 0;
   }
   // ── 画 30 帧（移动设备默认；user 10-14「移动设备上应该限速30吧」）：游戏逻辑仍 60，只对本身 60 帧的游戏少画一半（核按 vblank / flip 比判断，30 帧的游戏不再折半）──
   cap30 = false;
@@ -504,33 +594,33 @@ var CoreSession = class _CoreSession {
   /** 存整机状态；同一帧的画面（RGBA，左上角原点）一起交出来给缩略图用（取不到 = null）。 */
   async snapshot() {
     await this.whenRunning(SNAPSHOT_FRAMES);
-    const { core } = this;
-    const before = core._kr_snap_seq();
-    core._kr_request_snapshot();
-    await this.waitSeq(() => core._kr_snap_seq(), before);
-    const size = core._kr_snap_size();
+    const { core: core2 } = this;
+    const before = core2._kr_snap_seq();
+    core2._kr_request_snapshot();
+    await this.waitSeq(() => core2._kr_snap_seq(), before);
+    const size = core2._kr_snap_size();
     if (!size) throw new Error("core returned no state");
-    const state2 = core.HEAPU8.slice(core._kr_snap_ptr(), core._kr_snap_ptr() + size);
-    core._kr_snap_free();
-    const w = core._kr_thumb_w(), h2 = core._kr_thumb_h();
-    const frame2 = w > 0 && h2 > 0 ? { rgba: core.HEAPU8.slice(core._kr_thumb_ptr(), core._kr_thumb_ptr() + w * h2 * 4), w, h: h2 } : null;
+    const state2 = core2.HEAPU8.slice(core2._kr_snap_ptr(), core2._kr_snap_ptr() + size);
+    core2._kr_snap_free();
+    const w = core2._kr_thumb_w(), h2 = core2._kr_thumb_h();
+    const frame2 = w > 0 && h2 > 0 ? { rgba: core2.HEAPU8.slice(core2._kr_thumb_ptr(), core2._kr_thumb_ptr() + w * h2 * 4), w, h: h2 } : null;
     return { state: state2, frame: frame2 };
   }
   async restore(bytes) {
     await this.whenRunning();
-    const { core } = this;
-    const ptr = core._malloc(bytes.length);
+    const { core: core2 } = this;
+    const ptr = core2._malloc(bytes.length);
     if (!ptr) throw new Error(`core out of memory: cannot allocate ${(bytes.length / 2 ** 20).toFixed(0)} MB to restore a state`);
-    core.HEAPU8.set(bytes, ptr);
-    const before = core._kr_restore_seq();
-    core._kr_request_restore(ptr, bytes.length);
-    await this.waitSeq(() => core._kr_restore_seq(), before);
-    if (!core._kr_restore_ok()) throw new Error("core rejected the state");
+    core2.HEAPU8.set(bytes, ptr);
+    const before = core2._kr_restore_seq();
+    core2._kr_request_restore(ptr, bytes.length);
+    await this.waitSeq(() => core2._kr_restore_seq(), before);
+    if (!core2._kr_restore_ok()) throw new Error("core rejected the state");
   }
   // ── 画面（每次显示器刷新调一次）──
   tick() {
-    const { core, opts } = this;
-    const seq = core._kr_frame_seq();
+    const { core: core2, opts } = this;
+    const seq = core2._kr_frame_seq();
     const now = performance.now();
     this.perRefresh.dts.push(now - this.perRefresh.last);
     this.perRefresh.last = now;
@@ -538,13 +628,13 @@ var CoreSession = class _CoreSession {
     this.perRefresh.seq = seq;
     if (!this.hwChecked && seq > 0) {
       this.hwChecked = true;
-      const hw = core._kr_hw_active() === 1;
+      const hw = core2._kr_hw_active() === 1;
       opts.glCanvas.hidden = !hw;
       opts.softCanvas.hidden = hw;
     }
-    if (seq !== this.lastSeq && !core._kr_hw_active()) {
+    if (seq !== this.lastSeq && !core2._kr_hw_active()) {
       this.lastSeq = seq;
-      const w = core._kr_frame_w(), h2 = core._kr_frame_h();
+      const w = core2._kr_frame_w(), h2 = core2._kr_frame_h();
       if (w > 0 && h2 > 0) {
         const c = opts.softCanvas;
         if (c.width !== w || c.height !== h2) {
@@ -553,7 +643,7 @@ var CoreSession = class _CoreSession {
           this.image = null;
         }
         this.image ??= this.ctx2d.createImageData(w, h2);
-        const src = core.HEAPU8.subarray(core._kr_frame_ptr(), core._kr_frame_ptr() + w * h2 * 4);
+        const src = core2.HEAPU8.subarray(core2._kr_frame_ptr(), core2._kr_frame_ptr() + w * h2 * 4);
         const dst = this.image.data;
         for (let i = 0; i < src.length; i += 4) {
           dst[i] = src[i + 2];
@@ -567,13 +657,13 @@ var CoreSession = class _CoreSession {
   }
   // ── 统计（状态栏和自动化测试用）──
   stats() {
-    const { core, ac: ac2 } = this;
+    const { core: core2, ac: ac2 } = this;
     const now = performance.now();
-    const frames = core._kr_stat_frames();
+    const frames = core2._kr_stat_frames();
     const fw = this.fpsWindow;
     if (now - fw.t >= 1e3) {
       const dtMs = now - fw.t, ranFrames = frames - fw.frames;
-      const emuMs = core._kr_stat_emu_ms();
+      const emuMs = core2._kr_stat_emu_ms();
       fw.fps = (frames - fw.frames) * 1e3 / (now - fw.t);
       fw.speed = (emuMs - fw.emuMs) / (now - fw.t);
       const n = this.net;
@@ -584,17 +674,17 @@ var CoreSession = class _CoreSession {
       fw.t = now;
       fw.frames = frames;
       fw.emuMs = emuMs;
-      core._kr_pace_stats(this.paceBuf);
-      const f = core.HEAPF64.subarray(this.paceBuf >> 3, (this.paceBuf >> 3) + 8);
+      core2._kr_pace_stats(this.paceBuf);
+      const f = core2.HEAPF64.subarray(this.paceBuf >> 3, (this.paceBuf >> 3) + 8);
       this.pace = { mean: f[1], sd: f[2], max: f[3], late: f[4], bunched: f[5], frameMs: f[6], frameMsSd: f[7] };
       {
-        const c = core._kr_catchup_runs(), r = core._kr_reanchors();
+        const c = core2._kr_catchup_runs(), r = core2._kr_reanchors();
         this.win = { catchupPerSec: (c - this.winPrev.catchup) * 1e3 / dtMs, reanchorsPerSec: (r - this.winPrev.reanchors) * 1e3 / dtMs, ranFrames };
         this.winPrev = { catchup: c, reanchors: r };
       }
-      if (core._kr_perf_stats) {
-        core._kr_perf_stats(this.perfBuf);
-        const p = core.HEAPF64.slice(this.perfBuf >> 3, (this.perfBuf >> 3) + PERF_WORDS);
+      if (core2._kr_perf_stats) {
+        core2._kr_perf_stats(this.perfBuf);
+        const p = core2.HEAPF64.slice(this.perfBuf >> 3, (this.perfBuf >> 3) + PERF_WORDS);
         const q = this.perfPrev;
         if (q) {
           const d = (i) => p[i] - q[i];
@@ -637,8 +727,8 @@ var CoreSession = class _CoreSession {
       this.perRefresh.dts = [];
       this.perRefresh.counts = [0, 0, 0];
     }
-    const pacing = core._kr_get_pacing();
-    const autoWall = core._kr_pacing_auto_wall ? core._kr_pacing_auto_wall() === 1 : false;
+    const pacing = core2._kr_get_pacing();
+    const autoWall = core2._kr_pacing_auto_wall ? core2._kr_pacing_auto_wall() === 1 : false;
     return {
       /** 核自己量到 worker 的 rAF 慢、这一局改了墙钟（设的仍是跟屏幕）。 */
       autoWall,
@@ -648,21 +738,27 @@ var CoreSession = class _CoreSession {
       pace: this.pace,
       displayHz: this.perRefresh.hz,
       perRefresh: this.perRefresh.shown,
-      pacing: autoWall ? "\u5899\u949F\uFF08\u8BBE\u7684\u662F\u8DDF\u5C4F\u5E55\uFF1B\u6838\u91CF\u5230 rAF \u6162\uFF0C\u81EA\u52A8\u5207\uFF09" : ["\u5899\u949F", "\u58F0\u97F3", "\u8DDF\u5C4F\u5E55"][pacing] + (pacing === 2 ? ["\uFF08\u6309\u65F6\u95F4\u5BF9\u9F50\uFF09", "\uFF08\u6BCF\u5237\u65B0 1 \u5E27\uFF09"][core._kr_vsync_lock()] : ""),
-      catchup: core._kr_catchup_runs(),
-      reanchors: core._kr_reanchors(),
+      pacing: autoWall ? "\u5899\u949F\uFF08\u8BBE\u7684\u662F\u8DDF\u5C4F\u5E55\uFF1B\u6838\u91CF\u5230 rAF \u6162\uFF0C\u81EA\u52A8\u5207\uFF09" : ["\u5899\u949F", "\u58F0\u97F3", "\u8DDF\u5C4F\u5E55"][pacing] + (pacing === 2 ? ["\uFF08\u6309\u65F6\u95F4\u5BF9\u9F50\uFF09", "\uFF08\u6BCF\u5237\u65B0 1 \u5E27\uFF09"][core2._kr_vsync_lock()] : ""),
+      catchup: core2._kr_catchup_runs(),
+      reanchors: core2._kr_reanchors(),
+      /** 现在实际按哪种排程跑（核自己改成墙钟也算 wall）。 */
+      pacingMode: autoWall ? "wall" : ["wall", "audio", "vsync"][pacing],
       /** 核线程 rAF 的间隔（EMA，ms；0 = 不是跟屏幕排程）：Safari 把 worker 的 rAF 压慢时这里 > 16.7。 */
-      vsyncDt: core._kr_vsync_dt(),
+      vsyncDt: core2._kr_vsync_dt(),
+      /** 上屏节拍（cadence.h）：跟屏幕排程下每几次刷新上屏一帧；1 = 每次。72 Hz 屏放 30 帧的游戏 → 3（24 fps 匀速，不然每帧交替占 2 / 3 次刷新 = 抖）。老核 = 1。 */
+      presentEvery: core2._kr_present_every ? core2._kr_present_every() : 1,
+      /** 这一局累计（按模拟帧）：PPSSPP 去显卡读回画面几次（阻塞的几次）、块传输几次、帧缓冲拷贝几次。W-37：游戏抓画面那一下有没有回读。老核 = null。 */
+      gpuTotals: this.gpuTotals(),
       win: this.win,
       /** 核的帧循环多久没被调用了（ms；-1 = 老核不知道）。大 = 循环死了（rAF 没人调）；小而帧数不走 = 卡在 retro_run 里。 */
-      loopAgeMs: core._kr_loop_last_ms ? loopAge(core._kr_loop_last_ms()) : -1,
-      loopRescues: core._kr_loop_rescues ? core._kr_loop_rescues() : 0,
-      glLost: core._kr_gl_state ? (core._kr_gl_state() & 1) === 1 : false,
-      glRestores: core._kr_gl_state ? core._kr_gl_state() >> 1 : 0,
-      frameskip: core._kr_frameskip(),
-      renderer: core._kr_hw_active() ? "GPU\uFF08WebGL2\uFF09" + ["", " \xB7 \u4F4E\u5EF6\u8FDF\u753B\u5E03\uFF1A\u6D4F\u89C8\u5668\u91C7\u7EB3", " \xB7 \u4F4E\u5EF6\u8FDF\u753B\u5E03\uFF1A\u6D4F\u89C8\u5668\u6CA1\u91C7\u7EB3"][core._kr_desync_state()] : "\u8F6F\u4EF6\u6E32\u67D3",
-      bytesFetched: core._kr_stat_bytes_fetched(),
-      readsWaiting: core._kr_stat_reads_waiting(),
+      loopAgeMs: core2._kr_loop_last_ms ? loopAge(core2._kr_loop_last_ms()) : -1,
+      loopRescues: core2._kr_loop_rescues ? core2._kr_loop_rescues() : 0,
+      glLost: core2._kr_gl_state ? (core2._kr_gl_state() & 1) === 1 : false,
+      glRestores: core2._kr_gl_state ? core2._kr_gl_state() >> 1 : 0,
+      frameskip: core2._kr_frameskip(),
+      renderer: core2._kr_hw_active() ? "GPU\uFF08WebGL2\uFF09" + ["", " \xB7 \u4F4E\u5EF6\u8FDF\u753B\u5E03\uFF1A\u6D4F\u89C8\u5668\u91C7\u7EB3", " \xB7 \u4F4E\u5EF6\u8FDF\u753B\u5E03\uFF1A\u6D4F\u89C8\u5668\u6CA1\u91C7\u7EB3"][core2._kr_desync_state()] : "\u8F6F\u4EF6\u6E32\u67D3",
+      bytesFetched: core2._kr_stat_bytes_fetched(),
+      readsWaiting: core2._kr_stat_reads_waiting(),
       mediaReads: this.mediaReads,
       /** 这一秒读盘拿到的字节 / 秒。 */
       netBps: this.net.bps,
@@ -671,16 +767,16 @@ var CoreSession = class _CoreSession {
       netInflight: this.net.inflight,
       audioState: ac2.state,
       audioClock: ac2.currentTime,
-      audioRead: core.HEAP32[core._kr_audio_r_ptr() >> 2],
-      audioFillMs: core._kr_audio_fill() / 44.1,
-      audioUnderrunMs: core.HEAP32[core._kr_audio_underrun_ptr() >> 2] / 44.1,
-      audioDropped: core._kr_audio_dropped(),
+      audioRead: core2.HEAP32[core2._kr_audio_r_ptr() >> 2],
+      audioFillMs: core2._kr_audio_fill() / 44.1,
+      audioUnderrunMs: core2.HEAP32[core2._kr_audio_underrun_ptr() >> 2] / 44.1,
+      audioDropped: core2._kr_audio_dropped(),
       outputLatencyMs: ((ac2.outputLatency || 0) + (ac2.baseLatency || 0)) * 1e3,
       paused: this.paused,
       gameSpeed: this.speed,
       seconds: (now - this.startedAt) / 1e3,
       /** 画 30 帧：要的 / 此刻真在生效（游戏本身 60 帧才生效）/ 核估的游戏本身帧率（0 = 还没量到）。 */
-      frameCap: { want: this.cap30, active: core._kr_frameskip_floor_active ? core._kr_frameskip_floor_active() > 0 : false, nativeFps: core._kr_native_fps ? core._kr_native_fps() : 0 },
+      frameCap: { want: this.cap30, active: core2._kr_frameskip_floor_active ? core2._kr_frameskip_floor_active() > 0 : false, nativeFps: core2._kr_native_fps ? core2._kr_native_fps() : 0 },
       /** 性能读数（每秒一个窗口；第一秒 / 老核 = null）。 */
       perf: this.perf,
       glRenderer: this.glRenderer,
@@ -1663,7 +1759,7 @@ function createDelete(cfg) {
     writeQueue(q);
   }
   async function del(name, opts = {}) {
-    const { isOnline = () => true, confirm, onDirtyWarn, busy = _busy } = opts;
+    const { isOnline = () => true, confirm, onDirtyWarn, busy = _busy, expectCloudAbsent = false } = opts;
     if (confirm && !await confirm({ title: "\u5220\u9664", body: name, danger: true }))
       return { status: "cancelled" };
     if (head.isDirtyAnywhere(name) && onDirtyWarn && !await onDirtyWarn({ name }))
@@ -1671,6 +1767,8 @@ function createDelete(cfg) {
     const localPresent = local2 ? await local2.exists(name) : false;
     const deleteEventId = asideStamp(Date.now());
     if (!isOnline()) {
+      if (expectCloudAbsent)
+        return { status: "cancelled", reason: "offline" };
       const baseEtag = cloud.getETag(name);
       let trashKey = null;
       if (localPresent)
@@ -1682,13 +1780,18 @@ function createDelete(cfg) {
       return { status: "trashed", where: "local", queuedCloudDelete, baseEtag, trashKey };
     }
     return busy("file.deleting", async () => {
-      let cloudPresent = false;
+      let cloudPresent = false, metaFailed = false;
       try {
         cloudPresent = !!await cloud.fetchMeta(name);
       } catch (e) {
         reportStoreError(e, "log");
         cloudPresent = false;
+        metaFailed = true;
       }
+      if (expectCloudAbsent && metaFailed)
+        return { status: "cancelled", reason: "offline" };
+      if (expectCloudAbsent && cloudPresent)
+        return { status: "cancelled", reason: "cloud-present" };
       if (cloudPresent) {
         const wasDirty = head.isDirtyAnywhere(name);
         const trashed = await cloud.trash(name, deleteEventId);
@@ -4706,6 +4809,13 @@ function createStore(config) {
     uploadReplay.remove(n);
     return del.del(n, { isOnline });
   });
+  const delIfCloudAbsentSF = singleFlight("\u5220\u9664", async (n) => {
+    const d = await del.del(n, { isOnline, expectCloudAbsent: true });
+    if (d.status === "trashed")
+      uploadReplay.remove(n);
+    return d;
+  });
+  const trashedOrWhy = (d) => d.status === "trashed" ? { status: "trashed" } : d.status === "cancelled" ? { status: "unresolved", reason: d.reason === "cloud-present" ? "cloud-reappeared" : "offline" } : { status: "unresolved", reason: d.status };
   const renameListeners = /* @__PURE__ */ new Set();
   const tryMoveSF = singleFlight("\u79FB\u52A8", async (from, to) => {
     const occ = await nameOccupied(to);
@@ -4900,6 +5010,52 @@ function createStore(config) {
       const asBlob = blob instanceof Blob ? blob : new Blob([blob]);
       return await seal.unsealForRead(name, asBlob);
     };
+    const resolveCleanGone = async () => {
+      if (head.seenBase(name) == null)
+        return { status: "clean" };
+      const candidate = pendingGone.isPending(name);
+      if (!isOnline())
+        return candidate ? { status: "offline" } : { status: "clean" };
+      let meta;
+      try {
+        meta = await cloud.fetchMeta(name);
+      } catch (e) {
+        ui.reportError(e, "log");
+        return candidate ? { status: "offline" } : { status: "clean" };
+      }
+      if (meta)
+        return { status: "clean" };
+      const choice = await ui.resolveConflict({ name, local: await local2.get(name), cloud: null, occasion: "push", cloudState: "absent" });
+      if (choice === "cancel")
+        return { status: "cancelled" };
+      if (choice === "takeCloud") {
+        const d = await delIfCloudAbsentSF(name);
+        if (d.status === "trashed")
+          pendingGone.clear(name);
+        notifyFolderOf(name);
+        return trashedOrWhy(d);
+      }
+      const blob = await local2.get(name);
+      if (!blob)
+        return { status: "no-local" };
+      const atRest = await toU8(blob instanceof Blob ? blob : new Blob([blob]));
+      pendingGone.clear(name);
+      head.forget(name);
+      head.recordEdit(name);
+      let r;
+      try {
+        r = await pushMod.push(name, { encode: () => atRest, onConflict, surfaceCollision: true });
+      } catch (e) {
+        ui.reportError(e);
+        notifyFolderOf(name);
+        return { status: "not-pushed", reason: "error" };
+      }
+      notifyFolderOf(name);
+      if (r.status === "resolved" && r.resolution === "takeCloud")
+        return { status: "took-cloud", backupName: r.backupName };
+      const pushed = r.status === "pushed" || r.status === "healed" || r.status === "resolved";
+      return pushed ? { status: "pushed" } : { status: "not-pushed", reason: r.status };
+    };
     return {
       async save(bytes, opts) {
         roGuard("save");
@@ -5007,7 +5163,7 @@ function createStore(config) {
         if (!await local2.exists(name))
           return { status: "no-local" };
         if (!head.isDirtyAnywhere(name))
-          return { status: "clean" };
+          return resolveCleanGone();
         if (!isOnline())
           return { status: "offline" };
         let cloudState = "changed";
@@ -5022,9 +5178,9 @@ function createStore(config) {
           return { status: "cancelled" };
         if (choice === "takeCloud") {
           if (cloudState === "absent" || cloudState === "never") {
-            const d = await delSF(name);
+            const d = await delIfCloudAbsentSF(name);
             notifyFolderOf(name);
-            return d.status === "trashed" ? { status: "trashed" } : { status: "unresolved", reason: d.status };
+            return trashedOrWhy(d);
           }
           const r2 = await safeResolve.resolveConflict(name, "takeCloud", { adopt: opts?.adopt });
           notifyFolderOf(name);
@@ -6575,7 +6731,6 @@ var PLATFORM_CODE = { psp: "wafer" };
 var JAM_POLL_MS = 1e3;
 var ACTIVITY_INPUT_WINDOW_MS = 2 * 6e4;
 var ACTIVITY_PROGRESS_WINDOW_MS = 2 * 6e4;
-var FAST_FORWARD = 3;
 
 // src/app/labels.ts
 var labels = /* @__PURE__ */ new Map();
@@ -6854,7 +7009,7 @@ var storeUI = {
     const n = stemOf(name);
     const text = cloudState === "absent" ? {
       title: "\u4E91\u7AEF\u90A3\u4EFD\u6CA1\u4E86",
-      body: `\u300C${n}\u300D\u5728\u4E91\u7AEF\u5DF2\u7ECF\u4E0D\u5728\u4E86\uFF08\u522B\u7684\u8BBE\u5907\u5220\u4E86\uFF0C\u6216\u79FB\u8FDB\u4E86\u56DE\u6536\u7AD9\uFF09\uFF0C\u8FD9\u53F0\u8BBE\u5907\u4E0A\u8FD8\u6709\u4E00\u4EFD\u6CA1\u4F20\u4E0A\u53BB\u7684\u3002`,
+      body: `\u300C${n}\u300D\u5728\u4E91\u7AEF\u5DF2\u7ECF\u4E0D\u5728\u4E86\uFF08\u522B\u7684\u8BBE\u5907\u5220\u4E86\uFF0C\u6216\u79FB\u8FDB\u4E86\u56DE\u6536\u7AD9\uFF09\uFF0C\u8FD9\u53F0\u8BBE\u5907\u4E0A\u8FD8\u7559\u7740\u4E00\u4EFD\u3002`,
       hint: "\u300C\u4E91\u7AEF\u8986\u76D6\u672C\u5730\u300D= \u8DDF\u7740\u4E91\u7AEF\uFF0C\u8FD9\u53F0\u7684\u8FD9\u4EFD\u4E5F\u79FB\u5230\u56DE\u6536\u7AD9\uFF08\u80FD\u6062\u590D\uFF09\uFF1B\u300C\u672C\u5730\u8986\u76D6\u4E91\u7AEF\u300D= \u628A\u8FD9\u53F0\u7684\u4F20\u56DE\u4E91\u7AEF\u3002"
     } : cloudState === "never" ? {
       title: "\u4E91\u7AEF\u6CA1\u6709\u8FD9\u4EFD",
@@ -8547,6 +8702,125 @@ function unzipSync(data, opts) {
   return files;
 }
 
+// src/app/save-scan.ts
+function groupSaveDirs(files) {
+  const norm = files.map((f) => ({ ...f, path: f.path.replace(/\\/g, "/").replace(/^\/+/, "") }));
+  const roots = /* @__PURE__ */ new Map();
+  for (const f of norm) {
+    const m = /^(?:(.*)\/)?([^/]+)\/PARAM\.SFO$/i.exec(f.path);
+    if (!m) continue;
+    const full = m[1] ? `${m[1]}/${m[2]}` : m[2];
+    const prev = roots.get(m[2]);
+    if (prev && prev !== full) throw new Error(`\u5B58\u6863\u76EE\u5F55 ${m[2]} \u5728\u9009\u6765\u7684\u4E1C\u897F\u91CC\u6709\u4E24\u4EFD\uFF08${prev} \u548C ${full}\uFF09\u2014\u2014\u53EA\u9009\u4E00\u4EFD SAVEDATA`);
+    roots.set(m[2], full);
+  }
+  const out = [];
+  for (const [dir, full] of roots) {
+    const files2 = /* @__PURE__ */ new Map();
+    let newest = 0;
+    for (const f of norm) {
+      if (!f.path.startsWith(full + "/")) continue;
+      files2.set(`${dir}/${f.path.slice(full.length + 1)}`, f);
+      newest = Math.max(newest, f.mtime);
+    }
+    out.push({ dir, game: gameOf(dir), files: files2, newest });
+  }
+  return out.sort((a, b) => a.dir.localeCompare(b.dir));
+}
+var gameOf = (dir) => /^[A-Z]{4}\d{5}/.test(dir) ? dir.slice(0, 9) : dir;
+function sfoInfo(bytes) {
+  if (!bytes || bytes.length < 20) return {};
+  const v = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+  if (v.getUint32(0, true) !== 1179865088) return {};
+  const keyTab = v.getUint32(8, true), dataTab = v.getUint32(12, true), n = v.getUint32(16, true);
+  const out = {};
+  for (let i = 0; i < n && 20 + i * 16 + 16 <= bytes.length; i++) {
+    const e = 20 + i * 16;
+    const kOff = v.getUint16(e, true), fmt = v.getUint16(e + 2, true), len = v.getUint32(e + 4, true), dOff = v.getUint32(e + 12, true);
+    let end = keyTab + kOff;
+    while (end < bytes.length && bytes[end]) end++;
+    const key = new TextDecoder().decode(bytes.subarray(keyTab + kOff, end));
+    if (fmt !== 516) continue;
+    const s = new TextDecoder().decode(bytes.subarray(dataTab + dOff, Math.min(bytes.length, dataTab + dOff + len))).replace(/\0+$/, "").replace(/\s+/g, " ").trim();
+    if (key === "TITLE") out.title = s;
+    else if (key === "SAVEDATA_TITLE") out.saveTitle = s;
+    else if (key === "SAVEDATA_DETAIL") out.detail = s;
+  }
+  return out;
+}
+function sameEntries(a, b) {
+  const ka = Object.keys(a).sort(), kb = Object.keys(b).sort();
+  if (ka.length !== kb.length || ka.some((k, i) => k !== kb[i])) return false;
+  return ka.every((k) => a[k].length === b[k].length && a[k].every((x, i) => x === b[k][i]));
+}
+function differingFiles(mine, cloud) {
+  const keys = [.../* @__PURE__ */ new Set([...Object.keys(mine), ...Object.keys(cloud)])].sort();
+  const eq = (x, y) => x.length === y.length && x.every((b, i) => b === y[i]);
+  return keys.filter((k) => !mine[k] || !cloud[k] || !eq(mine[k], cloud[k])).map((k) => k.split("/").slice(1).join("/") + (!mine[k] ? "\uFF08\u53EA\u5728\u4E91\u7AEF\uFF09" : !cloud[k] ? "\uFF08\u53EA\u5728\u8FD9\u8FB9\uFF09" : ""));
+}
+function groupByGame(dirs) {
+  const m = /* @__PURE__ */ new Map();
+  for (const d of dirs) {
+    const g = m.get(d.game) ?? { game: d.game, title: "", dirs: [], newest: 0 };
+    g.dirs.push(d.dir);
+    g.newest = Math.max(g.newest, d.newest);
+    if (!g.title && d.title) g.title = d.title;
+    m.set(d.game, g);
+  }
+  return [...m.values()].sort((a, b) => b.newest - a.newest);
+}
+
+// src/app/jar-import.ts
+async function runImport(items, password, onEach, io) {
+  const { ids, complete } = await io.list();
+  if (!complete) throw new Error("\u6CA1\u62FF\u5230\u4E91\u7AEF\u5B8C\u6574\u7684\u5B58\u6863\u5217\u8868\uFF08\u6CA1\u767B\u5F55 / \u79BB\u7EBF / \u7F51\u7EDC\u6162\uFF09\u3002\u5148\u4E0D\u88C5\uFF1A\u4E0D\u7136\u53EF\u80FD\u65B0\u5EFA\u51FA\u548C\u4E91\u7AEF\u91CD\u590D\u7684\u7F50\u3002");
+  const existing = new Set(ids);
+  const plan = await Promise.all(items.map(async (it) => ({ it, id: await io.idOf(it.dir) })));
+  const probe = plan.find((p) => existing.has(p.id))?.id ?? ids[0];
+  if (probe) {
+    const sealed = await io.get(probe);
+    if (sealed) await unsealBytes(password, sealed);
+  }
+  const out = [];
+  for (const { it, id } of plan) {
+    let r;
+    try {
+      const mineAt = Math.max(0, ...Object.values(it.mtimes));
+      if (existing.has(id)) {
+        const sealed = await io.get(id);
+        if (!sealed) throw new Error("\u4E91\u7AEF\u5217\u8868\u91CC\u6709\uFF0C\u4F46\u8BFB\u4E0D\u5230");
+        const { plain, meta } = await unsealBytes(password, sealed);
+        const cloud = unzipSync(plain);
+        r = sameEntries(it.entries, cloud) ? { dir: it.dir, status: "same" } : { dir: it.dir, status: "differ", mineAt, cloudAt: meta.at, differ: differingFiles(it.entries, cloud) };
+      } else {
+        const zip = zipSync(Object.fromEntries(Object.entries(it.entries).map(([p, b]) => [p, [b, { mtime: new Date(it.mtimes[p] ?? mineAt) }]])), { level: 0 });
+        await io.put(id, await sealBytes(password, zip, { salt: io.salt, meta: { jar: { k: io.k, m: "shared", u: it.dir }, at: mineAt } }), it.dir);
+        const back = await io.get(id);
+        if (!back) throw new Error("\u5199\u5B8C\u8BFB\u4E0D\u56DE\u6765");
+        const { plain, meta } = await unsealBytes(password, back);
+        if (meta.jar?.u !== it.dir || !sameEntries(it.entries, unzipSync(plain))) throw new Error("\u5199\u5B8C\u8BFB\u56DE\u6765\u548C\u6E90\u6587\u4EF6\u4E0D\u4E00\u6837");
+        r = { dir: it.dir, status: "new" };
+      }
+    } catch (e) {
+      if (e instanceof WrongPasswordError) throw e;
+      r = { dir: it.dir, status: "error", error: e instanceof Error ? e.message : String(e) };
+    }
+    out.push(r);
+    onEach(out.length, r);
+  }
+  return out;
+}
+function exportSaveDirs(files, times, dirs) {
+  const want = new Set(dirs);
+  const entries = {};
+  for (const [path, bytes] of files) {
+    const dir = path.split("/")[0];
+    if (!want.has(dir)) continue;
+    entries[`SAVEDATA/${path}`] = [bytes, { mtime: new Date(times.get(dir) ?? Date.now()) }];
+  }
+  return zipSync(entries, { level: 0 });
+}
+
 // src/app/saves.ts
 var sessionSalt = crypto.getRandomValues(new Uint8Array(16));
 var HISTORY_KEEP = 3;
@@ -8761,6 +9035,8 @@ async function nudge(identifier, syncState2) {
     case "not-pushed":
       return `\u8FD8\u6CA1\u4F20\u4E0A\u53BB\uFF08${r.reason}\uFF09`;
     case "unresolved":
+      if (r.reason === "cloud-reappeared") return "\u6CA1\u52A8\uFF1A\u4E91\u7AEF\u90A3\u4EFD\u53C8\u51FA\u73B0\u4E86\uFF08\u522B\u7684\u8BBE\u5907\u521A\u4F20\u56DE\u6216\u6062\u590D\uFF09\u3002\u518D\u6309\u4E00\u6B21\u300C\u5904\u7406\u2026\u300D\uFF0C\u6309\u4E91\u7AEF\u6709\u65B0\u7248\u90A3\u6761\u8DEF\u8D70";
+      if (r.reason === "offline") return "\u6CA1\u52A8\uFF1A\u73B0\u5728\u8FDE\u4E0D\u4E0A\u4E91\u7AEF\uFF0C\u6CA1\u6CD5\u786E\u8BA4\u4E91\u7AEF\u90A3\u4EFD\u662F\u4E0D\u662F\u771F\u7684\u6CA1\u4E86";
       return `\u6CA1\u6362\u6210\u4E91\u7AEF\u90A3\u4EFD\uFF08${r.reason ?? "\u539F\u56E0\u4E0D\u660E"}\uFF09`;
   }
 }
@@ -8849,6 +9125,20 @@ async function restoreBin(item) {
     encrypted: item.raw.encrypted
   });
   return r.status;
+}
+function importSaveDirs(items, password, onEach) {
+  const k = PLATFORM_CODE.psp;
+  return runImport(items, password, onEach, {
+    list: () => listJams(k, { timeoutMs: 2e4, waitForCloud: true }),
+    idOf: (dir) => jamId({ k, m: "shared", u: dir }),
+    get: get2,
+    put: (id, sealed, dir) => {
+      setLabel(id, describeJar({ k, m: "shared", u: dir }));
+      return put(id, sealed);
+    },
+    salt: sessionSalt,
+    k
+  });
 }
 
 // src/app/presence.ts
@@ -10065,7 +10355,7 @@ async function openBins(titleByKey) {
     ];
   });
 }
-function gameOf(r, ctx) {
+function gameOf2(r, ctx) {
   const c = parseCrumbId(r.it.identifier);
   if (c) return r.meta?.t ?? ctx.titleByKey(c.key) ?? (r.meta?.fp?.id ? `${r.meta.fp.id}${r.meta.fp.v ? ` v${r.meta.fp.v}` : ""}` : `\u4EE3\u53F7 ${c.key.slice(0, 8)}\u2026`);
   const dir = r.meta?.jar?.u;
@@ -10104,7 +10394,7 @@ async function openSaveManager(ctx) {
     const visible = rows.filter((r) => !(only && r.meta?.jar && !(only.discId && r.meta.jar.u.toUpperCase().startsWith(only.discId.toUpperCase()))));
     const todo = visible.filter((r) => needsAttention(r.it.syncState)).sort((a, b) => whenOf(b) - whenOf(a));
     const groups = /* @__PURE__ */ new Map();
-    for (const r of visible) groups.set(gameOf(r, ctx), [...groups.get(gameOf(r, ctx)) ?? [], r]);
+    for (const r of visible) groups.set(gameOf2(r, ctx), [...groups.get(gameOf2(r, ctx)) ?? [], r]);
     const sections = [...groups].map(([g, rs]) => [g, rs.sort((a, b) => whenOf(b) - whenOf(a))]).sort((a, b) => whenOf(b[1][0]) - whenOf(a[1][0]));
     body.replaceChildren(
       h("h3", {}, todo.length ? `\u8981\u5904\u7406\u7684\uFF08${todo.length}\uFF09` : "\u6CA1\u6709\u8981\u5904\u7406\u7684"),
@@ -10134,7 +10424,7 @@ async function openSaveManager(ctx) {
       h(
         "div",
         { class: "slot-text" },
-        h("span", { class: "slot-name" }, inTodo ? `${nameOf(r)} \xB7 ${gameOf(r, ctx)}` : nameOf(r)),
+        h("span", { class: "slot-name" }, inTodo ? `${nameOf(r)} \xB7 ${gameOf2(r, ctx)}` : nameOf(r)),
         h("span", { class: "muted" }, [whenText(r), SYNC_TEXT[r.it.syncState] ?? r.it.syncState, fmtSize(r.it.size)].filter(Boolean).join(" \xB7 "))
       ),
       ...needsAttention(r.it.syncState) ? attentionButtons(r) : [],
@@ -10287,6 +10577,317 @@ async function resolveDuplicates(duplicates, peek, standardId) {
     }
   }
   return changed;
+}
+
+// src/app/quest-input.ts
+var COMBO_WINDOW_MS = 5e3;
+var GAZE_CONFIRM_MS = 2500;
+function isTypingKey(code) {
+  return /^Key[A-Z]$|^Digit\d$|^Numpad\d$|^Space$/.test(code);
+}
+var QUEST_PAD_HOWTO = "\u624B\u67C4\u4E0A\u540C\u65F6\u6309 View + Menu\uFF08\u4E2D\u95F4\u4E24\u4E2A\u5C0F\u952E\uFF09\uFF0C\u6216\u8005 \u8BBE\u7F6E \u203A \u8BBE\u5907 \u203A \u6E38\u620F\u624B\u67C4 \u5173\u6389\u300C\u4F7F\u7528\u6CE8\u89C6\u5149\u6807\u300D\uFF1B\u8FD8\u4E0D\u884C\u5C31\u91CD\u542F Quest\uFF08\u7CFB\u7EDF\u5076\u5C14\u81EA\u5DF1\u5361\u5728\u8FD9\u4E2A\u72B6\u6001\uFF0C\u91CD\u542F\u80FD\u597D\uFF09";
+function createQuestInputAdvisor() {
+  let padsNow = 0;
+  let padsEverSeen = false;
+  let comboAt = -Infinity;
+  let typingSeen = false;
+  let navSince = -1;
+  let wheels = 0;
+  const given = /* @__PURE__ */ new Set();
+  const combo = () => {
+    if (given.has("combo")) return null;
+    given.add("combo");
+    given.add("gaze");
+    return {
+      reason: "combo",
+      text: `\u624B\u67C4\u88AB Quest \u6536\u8D70\u4E86\uFF1A\u521A\u624D\u540C\u65F6\u6309\u4E86 Start + Select\uFF0C\u90A3\u6B63\u662F Quest \u7684\u300C\u6CE8\u89C6\u5149\u6807\u300D\u5F00\u5173\uFF08View + Menu\uFF09\u3002\u518D\u540C\u65F6\u6309\u4E00\u6B21\u5C31\u56DE\u6765\uFF1B\u4E0D\u884C\u5C31\u91CD\u542F Quest`,
+      log: "Quest \u8F93\u5165\uFF1ASelect + Start \u540C\u6309\u540E\u624B\u67C4\u4ECE Gamepad API \u6D88\u5931 \u2192 \u5224\u4E3A\u7CFB\u7EDF\u6CE8\u89C6\u5149\u6807\u5F00\u5173\uFF08View + Menu\uFF09\uFF0C\u5DF2\u63D0\u793A"
+    };
+  };
+  const gaze = () => {
+    if (given.has("gaze")) return null;
+    given.add("gaze");
+    return {
+      reason: "gaze",
+      text: `\u6536\u5230\u7684\u662F\u65B9\u5411\u952E / \u56DE\u8F66\uFF0C\u4E0D\u662F\u624B\u67C4\u3002\u5982\u679C\u4F60\u624B\u4E0A\u662F\u624B\u67C4\uFF1AQuest \u6B63\u62FF\u5B83\u5F53\u5149\u6807\u7528\uFF0C\u7F51\u9875\u770B\u4E0D\u5230\u3002${QUEST_PAD_HOWTO}`,
+      log: `Quest \u8F93\u5165\uFF1AGamepad API \u6CA1\u6709\u624B\u67C4\uFF0C\u5374\u6765\u4E86\u53EA\u6709\u5BFC\u822A\u952E\u7684\u952E\u76D8\u8F93\u5165\uFF08${GAZE_CONFIRM_MS / 1e3} s \u5185\u6CA1\u6709\u6253\u5B57\u952E\uFF1B\u6EDA\u8F6E ${wheels} \u6B21\uFF09\u2192 \u5224\u4E3A\u6CE8\u89C6\u5149\u6807\u6A21\u5F0F\u7684\u624B\u67C4\uFF0C\u5DF2\u63D0\u793A`
+    };
+  };
+  return {
+    feed(s) {
+      switch (s.kind) {
+        case "pads": {
+          const before = padsNow;
+          padsNow = s.count;
+          if (s.count > 0) {
+            padsEverSeen = true;
+            navSince = -1;
+            return null;
+          }
+          if (before > 0 && s.now - comboAt < COMBO_WINDOW_MS) return combo();
+          return null;
+        }
+        case "combo":
+          comboAt = s.now;
+          return null;
+        case "wheel":
+          wheels++;
+          return null;
+        case "key":
+          if (isTypingKey(s.code)) {
+            typingSeen = true;
+            navSince = -1;
+            return null;
+          }
+          if (padsNow > 0 || typingSeen) return null;
+          if (s.now - comboAt < COMBO_WINDOW_MS && padsEverSeen) return combo();
+          if (navSince < 0) navSince = s.now;
+          return null;
+        case "tick":
+          if (navSince >= 0 && !typingSeen && padsNow === 0 && s.now - navSince >= GAZE_CONFIRM_MS) {
+            navSince = -1;
+            return gaze();
+          }
+          return null;
+      }
+    },
+    /** 真键盘玩家：按过打字键就不再拿导航键当证据（main.ts 也拿它决定要不要收起软键）。 */
+    get typingSeen() {
+      return typingSeen;
+    },
+    get wheels() {
+      return wheels;
+    }
+  };
+}
+
+// src/app/settings-model.ts
+var SECTIONS = [
+  { id: "picture", title: "\u753B\u9762", hint: "\u4E0A\u5C4F\u8282\u594F\u3001\u5206\u8FA8\u7387\u3001\u8D34\u56FE" },
+  { id: "pacing", title: "\u8282\u594F", hint: "\u8DDF\u5C4F\u5E55\u8FD8\u662F\u8DDF\u949F\u3001\u6A21\u62DF\u901F\u5EA6\u3001\u8BFB\u76D8\u65F6\u5E8F" },
+  { id: "controls", title: "\u64CD\u4F5C", hint: "\u6309\u952E\u3001\u6447\u6746\u3001\u786E\u8BA4\u952E" },
+  { id: "system", title: "\u6A21\u62DF\u5668", hint: "CPU \u6838\u5FC3\u3001\u6E38\u620F\u8BED\u8A00\u3001\u673A\u578B" },
+  { id: "compat", title: "\u517C\u5BB9", hint: "\u753B\u9762\u7F3A\u4E1C\u897F / \u5361\u7684\u65F6\u5019\u5BF9\u7167\u7528" },
+  { id: "diag", title: "\u8BCA\u65AD", hint: "\u7EDF\u8BA1\u3001\u663E\u5361\u8C03\u7528\u67E5\u9519" }
+];
+var OFF_ON = (off = "\u5173", on = "\u5F00") => [{ value: "disabled", label: off }, { value: "enabled", label: on }];
+var core = (id, section, label, choices, def, hint) => ({ id, section, label, hint, choices, def, apply: "reload", layer: "core" });
+var PPSSPP_OPTIONS = [
+  // 画面
+  core("ppsspp_internal_resolution", "picture", "\u5185\u90E8\u5206\u8FA8\u7387", [1, 2, 3, 4].map((k) => ({ value: `${480 * k}x${272 * k}`, label: `${k}\xD7\uFF08${480 * k}\xD7${272 * k}\uFF09` })), "480x272", "PSP \u539F\u751F\u662F 1\xD7\u3002\u624B\u673A / Quest \u4E0A 1\xD7 \u5C31\u597D\uFF0C\u8D8A\u9AD8\u8D8A\u5403\u663E\u5361"),
+  core("ppsspp_texture_filtering", "picture", "\u8D34\u56FE\u8FC7\u6EE4", [{ value: "Auto", label: "\u81EA\u52A8" }, { value: "Nearest", label: "\u6700\u8FD1\u90BB\uFF08\u50CF\u7D20\u611F\uFF09" }, { value: "Linear", label: "\u7EBF\u6027\uFF08\u67D4\u4E00\u70B9\uFF09" }, { value: "Auto max quality", label: "\u81EA\u52A8\xB7\u6700\u9AD8\u8D28\u91CF" }], "Auto"),
+  core("ppsspp_texture_scaling_level", "picture", "\u8D34\u56FE\u653E\u5927", [{ value: "disabled", label: "\u5173" }, { value: "2x", label: "2\xD7" }, { value: "3x", label: "3\xD7" }, { value: "4x", label: "4\xD7" }, { value: "5x", label: "5\xD7" }], "disabled", "\u5728 CPU \u4E0A\u653E\u5927\u8D34\u56FE\uFF1A\u5F88\u5403 CPU\uFF0CQuest \u4E0A\u522B\u5F00"),
+  core("ppsspp_texture_scaling_type", "picture", "\u8D34\u56FE\u653E\u5927\u7B97\u6CD5", [{ value: "xbrz", label: "xBRZ" }, { value: "hybrid", label: "Hybrid" }, { value: "bicubic", label: "Bicubic" }, { value: "hybrid_bicubic", label: "Hybrid + Bicubic" }], "xbrz", "\u300C\u8D34\u56FE\u653E\u5927\u300D\u5F00\u7740\u624D\u6709\u7528"),
+  core("ppsspp_texture_shader", "picture", "\u8D34\u56FE\u653E\u5927\uFF08\u663E\u5361\uFF09", [{ value: "disabled", label: "\u5173" }, { value: "2xBRZ", label: "Tex2xBRZ" }, { value: "4xBRZ", label: "Tex4xBRZ" }, { value: "MMPX", label: "MMPX" }], "disabled"),
+  core("ppsspp_texture_anisotropic_filtering", "picture", "\u5404\u5411\u5F02\u6027\u8FC7\u6EE4", [{ value: "disabled", label: "\u5173" }, { value: "2x", label: "2\xD7" }, { value: "4x", label: "4\xD7" }, { value: "8x", label: "8\xD7" }, { value: "16x", label: "16\xD7" }], "16x"),
+  core("ppsspp_smart_2d_texture_filtering", "picture", "\u667A\u80FD 2D \u8D34\u56FE\u8FC7\u6EE4", OFF_ON(), "disabled"),
+  core("ppsspp_texture_deposterize", "picture", "\u8D34\u56FE\u53BB\u8272\u9636", OFF_ON(), "disabled"),
+  // 节奏
+  core("ppsspp_locked_cpu_speed", "pacing", "\u9501\u5B9A PSP \u7684 CPU \u9891\u7387", [{ value: "disabled", label: "\u4E0D\u9501\uFF08\u7167\u6E38\u620F\uFF09" }, ...["222MHz", "266MHz", "333MHz", "444MHz", "555MHz", "666MHz"].map((v) => ({ value: v, label: v }))], "disabled", "\u6709\u7684\u6E38\u620F\u8D85\u9891\u624D\u4E0D\u5361\uFF1B\u6A21\u62DF\u8D77\u6765\u66F4\u91CD"),
+  core("ppsspp_io_timing_method", "pacing", "\u8BFB\u76D8\u65F6\u5E8F", [{ value: "Fast", label: "\u5FEB" }, { value: "Host", label: "\u8DDF\u4E3B\u673A" }, { value: "Simulate UMD delays", label: "\u6A21\u62DF UMD \u5EF6\u8FDF" }], "Fast", "\u4E2A\u522B\u6E38\u620F\u8BFB\u76D8\u592A\u5FEB\u4F1A\u51FA\u9519\uFF0C\u624D\u7528\u300C\u6A21\u62DF UMD \u5EF6\u8FDF\u300D"),
+  // 操作
+  core("ppsspp_button_preference", "controls", "\u7CFB\u7EDF\u786E\u8BA4\u952E", [{ value: "Circle", label: "\u25CB\uFF08\u65E5\u7248\u4E60\u60EF\uFF09" }, { value: "Cross", label: "\xD7\uFF08\u6B27\u7F8E\u4E60\u60EF\uFF09" }], "Cross", "\u53EA\u7BA1 PSP \u7CFB\u7EDF\u5BF9\u8BDD\u6846\uFF08\u5B58\u6863\u3001\u8BFB\u6863\u90A3\u79CD\uFF09\uFF1B\u6E38\u620F\u5185\u6309\u952E\u5404\u6E38\u620F\u81EA\u5DF1\u5B9A"),
+  core("ppsspp_analog_deadzone", "controls", "\u6447\u6746\u6B7B\u533A", ["0.0", "0.05", "0.10", "0.15", "0.20", "0.25", "0.30"].map((v) => ({ value: v, label: `${Math.round(Number(v) * 100)}%` })), "0.0"),
+  core("ppsspp_analog_is_circular", "controls", "\u6447\u6746\u5706\u5F62\u8865\u507F", OFF_ON(), "disabled", "\u624B\u67C4\u6447\u6746\u662F\u5706\u5F62\u884C\u7A0B\u65F6\u5F00\uFF0C\u659C\u5411\u80FD\u63A8\u5230\u5E95"),
+  // 模拟器
+  core("ppsspp_cpu_core", "system", "CPU \u6838\u5FC3", [{ value: "IR JIT", label: "IR \u89E3\u91CA\u5668\uFF08\u9ED8\u8BA4\uFF09" }, { value: "Interpreter", label: "\u7ECF\u5178\u89E3\u91CA\u5668\uFF08\u6162 3 \u500D\uFF0C\u6392\u67E5\u7528\uFF09" }], "IR JIT", "\u7F51\u9875\u91CC\u6CA1\u6709 JIT"),
+  core("ppsspp_language", "system", "\u6E38\u620F\u8BED\u8A00", [
+    ["Automatic", "\u81EA\u52A8"],
+    ["Japanese", "\u65E5\u8BED"],
+    ["English", "\u82F1\u8BED"],
+    ["Chinese Simplified", "\u7B80\u4F53\u4E2D\u6587"],
+    ["Chinese Traditional", "\u7E41\u4F53\u4E2D\u6587"],
+    ["Korean", "\u97E9\u8BED"],
+    ["French", "\u6CD5\u8BED"],
+    ["Spanish", "\u897F\u73ED\u7259\u8BED"],
+    ["German", "\u5FB7\u8BED"],
+    ["Italian", "\u610F\u5927\u5229\u8BED"],
+    ["Dutch", "\u8377\u5170\u8BED"],
+    ["Portuguese", "\u8461\u8404\u7259\u8BED"],
+    ["Russian", "\u4FC4\u8BED"]
+  ].map(([value, label]) => ({ value, label })), "Automatic", "PSP \u7CFB\u7EDF\u8BED\u8A00\uFF1A\u652F\u6301\u591A\u8BED\u8A00\u7684\u6E38\u620F\u6309\u5B83\u9009"),
+  core("ppsspp_psp_model", "system", "PSP \u578B\u53F7", [{ value: "psp_2000_3000", label: "PSP-2000 / 3000" }, { value: "psp_1000", label: "PSP-1000" }], "psp_2000_3000", "1000 \u578B\u5185\u5B58\u5C11\uFF0C\u4E2A\u522B\u8001\u6E38\u620F\u8981\u5B83"),
+  // 兼容
+  core("ppsspp_software_skinning", "compat", "CPU \u8499\u76AE", OFF_ON("\u5173\uFF08\u4EA4\u7ED9\u663E\u5361\uFF0C\u9ED8\u8BA4\uFF09", "\u5F00"), "disabled", "\u5E26\u9AA8\u9ABC\u7684\u6A21\u578B\u5728 CPU \u4E0A\u7B97"),
+  core("ppsspp_disable_range_culling", "compat", "\u5173\u8303\u56F4\u5254\u9664", OFF_ON(), "disabled", "\u4E0D\u8BA9\u663E\u5361\u63D0\u524D\u4E22\u6389\u300C\u770B\u8D77\u6765\u5728\u753B\u9762\u5916\u300D\u7684\u9876\u70B9"),
+  core("ppsspp_gpu_hardware_transform", "compat", "\u786C\u4EF6\u53D8\u6362", OFF_ON("\u5173\uFF08\u8F6F\u4EF6\u53D8\u6362\uFF09", "\u5F00\uFF08\u9ED8\u8BA4\uFF09"), "enabled"),
+  core("ppsspp_hardware_tesselation", "compat", "\u786C\u4EF6\u66F2\u9762\u7EC6\u5206", OFF_ON(), "disabled"),
+  core("ppsspp_spline_quality", "compat", "\u66F2\u9762\u8D28\u91CF", [{ value: "Low", label: "\u4F4E" }, { value: "Medium", label: "\u4E2D" }, { value: "High", label: "\u9AD8" }], "High"),
+  core("ppsspp_skip_buffer_effects", "compat", "\u8DF3\u8FC7\u7F13\u51B2\u6548\u679C", OFF_ON(), "disabled", "\u5FEB\uFF0C\u4F46\u6709\u7684\u6E38\u620F\u4F1A\u4EC0\u4E48\u90FD\u753B\u4E0D\u51FA\u6765"),
+  core("ppsspp_skip_gpu_readbacks", "compat", "\u8DF3\u8FC7\u663E\u5361\u56DE\u8BFB", OFF_ON(), "disabled", "\u5FEB\uFF0C\u4F46\u6E38\u620F\u300C\u6293\u753B\u9762\u300D\uFF08\u6BD4\u5982\u8FC7\u5173\u7167\u7247\uFF09\u4F1A\u662F\u65E7\u7684"),
+  core("ppsspp_lazy_texture_caching", "compat", "\u61D2\u8D34\u56FE\u7F13\u5B58", OFF_ON(), "disabled", "\u5FEB\uFF0C\u4E2A\u522B\u6E38\u620F\u6587\u5B57\u4F1A\u51FA\u9519"),
+  core("ppsspp_lower_resolution_for_effects", "compat", "\u7279\u6548\u964D\u5206\u8FA8\u7387", [{ value: "disabled", label: "\u5173" }, { value: "Safe", label: "\u4FDD\u5B88" }, { value: "Balanced", label: "\u5747\u8861" }, { value: "Aggressive", label: "\u6FC0\u8FDB" }], "disabled")
+];
+var HIDDEN = [
+  { match: /^ppsspp_(enable_wlan|change_mac_address\d+|wlan_channel|enable_builtin_pro_ad_hoc_server|change_pro_ad_hoc_server_address|pro_ad_hoc_server_address\d+|enable_upnp|upnp_use_original_port|port_offset|minimum_timeout|forced_first_connect)$/, why: "\u8054\u7F51\uFF1A\u5BB6\u89C4\u9EC4\u7EBF\u533A\uFF0C\u4E0D\u8FDE\u5916\u90E8\u670D\u52A1" },
+  { match: /^ppsspp_cache_iso$/, why: "\u6574\u5F20\u76D8\u8BFB\u8FDB\u5185\u5B58\uFF1A\u786C\u89C4\u77E9\uFF0C\u6574\u5F20\u5149\u76D8\u6C38\u8FDC\u4E0D\u8FDB\u5185\u5B58" },
+  { match: /^ppsspp_(software_rendering|frameskip|frameskiptype|auto_frameskip|frame_duplication|detect_vsync_swap_interval|force_lag_sync|inflight_frames)$/, why: "\u6E32\u67D3\u65B9\u5F0F\u3001\u8DF3\u5E27\u3001\u6392\u7A0B\u7531 app \u7BA1\uFF08\u6392\u7A0B / \u4E0A\u5C4F\u8282\u62CD / \u8F6F\u4EF6\u6E32\u67D3\u5728 app \u5C42\uFF09" },
+  { match: /^ppsspp_backend$/, why: "\u7F51\u9875\u91CC\u53EA\u6709 WebGL2" },
+  { match: /^ppsspp_(cheats|texture_replacement)$/, why: "\u8981\u5916\u90E8\u6587\u4EF6\uFF08\u91D1\u624B\u6307 / \u8D34\u56FE\u5305\uFF09\uFF0C\u8FD8\u6CA1\u63A5" },
+  { match: /^ppsspp_fast_memory$/, why: "wasm \u4E0B\u5FC5\u987B\u5173\uFF08\u574F\u5730\u5740\u4F1A\u8BA9\u6574\u4E2A\u6838\u5D29\uFF0Cv0.1.32\uFF09" },
+  { match: /^ppsspp_(ignore_bad_memory_access|memstick_inserted)$/, why: "\u5FC5\u987B\u5F00\u7740\uFF1A\u5173\u4E86\u6E38\u620F\u8BFB\u4E0D\u5230\u5B58\u6863 / \u78B0\u5230\u574F\u5730\u5740\u6574\u4E2A\u6838\u5C31\u505C" },
+  { match: /^ppsspp_(mulitsample_level|cropto16x9|analog_sensitivity)$/, why: "\u8FD8\u6CA1\u5728\u7F51\u9875\u91CC\u9A8C\u8FC7 / \u7528\u4E0D\u4E0A\uFF0C\u7B49\u9700\u8981\u518D\u9732" }
+];
+var isHidden2 = (key) => HIDDEN.some((h2) => h2.match.test(key));
+var APP_SETTINGS = [
+  { id: "app.cadence", section: "picture", label: "\u4E0A\u5C4F\u8282\u62CD", hint: "72 Hz \u5C4F\u653E 30 \u5E27\u6E38\u620F\u7684\u53D6\u820D\uFF1A\u81EA\u52A8 = \u6BCF 3 \u6B21\u5237\u65B0 1 \u5E27\uFF08\u5300\uFF09", choices: [{ value: "0", label: "\u81EA\u52A8" }, { value: "1", label: "\u6BCF\u6B21\u5237\u65B0\u90FD\u4E0A" }, { value: "2", label: "\u6BCF 2 \u6B21\u5237\u65B0" }, { value: "3", label: "\u6BCF 3 \u6B21\u5237\u65B0" }], def: "0", apply: "now", layer: "app" },
+  { id: "app.cap30", section: "picture", label: "\u53EA\u753B 30 \u5E27", hint: "\u6E38\u620F\u672C\u8EAB 60 \u5E27\u65F6\u5C11\u753B\u4E00\u534A\uFF0C\u903B\u8F91\u7167\u5E38\uFF08\u79FB\u52A8\u8BBE\u5907\u9ED8\u8BA4\u5F00\uFF09", choices: OFF_ON("\u753B\u6EE1 60", "\u53EA\u753B 30"), def: "auto", apply: "now", layer: "app" },
+  {
+    id: "app.preset",
+    section: "pacing",
+    label: "\u65B9\u6848",
+    hint: "\u4E00\u9009\u5C31\u628A\u6392\u7A0B\u3001\u58F0\u97F3\u7F13\u51B2\u3001\u7CFB\u7EDF\u58F0\u97F3\u5EF6\u8FDF\u3001\u753B\u51E0\u5E27\u4E00\u8D77\u6362\u6389\uFF08W-4\uFF09\u3002\u4E0B\u9762\u51E0\u9879\u5355\u72EC\u6539\u8FC7\u5C31\u663E\u793A\u300C\u81EA\u5B9A\u4E49\u300D",
+    choices: [{ value: "default", label: "\u5747\u8861\uFF08\u9ED8\u8BA4\uFF09" }, { value: "gal", label: "GAL\uFF1A\u542C\u58F0\u7701\u7535" }, { value: "act", label: "ACT\uFF1A\u4F4E\u5EF6\u8FDF" }, { value: "mus", label: "MUS\uFF1A\u97F3\u753B\u5BF9\u9F50\uFF08\u5BF9\u9F50\u8FD8\u6CA1\u505A\uFF0C\u73B0\u540C ACT\uFF09" }, { value: "custom", label: "\u81EA\u5B9A\u4E49\uFF08\u5355\u72EC\u6539\u8FC7\uFF09" }],
+    def: "default",
+    apply: "now",
+    layer: "app"
+  },
+  { id: "app.ffcap", section: "pacing", label: "\u5FEB\u8FDB\u4E0A\u9650", hint: "\u6309\u4F4F\u5FEB\u8FDB / RT \u6309\u5230\u5E95\u65F6\u6700\u591A\u8DD1\u51E0\u500D\uFF08\u8BBE\u5907\u8DD1\u4E0D\u5230\u5C31\u8DD1\u5230\u5B83\u7684\u6781\u9650\uFF1B\u5FEB\u8FDB\u65F6\u81EA\u52A8\u591A\u8DF3\u5E27\uFF09", choices: [2, 3, 4, 5, 8, 10].map((x) => ({ value: String(x), label: x === 8 ? "\xD78\uFF08\u9ED8\u8BA4\uFF09" : `\xD7${x}` })), def: "8", apply: "now", layer: "app" },
+  { id: "app.pacing", section: "pacing", label: "\u6392\u7A0B", hint: "\u8DDF\u5C4F\u5E55 = \u8DDF\u663E\u793A\u5668\u5237\u65B0\u8D70\uFF1B\u8DDF\u58F0\u97F3 = \u987A\u6ED1\u4E0D\u7206\u97F3\uFF08\u5EF6\u8FDF\u9AD8\uFF09\uFF1B\u5899\u949F = \u6838\u81EA\u5DF1\u8BA1\u65F6", choices: [{ value: "vsync", label: "\u8DDF\u5C4F\u5E55" }, { value: "audio", label: "\u8DDF\u58F0\u97F3\uFF08\u987A\u6ED1\uFF09" }, { value: "wall", label: "\u5899\u949F" }], def: "vsync", apply: "now", layer: "app" },
+  { id: "app.tap", section: "controls", label: "\u6309\u4E0B\u9501\u5B58", hint: "\u5FEB\u901F\u8FDE\u6309\u6BCF\u4E00\u4E0B\u90FD\u8BA9\u6E38\u620F\u770B\u5230\uFF08\u81F3\u5C11\u6309\u4F4F 2 \u5E27\u3001\u677E\u5F00 2 \u5E27\uFF09", choices: OFF_ON("\u5173", "\u5F00\uFF08\u9ED8\u8BA4\uFF09"), def: "enabled", apply: "now", layer: "app" },
+  { id: "app.render", section: "compat", label: "\u8F6F\u4EF6\u6E32\u67D3", hint: "\u5B8C\u5168\u4E0D\u7528\u663E\u5361\uFF1A\u5F88\u6162\uFF0C\u4F46\u753B\u9762\u662F\u5BF9\u7684\u2014\u2014\u5224\u65AD\u662F\u4E0D\u662F\u663E\u5361\u90A3\u6761\u8DEF\u7684\u95EE\u9898", choices: OFF_ON(), def: "disabled", apply: "reload", layer: "app" },
+  { id: "app.stats", section: "diag", label: "\u7EDF\u8BA1\u8BE6\u60C5", hint: "\u753B\u9762\u4E0A\u53E0\u4E00\u5757\u5E27\u8282\u594F / \u58F0\u97F3 / \u8BFB\u76D8 / \u624B\u67C4\u7684\u8BFB\u6570", choices: OFF_ON(), def: "disabled", apply: "now", layer: "app" },
+  { id: "app.glcheck", section: "diag", label: "GL \u8BCA\u65AD", hint: "\u62BD\u6837\u67E5\u6BCF\u4E2A\u663E\u5361\u8C03\u7528\uFF0C\u7B2C\u4E00\u6B21\u51FA\u9519\u7684\u5199\u8FDB\u65E5\u5FD7\uFF08\u6162\u4E00\u70B9\uFF09", choices: OFF_ON(), def: "disabled", apply: "reload", layer: "app" }
+];
+var APP_RELOAD_PARAMS = { "app.render": ["render", "sw"], "app.glcheck": ["glcheck", "1"] };
+var VALID = new Map(PPSSPP_OPTIONS.map((d) => [d.id, new Set(d.choices.map((c) => c.value))]));
+function readCoreOverrides(params2) {
+  const out = /* @__PURE__ */ new Map();
+  if (params2.get("skin") === "cpu") out.set("ppsspp_software_skinning", "enabled");
+  if (params2.get("cull") === "0") out.set("ppsspp_disable_range_culling", "enabled");
+  if (params2.get("cpu") === "interp") out.set("ppsspp_cpu_core", "Interpreter");
+  for (const part of (params2.get("o") ?? "").split(";")) {
+    const i = part.indexOf(":");
+    if (i <= 0) continue;
+    const key = decodeURIComponent(part.slice(0, i)), value = decodeURIComponent(part.slice(i + 1));
+    if (isHidden2(key) || !VALID.get(key)?.has(value)) continue;
+    out.set(key, value);
+  }
+  return out;
+}
+function writeCoreOverrides(params2, overrides) {
+  const q = new URLSearchParams(params2);
+  q.delete("skin");
+  q.delete("cull");
+  q.delete("cpu");
+  const parts = [...overrides].filter(([k, v]) => PPSSPP_OPTIONS.find((d) => d.id === k)?.def !== v && !isHidden2(k) && VALID.get(k)?.has(v)).sort(([a], [b]) => a.localeCompare(b)).map(([k, v]) => `${encodeURIComponent(k)}:${encodeURIComponent(v)}`);
+  if (parts.length) q.set("o", parts.join(";"));
+  else q.delete("o");
+  return q;
+}
+var coreOptionArgs = (overrides) => [...overrides].filter(([k, v]) => !isHidden2(k) && VALID.get(k)?.has(v)).map(([k, v]) => `opt:${k}=${v}`);
+var PRESETS = {
+  default: { pacing: "vsync", audioTargetMs: 46, audioMaxMs: 81, latencyHint: "interactive", cap30: "auto" },
+  gal: { pacing: "audio", audioTargetMs: 150, audioMaxMs: 300, latencyHint: "playback", cap30: true, note: "\u5207\u5230\u540E\u53F0\u7EE7\u7EED\u51FA\u58F0\uFF08\u6302\u673A\u5F53 mp3\uFF09\u8FD8\u6CA1\u505A\uFF1A\u73B0\u5728\u5207\u540E\u53F0\u4F1A\u6682\u505C" },
+  act: { pacing: "vsync", audioTargetMs: 23, audioMaxMs: 35, latencyHint: "interactive", cap30: false, note: "\u58F0\u97F3\u7F13\u51B2\u538B\u5230\u6700\u5C0F\uFF0C\u5B81\u613F\u5076\u5C14\u7206\u97F3" },
+  mus: { pacing: "vsync", audioTargetMs: 23, audioMaxMs: 35, latencyHint: "interactive", cap30: false, note: "\u753B\u9762\u6309\u58F0\u97F3\u8F93\u51FA\u5EF6\u8FDF\u63A8\u8FDF\uFF08\u97F3\u753B\u5BF9\u9F50\uFF09\u8FD8\u6CA1\u505A\uFF1A\u73B0\u5728\u548C ACT \u4E00\u6837" }
+};
+function presetOf(k, deviceCap30) {
+  for (const id of ["default", "gal", "act"]) {
+    const p = PRESETS[id];
+    const cap = p.cap30 === "auto" ? deviceCap30 : p.cap30;
+    if (p.pacing === k.pacing && p.audioTargetMs === k.audioTargetMs && p.audioMaxMs === k.audioMaxMs && p.latencyHint === k.latencyHint && cap === k.cap30) return id;
+  }
+  return "custom";
+}
+
+// src/app/speed.ts
+var TRIGGER_DEADZONE = 0.2;
+var ANALOG_MAX = 4;
+var FULL_PRESS = 0.95;
+var DEFAULT_FF_CAP = 8;
+function triggerSpeed(value, cap = DEFAULT_FF_CAP) {
+  const v = Math.max(0, (value - TRIGGER_DEADZONE) / (1 - TRIGGER_DEADZONE));
+  if (v <= 0) return 1;
+  if (value >= FULL_PRESS) return cap;
+  const s = 1 + (Math.min(ANALOG_MAX, cap) - 1) * (v / ((FULL_PRESS - TRIGGER_DEADZONE) / (1 - TRIGGER_DEADZONE)));
+  return Math.min(cap, Math.round(s * 4) / 4);
+}
+
+// src/app/settings-panel.ts
+function activeReloadSettings(params2) {
+  const ov = readCoreOverrides(params2);
+  const core2 = PPSSPP_OPTIONS.filter((d) => ov.has(d.id) && ov.get(d.id) !== d.def).map((d) => `${d.label}\uFF1A${d.choices.find((c) => c.value === ov.get(d.id))?.label ?? ov.get(d.id)}`);
+  const app = Object.entries(APP_RELOAD_PARAMS).filter(([, [k, v]]) => params2.get(k) === v).map(([id]) => APP_SETTINGS.find((d) => d.id === id).label);
+  return [...app, ...core2];
+}
+function openSettings(host, focus, draft) {
+  const start = readCoreOverrides(host.params);
+  const appReloadStart = new Map(Object.entries(APP_RELOAD_PARAMS).map(([id, [k, v]]) => [id, host.params.get(k) === v ? "enabled" : "disabled"]));
+  const core2 = new Map(draft?.core ?? start);
+  const appReload = new Map(draft?.appReload ?? appReloadStart);
+  const valueOf2 = (d) => d.layer === "core" ? core2.get(d.id) ?? d.def : d.apply === "reload" ? appReload.get(d.id) : host.get(d.id);
+  const pending2 = () => {
+    const keys = /* @__PURE__ */ new Set([...core2.keys(), ...start.keys()]);
+    let n = 0;
+    for (const k of keys) if ((core2.get(k) ?? PPSSPP_OPTIONS.find((d) => d.id === k)?.def) !== (start.get(k) ?? PPSSPP_OPTIONS.find((d) => d.id === k)?.def)) n++;
+    for (const [k, v] of appReload) if (appReloadStart.get(k) !== v) n++;
+    return n;
+  };
+  void sheet((close) => {
+    const go = h("button", { class: "primary" });
+    const refresh = () => {
+      const n = pending2();
+      go.hidden = !n;
+      go.textContent = `\u7528\u8FD9\u4E9B\u8BBE\u7F6E\u91CD\u65B0\u8F7D\u5165\uFF08${n} \u9879\uFF09`;
+    };
+    const row = (d) => {
+      const sel = h(
+        "select",
+        { class: "setting-select", "aria-label": d.label },
+        ...d.choices.map((c) => h("option", { value: c.value, ...c.value === valueOf2(d) ? { selected: "" } : {} }, c.label))
+      );
+      sel.addEventListener("change", () => {
+        if (d.layer === "core") {
+          if (sel.value === d.def) core2.delete(d.id);
+          else core2.set(d.id, sel.value);
+        } else if (d.apply === "reload") appReload.set(d.id, sel.value);
+        else {
+          host.set(d.id, sel.value);
+          host.log(`\u8BBE\u7F6E\uFF1A${d.label} \u2192 ${d.choices.find((c) => c.value === sel.value)?.label ?? sel.value}`);
+          close();
+          openSettings(host, d.section, { core: core2, appReload });
+          return;
+        }
+        refresh();
+      });
+      return h(
+        "div",
+        { class: "setting-row" },
+        h("label", {}, h("span", {}, d.label), d.apply === "reload" ? h("span", { class: "setting-tag" }, "\u91CD\u65B0\u8F7D\u5165\u751F\u6548") : null),
+        sel,
+        d.hint ? h("p", { class: "muted setting-hint" }, d.hint) : null
+      );
+    };
+    const all = [...APP_SETTINGS, ...PPSSPP_OPTIONS];
+    const sections = SECTIONS.map((s) => {
+      const items = all.filter((d) => d.section === s.id);
+      return h("section", { class: "setting-section", id: `settings-${s.id}` }, h("h3", {}, `${s.title}`, h("span", { class: "muted" }, ` \xB7 ${s.hint}`)), ...items.map(row));
+    });
+    const nav = h("div", { class: "setting-nav" }, ...SECTIONS.map((s) => h("button", { onclick: () => document.getElementById(`settings-${s.id}`)?.scrollIntoView({ block: "start", behavior: "smooth" }) }, s.title)));
+    go.addEventListener("click", () => {
+      let q = writeCoreOverrides(host.params, core2);
+      for (const [id, [k, v]] of Object.entries(APP_RELOAD_PARAMS)) {
+        if (appReload.get(id) === "enabled") q.set(k, v);
+        else if (q.get(k) === v) q.delete(k);
+      }
+      host.log(`\u8BBE\u7F6E\uFF1A\u91CD\u65B0\u8F7D\u5165\uFF08${activeReloadSettings(q).join(" \xB7 ") || "\u5168\u90E8\u9ED8\u8BA4"}\uFF09`);
+      host.reload(q.toString());
+    });
+    const reset = h("button", { onclick: () => {
+      close();
+      openSettings(host, focus, { core: /* @__PURE__ */ new Map(), appReload: new Map([...appReload.keys()].map((k) => [k, "disabled"])) });
+    } }, "\u8981\u91CD\u65B0\u8F7D\u5165\u7684\u5168\u90E8\u6062\u590D\u9ED8\u8BA4");
+    refresh();
+    if (focus) queueMicrotask(() => document.getElementById(`settings-${focus}`)?.scrollIntoView({ block: "start" }));
+    return [
+      h("h2", {}, "\u8BBE\u7F6E"),
+      h("p", { class: "hint" }, "\u9009\u4E86\u5C31\u751F\u6548\u7684\u5F53\u573A\u5C31\u53D8\u3002\u6807\u7740\u300C\u91CD\u65B0\u8F7D\u5165\u751F\u6548\u300D\u7684\u5148\u5728\u8FD9\u91CC\u6539\u597D\uFF0C\u6700\u540E\u70B9\u5E95\u4E0B\u7684\u6309\u94AE\u4E00\u8D77\u751F\u6548\u2014\u2014\u8FD9\u4E9B\u53EA\u5728\u8FD9\u4E00\u6B21\u6253\u5F00\u91CC\u6709\u6548\uFF08\u8981\u4E0D\u8981\u8BB0\u4F4F\u3001\u6309\u8BBE\u5907\u8FD8\u662F\u6309\u6E38\u620F\u8BB0\uFF0C\u7B49\u4F60\u5B9A\uFF09\u3002"),
+      nav,
+      ...sections,
+      h("div", { class: "row" }, h("button", { onclick: () => close() }, "\u5173\u95ED"), reset, go)
+    ];
+  });
 }
 
 // src/app/disc-tools.ts
@@ -10660,8 +11261,9 @@ var currentSlot = null;
 var lastNote = "";
 var cards = /* @__PURE__ */ new Map();
 var titles = { get: (id) => cards.get(id)?.title, has: (id) => cards.has(id) };
+var latencyHint = "interactive";
 function audioContext() {
-  ac ??= new AudioContext({ sampleRate: 44100, latencyHint: "interactive" });
+  ac ??= new AudioContext({ sampleRate: 44100, latencyHint });
   return ac;
 }
 async function cycleAudio() {
@@ -10673,7 +11275,7 @@ async function cycleAudio() {
 }
 async function rebuildAudio(why) {
   if (!session) return;
-  const fresh = new AudioContext({ sampleRate: 44100, latencyHint: "interactive" });
+  const fresh = new AudioContext({ sampleRate: 44100, latencyHint });
   ac = fresh;
   await session.rebuildAudio(fresh);
   logEvent("warn", `\u58F0\u97F3\u91CD\u5EFA\uFF08${why}\uFF09\uFF1A\u65B0 AudioContext ${fresh.state}`);
@@ -10842,16 +11444,6 @@ function renderLibrary() {
   if (!discs.length && auth.isSignedIn()) {
     rows.push(h("p", { class: "muted" }, pantryComplete ? `\u7A7A\u7684\u3002\u6587\u4EF6\u653E\u5728 OneDrive\u300C\u5E94\u7528\u300D\u91CC\u672C app \u7684\u6587\u4EF6\u5939 \u2192 ${PANTRY}/` : "\u2026"));
   }
-  if (auth.isSignedIn()) rows.push(h(
-    "div",
-    { class: "row" },
-    h("button", { onclick: () => {
-      openSaveManager(saveManagerContext).catch((e) => banner(errorText(e)));
-    } }, "\u5B58\u6863\u7BA1\u7406"),
-    h("button", { onclick: () => {
-      openBins(saveManagerContext.titleByKey).catch((e) => banner(errorText(e)));
-    } }, "\u56DE\u6536\u7AD9 / \u5907\u4EFD\u7BB1")
-  ));
   list.replaceChildren(...rows);
   $("unlock").hidden = !locked;
 }
@@ -11071,13 +11663,24 @@ async function play(prepare, resume) {
     onInput: () => activity?.input(performance.now()),
     media: disc.media,
     ext: disc.ext,
-    coreDir: "./dist/core-a13f398ca92a/",
+    coreDir: "./dist/core-607242b07a1d/",
     glCanvas: $("gl"),
     softCanvas: $("screen"),
     audioContext: audioContext(),
     lowLatency: params.get("lowlatency") !== "0",
     pacing: params.get("pace") === "wall" ? "wall" : params.get("pace") === "audio" ? "audio" : void 0,
     cpuCore: params.get("cpu") === "interp" ? "interp" : void 0,
+    presentEvery: Number(params.get("cadence")) || 0,
+    // 诊断：强制上屏节拍（见 CoreSession opts）
+    cullOff: params.get("cull") === "0",
+    // 画面兼容（☰「画面兼容…」拼的网址参数）
+    forceSoftware: params.get("render") === "sw",
+    glCheck: params.get("glcheck") === "1",
+    tapOff: params.get("tap") === "0",
+    hideExt: (params.get("hideext") ?? "").replace(/[^A-Za-z0-9_,]/g, "").slice(0, 200) || void 0,
+    // 只测试用（W-34）
+    coreOptions: coreOptionArgs(readCoreOverrides(params)),
+    onCoreError: (line) => logEvent("warn", `\u6838\uFF1A${line}`),
     skinning: params.get("skin") === "cpu" ? "cpu" : "gpu",
     // 10-16 默认 GPU 蒙皮：PC 量过模拟线程 28%→25% 忙、顶点缓冲 2.4→1.4 MB/帧（wasm 没有 JIT 顶点解码器，软件蒙皮不划算）；?skin=cpu 退回
     memstick,
@@ -11085,6 +11688,10 @@ async function play(prepare, resume) {
   });
   if (resume) session.setHold(true);
   session.setFrameCap30(defaultFrameCap30());
+  {
+    const on = activeReloadSettings(params);
+    if (on.length) logEvent("info", `\u8FD9\u6B21\u6253\u5F00\u7684\u8BBE\u7F6E\uFF1A${on.join(" \xB7 ")}`);
+  }
   if (disc.identifier) {
     try {
       appState().setItem("lastDisc", disc.identifier);
@@ -11580,11 +12187,16 @@ function renderToolbar() {
 function openMenu() {
   if (!session) return;
   const s = session;
+  let done = null;
   const item = (label, hint, fn, on = false) => h("button", { class: `menu-item${on ? " on" : ""}`, onclick: () => {
     done?.();
     fn();
   } }, h("span", {}, label), h("span", { class: "muted" }, hint));
-  let done = null;
+  const big = (label, fn, on = false) => h("button", { class: on ? "primary" : "", onclick: () => {
+    done?.();
+    fn();
+  } }, label);
+  const changed = activeReloadSettings(params);
   void sheet((close) => {
     done = () => close();
     return [
@@ -11592,30 +12204,31 @@ function openMenu() {
       h("p", { class: "muted" }, APP_VERSION),
       h(
         "div",
+        { class: "menu-grid" },
+        big(s.paused ? "\u7EE7\u7EED" : "\u6682\u505C", togglePause, s.paused),
+        big("\u5FEB\u7167\u2026", openSlots),
+        big("\u5B58\u6863\u7BA1\u7406\u2026", () => {
+          openSaveManager({ ...saveManagerContext, only: current ? { title: current.title, key: current.key, discId: current.fp.id } : void 0 }).catch((e) => banner(errorText(e)));
+        })
+      ),
+      h("h3", {}, "\u8FD9\u53F0\u8BBE\u5907"),
+      h(
+        "div",
         { class: "menu-list" },
-        item(s.paused ? "\u7EE7\u7EED" : "\u6682\u505C", "P \xB7 Esc", togglePause, s.paused),
-        item(s.speed > 1 ? "\u6062\u590D\u6B63\u5E38\u901F\u5EA6" : `\u5FEB\u8FDB \xD7${FAST_FORWARD}`, "\u6309\u4F4F Tab \xB7 ` \u5207\u6362", () => setFast(!(s.speed > 1)), s.speed > 1),
-        item(softKeys?.visible ? "\u6536\u8D77\u5C4F\u5E55\u8F6F\u952E" : "\u5C4F\u5E55\u8F6F\u952E", "\u89E6\u5C4F / \u5C04\u7EBF\u70B9", toggleSoftKeys, softKeys?.visible ?? false),
         item(document.fullscreenElement ? "\u9000\u51FA\u5168\u5C4F" : "\u5168\u5C4F", "Alt+Enter \xB7 \u53CC\u51FB\u753B\u9762", toggleFullscreen),
         ...pip.supported ? [item(pip.active ? "\u6536\u56DE\u5C0F\u7A97" : "\u5C0F\u7A97", "Alt+P \xB7 \u7F6E\u9876\u7684\u5C0F\u753B\u9762\uFF0C\u8FB9\u770B\u8FB9\u505A\u522B\u7684", () => {
           togglePip().catch(() => {
           });
         }, pip.active)] : [],
+        item(softKeys?.visible ? "\u6536\u8D77\u5C4F\u5E55\u8F6F\u952E" : "\u5C4F\u5E55\u8F6F\u952E", "\u89E6\u5C4F / \u5C04\u7EBF\u70B9", toggleSoftKeys, softKeys?.visible ?? false),
         item(s.isMuted ? "\u53D6\u6D88\u9759\u97F3" : `\u97F3\u91CF ${Math.round(s.volume * 100)}`, "M \u9759\u97F3", openVolume, s.isMuted),
-        item(s.frameCap30 ? "\u53EA\u753B 30 \u5E27\uFF08\u7701\u7535\uFF09" : "\u753B\u6EE1 60 \u5E27", s.frameCap30 ? "\u6E38\u620F\u672C\u8EAB 60 \u5E27\u65F6\u5C11\u753B\u4E00\u534A\uFF1B\u903B\u8F91\u4E0D\u53D8" : "\u79FB\u52A8\u8BBE\u5907\u9ED8\u8BA4\u53EA\u753B 30", () => {
-          s.setFrameCap30(!s.frameCap30);
-          renderToolbar();
-        }, s.frameCap30),
-        item(s.pacingMode() === "wall" ? "\u6392\u7A0B\uFF1A\u5899\u949F \u2192 \u8DDF\u5C4F\u5E55" : "\u6392\u7A0B\uFF1A\u8DDF\u5C4F\u5E55 \u2192 \u5899\u949F", "\u5E27\u7387\u4F4E\u4F46\u6838\u4E0D\u5FD9\u65F6\u6362\u4E00\u79CD\u5BF9\u7167\uFF08\u8BCA\u65AD\u7528\uFF09", () => {
-          s.setPacing(s.pacingMode() === "wall" ? "vsync" : "wall");
-          renderToolbar();
-        }, s.pacingMode() === "wall"),
-        item($("status").hidden ? "\u7EDF\u8BA1\u8BE6\u60C5" : "\u6536\u8D77\u7EDF\u8BA1", "\u5E27\u8282\u594F \xB7 \u58F0\u97F3 \xB7 \u8BFB\u76D8 \xB7 \u624B\u67C4", () => {
-          $("status").hidden = !$("status").hidden;
-        }),
-        item("\u5B58\u6863\u7BA1\u7406", "\u8FD9\u5F20\u76D8\u7684\u5FEB\u7167\u548C\u5B58\u6863", () => {
-          openSaveManager({ ...saveManagerContext, only: current ? { title: current.title, key: current.key, discId: current.fp.id } : void 0 }).catch((e) => banner(errorText(e)));
-        }),
+        item(ffOn ? "\u6062\u590D\u6B63\u5E38\u901F\u5EA6" : `\u5FEB\u8FDB\uFF08\u6700\u5FEB \xD7${ffCap}\uFF09`, "\u624B\u67C4\u6309\u4F4F RT\uFF08\u6309\u4E00\u534A\u6309\u6DF1\u6D45\uFF09\xB7 \u6309\u4F4F Tab \xB7 ` \u5207\u6362", () => setFast(!ffOn), ffOn)
+      ),
+      h("h3", {}, "\u66F4\u591A"),
+      h(
+        "div",
+        { class: "menu-list" },
+        item("\u8BBE\u7F6E\u2026", changed.length ? `\u8FD9\u6B21\u6253\u5F00\u6539\u7740\uFF1A${changed.join(" \xB7 ")}` : "\u753B\u9762 \xB7 \u8282\u594F \xB7 \u64CD\u4F5C \xB7 \u6A21\u62DF\u5668 \xB7 \u517C\u5BB9 \xB7 \u8BCA\u65AD", () => openSettings(settingsHost()), changed.length > 0),
         item("\u65E5\u5FD7", "\u9ED1\u5323\u5B50\uFF08\u8DE8\u91CD\u8F7D\uFF09", openLog),
         item("\u9000\u51FA\u8FD9\u5F20\u76D8", "\u5B58\u6863\u4F1A\u5148\u540C\u6B65\u5B8C", () => {
           quit().catch((e) => banner(errorText(e)));
@@ -11624,6 +12237,83 @@ function openMenu() {
       h("div", { class: "row" }, h("button", { onclick: () => close() }, "\u5173\u95ED"))
     ];
   });
+}
+var lastPreset = "default";
+function applyPreset(id) {
+  const s = session;
+  if (!s || id === "custom" || !(id in PRESETS)) return;
+  const p = PRESETS[id];
+  s.setPacing(p.pacing);
+  s.setAudioBuffer(p.audioTargetMs, p.audioMaxMs);
+  s.setFrameCap30(p.cap30 === "auto" ? defaultFrameCap30() : p.cap30);
+  s.setPresentEveryForce(0);
+  lastPreset = id;
+  const hintChanged = latencyHint !== p.latencyHint;
+  latencyHint = p.latencyHint;
+  if (hintChanged) rebuildAudio(`\u6362\u65B9\u6848\uFF08\u7CFB\u7EDF\u58F0\u97F3\u5EF6\u8FDF\u6863 \u2192 ${p.latencyHint}\uFF09`).catch((e) => logEvent("error", `\u58F0\u97F3\u91CD\u5EFA\u5931\u8D25\uFF1A${errorText(e)}`));
+  logEvent("info", `\u65B9\u6848 \u2192 ${id.toUpperCase()}\uFF1A\u6392\u7A0B ${p.pacing} \xB7 \u58F0\u97F3\u7F13\u51B2 ${p.audioTargetMs} / ${p.audioMaxMs} ms \xB7 \u7CFB\u7EDF\u5EF6\u8FDF\u6863 ${p.latencyHint} \xB7 \u53EA\u753B 30 \u5E27 ${p.cap30 === "auto" ? "\u8BBE\u5907\u9ED8\u8BA4" : p.cap30 ? "\u5F00" : "\u5173"}${p.note ? ` \xB7 \u6CA1\u505A\u7684\uFF1A${p.note}` : ""}`);
+  if (p.note) say(p.note, 6e3);
+}
+function settingsHost() {
+  return {
+    params,
+    get(id) {
+      const s = session;
+      if (!s) return "";
+      switch (id) {
+        case "app.cadence":
+          return String(s.presentEveryForce());
+        case "app.cap30":
+          return s.frameCap30 ? "enabled" : "disabled";
+        case "app.pacing":
+          return s.pacingMode();
+        case "app.ffcap":
+          return String(ffCap);
+        case "app.preset": {
+          const now = presetOf({ pacing: s.pacingMode(), audioTargetMs: s.audioBufferMs.target, audioMaxMs: s.audioBufferMs.max, latencyHint, cap30: s.frameCap30 }, defaultFrameCap30());
+          return now === "act" && lastPreset === "mus" ? "mus" : now;
+        }
+        case "app.tap":
+          return s.tapOff ? "disabled" : "enabled";
+        case "app.stats":
+          return $("status").hidden ? "disabled" : "enabled";
+      }
+      return "";
+    },
+    set(id, v) {
+      const s = session;
+      if (!s) return;
+      switch (id) {
+        case "app.cadence":
+          s.setPresentEveryForce(Number(v));
+          break;
+        case "app.cap30":
+          s.setFrameCap30(v === "enabled");
+          break;
+        case "app.pacing":
+          s.setPacing(v === "wall" ? "wall" : v === "audio" ? "audio" : "vsync");
+          break;
+        case "app.preset":
+          applyPreset(v);
+          break;
+        case "app.ffcap":
+          ffCap = Number(v) || DEFAULT_FF_CAP;
+          applySpeed();
+          break;
+        case "app.tap":
+          s.setTapOff(v === "disabled");
+          break;
+        case "app.stats":
+          $("status").hidden = v !== "enabled";
+          break;
+      }
+      renderToolbar();
+    },
+    log: (text) => logEvent("info", text),
+    reload: (search) => {
+      location.search = search;
+    }
+  };
 }
 var hudPrev = { t: performance.now(), up: 0, down: 0 };
 function renderHud() {
@@ -11790,10 +12480,20 @@ function togglePause() {
   session.setPaused(!session.paused);
   renderToolbar();
 }
-function setFast(on) {
+var ffOn = false;
+var rtSpeed = 1;
+var ffCap = DEFAULT_FF_CAP;
+function applySpeed() {
   if (!session) return;
-  session.setSpeed(on ? FAST_FORWARD : 1);
-  renderToolbar();
+  const want = Math.max(ffOn ? ffCap : 1, rtSpeed);
+  if (session.speed !== want) {
+    session.setSpeed(want);
+    renderToolbar();
+  }
+}
+function setFast(on) {
+  ffOn = on;
+  applySpeed();
 }
 function defaultFrameCap30() {
   const forced = params.get("cap");
@@ -11930,8 +12630,6 @@ var PAD_MAP = [
   [3, "triangle"],
   [4, "l"],
   [5, "r"],
-  [6, "l"],
-  [7, "r"],
   [8, "select"],
   [9, "start"],
   [12, "up"],
@@ -11952,9 +12650,15 @@ function pollGamepads(s) {
   }
   const names = [];
   let pressed = false;
+  let combo = false;
   for (const gp of navigator.getGamepads?.() ?? []) {
     if (!gp || !gp.connected) continue;
+    if (gp.timestamp !== padLastTs.get(gp.index)) {
+      padLastTs.set(gp.index, gp.timestamp);
+      padTsChanges++;
+    }
     names.push(gp.id.slice(0, 40) + (gp.mapping === "standard" ? "" : "\uFF08\u975E\u6807\u51C6\u5E03\u5C40\uFF0C\u952E\u4F4D\u53EF\u80FD\u4E0D\u5BF9\uFF09"));
+    if (gp.buttons[8]?.pressed && gp.buttons[9]?.pressed) combo = true;
     for (const [i, name] of PAD_MAP) if (gp.buttons[i]?.pressed) {
       mask |= bit(name);
       pressed = true;
@@ -11972,10 +12676,52 @@ function pollGamepads(s) {
     mask |= rm;
   }
   padInfo = names.join(" + ");
+  {
+    let lt = 0, rt = 0, r3 = false, home = false;
+    for (const gp of navigator.getGamepads?.() ?? []) {
+      if (!gp || !gp.connected || gp.mapping !== "standard") continue;
+      lt = Math.max(lt, gp.buttons[6]?.value ?? 0);
+      rt = Math.max(rt, gp.buttons[7]?.value ?? (gp.buttons[7]?.pressed ? 1 : 0));
+      r3 ||= !!gp.buttons[11]?.pressed;
+      home ||= !!gp.buttons[16]?.pressed;
+    }
+    const ltDown = padLtDown ? lt > 0.3 : lt > 0.5;
+    if (ltDown && !padLtDown) togglePause();
+    if (home && !padHome) togglePause();
+    if (r3 && !padR3) setFast(!ffOn);
+    padLtDown = ltDown;
+    padHome = home;
+    padR3 = r3;
+    const rs = s.paused ? 1 : triggerSpeed(rt, ffCap);
+    if (rs !== rtSpeed) {
+      rtSpeed = rs;
+      applySpeed();
+    }
+    if (ltDown || r3 || home || rt > TRIGGER_DEADZONE) pressed = true;
+  }
   if (pressed) hardwareInput("\u624B\u67C4");
   s.setMask("pad", mask);
   s.setAnalog(ax, ay);
+  if (questAdvisor) {
+    const now = performance.now();
+    if (combo && !comboHeld) {
+      logEvent("info", "\u624B\u67C4\uFF1ASelect + Start \u540C\u65F6\u6309\u4E0B\uFF08Quest \u4E0A\u8FD9\u5C31\u662F View + Menu = \u7CFB\u7EDF\u300C\u6CE8\u89C6\u5149\u6807\u300D\u5F00\u5173\uFF09");
+      questFeed({ kind: "combo", now });
+    }
+    comboHeld = combo;
+    questFeed({ kind: "pads", count: names.length, now });
+    questFeed({ kind: "tick", now });
+  }
 }
+var comboHeld = false;
+var padLtDown = false;
+var padHome = false;
+var padR3 = false;
+var padLastTs = /* @__PURE__ */ new Map();
+var padTsChanges = 0;
+var padTsAtBurst = 0;
+var padPolls = 0;
+var padPollsAtBurst = 0;
 var statusAt = 0;
 var lastFrameAt = performance.now();
 var perfLogAt = 0;
@@ -11992,6 +12738,18 @@ function startFrameLoop() {
 function frame(gen) {
   if (gen !== frameGen || !session) return;
   pollGamepads(session);
+  padPolls++;
+  {
+    const b = session.takeBurst(performance.now());
+    if (b) {
+      const tsN = padTsChanges - padTsAtBurst, polls = padPolls - padPollsAtBurst;
+      logEvent("info", `\u8FDE\u6309\uFF1A\u9875\u9762\u770B\u5230 ${b.n} \u4E0B\uFF08${(b.ms / 1e3).toFixed(1)} s\uFF0C\u6765\u6E90 ${b.source}\uFF09\xB7 \u6838\u6536\u5230 ${b.coreRecv} \u653E\u51FA ${b.corePlayed}${b.coreDropped ? ` \u4E22 ${b.coreDropped}` : ""} \xB7 \u6700\u77ED\u6309\u4F4F ${Number.isFinite(b.minHold) ? b.minHold.toFixed(0) : "\u2014"} ms \xB7 \u6700\u77ED\u677E\u5F00 ${Number.isFinite(b.minGap) ? b.minGap.toFixed(0) : "\u2014"} ms \xB7 \u8FD9\u671F\u95F4\u9875\u9762\u8BFB\u624B\u67C4 ${polls} \u6B21\u3001\u6D4F\u89C8\u5668\u66F4\u65B0\u624B\u67C4\u72B6\u6001 ${tsN} \u6B21${params.get("tap") === "0" ? " \xB7 \u9501\u5B58\u5173\u7740\uFF08tap=0\uFF09" : ""}`);
+    }
+    if (!session.takeBurstPending()) {
+      padTsAtBurst = padTsChanges;
+      padPollsAtBurst = padPolls;
+    }
+  }
   session.tick();
   const now = performance.now();
   if (activity) {
@@ -12008,7 +12766,7 @@ function frame(gen) {
       perfLogAt = now;
       perfLogged++;
       const s = session.stats();
-      logEvent("info", `\u6027\u80FD\uFF1A${s.fps.toFixed(0)} fps \xB7 \u901F\u5EA6 ${pct(s.speed)} \xB7 ${s.renderer} \xB7 ${perfLines(s).join(" \xB7 ")}${s.coreLog().length ? ` \xB7 \u6838 stderr\uFF1A${s.coreLog().slice(-3).join(" | ")}` : ""}`);
+      logEvent("info", `\u6027\u80FD\uFF1A${s.fps.toFixed(0)} fps \xB7 \u901F\u5EA6 ${pct(s.speed)} \xB7 ${s.renderer} \xB7 ${perfLines(s).join(" \xB7 ")} \xB7 \u624B\u67C4\uFF1A${padInfo || "Gamepad API \u6CA1\u770B\u5230\u624B\u67C4"}${questAdvisor ? ` \xB7 \u6EDA\u8F6E ${questAdvisor.wheels} \u6B21` : ""}${s.gpuTotals ? ` \xB7 \u672C\u5C40\u7D2F\u8BA1\uFF1A\u56DE\u8BFB ${s.gpuTotals.readbacks}\uFF08\u963B\u585E ${s.gpuTotals.blocking}\uFF09\xB7 \u5757\u4F20\u8F93 ${s.gpuTotals.transfers} \xB7 \u62F7\u8D1D ${s.gpuTotals.copies}` : ""}${s.coreLog().length ? ` \xB7 \u6838 stderr\uFF1A${s.coreLog().slice(-3).join(" | ")}` : ""}`);
     }
   }
   (pip.window ?? window).requestAnimationFrame(() => frame(gen));
@@ -12019,11 +12777,17 @@ function perfLines(s) {
   if (!p) return ["\u6838\u7EBF\u7A0B\uFF1A\u8FD8\u6CA1\u6709\u8BFB\u6570\uFF08\u521A\u8D77 / \u8001\u6838\uFF09"];
   if (s.win.ranFrames === 0) return [`\u6838\u7EBF\u7A0B\uFF1A\u8FD9\u4E00\u79D2\u6CA1\u8DD1\u5E27\uFF08${s.paused ? "\u6682\u505C\u4E2D" : "\u6838\u6CA1\u5728\u8DD1"}\uFF09${s.glRenderer ? ` \xB7 ${s.glRenderer}` : ""}`];
   const capText = s.frameCap.want ? s.frameCap.active ? "\u751F\u6548" : `\u5F85\u547D\uFF08\u672C\u8EAB ${s.frameCap.nativeFps ? s.frameCap.nativeFps.toFixed(0) + " \u5E27" : "\u672A\u91CF"}\uFF09` : "\u5173";
-  const rafSlow = s.vsyncDt > 21;
-  const who = p.emuBusy > 0.85 ? "\u6A21\u62DF\u7EBF\u7A0B\uFF08CPU\uFF1A\u89E3\u91CA\u5668 / \u9876\u70B9\u89E3\u7801\uFF09" : p.submitBusy > 0.7 ? "\u63D0\u4EA4\u7EBF\u7A0B\uFF08GL \u8C03\u7528\u592A\u591A / \u592A\u8D35\uFF09" : s.fps < 50 && rafSlow ? `\u6392\u7A0B\uFF08\u6838\u7684 rAF \u88AB\u538B\u6162\u5230 ${s.vsyncDt.toFixed(0)} ms\uFF1AGPU \u8FDB\u7A0B\u8DDF\u4E0D\u4E0A\u6216\u6D4F\u89C8\u5668\u8282\u6D41\u2014\u2014\u2630 \u5207\u300C\u5899\u949F\u300D\u5BF9\u7167\uFF09` : s.fps < 50 ? "\u6D4F\u89C8\u5668 / GPU\uFF08\u4E24\u6761\u7EBF\u7A0B\u90FD\u4E0D\u7D27\u3001rAF \u4E5F\u51C6\u65F6\uFF09" : "\u90FD\u4E0D\u7D27";
+  const nativeShown = s.frameCap.nativeFps ? s.frameCap.nativeFps / (s.frameCap.active ? 2 : 1) : 0;
+  const shownTarget = s.presentEvery > 1 && s.displayHz ? s.displayHz / s.presentEvery : nativeShown || 60;
+  const onPace = s.fps >= shownTarget * 0.9 && s.speed > 0.95;
+  const rafSlow = s.pacingMode === "vsync" && s.vsyncDt > 21;
+  const who = p.emuBusy > 0.85 ? "\u6A21\u62DF\u7EBF\u7A0B\uFF08CPU\uFF1A\u89E3\u91CA\u5668 / \u9876\u70B9\u89E3\u7801\uFF09" : p.submitBusy > 0.7 ? "\u63D0\u4EA4\u7EBF\u7A0B\uFF08GL \u8C03\u7528\u592A\u591A / \u592A\u8D35\uFF09" : onPace ? "\u90FD\u4E0D\u7D27" : rafSlow ? `\u6392\u7A0B\uFF08\u6838\u7684 rAF \u88AB\u538B\u6162\u5230 ${s.vsyncDt.toFixed(0)} ms\uFF1AGPU \u8FDB\u7A0B\u8DDF\u4E0D\u4E0A\u6216\u6D4F\u89C8\u5668\u8282\u6D41\u2014\u2014\u2630 \u5207\u300C\u5899\u949F\u300D\u5BF9\u7167\uFF09` : "\u6D4F\u89C8\u5668 / GPU\uFF08\u4E24\u6761\u7EBF\u7A0B\u90FD\u4E0D\u7D27\u3001rAF \u4E5F\u51C6\u65F6\uFF09";
+  const ratio = s.displayHz && nativeShown ? s.displayHz / nativeShown : 0;
+  const uneven = ratio > 1.5 && Math.abs(ratio - Math.round(ratio)) > 0.05 * ratio;
+  const cadence = s.presentEvery > 1 ? ` \xB7 \u4E0A\u5C4F\u8282\u62CD\uFF1A\u6BCF ${s.presentEvery} \u6B21\u5237\u65B0 1 \u5E27\uFF08${(s.displayHz / s.presentEvery).toFixed(0)} fps \u5300\u901F\uFF1B${s.displayHz.toFixed(0)} Hz \u5C4F\u9664\u4E0D\u5C3D ${nativeShown.toFixed(0)} \u5E27\uFF0C\u591A\u51FA\u7684\u5E27\u4E22\u6389\u4E0D\u91CD\u590D\uFF09` : uneven ? ` \xB7 \u8282\u594F\uFF1A${s.displayHz.toFixed(0)} Hz \u5C4F\u653E ${nativeShown.toFixed(0)} \u5E27\u7684\u6E38\u620F\u9664\u4E0D\u5C3D\u2014\u2014\u6BCF\u5E27\u4EA4\u66FF\u5360 ${Math.floor(ratio)} / ${Math.ceil(ratio)} \u6B21\u5237\u65B0\uFF08\u770B\u7740\u6296\uFF1B\u8DDF\u5C4F\u5E55\u6392\u7A0B\u4F1A\u6309\u56FA\u5B9A\u8282\u62CD\u4E0A\u5C4F\uFF09` : "";
   return [
     `\u6838\u7EBF\u7A0B\uFF1A\u6A21\u62DF ${pct(p.emuBusy)} \u5FD9 \xB7 \u63D0\u4EA4 ${pct(p.submitBusy)} \u5FD9\uFF08retro_run \u5747 ${p.runMsPerFrame.toFixed(1)} / \u6700\u957F ${p.runMaxMs.toFixed(0)} ms \xB7 \u4E0A\u5C4F ${p.presentMs.toFixed(2)} ms\uFF09\xB7 \u74F6\u9888\uFF1A${who}${p.glErrors ? ` \xB7 GL \u9519\u8BEF 0x${p.glError.toString(16)} \xD7${p.glErrors}` : ""}${s.glRenderer ? ` \xB7 ${s.glRenderer}` : ""}`,
-    `\u6392\u7A0B\uFF1A${s.pacing} \xB7 \u6838 rAF \u95F4\u9694 ${s.vsyncDt ? s.vsyncDt.toFixed(1) + " ms" : "\u2014"} \xB7 \u51FA\u5E27\u95F4\u9694 ${s.pace.mean.toFixed(1)} \xB1 ${s.pace.sd.toFixed(1)} / \u6700\u957F ${s.pace.max.toFixed(0)} ms \xB7 \u8FFD\u8FDB\u5EA6 ${s.win.catchupPerSec.toFixed(0)} \u5E27/s \xB7 \u91CD\u951A ${s.win.reanchorsPerSec.toFixed(1)}/s \xB7 \u8DF3\u5E27 ${s.frameskip} \xB7 \u753B 30 \u5E27\uFF1A${capText} \xB7 \u4E3B\u7EBF\u7A0B ${s.displayHz.toFixed(0)} Hz\uFF08\u6BCF\u6B21\u5237\u65B0\u65B0\u5E27 0/1/2+\uFF1A${s.perRefresh.join("/")}\uFF09`,
+    `\u6392\u7A0B\uFF1A${s.pacing} \xB7 \u6838 rAF \u95F4\u9694 ${s.vsyncDt ? s.vsyncDt.toFixed(1) + " ms" : "\u2014"} \xB7 \u51FA\u5E27\u95F4\u9694 ${s.pace.mean.toFixed(1)} \xB1 ${s.pace.sd.toFixed(1)} / \u6700\u957F ${s.pace.max.toFixed(0)} ms \xB7 \u8FFD\u8FDB\u5EA6 ${s.win.catchupPerSec.toFixed(0)} \u5E27/s \xB7 \u91CD\u951A ${s.win.reanchorsPerSec.toFixed(1)}/s \xB7 \u8DF3\u5E27 ${s.frameskip} \xB7 \u753B 30 \u5E27\uFF1A${capText} \xB7 \u4E3B\u7EBF\u7A0B ${s.displayHz.toFixed(0)} Hz\uFF08\u6BCF\u6B21\u5237\u65B0\u65B0\u5E27 0/1/2+\uFF1A${s.perRefresh.join("/")}\uFF09${cadence}`,
     `\u6BCF\u5E27 GL\uFF1A\u753B ${p.draws.toFixed(0)} \u6B21 \xB7 \u6362\u7A0B\u5E8F ${p.prog.toFixed(0)} \xB7 \u8D34\u56FE ${p.tex.toFixed(1)}\uFF08${(p.texPx / 1e3).toFixed(0)}k px\uFF0C${p.texMs.toFixed(2)} ms\uFF09\xB7 \u7F13\u51B2 ${p.buf.toFixed(1)}\uFF08${(p.bufBytes / 1024).toFixed(0)} KB\uFF0C${p.bufMs.toFixed(2)} ms\uFF09\xB7 map ${p.map.toFixed(1)}\uFF08${p.mapMs.toFixed(2)} ms\uFF09\xB7 \u56DE\u8BFB ${p.read.toFixed(1)}\uFF08${p.readMs.toFixed(2)} ms\uFF09\xB7 \u540C\u6B65 ${p.sync.toFixed(1)}\uFF08${p.syncMs.toFixed(2)} ms\uFF09\xB7 blit ${p.blit.toFixed(1)} \xB7 PPSSPP\uFF1Adraw ${p.ppsspp.drawCalls} \xB7 \u9876\u70B9 ${p.ppsspp.vertsSubmitted}\uFF08\u89E3\u7801 ${p.ppsspp.vertsDecoded}\uFF09\xB7 \u8D34\u56FE\u89E3\u7801 ${p.ppsspp.texturesDecoded} \xB7 \u56DE\u8BFB ${p.ppsspp.readbacks} \xB7 \u62F7\u8D1D ${p.ppsspp.copies} \xB7 \u663E\u793A\u5217\u8868 ${p.ppsspp.listMs.toFixed(1)} ms`
   ];
 }
@@ -12036,13 +12800,91 @@ function statusText() {
     `\u663E\u793A\u5668 \u2248 ${s.displayHz.toFixed(0)} Hz \xB7 \u6BCF\u6B21\u5237\u65B0\u770B\u5230\u65B0\u5E27\uFF1A0 \u5F20 ${s.perRefresh[0]} \xB7 1 \u5F20 ${s.perRefresh[1]} \xB7 2 \u5F20\u4EE5\u4E0A ${s.perRefresh[2]}\uFF08\u6BCF\u79D2\uFF09`,
     `\u76D8\uFF1A\u8FD9\u4E00\u79D2 ${(s.netBps / 1024).toFixed(0)} KB/s \xB7 \u7B49\u8BFB\u76D8 ${s.netWaitMs.toFixed(0)} ms/s${s.netInflight ? `\uFF08\u6B63\u5728\u7B49 ${s.netInflight} \u4E2A\uFF09` : ""} \xB7 \u7D2F\u8BA1 ${(s.bytesFetched / 2 ** 20).toFixed(1)} MB / ${s.mediaReads} \u6B21`,
     `\u58F0\u97F3\uFF1A${s.audioState} \xB7 \u7F13\u51B2 ${s.audioFillMs.toFixed(0)} ms \xB7 \u8F93\u51FA\u5EF6\u8FDF ${s.outputLatencyMs.toFixed(0)} ms \xB7 \u6B20\u8F7D\u7D2F\u8BA1 ${s.audioUnderrunMs.toFixed(0)} ms \xB7 \u4E22\u5F03 ${s.audioDropped}`,
-    `\u624B\u67C4\uFF1A${padInfo || "\u6CA1\u68C0\u6D4B\u5230\uFF08\u63D2\u4E0A\u540E\u5728\u9875\u9762\u4E0A\u6309\u4E00\u4E0B\u624B\u67C4\u6309\u952E\uFF09"}`,
+    `\u624B\u67C4\uFF1A${padInfo || (IS_QUEST ? `\u6CA1\u68C0\u6D4B\u5230\u3002Quest \u53EF\u80FD\u6B63\u62FF\u624B\u67C4\u5F53\u5149\u6807\u7528\uFF08\u7F51\u9875\u770B\u4E0D\u5230\uFF09\uFF1A${QUEST_PAD_HOWTO}\u3002Xbox \u624B\u67C4\u6700\u7A33` : "\u6CA1\u68C0\u6D4B\u5230\uFF08\u63D2\u4E0A\u540E\u5728\u9875\u9762\u4E0A\u6309\u4E00\u4E0B\u624B\u67C4\u6309\u952E\uFF09")}`,
     `\u6D3B\u52A8\uFF1A${activity ? { playing: "\u8FD0\u884C\u4E2D", idle: "\u6302\u673A\uFF08\u81EA\u52A8\u5FEB\u7167\u4E0D\u8BA1\u65F6\uFF09", away: "\u540E\u53F0 / \u6682\u505C" }[activity.state(performance.now(), { visible: inForeground(), paused: s.paused })] : "\u2014"} \xB7 \u8BFB\u8FC7\u7684\u76D8 ${(session.discSeenBytes() / 2 ** 20).toFixed(1)} MB \xB7 \u8FD9\u6B21\u8FD0\u884C ${((activity?.playedMs ?? 0) / 6e4).toFixed(1)} \u5206\u949F`,
+    `\u624B\u67C4\uFF08\u540C PPSSPP Xbox \u9ED8\u8BA4\uFF09\uFF1AA \xD7 \xB7 B \u25CB \xB7 X \u25A1 \xB7 Y \u25B3 \xB7 LB/RB L/R \xB7 LT \u6682\u505C \xB7 RT \u5FEB\u8FDB\uFF08\u6309\u4E00\u534A\u6309\u6DF1\u6D45 1\u20134\xD7\uFF0C\u6309\u5230\u5E95 \xD7${ffCap}\uFF09\xB7 \u53F3\u6447\u6746\u6309\u4E0B \u5FEB\u8FDB\u5F00\u5173 \xB7 \u5DE6\u6447\u6746 \u6447\u6746 \xB7 \u53F3\u6447\u6746 \u5341\u5B57`,
     `\u952E\u76D8\uFF08\u540C PPSSPP \u9ED8\u8BA4\uFF09\uFF1A\u65B9\u5411\u952E \u5341\u5B57 \xB7 I/J/K/L \u6447\u6746\uFF08\u53F3 Shift \u8F7B\u63A8\uFF09\xB7 X \u25CB \xB7 Z \xD7 \xB7 A \u25A1 \xB7 S \u25B3 \xB7 Q/W L/R \xB7 \u7A7A\u683C Start \xB7 V / \u56DE\u8F66 Select \xB7 Esc / P \u6682\u505C \xB7 \u6309\u4F4F Tab \u5FEB\u8FDB \xB7 \` \u5FEB\u8FDB\u5F00\u5173 \xB7 M \u9759\u97F3 \xB7 F2 \u5B58 / F4 \u8BFB\u5F53\u524D\u683C`
   ].join("\n");
 }
-var KEYMAP = { ArrowUp: "up", ArrowDown: "down", ArrowLeft: "left", ArrowRight: "right", KeyX: "circle", KeyZ: "cross", KeyA: "square", KeyS: "triangle", Space: "start", KeyV: "select", Enter: "select", KeyQ: "l", KeyW: "r" };
-var STICK_KEYS = { KeyI: [0, -1], KeyK: [0, 1], KeyJ: [-1, 0], KeyL: [1, 0] };
+var KEYMAP = {
+  ArrowUp: "up",
+  ArrowDown: "down",
+  ArrowLeft: "left",
+  ArrowRight: "right",
+  KeyX: "circle",
+  KeyZ: "cross",
+  KeyA: "square",
+  KeyS: "triangle",
+  Space: "start",
+  KeyV: "select",
+  Enter: "select",
+  KeyQ: "l",
+  KeyW: "r",
+  // 手柄当键盘来的（下面 PAD_KEYCODES 翻出来的假 code）：A × · B ○ · X □ · Y △ · 肩键 / 扳机 L R · 十字 · Menu Start · View Select · 右摇杆四向 → 十字
+  PadA: "cross",
+  PadB: "circle",
+  PadX: "square",
+  PadY: "triangle",
+  PadRB: "r",
+  PadLB: "l",
+  PadLT: "l",
+  PadRT: "r",
+  PadUp: "up",
+  PadDown: "down",
+  PadLeft: "left",
+  PadRight: "right",
+  PadMenu: "start",
+  PadView: "select",
+  PadRUp: "up",
+  PadRDown: "down",
+  PadRRight: "right",
+  PadRLeft: "left"
+};
+var STICK_KEYS = { KeyI: [0, -1], KeyK: [0, 1], KeyJ: [-1, 0], KeyL: [1, 0], PadLUp: [0, -1], PadLDown: [0, 1], PadLRight: [1, 0], PadLLeft: [-1, 0] };
+var IS_QUEST = /\bQuest\b|OculusBrowser/.test(navigator.userAgent);
+var questAdvisor = IS_QUEST ? createQuestInputAdvisor() : null;
+function questFeed(sig) {
+  const adv = questAdvisor?.feed(sig);
+  if (!adv) return;
+  logEvent("info", adv.log);
+  say(adv.text, 15e3);
+}
+var PAD_KEYCODES = {
+  195: "PadA",
+  196: "PadB",
+  197: "PadX",
+  198: "PadY",
+  199: "PadRB",
+  200: "PadLB",
+  201: "PadLT",
+  202: "PadRT",
+  203: "PadUp",
+  204: "PadDown",
+  205: "PadLeft",
+  206: "PadRight",
+  207: "PadMenu",
+  208: "PadView",
+  211: "PadLUp",
+  212: "PadLDown",
+  213: "PadLRight",
+  214: "PadLLeft",
+  215: "PadRUp",
+  216: "PadRDown",
+  217: "PadRRight",
+  218: "PadRLeft"
+};
+function keyCodeOf(e) {
+  return e.code && e.code !== "Unidentified" ? e.code : PAD_KEYCODES[e.keyCode] ?? "";
+}
+var seenKeys = /* @__PURE__ */ new Set();
+function noteKey(e, code) {
+  if (seenKeys.size >= 16) return;
+  const sig = `${e.code}|${e.keyCode}|${e.location}`;
+  if (seenKeys.has(sig)) return;
+  seenKeys.add(sig);
+  const mapped = KEYMAP[code] ? `\u2192 ${KEYMAP[code]}` : STICK_KEYS[code] ? "\u2192 \u6447\u6746" : "\xB7 \u6CA1\u6620\u5C04\u5230 PSP \u952E";
+  logEvent("info", `\u8F93\u5165\uFF1A\u952E code=${e.code || "(\u7A7A)"} key=${e.key.length > 1 ? e.key : "(\u5B57\u7B26)"} keyCode=${e.keyCode} location=${e.location}${code !== e.code ? ` \u2192 ${code}` : ""} ${mapped}`);
+}
 var stickKeysDown = /* @__PURE__ */ new Set();
 var keyAnalog = { x: 0, y: 0 };
 function updateKeyAnalog(lightly) {
@@ -12057,6 +12899,13 @@ function updateKeyAnalog(lightly) {
 var rightShift = false;
 function onKey(e, down) {
   if (!session || isSheetOpen()) return;
+  const code = keyCodeOf(e);
+  if (down && !e.repeat) {
+    noteKey(e, code);
+    questFeed({ kind: "key", code, now: performance.now() });
+  }
+  const kind = code.startsWith("Pad") ? "\u624B\u67C4" : "\u952E\u76D8";
+  const counts = !(IS_QUEST && kind === "\u952E\u76D8" && !isTypingKey(code) && !questAdvisor?.typingSeen);
   if (down && e.code === "Enter" && e.altKey) {
     e.preventDefault();
     toggleFullscreen();
@@ -12073,12 +12922,12 @@ function onKey(e, down) {
     if (!e.repeat) setFast(down);
     return;
   }
-  if (STICK_KEYS[e.code]) {
+  if (STICK_KEYS[code]) {
     e.preventDefault();
     if (down) {
-      stickKeysDown.add(e.code);
-      hardwareInput("\u952E\u76D8");
-    } else stickKeysDown.delete(e.code);
+      stickKeysDown.add(code);
+      if (counts) hardwareInput(kind);
+    } else stickKeysDown.delete(code);
     updateKeyAnalog(e.getModifierState?.("Shift") && e.location === 2 || rightShift);
     return;
   }
@@ -12116,10 +12965,10 @@ function onKey(e, down) {
       return;
     }
   }
-  const b = KEYMAP[e.code];
+  const b = KEYMAP[code];
   if (!b) return;
   e.preventDefault();
-  if (down) hardwareInput("\u952E\u76D8");
+  if (down && counts) hardwareInput(kind);
   const m = session.getMask("keyboard");
   session.setMask("keyboard", down ? m | bit(b) : m & ~bit(b));
 }
@@ -12203,6 +13052,165 @@ async function unwrapWafer() {
     ui.close();
   }
 }
+var fmtWhen2 = (t) => t ? new Date(t).toLocaleString() : "\u4E0D\u77E5\u9053";
+function pickFiles(opts) {
+  return new Promise((resolve) => {
+    const input = h("input", { type: "file", hidden: "", ...opts.accept ? { accept: opts.accept } : {} });
+    if (opts.folder) {
+      input.setAttribute("webkitdirectory", "");
+      input.multiple = true;
+    }
+    input.addEventListener("change", () => {
+      resolve(input.files?.length ? [...input.files] : null);
+      input.remove();
+    });
+    input.addEventListener("cancel", () => {
+      resolve(null);
+      input.remove();
+    });
+    document.body.append(input);
+    input.click();
+  });
+}
+async function pickSaveSource() {
+  const how = await sheet((done) => [
+    h("h2", {}, "\u5B58\u6863\u88C5\u7F50\uFF1A\u4ECE\u54EA\u91CC\u6765"),
+    h("p", { class: "muted" }, "\u9009 PPSSPP \u8BB0\u5FC6\u68D2\u91CC\u7684 SAVEDATA \u6587\u4EF6\u5939\uFF08\u9009\u4E0A\u4E00\u5C42\u7684 PSP \u4E5F\u884C\uFF09\uFF0C\u6216\u8005\u5B83\u7684 zip\u3002\u6587\u4EF6\u5939\u8981\u7528\u7535\u8111\u4E0A\u7684 Chrome / Edge\uFF1Bzip \u54EA\u53F0\u8BBE\u5907\u90FD\u80FD\u9009\uFF08zip \u91CC\u7684\u6587\u4EF6\u65F6\u95F4\u8BFB\u4E0D\u51FA\u6765\uFF0C\u5B58\u6863\u65F6\u523B\u6309 zip \u6587\u4EF6\u7684\u65F6\u95F4\u7B97\uFF09\u3002"),
+    h("div", { class: "row" }, h("button", { onclick: () => done(null) }, "\u53D6\u6D88"), h("button", { onclick: () => done("zip") }, "\u9009 zip\u2026"), h("button", { class: "primary", onclick: () => done("folder") }, "\u9009\u6587\u4EF6\u5939\u2026"))
+  ]);
+  if (!how) return null;
+  if (how === "folder") {
+    const files = await pickFiles({ folder: true });
+    return files && files.map((f) => ({ path: f.webkitRelativePath || f.name, mtime: f.lastModified, read: async () => new Uint8Array(await f.arrayBuffer()) }));
+  }
+  const [zip] = await pickFiles({ folder: false, accept: ".zip,application/zip" }) ?? [];
+  if (!zip) return null;
+  const entries = unzipSync(new Uint8Array(await zip.arrayBuffer()));
+  return Object.entries(entries).filter(([p]) => !p.endsWith("/")).map(([path, bytes]) => ({ path, mtime: zip.lastModified, read: async () => bytes }));
+}
+function chooseGames(title, hint, groups, verb) {
+  const want = /* @__PURE__ */ new Set();
+  return sheet((done) => {
+    const rows = h("div", { class: "menu-list" });
+    const go = h("button", { class: "primary", onclick: () => done(new Set(want)) });
+    const draw = () => {
+      rows.replaceChildren(...groups.map((g) => h(
+        "button",
+        { class: `menu-item${want.has(g.game) ? " on" : ""}`, onclick: () => {
+          if (want.has(g.game)) want.delete(g.game);
+          else want.add(g.game);
+          draw();
+        } },
+        h("span", {}, `${want.has(g.game) ? "\u2713 " : ""}${g.title || g.game}`),
+        h("span", { class: "muted" }, `${g.game} \xB7 ${g.dirs.length} \u4E2A\u5B58\u6863\u76EE\u5F55 \xB7 \u6700\u8FD1 ${fmtWhen2(g.newest)}`)
+      )));
+      const n = groups.filter((g) => want.has(g.game)).reduce((s, g) => s + g.dirs.length, 0);
+      go.textContent = n ? `${verb}\uFF08${n} \u4E2A\u5B58\u6863\u76EE\u5F55\uFF09` : verb;
+      go.disabled = !n;
+    };
+    draw();
+    return [h("h2", {}, title), h("p", { class: "muted" }, hint), rows, h("div", { class: "row" }, h("button", { onclick: () => done(null) }, "\u53D6\u6D88"), go)];
+  });
+}
+function countSheet(title, total) {
+  const bar = h("progress", { max: String(total), value: "0" });
+  const text = h("span", { class: "muted" }, "");
+  let finish = () => {
+  };
+  void sheet((done) => {
+    finish = done;
+    return [h("h2", {}, title), bar, text];
+  }, { dismissable: false });
+  return { set(done, line) {
+    bar.value = done;
+    text.textContent = `${done} / ${total} \xB7 ${line}`;
+  }, close: () => finish(null) };
+}
+async function packSaves() {
+  const files = await pickSaveSource();
+  if (!files) return;
+  let dirs;
+  try {
+    dirs = groupSaveDirs(files);
+  } catch (e) {
+    banner(errorText(e), "warning");
+    return;
+  }
+  if (!dirs.length) {
+    banner("\u6CA1\u627E\u5230\u5B58\u6863\u76EE\u5F55\uFF08\u6BCF\u4E2A\u5B58\u6863\u76EE\u5F55\u91CC\u90FD\u6709\u4E00\u4E2A PARAM.SFO\uFF09\u3002\u9009 PPSSPP \u7684 PSP/SAVEDATA \u6587\u4EF6\u5939\uFF0C\u6216\u8005\u5B83\u7684 zip\u3002", "warning");
+    return;
+  }
+  const titled = await Promise.all(dirs.map(async (d) => {
+    const p = d.files.get(`${d.dir}/PARAM.SFO`);
+    return { ...d, title: p ? sfoInfo(await p.read()).title : void 0 };
+  }));
+  const chosen = await chooseGames("\u5B58\u6863\u88C5\u7F50\uFF1A\u88C5\u54EA\u51E0\u4E2A\u6E38\u620F", `\u627E\u5230 ${dirs.length} \u4E2A\u5B58\u6863\u76EE\u5F55\u3002\u4E91\u7AEF\u6CA1\u6709\u7684\u65B0\u5EFA\uFF1B\u5DF2\u7ECF\u6709\u3001\u5185\u5BB9\u4E00\u6837\u7684\u8DF3\u8FC7\uFF1B\u5DF2\u7ECF\u6709\u3001\u5185\u5BB9\u4E0D\u4E00\u6837\u7684\u4E0D\u52A8\uFF0C\u6700\u540E\u5217\u51FA\u6765\u7ED9\u4F60\u5B9A\u3002`, groupByGame(titled), "\u88C5\u7F50");
+  if (!chosen?.size) return;
+  const picked = titled.filter((d) => chosen.has(d.game));
+  const items = await Promise.all(picked.map(async (d) => {
+    const entries = {}, mtimes = {};
+    for (const [k, f] of d.files) {
+      entries[k] = await f.read();
+      mtimes[k] = f.mtime;
+    }
+    return { dir: d.dir, entries, mtimes };
+  }));
+  logEvent("info", `\u5B58\u6863\u88C5\u7F50\uFF1A\u5F00\u59CB\uFF08${[...chosen].join(" \xB7 ")}\uFF0C${items.length} \u4E2A\u76EE\u5F55\uFF09`);
+  let ui = null;
+  const results = await withPassword(async (pw) => {
+    const p = pw ?? getPassword();
+    if (!p) throw new NeedPassword();
+    ui = countSheet("\u6B63\u5728\u88C5\u7F50\u2026", items.length);
+    try {
+      return await importSaveDirs(items, p, (done, r) => ui.set(done, `${r.dir}\uFF1A${{ new: "\u65B0\u5EFA", same: "\u4E00\u6837\uFF0C\u8DF3\u8FC7", differ: "\u4E0D\u4E00\u6837\uFF0C\u6CA1\u52A8", error: "\u51FA\u9519" }[r.status]}`));
+    } finally {
+      ui.close();
+      ui = null;
+    }
+  }, "\u5B58\u6863");
+  if (!results) return;
+  const by = (s) => results.filter((r) => r.status === s);
+  for (const r of results) logEvent(r.status === "error" || r.status === "differ" ? "warn" : "info", `\u5B58\u6863\u88C5\u7F50\uFF1A${r.dir} \u2192 ${r.status === "new" ? "\u65B0\u5EFA" : r.status === "same" ? "\u4E00\u6837\uFF0C\u8DF3\u8FC7" : r.status === "differ" ? `\u4E0D\u4E00\u6837\uFF0C\u6CA1\u52A8\uFF08\u8FD9\u8FB9 ${fmtWhen2(r.mineAt)} / \u4E91\u7AEF ${fmtWhen2(r.cloudAt)}\uFF1B${r.differ.join("\u3001")}\uFF09` : `\u51FA\u9519\uFF1A${r.error}`}`);
+  void sheet((close) => [
+    h("h2", {}, "\u5B58\u6863\u88C5\u7F50\uFF1A\u7ED3\u679C"),
+    h("p", {}, `\u65B0\u5EFA ${by("new").length} \xB7 \u4E00\u6837\u8DF3\u8FC7 ${by("same").length} \xB7 \u4E0D\u4E00\u6837\u6CA1\u52A8 ${by("differ").length}${by("error").length ? ` \xB7 \u51FA\u9519 ${by("error").length}` : ""}`),
+    ...by("differ").length ? [
+      h("p", { class: "hint" }, "\u4E0B\u9762\u8FD9\u4E9B\u4E91\u7AEF\u5DF2\u7ECF\u6709\u3001\u5185\u5BB9\u548C\u8FD9\u8FB9\u4E0D\u4E00\u6837\uFF0C\u4E00\u4E2A\u5B57\u8282\u90FD\u6CA1\u52A8\uFF08\u4E0D\u66FF\u4F60\u731C\u54EA\u8FB9\u65B0\uFF09\u3002\u8981\u7528\u54EA\u4E00\u4EFD\u544A\u8BC9\u6211\uFF0C\u6216\u8005\u5728\u6E38\u620F\u91CC\u8BFB\u6863\u540E\u518D\u5B58\u4E00\u6B21\u3002"),
+      h("div", { class: "menu-list" }, ...results.filter((r) => r.status === "differ").map((r) => h("div", { class: "menu-item" }, h("span", {}, r.dir), h("span", { class: "muted" }, `\u8FD9\u8FB9 ${fmtWhen2(r.mineAt)} \xB7 \u4E91\u7AEF ${fmtWhen2(r.cloudAt)} \xB7 \u4E0D\u540C\uFF1A${r.differ.join("\u3001")}`))))
+    ] : [],
+    ...by("error").length ? [h("div", { class: "menu-list" }, ...results.filter((r) => r.status === "error").map((r) => h("div", { class: "menu-item" }, h("span", {}, r.dir), h("span", { class: "muted" }, r.error))))] : [],
+    h("div", { class: "row" }, h("button", { class: "primary", onclick: () => close() }, "\u597D"))
+  ]);
+}
+async function unpackSaves() {
+  const k = PLATFORM_CODE.psp;
+  const { ids, complete } = await listJams(k, { timeoutMs: 2e4, waitForCloud: true });
+  if (!ids.length) {
+    banner("\u4E91\u7AEF\u8FD8\u6CA1\u6709\u5B58\u6863\u3002", "warning");
+    return;
+  }
+  const stick = await withPassword(async (pw) => {
+    const p = pw ?? getPassword();
+    if (!p) throw new NeedPassword();
+    return loadMemstick(k, p, ids, complete);
+  }, "\u5B58\u6863");
+  if (!stick) return;
+  const dirs = [...stick.dirs].map((dir) => ({ dir, game: gameOf(dir), newest: stick.times.get(dir) ?? 0, title: sfoInfo(stick.files.get(`${dir}/PARAM.SFO`)).title }));
+  const skipped = stick.unreadable.size + [...stick.duplicates.values()].reduce((s, v) => s + v.length, 0);
+  const chosen = await chooseGames("\u5B58\u6863\u89E3\u7F50\uFF1A\u89E3\u54EA\u51E0\u4E2A\u6E38\u620F", `\u4E91\u7AEF ${ids.length} \u7F50${complete ? "" : "\uFF08\u4E91\u7AEF\u5217\u8868\u6CA1\u62FF\u5168\uFF0C\u53EF\u80FD\u7F3A\u51E0\u7F50\uFF09"}${skipped ? `\uFF1B${skipped} \u7F50\u6253\u4E0D\u5F00\u6216\u91CD\u590D\uFF0C\u6CA1\u5217\u51FA\u6765` : ""}\u3002\u6253\u6210\u4E00\u4E2A zip \u4E0B\u8F7D\uFF1A\u91CC\u9762\u662F SAVEDATA/<\u5B58\u6863\u76EE\u5F55>/\u2026\uFF0C\u89E3\u538B\u8FDB PPSSPP \u7684 memstick/PSP/ \u5C31\u80FD\u7528\uFF08\u540C\u540D\u76EE\u5F55\u4F1A\u88AB\u76D6\uFF0C\u5148\u5907\u4EFD\uFF09\u3002`, groupByGame(dirs), "\u6253\u5305\u4E0B\u8F7D");
+  if (!chosen?.size) return;
+  const want = dirs.filter((d) => chosen.has(d.game)).map((d) => d.dir);
+  const zip = await exportSaveDirs(stick.files, stick.times, want);
+  const stamp2 = (/* @__PURE__ */ new Date()).toISOString().slice(0, 16).replace(/[-:T]/g, "");
+  const url = URL.createObjectURL(new Blob([zip], { type: "application/zip" }));
+  const a = h("a", { href: url, download: `saves-${stamp2}.zip` });
+  document.body.append(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 6e4);
+  logEvent("info", `\u5B58\u6863\u89E3\u7F50\uFF1A${[...chosen].join(" \xB7 ")}\uFF0C${want.length} \u4E2A\u76EE\u5F55 \u2192 saves-${stamp2}.zip\uFF08${(zip.length / 1024).toFixed(0)} KB\uFF09`);
+  say(`\u6253\u5305\u597D\u4E86\uFF1A${want.length} \u4E2A\u5B58\u6863\u76EE\u5F55\uFF08saves-${stamp2}.zip\uFF09`, 6e3);
+}
 var toolErr = (e) => {
   if (e?.name !== "AbortError") banner(errorText(e));
 };
@@ -12268,7 +13276,13 @@ async function boot() {
     if (!e.target.closest(".softkeys .pk, .softkeys .dpad")) toggleFullscreen();
   });
   addEventListener("keydown", (e) => onKey(e, true));
+  const padLine = (g) => `${g.id.slice(0, 60)} \xB7 mapping=${g.mapping || "(\u975E\u6807\u51C6)"} \xB7 ${g.buttons.length} \u952E ${g.axes.length} \u8F74`;
+  addEventListener("gamepadconnected", (e) => logEvent("info", `\u624B\u67C4\u63A5\u5165\uFF08Gamepad API\uFF09\uFF1A${padLine(e.gamepad)}`));
+  addEventListener("gamepaddisconnected", (e) => logEvent("info", `\u624B\u67C4\u62D4\u51FA\uFF08Gamepad API\uFF09\uFF1A${padLine(e.gamepad)}`));
   addEventListener("keyup", (e) => onKey(e, false));
+  if (questAdvisor) addEventListener("wheel", () => {
+    if (session) questFeed({ kind: "wheel", now: performance.now() });
+  }, { passive: true });
   addEventListener("blur", () => session?.setMask("keyboard", 0));
   subscribe((s) => {
     syncState = s;
@@ -12303,6 +13317,18 @@ async function boot() {
   });
   $("unwrap-wafter").addEventListener("click", () => {
     unwrapWafer().catch(toolErr);
+  });
+  $("save-manager").addEventListener("click", () => {
+    openSaveManager(saveManagerContext).catch((e) => banner(errorText(e)));
+  });
+  $("bins").addEventListener("click", () => {
+    openBins(saveManagerContext.titleByKey).catch((e) => banner(errorText(e)));
+  });
+  $("pack-saves").addEventListener("click", () => {
+    packSaves().catch(toolErr);
+  });
+  $("unpack-saves").addEventListener("click", () => {
+    unpackSaves().catch(toolErr);
   });
   const fileInput = $("local-file");
   $("open-local").addEventListener("click", () => {
@@ -12412,6 +13438,18 @@ globalThis.kr = {
   },
   inputMask: () => session ? session.inputMask() : 0,
   snapshot: async () => session ? (await session.snapshot()).state.length : 0,
+  /** 手柄这一路此刻按着的 PSP 键位（测试：按住 RT 时不该有 R）。 */
+  padMask: () => session?.getMask("pad") ?? 0,
+  /** GL 诊断自测：核在下一趟抽查帧里故意发一个非法调用（要用 ?glcheck=1 开盘）。 */
+  glSelfTest: () => session?.core?._kr_glcheck_selftest?.(),
+  /** 开发期：把这一刻存成 private/states/<name>（经开发服务器 POST /__dev/state/；之后 ?state=<name> 从这里起跑）。added 20261017 by Claude Opus 5.5 */
+  devSave: async (name) => {
+    if (!session) return 0;
+    const st = await session.snapshot();
+    const r = await fetch(`/__dev/state/${encodeURIComponent(name)}`, { method: "POST", body: st.state });
+    if (!r.ok) throw new Error(`server ${r.status}`);
+    return st.state.length;
+  },
   restoreFromServer: restoreFromDevServer,
   started: () => session !== null,
   pause: (p) => {
@@ -12469,4 +13507,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-53c436cd6689.mjs.map
+//# sourceMappingURL=kudsrocket-0486e16b6241.mjs.map
