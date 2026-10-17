@@ -27,6 +27,7 @@
 #include <GLES3/gl3.h>
 #include <libretro.h>
 #include "cadence.h"
+#include "taplatch.h"
 #include <pthread.h>
 #include <stdarg.h>
 #include <stdatomic.h>
@@ -726,7 +727,20 @@ size_t audio_sample_batch_impl(const int16_t *data, size_t frames) {
   return frames;
 }
 static size_t audio_sample_batch(const int16_t *data, size_t frames) { return audio_sample_batch_impl(data, frames); }
-static void input_poll(void) {}
+// 按下锁存（taplatch.h，W-38 怪猎箱子连按只动一格）：页面每看到一次「新按下」调 kr_input_tap(键位)；核每帧（PPSSPP retro_input 调一次 input_poll）
+//   把排队的点按放出来——游戏至少看到 2 帧按下、2 帧松开——没排队的照实际状态。启动参数 tap=0 关掉（对照用）。added 20261017 by Claude Opus 5.5
+static KrTapLatch g_tap;
+static _Atomic unsigned g_tap_in[16];
+static uint32_t g_eff_input = 0;
+static int g_tap_off = 0;
+EMSCRIPTEN_KEEPALIVE void kr_input_tap(int bit) { if (bit >= 0 && bit < 16) atomic_fetch_add(&g_tap_in[bit], 1); }
+EMSCRIPTEN_KEEPALIVE void kr_input_stats(double *out) { out[0] = g_tap.received; out[1] = g_tap.played; out[2] = g_tap.dropped; }
+static void input_poll(void) {
+  uint32_t live = g_input;
+  unsigned taps[16];
+  for (int b = 0; b < 16; b++) taps[b] = atomic_exchange(&g_tap_in[b], 0);
+  g_eff_input = g_tap_off ? live : kr_tap_step(&g_tap, taps, live);
+}
 static int16_t input_state(unsigned port, unsigned device, unsigned index, unsigned id) {
   if (port != 0) return 0;
   if ((device & RETRO_DEVICE_MASK) == RETRO_DEVICE_ANALOG) {
@@ -734,7 +748,7 @@ static int16_t input_state(unsigned port, unsigned device, unsigned index, unsig
     return (int16_t)(id == RETRO_DEVICE_ID_ANALOG_X ? g_analog_x : id == RETRO_DEVICE_ID_ANALOG_Y ? g_analog_y : 0);
   }
   if ((device & RETRO_DEVICE_MASK) != RETRO_DEVICE_JOYPAD) return 0;
-  unsigned mask = g_input;
+  unsigned mask = g_eff_input;   // 这一帧给游戏的键位（input_poll 算好的：锁存过的点按 + 实际状态）
   if (id == RETRO_DEVICE_ID_JOYPAD_MASK) return (int16_t)mask;
   return id < 16 ? (int16_t)((mask >> id) & 1) : 0;
 }
@@ -1312,6 +1326,7 @@ int main(int argc, char **argv) {
     if (!strcmp(argv[i], "cull=0")) g_cull_off = 1;
     if (!strcmp(argv[i], "render=sw")) g_force_sw = 1;
     if (!strcmp(argv[i], "glcheck=1")) g_glcheck = 1;
+    if (!strcmp(argv[i], "tap=0")) g_tap_off = 1;
   }
   fprintf(stderr, "[kr] cpu core: %s\n", g_cpu_core);
   for (int i = 0; i < KR_CACHE_BLOCKS; i++) g_cache[i].block = -1;
