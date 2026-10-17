@@ -1,5 +1,5 @@
 // src/version.ts
-var APP_VERSION = "v0.1.48-2026-10-17";
+var APP_VERSION = "v0.1.49-2026-10-17";
 
 // assets/icons.svg
 var icons_default = '<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none">\n<!--\n  14 icons extracted from the family icon library (../20260708 SVG Icons/icons.svg) by extract-icons.py \u2014 do not hand-edit; re-run the script instead.\n  Family SVG Icons \u2014 MIT License, Copyright (c) 2026 fangzhangmnm.\n  Contains work derived from (per-icon provenance in data-src):\n    Feather Icons \u2014 MIT License, Copyright (c) 2013-2023 Cole Bemis \xB7 https://github.com/feathericons/feather\n-->\n  <!-- media -->\n  <!-- pause \u2014 \u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="pause" data-cat="media" data-src="own" data-note="\u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="3.2"><path d="M8.3 5.5 V18.5"/><path d="M15.7 5.5 V18.5"/></g></symbol>\n  <!-- play \u2014 \u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="play" data-cat="media" data-src="own" data-note="\u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 5.4 L18.8 12 L8.2 18.6 Z" fill="currentColor"/></symbol>\n  <!-- fast-forward \u2014 \u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="fast-forward" data-cat="media" data-src="own" data-note="\u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.4 6.8 L10.9 12 L4.4 17.2 Z" fill="currentColor"/><path d="M13.1 6.8 L19.6 12 L13.1 17.2 Z" fill="currentColor"/></symbol>\n  <!-- volume \u2014 \u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009) -->\n  <symbol id="volume" data-cat="media" data-src="own" data-note="\u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 10.3 H8.7 L12.6 6.6 V17.4 L8.7 13.7 H5.5 Z" fill="currentColor"/><path d="M15.13 9.73 A3.4 3.4 0 0 1 15.13 14.27"/><path d="M16.36 7.19 A6.1 6.1 0 0 1 16.36 16.81"/></symbol>\n  <!-- file -->\n  <!-- floppy-disk \u2014 \u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3 -->\n  <symbol id="floppy-disk" data-cat="file" data-src="feather:save" data-note="\u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13l3 3v13a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 17 8 17 3"/></symbol>\n  <!-- folder-open \u2014 \u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF -->\n  <symbol id="folder-open" data-cat="file" data-src="own" data-note="\u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18 V7 a2 2 0 0 1 2 -2 h4 l2 2 h6 a2 2 0 0 1 2 2 v1.8"/><path d="M3 18 L6.4 10.8 H21.6 L18.2 18 Z"/></symbol>\n  <!-- hierarchy -->\n  <!-- lock \u2014 \u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D -->\n  <symbol id="lock" data-cat="hierarchy" data-src="own" data-note="\u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10" width="13" height="11"/><path d="M8.8 10 V6.5 a3.2 3.2 0 0 1 6.4 0 V10"/></symbol>\n  <!-- common -->\n  <!-- x \u2014 \u53C9 -->\n  <symbol id="x" data-cat="common" data-src="own" data-note="\u53C9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 L17.5 17.5 M17.5 6.5 L6.5 17.5"/></symbol>\n  <!-- cloud -->\n  <!-- cloud \u2014 \u4E91 -->\n  <symbol id="cloud" data-cat="cloud" data-src="feather:cloud" data-note="\u4E91" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>\n  <!-- viewport -->\n  <!-- maximize-viewport \u2014 \u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55) -->\n  <symbol id="maximize-viewport" data-cat="viewport" data-src="own" data-note="\u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934 --> <polyline points="4 9 4 4 9 4"/> <polyline points="20 9 20 4 15 4"/> <polyline points="4 15 4 20 9 20"/> <polyline points="20 15 20 20 15 20"/></symbol>\n  <!-- picture-in-picture \u2014 \u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1) -->\n  <symbol id="picture-in-picture" data-cat="viewport" data-src="own" data-note="\u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u5927\u6846\uFF08\u4E3B\u753B\u5E03\uFF09+ \u5185\u5D4C\u5C0F\u7A97\uFF08\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1\uFF09\u2014\u2014 picture-in-picture \u9690\u55BB --> <rect x="3" y="4" width="18" height="14" rx="2"/> <rect x="12" y="10" width="7" height="5" rx="1"/></symbol>\n  <!-- ui -->\n  <!-- more \u2014 \u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00) -->\n  <symbol id="more" data-cat="ui" data-src="own" data-note="\u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/></symbol>\n  <!-- keyboard \u2014 \u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49) -->\n  <symbol id="keyboard" data-cat="ui" data-src="own" data-note="\u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="7.2" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="7.2" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><path d="M8.6 15.6 H15.4"/></symbol>\n  <!-- menu \u2014 \u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17) -->\n  <symbol id="menu" data-cat="ui" data-src="own" data-note="\u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"></line> <line x1="4" y1="12" x2="20" y2="12"></line> <line x1="4" y1="17" x2="20" y2="17"></line></symbol>\n</svg>\n';
@@ -236,7 +236,7 @@ var CoreSession = class _CoreSession {
           }
         }
       },
-      arguments: [`/disc/game${opts.ext}`, String(media.size), ...opts.lowLatency ? ["lowlatency"] : [], ...opts.cpuCore === "interp" ? ["cpu=interp"] : [], ...opts.skinning === "gpu" ? ["skin=gpu"] : [], ...opts.presentEvery ? [`cadence=${opts.presentEvery}`] : []],
+      arguments: [`/disc/game${opts.ext}`, String(media.size), ...opts.lowLatency ? ["lowlatency"] : [], ...opts.cpuCore === "interp" ? ["cpu=interp"] : [], ...opts.skinning === "gpu" ? ["skin=gpu"] : [], ...opts.presentEvery ? [`cadence=${opts.presentEvery}`] : [], ...opts.cullOff ? ["cull=0"] : [], ...opts.forceSoftware ? ["render=sw"] : []],
       locateFile: (path) => new URL(`${opts.coreDir}${path}`, location.href).href,
       preRun: [(M) => {
         if (!opts.memstick?.size) return;
@@ -354,9 +354,23 @@ var CoreSession = class _CoreSession {
   noteStderr(s) {
     const m = /^\[kr\] GL renderer: (.*)$/.exec(s);
     if (m) this.glRenderer = m[1].trim();
+    if (/error|fail|could not|incomplete|invalid|GL caps|forced|disabled \(cull/i.test(s) && !/SCENET|sceUtility|mac address/i.test(s) && !this.coreErrorsSeen.has(s) && this.coreErrorsSeen.size < 40) {
+      this.coreErrorsSeen.add(s);
+      this.opts.onCoreError?.(s.length > 300 ? s.slice(0, 300) + "\u2026" : s);
+    }
     if (!/error|fail|shader|\[kr\]/i.test(s)) return;
     this.stderrTail.push(s.length > 200 ? s.slice(0, 200) + "\u2026" : s);
     if (this.stderrTail.length > 40) this.stderrTail.shift();
+  }
+  coreErrorsSeen = /* @__PURE__ */ new Set();
+  gpuTotalsBuf = 0;
+  gpuTotals() {
+    const c = this.core;
+    if (!c._kr_gpu_totals) return null;
+    if (!this.gpuTotalsBuf) this.gpuTotalsBuf = c._malloc(4 * 8);
+    c._kr_gpu_totals(this.gpuTotalsBuf);
+    const b = this.gpuTotalsBuf >> 3;
+    return { readbacks: c.HEAPF64[b], blocking: c.HEAPF64[b + 1], transfers: c.HEAPF64[b + 2], copies: c.HEAPF64[b + 3] };
   }
   /** 核 stderr 里最近的报错 / 诊断行（最多 40 行）。 */
   coreLog() {
@@ -664,6 +678,8 @@ var CoreSession = class _CoreSession {
       vsyncDt: core._kr_vsync_dt(),
       /** 上屏节拍（cadence.h）：跟屏幕排程下每几次刷新上屏一帧；1 = 每次。72 Hz 屏放 30 帧的游戏 → 3（24 fps 匀速，不然每帧交替占 2 / 3 次刷新 = 抖）。老核 = 1。 */
       presentEvery: core._kr_present_every ? core._kr_present_every() : 1,
+      /** 这一局累计（按模拟帧）：PPSSPP 去显卡读回画面几次（阻塞的几次）、块传输几次、帧缓冲拷贝几次。W-37：游戏抓画面那一下有没有回读。老核 = null。 */
+      gpuTotals: this.gpuTotals(),
       win: this.win,
       /** 核的帧循环多久没被调用了（ms；-1 = 老核不知道）。大 = 循环死了（rAF 没人调）；小而帧数不走 = 卡在 retro_run 里。 */
       loopAgeMs: core._kr_loop_last_ms ? loopAge(core._kr_loop_last_ms()) : -1,
@@ -11226,7 +11242,7 @@ async function play(prepare, resume) {
     onInput: () => activity?.input(performance.now()),
     media: disc.media,
     ext: disc.ext,
-    coreDir: "./dist/core-969d998bc1c1/",
+    coreDir: "./dist/core-19bc19dabe93/",
     glCanvas: $("gl"),
     softCanvas: $("screen"),
     audioContext: audioContext(),
@@ -11235,6 +11251,10 @@ async function play(prepare, resume) {
     cpuCore: params.get("cpu") === "interp" ? "interp" : void 0,
     presentEvery: Number(params.get("cadence")) || 0,
     // 诊断：强制上屏节拍（见 CoreSession opts）
+    cullOff: params.get("cull") === "0",
+    // 画面兼容（☰「画面兼容…」拼的网址参数）
+    forceSoftware: params.get("render") === "sw",
+    onCoreError: (line) => logEvent("warn", `\u6838\uFF1A${line}`),
     skinning: params.get("skin") === "cpu" ? "cpu" : "gpu",
     // 10-16 默认 GPU 蒙皮：PC 量过模拟线程 28%→25% 忙、顶点缓冲 2.4→1.4 MB/帧（wasm 没有 JIT 顶点解码器，软件蒙皮不划算）；?skin=cpu 退回
     memstick,
@@ -11242,6 +11262,10 @@ async function play(prepare, resume) {
   });
   if (resume) session.setHold(true);
   session.setFrameCap30(defaultFrameCap30());
+  {
+    const on = compatActive();
+    if (on.length) logEvent("info", `\u753B\u9762\u517C\u5BB9\u5F00\u5173\uFF1A${on.join(" \xB7 ")}`);
+  }
   if (disc.identifier) {
     try {
       appState().setItem("lastDisc", disc.identifier);
@@ -11778,6 +11802,7 @@ function openMenu() {
         item("\u5B58\u6863\u7BA1\u7406", "\u8FD9\u5F20\u76D8\u7684\u5FEB\u7167\u548C\u5B58\u6863", () => {
           openSaveManager({ ...saveManagerContext, only: current ? { title: current.title, key: current.key, discId: current.fp.id } : void 0 }).catch((e) => banner(errorText(e)));
         }),
+        item("\u753B\u9762\u517C\u5BB9\u2026", compatActive().length ? `\u5F00\u7740\uFF1A${compatActive().join(" \xB7 ")}` : "\u753B\u9762\u7F3A\u4E1C\u897F\u65F6\u5BF9\u7167\u7528\uFF08\u91CD\u65B0\u8F7D\u5165\u751F\u6548\uFF09", openCompat, compatActive().length > 0),
         item("\u65E5\u5FD7", "\u9ED1\u5323\u5B50\uFF08\u8DE8\u91CD\u8F7D\uFF09", openLog),
         item("\u9000\u51FA\u8FD9\u5F20\u76D8", "\u5B58\u6863\u4F1A\u5148\u540C\u6B65\u5B8C", () => {
           quit().catch((e) => banner(errorText(e)));
@@ -11790,6 +11815,49 @@ function openMenu() {
 function cadenceLabel(s) {
   const f = s.presentEveryForce(), now = s.stats().presentEvery;
   return f === 0 ? `\u81EA\u52A8\uFF08\u73B0\u5728\u6BCF ${now} \u6B21\u5237\u65B0 1 \u5E27\uFF09` : f === 1 ? "\u6BCF\u6B21\u5237\u65B0\u90FD\u4E0A\uFF08eager\uFF09" : `\u6BCF ${f} \u6B21\u5237\u65B0 1 \u5E27`;
+}
+var COMPAT = [
+  { key: "skin", off: "cpu", label: "CPU \u8499\u76AE", hint: "\u5E26\u9AA8\u9ABC\u7684\u6A21\u578B\uFF08\u4EBA\u7269\u3001\u90E8\u5206\u7269\u4EF6\uFF09\u5728 CPU \u4E0A\u7B97\uFF0C\u4E0D\u4EA4\u7ED9\u663E\u5361\uFF0810-16 \u8D77\u9ED8\u8BA4\u4EA4\u7ED9\u663E\u5361\uFF09" },
+  { key: "cull", off: "0", label: "\u5173\u8303\u56F4\u5254\u9664", hint: "\u4E0D\u8BA9 PPSSPP \u5728\u663E\u5361\u91CC\u63D0\u524D\u4E22\u6389\u300C\u770B\u8D77\u6765\u5728\u753B\u9762\u5916\u300D\u7684\u9876\u70B9" },
+  { key: "render", off: "sw", label: "\u8F6F\u4EF6\u6E32\u67D3", hint: "\u5B8C\u5168\u4E0D\u7528\u663E\u5361\uFF1A\u5F88\u6162\uFF0C\u4F46\u753B\u9762\u662F\u5BF9\u7684\u2014\u2014\u62FF\u6765\u5224\u65AD\u662F\u4E0D\u662F\u663E\u5361\u90A3\u6761\u8DEF\u7684\u95EE\u9898" }
+];
+function compatActive() {
+  return COMPAT.filter((c) => params.get(c.key) === c.off).map((c) => c.label);
+}
+function openCompat() {
+  const want = new Map(COMPAT.map((c) => [c.key, params.get(c.key) === c.off]));
+  void sheet((close) => {
+    const rows = h("div", { class: "menu-list" });
+    const draw = () => rows.replaceChildren(...COMPAT.map((c) => h(
+      "button",
+      { class: `menu-item${want.get(c.key) ? " on" : ""}`, onclick: () => {
+        want.set(c.key, !want.get(c.key));
+        draw();
+      } },
+      h("span", {}, `${want.get(c.key) ? "\u2713 " : ""}${c.label}`),
+      h("span", { class: "muted" }, c.hint)
+    )));
+    draw();
+    return [
+      h("h2", {}, "\u753B\u9762\u517C\u5BB9"),
+      h("p", { class: "muted" }, "\u753B\u9762\u7F3A\u4E1C\u897F\uFF08\u4EBA\u7269\u3001\u7269\u4EF6\u4E0D\u89C1\uFF09\u65F6\u4E00\u6B21\u5F00\u4E00\u4E2A\u5BF9\u7167\u3002\u91CD\u65B0\u8F7D\u5165\u540E\u518D\u70B9\u8FD9\u5F20\u76D8\u3001\u9009\u300C\u4ECE\u4E0A\u6B21\u5F00\u59CB\u300D\uFF1B\u9ED1\u5323\u5B50\u4F1A\u8BB0\u4E0B\u5F00\u4E86\u54EA\u4E2A\u3002"),
+      rows,
+      h(
+        "div",
+        { class: "row" },
+        h("button", { onclick: () => close() }, "\u53D6\u6D88"),
+        h("button", { class: "primary", onclick: () => {
+          const q = new URLSearchParams(location.search);
+          for (const c of COMPAT) {
+            if (want.get(c.key)) q.set(c.key, c.off);
+            else if (q.get(c.key) === c.off) q.delete(c.key);
+          }
+          logEvent("info", `\u753B\u9762\u517C\u5BB9\uFF1A\u91CD\u65B0\u8F7D\u5165\uFF08${COMPAT.filter((c) => want.get(c.key)).map((c) => c.label).join(" \xB7 ") || "\u5168\u5173"}\uFF09`);
+          location.search = q.toString();
+        } }, "\u7528\u8FD9\u4E9B\u5F00\u5173\u91CD\u65B0\u8F7D\u5165")
+      )
+    ];
+  });
 }
 var hudPrev = { t: performance.now(), up: 0, down: 0 };
 function renderHud() {
@@ -12187,7 +12255,7 @@ function frame(gen) {
       perfLogAt = now;
       perfLogged++;
       const s = session.stats();
-      logEvent("info", `\u6027\u80FD\uFF1A${s.fps.toFixed(0)} fps \xB7 \u901F\u5EA6 ${pct(s.speed)} \xB7 ${s.renderer} \xB7 ${perfLines(s).join(" \xB7 ")} \xB7 \u624B\u67C4\uFF1A${padInfo || "Gamepad API \u6CA1\u770B\u5230\u624B\u67C4"}${questAdvisor ? ` \xB7 \u6EDA\u8F6E ${questAdvisor.wheels} \u6B21` : ""}${s.coreLog().length ? ` \xB7 \u6838 stderr\uFF1A${s.coreLog().slice(-3).join(" | ")}` : ""}`);
+      logEvent("info", `\u6027\u80FD\uFF1A${s.fps.toFixed(0)} fps \xB7 \u901F\u5EA6 ${pct(s.speed)} \xB7 ${s.renderer} \xB7 ${perfLines(s).join(" \xB7 ")} \xB7 \u624B\u67C4\uFF1A${padInfo || "Gamepad API \u6CA1\u770B\u5230\u624B\u67C4"}${questAdvisor ? ` \xB7 \u6EDA\u8F6E ${questAdvisor.wheels} \u6B21` : ""}${s.gpuTotals ? ` \xB7 \u672C\u5C40\u7D2F\u8BA1\uFF1A\u56DE\u8BFB ${s.gpuTotals.readbacks}\uFF08\u963B\u585E ${s.gpuTotals.blocking}\uFF09\xB7 \u5757\u4F20\u8F93 ${s.gpuTotals.transfers} \xB7 \u62F7\u8D1D ${s.gpuTotals.copies}` : ""}${s.coreLog().length ? ` \xB7 \u6838 stderr\uFF1A${s.coreLog().slice(-3).join(" | ")}` : ""}`);
     }
   }
   (pip.window ?? window).requestAnimationFrame(() => frame(gen));
@@ -12687,6 +12755,14 @@ globalThis.kr = {
   },
   inputMask: () => session ? session.inputMask() : 0,
   snapshot: async () => session ? (await session.snapshot()).state.length : 0,
+  /** 开发期：把这一刻存成 private/states/<name>（经开发服务器 POST /__dev/state/；之后 ?state=<name> 从这里起跑）。added 20261017 by Claude Opus 5.5 */
+  devSave: async (name) => {
+    if (!session) return 0;
+    const st = await session.snapshot();
+    const r = await fetch(`/__dev/state/${encodeURIComponent(name)}`, { method: "POST", body: st.state });
+    if (!r.ok) throw new Error(`server ${r.status}`);
+    return st.state.length;
+  },
   restoreFromServer: restoreFromDevServer,
   started: () => session !== null,
   pause: (p) => {
@@ -12744,4 +12820,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-f7d6b1fa6136.mjs.map
+//# sourceMappingURL=kudsrocket-6a77ae6f97f0.mjs.map

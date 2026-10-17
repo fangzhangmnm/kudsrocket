@@ -751,6 +751,9 @@ static const char *g_cpu_core = "IR JIT";
 // 蒙皮算在哪：PPSSPP 默认软件蒙皮（CPU 算、好合批）；CPU 是瓶颈的设备（Quest 怪猎主城 10-16 日志：模拟线程 100% 忙、每帧解码 9 万顶点）试试交给 GPU 顶点着色器。
 //   启动参数 skin=gpu → "disabled"。先量后定默认（perf-probe --url skin=gpu）。added 20261016 by Claude Fable 5.1
 static const char *g_sw_skinning = "enabled";
+// 画面兼容开关（W-34 / W-37 设备排查，added 20261017 by Claude Opus 5.5）：启动参数 cull=0 → 关掉 PPSSPP 的顶点范围剔除（物件被误剔的老毛病）；
+//   render=sw → 不建 WebGL、强制软件渲染（慢但不经 GPU：GPU 那条路有问题时画面对不对的金标准）。页面 ☰「画面兼容」拼网址参数重新载入。
+static int g_cull_off = 0, g_force_sw = 0;
 static const struct { const char *key, *value; } g_options[] = {
   {"ppsspp_cpu_core", "IR JIT"}, // 实际值看 g_cpu_core（environment() 里）
   // 快内存 = 读写 PSP 地址不检查（IR 的 IRPassSimplify 会把 ValidateAddress 全删掉）。wasm 的堆只有 768 MB、没有保护页：游戏碰一个坏地址就是
@@ -785,6 +788,7 @@ static bool environment(unsigned cmd, void *data) {
       if (!strcmp(var->key, "ppsspp_software_rendering")) { var->value = g_gl ? "disabled" : "enabled"; return true; }
       if (!strcmp(var->key, "ppsspp_cpu_core")) { var->value = g_cpu_core; return true; }
       if (!strcmp(var->key, "ppsspp_software_skinning")) { var->value = g_sw_skinning; return true; }
+      if (!strcmp(var->key, "ppsspp_disable_range_culling")) { var->value = g_cull_off ? "enabled" : "disabled"; return true; }
       if (!strcmp(var->key, "ppsspp_frameskip")) { var->value = "disabled"; return true; } // 运行中由 kr_ppsspp_set_frameskip 改
       for (size_t i = 0; i < sizeof(g_options) / sizeof(g_options[0]); i++)
         if (!strcmp(var->key, g_options[i].key)) { var->value = g_options[i].value; return true; }
@@ -961,6 +965,30 @@ EM_JS(void, kr_gl_debug_lose, (int handle), {
   var ext = c.GLctx.getExtension("WEBGL_lose_context"); if (!ext) return;
   ext.loseContext(); setTimeout(function () { ext.restoreContext(); }, 1500);
 });
+// GL 能力一行进 stderr（黑匣子）：设备上画面出错时先看这台的 WebGL2 是什么样（版本 / 精度 / 上限 / 关键扩展）。added 20261017 by Claude Opus 5.5
+EM_JS(void, kr_gl_caps_query, (int handle, char *out, int cap), {
+  var c = GL.contexts[handle]; if (!c || !c.GLctx) return;
+  var g = c.GLctx, p = function (k) { try { return g.getParameter(k); } catch (e) { return "?"; } };
+  var hp = "?"; try { var f = g.getShaderPrecisionFormat(g.FRAGMENT_SHADER, g.HIGH_FLOAT); hp = f ? f.precision : 0; } catch (e) {}
+  var hv = "?"; try { var v = g.getShaderPrecisionFormat(g.VERTEX_SHADER, g.HIGH_FLOAT); hv = v ? v.precision : 0; } catch (e) {}
+  var ex = (g.getSupportedExtensions() || []).filter(function (n) { return /clip_cull|color_buffer|depth|blend|float/i.test(n); }).join(",");
+  var s = String(p(g.VERSION) + " | " + p(g.SHADING_LANGUAGE_VERSION) + " | highp frag " + hp + " vert " + hv +
+      " | uniforms vert " + p(g.MAX_VERTEX_UNIFORM_VECTORS) + " frag " + p(g.MAX_FRAGMENT_UNIFORM_VECTORS) + " | tex " + p(g.MAX_TEXTURE_SIZE) +
+      " | depth bits " + p(g.DEPTH_BITS) + " stencil " + p(g.STENCIL_BITS) + " | ext " + ex);
+  var n = Math.min(s.length, cap - 1), i;
+  for (i = 0; i < n; i++) { var ch = s.charCodeAt(i); HEAPU8[out + i] = ch < 128 ? ch : 63; }
+  HEAPU8[out + n] = 0;
+});
+// 回读 / 块传输 / 拷贝的累计次数（W-37 怪猎胜利截图：游戏抓画面那一下 PPSSPP 有没有去显卡把画面读回来）。按模拟帧去重累加（vblank 数变了才算新的一帧）。
+static double g_tot_readbacks = 0, g_tot_blocking = 0, g_tot_transfers = 0, g_tot_copies = 0, g_tot_vb = -1;
+static void gpu_totals_tick(void) {
+  double st[17];
+  kr_ppsspp_gpu_stats(st);
+  if (st[15] == g_tot_vb) return;
+  g_tot_vb = st[15];
+  g_tot_readbacks += st[6]; g_tot_blocking += st[7]; g_tot_transfers += st[9]; g_tot_copies += st[10];
+}
+EMSCRIPTEN_KEEPALIVE void kr_gpu_totals(double *out) { out[0] = g_tot_readbacks; out[1] = g_tot_blocking; out[2] = g_tot_transfers; out[3] = g_tot_copies; }
 EMSCRIPTEN_KEEPALIVE double kr_loop_last_ms(void) { return atomic_load(&g_loop_last); }
 EMSCRIPTEN_KEEPALIVE unsigned kr_loop_rescues(void) { return atomic_load(&g_loop_rescues); }
 EMSCRIPTEN_KEEPALIVE int kr_gl_state(void) { return (atomic_load(&g_gl_lost) ? 1 : 0) | ((int)atomic_load(&g_gl_restores) << 1); }
@@ -1071,6 +1099,7 @@ static void run_one(void) {
   uint64_t produced_before = g_audio_produced;
   double pf_t0 = PF_NOW();
   retro_run();
+  gpu_totals_tick();
   double pf_dt = PF_NOW() - pf_t0;
   g_pf_run_ms += pf_dt;
   if (pf_dt > g_pf_run_max) g_pf_run_max = pf_dt;
@@ -1210,6 +1239,8 @@ int main(int argc, char **argv) {
     if (!strcmp(argv[i], "cpu=interp")) g_cpu_core = "Interpreter";
     if (!strcmp(argv[i], "skin=gpu")) g_sw_skinning = "disabled";
     if (!strncmp(argv[i], "cadence=", 8)) kr_set_present_every_force(atoi(argv[i] + 8));
+    if (!strcmp(argv[i], "cull=0")) g_cull_off = 1;
+    if (!strcmp(argv[i], "render=sw")) g_force_sw = 1;
   }
   fprintf(stderr, "[kr] cpu core: %s\n", g_cpu_core);
   for (int i = 0; i < KR_CACHE_BLOCKS; i++) g_cache[i].block = -1;
@@ -1222,7 +1253,9 @@ int main(int argc, char **argv) {
   retro_set_audio_sample_batch(audio_sample_batch);
   retro_set_input_poll(input_poll);
   retro_set_input_state(input_state);
-  gl_create(); // 先试 WebGL2：建得出来才答应核的 GPU 请求
+  if (g_force_sw) fprintf(stderr, "[kr] software rendering forced (render=sw)\n");
+  else gl_create(); // 先试 WebGL2：建得出来才答应核的 GPU 请求
+  if (g_cull_off) fprintf(stderr, "[kr] range culling disabled (cull=0)\n");
   retro_init();
 
   struct retro_game_info info = {g_disc_path, NULL, 0, NULL};
@@ -1243,6 +1276,7 @@ int main(int argc, char **argv) {
     g_hw_active = 1;
     kr_gl_hook_events((int)g_gl, (int *)&g_gl_lost, (int *)&g_gl_restored);
     kr_gl_renderer_query((int)g_gl, g_gl_renderer, (int)sizeof g_gl_renderer);
+    { static char caps[640]; caps[0] = 0; kr_gl_caps_query((int)g_gl, caps, (int)sizeof caps); fprintf(stderr, "[kr] GL caps: %s\n", caps); }
     fprintf(stderr, "[kr] GPU rendering: WebGL2, framebuffer %dx%d\n", w, h);
     fprintf(stderr, "[kr] GL renderer: %s\n", g_gl_renderer[0] ? g_gl_renderer : "(unknown)");
   } else {
