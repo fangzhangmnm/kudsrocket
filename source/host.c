@@ -494,7 +494,9 @@ static unsigned g_tick = 0;                  // 跟屏幕排程下 frame() 跑�
 static int g_hw_pending = 0;                 // 核画好了一帧还没上屏（只在 k > 1 时用）
 static unsigned g_hw_w = 0, g_hw_h = 0;
 EMSCRIPTEN_KEEPALIVE int kr_present_every(void) { return atomic_load(&g_present_every); }
-static atomic_int g_present_force = 0;        // 启动参数 cadence=N：强制节拍（PC 60 Hz 屏上验这条上屏路径用；0 = 自动）
+static atomic_int g_present_force = 0;        // 强制节拍：0 = 自动（cadence.h 算）；1 = 每次刷新都上屏（eager）；2 / 3 = 每 2 / 3 次刷新一帧。启动参数 cadence=N，或 ☰ 运行中切（kr_set_present_every_force）
+EMSCRIPTEN_KEEPALIVE void kr_set_present_every_force(int k) { atomic_store(&g_present_force, k < 0 ? 0 : k > 8 ? 8 : k); }
+EMSCRIPTEN_KEEPALIVE int kr_present_every_force(void) { return atomic_load(&g_present_force); }
 static int cadence_deferring(void);          // 现在是不是「攒着到节拍再上屏」（定义在主循环那节：要看排程状态）
 
 static void pace_tick_1s(void); // 排程自检（定义在主循环那节）
@@ -1207,7 +1209,7 @@ int main(int argc, char **argv) {
     if (!strcmp(argv[i], "lowlatency")) g_want_desync = true;
     if (!strcmp(argv[i], "cpu=interp")) g_cpu_core = "Interpreter";
     if (!strcmp(argv[i], "skin=gpu")) g_sw_skinning = "disabled";
-    if (!strncmp(argv[i], "cadence=", 8)) { int k = atoi(argv[i] + 8); atomic_store(&g_present_force, k < 0 ? 0 : k > 8 ? 8 : k); }
+    if (!strncmp(argv[i], "cadence=", 8)) kr_set_present_every_force(atoi(argv[i] + 8));
   }
   fprintf(stderr, "[kr] cpu core: %s\n", g_cpu_core);
   for (int i = 0; i < KR_CACHE_BLOCKS; i++) g_cache[i].block = -1;
