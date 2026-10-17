@@ -26,8 +26,12 @@ button:disabled { opacity: .4; cursor: default; }
 .disc { display: flex; align-items: center; gap: 12px; text-align: left; padding: 14px 16px; width: 100%; }
 .disc .title { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 16px; }
 .disc.continue { border-color: var(--accent); }
-.tools { padding-top: 12px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.tools { padding-top: 4px; display: grid; gap: 4px; }
+.tool-group { padding-top: 10px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.tool-group h3 { flex-basis: 100%; margin: 0; font-size: 14px; color: var(--ink-soft); font-weight: 600; }
 .tools p { flex-basis: 100%; margin: 0; font-size: 13px; }
+.library-head { display: flex; align-items: center; gap: 8px; padding-top: 10px; border-top: 1px solid var(--line); }
+.library-head h2 { margin: 0 auto 0 0; font-size: 14px; color: var(--ink-soft); font-weight: 600; }
 .sheet progress { width: 100%; }
 
 /* ── 游戏 ── */
