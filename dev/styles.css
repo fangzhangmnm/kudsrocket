@@ -1,7 +1,7 @@
 /* KudsRocket —— created 20261014 by Claude Opus 5.5 */
 :root {
   color-scheme: dark;
-  --bg: #111; --panel: #1c1c1c; --line: #333; --ink: #ddd; --ink-soft: #888; --accent: #7aa2ff; --warn: #e0a040; --err: #e05a5a;
+  --bg: #111; --panel: #1c1c1c; --line: #333; --ink: #ddd; --ink-soft: #888; --accent: #7aa2ff; --warn: #e0a040; --err: #e05a5a; --wait: #8ea2c4; /* wait = 没传上去但会自己好（蓝灰，不用管）；warn = 要人处理（琥珀）——user 10-18「颜色也分开」 */
   --tool: 40px;
   /* 家族组件要的 token（参考窗 @internal/reference-window + 弹出菜单 @internal/workbench-elements；10-18）。
      层级：画面里的东西 ≤ 6 < 参考窗 30 < 提示 40 / 更新 45 < 面板 50 < 菜单 55 < 横条 60 < 遮罩 70 */
@@ -137,21 +137,25 @@ button:disabled { opacity: .4; cursor: default; }
 .syncbar-track { display: block; height: 3px; background: rgba(255,255,255,.12); overflow: hidden; }
 .syncbar-fill { display: block; height: 100%; width: 35%; background: var(--accent); animation: syncbar-slide 1.4s linear infinite; }
 .syncbar.stuck .syncbar-fill, .syncbar.bad .syncbar-fill { background: var(--err); animation: none; width: 100%; }
-.syncbar.pending .syncbar-fill { background: var(--warn); animation: none; width: 100%; }
+.syncbar.attention .syncbar-fill { background: var(--warn); animation: none; width: 100%; }
+.syncbar.waiting .syncbar-fill { background: var(--wait); animation: none; width: 100%; opacity: .6; }
 .syncbar.done .syncbar-fill, .syncbar.local .syncbar-fill { animation: none; width: 100%; } /* 传好了 / 存在这台设备了：静态满条，别再转（user 10-15「存档好了下面的蓝条还要转几秒」） */
 .syncbar-text { justify-self: end; margin: 2px 8px 0 0; padding: 2px 10px; border-radius: 999px; font-size: 11px; background: rgba(0,0,0,.6); color: #ddd; }
 .syncbar.stuck .syncbar-text, .syncbar.bad .syncbar-text { background: var(--err); color: #fff; }
-.syncbar.pending .syncbar-text { background: var(--warn); color: #000; }
+.syncbar.attention .syncbar-text { background: var(--warn); color: #000; }
+.syncbar.waiting .syncbar-text { background: rgba(0,0,0,.6); color: var(--wait); }
 @keyframes syncbar-slide { from { transform: translateX(-100%); } to { transform: translateX(300%); } }
 .sync-home { font-size: 13px; cursor: pointer; }
 .sync-home.busy { color: var(--accent); }
 .sync-home.stuck, .sync-home.bad { color: var(--err); }
-.sync-home.pending { color: var(--warn); }
+.sync-home.attention { color: var(--warn); }
+.sync-home.waiting { color: var(--wait); }
 .sheet pre.log { max-height: 50vh; overflow: auto; margin: 0; padding: 8px; font: 11px/1.4 ui-monospace, monospace; background: #111; border-radius: 6px; white-space: pre-wrap; }
 /* smart save button：按同步状态变色 */
 .icon-btn.smart.saving, .icon-btn.smart.busy { color: var(--accent); animation: smart-pulse 1s ease-in-out infinite; }
 .icon-btn.smart.stuck, .icon-btn.smart.bad { color: var(--err); animation: none; }
-.icon-btn.smart.pending { color: var(--warn); }
+.icon-btn.smart.attention { color: var(--warn); }
+.icon-btn.smart.waiting { color: var(--wait); }
 .icon-btn.smart.done { color: #7c6; }
 @keyframes smart-pulse { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
 /* 存档管理：按游戏分组；快照小缩略图；要处理的行左边一道色 */
@@ -161,6 +165,7 @@ button:disabled { opacity: .4; cursor: default; }
 .thumb.small { width: 64px; height: 36px; flex: none; background: #000; border-radius: 4px; overflow: hidden; }
 .thumb.small img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .bin-row.attention { border-left: 3px solid var(--warn); }
+.bin-row.waiting { border-left: 3px solid var(--wait); }
 /* 连点按钮不选中文字（user 10-14「连续按按钮的时候状态栏上的文字会被选中」） */
 .toolbar, #status, .syncbar, #note, #banners, .sheet .row, .softkeys, .sync-home, .home-head { user-select: none; -webkit-user-select: none; }
 /* 真进度：条子不再无限滑动 */

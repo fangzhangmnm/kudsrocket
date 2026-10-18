@@ -1,5 +1,5 @@
 // src/version.ts
-var APP_VERSION = "v0.1.67-2026-10-18";
+var APP_VERSION = "v0.1.68-2026-10-18";
 
 // assets/icons.svg
 var icons_default = '<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none">\n<!--\n  24 icons extracted from the family icon library (../20260708 SVG Icons/icons.svg) by extract-icons.py \u2014 do not hand-edit; re-run the script instead.\n  Family SVG Icons \u2014 MIT License, Copyright (c) 2026 fangzhangmnm.\n  Contains work derived from (per-icon provenance in data-src):\n    Feather Icons \u2014 MIT License, Copyright (c) 2013-2023 Cole Bemis \xB7 https://github.com/feathericons/feather\n    Lucide \u2014 ISC License, Copyright (c) 2020 Lucide Contributors \xB7 https://github.com/lucide-icons/lucide\n-->\n  <!-- edit -->\n  <!-- paste \u2014 \u7C98\u8D34:\u526A\u8D34\u677F\u4E0D\u7F29(\u5E93\u5C3A\u5BF8)+\u6587\u6863\u63A2\u51FA\u53F3\u4E0B\u89D2, \u6309 copy \u7684\u524D\u540E\u4EF6\u6BD4\u4F8B -->\n  <symbol id="paste" data-cat="edit" data-src="own" data-note="\u7C98\u8D34:\u526A\u8D34\u677F\u4E0D\u7F29(\u5E93\u5C3A\u5BF8)+\u6587\u6863\u63A2\u51FA\u53F3\u4E0B\u89D2, \u6309 copy \u7684\u524D\u540E\u4EF6\u6BD4\u4F8B" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><mask id="icPaC"><rect width="24" height="24" fill="#fff" stroke="none"/><g transform="translate(6.76 3.85) scale(0.860)" fill="#000" stroke="#000" stroke-width="3.14" stroke-linejoin="round"><path d="M4 5.6a1.7 1.7 0 0 1 1.7-1.7h6.6l4 4v11.5a1.7 1.7 0 0 1-1.7 1.7H5.7A1.7 1.7 0 0 1 4 20.8z"/></g></mask><g mask="url(#icPaC)"><mask id="icPbTC"><rect width="24" height="24" fill="#fff"/><rect x="6.0" y="1.0000000000000002" width="6" height="4.2" rx="1.2" fill="#000" stroke="#000" stroke-width="2.4"/></mask><g mask="url(#icPbTC)"><rect x="2.0" y="3.3" width="14" height="17" rx="2"/></g><rect x="6.0" y="1.0000000000000002" width="6" height="4.2" rx="1.2"/></g><g transform="translate(6.76 3.85) scale(0.860)" stroke-width="1.98"><path d="M4 5.6a1.7 1.7 0 0 1 1.7-1.7h6.6l4 4v11.5a1.7 1.7 0 0 1-1.7 1.7H5.7A1.7 1.7 0 0 1 4 20.8z"/><path d="M12.3 3.9V8h4"/><path d="M6.6 12.4h7.2M6.6 15.4h5"/></g></symbol>\n  <!-- media -->\n  <!-- pause \u2014 \u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="pause" data-cat="media" data-src="own" data-note="\u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="3.2"><path d="M8.3 5.5 V18.5"/><path d="M15.7 5.5 V18.5"/></g></symbol>\n  <!-- play \u2014 \u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="play" data-cat="media" data-src="own" data-note="\u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 5.4 L18.8 12 L8.2 18.6 Z" fill="currentColor"/></symbol>\n  <!-- fast-forward \u2014 \u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="fast-forward" data-cat="media" data-src="own" data-note="\u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.4 6.8 L10.9 12 L4.4 17.2 Z" fill="currentColor"/><path d="M13.1 6.8 L19.6 12 L13.1 17.2 Z" fill="currentColor"/></symbol>\n  <!-- volume \u2014 \u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009) -->\n  <symbol id="volume" data-cat="media" data-src="own" data-note="\u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 10.3 H8.7 L12.6 6.6 V17.4 L8.7 13.7 H5.5 Z" fill="currentColor"/><path d="M15.13 9.73 A3.4 3.4 0 0 1 15.13 14.27"/><path d="M16.36 7.19 A6.1 6.1 0 0 1 16.36 16.81"/></symbol>\n  <!-- file -->\n  <!-- floppy-disk \u2014 \u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3 -->\n  <symbol id="floppy-disk" data-cat="file" data-src="feather:save" data-note="\u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13l3 3v13a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 17 8 17 3"/></symbol>\n  <!-- folder-open \u2014 \u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF -->\n  <symbol id="folder-open" data-cat="file" data-src="own" data-note="\u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18 V7 a2 2 0 0 1 2 -2 h4 l2 2 h6 a2 2 0 0 1 2 2 v1.8"/><path d="M3 18 L6.4 10.8 H21.6 L18.2 18 Z"/></symbol>\n  <!-- folder \u2014 \u6587\u4EF6\u5939:\u5DE6\u8FB9 tab + \u77E9\u5F62\u4E3B\u4F53 -->\n  <symbol id="folder" data-cat="file" data-src="lucide:folder" data-note="\u6587\u4EF6\u5939:\u5DE6\u8FB9 tab + \u77E9\u5F62\u4E3B\u4F53" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u6587\u4EF6\u5939\uFF1A\u5DE6\u8FB9 tab + \u77E9\u5F62\u4E3B\u4F53 --> <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>\n  <!-- trash-can \u2014 \u5783\u573E\u6876:\u6876\u8EAB\u6536\u53E3(feather \u662F\u76F4\u7B52);\u4E0E fluent(\u5706\u63D0\u624B/\u66F4\u4F4E)\u3001heroicons(\u5F27\u5F62\u900F\u89C6)\u4EA6\u4E0D\u540C \u2014 own -->\n  <symbol id="trash-can" data-cat="file" data-src="own" data-note="\u5783\u573E\u6876:\u6876\u8EAB\u6536\u53E3(feather \u662F\u76F4\u7B52);\u4E0E fluent(\u5706\u63D0\u624B/\u66F4\u4F4E)\u3001heroicons(\u5F27\u5F62\u900F\u89C6)\u4EA6\u4E0D\u540C \u2014 own" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 9.5v9"/><path d="M14 9.5v9"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></symbol>\n  <!-- new \u2014 \u65B0\u5EFA:\u7EAF\u52A0\u53F7(\u7B49\u957F\u5341\u5B57\u7EBF) -->\n  <symbol id="new" data-cat="file" data-src="own" data-note="\u65B0\u5EFA:\u7EAF\u52A0\u53F7(\u7B49\u957F\u5341\u5B57\u7EBF)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/> <line x1="5" y1="12" x2="19" y2="12"/></symbol>\n  <!-- hierarchy -->\n  <!-- lock \u2014 \u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D -->\n  <symbol id="lock" data-cat="hierarchy" data-src="own" data-note="\u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10" width="13" height="11"/><path d="M8.8 10 V6.5 a3.2 3.2 0 0 1 6.4 0 V10"/></symbol>\n  <!-- common -->\n  <!-- x \u2014 \u53C9 -->\n  <symbol id="x" data-cat="common" data-src="own" data-note="\u53C9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 L17.5 17.5 M17.5 6.5 L6.5 17.5"/></symbol>\n  <!-- chevron-left \u2014 \u2039 \u5C0F\u5C3A\u5BF8\u4F18\u5316\u88F8 chevron:\u63CF\u8FB9 2.4\u3001\u81C2\u77ED(14px chip \u7528)\uFF1B\u5E93\u91CC\u5E26\u6746\u7684 back \u662F\u53E6\u4E00\u8BED\u4E49\u3010WeebPaint \u53C2\u8003\u7A97\u591A\u56FE\u65F6\u7A97\u5E95\u7FFB\u9875 chip\uFF1Bfable \u81EA\u753B\u672A\u8FC7\u76EE\u3011 -->\n  <symbol id="chevron-left" data-cat="common" data-src="own" data-note="\u2039 \u5C0F\u5C3A\u5BF8\u4F18\u5316\u88F8 chevron:\u63CF\u8FB9 2.4\u3001\u81C2\u77ED(14px chip \u7528)\uFF1B\u5E93\u91CC\u5E26\u6746\u7684 back \u662F\u53E6\u4E00\u8BED\u4E49\u3010WeebPaint \u53C2\u8003\u7A97\u591A\u56FE\u65F6\u7A97\u5E95\u7FFB\u9875 chip\uFF1Bfable \u81EA\u753B\u672A\u8FC7\u76EE\u3011" data-review="pending" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="14.5 6 9 12 14.5 18" stroke-width="2.4"/></symbol>\n  <!-- chevron-right \u2014 \u203A chevron-left \u7684\u7CBE\u786E\u955C\u50CF\u3010WeebPaint \u53C2\u8003\u7A97\u7FFB\u9875 chip\uFF1Bfable \u81EA\u753B\u672A\u8FC7\u76EE\u3011 -->\n  <symbol id="chevron-right" data-cat="common" data-src="own" data-note="\u203A chevron-left \u7684\u7CBE\u786E\u955C\u50CF\u3010WeebPaint \u53C2\u8003\u7A97\u7FFB\u9875 chip\uFF1Bfable \u81EA\u753B\u672A\u8FC7\u76EE\u3011" data-review="pending" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="9.5 6 15 12 9.5 18" stroke-width="2.4"/></symbol>\n  <!-- back \u2014 \u8FD4\u56DE:\u5DE6\u5411\u6574\u7BAD\u5934(\u5E26\u6746;\u88F8 chevron-left \u66FE\u56E0\u5C0F\u5C3A\u5BF8\u6E32\u67D3\u5DEE\u88AB sunset) -->\n  <symbol id="back" data-cat="common" data-src="own" data-note="\u8FD4\u56DE:\u5DE6\u5411\u6574\u7BAD\u5934(\u5E26\u6746;\u88F8 chevron-left \u66FE\u56E0\u5C0F\u5C3A\u5BF8\u6E32\u67D3\u5DEE\u88AB sunset)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H5"/><polyline points="11 6 5 12 11 18"/></symbol>\n  <!-- forward \u2014 \u524D\u8FDB:back \u7684\u7CBE\u786E\u955C\u50CF(\u53F3\u5411\u6574\u7BAD\u5934\u5E26\u6746;\u4E0E chevron-right \u88F8 chevron \u5206\u5DE5)\u3010WebXiaoHeiWu \u4FA7\u680F\u9875\u5934\u300C\u56DE\u9000\u300D\u53F3\u90BB\u7684\u300C\u524D\u8FDB\u300D\u94AE\uFF08\u56DE\u9000\u4E4B\u540E\u518D\u56DE\u53BB\uFF09\uFF1B2026-09-10 fable \u81EA\u753B\u672A\u8FC7\u76EE\u3011 -->\n  <symbol id="forward" data-cat="common" data-src="own" data-note="\u524D\u8FDB:back \u7684\u7CBE\u786E\u955C\u50CF(\u53F3\u5411\u6574\u7BAD\u5934\u5E26\u6746;\u4E0E chevron-right \u88F8 chevron \u5206\u5DE5)\u3010WebXiaoHeiWu \u4FA7\u680F\u9875\u5934\u300C\u56DE\u9000\u300D\u53F3\u90BB\u7684\u300C\u524D\u8FDB\u300D\u94AE\uFF08\u56DE\u9000\u4E4B\u540E\u518D\u56DE\u53BB\uFF09\uFF1B2026-09-10 fable \u81EA\u753B\u672A\u8FC7\u76EE\u3011" data-review="pending" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12H19"/><polyline points="13 6 19 12 13 18"/></symbol>\n  <!-- check \u2014 \u52FE -->\n  <symbol id="check" data-cat="common" data-src="own" data-note="\u52FE" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5 L9.5 17.5 L19.5 6.5"/></symbol>\n  <!-- cloud -->\n  <!-- cloud \u2014 \u4E91 -->\n  <symbol id="cloud" data-cat="cloud" data-src="feather:cloud" data-note="\u4E91" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>\n  <!-- viewport -->\n  <!-- maximize-viewport \u2014 \u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55) -->\n  <symbol id="maximize-viewport" data-cat="viewport" data-src="own" data-note="\u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934 --> <polyline points="4 9 4 4 9 4"/> <polyline points="20 9 20 4 15 4"/> <polyline points="4 15 4 20 9 20"/> <polyline points="20 15 20 20 15 20"/></symbol>\n  <!-- picture-in-picture \u2014 \u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1) -->\n  <symbol id="picture-in-picture" data-cat="viewport" data-src="own" data-note="\u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u5927\u6846\uFF08\u4E3B\u753B\u5E03\uFF09+ \u5185\u5D4C\u5C0F\u7A97\uFF08\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1\uFF09\u2014\u2014 picture-in-picture \u9690\u55BB --> <rect x="3" y="4" width="18" height="14" rx="2"/> <rect x="12" y="10" width="7" height="5" rx="1"/></symbol>\n  <!-- one-to-one \u2014 1:1 \u50CF\u7D20:\u56DB\u89D2\u62EC\u53F7 + \u4E2D\u5FC3\u4E00\u9897\u5B9E\u5FC3\u50CF\u7D20=\u300C\u4E00\u56FE\u50CF\u7D20\u5BF9\u4E00\u5C4F\u50CF\u7D20\u300D(\u4E0D\u5199 1:1 \u6587\u5B57)\u3010WeebPaint \u53C2\u8003\u7A97 \uFF0B \u83DC\u5355\u300C1:1 \u50CF\u7D20\u300D\u9879\uFF1Bfable \u81EA\u753B\u672A\u8FC7\u76EE\u3011 -->\n  <symbol id="one-to-one" data-cat="viewport" data-src="own" data-note="1:1 \u50CF\u7D20:\u56DB\u89D2\u62EC\u53F7 + \u4E2D\u5FC3\u4E00\u9897\u5B9E\u5FC3\u50CF\u7D20=\u300C\u4E00\u56FE\u50CF\u7D20\u5BF9\u4E00\u5C4F\u50CF\u7D20\u300D(\u4E0D\u5199 1:1 \u6587\u5B57)\u3010WeebPaint \u53C2\u8003\u7A97 \uFF0B \u83DC\u5355\u300C1:1 \u50CF\u7D20\u300D\u9879\uFF1Bfable \u81EA\u753B\u672A\u8FC7\u76EE\u3011" data-review="pending" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8 V3.5 H8"/><path d="M16 3.5 H20.5 V8"/><path d="M20.5 16 V20.5 H16"/><path d="M8 20.5 H3.5 V16"/><rect x="9.6" y="9.6" width="4.8" height="4.8" fill="currentColor" stroke="none"/></symbol>\n  <!-- ui -->\n  <!-- more \u2014 \u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00) -->\n  <symbol id="more" data-cat="ui" data-src="own" data-note="\u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/></symbol>\n  <!-- keyboard \u2014 \u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49) -->\n  <symbol id="keyboard" data-cat="ui" data-src="own" data-note="\u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="7.2" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="7.2" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><path d="M8.6 15.6 H15.4"/></symbol>\n  <!-- menu \u2014 \u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17) -->\n  <symbol id="menu" data-cat="ui" data-src="own" data-note="\u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"></line> <line x1="4" y1="12" x2="20" y2="12"></line> <line x1="4" y1="17" x2="20" y2="17"></line></symbol>\n</svg>\n';
@@ -7622,6 +7622,8 @@ var LOG_MAX = 400;
 var flights = /* @__PURE__ */ new Map();
 var nextId = 1;
 var pending = 0;
+var needsYou = 0;
+var activities = /* @__PURE__ */ new Map();
 var problem = null;
 var local = null;
 var doneUntil = 0;
@@ -7667,9 +7669,9 @@ function subscribe(cb) {
     listeners.delete(cb);
   };
 }
-var inFlight = () => !!local || flights.size > 0;
+var inFlight = () => !!local || flights.size > 0 || activities.size > 0;
 function inFlightFresh() {
-  if (local) return true;
+  if (local || activities.size) return true;
   const now = performance.now();
   for (const f of flights.values()) if (now - Math.max(f.startedAt, f.progressAt ?? f.startedAt) < 9e4) return true;
   return false;
@@ -7688,6 +7690,16 @@ function whenIdle() {
 function beginLocal(label) {
   local = { label, startedAt: performance.now() };
   render();
+}
+var nextActivity = 1;
+function activity(text, run) {
+  const id = nextActivity++;
+  activities.set(id, text);
+  render();
+  return run().finally(() => {
+    activities.delete(id);
+    render();
+  });
 }
 function endLocal() {
   local = null;
@@ -7753,10 +7765,11 @@ function track(label, bytes, run, verb = "\u4F20") {
     throw e;
   });
 }
-function setPending(n, newer = 0) {
-  pending = n;
-  newerOnCloud = newer;
-  if (n === 0) softProblem = null;
+function setPending(c) {
+  needsYou = c.needsYou;
+  pending = c.needsYou + c.waiting;
+  newerOnCloud = c.newer;
+  if (pending === 0) softProblem = null;
   render();
 }
 var newerOnCloud = 0;
@@ -7782,11 +7795,14 @@ function state() {
     if (stuck) return { kind: "stuck", text: `\u5361\u4F4F\u4E86\uFF1F${first.label} \u5DF2\u7ECF${first.verb}\u4E86 ${secs(first.startedAt)}${pct2}${more}`, fraction };
     return { kind: "busy", text: `\u6B63\u5728${first.verb} ${first.label} ${mb(first.bytes)}${pct2} \xB7 ${secs(first.startedAt)}${more}`, fraction };
   }
+  const act = activities.values().next().value;
+  if (act) return { kind: "busy", text: `${act}${activities.size > 1 ? `\uFF08\u8FD8\u6709 ${activities.size - 1} \u4EF6\uFF09` : ""}` };
   if (problem) return { kind: "bad", text: problem.text };
-  if (softProblem && pending > 0) return { kind: "pending", text: softProblem.text };
+  if (needsYou > 0) return { kind: "attention", text: `${needsYou} \u4E2A\u8981\u5904\u7406\uFF08\u70B9\u5F00\u770B\uFF09${pending > needsYou ? ` \xB7 ${pending - needsYou} \u4E2A\u7B49\u7740\u4F20` : ""}` };
+  if (softProblem && pending > 0) return { kind: "waiting", text: softProblem.text };
   if (performance.now() < doneUntil) return signedIn() ? { kind: "done", text: "\u4F20\u597D\u4E86" } : { kind: "local", text: "\u5B58\u5728\u8FD9\u53F0\u8BBE\u5907\u4E86\uFF08\u6CA1\u767B\u5F55\uFF0C\u4E0D\u4F20\uFF09" };
   if (!signedIn()) return pending > 0 ? { kind: "local", text: `${pending} \u4E2A\u53EA\u5728\u8FD9\u53F0\u8BBE\u5907\uFF08\u767B\u5F55\u540E\u518D\u4F20\uFF09` } : { kind: "idle", text: "\u6CA1\u767B\u5F55\uFF1A\u5B58\u6863\u53EA\u5728\u8FD9\u53F0\u8BBE\u5907" };
-  if (pending > 0) return { kind: "pending", text: `${pending} \u4E2A\u6CA1\u4F20\u4E0A\u53BB / \u8981\u5904\u7406${newerOnCloud ? ` \xB7 ${newerOnCloud} \u4E2A\u4E91\u7AEF\u6709\u65B0\u7248` : ""}` };
+  if (pending > 0) return { kind: "waiting", text: `${pending} \u4E2A\u7B49\u7740\u4F20\uFF08\u4F1A\u81EA\u5DF1\u4F20\u4E0A\u53BB\uFF0C\u4E0D\u7528\u7BA1\uFF09${newerOnCloud ? ` \xB7 ${newerOnCloud} \u4E2A\u4E91\u7AEF\u6709\u65B0\u7248` : ""}` };
   if (newerOnCloud > 0) return { kind: "idle", text: `\u4E91\u7AEF\u6709\u65B0\u7248 ${newerOnCloud} \u4E2A\uFF08\u522B\u7684\u8BBE\u5907\u5B58\u7684\uFF0C\u81EA\u52A8\u6362\uFF09` };
   return { kind: "idle", text: "\u4E91\u7AEF\uFF1A\u5DF2\u540C\u6B65" };
 }
@@ -7806,9 +7822,9 @@ function render() {
     home.hidden = false;
     home.textContent = s.text;
   }
-  const live = local || flights.size || performance.now() < doneUntil;
+  const live = local || flights.size || activities.size || performance.now() < doneUntil;
   if (live && !timer) timer = window.setInterval(() => {
-    if (!(local || flights.size || performance.now() < doneUntil)) {
+    if (!(local || flights.size || activities.size || performance.now() < doneUntil)) {
       clearInterval(timer);
       timer = 0;
     }
@@ -7818,10 +7834,26 @@ function render() {
 
 // src/app/store-ui.ts
 var BACKGROUND_KEYS = /* @__PURE__ */ new Set(["sync.pushing", "file.renaming", "file.uploading", "cloud.checking", "file.pulling"]);
+var STATUS_KEYS = /* @__PURE__ */ new Set(["file.deleting", "folder.creating"]);
+var modalHook = () => {
+};
+var modalDepth = 0;
+function onStoreModal(fn) {
+  modalHook = fn;
+}
+async function modal(fn) {
+  if (modalDepth++ === 0) modalHook(true);
+  try {
+    return await fn();
+  } finally {
+    if (--modalDepth === 0) modalHook(false);
+  }
+}
 var stemOf = (identifier) => labelFor(identifier);
 var storeUI = {
   busy: (label, fn, key) => {
-    if (!key || !BACKGROUND_KEYS.has(key)) return withBusy(label, fn);
+    if (key && STATUS_KEYS.has(key)) return activity(label, fn);
+    if (!key || !BACKGROUND_KEYS.has(key)) return modal(() => withBusy(label, fn));
     if (key === "file.pulling") note(label, 3e4);
     return fn();
   },
@@ -7849,7 +7881,7 @@ var storeUI = {
       body: `\u300C${n}\u300D\u4E91\u7AEF\u6709\u66F4\u65B0\u7684\u7248\u672C\uFF0C\u8FD9\u53F0\u8BBE\u5907\u4E0A\u7684\u662F\u65E7\u7684\u3002`,
       hint: "\u300C\u4E91\u7AEF\u8986\u76D6\u672C\u5730\u300D= \u6362\u6210\u4E91\u7AEF\u90A3\u4EFD\uFF0C\u8FD9\u53F0\u7684\u8FD9\u4EFD\u8FDB\u5907\u4EFD\u7BB1\uFF1B\u300C\u53D6\u6D88\u300D= \u5148\u6253\u5F00\u8FD9\u53F0\u8BBE\u5907\u4E0A\u7684\u3002\u88AB\u66FF\u6362\u7684\u7248\u672C\u4F1A\u81EA\u52A8\u7559\u5E95\uFF0C\u4E0D\u4F1A\u4E22\u5931\u3002"
     };
-    const choice = await sheet((done) => [
+    const choice = await modal(() => sheet((done) => [
       h("h2", {}, text.title),
       h("p", {}, text.body),
       h("p", { class: "hint" }, text.hint),
@@ -7860,7 +7892,7 @@ var storeUI = {
         ...occasion === "push" ? [h("button", { onclick: () => done("keepMine") }, "\u672C\u5730\u8986\u76D6\u4E91\u7AEF")] : [],
         h("button", { class: "primary", onclick: () => done("takeCloud") }, "\u4E91\u7AEF\u8986\u76D6\u672C\u5730")
       )
-    ], { dismissable: false });
+    ], { dismissable: false }));
     logEvent("warn", `\u51B2\u7A81\uFF1A${stemOf(name)}\uFF08${occasion}\uFF09\u2192 ${{ keepMine: "\u672C\u5730\u8986\u76D6\u4E91\u7AEF", takeCloud: "\u4E91\u7AEF\u8986\u76D6\u672C\u5730", cancel: "\u53D6\u6D88" }[choice ?? "cancel"]}`);
     return choice ?? "cancel";
   },
@@ -10170,6 +10202,13 @@ function withRefs(files, refs) {
   return out;
 }
 
+// src/app/sync-class.ts
+function syncClass(syncState2) {
+  if (syncState2 === "synced" || syncState2 === "cloud-only" || syncState2 === "local-only") return "ok";
+  if (syncState2 === "unpushed" || syncState2 === "float" || syncState2 === "pendingGone" || syncState2 === "newer-on-cloud") return "waiting";
+  return "needs-you";
+}
+
 // src/app/saves.ts
 var sessionSalt = crypto.getRandomValues(new Uint8Array(16));
 var HISTORY_KEEP = 3;
@@ -10197,16 +10236,19 @@ function watchSlots(key, cb) {
   });
 }
 var foldersEnsured = /* @__PURE__ */ new Map();
-async function put(identifier, sealed, opts = {}) {
-  const store2 = getStore();
+function ensureFolderOf(identifier) {
   const folder = identifier.replace(/\/[^/]*$/, "");
   let ensured = foldersEnsured.get(folder);
   if (!ensured) {
-    ensured = store2.files.ensureFolder(folder);
+    ensured = getStore().files.ensureFolder(folder);
     foldersEnsured.set(folder, ensured);
     ensured.catch(() => foldersEnsured.delete(folder));
   }
-  await ensured;
+  return ensured;
+}
+async function put(identifier, sealed, opts = {}) {
+  const store2 = getStore();
+  await ensureFolderOf(identifier);
   return track(labelFor(identifier), sealed.length, (onProgress) => store2.file(identifier, { mode: "existing" }).save(new Blob([sealed]), { onProgress, tryPush: !opts.deferPush }));
 }
 async function clearLocalCopies(folders) {
@@ -10250,10 +10292,6 @@ async function ensureLineage(identifier) {
   }
   return await f.open().catch(() => null) != null;
 }
-async function recheckAfterPush(identifier) {
-  const r = await getStore().file(identifier, { mode: "existing" }).pullIfClean();
-  return JSON.stringify(r);
-}
 var readSealed = (identifier) => get2(identifier);
 var putSealed = (identifier, sealed) => put(identifier, sealed);
 function saveTrace(identifier, bytes, opts = {}) {
@@ -10292,9 +10330,16 @@ async function readTin(identifier, password, waitForCloud) {
 async function saveTin(identifier, zip, password, opts = {}) {
   return put(identifier, await sealBytes(password, zip, { salt: sessionSalt, meta: { at: Date.now() } }), opts);
 }
-async function saveSnapshot(identifier, state2, meta, password, opts = {}) {
+async function sealSnapshot(state2, meta, password) {
   const thumb = meta.thumb ? btoa(Array.from(meta.thumb, (b) => String.fromCharCode(b)).join("")) : void 0;
-  return put(identifier, await sealBytes(password, state2, { salt: sessionSalt, compress: true, meta: { thumb, at: meta.at, auto: meta.auto, fp: meta.fp, t: meta.title, ...meta.ws?.length && meta.wsz ? { ws: meta.ws, wsz: meta.wsz } : {} } }), opts);
+  return sealBytes(password, state2, { salt: sessionSalt, compress: true, meta: { thumb, at: meta.at, auto: meta.auto, fp: meta.fp, t: meta.title, ...meta.ws?.length && meta.wsz ? { ws: meta.ws, wsz: meta.wsz } : {} } });
+}
+async function saveSnapshot(identifier, state2, meta, password, opts = {}) {
+  return put(identifier, await sealSnapshot(state2, meta, password), opts);
+}
+async function writeLocal(identifier, sealed) {
+  await ensureFolderOf(identifier);
+  await getStore().file(identifier, { mode: "existing" }).save(new Blob([sealed]), { tryPush: false });
 }
 async function loadSnapshot(identifier, password) {
   const sealed = await get2(identifier);
@@ -10384,7 +10429,7 @@ var SYNC_TEXT = {
   "float": "\u53EA\u5728\u8FD9\u53F0\u8BBE\u5907\uFF0C\u4ECE\u6CA1\u4F20\u8FC7",
   "local-only": "\u53EA\u5728\u8FD9\u53F0\u8BBE\u5907"
 };
-var needsAttention = (syncState2) => !["synced", "cloud-only", "local-only"].includes(syncState2);
+var needsAttention = (syncState2) => syncClass(syncState2) !== "ok";
 var LOG_SLOT = "tmp/log.txt";
 async function uploadLog(text) {
   const f = getStore().file(LOG_SLOT, { mode: "existing" });
@@ -10824,6 +10869,77 @@ function setPipActive(on) {
 }
 var inForeground = () => document.visibilityState === "visible" || pipActive;
 var inBackground = () => !inForeground();
+
+// src/app/slot-writer.ts
+function createSlotWriter(d) {
+  const setTimer = d.setTimer ?? ((fn, ms) => setTimeout(fn, ms));
+  const clearTimer = d.clearTimer ?? ((t) => clearTimeout(t));
+  const entries = /* @__PURE__ */ new Map();
+  let pushTimer = null;
+  function settle(e, failedGen, err3) {
+    const keep = [];
+    for (const w of e.waiters) {
+      if (e.landedGen >= w.gen) w.resolve();
+      else if (failedGen != null && w.gen <= failedGen) w.reject(err3);
+      else keep.push(w);
+    }
+    e.waiters = keep;
+  }
+  function armPush(ms) {
+    if (pushTimer != null) clearTimer(pushTimer);
+    pushTimer = setTimer(() => {
+      pushTimer = null;
+      if (!d.background()) d.pushSoon();
+    }, ms);
+  }
+  return {
+    commit(id, bytes, opts) {
+      let e = entries.get(id);
+      if (!e) {
+        e = { bytes, at: opts.at, gen: 0, landedGen: 0, chain: Promise.resolve(), waiters: [] };
+        entries.set(id, e);
+      }
+      const entry = e;
+      const g = ++entry.gen;
+      entry.bytes = bytes;
+      entry.at = opts.at;
+      if (pushTimer != null) {
+        clearTimer(pushTimer);
+        pushTimer = null;
+      }
+      const local2 = new Promise((resolve, reject) => {
+        entry.waiters.push({ gen: g, resolve, reject });
+      });
+      local2.catch(() => {
+      });
+      if (entry.landedGen < g - 1) d.log("info", `${d.label(id)}\uFF1A\u4E0A\u4E00\u4EFD\u8FD8\u6392\u7740\uFF08\u8FD9\u4E00\u683C\u5728\u4F20\uFF09\uFF0C\u53EA\u7559\u6700\u65B0\u8FD9\u4EFD`);
+      entry.chain = entry.chain.then(async () => {
+        if (entry.gen !== g) return;
+        await d.writeLocal(id, bytes);
+        entry.landedGen = g;
+        settle(entry);
+        if (entry.gen === g) armPush(opts.pushAfterMs);
+      }).catch((err3) => {
+        d.log("warn", `${d.label(id)} \u6CA1\u843D\u5230\u672C\u673A\uFF1A${err3 instanceof Error ? err3.message : String(err3)}`);
+        settle(entry, g, err3);
+      });
+      return { local: local2 };
+    },
+    latest(id) {
+      const e = entries.get(id);
+      return e ? { bytes: e.bytes, at: e.at } : null;
+    },
+    queuedLocal: () => [...entries.values()].filter((e) => e.landedGen < e.gen).length,
+    async drain() {
+      await Promise.all([...entries.values()].map((e) => e.chain));
+      if (pushTimer != null) {
+        clearTimer(pushTimer);
+        pushTimer = null;
+        if (!d.background()) d.pushSoon();
+      }
+    }
+  };
+}
 
 // src/app/deadline.ts
 function withDeadline(p, ms, onSettleLate) {
@@ -11550,7 +11666,24 @@ function decompress(dat, buf) {
 }
 
 // src/app/snapshots.ts
-var SAVE_DEADLINE_MS = 2e4;
+var LOCAL_WAIT_MS = 4e3;
+var MANUAL_PUSH_DELAY_MS = 2e4;
+var HISTORY_MIN_AGE_MS = 10 * 6e4;
+function setHistoryMinAgeForTest(ms) {
+  HISTORY_MIN_AGE_MS = ms;
+}
+var pushHook = () => {
+};
+function setSnapshotPushHook(fn) {
+  pushHook = fn;
+}
+var writer = createSlotWriter({
+  writeLocal,
+  pushSoon: () => pushHook(),
+  background: () => inBackground(),
+  log: (level, text) => logEvent(level, text),
+  label: (id) => labelFor(id)
+});
 var fpSame = (saved, now) => !!saved && fpCompatible(saved, now);
 function workingSetOf(disc) {
   const ranges = disc.prefetcher?.workingSet() ?? [];
@@ -11708,8 +11841,13 @@ var Snapshots = class {
         n = alt.n;
         label = slotLabel({ kind, n });
       }
-      let old = null, oldAt = 0;
-      if (!auto && kind === "s" && this.slots.some((x) => x.kind === "s" && x.n === n && x.savedAt)) {
+      let old = null, oldAt = 0, oldMine = false;
+      const mine = !auto && kind === "s" ? writer.latest(crumbId(this.disc.key, kind, n)) : null;
+      if (mine) {
+        old = mine.bytes;
+        oldAt = mine.at;
+        oldMine = true;
+      } else if (!auto && kind === "s" && this.slots.some((x) => x.kind === "s" && x.n === n && x.savedAt)) {
         const existing = this.slots.find((x) => x.kind === "s" && x.n === n);
         oldAt = (await this.peek(existing).catch(() => null))?.at ?? existing.savedAt ?? Date.now();
         old = await readSealed(crumbId(this.disc.key, kind, n)).catch(() => null);
@@ -11726,34 +11864,35 @@ var Snapshots = class {
       }
       const id = crumbId(this.disc.key, kind, n);
       const at = Date.now();
-      const hidden = inBackground();
-      const r = await withDeadline(
-        saveSnapshot(id, state2, { thumb, at, auto, fp: this.disc.fp, title: this.disc.title, ...workingSetOf(this.disc) }, pw, { deferPush: hidden }),
-        SAVE_DEADLINE_MS,
-        (late) => {
-          if (!late.ok && auto) this.leaveFailed = true;
-          logEvent(late.ok ? "info" : "warn", late.ok ? `\u300C${label}\u300D\u90A3\u6B21\u8FDF\u5230\u7684\u4E0A\u4F20${late.value.pushed ? "\u4F20\u597D\u4E86" : "\u6CA1\u4F20\u4E0A\u53BB\uFF08\u4F1A\u7EED\u63A8\uFF09"}` : `\u300C${label}\u300D\u90A3\u6B21\u8FDF\u5230\u7684\u4E0A\u4F20\u51FA\u9519\uFF1A${String(late.error)}`);
-        }
-      );
+      const sealed = await sealSnapshot(state2, { thumb, at, auto, fp: this.disc.fp, title: this.disc.title, ...workingSetOf(this.disc) }, pw);
+      const { local: local2 } = writer.commit(id, sealed, { at, pushAfterMs: auto ? 0 : MANUAL_PUSH_DELAY_MS });
       this.metaCache.delete(id);
-      if (r === "timeout") {
-        logEvent("warn", `\u5B58\u300C${label}\u300D${SAVE_DEADLINE_MS / 1e3} s \u8FD8\u6CA1\u7ED3\u675F\uFF1A\u5148\u653E\u5F00\uFF0C\u672C\u673A\u90A3\u4EFD\u4F1A\u843D\u4E0B\u3001\u4E91\u7AEF\u81EA\u52A8\u7EED\u63A8\uFF1B\u8FD9\u6B21\u4E0D\u7559\u64A4\u9500`);
-        this.verbs.say(`\u300C${label}\u300D\u4E0A\u4F20\u5F88\u6162\uFF0C\u5148\u653E\u5F00\u8BA9\u4F60\u80FD\u63A5\u7740\u5B58\uFF1B\u4F1A\u81EA\u52A8\u7EED\u4F20`, 6e3);
-        return;
-      }
-      if (old) void this.keepHistory(old, oldAt);
+      const landed = await withDeadline(local2, LOCAL_WAIT_MS, (late) => {
+        if (!late.ok && auto) this.leaveFailed = true;
+        logEvent(late.ok ? "info" : "warn", late.ok ? `\u300C${label}\u300D\u6392\u7740\u7684\u90A3\u4EFD\u843D\u5230\u8FD9\u53F0\u8BBE\u5907\u4E86` : `\u300C${label}\u300D\u6392\u7740\u7684\u90A3\u4EFD\u6CA1\u843D\u5230\u8FD9\u53F0\u8BBE\u5907\uFF1A${String(late.error)}`);
+      });
+      if (landed === "timeout") {
+        logEvent("info", `\u5B58\u300C${label}\u300D\uFF1A\u8FD9\u4E00\u683C\u6B63\u5728\u4F20\u4E0A\u4E00\u4EFD\uFF0C\u65B0\u7684\u4E00\u4EFD\u6392\u7740\uFF0C\u4F20\u5B8C\u5C31\u843D\u5230\u8FD9\u53F0\u8BBE\u5907`);
+        this.verbs.say(`\u300C${label}\u300D\u6536\u4E0B\u4E86\uFF1A\u8FD9\u4E00\u683C\u8FD8\u5728\u4F20\u4E0A\u4E00\u4EFD\uFF0C\u4F20\u5B8C\u9A6C\u4E0A\u5199\u8FDB\u8FD9\u53F0\u8BBE\u5907\uFF08\u53EF\u4EE5\u63A5\u7740\u73A9\uFF09`, 6e3);
+      } else logEvent("info", `\u5B58\u300C${label}\u300D\uFF1A\u843D\u5230\u8FD9\u53F0\u8BBE\u5907\u4E86${auto ? "" : `\uFF0C${MANUAL_PUSH_DELAY_MS / 1e3} s \u540E\u4F20\uFF08\u671F\u95F4\u518D\u5B58\u53EA\u4F20\u6700\u540E\u4E00\u4EFD\uFF09`}`);
+      if (old && oldMine && at - oldAt < HISTORY_MIN_AGE_MS) logEvent("info", `\u5386\u53F2\uFF1A\u88AB\u76D6\u6389\u7684\u300C${label}\u300D\u662F\u8FD9\u4E00\u9875 ${Math.round((at - oldAt) / 1e3)} s \u524D\u521A\u5B58\u7684\u4E2D\u95F4\u6001\uFF0C\u4E0D\u53E6\u7559\uFF08\u4E0A\u4E00\u4EFD\u80FD\u64A4\u9500\uFF09`);
+      else if (old) void this.keepHistory(old, oldAt);
       if (!auto) {
         this.undoSaveInfo = { id, label, old, newAt: at };
         putGuard({ kind: "save", discKey: this.disc.key, id, label, old: old ? new Blob([old]) : null, newAt: at, at }).catch((e) => console.warn("[undo-guard] save", e));
-      }
-      if (r.pushed) {
-        recheckAfterPush(id).then((v) => logEvent("info", `\u63A8\u5B8C\u590D\u6838 ${label}\uFF1A${v}`), (e) => logEvent("warn", `\u63A8\u5B8C\u590D\u6838 ${label} \u5931\u8D25\uFF1A${String(e)}`));
-        tidyLocalSnapshots(this.slots, this.history()).catch((e) => console.warn("[tidy]", e));
       }
     } finally {
       endLocal();
       this.busy = false;
     }
+  }
+  /** 退出前：排着还没落本机的那几份落完（W-42）。 */
+  drainWrites() {
+    return writer.drain();
+  }
+  /** 续推之后（main.ts pushDirty）：传上去的快照只留最新几份本机副本（以前是每格推完立刻收拾）。 */
+  afterPush() {
+    tidyLocalSnapshots(this.slots, this.history()).catch((e) => console.warn("[tidy]", e));
   }
   /** 导入 PC 版 PPSSPP 的快照（W-7）：存成**新的**一格手动快照，不覆盖任何格。added 20261014 by Claude Opus 5.5
    *  放在哪 = 文件名里的盘号 + 版本算出的游戏身份代号（和开同一张盘算出来的一样）：是开着的这张盘 → 这张盘的格子、记上盘指纹（读档护栏照常）；
@@ -12087,19 +12226,25 @@ async function openSaveManager(ctx) {
   };
   const render2 = () => {
     const visible = rows.filter((r) => !(only && r.meta?.jar && !(only.discId && r.meta.jar.u.toUpperCase().startsWith(only.discId.toUpperCase()))));
-    const todo = visible.filter((r) => needsAttention(r.it.syncState)).sort((a, b) => whenOf(b) - whenOf(a));
+    const todo = visible.filter((r) => syncClass(r.it.syncState) === "needs-you").sort((a, b) => whenOf(b) - whenOf(a));
+    const waiting = visible.filter((r) => syncClass(r.it.syncState) === "waiting").sort((a, b) => whenOf(b) - whenOf(a));
     const groups = /* @__PURE__ */ new Map();
     for (const r of visible) groups.set(gameOf2(r, ctx), [...groups.get(gameOf2(r, ctx)) ?? [], r]);
     const sections = [...groups].map(([g, rs]) => [g, rs.sort((a, b) => whenOf(b) - whenOf(a))]).sort((a, b) => whenOf(b[1][0]) - whenOf(a[1][0]));
     body.replaceChildren(
-      h("h3", {}, todo.length ? `\u8981\u5904\u7406\u7684\uFF08${todo.length}\uFF09` : "\u6CA1\u6709\u8981\u5904\u7406\u7684"),
+      h("h3", {}, todo.length ? `\u8981\u4F60\u5904\u7406\u7684\uFF08${todo.length}\uFF09` : "\u6CA1\u6709\u8981\u4F60\u5904\u7406\u7684"),
       ...todo.length ? [h("div", { class: "bins" }, ...todo.map((r) => row(r, true)))] : [],
+      ...waiting.length ? [
+        h("h3", {}, `\u7B49\u7740\u4F20\u7684\uFF08${waiting.length}\uFF09`),
+        h("p", { class: "muted" }, "\u4F1A\u81EA\u5DF1\u4F20\u4E0A\u53BB\uFF08\u8054\u7F51\u3001\u56DE\u5230\u524D\u53F0\u65F6\u81EA\u52A8\u7EED\u4F20\uFF09\uFF0C\u4E00\u822C\u4E0D\u7528\u7BA1\uFF1B\u771F\u60F3\u73B0\u5728\u51B3\u5B9A\u4E5F\u53EF\u4EE5\u70B9\u300C\u5904\u7406\u2026\u300D\u3002"),
+        h("div", { class: "bins" }, ...waiting.map((r) => row(r, true)))
+      ] : [],
       ...peeking ? [h("p", { class: "muted" }, `\u6B63\u5728\u8BFB\u540D\u5B57\u548C\u65F6\u95F4\u2026\uFF08\u8FD8\u6709 ${peeking} \u6761\uFF09`)] : [],
       ...sections.flatMap(([g, rs]) => [h("h3", {}, `${g}\uFF08${rs.length}\uFF09`), h("div", { class: "bins" }, ...rs.map((r) => row(r, false)))]),
       ...visible.length ? [] : [h("p", { class: "muted" }, "\u7A7A\u7684\u3002")]
     );
   };
-  const act = (r, label, title) => h("button", { class: "primary", title, onclick: async () => {
+  const act = (r, label, title) => h("button", { class: syncClass(r.it.syncState) === "needs-you" ? "primary" : "", title, onclick: async () => {
     closeSheet();
     try {
       note(await nudge(r.it.identifier, r.it.syncState), 8e3);
@@ -12112,9 +12257,10 @@ async function openSaveManager(ctx) {
     const c = parseCrumbId(r.it.identifier);
     const thumb = c ? h("div", { class: "thumb small" }, r.meta?.thumb ? h("img", { src: `data:image/jpeg;base64,${r.meta.thumb}`, alt: "" }) : null) : null;
     const canLoad = c && ctx.loadSnapshot && c.key === ctx.loadSnapshot.key && r.it.syncState !== "cloud-only" ? ctx.loadSnapshot : null;
+    const cls = syncClass(r.it.syncState);
     return h(
       "div",
-      { class: `bin-row${needsAttention(r.it.syncState) ? " attention" : ""}` },
+      { class: `bin-row${cls === "needs-you" ? " attention" : cls === "waiting" ? " waiting" : ""}` },
       thumb,
       h(
         "div",
@@ -12612,8 +12758,8 @@ async function uploadToPantry(input, password, identifier, onProgress) {
   const src = { size: input.size, read: async (o, n) => new Uint8Array(await input.slice(o, o + n).arrayBuffer()) };
   const label = await readDiscLabel(src);
   const fp = { k: PLATFORM_CODE.psp, size: input.size, ...label?.id ? { id: label.id } : {}, ...label?.version ? { v: label.version } : {} };
-  const writer = await beginDisc(password, { size: input.size });
-  const head = await writer.finish({ name: input.name, fp });
+  const writer2 = await beginDisc(password, { size: input.size });
+  const head = await writer2.finish({ name: input.name, fp });
   const total = head.length + input.size;
   const source = {
     size: total,
@@ -12629,7 +12775,7 @@ async function uploadToPantry(input, password, identifier, onProgress) {
         const bodyOff = offset + o - head.length;
         if (bodyOff % 16 !== 0) throw new RangeError(`upload chunk not 16-aligned at body offset ${bodyOff}`);
         const plain = new Uint8Array(await input.slice(bodyOff, bodyOff + (length - o)).arrayBuffer());
-        out.set(await writer.encryptAt(bodyOff, plain), o);
+        out.set(await writer2.encryptAt(bodyOff, plain), o);
       }
       return out;
     }
@@ -12640,16 +12786,16 @@ async function encryptToLocal(input, password, out, p) {
   const src = { size: input.size, read: async (o, n) => new Uint8Array(await input.slice(o, o + n).arrayBuffer()) };
   const label = await readDiscLabel(src);
   const fp = { k: PLATFORM_CODE.psp, size: input.size, ...label?.id ? { id: label.id } : {}, ...label?.version ? { v: label.version } : {} };
-  const writer = await beginDisc(password);
+  const writer2 = await beginDisc(password);
   await writeAll(out, async (w) => {
-    await w.write(new Uint8Array(writer.headBytes));
+    await w.write(new Uint8Array(writer2.headBytes));
     for (let off = 0; off < input.size; off += CHUNK) {
       if (p.cancelled) throw new Cancelled();
       const plain = new Uint8Array(await input.slice(off, off + CHUNK).arrayBuffer());
-      await w.write(await writer.encrypt(plain));
+      await w.write(await writer2.encrypt(plain));
       p.update(Math.min(off + CHUNK, input.size), input.size);
     }
-    await w.write({ type: "write", position: 0, data: await writer.finish({ name: input.name, fp }) });
+    await w.write({ type: "write", position: 0, data: await writer2.finish({ name: input.name, fp }) });
   });
 }
 async function openForDecrypt(input, password) {
@@ -15817,7 +15963,7 @@ var discOpens = 0;
 var ac = null;
 var softKeys = null;
 var snaps = null;
-var activity = null;
+var activity2 = null;
 var stageEl = $("stage");
 var pausedMarkEl = $("paused-mark");
 var resumeCoverEl = $("resume-cover");
@@ -15909,6 +16055,28 @@ var say = (text, ms) => {
   lastNote = text;
   note(text, ms);
 };
+var pushDirtyNow = async () => {
+};
+setSnapshotPushHook(() => {
+  void pushDirtyNow();
+});
+var pausedByModal = false;
+onStoreModal((on) => {
+  const s = session;
+  if (!s) return;
+  if (on) {
+    if (!s.paused) {
+      s.setPaused(true);
+      pausedByModal = true;
+      logEvent("info", "\u5E93\u7684\u9762\u677F / \u906E\u7F69\u5F00\u7740\uFF1A\u6E38\u620F\u6682\u505C");
+      renderToolbar();
+    }
+  } else if (pausedByModal) {
+    pausedByModal = false;
+    s.setPaused(false);
+    renderToolbar();
+  }
+});
 var guide = createGuideWindow({
   log: (level, text) => logEvent(level, text),
   say,
@@ -16291,9 +16459,9 @@ async function play(prepare, resume) {
   $("title").textContent = disc.title;
   setActiveIdentifier(disc.identifier);
   if (resume) showResumeCover("\u6B63\u5728\u63A5\u4E0A\u6B21\u7684\u8FDB\u5EA6\u2026");
-  activity = createActivity({ inputWindowMs: ACTIVITY_INPUT_WINDOW_MS, progressWindowMs: ACTIVITY_PROGRESS_WINDOW_MS }, performance.now());
+  activity2 = createActivity({ inputWindowMs: ACTIVITY_INPUT_WINDOW_MS, progressWindowMs: ACTIVITY_PROGRESS_WINDOW_MS }, performance.now());
   session = await CoreSession.start({
-    onInput: () => activity?.input(performance.now()),
+    onInput: () => activity2?.input(performance.now()),
     media: disc.media,
     ext: disc.ext,
     coreDir: "./dist/core-b865f1f47260/",
@@ -17294,6 +17462,8 @@ async function quit() {
   try {
     if (!leaveNow) await jamTick(true);
     if (!leaveNow) await guide.flush();
+    if (!leaveNow) await snaps?.drainWrites();
+    if (!leaveNow) await pushDirtyNow();
     if (!leaveNow) await whenIdle();
     if (!leaveNow) await closePrefetcher();
   } finally {
@@ -17430,9 +17600,9 @@ function frame(gen) {
   }
   session.tick();
   const now = performance.now();
-  if (activity) {
-    activity.discSeen(session.discSeenBytes(), now);
-    snaps?.tick(activity.tick(now - lastFrameAt, now, { visible: inForeground(), paused: session.paused }));
+  if (activity2) {
+    activity2.discSeen(session.discSeenBytes(), now);
+    snaps?.tick(activity2.tick(now - lastFrameAt, now, { visible: inForeground(), paused: session.paused }));
   }
   lastFrameAt = now;
   if (now - statusAt > 500) {
@@ -17479,7 +17649,7 @@ function statusText() {
     `\u76D8\uFF1A\u8FD9\u4E00\u79D2 ${(s.netBps / 1024).toFixed(0)} KB/s \xB7 \u7B49\u8BFB\u76D8 ${s.netWaitMs.toFixed(0)} ms/s${s.netInflight ? `\uFF08\u6B63\u5728\u7B49 ${s.netInflight} \u4E2A\uFF09` : ""} \xB7 \u7D2F\u8BA1 ${(s.bytesFetched / 2 ** 20).toFixed(1)} MB / ${s.mediaReads} \u6B21`,
     `\u58F0\u97F3\uFF1A${s.audioState} \xB7 \u7F13\u51B2 ${s.audioFillMs.toFixed(0)} ms \xB7 \u8F93\u51FA\u5EF6\u8FDF ${s.outputLatencyMs.toFixed(0)} ms \xB7 \u6B20\u8F7D\u7D2F\u8BA1 ${s.audioUnderrunMs.toFixed(0)} ms \xB7 \u4E22\u5F03 ${s.audioDropped}`,
     `\u624B\u67C4\uFF1A${padInfo || (IS_QUEST ? `\u6CA1\u68C0\u6D4B\u5230\u3002Quest \u53EF\u80FD\u6B63\u62FF\u624B\u67C4\u5F53\u5149\u6807\u7528\uFF08\u7F51\u9875\u770B\u4E0D\u5230\uFF09\uFF1A${QUEST_PAD_HOWTO}\u3002Xbox \u624B\u67C4\u6700\u7A33` : "\u6CA1\u68C0\u6D4B\u5230\uFF08\u63D2\u4E0A\u540E\u5728\u9875\u9762\u4E0A\u6309\u4E00\u4E0B\u624B\u67C4\u6309\u952E\uFF09")}`,
-    `\u6D3B\u52A8\uFF1A${activity ? { playing: "\u8FD0\u884C\u4E2D", idle: "\u6302\u673A\uFF08\u81EA\u52A8\u5FEB\u7167\u4E0D\u8BA1\u65F6\uFF09", away: "\u540E\u53F0 / \u6682\u505C" }[activity.state(performance.now(), { visible: inForeground(), paused: s.paused })] : "\u2014"} \xB7 \u8BFB\u8FC7\u7684\u76D8 ${(session.discSeenBytes() / 2 ** 20).toFixed(1)} MB \xB7 \u8FD9\u6B21\u8FD0\u884C ${((activity?.playedMs ?? 0) / 6e4).toFixed(1)} \u5206\u949F`,
+    `\u6D3B\u52A8\uFF1A${activity2 ? { playing: "\u8FD0\u884C\u4E2D", idle: "\u6302\u673A\uFF08\u81EA\u52A8\u5FEB\u7167\u4E0D\u8BA1\u65F6\uFF09", away: "\u540E\u53F0 / \u6682\u505C" }[activity2.state(performance.now(), { visible: inForeground(), paused: s.paused })] : "\u2014"} \xB7 \u8BFB\u8FC7\u7684\u76D8 ${(session.discSeenBytes() / 2 ** 20).toFixed(1)} MB \xB7 \u8FD9\u6B21\u8FD0\u884C ${((activity2?.playedMs ?? 0) / 6e4).toFixed(1)} \u5206\u949F`,
     `\u624B\u67C4\uFF08\u540C PPSSPP Xbox \u9ED8\u8BA4\uFF09\uFF1AA \xD7 \xB7 B \u25CB \xB7 X \u25A1 \xB7 Y \u25B3 \xB7 LB/RB L/R \xB7 LT \u6682\u505C \xB7 RT \u5FEB\u8FDB\uFF08\u6309\u4E00\u534A\u6309\u6DF1\u6D45 1\u20134\xD7\uFF0C\u6309\u5230\u5E95 \xD7${ffCap}\uFF09\xB7 \u53F3\u6447\u6746\u6309\u4E0B \u5FEB\u8FDB\u5F00\u5173 \xB7 \u5DE6\u6447\u6746 \u6447\u6746 \xB7 \u53F3\u6447\u6746 \u5341\u5B57`,
     `\u952E\u76D8\uFF08\u540C PPSSPP \u9ED8\u8BA4\uFF09\uFF1A\u65B9\u5411\u952E \u5341\u5B57 \xB7 I/J/K/L \u6447\u6746\uFF08\u53F3 Shift \u8F7B\u63A8\uFF09\xB7 X \u25CB \xB7 Z \xD7 \xB7 A \u25A1 \xB7 S \u25B3 \xB7 Q/W L/R \xB7 \u7A7A\u683C Start \xB7 V / \u56DE\u8F66 Select \xB7 Esc / P \u6682\u505C \xB7 \u6309\u4F4F Tab \u5FEB\u8FDB \xB7 \` \u5FEB\u8FDB\u5F00\u5173 \xB7 M \u9759\u97F3 \xB7 F2 \u5B58 / F4 \u8BFB\u5F53\u524D\u683C`
   ].join("\n");
@@ -18092,15 +18262,20 @@ async function boot() {
     pendingWatch.get(folder)?.();
     pendingWatch.set(folder, store2.files.watchFolder(folder, (snap) => {
       const newer = snap.items.filter((it) => it.syncState === "newer-on-cloud");
-      pendingBy.set(folder, { todo: snap.items.filter((it) => needsAttention(it.syncState) && it.syncState !== "newer-on-cloud").length, newer: newer.length });
-      const sum = [...pendingBy.values()].reduce((a, b) => ({ todo: a.todo + b.todo, newer: a.newer + b.newer }), { todo: 0, newer: 0 });
-      setPending(sum.todo, sum.newer);
+      pendingBy.set(folder, {
+        needsYou: snap.items.filter((it) => syncClass(it.syncState) === "needs-you").length,
+        waiting: snap.items.filter((it) => syncClass(it.syncState) === "waiting" && it.syncState !== "newer-on-cloud").length,
+        newer: newer.length
+      });
+      const sum = [...pendingBy.values()].reduce((a, b) => ({ needsYou: a.needsYou + b.needsYou, waiting: a.waiting + b.waiting, newer: a.newer + b.newer }), { needsYou: 0, waiting: 0, newer: 0 });
+      setPending(sum);
       for (const it of newer) if (folder === CRUMBS || !session) dropStaleLocal(it.identifier).catch((e) => console.warn("[stale]", e));
     }));
   };
   const recount = () => {
     countPending(jarFolder(PLATFORM_CODE.psp));
     countPending(CRUMBS);
+    countPending(TINS);
   };
   recount();
   $("refresh").addEventListener("click", () => watchPantry());
@@ -18117,15 +18292,22 @@ async function boot() {
       e.returnValue = "";
     }
   });
-  let pushing = false;
+  let pushing = null;
   const pushDirty = () => {
-    if (pushing || inFlightFresh() || !auth.isSignedIn() || !navigator.onLine) return;
-    pushing = true;
-    store2.files.dirty.pushAll().catch((e) => console.warn("[pushAll]", e)).finally(() => {
-      pushing = false;
+    if (pushing) return pushing;
+    if (inFlightFresh() || !auth.isSignedIn() || !navigator.onLine) return Promise.resolve();
+    pushing = activity("\u6B63\u5728\u4F20\u6CA1\u4F20\u4E0A\u53BB\u7684\u2026", () => store2.files.dirty.pushAll()).then((r) => {
+      if (r.pushed || r.failed.length) logEvent(r.failed.length ? "warn" : "info", `\u7EED\u63A8\uFF1A\u4F20\u4E0A\u53BB ${r.pushed} \u4E2A${r.failed.length ? `\uFF0C\u6CA1\u4F20\u4E0A\u53BB ${r.failed.length} \u4E2A\uFF08\u79BB\u7EBF / \u51B2\u7A81\uFF1A\u51B2\u7A81\u7684\u5728\u5B58\u6863\u7BA1\u7406\u300C\u8981\u4F60\u5904\u7406\u7684\u300D\u91CC\uFF09` : ""}`);
+      snaps?.afterPush();
+    }).catch((e) => {
+      console.warn("[pushAll]", e);
+    }).finally(() => {
+      pushing = null;
       recount();
     });
+    return pushing;
   };
+  pushDirtyNow = pushDirty;
   document.addEventListener("visibilitychange", () => {
     if (document.visibilityState === "visible") pushDirty();
   });
@@ -18136,7 +18318,7 @@ async function boot() {
     retryTimer = window.setTimeout(pushDirty, 15e3);
   });
   setInterval(() => {
-    if ([...pendingBy.values()].some((n) => n.todo > 0)) pushDirty();
+    if ([...pendingBy.values()].some((n) => n.needsYou + n.waiting > 0)) void pushDirty();
   }, 45e3);
   auth.onAuthChanged(() => {
     renderAccount();
@@ -18203,6 +18385,9 @@ globalThis.kr = {
     log: () => dumpLog(),
     debugLoseGl: () => session?.debugLoseGl() ?? false,
     history: () => snaps?.history().map((h2) => h2.n) ?? [],
+    setHistoryMinAge: (ms) => setHistoryMinAgeForTest(ms),
+    /** 库的全屏遮罩跑 ms 毫秒（验遮罩开着时游戏暂停、关了恢复；W-42）。 */
+    storeOverlay: (ms) => storeUI.busy("\u6D4B\u8BD5\u906E\u7F69", () => new Promise((r) => setTimeout(r, ms)), "trash.purging"),
     rebuildAudio: () => rebuildAudio("\u6D4B\u8BD5"),
     async titleCacheTest() {
       const pw = getPassword();
@@ -18242,4 +18427,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-c022d523af89.mjs.map
+//# sourceMappingURL=kudsrocket-7b6b9b17d7f3.mjs.map
