@@ -3,11 +3,13 @@
 <html lang="zh">
 <head>
 <meta charset="utf-8">
+<!-- CSP（2026-10-17，user「csp…一起上」，和记住口令一起）：脚本只准本站文件 + wasm（核、音频 worklet 都是本站）；iframe 只准微软登录（MSAL 后台续登录）；connect-src 放 https: 是因为 OneDrive 的下载 / 上传主机不固定。test/csp.test.ts 钉着。 -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; worker-src 'self' blob:; connect-src 'self' https: blob: data:; img-src 'self' data: blob:; media-src 'self' data: blob:; font-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; frame-src 'self' https://login.microsoftonline.com https://login.live.com; object-src 'none'; base-uri 'self'; form-action 'self'; manifest-src 'self'">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <meta name="theme-color" content="#111111">
 <title>KudsRocket</title>
 <link rel="manifest" href="./manifest.webmanifest">
-<link rel="stylesheet" href="./styles.css?v=0486e16b6241">
+<link rel="stylesheet" href="./styles.css?v=fc0593c51766">
 </head>
 <body>
 <main id="home">
@@ -65,6 +67,6 @@
 <div id="note" hidden></div>
 <div id="update" hidden></div>
 <div id="busy" hidden><span></span></div>
-<script type="module" src="./dist/kudsrocket-0486e16b6241.mjs"></script>
+<script type="module" src="./dist/kudsrocket-fc0593c51766.mjs"></script>
 </body>
 </html>

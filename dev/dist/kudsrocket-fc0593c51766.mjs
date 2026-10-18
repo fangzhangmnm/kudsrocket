@@ -1,5 +1,5 @@
 // src/version.ts
-var APP_VERSION = "v0.1.57-2026-10-17";
+var APP_VERSION = "v0.1.58-2026-10-17";
 
 // assets/icons.svg
 var icons_default = '<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none">\n<!--\n  14 icons extracted from the family icon library (../20260708 SVG Icons/icons.svg) by extract-icons.py \u2014 do not hand-edit; re-run the script instead.\n  Family SVG Icons \u2014 MIT License, Copyright (c) 2026 fangzhangmnm.\n  Contains work derived from (per-icon provenance in data-src):\n    Feather Icons \u2014 MIT License, Copyright (c) 2013-2023 Cole Bemis \xB7 https://github.com/feathericons/feather\n-->\n  <!-- media -->\n  <!-- pause \u2014 \u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="pause" data-cat="media" data-src="own" data-note="\u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="3.2"><path d="M8.3 5.5 V18.5"/><path d="M15.7 5.5 V18.5"/></g></symbol>\n  <!-- play \u2014 \u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="play" data-cat="media" data-src="own" data-note="\u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 5.4 L18.8 12 L8.2 18.6 Z" fill="currentColor"/></symbol>\n  <!-- fast-forward \u2014 \u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="fast-forward" data-cat="media" data-src="own" data-note="\u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.4 6.8 L10.9 12 L4.4 17.2 Z" fill="currentColor"/><path d="M13.1 6.8 L19.6 12 L13.1 17.2 Z" fill="currentColor"/></symbol>\n  <!-- volume \u2014 \u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009) -->\n  <symbol id="volume" data-cat="media" data-src="own" data-note="\u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 10.3 H8.7 L12.6 6.6 V17.4 L8.7 13.7 H5.5 Z" fill="currentColor"/><path d="M15.13 9.73 A3.4 3.4 0 0 1 15.13 14.27"/><path d="M16.36 7.19 A6.1 6.1 0 0 1 16.36 16.81"/></symbol>\n  <!-- file -->\n  <!-- floppy-disk \u2014 \u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3 -->\n  <symbol id="floppy-disk" data-cat="file" data-src="feather:save" data-note="\u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13l3 3v13a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 17 8 17 3"/></symbol>\n  <!-- folder-open \u2014 \u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF -->\n  <symbol id="folder-open" data-cat="file" data-src="own" data-note="\u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18 V7 a2 2 0 0 1 2 -2 h4 l2 2 h6 a2 2 0 0 1 2 2 v1.8"/><path d="M3 18 L6.4 10.8 H21.6 L18.2 18 Z"/></symbol>\n  <!-- hierarchy -->\n  <!-- lock \u2014 \u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D -->\n  <symbol id="lock" data-cat="hierarchy" data-src="own" data-note="\u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10" width="13" height="11"/><path d="M8.8 10 V6.5 a3.2 3.2 0 0 1 6.4 0 V10"/></symbol>\n  <!-- common -->\n  <!-- x \u2014 \u53C9 -->\n  <symbol id="x" data-cat="common" data-src="own" data-note="\u53C9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 L17.5 17.5 M17.5 6.5 L6.5 17.5"/></symbol>\n  <!-- cloud -->\n  <!-- cloud \u2014 \u4E91 -->\n  <symbol id="cloud" data-cat="cloud" data-src="feather:cloud" data-note="\u4E91" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>\n  <!-- viewport -->\n  <!-- maximize-viewport \u2014 \u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55) -->\n  <symbol id="maximize-viewport" data-cat="viewport" data-src="own" data-note="\u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934 --> <polyline points="4 9 4 4 9 4"/> <polyline points="20 9 20 4 15 4"/> <polyline points="4 15 4 20 9 20"/> <polyline points="20 15 20 20 15 20"/></symbol>\n  <!-- picture-in-picture \u2014 \u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1) -->\n  <symbol id="picture-in-picture" data-cat="viewport" data-src="own" data-note="\u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u5927\u6846\uFF08\u4E3B\u753B\u5E03\uFF09+ \u5185\u5D4C\u5C0F\u7A97\uFF08\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1\uFF09\u2014\u2014 picture-in-picture \u9690\u55BB --> <rect x="3" y="4" width="18" height="14" rx="2"/> <rect x="12" y="10" width="7" height="5" rx="1"/></symbol>\n  <!-- ui -->\n  <!-- more \u2014 \u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00) -->\n  <symbol id="more" data-cat="ui" data-src="own" data-note="\u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/></symbol>\n  <!-- keyboard \u2014 \u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49) -->\n  <symbol id="keyboard" data-cat="ui" data-src="own" data-note="\u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="7.2" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="7.2" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><path d="M8.6 15.6 H15.4"/></symbol>\n  <!-- menu \u2014 \u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17) -->\n  <symbol id="menu" data-cat="ui" data-src="own" data-note="\u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"></line> <line x1="4" y1="12" x2="20" y2="12"></line> <line x1="4" y1="17" x2="20" y2="17"></line></symbol>\n</svg>\n';
@@ -106,7 +106,7 @@ function askPassword(title, hint = "", opts = {}) {
       h("h2", {}, title),
       hint ? h("p", { class: "hint" }, hint) : null,
       input,
-      remember ? h("label", { class: "remember-row" }, remember, h("span", {}, "\u5728\u8FD9\u53F0\u8BBE\u5907\u4E0A\u8BB0\u4F4F"), h("span", { class: "hint" }, "\u80FD\u89E3\u9501\u8FD9\u53F0\u8BBE\u5907\u7684\u4EBA\u5C31\u80FD\u6253\u5F00\u4F60\u7684\u4E1C\u897F")) : null,
+      remember ? h("label", { class: "remember-row" }, remember, h("span", {}, "\u5728\u8FD9\u53F0\u8BBE\u5907\u4E0A\u8BB0\u4F4F 30 \u5929"), h("span", { class: "hint" }, "\u80FD\u89E3\u9501\u8FD9\u53F0\u8BBE\u5907\u7684\u4EBA\u5C31\u80FD\u6253\u5F00\u4F60\u7684\u4E1C\u897F")) : null,
       h(
         "div",
         { class: "row" },
@@ -3484,9 +3484,9 @@ function createIdbCache(dbName) {
       return;
     const p = _db;
     _db = null;
-    void p?.then((db4) => {
+    void p?.then((db3) => {
       try {
-        db4.close();
+        db3.close();
       } catch {
       }
     }).catch(() => {
@@ -3513,19 +3513,19 @@ function createIdbCache(dbName) {
       };
       r.onsuccess = () => {
         clearTimeout(timer2);
-        const db4 = r.result;
-        db4.onclose = () => {
+        const db3 = r.result;
+        db3.onclose = () => {
           dropConnection(p);
         };
-        db4.onversionchange = () => {
-          db4.close();
+        db3.onversionchange = () => {
+          db3.close();
           dropConnection(p);
         };
         if (_db !== p) {
-          db4.close();
+          db3.close();
           return;
         }
-        resolve(db4);
+        resolve(db3);
       };
       r.onerror = () => {
         clearTimeout(timer2);
@@ -3542,7 +3542,7 @@ function createIdbCache(dbName) {
     _win?.removeEventListener("pageshow", _onPageShow);
     dropConnection(null);
   }
-  function tx4(mode, run, op = "tx") {
+  function tx3(mode, run, op = "tx") {
     if (_suspended)
       return Promise.reject(new IdbSuspendedError(`${mode} ${op}`));
     return txOnce(mode, run, op).catch((e) => {
@@ -3558,8 +3558,8 @@ function createIdbCache(dbName) {
   }
   function txOnce(mode, run, op) {
     const conn = openDb();
-    return conn.then((db4) => new Promise((resolve, reject) => {
-      const t = db4.transaction(STORE, mode);
+    return conn.then((db3) => new Promise((resolve, reject) => {
+      const t = db3.transaction(STORE, mode);
       const ms = _idbOpTimeoutMs;
       const rec = { t, mode, suspended: false };
       _active.add(rec);
@@ -3616,25 +3616,25 @@ function createIdbCache(dbName) {
   return {
     close,
     get(name) {
-      return tx4("readonly", (s) => {
+      return tx3("readonly", (s) => {
         const r = s.get(name);
         return () => r.result;
       }, "get");
     },
     put(name, rec) {
-      return tx4("readwrite", (s) => {
+      return tx3("readwrite", (s) => {
         s.put(rec, name);
         return () => void 0;
       }, "put");
     },
     del(name) {
-      return tx4("readwrite", (s) => {
+      return tx3("readwrite", (s) => {
         s.delete(name);
         return () => void 0;
       }, "del");
     },
     keys() {
-      return tx4("readonly", (s) => {
+      return tx3("readonly", (s) => {
         const r = s.getAllKeys();
         return () => r.result.filter((k) => typeof k === "string");
       }, "keys");
@@ -3642,7 +3642,7 @@ function createIdbCache(dbName) {
     /** 按 key 前缀汇总占用（单事务 cursor 走一遍；`Blob.size` 是引用属性，**不把字节读进内存**）。
      *  只返两个标量，不返任何名字 —— 拿不到清单，故**不能**当全库列举用（那是被否决的退化设计）。 */
     usage(prefix) {
-      return tx4("readonly", (s) => {
+      return tx3("readonly", (s) => {
         let bytes = 0, count = 0;
         const c = s.openCursor();
         c.onsuccess = () => {
@@ -3663,7 +3663,7 @@ function createIdbCache(dbName) {
     },
     /** 原子改名(同一事务 get→put 新→del 旧):trash/restore/backup 用。源不存在则 noop。 */
     rename(from, to) {
-      return tx4("readwrite", (s) => {
+      return tx3("readwrite", (s) => {
         const g = s.get(from);
         g.onsuccess = () => {
           const v = g.result;
@@ -6709,6 +6709,140 @@ function createEncryption(opts = {}) {
   };
 }
 
+// node_modules/@internal/encryption/dist/remember.js
+var MAX_REMEMBER_MS = 30 * 24 * 60 * 60 * 1e3;
+var RECORD_VERSION = 1;
+var AAD_TAG = "internal-encryption.remember.v1";
+var CLOCK_SLACK_MS = 24 * 60 * 60 * 1e3;
+var STORE_NAME = "secret";
+var RECORD_KEY = "password";
+function idbSecretStore(dbName, factory) {
+  const idb = factory ?? globalThis.indexedDB;
+  if (!idb)
+    throw new Error("idbSecretStore: IndexedDB is not available here (inject a SecretStore instead)");
+  let dbp3 = null;
+  const db3 = () => {
+    dbp3 ??= new Promise((resolve, reject) => {
+      const req = idb.open(dbName, 1);
+      req.onupgradeneeded = () => {
+        req.result.createObjectStore(STORE_NAME);
+      };
+      req.onsuccess = () => {
+        const d = req.result;
+        d.onversionchange = () => {
+          d.close();
+          dbp3 = null;
+        };
+        resolve(d);
+      };
+      req.onerror = () => reject(req.error);
+    });
+    dbp3.catch(() => {
+      dbp3 = null;
+    });
+    return dbp3;
+  };
+  async function tx3(mode, body) {
+    const d = await db3();
+    return new Promise((resolve, reject) => {
+      const t = d.transaction(STORE_NAME, mode);
+      let result;
+      const req = body(t.objectStore(STORE_NAME));
+      req.onsuccess = () => {
+        result = req.result;
+      };
+      t.oncomplete = () => resolve(result);
+      t.onerror = () => reject(t.error);
+      t.onabort = () => reject(t.error ?? new Error("remember: transaction aborted"));
+    });
+  }
+  const exists = async () => {
+    if (dbp3)
+      return true;
+    if (typeof idb.databases !== "function")
+      return true;
+    try {
+      return (await idb.databases()).some((d) => d.name === dbName);
+    } catch {
+      return true;
+    }
+  };
+  return {
+    get: async () => await exists() ? tx3("readonly", (s) => s.get(RECORD_KEY)) : void 0,
+    put: async (rec) => {
+      await tx3("readwrite", (s) => s.put(rec, RECORD_KEY));
+    },
+    delete: async () => {
+      if (await exists())
+        await tx3("readwrite", (s) => s.delete(RECORD_KEY));
+    }
+  };
+}
+function createPasswordKeeper(opts) {
+  const store2 = opts.store ?? idbSecretStore(opts.dbName);
+  const now = opts.now ?? (() => Date.now());
+  const aad = (expiresAt) => new TextEncoder().encode(`${AAD_TAG}|${expiresAt}`);
+  const isRecord = (x) => {
+    const r = x;
+    return r != null && typeof r === "object" && r.v === RECORD_VERSION && typeof r.key === "object" && r.key != null && r.iv instanceof Uint8Array && r.iv.length === 12 && r.ct instanceof ArrayBuffer && typeof r.expiresAt === "number" && Number.isFinite(r.expiresAt);
+  };
+  const forget = async () => {
+    await store2.delete();
+  };
+  const quietForget = () => forget().catch(() => {
+  });
+  async function live() {
+    let rec;
+    try {
+      rec = await store2.get();
+    } catch {
+      return null;
+    }
+    if (rec == null)
+      return null;
+    const t = now();
+    if (!isRecord(rec) || rec.expiresAt <= t || rec.expiresAt > t + MAX_REMEMBER_MS + CLOCK_SLACK_MS) {
+      await quietForget();
+      return null;
+    }
+    return rec;
+  }
+  return {
+    async remember(password, o = {}) {
+      if (typeof password !== "string" || password.length === 0)
+        throw new TypeError("remember: password must be a non-empty string");
+      const ttl = o.ttlMs ?? MAX_REMEMBER_MS;
+      if (typeof ttl !== "number" || !Number.isFinite(ttl) || ttl <= 0)
+        throw new RangeError("remember: ttlMs must be a positive number of milliseconds");
+      const expiresAt = Math.round(now() + Math.min(ttl, MAX_REMEMBER_MS));
+      const subtle = globalThis.crypto.subtle;
+      const key = await subtle.generateKey({ name: "AES-GCM", length: 256 }, false, ["encrypt", "decrypt"]);
+      const iv = globalThis.crypto.getRandomValues(new Uint8Array(12));
+      const ct = await subtle.encrypt({ name: "AES-GCM", iv, additionalData: aad(expiresAt) }, key, new TextEncoder().encode(password));
+      const rec = { v: RECORD_VERSION, key, iv, ct, expiresAt };
+      await store2.put(rec);
+      return { expiresAt };
+    },
+    async recall() {
+      const rec = await live();
+      if (!rec)
+        return null;
+      try {
+        const plain = await globalThis.crypto.subtle.decrypt({ name: "AES-GCM", iv: rec.iv, additionalData: aad(rec.expiresAt) }, rec.key, rec.ct);
+        return new TextDecoder().decode(plain);
+      } catch {
+        await quietForget();
+        return null;
+      }
+    },
+    async status() {
+      const rec = await live();
+      return rec ? { remembered: true, expiresAt: rec.expiresAt } : { remembered: false, expiresAt: null };
+    },
+    forget
+  };
+}
+
 // src/app/config.ts
 var APP_ID = "kudsrocket";
 var CLIENT_ID2 = "0c1d8f21-dce6-4e17-a919-e6f226c47ee2";
@@ -7080,6 +7214,8 @@ var od = createOneDriveProvider({
   transport: { timeouts: DEFAULT_GRAPH_TIMEOUTS, chunkResume: true, verifyChunkedCommit: true }
 });
 var auth = od.auth;
+var _keeper = null;
+var passwordKeeper = () => _keeper ??= createPasswordKeeper({ dbName: `${APP_ID}.remember` });
 var activeIdentifier = null;
 function setActiveIdentifier(id) {
   activeIdentifier = id;
@@ -7620,9 +7756,16 @@ async function inspectPantry(identifier) {
 }
 
 // src/app/remember-password.ts
-var DB_NAME = "kudsrocket.remember";
-var STORE2 = "secret";
-var KEY2 = "password";
+var rememberPassword = async (password) => (await passwordKeeper().remember(password)).expiresAt;
+var recallPassword = () => passwordKeeper().recall();
+var rememberedUntil = async () => (await passwordKeeper().status()).expiresAt;
+var hasRememberedPassword = async () => (await passwordKeeper().status()).remembered;
+var forgetPassword = () => passwordKeeper().forget();
+
+// src/app/title-cache.ts
+var DB_NAME = "kudsrocket.titles";
+var STORE2 = "cards";
+var SALT_KEY = "_salt";
 var dbp = null;
 function db() {
   dbp ??= new Promise((resolve, reject) => {
@@ -7649,67 +7792,15 @@ async function tx(mode, body) {
     };
     t.oncomplete = () => resolve(result);
     t.onerror = () => reject(t.error);
-    t.onabort = () => reject(t.error ?? new Error("remember-password transaction aborted"));
-  });
-}
-async function rememberPassword(password) {
-  const key = await crypto.subtle.generateKey({ name: "AES-GCM", length: 256 }, false, ["encrypt", "decrypt"]);
-  const iv = crypto.getRandomValues(new Uint8Array(12));
-  const ct = await crypto.subtle.encrypt({ name: "AES-GCM", iv }, key, new TextEncoder().encode(password));
-  const rec = { key, iv, ct };
-  await tx("readwrite", (s) => s.put(rec, KEY2));
-}
-async function recallPassword() {
-  const rec = await tx("readonly", (s) => s.get(KEY2)).catch(() => void 0);
-  if (!rec) return null;
-  try {
-    return new TextDecoder().decode(await crypto.subtle.decrypt({ name: "AES-GCM", iv: rec.iv }, rec.key, rec.ct));
-  } catch {
-    return null;
-  }
-}
-var hasRememberedPassword = async () => await tx("readonly", (s) => s.get(KEY2)).catch(() => void 0) != null;
-var forgetPassword = () => tx("readwrite", (s) => s.delete(KEY2)).then(() => void 0);
-
-// src/app/title-cache.ts
-var DB_NAME2 = "kudsrocket.titles";
-var STORE3 = "cards";
-var SALT_KEY = "_salt";
-var dbp2 = null;
-function db2() {
-  dbp2 ??= new Promise((resolve, reject) => {
-    const req = indexedDB.open(DB_NAME2, 1);
-    req.onupgradeneeded = () => {
-      req.result.createObjectStore(STORE3);
-    };
-    req.onsuccess = () => resolve(req.result);
-    req.onerror = () => reject(req.error);
-  });
-  dbp2.catch(() => {
-    dbp2 = null;
-  });
-  return dbp2;
-}
-async function tx2(mode, body) {
-  const d = await db2();
-  return new Promise((resolve, reject) => {
-    const t = d.transaction(STORE3, mode);
-    let result;
-    const req = body(t.objectStore(STORE3));
-    if (req) req.onsuccess = () => {
-      result = req.result;
-    };
-    t.oncomplete = () => resolve(result);
-    t.onerror = () => reject(t.error);
     t.onabort = () => reject(t.error ?? new Error("title-cache transaction aborted"));
   });
 }
 async function cacheKey(password, create) {
-  let salt = await tx2("readonly", (s) => s.get(SALT_KEY));
+  let salt = await tx("readonly", (s) => s.get(SALT_KEY));
   if (!salt) {
     if (!create) return null;
     salt = crypto.getRandomValues(new Uint8Array(16));
-    await tx2("readwrite", (s) => s.put(salt, SALT_KEY));
+    await tx("readwrite", (s) => s.put(salt, SALT_KEY));
   }
   return (await deriveKeys(password, salt, DEFAULT_ITERATIONS)).meta;
 }
@@ -7717,8 +7808,8 @@ async function loadTitleCards(password) {
   const out = /* @__PURE__ */ new Map();
   const key = await cacheKey(password, false).catch(() => null);
   if (!key) return out;
-  const keys = await tx2("readonly", (s) => s.getAllKeys()).catch(() => void 0) ?? [];
-  const vals = await tx2("readonly", (s) => s.getAll()).catch(() => void 0) ?? [];
+  const keys = await tx("readonly", (s) => s.getAllKeys()).catch(() => void 0) ?? [];
+  const vals = await tx("readonly", (s) => s.getAll()).catch(() => void 0) ?? [];
   for (let i = 0; i < keys.length && i < vals.length; i++) {
     if (keys[i] === SALT_KEY) continue;
     const v = vals[i];
@@ -7736,9 +7827,9 @@ async function saveTitleCard(password, identifier, size, card) {
   const iv = crypto.getRandomValues(new Uint8Array(12));
   const ct = await crypto.subtle.encrypt({ name: "AES-GCM", iv }, key, new TextEncoder().encode(JSON.stringify(card)));
   const rec = { size, iv, ct };
-  await tx2("readwrite", (s) => s.put(rec, identifier));
+  await tx("readwrite", (s) => s.put(rec, identifier));
 }
-var clearTitleCards = () => tx2("readwrite", (s) => s.clear()).then(() => void 0);
+var clearTitleCards = () => tx("readwrite", (s) => s.clear()).then(() => void 0);
 
 // vendor/fflate/fflate.esm.js
 var u8 = Uint8Array;
@@ -9183,29 +9274,29 @@ function pickNewest(cands) {
 }
 
 // src/app/undo-guard.ts
-var DB_NAME3 = "kudsrocket.undo-guard";
-var STORE4 = "guards";
-var dbp3 = null;
-function db3() {
-  dbp3 ??= new Promise((resolve, reject) => {
-    const req = indexedDB.open(DB_NAME3, 1);
+var DB_NAME2 = "kudsrocket.undo-guard";
+var STORE3 = "guards";
+var dbp2 = null;
+function db2() {
+  dbp2 ??= new Promise((resolve, reject) => {
+    const req = indexedDB.open(DB_NAME2, 1);
     req.onupgradeneeded = () => {
-      req.result.createObjectStore(STORE4);
+      req.result.createObjectStore(STORE3);
     };
     req.onsuccess = () => resolve(req.result);
     req.onerror = () => reject(req.error);
   });
-  dbp3.catch(() => {
-    dbp3 = null;
+  dbp2.catch(() => {
+    dbp2 = null;
   });
-  return dbp3;
+  return dbp2;
 }
-async function tx3(mode, body) {
-  const d = await db3();
+async function tx2(mode, body) {
+  const d = await db2();
   return new Promise((resolve, reject) => {
-    const t = d.transaction(STORE4, mode);
+    const t = d.transaction(STORE3, mode);
     let result;
-    const req = body(t.objectStore(STORE4));
+    const req = body(t.objectStore(STORE3));
     if (req) req.onsuccess = () => {
       result = req.result;
     };
@@ -9214,13 +9305,13 @@ async function tx3(mode, body) {
     t.onabort = () => reject(t.error ?? new Error("undo-guard transaction aborted"));
   });
 }
-var putGuard = (g) => tx3("readwrite", (s) => s.put(g, g.kind));
+var putGuard = (g) => tx2("readwrite", (s) => s.put(g, g.kind));
 async function getGuard(kind, discKey2) {
-  const g = await tx3("readonly", (s) => s.get(kind));
+  const g = await tx2("readonly", (s) => s.get(kind));
   return g && g.discKey === discKey2 ? g : void 0;
 }
 async function deleteGuard(kind, discKey2) {
-  if (await getGuard(kind, discKey2)) await tx3("readwrite", (s) => s.delete(kind));
+  if (await getGuard(kind, discKey2)) await tx2("readwrite", (s) => s.delete(kind));
 }
 
 // src/disc/ppst.ts
@@ -9325,9 +9416,9 @@ var rzfh = function(dat, w) {
     if (flg & 8)
       err2(0);
     var bt = 6 - ss;
-    var db4 = df == 3 ? 4 : df;
-    var di = rb(dat, bt, db4);
-    bt += db4;
+    var db3 = df == 3 ? 4 : df;
+    var di = rb(dat, bt, db3);
+    bt += db3;
     var fsb = fcf ? 1 << fcf : ss;
     var fss = rb(dat, bt, fsb) + (fcf == 1 && 256);
     var ws = fss;
@@ -11299,6 +11390,8 @@ function watchPantry() {
   });
 }
 var remembered = false;
+var rememberedTill = null;
+var dayText = (ms) => new Date(ms).toLocaleDateString("zh-CN", { month: "long", day: "numeric" });
 var triedUnlock = /* @__PURE__ */ new Set();
 var titleCache = null;
 var titleCacheFor = null;
@@ -11334,10 +11427,11 @@ function adoptPassword(pw) {
   hydrateTitles().catch(() => {
   });
   if (!takeRememberChoice()) return;
-  rememberPassword(pw).then(() => {
+  rememberPassword(pw).then((till) => {
     remembered = true;
+    rememberedTill = till;
     renderAccount();
-    say("\u8FD9\u53F0\u8BBE\u5907\u8BB0\u4F4F\u53E3\u4EE4\u4E86\uFF08\u4E3B\u9875\u4E0A\u80FD\u5FD8\u8BB0\uFF09");
+    say(`\u8FD9\u53F0\u8BBE\u5907\u8BB0\u4F4F\u53E3\u4EE4\u4E86\uFF0C\u5230 ${dayText(till)}\uFF08\u4E3B\u9875\u4E0A\u80FD\u5FD8\u8BB0\uFF09`);
   }, (e) => banner(`\u6CA1\u8BB0\u4F4F\u53E3\u4EE4\uFF1A${errorText(e)}`));
 }
 async function forgetRemembered(why) {
@@ -11347,11 +11441,12 @@ async function forgetRemembered(why) {
   titleCache = null;
   titleCacheFor = null;
   remembered = false;
+  rememberedTill = null;
   renderAccount();
   say(why);
 }
 var logButton = () => h("button", { title: "\u9ED1\u5323\u5B50\uFF1A\u5B58 / \u4F20 / \u51B2\u7A81 / \u5207\u540E\u53F0 / \u6838\u6CA1\u53CD\u5E94\u2026\u2026\u8DE8\u91CD\u8F7D\u4FDD\u7559", onclick: () => openLog() }, "\u65E5\u5FD7");
-var rememberRow = () => remembered ? [h("span", { class: "muted" }, "\xB7 \u8FD9\u53F0\u8BBE\u5907\u8BB0\u7740\u53E3\u4EE4"), h("button", { onclick: () => {
+var rememberRow = () => remembered ? [h("span", { class: "muted" }, rememberedTill ? `\xB7 \u8FD9\u53F0\u8BBE\u5907\u8BB0\u7740\u53E3\u4EE4\uFF08\u5230 ${dayText(rememberedTill)}\uFF09` : "\xB7 \u8FD9\u53F0\u8BBE\u5907\u8BB0\u7740\u53E3\u4EE4"), h("button", { onclick: () => {
   forgetRemembered("\u5DF2\u5FD8\u8BB0\u8FD9\u53F0\u8BBE\u5907\u8BB0\u7740\u7684\u53E3\u4EE4").catch(() => {
   });
 } }, "\u5FD8\u8BB0\u53E3\u4EE4")] : [];
@@ -11368,6 +11463,7 @@ function renderAccount() {
       h("span", {}, "OneDrive"),
       h("button", { onclick: async () => {
         await auth.signOut();
+        if (remembered) await forgetRemembered("\u5DF2\u9000\u51FA\u767B\u5F55\uFF0C\u8FD9\u53F0\u8BBE\u5907\u4E5F\u4E0D\u518D\u8BB0\u7740\u53E3\u4EE4");
         renderAccount();
         renderLibrary();
       } }, "\u9000\u51FA\u767B\u5F55"),
@@ -13343,10 +13439,11 @@ async function boot() {
     unlockTitles().catch((e) => banner(errorText(e)));
   });
   const store2 = getStore();
-  recallPassword().then((pw) => {
+  recallPassword().then(async (pw) => {
     if (!pw) return;
     setPassword(pw);
     remembered = true;
+    rememberedTill = await rememberedUntil().catch(() => null);
     renderAccount();
     unlockTitles().catch(() => {
     });
@@ -13507,4 +13604,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-0486e16b6241.mjs.map
+//# sourceMappingURL=kudsrocket-fc0593c51766.mjs.map
