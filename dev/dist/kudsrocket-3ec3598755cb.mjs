@@ -1,5 +1,5 @@
 // src/version.ts
-var APP_VERSION = "v0.1.61-2026-10-18";
+var APP_VERSION = "v0.1.62-2026-10-18";
 
 // assets/icons.svg
 var icons_default = '<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none">\n<!--\n  14 icons extracted from the family icon library (../20260708 SVG Icons/icons.svg) by extract-icons.py \u2014 do not hand-edit; re-run the script instead.\n  Family SVG Icons \u2014 MIT License, Copyright (c) 2026 fangzhangmnm.\n  Contains work derived from (per-icon provenance in data-src):\n    Feather Icons \u2014 MIT License, Copyright (c) 2013-2023 Cole Bemis \xB7 https://github.com/feathericons/feather\n-->\n  <!-- media -->\n  <!-- pause \u2014 \u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="pause" data-cat="media" data-src="own" data-note="\u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="3.2"><path d="M8.3 5.5 V18.5"/><path d="M15.7 5.5 V18.5"/></g></symbol>\n  <!-- play \u2014 \u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="play" data-cat="media" data-src="own" data-note="\u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 5.4 L18.8 12 L8.2 18.6 Z" fill="currentColor"/></symbol>\n  <!-- fast-forward \u2014 \u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="fast-forward" data-cat="media" data-src="own" data-note="\u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.4 6.8 L10.9 12 L4.4 17.2 Z" fill="currentColor"/><path d="M13.1 6.8 L19.6 12 L13.1 17.2 Z" fill="currentColor"/></symbol>\n  <!-- volume \u2014 \u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009) -->\n  <symbol id="volume" data-cat="media" data-src="own" data-note="\u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 10.3 H8.7 L12.6 6.6 V17.4 L8.7 13.7 H5.5 Z" fill="currentColor"/><path d="M15.13 9.73 A3.4 3.4 0 0 1 15.13 14.27"/><path d="M16.36 7.19 A6.1 6.1 0 0 1 16.36 16.81"/></symbol>\n  <!-- file -->\n  <!-- floppy-disk \u2014 \u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3 -->\n  <symbol id="floppy-disk" data-cat="file" data-src="feather:save" data-note="\u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13l3 3v13a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 17 8 17 3"/></symbol>\n  <!-- folder-open \u2014 \u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF -->\n  <symbol id="folder-open" data-cat="file" data-src="own" data-note="\u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18 V7 a2 2 0 0 1 2 -2 h4 l2 2 h6 a2 2 0 0 1 2 2 v1.8"/><path d="M3 18 L6.4 10.8 H21.6 L18.2 18 Z"/></symbol>\n  <!-- hierarchy -->\n  <!-- lock \u2014 \u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D -->\n  <symbol id="lock" data-cat="hierarchy" data-src="own" data-note="\u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10" width="13" height="11"/><path d="M8.8 10 V6.5 a3.2 3.2 0 0 1 6.4 0 V10"/></symbol>\n  <!-- common -->\n  <!-- x \u2014 \u53C9 -->\n  <symbol id="x" data-cat="common" data-src="own" data-note="\u53C9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 L17.5 17.5 M17.5 6.5 L6.5 17.5"/></symbol>\n  <!-- cloud -->\n  <!-- cloud \u2014 \u4E91 -->\n  <symbol id="cloud" data-cat="cloud" data-src="feather:cloud" data-note="\u4E91" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>\n  <!-- viewport -->\n  <!-- maximize-viewport \u2014 \u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55) -->\n  <symbol id="maximize-viewport" data-cat="viewport" data-src="own" data-note="\u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934 --> <polyline points="4 9 4 4 9 4"/> <polyline points="20 9 20 4 15 4"/> <polyline points="4 15 4 20 9 20"/> <polyline points="20 15 20 20 15 20"/></symbol>\n  <!-- picture-in-picture \u2014 \u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1) -->\n  <symbol id="picture-in-picture" data-cat="viewport" data-src="own" data-note="\u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u5927\u6846\uFF08\u4E3B\u753B\u5E03\uFF09+ \u5185\u5D4C\u5C0F\u7A97\uFF08\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1\uFF09\u2014\u2014 picture-in-picture \u9690\u55BB --> <rect x="3" y="4" width="18" height="14" rx="2"/> <rect x="12" y="10" width="7" height="5" rx="1"/></symbol>\n  <!-- ui -->\n  <!-- more \u2014 \u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00) -->\n  <symbol id="more" data-cat="ui" data-src="own" data-note="\u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/></symbol>\n  <!-- keyboard \u2014 \u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49) -->\n  <symbol id="keyboard" data-cat="ui" data-src="own" data-note="\u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="7.2" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="7.2" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><path d="M8.6 15.6 H15.4"/></symbol>\n  <!-- menu \u2014 \u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17) -->\n  <symbol id="menu" data-cat="ui" data-src="own" data-note="\u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"></line> <line x1="4" y1="12" x2="20" y2="12"></line> <line x1="4" y1="17" x2="20" y2="17"></line></symbol>\n</svg>\n';
@@ -7514,7 +7514,6 @@ var STREAM_LANES = 3;
 var STREAM_STALL_MS = 3e3;
 var AUTO_SLOTS = 4;
 var LOCAL_SNAPSHOTS_KEPT = 2;
-var READ_AHEAD_BYTES = 4 * 2 ** 20;
 var AUTO_EVERY_MS = 10 * 6e4;
 var AUTO_MIN_GAP_MS = 3e4;
 var THUMB_W = 240;
@@ -7981,6 +7980,663 @@ function getStore() {
   return store;
 }
 
+// node_modules/@internal/prefetch/dist/model.js
+var MAX_CONTEXTS = 6e3;
+var SUCC_PER_CONTEXT = 8;
+var MAX_LABELS = 512;
+var BLOCKS_PER_LABEL = 256;
+var emptyCalib = () => ({ sequential: [0, 0], ranges: [0, 0], label: [0, 0], successor: [0, 0] });
+function emptyModel(blockBytes, size) {
+  return { blockBytes, size, sessions: 0, succ: /* @__PURE__ */ new Map(), labels: /* @__PURE__ */ new Map(), calib: emptyCalib(), streams: [] };
+}
+function addSucc(m, ctx, next) {
+  let row = m.succ.get(ctx);
+  if (!row)
+    m.succ.set(ctx, row = /* @__PURE__ */ new Map());
+  row.set(next, (row.get(next) ?? 0) + 1);
+}
+function labelFired(m, label) {
+  let s = m.labels.get(label);
+  if (!s)
+    m.labels.set(label, s = { fired: 0, blocks: /* @__PURE__ */ new Map() });
+  s.fired++;
+}
+function learnLabel(m, label, block, delayMs) {
+  let s = m.labels.get(label);
+  if (!s)
+    m.labels.set(label, s = { fired: 0, blocks: /* @__PURE__ */ new Map() });
+  const c = s.blocks.get(block);
+  if (c) {
+    c[0]++;
+    c[1] += delayMs;
+  } else
+    s.blocks.set(block, [1, delayMs]);
+}
+function mergeModel(into, other) {
+  if (other.blockBytes !== into.blockBytes || other.size !== into.size)
+    return into;
+  into.sessions += other.sessions;
+  for (const [ctx, row] of other.succ)
+    for (const [n, c] of row) {
+      let r = into.succ.get(ctx);
+      if (!r)
+        into.succ.set(ctx, r = /* @__PURE__ */ new Map());
+      r.set(n, (r.get(n) ?? 0) + c);
+    }
+  for (const [label, s] of other.labels) {
+    let t = into.labels.get(label);
+    if (!t)
+      into.labels.set(label, t = { fired: 0, blocks: /* @__PURE__ */ new Map() });
+    t.fired += s.fired;
+    for (const [b, [c, d]] of s.blocks) {
+      const x = t.blocks.get(b);
+      if (x) {
+        x[0] += c;
+        x[1] += d;
+      } else
+        t.blocks.set(b, [c, d]);
+    }
+  }
+  for (const e of Object.keys(into.calib)) {
+    into.calib[e][0] += other.calib[e][0];
+    into.calib[e][1] += other.calib[e][1];
+  }
+  return into;
+}
+var cloneModel = (m) => mergeModel(emptyModel(m.blockBytes, m.size), m);
+function encodeModel(m) {
+  const rowTotal = (row) => {
+    let s = 0;
+    for (const c of row.values())
+      s += c;
+    return s;
+  };
+  const succ = [...m.succ].sort((a, b) => rowTotal(b[1]) - rowTotal(a[1])).slice(0, MAX_CONTEXTS).map(([ctx, row]) => [ctx, [...row].sort((a, b) => b[1] - a[1]).slice(0, SUCC_PER_CONTEXT).flat()]);
+  const labels2 = [...m.labels].sort((a, b) => b[1].fired - a[1].fired).slice(0, MAX_LABELS).map(([label, s]) => [
+    label,
+    s.fired,
+    [...s.blocks].sort((a, b) => b[1][0] - a[1][0]).slice(0, BLOCKS_PER_LABEL).flatMap(([b, [c, d]]) => [b, c, Math.round(d)])
+  ]);
+  const wire = { v: 1, bb: m.blockBytes, size: m.size, sessions: m.sessions, succ, labels: labels2, calib: m.calib, streams: m.streams.map(([b, r, g]) => [b, r, Math.round(g)]) };
+  return new TextEncoder().encode(JSON.stringify(wire));
+}
+function decodeModel(bytes, blockBytes, size) {
+  let w;
+  try {
+    w = JSON.parse(new TextDecoder().decode(bytes));
+  } catch {
+    return null;
+  }
+  if (!w || w.v !== 1 || w.bb !== blockBytes || w.size !== size)
+    return null;
+  const m = emptyModel(blockBytes, size);
+  m.sessions = w.sessions | 0;
+  for (const [ctx, flat] of w.succ ?? []) {
+    const row = /* @__PURE__ */ new Map();
+    for (let i = 0; i + 1 < flat.length; i += 2)
+      row.set(flat[i], flat[i + 1]);
+    m.succ.set(ctx, row);
+  }
+  for (const [label, fired, flat] of w.labels ?? []) {
+    const blocks = /* @__PURE__ */ new Map();
+    for (let i = 0; i + 2 < flat.length; i += 3)
+      blocks.set(flat[i], [flat[i + 1], flat[i + 2]]);
+    m.labels.set(label, { fired, blocks });
+  }
+  for (const e of Object.keys(m.calib)) {
+    const c = w.calib?.[e];
+    if (Array.isArray(c) && c.length === 2)
+      m.calib[e] = [c[0] | 0, c[1] | 0];
+  }
+  for (const x of w.streams ?? [])
+    if (Array.isArray(x) && x.length === 3)
+      m.streams.push([x[0], x[1], x[2]]);
+  return m;
+}
+
+// node_modules/@internal/prefetch/dist/planner.js
+var PRIOR = { sequential: [2, 1], ranges: [4, 1], label: [1, 1], successor: [1, 1] };
+var START_LABEL = "@start";
+var DEFAULT_FETCH_P90 = 1500;
+var MAX_STREAMS = 16;
+function admitThreshold(n) {
+  if (!n)
+    return 0.2;
+  if (n.saveData)
+    return Infinity;
+  if (n.metered === true)
+    return 0.6;
+  if (n.metered === "unknown")
+    return 0.35;
+  return 0.2;
+}
+var Planner = class {
+  size;
+  blockBytes;
+  blockCount;
+  /** 预测用：这台设备的 + 别的设备的 + 这一局的。 */
+  model;
+  /** 只记这一局学到的；结账时加到 own 上存回去（别的设备的次数不会被重复记进自己那份）。 */
+  delta;
+  own;
+  enabled;
+  localCap;
+  /** 认为已在本机的块 → 最近一次碰它的时刻（Map 的插入顺序 = 最近使用顺序）。 */
+  local = /* @__PURE__ */ new Map();
+  hist = [];
+  /** 顺序流表：每条流 = 最后一块、连着往后读了几块、两块之间的典型间隔、最近一次碰的时刻。 */
+  streams = [];
+  gapMs = 3e3;
+  lastDistinctAt = -1;
+  explicit = [];
+  windows = [];
+  pending = /* @__PURE__ */ new Map();
+  samples = [];
+  /** 自上次取走后发生的「用上 / 浪费」（外壳取走写 trace 和统计）。 */
+  outcomes = [];
+  constructor(o) {
+    this.size = o.size;
+    this.blockBytes = o.blockBytes;
+    this.blockCount = Math.ceil(o.size / o.blockBytes);
+    this.own = o.own ?? emptyModel(o.blockBytes, o.size);
+    this.model = cloneModel(this.own);
+    for (const m of o.others ?? [])
+      mergeModel(this.model, m);
+    this.delta = emptyModel(o.blockBytes, o.size);
+    this.streams = this.own.streams.slice(0, MAX_STREAMS).map(([last, run, gapMs]) => ({ last, run, gapMs, at: 0 }));
+    this.enabled = new Set(o.experts ?? Object.keys(PRIOR));
+    this.localCap = Math.max(1, Math.floor(o.cacheBytes / o.blockBytes));
+  }
+  blockOf(offset) {
+    return Math.floor(offset / this.blockBytes);
+  }
+  rangeOf(block) {
+    const offset = block * this.blockBytes;
+    return { offset, length: Math.min(this.blockBytes, this.size - offset) };
+  }
+  // ── 观察 ──
+  observeRead(t, offset, length) {
+    const b0 = this.blockOf(offset), b1 = this.blockOf(offset + Math.max(length, 1) - 1);
+    for (let b = b0; b <= b1 && b < this.blockCount; b++)
+      this.touch(t, b);
+  }
+  touch(t, b) {
+    const p = this.pending.get(b);
+    if (p) {
+      this.pending.delete(b);
+      this.credit(p.expert, true);
+      this.outcomes.push({ block: b, used: true, expert: p.expert });
+    }
+    for (const w of this.windows)
+      if (t <= w.until && !w.seen.has(b)) {
+        w.seen.add(b);
+        for (const m of [this.model, this.delta])
+          learnLabel(m, w.label, b, t - w.start);
+      }
+    const last = this.hist.at(-1);
+    if (b !== last) {
+      if (last !== void 0) {
+        const prev = this.hist.at(-2);
+        for (const m of [this.model, this.delta]) {
+          addSucc(m, String(last), b);
+          if (prev !== void 0)
+            addSucc(m, `${prev},${last}`, b);
+        }
+        if (this.lastDistinctAt >= 0) {
+          const g = Math.min(6e4, Math.max(50, t - this.lastDistinctAt));
+          this.gapMs = this.gapMs * 0.8 + g * 0.2;
+        }
+      }
+      this.hist.push(b);
+      if (this.hist.length > 3)
+        this.hist.shift();
+      this.lastDistinctAt = t;
+    }
+    this.followStream(t, b);
+    this.markLocal(t, b);
+  }
+  /** b 接上某条流（= 那条流的下一块）就延长它；是同一块就只更新时刻；否则开一条新流（挤掉最久没动的）。 */
+  followStream(t, b) {
+    const same = this.streams.find((s2) => s2.last === b);
+    if (same) {
+      same.at = t;
+      return;
+    }
+    const s = this.streams.find((x) => x.last + 1 === b);
+    if (s) {
+      s.gapMs = s.gapMs * 0.7 + Math.min(6e4, Math.max(50, t - s.at)) * 0.3;
+      s.last = b;
+      s.run++;
+      s.at = t;
+      return;
+    }
+    this.streams.push({ last: b, run: 0, gapMs: this.gapMs, at: t });
+    if (this.streams.length > MAX_STREAMS)
+      this.streams.sort((x, y) => y.at - x.at).length = MAX_STREAMS;
+  }
+  observeHint(t, h2) {
+    const conf = Math.min(1, Math.max(0, h2.confidence ?? 0.8));
+    const within = Math.max(0, h2.withinMs ?? 3e4);
+    let i = 0;
+    for (const r of h2.ranges ?? []) {
+      if (!(r.length > 0))
+        continue;
+      const b0 = this.blockOf(r.offset), b1 = this.blockOf(r.offset + r.length - 1);
+      for (let b = b0; b <= b1 && b < this.blockCount; b++)
+        this.explicit.push({ block: b, p: conf, until: t + within, due: t + i++ });
+    }
+    if (h2.label) {
+      for (const m of [this.model, this.delta])
+        labelFired(m, h2.label);
+      this.windows.push({ label: h2.label, start: t, until: t + within, conf, seen: /* @__PURE__ */ new Set() });
+    }
+  }
+  // ── 预取的来回 ──
+  /** dueMs = 预测的「大约什么时候要」：过了它再宽限一阵还没被读到才算浪费（远期的猜测不该被 30 s 的期限冤枉）。 */
+  issued(t, block, expert, score, dueMs = t) {
+    const grace = Math.max(3e4, 4 * this.fetchP90Ms());
+    this.pending.set(block, { expert, until: Math.max(t, dueMs) + grace, score });
+    for (const m of [this.model, this.delta])
+      m.calib[expert][0]++;
+  }
+  /** 预取完成（这块已在本机）。ms = 花了多久；命中本机的不要喂进实测。 */
+  prefetched(t, block, networkMs) {
+    this.markLocal(t, block);
+    if (networkMs !== void 0)
+      this.sample(networkMs);
+  }
+  /** 预取失败：撤回，不算浪费。 */
+  prefetchFailed(block) {
+    const p = this.pending.get(block);
+    if (!p)
+      return;
+    this.pending.delete(block);
+    for (const m of [this.model, this.delta])
+      m.calib[p.expert][0] = Math.max(0, m.calib[p.expert][0] - 1);
+  }
+  /** 实测：拉一块（走了网络的）花了多久。 */
+  sample(ms) {
+    this.samples.push(ms);
+    if (this.samples.length > 32)
+      this.samples.shift();
+  }
+  quantile(q) {
+    if (!this.samples.length)
+      return null;
+    const s = [...this.samples].sort((a, b) => a - b);
+    return s[Math.min(s.length - 1, Math.floor(q * s.length))];
+  }
+  fetchMs() {
+    return this.quantile(0.5);
+  }
+  fetchP90Ms() {
+    return this.quantile(0.9) ?? DEFAULT_FETCH_P90;
+  }
+  /** 比这慢的读 = 没命中、在等网络。 */
+  slowReadMs() {
+    const m = this.fetchMs();
+    return m === null ? 40 : Math.max(20, Math.min(200, m / 4));
+  }
+  isLocal(block) {
+    return this.local.has(block);
+  }
+  /** 在途 / 已拉来还没被读到的投机里分最低的那个（名额满时，更有把握的候选可以挤掉它）。 */
+  lowestPending() {
+    let low = null;
+    for (const [block, p] of this.pending)
+      if (!low || p.score < low.score)
+        low = { block, score: p.score };
+    return low;
+  }
+  /** 放弃一个投机：记浪费，名额让出来。 */
+  abandon(block) {
+    const p = this.pending.get(block);
+    if (!p)
+      return;
+    this.pending.delete(block);
+    this.credit(p.expert, false);
+    this.outcomes.push({ block, used: false, expert: p.expert });
+  }
+  pendingCount() {
+    return this.pending.size;
+  }
+  // ── 预测 ──
+  /** 到期的：投机没被用上的记浪费；过期的提示和窗口收掉。 */
+  tick(t) {
+    for (const [b, p] of this.pending)
+      if (p.until < t) {
+        this.pending.delete(b);
+        this.credit(p.expert, false);
+        this.outcomes.push({ block: b, used: false, expert: p.expert });
+      }
+    this.explicit = this.explicit.filter((x) => x.until >= t && !this.local.has(x.block));
+    this.windows = this.windows.filter((w) => w.until >= t);
+  }
+  candidates(t, limit = 8) {
+    this.tick(t);
+    const acc = /* @__PURE__ */ new Map();
+    const add = (b, p, e, due) => {
+      if (!this.enabled.has(e) || !(p > 0) || b < 0 || b >= this.blockCount || this.local.has(b) || this.pending.has(b))
+        return;
+      const rp = this.reliability(e) * Math.min(1, p);
+      let a = acc.get(b);
+      if (!a)
+        acc.set(b, a = { keep: 1, best: 0, expert: e, due });
+      a.keep *= 1 - rp;
+      if (rp > a.best) {
+        a.best = rp;
+        a.expert = e;
+      }
+      if (due < a.due)
+        a.due = due;
+    };
+    const last = this.hist.at(-1);
+    for (const s of this.streams) {
+      const p0 = s.run / (s.run + 1);
+      const depth = Math.min(8, Math.max(1, Math.ceil(this.fetchP90Ms() / Math.max(1, s.gapMs)) + 1));
+      let p = 1;
+      for (let k = 1; k <= depth; k++) {
+        p *= p0;
+        add(s.last + k, p, "sequential", s.at + k * s.gapMs);
+      }
+    }
+    for (const x of this.explicit)
+      add(x.block, x.p, "ranges", x.due);
+    for (const w of this.windows) {
+      const s = this.model.labels.get(w.label);
+      if (!s || s.fired < 2)
+        continue;
+      for (const [b, [c, d]] of s.blocks)
+        add(b, c / (s.fired - 1) * w.conf, "label", w.start + d / c);
+    }
+    if (last !== void 0) {
+      for (const [n1, p1] of this.successors(this.hist, 3)) {
+        add(n1, p1, "successor", t + this.gapMs);
+        for (const [n2, p2] of this.successors([...this.hist.slice(-1), n1], 2))
+          add(n2, p1 * p2, "successor", t + 2 * this.gapMs);
+      }
+    }
+    return [...acc].map(([block, a]) => ({ block, score: 1 - a.keep, expert: a.expert, dueMs: a.due })).sort((x, y) => y.score - x.score || x.dueMs - y.dueMs).slice(0, limit);
+  }
+  /** 后继分布：先用两块的上下文，见过不到 2 次就退回一块的；次数做收缩（c / (总数 + 1)），见得少就没把握。 */
+  successors(h2, k) {
+    const a = h2.at(-1);
+    if (a === void 0)
+      return [];
+    const two = h2.length >= 2 ? this.model.succ.get(`${h2.at(-2)},${a}`) : void 0;
+    const total = (r) => {
+      let s = 0;
+      for (const c of r?.values() ?? [])
+        s += c;
+      return s;
+    };
+    const row = two && total(two) >= 2 ? two : this.model.succ.get(String(a));
+    if (!row)
+      return [];
+    const n = total(row);
+    return [...row].sort((x, y) => y[1] - x[1]).slice(0, k).map(([b, c]) => [b, c / (n + 1)]);
+  }
+  reliability(e) {
+    const [issued, used] = this.model.calib[e];
+    const [a, b] = PRIOR[e];
+    return (used + a) / (issued + a + b);
+  }
+  credit(e, used) {
+    if (used)
+      for (const m of [this.model, this.delta])
+        m.calib[e][1]++;
+  }
+  markLocal(t, b) {
+    this.local.delete(b);
+    this.local.set(b, t);
+    if (this.local.size > this.localCap)
+      this.local.delete(this.local.keys().next().value);
+  }
+  // ── 给宿主 ──
+  /** 最近 withinMs 内碰过的块，最近的优先，最多 limit 块，合并成连续的字节范围。 */
+  workingSet(t, withinMs = 12e4, limit = 64) {
+    const blocks = [...this.local].filter(([, at]) => at >= t - withinMs).sort((a, b) => b[1] - a[1]).slice(0, limit).map(([b]) => b).sort((a, b) => a - b);
+    const out = [];
+    for (const b of blocks) {
+      const r = this.rangeOf(b), prev = out.at(-1);
+      if (prev && prev.offset + prev.length === r.offset)
+        prev.length += r.length;
+      else
+        out.push(r);
+    }
+    return out;
+  }
+  /** 结账：在途的投机全记浪费，返回「这台设备的 + 这一局的」= 该存回去的那份。 */
+  finish() {
+    for (const [b, p] of this.pending) {
+      this.credit(p.expert, false);
+      this.outcomes.push({ block: b, used: false, expert: p.expert });
+    }
+    this.pending.clear();
+    this.windows = [];
+    this.explicit = [];
+    const out = mergeModel(cloneModel(this.own), this.delta);
+    out.sessions++;
+    out.streams = [...this.streams].sort((a, b) => b.at - a.at).filter((x) => x.run >= 1).slice(0, MAX_STREAMS).map((x) => [x.last, x.run, x.gapMs]);
+    return out;
+  }
+};
+var Gate = class {
+  issuedAt = [];
+  perMinute;
+  maxOutstanding;
+  constructor(perMinute, maxOutstanding) {
+    this.perMinute = perMinute;
+    this.maxOutstanding = maxOutstanding;
+  }
+  rateOk(t) {
+    this.issuedAt = this.issuedAt.filter((x) => x > t - 6e4);
+    return this.issuedAt.length < this.perMinute;
+  }
+  /** 这个候选能不能发：名额有空就发；满了就看能不能挤掉最低的（能就先挤掉）。 */
+  admit(planner, score) {
+    if (planner.pendingCount() < this.maxOutstanding)
+      return true;
+    const low = planner.lowestPending();
+    if (!low || score < low.score + 0.1)
+      return false;
+    planner.abandon(low.block);
+    return true;
+  }
+  note(t) {
+    this.issuedAt.push(t);
+  }
+  refund(t) {
+    const i = this.issuedAt.lastIndexOf(t);
+    if (i >= 0)
+      this.issuedAt.splice(i, 1);
+  }
+};
+function makeGate(blockBytes, cacheBytes, perMinute = 30) {
+  return new Gate(perMinute, Math.max(1, Math.floor(cacheBytes / 4 / blockBytes)));
+}
+
+// node_modules/@internal/prefetch/dist/prefetch.js
+var DEFAULT_BLOCK_BYTES = 2 * 1024 * 1024;
+var START_WINDOW_MS = 6e4;
+async function createPrefetch(o) {
+  const { source, budget } = o;
+  const blockBytes = o.blockBytes ?? DEFAULT_BLOCK_BYTES;
+  const clock = o.clock ?? { now: () => globalThis.performance?.now() ?? Date.now() };
+  const report = o.report ?? ((e, where) => console.warn(`[prefetch] ${where}:`, e));
+  const emit = (e) => {
+    try {
+      o.trace?.(e);
+    } catch (err3) {
+      report(err3, "trace callback");
+    }
+  };
+  let own;
+  const others = [];
+  if (o.memory) {
+    try {
+      const bytes = await o.memory.load();
+      own = bytes && decodeModel(bytes, blockBytes, source.size) || void 0;
+    } catch (e) {
+      report(e, "load model");
+    }
+    try {
+      for (const bytes of await o.memory.others?.() ?? []) {
+        const m = decodeModel(bytes, blockBytes, source.size);
+        if (m)
+          others.push(m);
+      }
+    } catch (e) {
+      report(e, "load other devices' models");
+    }
+  }
+  const planner = new Planner({ size: source.size, blockBytes, cacheBytes: budget.cacheBytes, own, others });
+  const gate = makeGate(blockBytes, budget.cacheBytes, budget.speculativePerMinute);
+  const concurrency = Math.max(1, budget.concurrency ?? 1);
+  const stats = {
+    reads: 0,
+    stallMs: 0,
+    slowReads: 0,
+    prefetches: 0,
+    used: 0,
+    wasted: 0,
+    fetchMs: null,
+    fetchP90Ms: null,
+    experts: { sequential: { issued: 0, used: 0 }, ranges: { issued: 0, used: 0 }, label: { issued: 0, used: 0 }, successor: { issued: 0, used: 0 } }
+  };
+  let inflight = 0;
+  let closed = false;
+  const drainOutcomes = () => {
+    const t = clock.now();
+    for (const x of planner.outcomes.splice(0)) {
+      if (x.used) {
+        stats.used++;
+        stats.experts[x.expert].used++;
+      } else
+        stats.wasted++;
+      emit({ t, kind: "outcome", block: x.block, used: x.used, expert: x.expert });
+    }
+  };
+  const pump = () => {
+    if (closed || !source.prefetch)
+      return;
+    while (inflight < concurrency) {
+      const t = clock.now();
+      const threshold = admitThreshold(budget.network?.());
+      if (!Number.isFinite(threshold) || !gate.rateOk(t))
+        break;
+      const c = planner.candidates(t, 4).find((x) => x.score >= threshold);
+      if (!c || !gate.admit(planner, c.score)) {
+        drainOutcomes();
+        break;
+      }
+      drainOutcomes();
+      issue(t, c.block, c.score, c.expert, c.dueMs);
+    }
+  };
+  const issue = (t, block, score, expert, dueMs) => {
+    inflight++;
+    gate.note(t);
+    planner.issued(t, block, expert, score, dueMs);
+    stats.experts[expert].issued++;
+    const r = planner.rangeOf(block);
+    source.prefetch(r.offset, r.length).then(() => {
+      const now = clock.now(), ms = now - t;
+      const local2 = ms < planner.slowReadMs();
+      if (local2)
+        gate.refund(t);
+      else
+        stats.prefetches++;
+      planner.prefetched(now, block, local2 ? void 0 : ms);
+      emit({ t: now, kind: "prefetch", block, score, expert, ms, ok: true, local: local2 });
+    }, (e) => {
+      const now = clock.now();
+      planner.prefetchFailed(block);
+      emit({ t: now, kind: "prefetch", block, score, expert, ms: now - t, ok: false, local: false });
+      report(e, `prefetch block ${block}`);
+    }).finally(() => {
+      inflight--;
+      pump();
+    });
+  };
+  const prefetcher = {
+    async read(offset, length) {
+      const t0 = clock.now();
+      planner.observeRead(t0, offset, length);
+      drainOutcomes();
+      const pending2 = source.read(offset, length);
+      pump();
+      const bytes = await pending2;
+      const waitMs = clock.now() - t0;
+      stats.reads++;
+      if (waitMs > planner.slowReadMs()) {
+        stats.slowReads++;
+        stats.stallMs += waitMs;
+        if (planner.blockOf(offset) === planner.blockOf(offset + Math.max(length, 1) - 1))
+          planner.sample(waitMs);
+      }
+      emit({ t: t0, kind: "read", offset, length, waitMs });
+      return bytes;
+    },
+    hint(h2) {
+      const t = clock.now();
+      planner.observeHint(t, h2);
+      emit({ t, kind: "hint", label: h2.label, ranges: h2.ranges?.length ?? 0, confidence: h2.confidence ?? 0.8, withinMs: h2.withinMs ?? 3e4 });
+      pump();
+    },
+    workingSet(withinMs) {
+      return planner.workingSet(clock.now(), withinMs);
+    },
+    stats() {
+      stats.fetchMs = planner.fetchMs();
+      stats.fetchP90Ms = stats.fetchMs === null ? null : planner.fetchP90Ms();
+      return structuredClone(stats);
+    },
+    async close() {
+      if (closed)
+        return;
+      closed = true;
+      const merged = planner.finish();
+      drainOutcomes();
+      if (o.memory) {
+        try {
+          await o.memory.save(encodeModel(merged));
+        } catch (e) {
+          report(e, "save model");
+        }
+      }
+    }
+  };
+  planner.observeHint(clock.now(), { label: START_LABEL, confidence: 0.9, withinMs: START_WINDOW_MS });
+  pump();
+  return prefetcher;
+}
+
+// src/app/disc-prefetch.ts
+function networkState() {
+  const c = navigator.connection;
+  return { metered: c?.type === "cellular" ? true : c?.type ? false : "unknown", saveData: !!c?.saveData };
+}
+function createDiscPrefetcher(stream, o) {
+  let missed = 0;
+  return createPrefetch({
+    source: { size: stream.totalSize, read: (off, n) => stream.read(off, n), prefetch: (off, n) => stream.prefetch(off, n) },
+    budget: { cacheBytes: o.cacheBytes, concurrency: o.lanes, network: networkState },
+    report: (e, where) => {
+      if (where.startsWith("prefetch block")) {
+        if (++missed <= 3 || missed % 50 === 0) console.info(`[prefetch] ${where} \u6CA1\u62C9\u5230\uFF08\u7B2C ${missed} \u6B21\uFF09`, e);
+        return;
+      }
+      o.log("warn", `\u9884\u53D6\uFF1A${where}\uFF1A${e instanceof Error ? e.message : String(e)}`);
+    }
+  });
+}
+function prefetchSummary(s) {
+  const ms = (v) => v == null ? "?" : `${Math.round(v)}`;
+  const ex = Object.entries(s.experts).filter(([, v]) => v.issued).map(([k, v]) => `${k} ${v.used}/${v.issued}`).join(" \xB7 ");
+  return `\u9884\u53D6\uFF1A\u8BFB ${s.reads} \u6B21\uFF0C\u6162\u8BFB ${s.slowReads} \u6B21\u5171\u5361 ${(s.stallMs / 1e3).toFixed(1)} s\uFF1B\u6295\u673A\u8D70\u7F51\u7EDC ${s.prefetches} \u7247\uFF0C\u7528\u4E0A ${s.used}\u3001\u767D\u62C9 ${s.wasted}\uFF1B\u62C9\u4E00\u5757 \u4E2D\u4F4D ${ms(s.fetchMs)} ms / p90 ${ms(s.fetchP90Ms)} ms${ex ? `\uFF1B\u4E13\u5BB6 ${ex}` : ""}`;
+}
+
 // src/disc/crypt.ts
 var MAGIC = "KRD1";
 var MAGIC2 = "KRD2";
@@ -8421,25 +9077,12 @@ var retryHooks = {
     document.addEventListener("visibilitychange", onVis);
   })
 };
-function withReadAhead(stream) {
-  let aheadUntil = 0;
-  return {
-    size: stream.totalSize,
-    read(o, n) {
-      const end = o + n;
-      if (READ_AHEAD_BYTES > 0 && end + READ_AHEAD_BYTES / 2 > aheadUntil && end < stream.totalSize) {
-        aheadUntil = Math.min(stream.totalSize, end + READ_AHEAD_BYTES);
-        stream.prefetch(end, aheadUntil - end).catch(() => {
-        });
-      }
-      return readWithRetry((a, b) => stream.read(a, b), o, n, retryHooks);
-    }
-  };
-}
 async function fromPantry(identifier, password, fallbackKey) {
   const stream = await getStore().file(identifier, { mode: "existing" }).openStream();
   if (!stream) throw new Error("\u8FD9\u5F20\u76D8\u73B0\u5728\u62FF\u4E0D\u5230\uFF08\u6CA1\u767B\u5F55\u3001\u79BB\u7EBF\uFF0C\u6216\u8005\u4E91\u7AEF\u5DF2\u7ECF\u6CA1\u6709\u4E86\uFF09");
-  return { ...await unwrap(withReadAhead(stream), identifier, password, fallbackKey), identifier, net: () => stream.status() };
+  const prefetcher = await createDiscPrefetcher(stream, { cacheBytes: stagingCapBytes() || 256 * 2 ** 20, lanes: STREAM_LANES, log: logEvent });
+  const src = { size: stream.totalSize, read: (o, n) => readWithRetry((a, b) => prefetcher.read(a, b), o, n, retryHooks) };
+  return { ...await unwrap(src, identifier, password, fallbackKey), identifier, net: () => stream.status(), prefetcher };
 }
 async function inspectPantry(identifier) {
   const encrypted = identifier.endsWith(".wafter");
@@ -13150,7 +13793,10 @@ function renderHud() {
   el.classList.toggle("waiting", stuck);
   const nsLine = ns ? `
 \u8BFB\u76D8\u5728\u9014\uFF1A\u6E38\u620F\u5728\u7B49 ${ns.demand} \u7247 \xB7 \u9884\u53D6 ${ns.speculative} \u7247\u5728\u4F20\u3001${ns.queued} \u7247\u6392\u961F${ns.stalled ? ` \xB7 ${ns.stalled} \u7247 3 \u79D2\u6CA1\u5230\u5B57\u8282\uFF08\u5728\u6362\u8DEF / \u5BF9\u51B2\uFF09` : ""}${ns.mirror !== "none" ? ` \xB7 \u955C\u50CF${ns.mirrorLabel ? `\u300C${ns.mirrorLabel}\u300D` : ""}\uFF1A${{ ok: "\u5728\u7528", down: "\u51FA\u9519\u4E86\uFF0C\u6682\u65F6\u8D70\u4E91\u7AEF", rejected: "\u5B57\u8282\u548C\u4E91\u7AEF\u4E0D\u4E00\u6837\uFF0C\u8FD9\u4E00\u7248\u4E0D\u7528\u5B83" }[ns.mirror] ?? ns.mirror}` : ""}` : "";
-  el.title = (stuck ? `\u5728\u7B49\u8BFB\u76D8\uFF1A\u8FD9\u4E00\u79D2\u7B49\u4E86 ${st.netWaitMs.toFixed(0)} ms\uFF08\u7F51\u6162 / \u65AD\u4E86\uFF1B\u300C\u7F13\u5B58\u5168\u76D8\u300D\u540E\u5C31\u4E0D\u7B49\uFF09` : "\u5E27\u7387 \xB7 \u4E0B\u8F7D \xB7 \u4E0A\u4F20 \xB7 \u6838\u5185\u5B58\uFF08\u5DF2\u7528 / 768 MB\uFF09") + nsLine;
+  const pf = current?.prefetcher?.stats();
+  const pfLine = pf ? `
+\u9884\u53D6\uFF1A\u6295\u673A\u8D70\u7F51\u7EDC ${pf.prefetches} \u7247\u3001\u7528\u4E0A ${pf.used}\u3001\u767D\u62C9 ${pf.wasted}\uFF1B\u6E38\u620F\u6162\u8BFB ${pf.slowReads} \u6B21\u5171 ${(pf.stallMs / 1e3).toFixed(1)} s${pf.fetchMs != null ? `\uFF1B\u62C9\u4E00\u5757 ${Math.round(pf.fetchMs)} ms` : ""}` : "";
+  el.title = (stuck ? `\u5728\u7B49\u8BFB\u76D8\uFF1A\u8FD9\u4E00\u79D2\u7B49\u4E86 ${st.netWaitMs.toFixed(0)} ms\uFF08\u7F51\u6162 / \u65AD\u4E86\uFF1B\u300C\u7F13\u5B58\u5168\u76D8\u300D\u540E\u5C31\u4E0D\u7B49\uFF09` : "\u5E27\u7387 \xB7 \u4E0B\u8F7D \xB7 \u4E0A\u4F20 \xB7 \u6838\u5185\u5B58\uFF08\u5DF2\u7528 / 768 MB\uFF09") + nsLine + pfLine;
 }
 var syncState = { kind: "idle", text: "" };
 function snapshotButton(id = "snapshot-btn") {
@@ -13418,6 +14064,17 @@ function openStallSheet() {
     stallSheetOpen = false;
   });
 }
+var prefetchClosed = false;
+async function closePrefetcher() {
+  const pf = current?.prefetcher;
+  if (!pf || prefetchClosed) return;
+  prefetchClosed = true;
+  logEvent("info", prefetchSummary(pf.stats()));
+  await pf.close().catch((e) => logEvent("warn", `\u9884\u53D6\u7ED3\u8D26\u5931\u8D25\uFF1A${errorText(e)}`));
+}
+addEventListener("pagehide", () => {
+  void closePrefetcher();
+});
 async function quit() {
   const ok = await confirmSheet("\u9000\u51FA\uFF1F", "\u5B58\u6863\u4F1A\u5148\u540C\u6B65\u5B8C\u518D\u9000\u51FA\uFF1B\u4E0D\u4F1A\u81EA\u52A8\u5B58\u5FEB\u7167\u3002", "\u9000\u51FA");
   if (!ok) return;
@@ -13439,6 +14096,7 @@ async function quit() {
   try {
     if (!leaveNow) await jamTick(true);
     if (!leaveNow) await whenIdle();
+    if (!leaveNow) await closePrefetcher();
   } finally {
     off();
   }
@@ -14376,4 +15034,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-daef0f66c488.mjs.map
+//# sourceMappingURL=kudsrocket-3ec3598755cb.mjs.map
