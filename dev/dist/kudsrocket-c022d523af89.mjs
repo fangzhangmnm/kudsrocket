@@ -1,8 +1,8 @@
 // src/version.ts
-var APP_VERSION = "v0.1.66-2026-10-18";
+var APP_VERSION = "v0.1.67-2026-10-18";
 
 // assets/icons.svg
-var icons_default = '<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none">\n<!--\n  14 icons extracted from the family icon library (../20260708 SVG Icons/icons.svg) by extract-icons.py \u2014 do not hand-edit; re-run the script instead.\n  Family SVG Icons \u2014 MIT License, Copyright (c) 2026 fangzhangmnm.\n  Contains work derived from (per-icon provenance in data-src):\n    Feather Icons \u2014 MIT License, Copyright (c) 2013-2023 Cole Bemis \xB7 https://github.com/feathericons/feather\n-->\n  <!-- media -->\n  <!-- pause \u2014 \u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="pause" data-cat="media" data-src="own" data-note="\u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="3.2"><path d="M8.3 5.5 V18.5"/><path d="M15.7 5.5 V18.5"/></g></symbol>\n  <!-- play \u2014 \u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="play" data-cat="media" data-src="own" data-note="\u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 5.4 L18.8 12 L8.2 18.6 Z" fill="currentColor"/></symbol>\n  <!-- fast-forward \u2014 \u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="fast-forward" data-cat="media" data-src="own" data-note="\u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.4 6.8 L10.9 12 L4.4 17.2 Z" fill="currentColor"/><path d="M13.1 6.8 L19.6 12 L13.1 17.2 Z" fill="currentColor"/></symbol>\n  <!-- volume \u2014 \u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009) -->\n  <symbol id="volume" data-cat="media" data-src="own" data-note="\u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 10.3 H8.7 L12.6 6.6 V17.4 L8.7 13.7 H5.5 Z" fill="currentColor"/><path d="M15.13 9.73 A3.4 3.4 0 0 1 15.13 14.27"/><path d="M16.36 7.19 A6.1 6.1 0 0 1 16.36 16.81"/></symbol>\n  <!-- file -->\n  <!-- floppy-disk \u2014 \u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3 -->\n  <symbol id="floppy-disk" data-cat="file" data-src="feather:save" data-note="\u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13l3 3v13a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 17 8 17 3"/></symbol>\n  <!-- folder-open \u2014 \u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF -->\n  <symbol id="folder-open" data-cat="file" data-src="own" data-note="\u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18 V7 a2 2 0 0 1 2 -2 h4 l2 2 h6 a2 2 0 0 1 2 2 v1.8"/><path d="M3 18 L6.4 10.8 H21.6 L18.2 18 Z"/></symbol>\n  <!-- hierarchy -->\n  <!-- lock \u2014 \u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D -->\n  <symbol id="lock" data-cat="hierarchy" data-src="own" data-note="\u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10" width="13" height="11"/><path d="M8.8 10 V6.5 a3.2 3.2 0 0 1 6.4 0 V10"/></symbol>\n  <!-- common -->\n  <!-- x \u2014 \u53C9 -->\n  <symbol id="x" data-cat="common" data-src="own" data-note="\u53C9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 L17.5 17.5 M17.5 6.5 L6.5 17.5"/></symbol>\n  <!-- cloud -->\n  <!-- cloud \u2014 \u4E91 -->\n  <symbol id="cloud" data-cat="cloud" data-src="feather:cloud" data-note="\u4E91" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>\n  <!-- viewport -->\n  <!-- maximize-viewport \u2014 \u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55) -->\n  <symbol id="maximize-viewport" data-cat="viewport" data-src="own" data-note="\u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934 --> <polyline points="4 9 4 4 9 4"/> <polyline points="20 9 20 4 15 4"/> <polyline points="4 15 4 20 9 20"/> <polyline points="20 15 20 20 15 20"/></symbol>\n  <!-- picture-in-picture \u2014 \u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1) -->\n  <symbol id="picture-in-picture" data-cat="viewport" data-src="own" data-note="\u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u5927\u6846\uFF08\u4E3B\u753B\u5E03\uFF09+ \u5185\u5D4C\u5C0F\u7A97\uFF08\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1\uFF09\u2014\u2014 picture-in-picture \u9690\u55BB --> <rect x="3" y="4" width="18" height="14" rx="2"/> <rect x="12" y="10" width="7" height="5" rx="1"/></symbol>\n  <!-- ui -->\n  <!-- more \u2014 \u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00) -->\n  <symbol id="more" data-cat="ui" data-src="own" data-note="\u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/></symbol>\n  <!-- keyboard \u2014 \u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49) -->\n  <symbol id="keyboard" data-cat="ui" data-src="own" data-note="\u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="7.2" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="7.2" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><path d="M8.6 15.6 H15.4"/></symbol>\n  <!-- menu \u2014 \u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17) -->\n  <symbol id="menu" data-cat="ui" data-src="own" data-note="\u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"></line> <line x1="4" y1="12" x2="20" y2="12"></line> <line x1="4" y1="17" x2="20" y2="17"></line></symbol>\n</svg>\n';
+var icons_default = '<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none">\n<!--\n  24 icons extracted from the family icon library (../20260708 SVG Icons/icons.svg) by extract-icons.py \u2014 do not hand-edit; re-run the script instead.\n  Family SVG Icons \u2014 MIT License, Copyright (c) 2026 fangzhangmnm.\n  Contains work derived from (per-icon provenance in data-src):\n    Feather Icons \u2014 MIT License, Copyright (c) 2013-2023 Cole Bemis \xB7 https://github.com/feathericons/feather\n    Lucide \u2014 ISC License, Copyright (c) 2020 Lucide Contributors \xB7 https://github.com/lucide-icons/lucide\n-->\n  <!-- edit -->\n  <!-- paste \u2014 \u7C98\u8D34:\u526A\u8D34\u677F\u4E0D\u7F29(\u5E93\u5C3A\u5BF8)+\u6587\u6863\u63A2\u51FA\u53F3\u4E0B\u89D2, \u6309 copy \u7684\u524D\u540E\u4EF6\u6BD4\u4F8B -->\n  <symbol id="paste" data-cat="edit" data-src="own" data-note="\u7C98\u8D34:\u526A\u8D34\u677F\u4E0D\u7F29(\u5E93\u5C3A\u5BF8)+\u6587\u6863\u63A2\u51FA\u53F3\u4E0B\u89D2, \u6309 copy \u7684\u524D\u540E\u4EF6\u6BD4\u4F8B" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><mask id="icPaC"><rect width="24" height="24" fill="#fff" stroke="none"/><g transform="translate(6.76 3.85) scale(0.860)" fill="#000" stroke="#000" stroke-width="3.14" stroke-linejoin="round"><path d="M4 5.6a1.7 1.7 0 0 1 1.7-1.7h6.6l4 4v11.5a1.7 1.7 0 0 1-1.7 1.7H5.7A1.7 1.7 0 0 1 4 20.8z"/></g></mask><g mask="url(#icPaC)"><mask id="icPbTC"><rect width="24" height="24" fill="#fff"/><rect x="6.0" y="1.0000000000000002" width="6" height="4.2" rx="1.2" fill="#000" stroke="#000" stroke-width="2.4"/></mask><g mask="url(#icPbTC)"><rect x="2.0" y="3.3" width="14" height="17" rx="2"/></g><rect x="6.0" y="1.0000000000000002" width="6" height="4.2" rx="1.2"/></g><g transform="translate(6.76 3.85) scale(0.860)" stroke-width="1.98"><path d="M4 5.6a1.7 1.7 0 0 1 1.7-1.7h6.6l4 4v11.5a1.7 1.7 0 0 1-1.7 1.7H5.7A1.7 1.7 0 0 1 4 20.8z"/><path d="M12.3 3.9V8h4"/><path d="M6.6 12.4h7.2M6.6 15.4h5"/></g></symbol>\n  <!-- media -->\n  <!-- pause \u2014 \u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="pause" data-cat="media" data-src="own" data-note="\u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="3.2"><path d="M8.3 5.5 V18.5"/><path d="M15.7 5.5 V18.5"/></g></symbol>\n  <!-- play \u2014 \u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="play" data-cat="media" data-src="own" data-note="\u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 5.4 L18.8 12 L8.2 18.6 Z" fill="currentColor"/></symbol>\n  <!-- fast-forward \u2014 \u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="fast-forward" data-cat="media" data-src="own" data-note="\u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.4 6.8 L10.9 12 L4.4 17.2 Z" fill="currentColor"/><path d="M13.1 6.8 L19.6 12 L13.1 17.2 Z" fill="currentColor"/></symbol>\n  <!-- volume \u2014 \u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009) -->\n  <symbol id="volume" data-cat="media" data-src="own" data-note="\u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 10.3 H8.7 L12.6 6.6 V17.4 L8.7 13.7 H5.5 Z" fill="currentColor"/><path d="M15.13 9.73 A3.4 3.4 0 0 1 15.13 14.27"/><path d="M16.36 7.19 A6.1 6.1 0 0 1 16.36 16.81"/></symbol>\n  <!-- file -->\n  <!-- floppy-disk \u2014 \u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3 -->\n  <symbol id="floppy-disk" data-cat="file" data-src="feather:save" data-note="\u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13l3 3v13a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 17 8 17 3"/></symbol>\n  <!-- folder-open \u2014 \u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF -->\n  <symbol id="folder-open" data-cat="file" data-src="own" data-note="\u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18 V7 a2 2 0 0 1 2 -2 h4 l2 2 h6 a2 2 0 0 1 2 2 v1.8"/><path d="M3 18 L6.4 10.8 H21.6 L18.2 18 Z"/></symbol>\n  <!-- folder \u2014 \u6587\u4EF6\u5939:\u5DE6\u8FB9 tab + \u77E9\u5F62\u4E3B\u4F53 -->\n  <symbol id="folder" data-cat="file" data-src="lucide:folder" data-note="\u6587\u4EF6\u5939:\u5DE6\u8FB9 tab + \u77E9\u5F62\u4E3B\u4F53" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u6587\u4EF6\u5939\uFF1A\u5DE6\u8FB9 tab + \u77E9\u5F62\u4E3B\u4F53 --> <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>\n  <!-- trash-can \u2014 \u5783\u573E\u6876:\u6876\u8EAB\u6536\u53E3(feather \u662F\u76F4\u7B52);\u4E0E fluent(\u5706\u63D0\u624B/\u66F4\u4F4E)\u3001heroicons(\u5F27\u5F62\u900F\u89C6)\u4EA6\u4E0D\u540C \u2014 own -->\n  <symbol id="trash-can" data-cat="file" data-src="own" data-note="\u5783\u573E\u6876:\u6876\u8EAB\u6536\u53E3(feather \u662F\u76F4\u7B52);\u4E0E fluent(\u5706\u63D0\u624B/\u66F4\u4F4E)\u3001heroicons(\u5F27\u5F62\u900F\u89C6)\u4EA6\u4E0D\u540C \u2014 own" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 9.5v9"/><path d="M14 9.5v9"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></symbol>\n  <!-- new \u2014 \u65B0\u5EFA:\u7EAF\u52A0\u53F7(\u7B49\u957F\u5341\u5B57\u7EBF) -->\n  <symbol id="new" data-cat="file" data-src="own" data-note="\u65B0\u5EFA:\u7EAF\u52A0\u53F7(\u7B49\u957F\u5341\u5B57\u7EBF)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/> <line x1="5" y1="12" x2="19" y2="12"/></symbol>\n  <!-- hierarchy -->\n  <!-- lock \u2014 \u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D -->\n  <symbol id="lock" data-cat="hierarchy" data-src="own" data-note="\u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10" width="13" height="11"/><path d="M8.8 10 V6.5 a3.2 3.2 0 0 1 6.4 0 V10"/></symbol>\n  <!-- common -->\n  <!-- x \u2014 \u53C9 -->\n  <symbol id="x" data-cat="common" data-src="own" data-note="\u53C9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 L17.5 17.5 M17.5 6.5 L6.5 17.5"/></symbol>\n  <!-- chevron-left \u2014 \u2039 \u5C0F\u5C3A\u5BF8\u4F18\u5316\u88F8 chevron:\u63CF\u8FB9 2.4\u3001\u81C2\u77ED(14px chip \u7528)\uFF1B\u5E93\u91CC\u5E26\u6746\u7684 back \u662F\u53E6\u4E00\u8BED\u4E49\u3010WeebPaint \u53C2\u8003\u7A97\u591A\u56FE\u65F6\u7A97\u5E95\u7FFB\u9875 chip\uFF1Bfable \u81EA\u753B\u672A\u8FC7\u76EE\u3011 -->\n  <symbol id="chevron-left" data-cat="common" data-src="own" data-note="\u2039 \u5C0F\u5C3A\u5BF8\u4F18\u5316\u88F8 chevron:\u63CF\u8FB9 2.4\u3001\u81C2\u77ED(14px chip \u7528)\uFF1B\u5E93\u91CC\u5E26\u6746\u7684 back \u662F\u53E6\u4E00\u8BED\u4E49\u3010WeebPaint \u53C2\u8003\u7A97\u591A\u56FE\u65F6\u7A97\u5E95\u7FFB\u9875 chip\uFF1Bfable \u81EA\u753B\u672A\u8FC7\u76EE\u3011" data-review="pending" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="14.5 6 9 12 14.5 18" stroke-width="2.4"/></symbol>\n  <!-- chevron-right \u2014 \u203A chevron-left \u7684\u7CBE\u786E\u955C\u50CF\u3010WeebPaint \u53C2\u8003\u7A97\u7FFB\u9875 chip\uFF1Bfable \u81EA\u753B\u672A\u8FC7\u76EE\u3011 -->\n  <symbol id="chevron-right" data-cat="common" data-src="own" data-note="\u203A chevron-left \u7684\u7CBE\u786E\u955C\u50CF\u3010WeebPaint \u53C2\u8003\u7A97\u7FFB\u9875 chip\uFF1Bfable \u81EA\u753B\u672A\u8FC7\u76EE\u3011" data-review="pending" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="9.5 6 15 12 9.5 18" stroke-width="2.4"/></symbol>\n  <!-- back \u2014 \u8FD4\u56DE:\u5DE6\u5411\u6574\u7BAD\u5934(\u5E26\u6746;\u88F8 chevron-left \u66FE\u56E0\u5C0F\u5C3A\u5BF8\u6E32\u67D3\u5DEE\u88AB sunset) -->\n  <symbol id="back" data-cat="common" data-src="own" data-note="\u8FD4\u56DE:\u5DE6\u5411\u6574\u7BAD\u5934(\u5E26\u6746;\u88F8 chevron-left \u66FE\u56E0\u5C0F\u5C3A\u5BF8\u6E32\u67D3\u5DEE\u88AB sunset)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H5"/><polyline points="11 6 5 12 11 18"/></symbol>\n  <!-- forward \u2014 \u524D\u8FDB:back \u7684\u7CBE\u786E\u955C\u50CF(\u53F3\u5411\u6574\u7BAD\u5934\u5E26\u6746;\u4E0E chevron-right \u88F8 chevron \u5206\u5DE5)\u3010WebXiaoHeiWu \u4FA7\u680F\u9875\u5934\u300C\u56DE\u9000\u300D\u53F3\u90BB\u7684\u300C\u524D\u8FDB\u300D\u94AE\uFF08\u56DE\u9000\u4E4B\u540E\u518D\u56DE\u53BB\uFF09\uFF1B2026-09-10 fable \u81EA\u753B\u672A\u8FC7\u76EE\u3011 -->\n  <symbol id="forward" data-cat="common" data-src="own" data-note="\u524D\u8FDB:back \u7684\u7CBE\u786E\u955C\u50CF(\u53F3\u5411\u6574\u7BAD\u5934\u5E26\u6746;\u4E0E chevron-right \u88F8 chevron \u5206\u5DE5)\u3010WebXiaoHeiWu \u4FA7\u680F\u9875\u5934\u300C\u56DE\u9000\u300D\u53F3\u90BB\u7684\u300C\u524D\u8FDB\u300D\u94AE\uFF08\u56DE\u9000\u4E4B\u540E\u518D\u56DE\u53BB\uFF09\uFF1B2026-09-10 fable \u81EA\u753B\u672A\u8FC7\u76EE\u3011" data-review="pending" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12H19"/><polyline points="13 6 19 12 13 18"/></symbol>\n  <!-- check \u2014 \u52FE -->\n  <symbol id="check" data-cat="common" data-src="own" data-note="\u52FE" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5 L9.5 17.5 L19.5 6.5"/></symbol>\n  <!-- cloud -->\n  <!-- cloud \u2014 \u4E91 -->\n  <symbol id="cloud" data-cat="cloud" data-src="feather:cloud" data-note="\u4E91" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>\n  <!-- viewport -->\n  <!-- maximize-viewport \u2014 \u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55) -->\n  <symbol id="maximize-viewport" data-cat="viewport" data-src="own" data-note="\u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934 --> <polyline points="4 9 4 4 9 4"/> <polyline points="20 9 20 4 15 4"/> <polyline points="4 15 4 20 9 20"/> <polyline points="20 15 20 20 15 20"/></symbol>\n  <!-- picture-in-picture \u2014 \u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1) -->\n  <symbol id="picture-in-picture" data-cat="viewport" data-src="own" data-note="\u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u5927\u6846\uFF08\u4E3B\u753B\u5E03\uFF09+ \u5185\u5D4C\u5C0F\u7A97\uFF08\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1\uFF09\u2014\u2014 picture-in-picture \u9690\u55BB --> <rect x="3" y="4" width="18" height="14" rx="2"/> <rect x="12" y="10" width="7" height="5" rx="1"/></symbol>\n  <!-- one-to-one \u2014 1:1 \u50CF\u7D20:\u56DB\u89D2\u62EC\u53F7 + \u4E2D\u5FC3\u4E00\u9897\u5B9E\u5FC3\u50CF\u7D20=\u300C\u4E00\u56FE\u50CF\u7D20\u5BF9\u4E00\u5C4F\u50CF\u7D20\u300D(\u4E0D\u5199 1:1 \u6587\u5B57)\u3010WeebPaint \u53C2\u8003\u7A97 \uFF0B \u83DC\u5355\u300C1:1 \u50CF\u7D20\u300D\u9879\uFF1Bfable \u81EA\u753B\u672A\u8FC7\u76EE\u3011 -->\n  <symbol id="one-to-one" data-cat="viewport" data-src="own" data-note="1:1 \u50CF\u7D20:\u56DB\u89D2\u62EC\u53F7 + \u4E2D\u5FC3\u4E00\u9897\u5B9E\u5FC3\u50CF\u7D20=\u300C\u4E00\u56FE\u50CF\u7D20\u5BF9\u4E00\u5C4F\u50CF\u7D20\u300D(\u4E0D\u5199 1:1 \u6587\u5B57)\u3010WeebPaint \u53C2\u8003\u7A97 \uFF0B \u83DC\u5355\u300C1:1 \u50CF\u7D20\u300D\u9879\uFF1Bfable \u81EA\u753B\u672A\u8FC7\u76EE\u3011" data-review="pending" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8 V3.5 H8"/><path d="M16 3.5 H20.5 V8"/><path d="M20.5 16 V20.5 H16"/><path d="M8 20.5 H3.5 V16"/><rect x="9.6" y="9.6" width="4.8" height="4.8" fill="currentColor" stroke="none"/></symbol>\n  <!-- ui -->\n  <!-- more \u2014 \u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00) -->\n  <symbol id="more" data-cat="ui" data-src="own" data-note="\u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/></symbol>\n  <!-- keyboard \u2014 \u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49) -->\n  <symbol id="keyboard" data-cat="ui" data-src="own" data-note="\u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="7.2" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="7.2" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><path d="M8.6 15.6 H15.4"/></symbol>\n  <!-- menu \u2014 \u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17) -->\n  <symbol id="menu" data-cat="ui" data-src="own" data-note="\u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"></line> <line x1="4" y1="12" x2="20" y2="12"></line> <line x1="4" y1="17" x2="20" y2="17"></line></symbol>\n</svg>\n';
 
 // src/app/ui.ts
 var $ = (id) => {
@@ -1962,11 +1962,11 @@ function createIdentifiersNoKinds() {
 }
 var defaultCloudToName = (cloudName) => cloudName.endsWith(".zip") ? cloudName.slice(0, -4) : cloudName;
 function createCloudSync(cfg) {
-  const { provider, kv, fileName, encFileName = null, contentType = "application/octet-stream", trashFolder = ".trash", backupFolder = ".backup", appKey = "sync", manageDirty = true } = cfg;
+  const { provider, kv, fileName: fileName2, encFileName = null, contentType = "application/octet-stream", trashFolder = ".trash", backupFolder = ".backup", appKey = "sync", manageDirty = true } = cfg;
   const now = cfg.now || (() => Date.now());
   const isHiddenAny = (n) => isHidden(n) || !!cfg.hidden?.(n);
   async function _find(name) {
-    const p = fileName(name);
+    const p = fileName2(name);
     let item = await provider.getItemByPath(p);
     if (item)
       return { item, path: p, enc: false };
@@ -1984,7 +1984,7 @@ function createCloudSync(cfg) {
   const etagKey = (n) => `${appKey}.etag:${n}`;
   const dirtyKey = (n) => `${appKey}.dirty:${n}`;
   const baseName = (n) => n.includes("/") ? n.slice(n.lastIndexOf("/") + 1) : n;
-  const stampedName = (n, enc = false, stamp2 = asideStamp(now())) => (enc && encFileName ? encFileName : fileName)(`${baseName(n)} [${stamp2}]`);
+  const stampedName = (n, enc = false, stamp2 = asideStamp(now())) => (enc && encFileName ? encFileName : fileName2)(`${baseName(n)} [${stamp2}]`);
   function getETag(name) {
     return kv.get(etagKey(name)) || null;
   }
@@ -2046,10 +2046,10 @@ function createCloudSync(cfg) {
   }
   async function push(name, bytes, opts = {}) {
     const enc = !!(encFileName && opts.encrypted);
-    const path = enc ? encFileName(name) : fileName(name);
+    const path = enc ? encFileName(name) : fileName2(name);
     let baseEtag = "baseEtag" in opts ? opts.baseEtag : getETag(name);
     if (encFileName && baseEtag) {
-      const otherPath = enc ? fileName(name) : encFileName(name);
+      const otherPath = enc ? fileName2(name) : encFileName(name);
       const target = await provider.getItemByPath(path).catch((e) => {
         reportStoreError(e, "log");
         return null;
@@ -2102,7 +2102,7 @@ function createCloudSync(cfg) {
   async function pushStream(name, source, opts = {}) {
     if (!provider.uploadStream)
       throw new Error("cloud-sync.pushStream: provider has no uploadStream");
-    const path = fileName(name);
+    const path = fileName2(name);
     let item = null;
     try {
       item = await provider.uploadStream(path, source, { contentType, conflictBehavior: "fail", onProgress: opts.onProgress });
@@ -2174,7 +2174,7 @@ function createCloudSync(cfg) {
     const clean = targetName;
     const folder = clean.includes("/") ? clean.slice(0, clean.lastIndexOf("/")) : "";
     const base = baseName(clean);
-    const mkName = opts.encrypted && encFileName ? encFileName : fileName;
+    const mkName = opts.encrypted && encFileName ? encFileName : fileName2;
     const folderId = await provider.ensureFolder(folder);
     const disp = restoreStampDisplay(opts.snapshotStamp, now());
     const stamped = (suf) => withStemTail(base, ` [${suf}]`, ids);
@@ -2203,7 +2203,7 @@ function createCloudSync(cfg) {
     }
   }
   async function weakOverride(name, bytes, opts = {}) {
-    const path = encFileName && opts.encrypted ? encFileName(name) : fileName(name);
+    const path = encFileName && opts.encrypted ? encFileName(name) : fileName2(name);
     const cur = await _find(name);
     let backedUp = null;
     let item;
@@ -2319,7 +2319,7 @@ function createCloudSync(cfg) {
       throw new Error(`\u4E91\u7AEF\u627E\u4E0D\u5230\uFF1A${oldName}`);
     const oldFolder = oldName.includes("/") ? oldName.slice(0, oldName.lastIndexOf("/")) : "";
     const newFolder = newName.includes("/") ? newName.slice(0, newName.lastIndexOf("/")) : "";
-    const mkName = found.enc && encFileName ? encFileName : fileName;
+    const mkName = found.enc && encFileName ? encFileName : fileName2;
     const newBase = mkName(newName.includes("/") ? newName.slice(newName.lastIndexOf("/") + 1) : newName);
     let moved;
     if (oldFolder === newFolder) {
@@ -7278,10 +7278,10 @@ function createEncryption(opts = {}) {
       return false;
     }
   }
-  async function packContainer({ dataBytes, fileName, ext = "bin", guid: guid2, peek = null, password }) {
+  async function packContainer({ dataBytes, fileName: fileName2, ext = "bin", guid: guid2, peek = null, password }) {
     if (!password)
       throw new Error("cannot encrypt without a password");
-    const metaJson = JSON.stringify({ v: 1, name: fileName || null, ext });
+    const metaJson = JSON.stringify({ v: 1, name: fileName2 || null, ext });
     const payloadBytes = await codec().pack7z([
       { path: "data.bin", data: dataBytes },
       { path: "meta.bin", data: META_MAGIC + metaJson }
@@ -7505,6 +7505,8 @@ var CRUMB_SUFFIX = ".crumb";
 var JAM_SUFFIX = ".jam";
 var RECIPES = "recipes";
 var RECIPE_SUFFIX = ".recipe";
+var TINS = "tins";
+var TIN_SUFFIX = ".tin";
 var DOC_KINDS = [
   { kind: "disc", suffix: ".wafter", container: "raw", tier: "resource" },
   { kind: "disc", suffix: ".iso", container: "raw", tier: "resource" },
@@ -7513,7 +7515,9 @@ var DOC_KINDS = [
   { kind: "crumb", suffix: CRUMB_SUFFIX, container: "raw", tier: "auto-backup", stem: /^[0-9a-f]{16}-[ah]\d+$/ },
   { kind: "jam", suffix: JAM_SUFFIX, container: "raw" },
   // 菜谱 = 机器写、可重学的东西 → 二等：永不弹面、这台的赢（每台设备只写自己那份，撞上只会是同一台的两个标签页）
-  { kind: "recipe", suffix: RECIPE_SUFFIX, container: "raw", tier: "auto-backup" }
+  { kind: "recipe", suffix: RECIPE_SUFFIX, container: "raw", tier: "auto-backup" },
+  // 铁盒 = 一等作品：里面是人导入的攻略图 / 笔记，丢了没地方再生 → 冲突弹面、输家进备份箱（10-18）
+  { kind: "tin", suffix: TIN_SUFFIX, container: "raw" }
 ];
 var STREAM_LANES = 3;
 var STREAM_STALL_MS = 3e3;
@@ -7540,6 +7544,7 @@ function labelFor(identifier) {
   if (identifier.startsWith("jars/")) return "\u5B58\u6863";
   if (identifier.startsWith("pantry/")) return "\u76D8";
   if (identifier.startsWith("recipes/")) return "\u8BFB\u76D8\u83DC\u8C31";
+  if (identifier.startsWith("tins/")) return "\u53C2\u8003\u7A97\uFF08\u653B\u7565 / \u7B14\u8BB0\uFF09";
   if (identifier.startsWith("tmp/traces/")) return "\u8BFB\u76D8\u8F68\u8FF9";
   return identifier.replace(/^.*\//, "");
 }
@@ -9129,26 +9134,26 @@ for (i = 0; i < 32768; ++i) {
 }
 var x;
 var i;
-var hMap = function(cd, mb2, r) {
+var hMap = function(cd, mb3, r) {
   var s = cd.length;
   var i = 0;
-  var l = new u16(mb2);
+  var l = new u16(mb3);
   for (; i < s; ++i) {
     if (cd[i])
       ++l[cd[i] - 1];
   }
-  var le = new u16(mb2);
-  for (i = 1; i < mb2; ++i) {
+  var le = new u16(mb3);
+  for (i = 1; i < mb3; ++i) {
     le[i] = le[i - 1] + l[i - 1] << 1;
   }
   var co;
   if (r) {
-    co = new u16(1 << mb2);
-    var rvb = 15 - mb2;
+    co = new u16(1 << mb3);
+    var rvb = 15 - mb3;
     for (i = 0; i < s; ++i) {
       if (cd[i]) {
         var sv = i << 4 | cd[i];
-        var r_1 = mb2 - cd[i];
+        var r_1 = mb3 - cd[i];
         var v = le[cd[i] - 1]++ << r_1;
         for (var m = v | (1 << r_1) - 1; v <= m; ++v) {
           co[rev[v] >> rvb] = sv;
@@ -9392,7 +9397,7 @@ var wbits16 = function(d, p, v) {
   d[o + 1] |= v >> 8;
   d[o + 2] |= v >> 16;
 };
-var hTree = function(d, mb2) {
+var hTree = function(d, mb3) {
   var t = [];
   for (var i = 0; i < d.length; ++i) {
     if (d[i])
@@ -9425,36 +9430,36 @@ var hTree = function(d, mb2) {
   }
   var tr = new u16(maxSym + 1);
   var mbt = ln(t[i1 - 1], tr, 0);
-  if (mbt > mb2) {
+  if (mbt > mb3) {
     var i = 0, dt = 0;
-    var lft = mbt - mb2, cst = 1 << lft;
+    var lft = mbt - mb3, cst = 1 << lft;
     t2.sort(function(a, b) {
       return tr[b.s] - tr[a.s] || a.f - b.f;
     });
     for (; i < s; ++i) {
       var i2_1 = t2[i].s;
-      if (tr[i2_1] > mb2) {
+      if (tr[i2_1] > mb3) {
         dt += cst - (1 << mbt - tr[i2_1]);
-        tr[i2_1] = mb2;
+        tr[i2_1] = mb3;
       } else
         break;
     }
     dt >>= lft;
     while (dt > 0) {
       var i2_2 = t2[i].s;
-      if (tr[i2_2] < mb2)
-        dt -= 1 << mb2 - tr[i2_2]++ - 1;
+      if (tr[i2_2] < mb3)
+        dt -= 1 << mb3 - tr[i2_2]++ - 1;
       else
         ++i;
     }
     for (; i >= 0 && dt; --i) {
       var i2_3 = t2[i].s;
-      if (tr[i2_3] == mb2) {
+      if (tr[i2_3] == mb3) {
         --tr[i2_3];
         ++dt;
       }
     }
-    mbt = mb2;
+    mbt = mb3;
   }
   return { t: new u8(tr), l: mbt };
 };
@@ -9782,17 +9787,17 @@ var dutf8 = function(d) {
       r += String.fromCharCode((c & 15) << 12 | (d[i++] & 63) << 6 | d[i++] & 63);
   }
 };
-function strToU8(str, latin1) {
+function strToU8(str2, latin1) {
   if (latin1) {
-    var ar_1 = new u8(str.length);
-    for (var i = 0; i < str.length; ++i)
-      ar_1[i] = str.charCodeAt(i);
+    var ar_1 = new u8(str2.length);
+    for (var i = 0; i < str2.length; ++i)
+      ar_1[i] = str2.charCodeAt(i);
     return ar_1;
   }
   if (te)
-    return te.encode(str);
-  var l = str.length;
-  var ar = new u8(str.length + (str.length >> 1));
+    return te.encode(str2);
+  var l = str2.length;
+  var ar = new u8(str2.length + (str2.length >> 1));
   var ai = 0;
   var w = function(v) {
     ar[ai++] = v;
@@ -9803,13 +9808,13 @@ function strToU8(str, latin1) {
       n.set(ar);
       ar = n;
     }
-    var c = str.charCodeAt(i);
+    var c = str2.charCodeAt(i);
     if (c < 128 || latin1)
       w(c);
     else if (c < 2048)
       w(192 | c >> 6), w(128 | c & 63);
     else if (c > 55295 && c < 57344)
-      c = 65536 + (c & 1023 << 10) | str.charCodeAt(++i) & 1023, w(240 | c >> 18), w(128 | c >> 12 & 63), w(128 | c >> 6 & 63), w(128 | c & 63);
+      c = 65536 + (c & 1023 << 10) | str2.charCodeAt(++i) & 1023, w(240 | c >> 18), w(128 | c >> 12 & 63), w(128 | c >> 6 & 63), w(128 | c & 63);
     else
       w(224 | c >> 12), w(128 | c >> 6 & 63), w(128 | c & 63);
   }
@@ -10105,6 +10110,66 @@ function exportSaveDirs(files, times, dirs) {
   return zipSync(entries, { level: 0 });
 }
 
+// src/app/tin-format.ts
+var TIN_HEAD = "tin.json";
+var TIN_VERSION = 1;
+var TIN_REFS_DIR = ".kudsrocket/references";
+var TinTooNewError = class extends Error {
+  fileVersion;
+  constructor(fileVersion) {
+    super(`tin version ${fileVersion} is newer than this app (${TIN_VERSION})`);
+    this.name = "TinTooNewError";
+    this.fileVersion = fileVersion;
+  }
+};
+var NotATinError = class extends Error {
+  constructor(why) {
+    super(`not a tin: ${why}`);
+    this.name = "NotATinError";
+  }
+};
+var tinId = (key) => `${TINS}/${key}${TIN_SUFFIX}`;
+var TIN_RE = new RegExp(`^${TINS}/([0-9a-f]{16})\\${TIN_SUFFIX}$`);
+var parseTinId = (id) => TIN_RE.exec(id)?.[1] ?? null;
+var isRefEntry = (path) => path.startsWith(`${TIN_REFS_DIR}/`);
+var TEXTISH = /\.(json|txt|md|ini|csv)$/i;
+function encodeTin(t) {
+  const entries = {};
+  entries[TIN_HEAD] = [new TextEncoder().encode(JSON.stringify({ ...t.head, v: TIN_VERSION })), { level: 6 }];
+  for (const path of [...t.files.keys()].sort()) {
+    if (path === TIN_HEAD) continue;
+    entries[path] = [t.files.get(path), { level: TEXTISH.test(path) ? 6 : 0 }];
+  }
+  return zipSync(entries);
+}
+function decodeTin(zip) {
+  let raw;
+  try {
+    raw = unzipSync(zip);
+  } catch (e) {
+    throw new NotATinError(`unzip failed (${e instanceof Error ? e.message : String(e)})`);
+  }
+  const headBytes = raw[TIN_HEAD];
+  if (!headBytes) throw new NotATinError(`no ${TIN_HEAD}`);
+  let head;
+  try {
+    head = JSON.parse(new TextDecoder().decode(headBytes));
+  } catch {
+    throw new NotATinError(`${TIN_HEAD} is not JSON`);
+  }
+  if (typeof head !== "object" || head === null || typeof head.v !== "number") throw new NotATinError(`${TIN_HEAD} has no version`);
+  if (head.v > TIN_VERSION) throw new TinTooNewError(head.v);
+  const files = /* @__PURE__ */ new Map();
+  for (const [path, bytes] of Object.entries(raw)) if (path !== TIN_HEAD && !path.endsWith("/")) files.set(path, bytes);
+  return { head, files };
+}
+function withRefs(files, refs) {
+  const out = /* @__PURE__ */ new Map();
+  for (const [p, b] of files) if (!isRefEntry(p)) out.set(p, b);
+  for (const [p, b] of refs) out.set(p, b);
+  return out;
+}
+
 // src/app/saves.ts
 var sessionSalt = crypto.getRandomValues(new Uint8Array(16));
 var HISTORY_KEEP = 3;
@@ -10205,6 +10270,27 @@ async function readRecipe(identifier, password) {
   } catch {
     return null;
   }
+}
+async function readTin(identifier, password, waitForCloud) {
+  const folder = identifier.replace(/\/[^/]*$/, "");
+  const { items } = await listFolderOnce(folder, 8e3, waitForCloud);
+  if (!items.some((it) => it.identifier === identifier) && !await getStore().files.occupied(identifier).catch(() => false)) return { state: "absent" };
+  let sealed;
+  try {
+    const blob = await getStore().file(identifier, { mode: "existing" }).open();
+    sealed = blob ? new Uint8Array(await blob.arrayBuffer()) : null;
+  } catch (e) {
+    return { state: "unreadable", why: e instanceof Error ? e.message : String(e), wrongPassword: false };
+  }
+  if (!sealed) return { state: "unreadable", why: "\u62FF\u4E0D\u5230\uFF08\u79BB\u7EBF\u4E14\u8FD9\u53F0\u8BBE\u5907\u6CA1\u6709\u526F\u672C\uFF1F\uFF09", wrongPassword: false };
+  try {
+    return { state: "read", zip: (await unsealBytes(password, sealed)).plain };
+  } catch (e) {
+    return { state: "unreadable", why: e instanceof WrongPasswordError ? "\u53E3\u4EE4\u4E0D\u662F\u8FD9\u4E2A" : e instanceof Error ? e.message : String(e), wrongPassword: e instanceof WrongPasswordError };
+  }
+}
+async function saveTin(identifier, zip, password, opts = {}) {
+  return put(identifier, await sealBytes(password, zip, { salt: sessionSalt, meta: { at: Date.now() } }), opts);
 }
 async function saveSnapshot(identifier, state2, meta, password, opts = {}) {
   const thumb = meta.thumb ? btoa(Array.from(meta.thumb, (b) => String.fromCharCode(b)).join("")) : void 0;
@@ -10413,6 +10499,8 @@ function labelOfBinned(identifier, titleByKey) {
     return `\u5FEB\u7167 ${slot} \xB7 ${game}`;
   }
   if (identifier.endsWith(JAM_SUFFIX)) return "\u5B58\u6863\uFF08\u4E00\u7F50\uFF09";
+  const tin = parseTinId(identifier);
+  if (tin) return `\u53C2\u8003\u7A97\uFF08\u653B\u7565 / \u7B14\u8BB0\uFF09\xB7 ${titleByKey?.(tin) ?? `\u76D8 ${tin.slice(0, 6)}\u2026`}`;
   return identifier.replace(/^.*\//, "");
 }
 async function restoreBin(item) {
@@ -11077,22 +11165,22 @@ var rhu = function(dat, bt) {
       err2(0);
     wes += wt && 1 << wt - 1;
   }
-  var mb2 = msb(wes) + 1;
-  var ts = 1 << mb2;
+  var mb3 = msb(wes) + 1;
+  var ts = 1 << mb3;
   var rem = ts - wes;
   if (rem & rem - 1)
     err2(0);
   hw[wc++] = msb(rem) + 1;
   for (i = 0; i < wc; ++i) {
     var wt = hw[i];
-    ++rc[hw[i] = wt && mb2 + 1 - wt];
+    ++rc[hw[i] = wt && mb3 + 1 - wt];
   }
   var hbuf = new u82(ts << 1);
   var syms = hbuf.subarray(0, ts), nb = hbuf.subarray(ts);
-  ri[mb2] = 0;
-  for (i = mb2; i > 0; --i) {
+  ri[mb3] = 0;
+  for (i = mb3; i > 0; --i) {
     var pv = ri[i];
-    fill(nb, i, pv, ri[i - 1] = pv + rc[i] * (1 << mb2 - i));
+    fill(nb, i, pv, ri[i - 1] = pv + rc[i] * (1 << mb3 - i));
   }
   if (ri[0] != ts)
     err2(0);
@@ -11100,12 +11188,12 @@ var rhu = function(dat, bt) {
     var bits2 = hw[i];
     if (bits2) {
       var code = ri[bits2];
-      fill(syms, i, code, ri[bits2] = code + (1 << mb2 - bits2));
+      fill(syms, i, code, ri[bits2] = code + (1 << mb3 - bits2));
     }
   }
   return [bt, {
     n: nb,
-    b: mb2,
+    b: mb3,
     s: syms
   }];
 };
@@ -12733,6 +12821,2931 @@ function createPip(stage, host) {
   };
 }
 
+// node_modules/@internal/reference-window/dist/pointer-gesture.js
+function pinchScaleRot(start, dist, angle, minScale, maxScale) {
+  const scale = Math.max(minScale, Math.min(maxScale, start.vp.scale * (dist / start.dist)));
+  let dRot = angle - start.angle;
+  if (dRot > Math.PI)
+    dRot -= 2 * Math.PI;
+  if (dRot < -Math.PI)
+    dRot += 2 * Math.PI;
+  return { scale, rot: start.vp.rot + dRot };
+}
+function solveAnchorTranslation(modelPt, scale, rot, screenX, screenY) {
+  const c = Math.cos(rot), s = Math.sin(rot);
+  return {
+    tx: screenX - (modelPt.x * scale * c - modelPt.y * scale * s),
+    ty: screenY - (modelPt.x * scale * s + modelPt.y * scale * c)
+  };
+}
+
+// node_modules/@internal/reference-window/dist/deck/deck.js
+function cloneView(v) {
+  if (!v)
+    return null;
+  const ok = Number.isFinite(v.tx) && Number.isFinite(v.ty) && Number.isFinite(v.scale) && Number.isFinite(v.rot);
+  return ok ? { tx: v.tx, ty: v.ty, scale: v.scale, rot: v.rot } : null;
+}
+function clonePlay(p) {
+  if (!p || !Number.isFinite(p.t))
+    return null;
+  return { t: p.t, loop: !!p.loop };
+}
+function cloneCarried(c) {
+  return { at: c.at, item: JSON.parse(JSON.stringify(c.item)), files: { ...c.files } };
+}
+function clampIndex(i, n) {
+  if (n <= 0)
+    return 0;
+  if (!Number.isFinite(i))
+    return 0;
+  return Math.max(0, Math.min(n - 1, Math.trunc(i)));
+}
+function createDeck() {
+  let cards2 = [];
+  let carried = [];
+  let index = 0;
+  let seq = 0;
+  const listeners2 = /* @__PURE__ */ new Set();
+  const emit = (what) => {
+    let first = null, threw = false;
+    for (const fn of [...listeners2]) {
+      try {
+        fn(what);
+      } catch (e) {
+        if (!threw) {
+          threw = true;
+          first = e;
+        }
+      }
+    }
+    if (threw)
+      throw first;
+  };
+  const make = (c) => ({
+    id: `c${++seq}`,
+    kind: c.kind,
+    name: c.name ?? "",
+    bytes: c.bytes ?? null,
+    mime: c.mime ?? (c.bytes?.type || ""),
+    target: c.target ?? null,
+    vp: cloneView(c.vp),
+    play: clonePlay(c.play),
+    origin: c.origin ?? null,
+    ram: c.ram && Number.isFinite(c.ram.bytes) ? { bytes: c.ram.bytes } : null
+  });
+  const copy = (c) => ({ ...c, vp: cloneView(c.vp), play: clonePlay(c.play), ram: c.ram ? { bytes: c.ram.bytes } : null });
+  const deck = {
+    get size() {
+      return cards2.length;
+    },
+    get index() {
+      return index;
+    },
+    get current() {
+      return cards2[index] ?? null;
+    },
+    cards: () => cards2,
+    get: (id) => cards2.find((c) => c.id === id) ?? null,
+    indexOf: (id) => cards2.findIndex((c) => c.id === id),
+    snapshot: () => ({ index, cards: cards2.map(copy), carried: carried.map(cloneCarried) }),
+    restore(s) {
+      if (!s || !Array.isArray(s.cards))
+        throw new TypeError("Deck.restore expects { cards: [...] }");
+      cards2 = s.cards.map((c) => {
+        if (!c || typeof c.kind !== "string" || !c.kind)
+          throw new TypeError("Deck.restore: every card needs a non-empty string kind");
+        return make(c);
+      });
+      carried = (s.carried ?? []).map(cloneCarried);
+      index = clampIndex(s.index ?? 0, cards2.length);
+      emit({ type: "reset" });
+      return cards2.map((c) => c.id);
+    },
+    clear() {
+      cards2 = [];
+      carried = [];
+      index = 0;
+      emit({ type: "reset" });
+    },
+    add(card, opts) {
+      if (!card || typeof card.kind !== "string" || !card.kind)
+        throw new TypeError("Deck.add: card needs a non-empty string kind");
+      const c = make(card);
+      cards2.push(c);
+      if (opts?.select ?? true)
+        index = cards2.length - 1;
+      emit({ type: "cards" });
+      return c.id;
+    },
+    remove(id) {
+      const i = deck.indexOf(id);
+      if (i < 0)
+        return;
+      cards2.splice(i, 1);
+      if (i < index)
+        index -= 1;
+      index = clampIndex(index, cards2.length);
+      emit({ type: "cards" });
+    },
+    move(id, toIndex) {
+      const from = deck.indexOf(id);
+      if (from < 0)
+        return;
+      const to = clampIndex(toIndex, cards2.length);
+      if (to === from)
+        return;
+      const viewing = cards2[index]?.id ?? null;
+      const [c] = cards2.splice(from, 1);
+      cards2.splice(to, 0, c);
+      if (viewing)
+        index = deck.indexOf(viewing);
+      emit({ type: "cards" });
+    },
+    select(i) {
+      const next = clampIndex(i, cards2.length);
+      if (next === index)
+        return;
+      index = next;
+      emit({ type: "view" });
+    },
+    setView(id, vp) {
+      const c = deck.get(id);
+      const v = cloneView(vp);
+      if (!c || !v)
+        return;
+      const o = c.vp;
+      if (o && o.tx === v.tx && o.ty === v.ty && o.scale === v.scale && o.rot === v.rot)
+        return;
+      c.vp = v;
+      emit({ type: "view" });
+    },
+    setPlay(id, play2) {
+      const c = deck.get(id);
+      const p = clonePlay(play2);
+      if (!c || !p)
+        return;
+      if (c.play && c.play.t === p.t && c.play.loop === p.loop)
+        return;
+      c.play = p;
+      emit({ type: "view" });
+    },
+    setRam(id, on) {
+      const c = deck.get(id);
+      if (!c)
+        return;
+      if (on) {
+        if (c.ram)
+          return;
+        c.ram = { bytes: c.bytes?.size ?? 0 };
+      } else {
+        if (!c.ram || !c.bytes)
+          return;
+        c.ram = null;
+      }
+      emit({ type: "cards" });
+    },
+    fill(id, bytes, mime) {
+      const c = deck.get(id);
+      if (!c || !c.ram)
+        return;
+      c.bytes = bytes;
+      if (mime)
+        c.mime = mime;
+      emit({ type: "view" });
+    },
+    setTarget(id, target) {
+      const c = deck.get(id);
+      if (!c || c.target === target)
+        return;
+      c.target = target;
+      emit({ type: "cards" });
+      emit({ type: "invalidate", id });
+    },
+    invalidate(id) {
+      if (deck.indexOf(id) < 0)
+        return;
+      emit({ type: "invalidate", id });
+    },
+    onChange(fn) {
+      listeners2.add(fn);
+      return () => {
+        listeners2.delete(fn);
+      };
+    }
+  };
+  return deck;
+}
+
+// node_modules/@internal/reference-window/dist/deck/import.js
+function sniffKind(f) {
+  const t = (f.type || "").toLowerCase(), n = (f.name || "").toLowerCase();
+  if (t.startsWith("image/"))
+    return "image";
+  if (t.startsWith("audio/"))
+    return "audio";
+  if (t.startsWith("video/"))
+    return "video";
+  if (t.startsWith("text/") || /\.(txt|md)$/.test(n))
+    return "text";
+  if (/\.(mp3|m4a|wav|flac|ogg|opus|aac|weba)$/.test(n))
+    return "audio";
+  if (/\.(png|jpe?g|webp|gif)$/.test(n))
+    return "image";
+  if (/\.(mp4|webm|mov)$/.test(n))
+    return "video";
+  return null;
+}
+async function importIntoDeck(deck, files, o) {
+  const out = { added: [], filled: [], skipped: [], notes: [] };
+  for (const f of files) {
+    const name = f.name ?? "", kind = sniffKind(f);
+    if (!kind || !o.kinds.includes(kind)) {
+      out.skipped.push({ name, why: "unsupported" });
+      continue;
+    }
+    const hole = deck.cards().find((c) => c.ram && !c.bytes && c.kind === kind && c.name === name);
+    if (hole) {
+      deck.fill(hole.id, f, f.type || void 0);
+      deck.select(deck.indexOf(hole.id));
+      out.filled.push(hole);
+      continue;
+    }
+    try {
+      let blob = f, mime = f.type || "", ram = false;
+      const canCompress = !!o.transcoder?.kinds.includes(kind), limit = o.askAbove?.[kind];
+      if (o.ask && limit !== void 0 && f.size > limit) {
+        const estimate = canCompress && o.transcoder?.estimate ? await o.transcoder.estimate(kind, f).catch(() => null) : null;
+        const choice = await o.ask({ name, kind, bytes: f.size, estimate, canCompress, suggestRam: o.ramAbove !== void 0 && f.size > o.ramAbove });
+        if (choice === "cancel") {
+          out.skipped.push({ name, why: "cancelled" });
+          continue;
+        }
+        if (choice === "ram")
+          ram = true;
+        if (choice === "compress" && canCompress) {
+          const r = await o.transcoder.encode(kind, f);
+          blob = r.blob;
+          mime = r.mime;
+          if (r.note)
+            out.notes.push(`${name}: ${r.note}`);
+        }
+      }
+      if (kind === "text" && !mime)
+        mime = /\.md$/i.test(name) ? "text/markdown" : "text/plain";
+      const id = deck.add({ kind, bytes: blob, mime, name, ...ram ? { ram: { bytes: blob.size } } : {} });
+      const c = deck.cards().find((x) => x.id === id);
+      if (c)
+        out.added.push(c);
+    } catch (e) {
+      out.skipped.push({ name, why: "failed", message: String(e?.message ?? e) });
+    }
+  }
+  return out;
+}
+
+// node_modules/@internal/reference-window/dist/reference-window.js
+function fmtBytes(n) {
+  return n >= 1048576 ? `${(n / 1048576).toFixed(1)} MB` : `${Math.max(1, Math.round(n / 1024))} KB`;
+}
+var REF_LONG_PRESS_MS = 450;
+var REF_LONG_PRESS_CANCEL_SQ = 64;
+var LIVE_THROTTLE_MS = 300;
+var IDLE_DIM_MS = 2500;
+var NEAREST_MIN_SCALE = 2;
+var MAX_SCALE = 50;
+var MIN_VISIBLE_PX = 16;
+var PAN_KEEP_PX = 24;
+var SPAWN_LEFT = 112;
+var SPAWN_TOP = 104;
+var CLAMP_MIN_LEFT = 96;
+var CLAMP_MIN_TOP = 96;
+var DRAG_TOP_FLOOR = 60;
+var MIN_EDGE = 96;
+var TEXT_SCALE_MIN = 0.5;
+var TEXT_SCALE_MAX = 4;
+var REF_ICON_IDS = {
+  folder: "folder",
+  paste: "paste",
+  cloud: "cloud",
+  pip: "picture-in-picture",
+  oneToOne: "one-to-one",
+  trash: "trash-can",
+  x: "x",
+  plus: "new",
+  prev: "chevron-left",
+  next: "chevron-right",
+  // 2026-09-29：挪动顺序 / 跳转列表。都是库里现成的图标（带杆的左右箭头、勾），没有新画。
+  earlier: "back",
+  later: "forward",
+  current: "check",
+  // 0.4.0（2026-10-09）：音频卡的播放 / 暂停。图标库里现成的。
+  play: "play",
+  pause: "pause"
+};
+function iconMarkup(id) {
+  const sym = typeof document !== "undefined" ? document.querySelector(`svg symbol[id="${id}"]`) : null;
+  if (!sym) {
+    return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2 2" aria-hidden="true" data-icon-missing="${id}"><rect x="4" y="4" width="16" height="16" rx="2"/></svg>`;
+  }
+  const attrs = ["viewBox", "fill", "stroke", "stroke-width", "stroke-linecap", "stroke-linejoin"].map((a) => {
+    const v = sym.getAttribute(a);
+    return v != null ? `${a}="${v}"` : "";
+  }).filter(Boolean).join(" ");
+  return `<svg ${attrs} aria-hidden="true" data-icon="${id}">${sym.innerHTML}</svg>`;
+}
+function buildTemplate() {
+  return `<style>
+:host {
+  position: fixed;
+  top: 60px; left: 16px;
+  display: block;
+  width: 280px; height: 320px;
+  min-width: ${MIN_EDGE}px; min-height: ${MIN_EDGE}px;
+  resize: both;              /* \u684C\u9762\u9F20\u6807\u62D6\u53F3\u4E0B\u89D2\uFF1Btouch \u8D70 .grip */
+  overflow: hidden;
+  border: 1px solid var(--line, #3c4043);
+  border-radius: var(--radius, 10px);
+  outline: none;
+  box-shadow: var(--shadow, 0 8px 24px rgba(0, 0, 0, 0.4));
+  z-index: var(--z-window, 100);
+  -webkit-tap-highlight-color: transparent;
+  font-size: 13px;
+  /* \u5E95 = \u7EAF\u8272 --void\uFF080.3.1\uFF0Cuser 2026-09-30\u300C\u80CC\u666F\u4E5F\u4E0D\u9700\u8981\u52A0\u70B9\uFF0C\u5C31\u7EAF\u8272\u300D\uFF09\u3002\u60F3\u8981\u548C\u81EA\u5DF1\u753B\u5E03\u540C\u6B3E\u70B9\u9635\u7684\u5BBF\u4E3B
+     \uFF08WeebPaint 0830\u300C\u5E95=editor \u753B\u5E03 void \u540C\u6B3E\u300D\uFF09\u5728\u5BBF\u4E3B CSS \u91CC\u5BF9 wp-reference-window \u5199 background-image\u2014\u2014
+     \u5916\u90E8\u6837\u5F0F\u76D6\u5F97\u8FC7 :host\u3002 */
+  background-color: var(--void, #e6e2d6);
+}
+:host(:not([open])) { display: none; }
+canvas {
+  position: absolute; inset: 0; display: block;
+  width: 100%; height: 100%;
+  touch-action: none; cursor: grab;
+}
+canvas:active { cursor: grabbing; }
+:host([pick]) canvas, :host([pick]) canvas:active { cursor: crosshair; }
+/* gizmo \u5C3A\u5BF8 = \u5BB6\u65CF\u6D6E\u7A97\u6807\u51C6\u4EF6\uFF08user 0830\u300C\u6309 Layers \u7684\u5927\u5C0F\u6765\u300D\uFF09\uFF1A\u628A\u624B 22\xD722 \u6EE1\u94FA\uFF08\u540C styles.css
+   .float-panel-resize \u7684\u53CC\u659C\u7EB9\u6E10\u53D8\uFF09\uFF0C\uFF0B 28\uFF0Cchips 14px \u56FE\u6807\u3002 */
+/* \u53F3\u4E0A\u89D2\u4E24\u9897\u5706\u94AE\uFF1A\uFF0B\uFF08\u83DC\u5355\uFF09\u5728\u5DE6\u3001\xD7\uFF08\u5173\u7A97\uFF09\u5728\u6700\u53F3\u2014\u2014\u5173\u95ED\u4ECE\u83DC\u5355\u91CC\u63D0\u51FA\u6765\uFF082026-09-11 user\u300C\u53C2\u8003\u7A97\u7684\u5173\u95ED\u6309\u94AE\u63D0\u51FA\u6765\u653E\u5728\u2026\u53F3\u8FB9\u3002\u4E0D\u7136\u627E\u4E0D\u5230\u300D\uFF09 */
+.plus, .close {
+  position: absolute; top: 4px; z-index: 3;
+  width: 28px; height: 28px; padding: 0; border: none; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: color-mix(in srgb, var(--bg, #202124) 72%, transparent);
+  color: var(--ink, #e8eaed); cursor: pointer;   /* \u7EAF\u83DC\u5355\u94AE\uFF080830 user\uFF1A\uFF0B\u517C\u62D6\u628A\u5F88\u5947\u602A\uFF0C\u62D6\u5F52\u5DE6\u4E0A\u89D2\u70B9\u9635\u628A\u624B\uFF09 */
+  user-select: none; -webkit-user-select: none;
+  transition: opacity 0.35s;
+}
+.close { right: 4px; }
+.plus { right: 36px; }
+.plus svg, .close svg { width: 16px; height: 16px; pointer-events: none; }
+.plus:hover, .close:hover { background: color-mix(in srgb, var(--bg, #202124) 90%, transparent); }
+/* \u62D6\u52A8\u628A\u624B\uFF08user 0830\u300C\u5DE6\u4E0A\u89D2\u52A0\u4E00\u70B9\u5C0F\u70B9\u4E00\u6837\u7684\u62D6\u52A8\u533A\u57DF\u2026\u4E09\u89D2\u5F62\u5E03\u5C40\uFF0C\u6CA1\u6709\u6309\u94AE\u5F0F\u9AD8\u4EAE\uFF0C\u53C2\u8003 resize\u300D\uFF09\uFF1A
+   \u4E0E\u53F3\u4E0B resize \u628A\u624B\u540C\u5F62\u5236\u540C\u5C3A\u5BF8\u2014\u2014\u70B9\u9635\u88C1\u6210\u5DE6\u4E0A\u4E09\u89D2\u3001\u65E0\u5E95\u65E0\u6846\uFF0C\u53EA\u9760 opacity \u547C\u5438\u3002gizmo \u7EB9\u7406\u975E icon\u3002 */
+/* \u4E24\u628A\u624B\u5728\u6697\u56FE\uFF08\u4E09\u6B21\u5143\u76F8\u7247\uFF09\u4E0A\u770B\u4E0D\u6E05\uFF08user 0830\uFF09\u2192 \u4E0E \uFF0B \u540C\u6B3E\u300C\u534A\u900F\u660E\u4E3B\u9898\u5E95 + \u4E3B\u8272 gizmo\u300D\uFF1A
+   \u5143\u7D20\u672C\u8EAB\u88C1\u6210\u4E09\u89D2\u5F62\u5E95\u677F\uFF08clip-path\uFF09\uFF0C\u7EB9\u7406\u8D70 ::after \u7528 currentColor=--ink\u3002\u6D45\u4E3B\u9898=\u767D\u5E95\u9ED1\u70B9\u3001\u6697\u4E3B\u9898=\u9ED1\u5E95\u767D\u70B9\u3002 */
+/* 0.4.1\uFF08user 2026-10-13\u300C\u53C2\u8003\u7A97\u5DE6\u4E0A\u89D2\u5176\u5B9E\u4E00\u76F4\u6BD4\u8F83\u96BE\u62D6\u300D\uFF09\uFF1A\u4EE5\u524D clip-path \u88C1\u5728\u5143\u7D20\u672C\u8EAB\u4E0A\u2014\u2014**\u80FD\u70B9\u4E2D\u7684\u533A\u57DF\u4E5F\u88AB\u88C1\u6210\u4E86\u4E09\u89D2**\uFF0C
+   22 px \u65B9\u5757\u53EA\u5269\u4E00\u534A\u80FD\u6309\u3002\u73B0\u5728\u5143\u7D20 = \u900F\u660E\u7684 36 px \u65B9\u5757\uFF08\u89E6\u5C4F 44 px\uFF09\u4E13\u7BA1\u6309\uFF0C\u770B\u5F97\u89C1\u7684\u4E09\u89D2\u5E95\u677F + \u70B9\u9635\u632A\u5230 ::before / ::after\uFF0C\u6837\u5B50\u4E0D\u53D8\u3002 */
+.move {
+  position: absolute; left: 0; top: 0; width: 36px; height: 36px; z-index: 3;
+  cursor: grab; touch-action: none; user-select: none; -webkit-user-select: none;
+  color: var(--ink, #e8eaed); opacity: 0.85;
+  transition: opacity 0.35s;
+}
+@media (pointer: coarse) { .move { width: 44px; height: 44px; } }
+.move::before {
+  content: ""; position: absolute; left: 0; top: 0; width: 22px; height: 22px;
+  background: color-mix(in srgb, var(--bg, #202124) 72%, transparent);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+.move:hover { opacity: 1; }
+.move:active { cursor: grabbing; }
+/* \u663E\u5F0F 6 \u70B9\uFF083-2-1 \u4E09\u89D2\u6392\u5E03\uFF0Cpitch 5.5\uFF09\uFF1A\u79BB\u5E95\u677F\u659C\u8FB9 \u22653px\uFF0C\u4E0D\u51FA\u534A\u9897\u70B9\uFF08user 0830\u300C\u767D\u7684\u5E94\u8BE5\u8D85\u8FC7\u88C1\u5207\u4E00\u70B9\u300D\uFF09 */
+.move::after {
+  content: ""; position: absolute; left: 0; top: 0; width: 22px; height: 22px;
+  background-image:
+    radial-gradient(circle at 4px 4px,     currentColor 1.2px, transparent 1.7px),
+    radial-gradient(circle at 9.5px 4px,   currentColor 1.2px, transparent 1.7px),
+    radial-gradient(circle at 15px 4px,    currentColor 1.2px, transparent 1.7px),
+    radial-gradient(circle at 4px 9.5px,   currentColor 1.2px, transparent 1.7px),
+    radial-gradient(circle at 9.5px 9.5px, currentColor 1.2px, transparent 1.7px),
+    radial-gradient(circle at 4px 15px,    currentColor 1.2px, transparent 1.7px);
+}
+/* resize \u628A\u624B\uFF1A\u659C\u7EB9\u6CBF styles.css .float-panel-resize \u5BB6\u65CF\u6807\u51C6\u4EF6\uFF1B19\uFF08user 0830\uFF1A\u89C6\u89C9\u4E0A\u659C\u7EB9\u6BD4\u70B9\u9635\u663E\u5927\uFF0C\u7A0D\u5C0F\u4E00\u70B9\uFF09 */
+.grip {
+  position: absolute; right: 0; bottom: 0; width: 19px; height: 19px;
+  cursor: nwse-resize; touch-action: none; z-index: 2;
+  color: var(--ink, #e8eaed); opacity: 0.85;
+  background: color-mix(in srgb, var(--bg, #202124) 72%, transparent);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  transition: opacity 0.35s;
+}
+.grip:hover { opacity: 1; }
+/* \u659C\u7EB9\u4F4D\u7F6E\uFF1A\u6807\u51C6\u4EF6\u662F 45\u201352 / 66\u201373%\uFF0C\u4F46\u672C\u628A\u624B\u88C1\u6210\u4E09\u89D2\u540E\u659C\u8FB9\u6B63\u843D\u5728 135\xB0 \u6E10\u53D8\u7EBF\u7684 50% \u4F4D\u2014\u2014\u7B2C\u4E00\u9053\u7EB9\u4F1A\u88AB
+   \u8170\u65A9\u6210\u7EC6\u4E1D\uFF08user 0830 \u6293\u5230\uFF09\u3002\u6574\u4F53\u5F80\u89D2\u843D\u632A 13%\uFF1A58\u201365 / 79\u201386%\uFF0C\u659C\u8FB9\u5916\u7559 ~2px \u5E95\u677F\u767D\u8FB9\u3002 */
+.grip::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(135deg,
+    transparent 0 58%, currentColor 58% 65%,
+    transparent 65% 79%, currentColor 79% 86%,
+    transparent 86%);
+}
+.chips {
+  position: absolute; left: 50%; bottom: 4px; transform: translateX(-50%); z-index: 2;
+  display: flex; align-items: center; gap: 2px;
+  background: color-mix(in srgb, var(--bg, #202124) 72%, transparent);
+  border-radius: 12px; padding: 1px 4px;
+  color: var(--ink, #e8eaed);
+  cursor: default;   /* \u8BA1\u6570\u6587\u672C\u4E0D\u51FA I-beam\uFF1B\u6309\u94AE\u5404\u81EA pointer */
+  transition: opacity 0.35s;
+}
+.chips.hidden { display: none; }
+.chip { background: transparent; border: none; color: inherit; padding: 2px; cursor: pointer; display: flex; }
+.chip svg { width: 14px; height: 14px; }
+.chip-count { font-size: 11px; min-width: 26px; text-align: center; color: var(--ink-soft, #9aa0a6); font-family: inherit; justify-content: center; }
+/* gizmo \u663E\u9690\u4E24\u6863\uFF08user 0830\u300C\u9F20\u6807\u79FB\u8D70\u65F6 gizmos \u90FD\u9690\u85CF\u300D\uFF1B\u300C12.12 iPad \u770B\u8D77\u6765\u8FD8\u884C\u4E0D\u5E72\u6270\u300D\u2192 \u89E6\u5C4F\u6863\u7EF4\u6301\uFF09\uFF1A
+   .away = \u80FD\u60AC\u505C\u7684\u8BBE\u5907\u6307\u9488\u79BB\u7A97 \u2192 \u5168\u9690\uFF08\u8FDB\u7A97\u5373\u73B0\uFF09\uFF1B.idle = \u95F2\u7F6E 2.5s \u6DE1\u81F3 .35\uFF08\u89E6\u5C4F\u65E0\u60AC\u505C\u53EA\u6709\u8FD9\u6863\uFF0C
+   \u5168\u9690\u4F1A\u8BA9 chips \u53D8\u76F2\u64CD\u4F5C\uFF09\u3002\u83DC\u5355\u5F39\u5C42\u4E0D\u5728\u5176\u5217\u3002 */
+:host(.idle) .plus, :host(.idle) .close, :host(.idle) .grip, :host(.idle) .chips, :host(.idle) .move { opacity: 0.35; }
+/* 0.4.1 \u6536\u6210\u5C0F\u56FE\u6807\uFF08user 2026-10-09\u300Creference window\u52A0\u4E00\u4E2A\u6700\u5C0F\u5316\uFF08\u53D8\u6210\u4E00\u4E2A\u53EF\u62D6\u52A8\u5C0F\u56FE\u6807\uFF09\u7684\u529F\u80FD\uFF0C\u4EE5\u540E\u8BA9opus\u5F04\u300D\uFF09\uFF1A
+   \u7A97\u7F29\u6210 44 px \u5706\u94AE\uFF08\u5C3A\u5BF8\u7528 !important \u538B\u4F4F style \u91CC\u7684\u5BBD\u9AD8\u2014\u2014\u539F\u6765\u7684\u5BBD\u9AD8\u539F\u6837\u7559\u7740\uFF0C\u6062\u590D\u5C31\u56DE\u53BB\uFF09\uFF1B\u91CC\u9762\u53EA\u5269 .bubble\uFF1A\u62D6 = \u632A\u4F4D\u7F6E\uFF0C\u70B9 = \u6062\u590D\u3002 */
+:host([minimized]) {
+  box-sizing: border-box !important; width: 44px !important; height: 44px !important; min-width: 0 !important; min-height: 0 !important;
+  border-radius: 50% !important; resize: none !important; background-color: color-mix(in srgb, var(--bg, #202124) 85%, transparent);
+}
+:host([minimized]) :is(canvas, .text, .audio, .empty, .move, .plus, .close, .grip, .chips) { display: none !important; }
+.bubble { display: none; }
+:host([minimized]) .bubble {
+  display: flex; position: absolute; inset: 0; z-index: 4; align-items: center; justify-content: center;
+  padding: 0; border: none; border-radius: 50%; background: transparent; color: var(--ink, #e8eaed);
+  cursor: grab; touch-action: none; user-select: none; -webkit-user-select: none;
+}
+:host([minimized]) .bubble:active { cursor: grabbing; }
+.bubble svg { width: 22px; height: 22px; pointer-events: none; }
+:host(.away) .plus, :host(.away) .close, :host(.away) .grip, :host(.away) .chips, :host(.away) .move { opacity: 0; }
+/* \u83DC\u5355\u4E0D\u5728 shadow \u91CC\uFF082026-09-02\uFF09\uFF1A\u6302 body \u8D70 ui/popup-menu\u2014\u2014absolute \u5B50\u8282\u70B9\u4F1A\u88AB :host overflow:hidden \u88C1\u3001
+   \u4E5F\u56F0\u5728 :host \u7684 stacking context \u91CC\u88AB\u522B\u7684\u6D6E\u7A97\u76D6\uFF08\u8001\u9519\u8BEF\u590D\u53D1\u6839\u56E0\uFF09\u3002 */
+/* \u6587\u5B57\u5361\uFF1A\u53EA\u8BFB\u3001\u53EF\u9009\u4E2D\u3001\u53EF\u6EDA\u52A8\u3002\u5355\u6307\u6EDA\u52A8\u4EA4\u7ED9\u6D4F\u89C8\u5668\uFF08touch-action: pan-y\uFF09\uFF0C\u53CC\u6307\u634F\u5408\u8C03\u5B57\u53F7\u7531\u7EC4\u4EF6\u63A5\u3002
+   \u5E95\u8272\u7528\u4E3B\u9898\u5E95\u800C\u4E0D\u662F\u70B9\u9635\uFF1A\u5B57\u8981\u80FD\u8BFB\u3002\u9009\u4E2D\u6587\u5B57\u9700\u8981\u628A\u7126\u70B9\u62FF\u8FC7\u6765 \u2192 data-takes-focus \u653E\u884C\uFF08\u5176\u4F59 gizmo \u4E0D\u62A2\u7126\u70B9\uFF09\u3002 */
+.text {
+  position: absolute; inset: 0; display: none; overflow: auto; z-index: 1;
+  box-sizing: border-box; padding: 10px 12px 30px 12px;
+  color: var(--ink, #e8eaed);
+  background: color-mix(in srgb, var(--bg, #202124) 94%, transparent);
+  font-size: calc(13px * var(--ref-text-scale, 1)); line-height: 1.55;
+  white-space: pre-wrap; overflow-wrap: anywhere;
+  user-select: text; -webkit-user-select: text;
+  touch-action: pan-y; cursor: text;
+  -webkit-overflow-scrolling: touch;
+}
+.text.shown { display: block; }
+.text.missing { color: var(--ink-soft, #9aa0a6); font-style: italic; }
+.empty {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 6px; text-align: center; color: var(--ink-soft, #9aa0a6);
+  pointer-events: none; padding: 12px; font-size: 12px;
+}
+.empty.hidden { display: none; }
+/* 0.4.0 \u97F3\u9891\u5361\uFF082026-10-09\uFF09\uFF1A\u5361\u7247\u5185\u5BB9\u533A\u4E00\u4E2A\u64AD\u653E / \u6682\u505C + \u540D\u5B57 + \u80FD\u62D6\u7684\u8FDB\u5EA6\u6761 + \u65F6\u95F4\uFF1B\u4E0D\u81EA\u52A8\u653E\uFF08user\u300C\u5176\u5B9E\u6211\u4E5F\u89C9\u5F97\u81EA\u52A8\u653E\u53CD\u800C\u70E6\uFF0C\u8981\u4E0D\u8FD8\u662F\u64AD\u653E\u952E\u5427\u300D\uFF09 */
+.audio { position: absolute; inset: 0; display: none; z-index: 1; align-items: center; gap: 12px; padding: 12px 14px 30px 14px; box-sizing: border-box;
+  color: var(--ink, #e8eaed); background: color-mix(in srgb, var(--bg, #202124) 94%, transparent); }
+.audio.shown { display: flex; }
+.audio .aplay { flex: none; width: 52px; height: 52px; border-radius: 50%; border: 1px solid var(--line, #5f6368); background: transparent; color: inherit; display: grid; place-items: center; cursor: pointer; padding: 0; }
+.audio .aplay svg { width: 26px; height: 26px; }
+.audio .ainfo { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px; }
+.audio .aname { font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.audio .aseek { width: 100%; margin: 0; accent-color: var(--ink, #e8eaed); }
+.audio .atime { font-size: 12px; color: var(--ink-soft, #9aa0a6); font-variant-numeric: tabular-nums; }
+.audio.missing .aname { color: var(--ink-soft, #9aa0a6); font-style: italic; }
+.empty ::slotted(*), .empty p { margin: 0; }
+:host(:focus) { box-shadow: var(--shadow, 0 8px 24px rgba(0, 0, 0, 0.4)), inset 0 0 0 2px color-mix(in srgb, var(--ink, #e8eaed) 45%, transparent); }   /* \u6709\u7126\u70B9 = \u7C98\u8D34\u843D\u8FD9\u91CC\uFF1A\u4E00\u5708\u7EC6\u63CF\u8FB9 */
+</style>
+<canvas></canvas>
+<div class="text" part="text" data-takes-focus></div>
+<div class="audio" part="audio"><button class="aplay" type="button"></button><div class="ainfo"><div class="aname"></div><input class="aseek" type="range" min="0" max="1000" step="1" value="0"><div class="atime"></div></div></div>
+<div class="empty"><slot name="empty"><p>\uFF0B \u5BFC\u5165\u53C2\u8003</p></slot></div>
+<div class="move" part="move"></div>
+<button class="plus" part="plus" type="button" aria-haspopup="true">${iconMarkup(REF_ICON_IDS.plus)}</button>
+<button class="close" part="close" type="button">${iconMarkup(REF_ICON_IDS.x)}</button>
+<div class="grip" part="grip"></div>
+<button class="bubble" part="bubble" type="button" title="Restore (drag to move)" aria-label="Restore (drag to move)">${iconMarkup(REF_ICON_IDS.pip)}</button>
+<div class="chips hidden">
+  <button class="chip" data-page="-1" type="button">${iconMarkup(REF_ICON_IDS.prev)}</button>
+  <button class="chip chip-count" data-jump type="button">1/1</button>
+  <button class="chip" data-page="1" type="button">${iconMarkup(REF_ICON_IDS.next)}</button>
+</div>
+`;
+}
+var WpReferenceWindow = class extends HTMLElement {
+  static get observedAttributes() {
+    return ["open", "no-cloud", "minimized"];
+  }
+  /** 0.3.1：窗身可拿焦点（粘贴归焦点）。属性只能在这里加（自定义元素构造器里加属性 = createElement 直接炸）；宿主可自定 tabindex。 */
+  connectedCallback() {
+    if (!this.hasAttribute("tabindex"))
+      this.tabIndex = 0;
+  }
+  // no-cloud：宿主云功能关 → 藏云盘选图项
+  // 宿主端口：live 合成 provider（一次性 set；组件在当前页 kind=live 时消费）。null = 这个宿主没有画面可出。
+  liveProvider = null;
+  /** 两帧之间至少隔多久（毫秒）。归宿主定：只有宿主知道自己出一帧多贵。缺省 300 = WeebPaint 现值。 */
+  liveMinIntervalMs = LIVE_THROTTLE_MS;
+  /** ＋ 菜单里列哪些画面（多台相机的宿主用）。null = 只列一项。 */
+  liveTargets = null;
+  /** 链接卡的内容端口（0.3.0）：bytes 为空、有 target 的非 live 卡从这里要内容。null = 这个宿主没有可链接的东西。 */
+  linkProvider = null;
+  // 宿主端口：＋ 菜单（一次性 set = ui/popup-menu 的 togglePopupMenu）。null = 没菜单（裸挂时 ＋ 无反应）。
+  menuPort = null;
+  /** 拖把地板（宿主注入 = ui/floating-window 运行时量的「顶栏下缘」；缺省 60 = 旧常数，裸挂可用）。
+   *  拖 / 恢复 / 视口钳制三条路都吃它——出血区规则只准一个出处（2026-09-02 C2）。 */
+  topFloor = DRAG_TOP_FLOOR;
+  /** 0.4.0 音频卡的速度档（宿主注入，如 [1, 0.75, 0.5]；保音高）。null = 不给速度（库的缺省；user 2026-10-09「默认不开，moonsinger开」）。 */
+  audioRates = null;
+  /** 底边地板（宿主注入 = 屏底被占掉的高度：app 内软键盘、iOS 键盘那一块……；缺省 0）。拖 / resize / 视口钳制都吃它——
+   *  否则右下角的 resize 把手会被键盘盖住（user 2026-09-30「参考窗或者任何浮窗需要保证 move 和 resize 能点到」）。改了之后宿主调 reclamp()。 */
+  bottomFloor = 0;
+  _canvas;
+  _cctx;
+  _textEl;
+  _audioLayer;
+  _aPlay;
+  _aName;
+  _aSeek;
+  _aTime;
+  /** 0.4.0 音频卡：一个窗一个 <audio>，记着正在放哪张卡。翻到别的卡 / 关窗都不停（user「关窗的时候音乐不停」、2026-10-09「1. 不停」）。 */
+  _audio = null;
+  _audioOf = null;
+  _audioUrl = null;
+  _rate = 1;
+  _emptyEl;
+  _plusEl;
+  _menu = null;
+  // 菜单句柄（开着才非 null）
+  _delArmed = false;
+  // 删除二段确认 armed（菜单关即复位）
+  _chipsEl;
+  _chipCountEl;
+  _menuAnchor = null;
+  // 现在开着的菜单挂在谁身上（＋ 或计数钮）
+  // ---- 多参考模型：卡片归牌组；这里只留画它们要用的东西 ----
+  _deck = createDeck();
+  _offDeck = null;
+  _muted = false;
+  // 自己改牌组的那一下不听自己的回声（同步的重入守卫，不是时间窗）
+  _shownId = null;
+  // 现在画着的是哪张卡
+  _bitmaps = /* @__PURE__ */ new Map();
+  // 解好的位图，按卡 id
+  _decoding = /* @__PURE__ */ new Set();
+  // 正在解的卡
+  _texts = /* @__PURE__ */ new Map();
+  // 解好的文字，按卡 id
+  _linked = /* @__PURE__ */ new Map();
+  // 链接卡取回来的字节（只显示不存）
+  _linkMissing = /* @__PURE__ */ new Set();
+  // 链接卡这次取不到（页删了…）
+  _resolving = /* @__PURE__ */ new Set();
+  // 正在向宿主要内容的链接卡
+  _textPinch = [];
+  // 文字层上的指针（捏合调字号）
+  _textPinchStart = null;
+  _textScrollRaf = null;
+  _labels = {};
+  _liveSource = null;
+  _liveSize = null;
+  // 这张卡「本来多大」（宿主没说 = 画面的像素尺寸）
+  _liveOf = null;
+  // 手上这一帧是哪张卡的
+  _liveDirty = false;
+  _lastLiveComposeT;
+  _liveThrottle = null;
+  _vp = { tx: 0, ty: 0, scale: 1, rot: 0 };
+  _raf = null;
+  _panelDrag = null;
+  _resizeDrag = null;
+  _pointers = /* @__PURE__ */ new Map();
+  _gestureStart = null;
+  _picking = false;
+  _longPressTimer = null;
+  _lpStart = null;
+  _lpEvent = null;
+  _idleTimer = null;
+  constructor() {
+    super();
+    window.addEventListener?.("resize", () => {
+      if (!this.open)
+        return;
+      if (this._clampIntoViewport())
+        this._emitRect();
+    });
+    const root = this.attachShadow({ mode: "open" });
+    root.innerHTML = buildTemplate();
+    this._canvas = root.querySelector("canvas");
+    this._textEl = root.querySelector(".text");
+    this._audioLayer = root.querySelector(".audio");
+    this._aPlay = root.querySelector(".aplay");
+    this._aName = root.querySelector(".aname");
+    this._aSeek = root.querySelector(".aseek");
+    this._aTime = root.querySelector(".atime");
+    this._aPlay.innerHTML = iconMarkup(REF_ICON_IDS.play);
+    this._aPlay.addEventListener("click", () => this.togglePlay());
+    this._aSeek.addEventListener("input", () => {
+      const a = this._audio;
+      if (a && this._audioOf === this._deck.current?.id && Number.isFinite(a.duration)) {
+        a.currentTime = Number(this._aSeek.value) / 1e3 * a.duration;
+        this._updateAudioLayer();
+      }
+    });
+    this._aSeek.addEventListener("change", () => this._saveAudioPos());
+    this.addEventListener("keydown", (e) => {
+      if (e.key === " " && this._deck.current?.kind === "audio" && !e.composedPath()[0]?.closest?.("input, .text")) {
+        e.preventDefault();
+        e.stopPropagation();
+        this.togglePlay();
+      }
+    });
+    this._emptyEl = root.querySelector(".empty");
+    this._plusEl = root.querySelector(".plus");
+    this._chipsEl = root.querySelector(".chips");
+    this._chipCountEl = root.querySelector(".chip-count");
+    this._cctx = this._canvas.getContext("2d");
+    this._bind(root);
+    this._offDeck = this._deck.onChange((what) => this._onDeckChange(what));
+  }
+  // ---- 牌组（宿主可以直接用；也可以换成自己的，比如和 VR 视图共用一副）----
+  get deck() {
+    return this._deck;
+  }
+  set deck(d) {
+    if (!d || d === this._deck)
+      return;
+    this._offDeck?.();
+    this._closeAllBitmaps();
+    this._deck = d;
+    this._shownId = null;
+    this._offDeck = d.onChange((what) => this._onDeckChange(what));
+    this._syncFromDeck();
+  }
+  // ---- 属性面（入向；程序性 set 不发事件）----
+  /** 键盘焦点在参考窗上（含窗内文字卡）= 宿主的 Ctrl+V 应落到这里（0.3.1，user「看 focus」）。 */
+  get hasFocus() {
+    return document.activeElement === this;
+  }
+  get open() {
+    return this.hasAttribute("open");
+  }
+  set open(v) {
+    this.toggleAttribute("open", !!v);
+    if (!v) {
+      this._menu?.close();
+      this.toggleAttribute("minimized", false);
+    }
+  }
+  // 关窗 = 菜单一并收（菜单挂 body，不随窗隐）；收着的小图标也一起还原（再开 = 整窗）
+  /** 0.4.1 收成小图标（程序性 set 不发事件，同 open）。收着的时候 `rect` 照样报原来的宽高（只有位置跟着小图标走），宿主存的大小不会被 44×44 盖掉。 */
+  get minimized() {
+    return this.hasAttribute("minimized");
+  }
+  set minimized(v) {
+    if (!!v === this.minimized)
+      return;
+    if (v) {
+      const r = this.getBoundingClientRect();
+      if (r.width > 0 && r.height > 0)
+        this._restoreSize = { w: r.width, h: r.height };
+    }
+    this.toggleAttribute("minimized", !!v);
+    if (v)
+      this._menu?.close();
+    else
+      this._afterRestore();
+  }
+  _restoreSize = null;
+  attributeChangedCallback(name, oldV, newV) {
+    if (name === "no-cloud") {
+      this._menu?.refresh();
+      return;
+    }
+    if (name === "open" && oldV !== newV && newV != null)
+      this._afterShow();
+  }
+  close() {
+    this.open = false;
+  }
+  // 程序性关（不发事件）
+  /** 0.4.0 导入漏斗（deck/import.ts）：嗅种类 → 够大就问宿主（ask）→ 原样 / 压（宿主注入的 transcoder）/ 不要 → 进牌组；加进去了就开窗。
+   *  kinds 缺省 = 图片 / 文字 / 音频。结果（加了哪些、哪些没进、为什么）原样还给宿主，由宿主明说。 */
+  async importFiles(files, opts = {}) {
+    const r = await importIntoDeck(this._deck, files, { ...opts, kinds: opts.kinds ?? ["image", "text", "audio"] });
+    if (r.added.length || r.filled.length)
+      this.open = true;
+    return r;
+  }
+  /** 元素从文档里拿掉 = 停（关窗不停；整个窗没了才停）。 */
+  disconnectedCallback() {
+    this._audio?.pause();
+  }
+  // ---- 0.4.0 音频卡 ----
+  /** 当前这张音频卡：播放 / 暂停（换了一张卡 = 先停上一张、从这张记着的位置放）。不是音频卡 = 什么都不做。 */
+  togglePlay() {
+    const cur = this._deck.current;
+    if (!cur || cur.kind !== "audio")
+      return;
+    const bytes = cur.bytes ?? this._linked.get(cur.id) ?? null;
+    if (!bytes)
+      return;
+    if (this._audioOf !== cur.id)
+      this._loadAudio(cur, bytes);
+    const a = this._audio;
+    if (a.paused)
+      a.play().catch((e) => this._emit("notice", { level: "error", code: "decode-failed", id: cur.id, name: cur.name, message: String(e?.message ?? e) }));
+    else
+      a.pause();
+    this._updateAudioLayer();
+  }
+  /** 正在放（任何一张音频卡）。 */
+  get playing() {
+    return !!this._audio && !this._audio.paused;
+  }
+  _loadAudio(c, bytes) {
+    this._stopAudio();
+    const a = new Audio(), t0 = c.play?.t ?? 0;
+    this._audioUrl = URL.createObjectURL(bytes);
+    a.preload = "auto";
+    a.src = this._audioUrl;
+    a.loop = !!c.play?.loop;
+    a.playbackRate = this._rate;
+    a.preservesPitch = true;
+    if (t0 > 0)
+      a.addEventListener("loadedmetadata", () => {
+        a.currentTime = Math.min(t0, Number.isFinite(a.duration) ? a.duration : t0);
+      }, { once: true });
+    for (const ev of ["timeupdate", "play", "pause", "ended", "loadedmetadata", "durationchange"])
+      a.addEventListener(ev, () => this._updateAudioLayer());
+    a.addEventListener("pause", () => this._saveAudioPos());
+    a.addEventListener("error", () => this._emit("notice", { level: "error", code: "decode-failed", id: c.id, name: c.name, message: "audio could not be decoded" }));
+    this._audio = a;
+    this._audioOf = c.id;
+  }
+  _stopAudio() {
+    if (this._audio) {
+      this._saveAudioPos();
+      this._audio.pause();
+      this._audio.removeAttribute("src");
+    }
+    if (this._audioUrl)
+      URL.revokeObjectURL(this._audioUrl);
+    this._audio = null;
+    this._audioOf = null;
+    this._audioUrl = null;
+  }
+  /** 放到哪 / 循环记进卡（视图态：牌组发 view，不标脏）。 */
+  _saveAudioPos() {
+    const a = this._audio, id = this._audioOf;
+    if (!a || !id || this._deck.indexOf(id) < 0)
+      return;
+    this._deck.setPlay(id, { t: Math.round(a.currentTime * 100) / 100, loop: a.loop });
+  }
+  _updateAudioLayer() {
+    const cur = this._deck.current, isAudio = cur?.kind === "audio";
+    this._audioLayer.classList.toggle("shown", isAudio);
+    if (!isAudio || !cur)
+      return;
+    const a = this._audio && this._audioOf === cur.id ? this._audio : null, playing = !!a && !a.paused;
+    const want = playing ? REF_ICON_IDS.pause : REF_ICON_IDS.play;
+    if (this._aPlay.dataset.icon !== want) {
+      this._aPlay.innerHTML = iconMarkup(want);
+      this._aPlay.dataset.icon = want;
+    }
+    this._aPlay.setAttribute("aria-label", playing ? this._labels.pause ?? "Pause" : this._labels.play ?? "Play");
+    const missing = !cur.bytes && !this._linked.get(cur.id);
+    this._audioLayer.classList.toggle("missing", missing);
+    const hole = missing && !!cur.ram;
+    const name = hole ? `${cur.name || this._labels.kindNames?.audio || "audio"} \xB7 ${fmtBytes(cur.ram.bytes)} \u2014 ${this._ramMissingText()}` : missing && this._linkMissing.has(cur.id) ? this._labels.linkMissing ?? "Content unavailable" : cur.name || this._labels.kindNames?.audio || "audio";
+    if (this._aName.textContent !== name)
+      this._aName.textContent = name;
+    const dur = a && Number.isFinite(a.duration) ? a.duration : null, t = a ? a.currentTime : cur.play?.t ?? 0;
+    this._aPlay.disabled = missing;
+    this._aSeek.disabled = !dur;
+    this._aSeek.value = String(dur ? Math.round(t / dur * 1e3) : 0);
+    const fmt = (x) => `${Math.floor(x / 60)}:${String(Math.floor(x % 60)).padStart(2, "0")}`;
+    this._aTime.textContent = `${fmt(t)}${dur ? ` / ${fmt(dur)}` : ""}${a && a.playbackRate !== 1 ? ` \xB7 ${a.playbackRate}\xD7` : ""}${cur.play?.loop ? ` \xB7 ${this._labels.loop ?? "loop"}` : ""}`;
+  }
+  get live() {
+    return this._deck.current?.kind === "live";
+  }
+  isLive() {
+    return this.live;
+  }
+  get viewport() {
+    return { ...this._vp };
+  }
+  set viewport(v) {
+    if (!v)
+      return;
+    if (Number.isFinite(v.tx))
+      this._vp.tx = v.tx;
+    if (Number.isFinite(v.ty))
+      this._vp.ty = v.ty;
+    if (Number.isFinite(v.scale))
+      this._vp.scale = v.scale;
+    if (Number.isFinite(v.rot))
+      this._vp.rot = v.rot;
+    this._saveCurrentVp();
+    this._invalidate();
+  }
+  get rect() {
+    const r = this.getBoundingClientRect();
+    if (this.minimized) {
+      const w = this._restoreSize?.w ?? (parseFloat(this.style.width) || 280) + 2, h2 = this._restoreSize?.h ?? (parseFloat(this.style.height) || 320) + 2;
+      return { left: r.left, top: r.top, width: w, height: h2 };
+    }
+    return { left: r.left, top: r.top, width: r.width, height: r.height };
+  }
+  set rect(o) {
+    if (o && o.left != null && o.top != null) {
+      this.style.left = Math.max(CLAMP_MIN_LEFT, o.left) + "px";
+      this.style.top = Math.max(CLAMP_MIN_TOP, this.topFloor, o.top) + "px";
+      if (o.width)
+        this.style.width = o.width + "px";
+      if (o.height)
+        this.style.height = o.height + "px";
+      if (this.minimized && o.width && o.height)
+        this._restoreSize = null;
+      this._clampIntoViewport();
+    } else if (!this.style.left || !this.style.top) {
+      this.style.left = SPAWN_LEFT + "px";
+      this.style.top = SPAWN_TOP + "px";
+    }
+  }
+  set labels(l) {
+    this._labels = { ...this._labels, ...l };
+    this._menu?.refresh();
+    const setTitle = (sel, title, aria) => {
+      const b = this.shadowRoot.querySelector(sel);
+      if (!b)
+        return;
+      if (title)
+        b.title = title;
+      if (aria || title)
+        b.setAttribute("aria-label", aria || title);
+    };
+    setTitle(".plus", l.menu);
+    setTitle(".close", l.closeWin);
+    setTitle(".move", l.move);
+    setTitle('[data-page="-1"]', l.prev);
+    setTitle('[data-page="1"]', l.next);
+    setTitle("[data-jump]", l.jump);
+    setTitle(".grip", l.resize, l.resizeAria);
+    setTitle(".bubble", l.restore);
+  }
+  // ---- 多参考内容 API（宿主灌注；程序性，不发事件）----
+  /** 整表替换（load 恢复用）。旧 image bitmap 全部释放。 */
+  setItems(items, index = 0) {
+    this._closeAllBitmaps();
+    const ids = this._mute(() => this._deck.restore({
+      index,
+      cards: items.map((it) => it.kind === "image" ? { kind: "image", bytes: it.blob, mime: it.blob?.type ?? "", vp: it.vp } : { kind: "live", vp: it.vp })
+    }));
+    items.forEach((it, i) => {
+      if (it.kind === "image")
+        this._bitmaps.set(ids[i], it.bitmap);
+    });
+    this._shownId = this._deck.current?.id ?? null;
+    this._loadCurrentVp({ fitIfMissing: true });
+    this._afterItemsChanged();
+  }
+  /** 追加一张图并翻到它（导入漏斗尾）。 */
+  addImage(bitmap, blob, opts) {
+    this._saveCurrentVp();
+    const id = this._mute(() => this._deck.add({ kind: "image", bytes: blob, mime: blob?.type ?? "", name: opts?.name ?? "", origin: opts?.origin ?? null }));
+    this._bitmaps.set(id, bitmap);
+    this._shownId = id;
+    this._loadCurrentVp({ fitIfMissing: true });
+    this._afterItemsChanged();
+  }
+  /** 追加一张文字卡并翻到它（0.3.0）。name 缺省取首行。 */
+  addText(text, opts) {
+    this._saveCurrentVp();
+    const mime = opts?.mime ?? "text/plain";
+    const id = this._mute(() => this._deck.add({ kind: "text", bytes: new Blob([text], { type: mime }), mime, name: opts?.name ?? "", origin: opts?.origin ?? null }));
+    this._texts.set(id, text);
+    this._shownId = id;
+    this._loadCurrentVp({ fitIfMissing: true });
+    this._afterItemsChanged();
+  }
+  /** 画布镜像页：已有 → 翻过去；没有 → 追加并翻到（liveProvider 缺席 = no-op）。 */
+  showLive(target = null, name = "") {
+    if (!this.liveProvider)
+      return;
+    const i = this._deck.cards().findIndex((c) => c.kind === "live" && (c.target ?? null) === target);
+    this._saveCurrentVp();
+    this._mute(() => {
+      if (i >= 0)
+        this._deck.select(i);
+      else
+        this._deck.add({ kind: "live", target, name });
+    });
+    this._shownId = this._deck.current?.id ?? null;
+    this._liveDirty = true;
+    this._loadCurrentVp({ fitIfMissing: true });
+    this._afterItemsChanged();
+  }
+  /** 清空（换画/重置）。 */
+  clearAll() {
+    this._closeAllBitmaps();
+    this._mute(() => this._deck.clear());
+    this._shownId = null;
+    this._stopLiveTimer();
+    this._afterItemsChanged();
+  }
+  /** 宿主读走全部状态（desk 同步 + 保存收集）。当前页 vp 先回写。 */
+  getRefState() {
+    this._saveCurrentVp();
+    return {
+      index: this._deck.index,
+      items: this._deck.cards().map((c) => c.kind === "live" ? { kind: "live", vp: c.vp ? { ...c.vp } : null } : { kind: "image", blob: c.bytes, vp: c.vp ? { ...c.vp } : null })
+    };
+  }
+  get itemCount() {
+    return this._deck.size;
+  }
+  fitToPanel() {
+    const src = this._sourceSize();
+    if (!src)
+      return;
+    const bw = this._canvas.width / (window.devicePixelRatio || 1);
+    const bh = this._canvas.height / (window.devicePixelRatio || 1);
+    if (src.w <= 0 || src.h <= 0 || bw <= 0 || bh <= 0)
+      return;
+    const s = Math.min(bw / src.w, bh / src.h) * 0.95;
+    this._vp = { tx: bw / 2, ty: bh / 2, scale: s, rot: 0 };
+    this._saveCurrentVp();
+    this._emitViewport();
+    this._invalidate();
+  }
+  /** 1:1 像素（user 0830）：1 图像素 = 1 **设备**像素（像素图标真面目；scale=1/dpr）、摆正（rot=0）、
+   *  当前画布中心的图点保持锚定。菜单项触发 = 用户交互 → 发事件。 */
+  oneToOne() {
+    const src = this._sourceSize();
+    if (!src)
+      return;
+    const dpr = window.devicePixelRatio || 1;
+    const bw = this._canvas.width / dpr, bh = this._canvas.height / dpr;
+    const ip = screenToImg(bw / 2, bh / 2, this._vp);
+    const scale = 1 / dpr;
+    const t = solveAnchorTranslation(ip, scale, 0, bw / 2, bh / 2);
+    this._vp = { tx: t.tx, ty: t.ty, scale, rot: 0 };
+    this._containVp();
+    this._saveCurrentVp();
+    this._emitViewport();
+    this._invalidate();
+  }
+  // 缩放界限：放大顶 MAX_SCALE；缩小到长边显示 ≥ MIN_VISIBLE_PX 即止（小图不设限到 1:1 之上）。
+  _scaleBounds() {
+    const src = this._sourceSize();
+    const lo = src ? Math.min(1, MIN_VISIBLE_PX / Math.max(src.w, src.h)) : 0.02;
+    return { lo, hi: MAX_SCALE };
+  }
+  // 平移护栏：图的（旋转后）bbox 与画布保 ≥keep 重叠——图永远找得回来；keep 对小图/小窗自适应收缩。
+  _containVp() {
+    const src = this._sourceSize();
+    if (!src)
+      return;
+    const dpr = window.devicePixelRatio || 1;
+    const cw = this._canvas.width / dpr, ch = this._canvas.height / dpr;
+    if (!(cw > 0) || !(ch > 0))
+      return;
+    const v = this._vp;
+    const c = Math.abs(Math.cos(v.rot)), s = Math.abs(Math.sin(v.rot));
+    const halfW = (src.w * c + src.h * s) / 2 * v.scale;
+    const halfH = (src.w * s + src.h * c) / 2 * v.scale;
+    const keepX = Math.min(PAN_KEEP_PX, halfW, cw / 2);
+    const keepY = Math.min(PAN_KEEP_PX, halfH, ch / 2);
+    v.tx = clamp(v.tx, keepX - halfW, cw - keepX + halfW);
+    v.ty = clamp(v.ty, keepY - halfH, ch - keepY + halfH);
+  }
+  // 宿主在 doc 像素/结构变化时调（组件不监听宿主全局事件）。真合成在 _render 里按脏标+节流做。
+  //   target 不给 = 「有东西变了」（WeebPaint 现有用法）；给了 = 只有那一个画面变了，当前看的不是它就不理。
+  markLiveDirty(target) {
+    if (!this.live)
+      return;
+    if (target !== void 0 && (this._deck.current?.target ?? null) !== target)
+      return;
+    this._liveDirty = true;
+    this._invalidate();
+  }
+  // ---- 出向事件 ----
+  _emit(name, detail) {
+    this.dispatchEvent(new CustomEvent(name, { detail }));
+  }
+  _emitViewport() {
+    this._emit("viewportchange", { ...this._vp });
+  }
+  _emitRect() {
+    this._emit("rectchange", this.rect);
+  }
+  _emitItems() {
+    this._emit("itemschange", { index: this._deck.index, count: this._deck.size });
+  }
+  // ---- 内部：item 切换 ----
+  _saveCurrentVp() {
+    const cur = this._deck.current;
+    if (cur)
+      this._mute(() => this._deck.setView(cur.id, this._vp));
+  }
+  _loadCurrentVp(opts) {
+    const cur = this._deck.current;
+    if (!cur)
+      return;
+    if (cur.vp)
+      this._vp = { ...cur.vp };
+    else if (opts.fitIfMissing) {
+      this._vp = { tx: 0, ty: 0, scale: 1, rot: 0 };
+      queueMicrotask(() => {
+        if (!this._deck.current?.vp)
+          this.fitToPanelSilent();
+      });
+    }
+  }
+  /** fit 但不发事件（程序性初始适应；用户双击走 fitToPanel）。 */
+  fitToPanelSilent() {
+    if (this._deck.current?.kind === "text") {
+      this._vp = { tx: 0, ty: 0, scale: 1, rot: 0 };
+      this._saveCurrentVp();
+      this._updateTextLayer();
+      return;
+    }
+    const src = this._sourceSize();
+    if (!src)
+      return;
+    const bw = this._canvas.width / (window.devicePixelRatio || 1);
+    const bh = this._canvas.height / (window.devicePixelRatio || 1);
+    if (src.w <= 0 || src.h <= 0 || bw <= 0 || bh <= 0)
+      return;
+    const s = Math.min(bw / src.w, bh / src.h) * 0.95;
+    this._vp = { tx: bw / 2, ty: bh / 2, scale: s, rot: 0 };
+    this._saveCurrentVp();
+    this._invalidate();
+  }
+  _page(delta) {
+    const n = this._deck.size;
+    if (n < 2)
+      return;
+    this._saveCurrentVp();
+    this._mute(() => this._deck.select((this._deck.index + delta + n) % n));
+    this._shownId = this._deck.current?.id ?? null;
+    if (this.live)
+      this._liveDirty = true;
+    this._loadCurrentVp({ fitIfMissing: true });
+    this._afterItemsChanged();
+    this._emitItems();
+  }
+  /** 用户把当前这张卡挪一位。还在看这张卡，只是它排的位置变了。 */
+  _moveCurrent(delta) {
+    const cur = this._deck.current;
+    const to = this._deck.index + delta;
+    if (!cur || to < 0 || to >= this._deck.size)
+      return;
+    this._saveCurrentVp();
+    this._mute(() => this._deck.move(cur.id, to));
+    this._afterItemsChanged();
+    this._emitItems();
+  }
+  /** 用户从跳转列表里点了第 i 张。 */
+  _jumpTo(i) {
+    if (i === this._deck.index || i < 0 || i >= this._deck.size)
+      return;
+    this._saveCurrentVp();
+    this._mute(() => this._deck.select(i));
+    this._shownId = this._deck.current?.id ?? null;
+    if (this.live)
+      this._liveDirty = true;
+    this._loadCurrentVp({ fitIfMissing: true });
+    this._afterItemsChanged();
+    this._emitItems();
+  }
+  _cardLabel(c, i) {
+    const firstLine = c.kind === "text" ? (this._texts.get(c.id) ?? "").split("\n").find((l) => l.trim())?.trim().slice(0, 24) : "";
+    const name = c.name || firstLine || this._labels.kindNames?.[c.kind] || c.kind;
+    return `${i + 1}  ${name}`;
+  }
+  _deleteCurrent() {
+    const cur = this._deck.current;
+    if (!cur)
+      return;
+    this._bitmaps.get(cur.id)?.close?.();
+    this._bitmaps.delete(cur.id);
+    this._mute(() => this._deck.remove(cur.id));
+    this._shownId = this._deck.current?.id ?? null;
+    if (this.live)
+      this._liveDirty = true;
+    this._loadCurrentVp({ fitIfMissing: true });
+    this._afterItemsChanged();
+    this._emitItems();
+  }
+  // ---- 牌组 ⇄ 视图 ----
+  /** 自己改牌组的那一下不听自己的回声。别的监听者（宿主、VR 视图）照常收到。 */
+  _mute(fn) {
+    const was = this._muted;
+    this._muted = true;
+    try {
+      return fn();
+    } finally {
+      this._muted = was;
+    }
+  }
+  _closeAllBitmaps() {
+    for (const bm of this._bitmaps.values())
+      bm.close?.();
+    this._bitmaps.clear();
+    this._texts.clear();
+    this._linked.clear();
+    this._linkMissing.clear();
+  }
+  /** 别人（宿主直接用 .deck、或共用这副牌的另一个视图）改了牌组。 */
+  _onDeckChange(what) {
+    if (this._muted)
+      return;
+    if (what.type === "invalidate") {
+      const c = this._deck.get(what.id);
+      if (c?.kind === "live") {
+        if (this._deck.current?.id === what.id)
+          this.markLiveDirty();
+        return;
+      }
+      if (c && !c.bytes && c.target) {
+        this._linked.delete(c.id);
+        this._linkMissing.delete(c.id);
+        this._texts.delete(c.id);
+        this._bitmaps.get(c.id)?.close?.();
+        this._bitmaps.delete(c.id);
+      }
+    }
+    this._syncFromDeck();
+  }
+  /** 把视图对齐到牌组现状。幂等：牌组没变就什么都不做。 */
+  _syncFromDeck() {
+    for (const [id, bm] of this._bitmaps) {
+      if (this._deck.indexOf(id) < 0) {
+        bm.close?.();
+        this._bitmaps.delete(id);
+      }
+    }
+    for (const m of [this._texts, this._linked])
+      for (const id of [...m.keys()])
+        if (this._deck.indexOf(id) < 0)
+          m.delete(id);
+    for (const id of [...this._linkMissing])
+      if (this._deck.indexOf(id) < 0)
+        this._linkMissing.delete(id);
+    if (this._audioOf && this._deck.indexOf(this._audioOf) < 0)
+      this._stopAudio();
+    for (const c of this._deck.cards()) {
+      if (c.kind === "live")
+        continue;
+      const bytes = c.bytes ?? this._linked.get(c.id) ?? null;
+      if (!bytes) {
+        if (c.target && !this._linkMissing.has(c.id) && !this._resolving.has(c.id))
+          this._resolveLink(c);
+        continue;
+      }
+      if (c.kind === "image" && !this._bitmaps.has(c.id) && !this._decoding.has(c.id))
+        this._decode(c, bytes);
+      else if (c.kind === "text" && !this._texts.has(c.id) && !this._decoding.has(c.id))
+        this._decodeText(c, bytes);
+    }
+    const cur = this._deck.current;
+    if ((cur?.id ?? null) !== this._shownId) {
+      this._shownId = cur?.id ?? null;
+      if (cur?.kind === "live")
+        this._liveDirty = true;
+      this._loadCurrentVp({ fitIfMissing: true });
+    } else if (cur?.vp) {
+      const a = cur.vp, b = this._vp;
+      if (a.tx !== b.tx || a.ty !== b.ty || a.scale !== b.scale || a.rot !== b.rot)
+        this._vp = { ...a };
+    }
+    this._afterItemsChanged();
+  }
+  /** 只给了字节没给位图的图片卡（宿主直接往牌组里加的）：这里解。解不出来要说，不许装没事。 */
+  _decode(c, bytes) {
+    if (typeof createImageBitmap !== "function")
+      return;
+    this._decoding.add(c.id);
+    createImageBitmap(bytes).then((bm) => {
+      this._decoding.delete(c.id);
+      if (this._deck.indexOf(c.id) < 0 || this._bitmaps.has(c.id)) {
+        bm.close?.();
+        return;
+      }
+      this._bitmaps.set(c.id, bm);
+      if (this._deck.current?.id === c.id) {
+        if (!this._deck.current.vp)
+          this.fitToPanelSilent();
+        this._invalidate();
+      }
+    }, (e) => {
+      this._decoding.delete(c.id);
+      this._emit("notice", { level: "error", code: "decode-failed", id: c.id, name: c.name, message: String(e?.message ?? e) });
+    });
+  }
+  _decodeText(c, bytes) {
+    this._decoding.add(c.id);
+    bytes.text().then((text) => {
+      this._decoding.delete(c.id);
+      if (this._deck.indexOf(c.id) < 0)
+        return;
+      this._texts.set(c.id, text);
+      if (this._deck.current?.id === c.id)
+        this._afterItemsChanged();
+    }, (e) => {
+      this._decoding.delete(c.id);
+      this._emit("notice", { level: "error", code: "decode-failed", id: c.id, name: c.name, message: String(e?.message ?? e) });
+    });
+  }
+  /** 链接卡：向宿主要内容。要不到 → 记下「缺」，卡上如实写；宿主 invalidate 后再要。 */
+  _resolveLink(c) {
+    if (!this.linkProvider || !c.target) {
+      this._linkMissing.add(c.id);
+      if (this._deck.current?.id === c.id)
+        this._afterItemsChanged();
+      return;
+    }
+    this._resolving.add(c.id);
+    Promise.resolve().then(() => this.linkProvider(c.target, c.kind)).then((blob) => {
+      this._resolving.delete(c.id);
+      if (this._deck.indexOf(c.id) < 0)
+        return;
+      if (blob)
+        this._linked.set(c.id, blob);
+      else
+        this._linkMissing.add(c.id);
+      this._syncFromDeck();
+    }, (e) => {
+      this._resolving.delete(c.id);
+      this._linkMissing.add(c.id);
+      this._emit("notice", { level: "error", code: "link-failed", id: c.id, name: c.name, target: c.target, message: String(e?.message ?? e) });
+      this._syncFromDeck();
+    });
+  }
+  _afterItemsChanged() {
+    if (!this.live)
+      this._stopLiveTimer();
+    this._updateEmptyHint();
+    this._updateChips();
+    this._updateTextLayer();
+    this._updateAudioLayer();
+    this._invalidate();
+  }
+  /** 文字卡：内容层显示 / 隐藏 + 灌内容 + 字号 + 滚动位置。 */
+  _updateTextLayer() {
+    const cur = this._deck.current;
+    const hole = !!cur && cur.kind !== "audio" && cur.kind !== "live" && !!cur.ram && !cur.bytes;
+    const isText = cur?.kind === "text" || hole;
+    this._textEl.classList.toggle("shown", isText);
+    this._canvas.style.visibility = isText || cur?.kind === "audio" ? "hidden" : "";
+    if (!isText || !cur)
+      return;
+    if (hole) {
+      this._textEl.classList.add("missing");
+      const content2 = `${cur.name || this._labels.kindNames?.[cur.kind] || cur.kind} \xB7 ${fmtBytes(cur.ram.bytes)}
+${this._ramMissingText()}`;
+      if (this._textEl.textContent !== content2)
+        this._textEl.textContent = content2;
+      return;
+    }
+    const text = this._texts.get(cur.id);
+    const missing = text === void 0 && this._linkMissing.has(cur.id);
+    this._textEl.classList.toggle("missing", missing);
+    const content = text ?? (missing ? this._labels.linkMissing ?? "Content unavailable" : "");
+    if (this._textEl.textContent !== content)
+      this._textEl.textContent = content;
+    this._textEl.style.setProperty("--ref-text-scale", String(this._vp.scale));
+    const ty = this._vp.ty;
+    if (Math.abs(this._textEl.scrollTop - ty) > 0.5)
+      requestAnimationFrame(() => {
+        if (this._deck.current?.id === cur.id)
+          this._textEl.scrollTop = ty;
+      });
+  }
+  _updateChips() {
+    const n = this._deck.size;
+    this._chipsEl.classList.toggle("hidden", n < 2);
+    if (n >= 2)
+      this._chipCountEl.textContent = `${this._deck.index + 1}/${n}`;
+  }
+  _sourceSize() {
+    const cur = this._deck.current;
+    if (!cur)
+      return null;
+    if (cur.kind === "live") {
+      this._dropLiveIfOther(cur);
+      if (!this._liveSource && this.liveProvider)
+        this._takeLiveFrame(cur);
+      return this._liveSource ? this._liveSize : null;
+    }
+    const bm = this._bitmaps.get(cur.id);
+    return bm ? { w: bm.width, h: bm.height } : null;
+  }
+  // ---- 内部：显示/绑定 ----
+  _afterShow() {
+    if (!this.style.left || !this.style.top) {
+      this.style.left = SPAWN_LEFT + "px";
+      this.style.top = SPAWN_TOP + "px";
+    }
+    this._clampIntoViewport();
+    this._resizeCanvasToBody();
+    this._updateEmptyHint();
+    this._updateChips();
+    if (this.live)
+      this._liveDirty = true;
+    if (this._deck.current && !this._deck.current.vp)
+      this.fitToPanelSilent();
+    this._pokeIdle();
+    this._invalidate();
+  }
+  _bind(root) {
+    this._plusEl.addEventListener("click", () => this._toggleMenu());
+    root.querySelector(".close").addEventListener("click", () => {
+      this.open = false;
+      this._emit("openchange", { open: false });
+    });
+    const move = root.querySelector(".move");
+    move.addEventListener("pointerdown", (e) => {
+      const r = this.getBoundingClientRect();
+      this._panelDrag = { id: e.pointerId, sx: e.clientX, sy: e.clientY, ol: r.left, ot: r.top, moved: false };
+      try {
+        move.setPointerCapture(e.pointerId);
+      } catch {
+      }
+      e.preventDefault();
+    });
+    move.addEventListener("pointermove", (e) => {
+      const d = this._panelDrag;
+      if (!d || e.pointerId !== d.id)
+        return;
+      d.moved = true;
+      const w = this.offsetWidth, h2 = this.offsetHeight;
+      const left = clamp(d.ol + (e.clientX - d.sx), 0, window.innerWidth - w);
+      const top = clamp(d.ot + (e.clientY - d.sy), this.topFloor, Math.max(this.topFloor, window.innerHeight - this.bottomFloor - h2));
+      this.style.left = left + "px";
+      this.style.top = top + "px";
+      this._emitRect();
+    });
+    const endMove = (e) => {
+      if (this._panelDrag && e.pointerId === this._panelDrag.id) {
+        try {
+          move.releasePointerCapture(e.pointerId);
+        } catch {
+        }
+        this._panelDrag = null;
+      }
+    };
+    move.addEventListener("pointerup", endMove);
+    move.addEventListener("pointercancel", endMove);
+    const bubble = root.querySelector(".bubble");
+    let bub = null;
+    bubble.addEventListener("pointerdown", (e) => {
+      const r = this.getBoundingClientRect();
+      bub = { id: e.pointerId, sx: e.clientX, sy: e.clientY, ol: r.left, ot: r.top, moved: false };
+      try {
+        bubble.setPointerCapture(e.pointerId);
+      } catch {
+      }
+      e.preventDefault();
+    });
+    bubble.addEventListener("pointermove", (e) => {
+      if (!bub || e.pointerId !== bub.id)
+        return;
+      const dx = e.clientX - bub.sx, dy = e.clientY - bub.sy;
+      if (!bub.moved && Math.hypot(dx, dy) < 4)
+        return;
+      bub.moved = true;
+      const w = this.offsetWidth, h2 = this.offsetHeight;
+      this.style.left = clamp(bub.ol + dx, 0, window.innerWidth - w) + "px";
+      this.style.top = clamp(bub.ot + dy, this.topFloor, Math.max(this.topFloor, window.innerHeight - this.bottomFloor - h2)) + "px";
+      this._emitRect();
+    });
+    const endBubble = (e) => {
+      if (!bub || e.pointerId !== bub.id)
+        return;
+      try {
+        bubble.releasePointerCapture(e.pointerId);
+      } catch {
+      }
+      const tap = !bub.moved && e.type === "pointerup";
+      bub = null;
+      if (tap)
+        this._setMinimizedByUser(false);
+    };
+    bubble.addEventListener("pointerup", endBubble);
+    bubble.addEventListener("pointercancel", endBubble);
+    root.addEventListener("pointerdown", () => this._pokeIdle(), { capture: true });
+    root.addEventListener("pointermove", () => this._pokeIdle(), { capture: true, passive: true });
+    const hoverCapable = typeof matchMedia === "function" && matchMedia("(hover: hover)").matches;
+    if (hoverCapable) {
+      this.addEventListener("pointerenter", () => this.classList.remove("away"));
+      this.addEventListener("pointerleave", () => {
+        if (this._panelDrag || this._resizeDrag || this._pointers.size > 0)
+          return;
+        this.classList.add("away");
+      });
+    }
+    this._chipsEl.addEventListener("click", (e) => {
+      const t = e.target;
+      if (t.closest("[data-jump]")) {
+        this._toggleJump();
+        return;
+      }
+      const b = t.closest("[data-page]");
+      if (b)
+        this._page(parseInt(b.dataset.page, 10));
+    });
+    const keepHostFocus = (e) => {
+      const t = e.target;
+      if (!t?.closest?.("button"))
+        return;
+      e.preventDefault();
+    };
+    root.addEventListener("pointerdown", keepHostFocus);
+    root.addEventListener("mousedown", keepHostFocus);
+    const grip = root.querySelector(".grip");
+    grip.addEventListener("pointerdown", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      try {
+        grip.setPointerCapture(e.pointerId);
+      } catch {
+      }
+      const r = this.getBoundingClientRect();
+      this._resizeDrag = { id: e.pointerId, sx: e.clientX, sy: e.clientY, w0: r.width, h0: r.height, l0: r.left, t0: r.top };
+    });
+    grip.addEventListener("pointermove", (e) => {
+      if (!this._resizeDrag || e.pointerId !== this._resizeDrag.id)
+        return;
+      const w = Math.max(MIN_EDGE, Math.min(window.innerWidth - 8 - this._resizeDrag.l0, this._resizeDrag.w0 + (e.clientX - this._resizeDrag.sx)));
+      const h2 = Math.max(MIN_EDGE, Math.min(window.innerHeight - this.bottomFloor - 8 - this._resizeDrag.t0, this._resizeDrag.h0 + (e.clientY - this._resizeDrag.sy)));
+      this.style.width = w + "px";
+      this.style.height = h2 + "px";
+      this._emitRect();
+    });
+    const endResize = (e) => {
+      if (this._resizeDrag && e.pointerId === this._resizeDrag.id) {
+        try {
+          grip.releasePointerCapture(e.pointerId);
+        } catch {
+        }
+        this._resizeDrag = null;
+      }
+    };
+    grip.addEventListener("pointerup", endResize);
+    grip.addEventListener("pointercancel", endResize);
+    const tx3 = this._textEl;
+    tx3.addEventListener("scroll", () => {
+      if (this._textScrollRaf != null)
+        return;
+      this._textScrollRaf = requestAnimationFrame(() => {
+        this._textScrollRaf = null;
+        if (this._deck.current?.kind !== "text")
+          return;
+        this._vp.ty = tx3.scrollTop;
+        this._saveCurrentVp();
+        this._emitViewport();
+      });
+    }, { passive: true });
+    tx3.addEventListener("pointerdown", (e) => {
+      this._textPinch.push({ id: e.pointerId, x: e.clientX, y: e.clientY });
+      if (this._textPinch.length === 2) {
+        const [a, b] = this._textPinch;
+        this._textPinchStart = { dist: Math.hypot(b.x - a.x, b.y - a.y) || 1, scale: this._vp.scale };
+        try {
+          tx3.setPointerCapture(e.pointerId);
+        } catch {
+        }
+        e.preventDefault();
+      }
+    });
+    tx3.addEventListener("pointermove", (e) => {
+      const p = this._textPinch.find((q) => q.id === e.pointerId);
+      if (!p)
+        return;
+      p.x = e.clientX;
+      p.y = e.clientY;
+      if (this._textPinch.length >= 2 && this._textPinchStart) {
+        const [a, b] = this._textPinch;
+        const dist = Math.hypot(b.x - a.x, b.y - a.y) || 1;
+        this._setTextScale(this._textPinchStart.scale * (dist / this._textPinchStart.dist));
+        e.preventDefault();
+      }
+    });
+    const endTextPointer = (e) => {
+      this._textPinch = this._textPinch.filter((q) => q.id !== e.pointerId);
+      if (this._textPinch.length < 2)
+        this._textPinchStart = null;
+    };
+    tx3.addEventListener("pointerup", endTextPointer);
+    tx3.addEventListener("pointercancel", endTextPointer);
+    tx3.addEventListener("wheel", (e) => {
+      if (!(e.ctrlKey || e.metaKey))
+        return;
+      e.preventDefault();
+      this._setTextScale(this._vp.scale * Math.exp(-e.deltaY * 5e-3));
+    }, { passive: false });
+    this._canvas.addEventListener("pointerdown", (e) => this._onDown(e), { passive: false });
+    this._canvas.addEventListener("pointermove", (e) => this._onMove(e), { passive: false });
+    this._canvas.addEventListener("pointerup", (e) => this._onUp(e), { passive: false });
+    this._canvas.addEventListener("pointercancel", (e) => this._onUp(e), { passive: false });
+    this._canvas.addEventListener("wheel", (e) => this._onWheel(e), { passive: false });
+    this._canvas.addEventListener("dblclick", () => this.fitToPanel());
+    const ro = new ResizeObserver(() => {
+      this._clampIntoViewport();
+      this._resizeCanvasToBody();
+      if (this._raf) {
+        cancelAnimationFrame(this._raf);
+        this._raf = null;
+      }
+      this._render();
+      this._emitRect();
+    });
+    ro.observe(this);
+  }
+  _ramMissingText() {
+    return this._labels.ramMissing ?? "Kept in memory only, not saved. Drop the file here or import it again with \uFF0B.";
+  }
+  _menuItems() {
+    const l = this._labels, cur = this._deck.current;
+    return [
+      { id: "load", label: l.load ?? "Load image", icon: REF_ICON_IDS.folder },
+      { id: "paste", label: l.paste ?? "Paste", icon: REF_ICON_IDS.paste },
+      { id: "cloud", label: l.cloud ?? "From cloud", icon: REF_ICON_IDS.cloud, hidden: this.hasAttribute("no-cloud") },
+      // 宿主出画面的卡：宿主没给 provider 就不列（写作 app 没有画布可镜像）；多台相机的宿主经 liveTargets 列多项
+      ...this._liveMenuItems(),
+      { id: "onetoone", label: l.oneToOne ?? "1:1", icon: REF_ICON_IDS.oneToOne, hidden: this._deck.current?.kind === "audio" },
+      // 0.4.0 音频卡：循环（ROUND 的设想：放在 ＋ 菜单）；速度只在宿主给了档位时列（user 2026-10-09「默认不开，moonsinger开」）。点了不关，可以连点
+      ...this._deck.current?.kind === "audio" ? this._audioMenuItems() : [],
+      // 只放内存（user 2026-10-09「然后能不能加RAM only，就是不落盘，每次重新上传」）：有自己字节的卡才有（链接卡 / 宿主画面 / 读回来的空位没有）
+      { id: "minimize", label: l.minimize ?? "Minimize to icon", icon: REF_ICON_IDS.pip, separatorBefore: true },
+      {
+        id: "ram",
+        label: l.ram ?? "Keep in memory only (not saved)",
+        ...cur?.ram ? { icon: REF_ICON_IDS.current } : {},
+        hidden: !cur || cur.kind === "live" || !!cur.target || !cur.bytes,
+        separatorBefore: true
+      },
+      // 挪动顺序的逃生口（user 2026-09-29「reorder也需要有逃生口」）：点完菜单不关，可以连点；到头的那一项藏起来
+      {
+        id: "earlier",
+        label: l.moveEarlier ?? "Move earlier",
+        icon: REF_ICON_IDS.earlier,
+        hidden: this._deck.size < 2 || this._deck.index === 0,
+        separatorBefore: true
+      },
+      {
+        id: "later",
+        label: l.moveLater ?? "Move later",
+        icon: REF_ICON_IDS.later,
+        hidden: this._deck.size < 2 || this._deck.index === this._deck.size - 1,
+        separatorBefore: this._deck.size >= 2 && this._deck.index === 0
+      },
+      // 删除 = 二段确认（防误碰，user 0830）：第一下 arm（文案换 delConfirm 变红），第二下才删；没有可删的页时藏。
+      {
+        id: "delete",
+        label: this._delArmed ? l.delConfirm ?? l.del ?? "Delete" : l.del ?? "Delete",
+        icon: REF_ICON_IDS.trash,
+        danger: this._delArmed,
+        hidden: this._deck.size === 0,
+        separatorBefore: true
+      }
+      // 「关闭」2026-09-11 从菜单提出成窗右上角 × 钮（user「不然找不到」）
+    ];
+  }
+  _audioMenuItems() {
+    const cur = this._deck.current, l = this._labels, loop = !!cur.play?.loop;
+    return [
+      { id: "loop", label: l.loop ?? "Loop", ...loop ? { icon: REF_ICON_IDS.current } : {}, separatorBefore: true },
+      ...(this.audioRates ?? []).map((r, i) => ({ id: "rate:" + r, label: `${l.rate ?? "Speed"} ${r}\xD7`, ...r === this._rate ? { icon: REF_ICON_IDS.current } : {}, ...i === 0 ? { separatorBefore: true } : {} }))
+    ];
+  }
+  _liveMenuId(target) {
+    return target == null ? "live" : "live:" + target;
+  }
+  _liveMenuTargets() {
+    if (!this.liveProvider)
+      return [];
+    const list = this.liveTargets?.();
+    return list && list.length ? list : [{ target: null, label: this._labels.live ?? "Live mirror" }];
+  }
+  _liveMenuItems() {
+    return this._liveMenuTargets().map((t) => ({ id: this._liveMenuId(t.target), label: t.label, icon: REF_ICON_IDS.pip }));
+  }
+  /** 跳转列表：点计数钮弹出，一张卡一行，点哪个跳哪个。复用同一个菜单端口，不加新 gizmo。 */
+  _toggleJump() {
+    if (!this.menuPort || this._deck.size < 2)
+      return;
+    this._swapMenuAnchor(this._chipCountEl);
+    this._menu = this.menuPort({
+      anchor: this._chipCountEl,
+      items: () => this._deck.cards().map((c, i) => ({
+        id: "jump:" + i,
+        label: this._cardLabel(c, i),
+        ...i === this._deck.index ? { icon: REF_ICON_IDS.current } : {}
+      })),
+      align: "left",
+      band: "menu",
+      swallowOutsideTap: true,
+      ariaLabel: this._labels.jump,
+      onClose: () => {
+        this._menu = null;
+        this._menuAnchor = null;
+      },
+      onPick: (id) => {
+        this._jumpTo(parseInt(id.slice(5), 10));
+      }
+    });
+    this._menuAnchor = this._menu ? this._chipCountEl : null;
+  }
+  /** 两个菜单共用一个端口：要开的和正开着的不是同一个锚 → 先把开着的收掉（同一个锚则交给端口自己的 toggle 语义）。 */
+  _swapMenuAnchor(next) {
+    if (this._menu && this._menuAnchor !== next)
+      this._menu.close();
+  }
+  _toggleMenu() {
+    if (!this.menuPort)
+      return;
+    this._swapMenuAnchor(this._plusEl);
+    this._delArmed = false;
+    this._menu = this.menuPort({
+      anchor: this._plusEl,
+      items: () => this._menuItems(),
+      align: "right",
+      band: "menu",
+      swallowOutsideTap: true,
+      // 菜单开着时点别处 = 只关菜单，那一击不落到画布/主画布（原 shadow 内行为保留并推广）
+      ariaLabel: this._labels.menu,
+      onClose: () => {
+        this._menu = null;
+        this._menuAnchor = null;
+        this._delArmed = false;
+      },
+      onPick: (id) => {
+        if (id === "delete") {
+          if (!this._delArmed) {
+            this._delArmed = true;
+            return "keep";
+          }
+          this._deleteCurrent();
+          return;
+        }
+        if (id === "earlier" || id === "later") {
+          this._delArmed = false;
+          this._moveCurrent(id === "earlier" ? -1 : 1);
+          return "keep";
+        }
+        if (id === "loop") {
+          const cur = this._deck.current;
+          if (!cur)
+            return;
+          const loop = !cur.play?.loop;
+          if (this._audio && this._audioOf === cur.id)
+            this._audio.loop = loop;
+          this._deck.setPlay(cur.id, { t: this._audio && this._audioOf === cur.id ? this._audio.currentTime : cur.play?.t ?? 0, loop });
+          this._updateAudioLayer();
+          return "keep";
+        }
+        if (id === "ram") {
+          const cur = this._deck.current;
+          if (cur)
+            this._deck.setRam(cur.id, !cur.ram);
+          return "keep";
+        }
+        if (id.startsWith("rate:")) {
+          this._rate = Number(id.slice(5)) || 1;
+          if (this._audio)
+            this._audio.playbackRate = this._rate;
+          this._updateAudioLayer();
+          return "keep";
+        }
+        if (id === "load")
+          this._emit("requestload");
+        else if (id === "paste")
+          this._emit("requestpaste");
+        else if (id === "cloud")
+          this._emit("requestcloudload");
+        else if (id === "live" || id.startsWith("live:")) {
+          const t = this._liveMenuTargets().find((x) => this._liveMenuId(x.target) === id);
+          this.showLive(t?.target ?? null, t?.target == null ? "" : t.label);
+          this._emitItems();
+        } else if (id === "onetoone")
+          this.oneToOne();
+        else if (id === "minimize")
+          this._setMinimizedByUser(true);
+      }
+    });
+    this._menuAnchor = this._menu ? this._plusEl : null;
+  }
+  _pokeIdle() {
+    this.classList.remove("idle");
+    if (this._idleTimer)
+      clearTimeout(this._idleTimer);
+    this._idleTimer = setTimeout(() => {
+      this.classList.add("idle");
+    }, IDLE_DIM_MS);
+  }
+  _onDown(e) {
+    if (!this.hasAttribute("pick"))
+      this.focus({ preventScroll: true });
+    try {
+      this._canvas.setPointerCapture?.(e.pointerId);
+    } catch {
+    }
+    this._pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    if (this._pointers.size === 1) {
+      if (this.hasAttribute("pick")) {
+        this._beginPick(e);
+        e.preventDefault();
+        return;
+      }
+      if (e.pointerType === "touch") {
+        this._lpStart = { x: e.clientX, y: e.clientY };
+        this._lpEvent = e;
+        this._longPressTimer = setTimeout(() => {
+          this._longPressTimer = null;
+          if (this._lpEvent)
+            this._beginPick(this._lpEvent);
+        }, REF_LONG_PRESS_MS);
+      }
+    }
+    if (this._pointers.size === 2) {
+      this._cancelLongPress();
+      this._endPick();
+      const arr = [...this._pointers.values()];
+      const dx = arr[1].x - arr[0].x, dy = arr[1].y - arr[0].y;
+      this._gestureStart = {
+        midX: (arr[0].x + arr[1].x) / 2,
+        midY: (arr[0].y + arr[1].y) / 2,
+        dist: Math.hypot(dx, dy) || 1,
+        angle: Math.atan2(dy, dx),
+        vp: { ...this._vp }
+      };
+    }
+    e.preventDefault();
+  }
+  _onMove(e) {
+    const p = this._pointers.get(e.pointerId);
+    if (!p)
+      return;
+    const px = p.x, py = p.y;
+    p.x = e.clientX;
+    p.y = e.clientY;
+    if (this._longPressTimer && this._lpStart) {
+      const ddx = e.clientX - this._lpStart.x, ddy = e.clientY - this._lpStart.y;
+      if (ddx * ddx + ddy * ddy > REF_LONG_PRESS_CANCEL_SQ)
+        this._cancelLongPress();
+    }
+    if (this._picking && this._pointers.size === 1) {
+      this._pickAt(e.clientX, e.clientY);
+      e.preventDefault();
+      return;
+    }
+    if (this._pointers.size === 1) {
+      this._vp.tx += e.clientX - px;
+      this._vp.ty += e.clientY - py;
+      this._containVp();
+      this._saveCurrentVp();
+      this._emitViewport();
+      this._invalidate();
+    } else if (this._pointers.size >= 2 && this._gestureStart) {
+      const arr = [...this._pointers.values()];
+      const dx = arr[1].x - arr[0].x, dy = arr[1].y - arr[0].y;
+      const dist = Math.hypot(dx, dy) || 1;
+      const midX = (arr[0].x + arr[1].x) / 2;
+      const midY = (arr[0].y + arr[1].y) / 2;
+      const angle = Math.atan2(dy, dx);
+      const g = this._gestureStart;
+      const b = this._scaleBounds();
+      const { scale, rot } = pinchScaleRot(g, dist, angle, b.lo, b.hi);
+      const rect = this._canvas.getBoundingClientRect();
+      const ip = screenToImg(g.midX - rect.left, g.midY - rect.top, g.vp);
+      const t = solveAnchorTranslation(ip, scale, rot, midX - rect.left, midY - rect.top);
+      this._vp = { tx: t.tx, ty: t.ty, scale, rot };
+      this._containVp();
+      this._saveCurrentVp();
+      this._emitViewport();
+      this._invalidate();
+    }
+    e.preventDefault();
+  }
+  _onUp(e) {
+    this._pointers.delete(e.pointerId);
+    this._cancelLongPress();
+    if (this._pointers.size === 0)
+      this._endPick();
+    if (this._pointers.size < 2)
+      this._gestureStart = null;
+    e.preventDefault?.();
+  }
+  _onWheel(e) {
+    e.preventDefault();
+    const rect = this._canvas.getBoundingClientRect();
+    const sx = e.clientX - rect.left;
+    const sy = e.clientY - rect.top;
+    const ip = screenToImg(sx, sy, this._vp);
+    const factor = e.ctrlKey || e.metaKey ? Math.exp(-e.deltaY * 0.01) : Math.exp(-e.deltaY * 5e-3);
+    const b = this._scaleBounds();
+    const newScale = clamp(this._vp.scale * factor, b.lo, b.hi);
+    const t = solveAnchorTranslation(ip, newScale, this._vp.rot, sx, sy);
+    this._vp.tx = t.tx;
+    this._vp.ty = t.ty;
+    this._vp.scale = newScale;
+    this._containVp();
+    this._saveCurrentVp();
+    this._emitViewport();
+    this._invalidate();
+  }
+  _setTextScale(scale) {
+    const s = clamp(scale, TEXT_SCALE_MIN, TEXT_SCALE_MAX);
+    if (s === this._vp.scale)
+      return;
+    this._vp.scale = s;
+    this._textEl.style.setProperty("--ref-text-scale", String(s));
+    this._saveCurrentVp();
+    this._emitViewport();
+  }
+  // ---- 吸色（v154；宿主拿事件接主吸色 setColor + pin）----
+  _cancelLongPress() {
+    if (this._longPressTimer) {
+      clearTimeout(this._longPressTimer);
+      this._longPressTimer = null;
+    }
+    this._lpStart = null;
+    this._lpEvent = null;
+  }
+  _beginPick(e) {
+    this._picking = true;
+    this._cancelLongPress();
+    this._emit("colorpickstart");
+    this._pickAt(e.clientX, e.clientY);
+  }
+  _endPick() {
+    if (!this._picking)
+      return;
+    this._picking = false;
+    this._emit("colorpickend");
+  }
+  // 读自家 canvas 像素（所见即所吸）。透明区 hex=null（宿主收 pin）。半透明合成到白底。
+  _pickAt(clientX, clientY) {
+    const rect = this._canvas.getBoundingClientRect();
+    const dpr = window.devicePixelRatio || 1;
+    let px = Math.round((clientX - rect.left) * dpr);
+    let py = Math.round((clientY - rect.top) * dpr);
+    px = Math.max(0, Math.min(this._canvas.width - 1, px));
+    py = Math.max(0, Math.min(this._canvas.height - 1, py));
+    let d;
+    try {
+      d = this._cctx.getImageData(px, py, 1, 1).data;
+    } catch {
+      return;
+    }
+    let r = d[0], g = d[1], b = d[2];
+    const a = d[3];
+    if (a === 0) {
+      this._emit("colorpick", { hex: null, screenX: clientX, screenY: clientY });
+      return;
+    }
+    if (a < 255) {
+      const f = a / 255;
+      r = Math.round(r * f + 255 * (1 - f));
+      g = Math.round(g * f + 255 * (1 - f));
+      b = Math.round(b * f + 255 * (1 - f));
+    }
+    const hex = "#" + [r, g, b].map((v) => v.toString(16).padStart(2, "0")).join("");
+    this._emit("colorpick", { hex, screenX: clientX, screenY: clientY });
+  }
+  // ---- 渲染 ----
+  _resizeCanvasToBody() {
+    const dpr = window.devicePixelRatio || 1;
+    const w = this.clientWidth;
+    const h2 = this.clientHeight;
+    if (w <= 0 || h2 <= 0)
+      return;
+    this._canvas.width = Math.round(w * dpr);
+    this._canvas.height = Math.round(h2 * dpr);
+    this._canvas.style.width = w + "px";
+    this._canvas.style.height = h2 + "px";
+  }
+  _invalidate() {
+    if (this._raf)
+      return;
+    this._raf = requestAnimationFrame(() => {
+      this._raf = null;
+      this._render();
+    });
+  }
+  _stopLiveTimer() {
+    this._liveSource = null;
+    this._liveSize = null;
+    this._liveOf = null;
+    this._liveDirty = false;
+    if (this._liveThrottle != null) {
+      clearTimeout(this._liveThrottle);
+      this._liveThrottle = null;
+    }
+  }
+  /** 手上的帧是另一张卡的（多台相机之间翻页）→ 扔掉，连节流的计时一起清：新卡的第一帧要立刻出，不许先画一下别人的画面。 */
+  _dropLiveIfOther(cur) {
+    if (this._liveOf === cur.id)
+      return;
+    this._liveSource = null;
+    this._liveSize = null;
+    this._liveOf = cur.id;
+    this._lastLiveComposeT = void 0;
+    if (this._liveThrottle != null) {
+      clearTimeout(this._liveThrottle);
+      this._liveThrottle = null;
+    }
+  }
+  /** 向宿主要一帧。要到了返回 true。 */
+  _takeLiveFrame(cur) {
+    if (!this.liveProvider)
+      return false;
+    const want = { width: this._canvas.width, height: this._canvas.height };
+    const got = this.liveProvider(want, cur.target ?? null);
+    if (!got)
+      return false;
+    const wrapped = "source" in got;
+    const src = wrapped ? got.source : got;
+    this._liveSource = src;
+    this._liveSize = wrapped ? { w: got.width, h: got.height } : { w: src.width, h: src.height };
+    this._liveOf = cur.id;
+    this._lastLiveComposeT = performance.now();
+    return true;
+  }
+  // live 合成：只在脏标真起时问 provider；节流内保留脏标等 timer 补帧（S9）。
+  _recomposeLive() {
+    const cur = this._deck.current;
+    if (!this.liveProvider || !cur)
+      return true;
+    this._dropLiveIfOther(cur);
+    const gap = Math.max(0, this.liveMinIntervalMs);
+    const now = performance.now();
+    const since = now - (this._lastLiveComposeT ?? -Infinity);
+    if (since < gap) {
+      if (this._liveThrottle == null) {
+        this._liveThrottle = setTimeout(() => {
+          this._liveThrottle = null;
+          this._invalidate();
+        }, gap + 20 - since);
+      }
+      return false;
+    }
+    this._takeLiveFrame(cur);
+    return true;
+  }
+  _render() {
+    const cur = this._deck.current;
+    if (cur?.kind === "live" && this._liveDirty) {
+      if (this._recomposeLive())
+        this._liveDirty = false;
+    }
+    const dpr = window.devicePixelRatio || 1;
+    const W = this._canvas.width, H = this._canvas.height;
+    const ctx = this._cctx;
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.clearRect(0, 0, W, H);
+    let source = null;
+    if (cur?.kind === "live") {
+      if (!this._liveSource)
+        this._recomposeLive();
+      source = this._liveSource;
+    } else if (cur)
+      source = this._bitmaps.get(cur.id) ?? null;
+    if (!source)
+      return;
+    const nearest = this._vp.scale >= NEAREST_MIN_SCALE;
+    ctx.imageSmoothingEnabled = !nearest;
+    if (!nearest)
+      ctx.imageSmoothingQuality = "high";
+    const v = this._vp;
+    const c = Math.cos(v.rot), s = Math.sin(v.rot);
+    ctx.setTransform(v.scale * c * dpr, v.scale * s * dpr, -v.scale * s * dpr, v.scale * c * dpr, v.tx * dpr, v.ty * dpr);
+    const size = cur?.kind === "live" && this._liveSize ? this._liveSize : { w: source.width, h: source.height };
+    ctx.drawImage(source, -size.w / 2, -size.h / 2, size.w, size.h);
+  }
+  _updateEmptyHint() {
+    this._emptyEl.classList.toggle("hidden", this._deck.size > 0);
+  }
+  /** 视口护栏：尺寸不超视口预算、位置不落屏外（拖已自钳；这里兜 restore/open/浏览器窗口 resize/
+   *  native CSS resize 四条路）。返回是否有修正。 */
+  /** 地板变了（键盘露 / 收、顶栏高度变）之后宿主调：整窗钳回可见区，动了就发 rectchange。 */
+  reclamp() {
+    if (this._clampIntoViewport())
+      this._emitRect();
+  }
+  /** 0.4.1 用户收起 / 恢复（菜单项、点小图标）：改状态 + 发 minimizechange（宿主想记住就记）。 */
+  _setMinimizedByUser(v) {
+    if (v === this.minimized)
+      return;
+    this.minimized = v;
+    this._emit("minimizechange", { minimized: v });
+  }
+  /** 恢复成整窗之后：小图标可能被挪到了右下角——整窗钳回可见区；画面重新按窗大小铺（收着时 canvas 是隐藏的）。 */
+  _afterRestore() {
+    if (!this.open)
+      return;
+    if (this._clampIntoViewport())
+      this._emitRect();
+    this._resizeCanvasToBody();
+    if (this.live)
+      this._liveDirty = true;
+    this._pokeIdle();
+    this._invalidate();
+  }
+  _clampIntoViewport() {
+    const vw = window.innerWidth, vh = window.innerHeight;
+    if (!(vw > 0) || !(vh > 0))
+      return false;
+    let w = this.offsetWidth, h2 = this.offsetHeight;
+    if (!(w > 0) || !(h2 > 0))
+      return false;
+    let changed = false;
+    const maxW = Math.max(MIN_EDGE, vw - 8), maxH = Math.max(MIN_EDGE, vh - this.topFloor - this.bottomFloor - 8);
+    if (w > maxW || h2 > maxH) {
+      const cs = getComputedStyle(this), bw = w - parseFloat(cs.width), bh = h2 - parseFloat(cs.height);
+      if (w > maxW) {
+        this.style.width = Math.max(0, maxW - (bw > 0 ? bw : 0)) + "px";
+        changed = true;
+      }
+      if (h2 > maxH) {
+        this.style.height = Math.max(0, maxH - (bh > 0 ? bh : 0)) + "px";
+        changed = true;
+      }
+      w = this.offsetWidth;
+      h2 = this.offsetHeight;
+    }
+    const r = this.getBoundingClientRect();
+    const left = clamp(r.left, 0, vw - w);
+    const top = clamp(r.top, this.topFloor, Math.max(this.topFloor, vh - this.bottomFloor - h2));
+    if (Math.abs(left - r.left) > 0.5) {
+      this.style.left = left + "px";
+      changed = true;
+    }
+    if (Math.abs(top - r.top) > 0.5) {
+      this.style.top = top + "px";
+      changed = true;
+    }
+    return changed;
+  }
+};
+function clamp(x, lo, hi) {
+  return Math.max(lo, Math.min(hi, x));
+}
+function screenToImg(sx, sy, vp) {
+  const c = Math.cos(-vp.rot), s = Math.sin(-vp.rot);
+  const dx = sx - vp.tx, dy = sy - vp.ty;
+  return { x: (dx * c - dy * s) / vp.scale, y: (dx * s + dy * c) / vp.scale };
+}
+var WP_REFERENCE_WINDOW_TAG = "wp-reference-window";
+if (!customElements.get(WP_REFERENCE_WINDOW_TAG)) {
+  customElements.define(WP_REFERENCE_WINDOW_TAG, WpReferenceWindow);
+}
+
+// node_modules/@internal/reference-window/dist/deck/manifest.js
+var DECK_MANIFEST_VERSION = 1;
+var DECK_MANIFEST_NAME = "manifest.json";
+function deckDir(app) {
+  if (!/^[a-z][a-z0-9-]*$/.test(app))
+    throw new Error(`deckDir: app name must be lowercase [a-z0-9-], got "${app}"`);
+  return `.${app}/references`;
+}
+var DeckManifestTooNewError = class extends Error {
+  fileVersion;
+  libVersion;
+  constructor(fileVersion, libVersion) {
+    super(`reference manifest version ${fileVersion} is newer than this library supports (${libVersion}); refusing to read`);
+    this.name = "DeckManifestTooNewError";
+    this.fileVersion = fileVersion;
+    this.libVersion = libVersion;
+  }
+};
+var EXT_BY_MIME = {
+  "image/jpeg": "jpg",
+  "image/png": "png",
+  "image/webp": "webp",
+  "image/gif": "gif",
+  "text/plain": "txt",
+  "text/markdown": "md",
+  "video/mp4": "mp4",
+  "video/webm": "webm",
+  "audio/mpeg": "mp3",
+  "audio/mp4": "m4a",
+  "audio/ogg": "ogg",
+  "audio/opus": "opus",
+  "audio/webm": "weba",
+  // 0.4.0（2026-10-09，音频卡；Claude Opus 5.5）：以前这几种落成 bin
+  "audio/wav": "wav",
+  "audio/flac": "flac",
+  "audio/aac": "aac",
+  "video/quicktime": "mov"
+};
+var MIME_BY_EXT = Object.fromEntries(Object.entries(EXT_BY_MIME).map(([m, e]) => [e, m]));
+var EXT_BY_MIME_ALIAS = {
+  "audio/x-wav": "wav",
+  "audio/wave": "wav",
+  "audio/vnd.wave": "wav",
+  "audio/x-m4a": "m4a",
+  "audio/mp3": "mp3",
+  "audio/x-flac": "flac",
+  "audio/aacp": "aac"
+};
+function extForMime(mime) {
+  const base = (mime || "").split(";")[0].trim().toLowerCase();
+  return EXT_BY_MIME[base] ?? EXT_BY_MIME_ALIAS[base] ?? (base.startsWith("image/") ? "img" : "bin");
+}
+function mimeForName(name) {
+  const m = /\.([A-Za-z0-9]+)$/.exec(name || "");
+  return m ? MIME_BY_EXT[m[1].toLowerCase()] ?? "" : "";
+}
+function extOfName(name) {
+  const m = /\.([A-Za-z0-9]+)$/.exec(name || "");
+  return m ? m[1].toLowerCase() : "bin";
+}
+var fileName = (dir, position, ext) => `${dir}/r${position}.${ext}`;
+var STEPS = {};
+function isObj(x) {
+  return !!x && typeof x === "object" && !Array.isArray(x);
+}
+function migrateDeckManifest(json) {
+  const src = isObj(json) ? json : {};
+  let v = typeof src.version === "number" && Number.isFinite(src.version) ? Math.trunc(src.version) : 1;
+  if (v > DECK_MANIFEST_VERSION)
+    throw new DeckManifestTooNewError(v, DECK_MANIFEST_VERSION);
+  let cur = src;
+  while (v < DECK_MANIFEST_VERSION) {
+    const step = STEPS[v];
+    if (!step)
+      throw new Error(`migrateDeckManifest: no step registered for v${v} \u2192 v${v + 1}`);
+    cur = step(cur);
+    v++;
+    if (cur.version !== v)
+      throw new Error(`migrateDeckManifest: step v${v - 1}\u2192v${v} did not set version`);
+  }
+  const items = Array.isArray(cur.items) ? cur.items.filter((it) => isObj(it) && typeof it.kind === "string" && !!it.kind) : [];
+  const index = typeof cur.index === "number" && Number.isFinite(cur.index) ? Math.trunc(cur.index) : 0;
+  return { version: DECK_MANIFEST_VERSION, index, items };
+}
+function readView(x) {
+  if (!isObj(x))
+    return null;
+  const { tx: tx3, ty, scale, rot } = x;
+  const ok = [tx3, ty, scale, rot].every((n) => typeof n === "number" && Number.isFinite(n));
+  return ok ? { tx: tx3, ty, scale, rot } : null;
+}
+function readPlay(x) {
+  if (!isObj(x) || typeof x.t !== "number" || !Number.isFinite(x.t))
+    return null;
+  return { t: x.t, loop: !!x.loop };
+}
+var str = (x) => typeof x === "string" ? x : "";
+async function decodeDeck(o) {
+  const dir = deckDir(o.app);
+  const blob = o.getFile(`${dir}/${DECK_MANIFEST_NAME}`);
+  if (!blob)
+    return { index: 0, cards: [], carried: [] };
+  let json;
+  try {
+    json = JSON.parse(await blob.text());
+  } catch (e) {
+    throw new Error(`decodeDeck: ${dir}/${DECK_MANIFEST_NAME} is not valid JSON: ${String(e.message)}`);
+  }
+  return decodeDeckFromJson(json, o);
+}
+function decodeDeckFromJson(manifestJson, o) {
+  const m = migrateDeckManifest(manifestJson);
+  const known = new Set(o.knownKinds);
+  const cards2 = [];
+  const carried = [];
+  let index = 0, indexSet = false;
+  m.items.forEach((raw, at) => {
+    if (!known.has(raw.kind)) {
+      const files = {};
+      const s = str(raw.src) ? o.getFile(str(raw.src)) : null;
+      if (s)
+        files.src = s;
+      carried.push({ at, item: JSON.parse(JSON.stringify(raw)), files });
+      return;
+    }
+    const ram = isObj(raw.ram) && typeof raw.ram.bytes === "number" && Number.isFinite(raw.ram.bytes) ? { bytes: raw.ram.bytes } : null;
+    const src = ram ? "" : str(raw.src);
+    const bytes = src ? o.getFile(src) : null;
+    if (at === m.index) {
+      index = cards2.length;
+      indexSet = true;
+    }
+    cards2.push({
+      kind: raw.kind,
+      name: str(raw.name),
+      bytes,
+      mime: str(raw.mime) || bytes?.type || mimeForName(src),
+      target: str(raw.target) || null,
+      vp: readView(raw.vp),
+      play: readPlay(raw.play),
+      origin: str(raw.origin) || null,
+      ram
+    });
+  });
+  if (!indexSet)
+    index = Math.max(0, Math.min(cards2.length - 1, m.index));
+  return { index, cards: cards2, carried };
+}
+function encodeDeck(s, o) {
+  const dir = deckDir(o.app);
+  const slots = s.cards.map((card) => ({ card }));
+  for (const c of [...s.carried].sort((a, b) => a.at - b.at)) {
+    const at = Math.max(0, Math.min(slots.length, Math.trunc(c.at) || 0));
+    slots.splice(at, 0, { carried: c });
+  }
+  const files = /* @__PURE__ */ new Map();
+  const items = [];
+  let index = 0;
+  const viewing = s.cards[s.index] ?? null;
+  slots.forEach((slot, position) => {
+    if ("carried" in slot) {
+      const item2 = JSON.parse(JSON.stringify(slot.carried.item));
+      const src = slot.carried.files.src;
+      if (src) {
+        const n = fileName(dir, position, extOfName(str(item2.src)));
+        files.set(n, src);
+        item2.src = n;
+      } else
+        delete item2.src;
+      items.push(item2);
+      return;
+    }
+    const c = slot.card;
+    if (c === viewing)
+      index = position;
+    const item = { kind: c.kind };
+    if (c.bytes && !c.ram) {
+      const n = fileName(dir, position, extForMime(c.mime || c.bytes.type));
+      files.set(n, c.bytes);
+      item.src = n;
+    }
+    item.vp = c.vp ? { tx: c.vp.tx, ty: c.vp.ty, scale: c.vp.scale, rot: c.vp.rot } : null;
+    if (c.name)
+      item.name = c.name;
+    if (c.mime && (!item.src || mimeForName(item.src) !== c.mime.split(";")[0].trim().toLowerCase()))
+      item.mime = c.mime;
+    if (c.target)
+      item.target = c.target;
+    if (c.origin)
+      item.origin = c.origin;
+    if (c.play)
+      item.play = { t: c.play.t, loop: c.play.loop };
+    if (c.ram)
+      item.ram = { bytes: c.ram.bytes };
+    items.push(item);
+  });
+  const manifest = { version: DECK_MANIFEST_VERSION, index, items };
+  const out = /* @__PURE__ */ new Map();
+  out.set(`${dir}/${DECK_MANIFEST_NAME}`, new Blob([JSON.stringify(manifest)], { type: "application/json" }));
+  for (const [n, b] of files)
+    out.set(n, b);
+  return out;
+}
+
+// node_modules/@internal/workbench-elements/dist/host-floors.js
+function safeAreaTop() {
+  const probe = document.createElement("div");
+  probe.style.cssText = "position:fixed;top:0;left:0;height:0;padding-top:env(safe-area-inset-top,0px);visibility:hidden;pointer-events:none;";
+  document.body.appendChild(probe);
+  const v = parseFloat(getComputedStyle(probe).paddingTop) || 0;
+  probe.remove();
+  return v;
+}
+var _f = { toolbarBottom: () => 0, floatingTop: () => safeAreaTop() };
+var floors = { toolbarBottom: () => _f.toolbarBottom(), floatingTop: () => _f.floatingTop() };
+
+// node_modules/@internal/workbench-elements/dist/anchored-popup.js
+function topToolbarBottom() {
+  return floors.toolbarBottom();
+}
+function positionPopup(popupEl, opts = {}) {
+  if (!popupEl)
+    return;
+  const { anchor = null, align = "right", offsetY = 4, edgeMargin = 8, belowToolbars = false, clampViewport = true } = opts;
+  popupEl.style.position = "fixed";
+  const safeTop = safeAreaTop();
+  let top;
+  const w = popupEl.offsetWidth || 0;
+  if (anchor) {
+    const r = anchor.getBoundingClientRect();
+    top = r.bottom + offsetY;
+    if (align === "right") {
+      let right = window.innerWidth - r.right;
+      if (w)
+        right = Math.max(edgeMargin, Math.min(right, window.innerWidth - w - edgeMargin));
+      popupEl.style.right = right + "px";
+      popupEl.style.left = "auto";
+    } else {
+      let left = r.left;
+      if (w)
+        left = Math.max(edgeMargin, Math.min(left, window.innerWidth - w - edgeMargin));
+      popupEl.style.left = left + "px";
+      popupEl.style.right = "auto";
+    }
+  } else {
+    top = safeTop + offsetY;
+    if (align === "right") {
+      popupEl.style.right = edgeMargin + "px";
+      popupEl.style.left = "auto";
+    } else {
+      popupEl.style.left = edgeMargin + "px";
+      popupEl.style.right = "auto";
+    }
+  }
+  if (belowToolbars)
+    top = Math.max(top, topToolbarBottom() + offsetY);
+  top = Math.max(top, safeTop + 4);
+  if (clampViewport) {
+    const h2 = popupEl.offsetHeight || 0;
+    if (h2)
+      top = Math.min(top, Math.max(safeTop + 4, window.innerHeight - h2 - 8));
+  }
+  popupEl.style.top = top + "px";
+}
+
+// node_modules/@internal/workbench-elements/dist/icon.js
+function iconHtml(name, opts = {}) {
+  const { size, cls } = opts;
+  const attrs = [
+    'viewBox="0 0 24 24"',
+    cls ? `class="${cls}"` : "",
+    size ? `width="${size}" height="${size}"` : "",
+    'aria-hidden="true"'
+  ].filter(Boolean).join(" ");
+  return `<svg ${attrs}><use href="#${name}"/></svg>`;
+}
+
+// node_modules/@internal/workbench-elements/dist/popup-menu.js
+var _open = [];
+function currentPopupMenu() {
+  return _open[_open.length - 1] ?? null;
+}
+function togglePopupMenu(opts) {
+  const cur = _open.find((x) => x.anchor === opts.anchor);
+  if (cur) {
+    cur.close();
+    return null;
+  }
+  return openPopupMenu(opts);
+}
+function openPopupMenu(opts) {
+  const variant = opts.variant ?? "list";
+  const band = opts.band ?? "menu";
+  const el = document.createElement("div");
+  el.className = (variant === "compact" ? "lasso-icon-menu lasso-icon-list " : "menu-panel ") + `popup-menu popup-menu--${variant}` + (band === "css" ? "" : ` band-${band}`);
+  el.setAttribute("role", "menu");
+  const render2 = () => {
+    const items = opts.items().filter((it) => !it.hidden);
+    const anyIcon = items.some((it) => !!it.icon);
+    let html = "";
+    for (const it of items) {
+      if (it.separatorBefore)
+        html += `<hr class="popup-menu-sep">`;
+      if (it.header) {
+        html += `<div class="popup-menu-group">${escapeHtml(it.label)}</div>`;
+        continue;
+      }
+      const cls = variant === "compact" ? "lasso-tool-btn popup-menu-item" : "menu-item popup-menu-item" + (anyIcon ? " menu-item-with-icon" : "") + (it.danger ? " danger" : "");
+      const role = it.checked != null ? "menuitemradio" : "menuitem";
+      const checkAttr = it.checked != null ? variant === "compact" ? ` aria-pressed="${it.checked}"` : ` aria-checked="${it.checked}"` : "";
+      const icon2 = anyIcon ? it.icon ? iconHtml(it.icon) : `<span class="menu-item-icon-blank"></span>` : "";
+      html += `<button type="button" class="${cls}" role="${role}" data-id="${escapeHtml(it.id)}"${checkAttr}${it.disabled ? " disabled" : ""}>` + icon2 + `<span class="menu-item-label">${escapeHtml(it.label)}</span></button>`;
+    }
+    el.innerHTML = html;
+  };
+  render2();
+  document.body.appendChild(el);
+  const handle = _mount(el, opts, {
+    reposition: true,
+    onRefresh: render2,
+    onClosed: () => el.remove()
+  });
+  el.addEventListener("click", (e) => {
+    const b = e.target.closest("[data-id]");
+    if (!b || b.disabled)
+      return;
+    e.stopPropagation();
+    const id = b.dataset.id;
+    const item = opts.items().find((it) => it.id === id);
+    if (!item)
+      return;
+    const r = opts.onPick(id, item);
+    if (r === "keep") {
+      if (handle.isOpen)
+        handle.refresh();
+      return;
+    }
+    handle.close();
+  });
+  return handle;
+}
+function _mount(el, opts, hooks) {
+  for (const h2 of [..._open])
+    if (!h2.el.contains(opts.anchor) && h2.el !== el)
+      h2.close();
+  if (opts.ariaLabel)
+    el.setAttribute("aria-label", opts.ariaLabel);
+  let open = true;
+  const position = () => {
+    if (!hooks.reposition)
+      return;
+    positionPopup(el, {
+      anchor: opts.anchor,
+      align: opts.align ?? "right",
+      offsetY: opts.offsetY ?? 4,
+      belowToolbars: opts.belowToolbars,
+      edgeMargin: opts.edgeMargin,
+      clampViewport: true
+    });
+  };
+  const onDocPointerDown = (e) => {
+    const path = e.composedPath();
+    if (path.includes(el) || path.includes(opts.anchor))
+      return;
+    handle.close();
+    if (opts.swallowOutsideTap) {
+      e.stopPropagation();
+      e.preventDefault();
+    }
+  };
+  const onKey2 = (e) => {
+    if (currentPopupMenu() !== handle)
+      return;
+    if (e.key === "Escape") {
+      e.preventDefault();
+      handle.close();
+      return;
+    }
+    if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+      const btns = [...el.querySelectorAll("button:not([disabled])")];
+      if (!btns.length)
+        return;
+      const i = btns.indexOf(document.activeElement);
+      const next = e.key === "ArrowDown" ? (i + 1) % btns.length : (i - 1 + btns.length) % btns.length;
+      btns[next].focus();
+      e.preventDefault();
+    }
+  };
+  const onResize = () => {
+    if (open)
+      position();
+  };
+  let anchorAt = anchorPos();
+  function anchorPos() {
+    const r = opts.anchor.getBoundingClientRect();
+    return { x: r.left, y: r.top };
+  }
+  const onScroll = (e) => {
+    if (!open)
+      return;
+    const t = e.target;
+    if (t && el.contains(t))
+      return;
+    const now = anchorPos();
+    if (Math.abs(now.x - anchorAt.x) < 0.5 && Math.abs(now.y - anchorAt.y) < 0.5)
+      return;
+    handle.close();
+  };
+  const handle = {
+    get isOpen() {
+      return open;
+    },
+    el,
+    anchor: opts.anchor,
+    refresh() {
+      if (!open)
+        return;
+      hooks.onRefresh?.();
+      position();
+      anchorAt = anchorPos();
+    },
+    close() {
+      if (!open)
+        return;
+      open = false;
+      document.removeEventListener("pointerdown", onDocPointerDown, true);
+      document.removeEventListener("keydown", onKey2, true);
+      document.removeEventListener("scroll", onScroll, true);
+      window.removeEventListener("resize", onResize);
+      const i = _open.indexOf(handle);
+      if (i >= 0)
+        _open.splice(i, 1);
+      hooks.onClosed();
+      opts.onClose?.();
+    }
+  };
+  position();
+  setTimeout(() => {
+    if (!open)
+      return;
+    document.addEventListener("pointerdown", onDocPointerDown, true);
+    document.addEventListener("keydown", onKey2, true);
+    document.addEventListener("scroll", onScroll, true);
+    window.addEventListener("resize", onResize);
+  }, 0);
+  _open.push(handle);
+  return handle;
+}
+function escapeHtml(s) {
+  return s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+}
+
+// node_modules/@internal/workbench-elements/src/workbench-elements.css
+var workbench_elements_default = "/* @internal/workbench-elements \u2014\u2014 \u56DB\u4E2A\u539F\u5B50\u7684\u76AE\uFF08WET \u81EA WeebPaint styles.css\uFF0C2026-09-09\uFF0CClaude Fable 5.1\uFF09\u3002\n   class \u540D\u4E0E WeebPaint \u5B8C\u5168\u4E00\u81F4\uFF08\u4E0D\u6539\u8BED\u4E49\uFF09\uFF1B\u5BBF\u4E3B\u5DF2\u6709\u540C\u540D\u89C4\u5219\u65F6\u91CD\u590D\u65E0\u5BB3\uFF0C\u65E5\u540E\u53EF\u5220\u81EA\u5BB6\u90A3\u4EFD\u3002\n   \u9700\u8981\u5BBF\u4E3B :root \u63D0\u4F9B\u7684 token\uFF1A--bg --bg-soft --ink --ink-soft --line --shadow --accent --danger\n                              --z-menu --z-popover --z-modal --z-notice --z-toast */\n\n/* \u2500\u2500 popup-menu \xB7 list \u53D8\u4F53\uFF08.menu-panel \u76AE\uFF09 \u2500\u2500 */\n.menu-panel {\n  position: fixed;\n  min-width: 200px;\n  max-width: min(320px, calc(100vw - 24px));\n  max-height: calc(100vh - 80px);\n  overflow-y: auto;\n  background: var(--bg);\n  border: 1px solid var(--line);\n  border-radius: 8px;\n  box-shadow: var(--shadow);\n  color: var(--ink);\n  z-index: var(--z-menu);\n  padding: 6px;\n  -webkit-overflow-scrolling: touch;\n  overscroll-behavior: contain;\n}\n.popup-menu.band-menu    { z-index: var(--z-menu); }\n.popup-menu.band-popover { z-index: var(--z-popover); }\n.popup-menu.band-modal   { z-index: calc(var(--z-modal) + 5); }\n.popup-menu--list { top: auto; left: auto; }          /* \u5750\u6807\u5168\u7531 positionPopup \u5199 inline */\n.popup-menu-sep { border: none; border-top: 1px solid var(--line); margin: 4px 2px; }\n.popup-menu-item.danger, .popup-menu-item.danger svg { color: var(--danger); }\n.popup-menu-group { font-size: 10px; color: var(--ink-soft); padding: 6px 8px 2px; text-transform: uppercase; letter-spacing: .06em; user-select: none; }\n\n.menu-item {\n  width: 100%;\n  display: flex; align-items: center; justify-content: space-between;\n  padding: 10px 12px;\n  background: transparent; border: none; border-radius: 6px;\n  font: inherit; color: var(--ink); cursor: pointer; text-align: left;\n}\n.menu-item:hover { background: color-mix(in srgb, var(--ink) 8%, transparent); }\n.menu-item:disabled { opacity: 0.35; cursor: not-allowed; }\n.menu-item:disabled:hover { background: transparent; }\n.menu-item.menu-item-with-icon { justify-content: flex-start; gap: 10px; }\n.menu-item.menu-item-with-icon svg { width: 18px; height: 18px; flex-shrink: 0; }\n.menu-item-icon-blank { width: 18px; height: 18px; flex: none; }\n.menu-item-label { min-width: 0; }\n\n/* \u2500\u2500 popup-menu \xB7 compact \u53D8\u4F53\uFF08.lasso-icon-menu.lasso-icon-list \u76AE + .lasso-tool-btn \u836F\u4E38\u884C\uFF09 \u2500\u2500 */\n.lasso-icon-menu {\n  position: fixed; display: flex; gap: 2px; padding: 4px;\n  z-index: var(--z-popover);\n  background: var(--bg-soft); border: 1px solid var(--line); border-radius: 8px; box-shadow: var(--shadow);\n  color: var(--ink);\n}\n.lasso-icon-menu.lasso-icon-list { flex-direction: column; align-items: stretch; min-width: 168px; }\n.lasso-icon-menu.lasso-icon-list > button { display: flex; align-items: center; justify-content: flex-start; gap: 8px; padding: 5px 8px; font-size: 12px; }\n.lasso-icon-menu.lasso-icon-list > button svg { width: 18px; height: 18px; flex: 0 0 auto; }\n.lasso-tool-btn {\n  background: transparent; border: none;\n  padding: 4px 10px; font: inherit; font-size: 13px; color: var(--ink);\n  cursor: pointer; border-radius: 999px; white-space: nowrap;\n}\n.lasso-tool-btn:hover { background: color-mix(in srgb, var(--ink) 8%, transparent); }\n\n/* \u2500\u2500 notice \xB7 \u6808 + .toast \u76AE \u2500\u2500 */\n.toast {\n  position: fixed; left: 50%; bottom: max(env(safe-area-inset-bottom, 0px), 20px); transform: translateX(-50%);\n  display: flex; align-items: center; gap: 8px; padding: 8px 12px;\n  background: var(--ink); color: var(--bg);\n  border-radius: 999px; box-shadow: var(--shadow);\n  z-index: var(--z-toast); font-size: 13px;\n}\n.toast button {\n  background: transparent; border: 1px solid color-mix(in srgb, var(--bg) 40%, transparent); color: var(--bg);\n  padding: 4px 10px; border-radius: 999px; font-size: 12px; cursor: pointer;\n}\n.toast button.dismiss { border: none; font-size: 16px; padding: 2px 6px; }\n.dismiss svg { width: 16px; height: 16px; display: block; }\n.notice-stack {\n  position: fixed; left: 50%; transform: translateX(-50%);\n  bottom: max(env(safe-area-inset-bottom, 0px), 20px);\n  display: flex; flex-direction: column; align-items: center; gap: 8px;\n  max-width: calc(100vw - 24px);\n  z-index: var(--z-notice);\n  pointer-events: none;\n}\n.notice-stack.docked-top { bottom: auto; }\n.notice-stack > .toast { position: static; transform: none; pointer-events: auto; max-width: min(640px, calc(100vw - 24px)); flex-wrap: wrap; justify-content: center; }\n.notice-stack > .toast .notice-text { white-space: pre-wrap; word-break: break-word; max-height: 40vh; overflow: auto; }\n.toast.notice-error   { background: #c0392b; color: #fff; }\n.toast.notice-warning { background: #b7791f; color: #fff; }\n.toast.notice-error button, .toast.notice-warning button { color: #fff; border-color: rgba(255, 255, 255, 0.4); }\n.toast button.primary { background: rgba(255, 255, 255, 0.18); font-weight: 600; }\n";
+
+// src/app/guide-window.ts
+var APP = "kudsrocket";
+var KINDS = ["image", "text"];
+var ASK_ABOVE = 1024 * 1024;
+var RAM_ABOVE = 4 * 1024 * 1024;
+var SAVE_DELAY_MS = 1500;
+var mb2 = (n) => `${(n / 2 ** 20).toFixed(n >= 10 * 2 ** 20 ? 0 : 1)} MB`;
+function createGuideWindow(d) {
+  let el = null;
+  let fileInput = null;
+  let game = null;
+  let getPw = () => null;
+  let phase = "none";
+  let why = null;
+  let head = { v: TIN_VERSION };
+  let others = /* @__PURE__ */ new Map();
+  let loading = null;
+  let loadTimer = null;
+  let saveTimer = null;
+  let cardsDirty = false, viewDirty = false;
+  let applying = false;
+  let saving = Promise.resolve();
+  let told = false;
+  function ensureEl() {
+    if (el) return el;
+    document.head.append(h("style", { id: "workbench-elements-css" }, workbench_elements_default));
+    const w = document.createElement("wp-reference-window");
+    w.className = "ref-window";
+    w.setAttribute("no-cloud", "");
+    w.menuPort = (o) => {
+      const handle = togglePopupMenu(o);
+      const fs = document.fullscreenElement;
+      if (handle && fs) {
+        const menus = document.body.querySelectorAll(":scope > .popup-menu");
+        const m = menus[menus.length - 1];
+        if (m) fs.append(m);
+      }
+      return handle;
+    };
+    w.labels = {
+      load: "\u5BFC\u5165\u56FE\u7247 / \u6587\u5B57\u2026",
+      paste: "\u7C98\u8D34",
+      oneToOne: "\u539F\u5C3A\u5BF8",
+      del: "\u5220\u6389\u8FD9\u5F20",
+      delConfirm: "\u518D\u70B9\u4E00\u6B21\u5220\u6389",
+      closeWin: "\u6536\u8D77\u53C2\u8003\u7A97",
+      prev: "\u4E0A\u4E00\u5F20",
+      next: "\u4E0B\u4E00\u5F20",
+      menu: "\u53C2\u8003\u7A97\u83DC\u5355",
+      move: "\u62D6\u52A8",
+      resize: "\u6539\u5927\u5C0F",
+      resizeAria: "\u6539\u5927\u5C0F",
+      moveEarlier: "\u5F80\u524D\u632A",
+      moveLater: "\u5F80\u540E\u632A",
+      jump: "\u8DF3\u5230\u2026",
+      kindNames: { image: "\u56FE\u7247", text: "\u6587\u5B57" },
+      linkMissing: "\u5185\u5BB9\u4E0D\u5728\u4E86",
+      ram: "\u53EA\u653E\u5185\u5B58\uFF08\u4E0D\u5B58\u8FDB\u76D2\u5B50\uFF09",
+      ramMissing: "\u53EA\u5728\u5185\u5B58\u91CC\uFF0C\u6CA1\u5B58\u2014\u2014\u628A\u8FD9\u4E2A\u6587\u4EF6\u62D6\u8FDB\u6765\uFF0C\u6216\u8005\u70B9 \uFF0B \u91CD\u65B0\u5BFC\u5165\uFF0C\u5C31\u8865\u56DE\u8FD9\u91CC",
+      minimize: "\u7F29\u6210\u5C0F\u56FE\u6807",
+      restore: "\u70B9\u4E00\u4E0B\u6062\u590D\uFF0C\u6309\u4F4F\u62D6\u52A8\u632A\u4F4D\u7F6E"
+    };
+    const input = h("input", { type: "file", multiple: true, hidden: true, accept: "image/*,.txt,.md,text/plain,text/markdown" });
+    (document.fullscreenElement ?? document.body).append(w);
+    document.body.append(input);
+    el = w;
+    fileInput = input;
+    w.deck.onChange((what) => {
+      if (applying) return;
+      if (what.type === "cards") {
+        cardsDirty = true;
+        scheduleSave();
+      } else if (what.type === "view") viewDirty = true;
+    });
+    w.addEventListener("openchange", () => {
+      viewDirty = true;
+      if (w.open) syncFloor();
+    });
+    w.addEventListener("rectchange", () => {
+      viewDirty = true;
+    });
+    w.addEventListener("requestload", () => {
+      input.value = "";
+      input.click();
+    });
+    input.addEventListener("change", () => {
+      const files = [...input.files ?? []];
+      if (files.length) void importFiles(files);
+    });
+    w.addEventListener("requestpaste", () => {
+      void pasteFromClipboard();
+    });
+    addEventListener("paste", (e) => {
+      if (!w.hasFocus) return;
+      const cd = e.clipboardData;
+      if (!cd) return;
+      e.preventDefault();
+      e.stopPropagation();
+      const files = [...cd.files];
+      if (files.length) {
+        void importFiles(files);
+        return;
+      }
+      const text = cd.getData("text/plain");
+      if (text.trim()) {
+        w.addText(text, { name: "" });
+        w.open = true;
+        return;
+      }
+      d.say("\u526A\u8D34\u677F\u91CC\u6CA1\u6709\u56FE\u7247\u6216\u6587\u5B57", 3e3);
+    }, true);
+    w.addEventListener("dragover", (e) => {
+      if (e.dataTransfer && Array.from(e.dataTransfer.types).includes("Files")) {
+        e.preventDefault();
+        e.stopPropagation();
+        e.dataTransfer.dropEffect = "copy";
+      }
+    });
+    w.addEventListener("drop", (e) => {
+      const files = [...e.dataTransfer?.files ?? []];
+      if (!files.length) return;
+      e.preventDefault();
+      e.stopPropagation();
+      void importFiles(files);
+    });
+    w.addEventListener("notice", (e) => {
+      const n = e.detail;
+      d.log(n.level === "error" ? "warn" : "info", `\u53C2\u8003\u7A97\uFF1A${n.code} ${n.name ?? ""} ${n.message}`);
+      if (n.code === "decode-failed") d.say(`\u8FD9\u5F20\u56FE\u8FD9\u4E2A\u6D4F\u89C8\u5668\u6253\u4E0D\u5F00${n.name ? `\uFF1A${n.name}` : ""}`, 4e3);
+    });
+    w.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        e.stopPropagation();
+        w.blur();
+        document.activeElement?.blur?.();
+        return;
+      }
+      if (e.ctrlKey || e.metaKey) e.stopPropagation();
+    });
+    w.addEventListener("keyup", (e) => {
+      if (e.ctrlKey || e.metaKey || e.key === "Escape") e.stopPropagation();
+    });
+    document.addEventListener("fullscreenchange", () => {
+      (document.fullscreenElement ?? document.body).append(w);
+      if (w.open) syncFloor();
+    });
+    addEventListener("resize", () => {
+      if (w.open) syncFloor();
+    });
+    return w;
+  }
+  function syncFloor() {
+    if (!el) return;
+    el.topFloor = d.topFloor();
+    el.bottomFloor = 0;
+    if (el.open) el.reclamp();
+  }
+  async function importFiles(files) {
+    const w = ensureEl();
+    const r = await w.importFiles(files, { kinds: KINDS, ask, askAbove: { image: ASK_ABOVE }, ramAbove: RAM_ABOVE });
+    for (const k of r.skipped) {
+      if (k.why === "unsupported") d.say(`\u8BA4\u4E0D\u51FA\uFF1A${k.name}\uFF08\u53C2\u8003\u7A97\u6536\u56FE\u7247\u548C\u6587\u5B57\uFF09`, 4e3);
+      else if (k.why === "failed") {
+        d.say(`\u6CA1\u52A0\u4E0A\uFF1A${k.name}`, 4e3);
+        d.log("warn", `\u53C2\u8003\u7A97\uFF1A${k.name} \u6CA1\u52A0\u4E0A\uFF1A${k.message ?? "?"}`);
+      }
+    }
+    for (const n of r.notes) d.log("info", `\u53C2\u8003\u7A97\uFF1A${n}`);
+    if (r.added.length || r.filled.length) {
+      tellIfNotSaved();
+      d.log("info", `\u53C2\u8003\u7A97\uFF1A\u52A0\u4E86 ${r.added.length} \u5F20${r.filled.length ? `\u3001\u8865\u56DE ${r.filled.length} \u5F20` : ""}`);
+    }
+  }
+  async function pasteFromClipboard() {
+    const w = ensureEl();
+    try {
+      for (const it of await navigator.clipboard.read()) {
+        const img = it.types.find((x) => x.startsWith("image/"));
+        if (img) {
+          await importFiles([new File([await it.getType(img)], `clipboard.${img.split("/")[1] ?? "png"}`, { type: img })]);
+          return;
+        }
+        if (it.types.includes("text/plain")) {
+          const text = await (await it.getType("text/plain")).text();
+          if (text.trim()) {
+            w.addText(text, { name: "" });
+            w.open = true;
+            tellIfNotSaved();
+            return;
+          }
+        }
+      }
+    } catch {
+      try {
+        const text = await navigator.clipboard.readText();
+        if (text.trim()) {
+          w.addText(text, { name: "" });
+          w.open = true;
+          tellIfNotSaved();
+          return;
+        }
+      } catch {
+      }
+    }
+    d.say("\u526A\u8D34\u677F\u91CC\u6CA1\u6709\u56FE\u7247\u6216\u6587\u5B57\uFF08\u6216\u6D4F\u89C8\u5668\u4E0D\u8BA9\u8BFB\uFF09", 3e3);
+  }
+  function ask(q) {
+    return sheet((done) => {
+      const keep = h("button", { class: q.suggestRam ? "" : "primary", onclick: () => done("keep") }, "\u5B58\u8FDB\u76D2\u5B50");
+      const ram = h("button", { class: q.suggestRam ? "primary" : "", onclick: () => done("ram") }, "\u53EA\u653E\u5185\u5B58");
+      return [
+        h("h2", {}, `${q.name}\uFF1A${mb2(q.bytes)}`),
+        h("p", { class: "muted" }, "\u5B58\u8FDB\u76D2\u5B50 = \u8DDF\u7740\u8FD9\u4E2A\u6E38\u620F\u540C\u6B65\u5230 OneDrive\uFF0C\u522B\u7684\u8BBE\u5907\u4E5F\u80FD\u770B\uFF08\u4E4B\u540E\u6BCF\u6B21\u6539\u53C2\u8003\u7A97\u90FD\u8981\u4F20\u4E00\u6B21\u6574\u76D2\uFF09\u3002\u53EA\u653E\u5185\u5B58 = \u8FD9\u6B21\u6253\u5F00\u6709\u6548\uFF0C\u4E0B\u6B21\u662F\u4E2A\u7A7A\u4F4D\uFF0C\u628A\u540C\u4E00\u4E2A\u6587\u4EF6\u62D6\u8FDB\u6765\u5C31\u8865\u56DE\u3002"),
+        h("div", { class: "row" }, ...q.suggestRam ? [ram, keep] : [keep, ram], h("button", { onclick: () => done("cancel") }, "\u7B97\u4E86"))
+      ];
+    }).then((v) => v ?? "cancel");
+  }
+  function tellIfNotSaved() {
+    if (told || phase === "ready" || phase === "loading") return;
+    told = true;
+    d.say(phase === "nopw" ? "\u53C2\u8003\u7A97\uFF1A\u8FD9\u6B21\u6CA1\u6709\u53E3\u4EE4\uFF0C\u91CC\u9762\u7684\u4E1C\u897F\u4E0D\u4F1A\u5B58" : `\u53C2\u8003\u7A97\u8FD9\u6B21\u53EA\u8BFB\uFF1A${why ?? "\u76D2\u5B50\u6CA1\u8BFB\u8FDB\u6765"}\u2014\u2014\u6539\u7684\u4E1C\u897F\u4E0D\u4F1A\u5B58`, 6e3);
+  }
+  function ensureLoaded() {
+    if (loadTimer) {
+      clearTimeout(loadTimer);
+      loadTimer = null;
+    }
+    if (!game) return Promise.resolve();
+    if (phase === "nopw" && getPw()) loading = null;
+    return loading ??= load(game);
+  }
+  async function load(g) {
+    const w = ensureEl();
+    const pw = getPw();
+    if (!pw) {
+      phase = "nopw";
+      why = "\u6CA1\u6709\u53E3\u4EE4";
+      d.log("info", "\u53C2\u8003\u7A97\uFF1A\u8FD9\u6B21\u6CA1\u6709\u53E3\u4EE4\uFF08\u660E\u6587\u76D8\u3001\u8FD8\u6CA1\u8F93\u8FC7\uFF09\uFF0C\u53C2\u8003\u7A97\u4E0D\u8BFB\u4E0D\u5B58");
+      return;
+    }
+    phase = "loading";
+    const id = tinId(g.key);
+    const r = await readTin(id, pw, d.cloudReachable());
+    if (game !== g) return;
+    if (r.state === "absent") {
+      head = { v: TIN_VERSION, k: g.k, ...g.id ? { id: g.id } : {}, ...g.ver ? { ver: g.ver } : {}, t: g.title };
+      others = /* @__PURE__ */ new Map();
+      phase = "ready";
+      d.log("info", "\u53C2\u8003\u7A97\uFF1A\u8FD9\u4E2A\u6E38\u620F\u8FD8\u6CA1\u6709\u76D2\u5B50\uFF08\u7B2C\u4E00\u6B21\u52A0\u4E1C\u897F\u65F6\u5EFA\uFF09");
+      return;
+    }
+    if (r.state === "unreadable") {
+      phase = "readonly";
+      why = r.wrongPassword ? "\u76D2\u5B50\u662F\u7528\u522B\u7684\u53E3\u4EE4\u5C01\u7684" : `\u76D2\u5B50\u6CA1\u8BFB\u8FDB\u6765\uFF08${r.why}\uFF09`;
+      d.log("warn", `\u53C2\u8003\u7A97\uFF1A${why}\uFF1B\u8FD9\u4E00\u5C40\u4E0D\u5199`);
+      return;
+    }
+    let tin;
+    try {
+      tin = decodeTin(r.zip);
+    } catch (e) {
+      phase = "readonly";
+      why = e instanceof TinTooNewError ? `\u76D2\u5B50\u662F\u65B0\u7248\u672C\u5199\u7684\uFF08\u683C\u5F0F ${e.fileVersion}\uFF09` : `\u76D2\u5B50\u574F\u4E86\uFF08${e instanceof Error ? e.message : String(e)}\uFF09`;
+      d.log("warn", `\u53C2\u8003\u7A97\uFF1A${why}\uFF1B\u8FD9\u4E00\u5C40\u4E0D\u5199`);
+      return;
+    }
+    head = { ...tin.head, k: g.k, t: g.title, ...g.id ? { id: g.id } : {}, ...g.ver ? { ver: g.ver } : {} };
+    others = new Map([...tin.files].filter(([p]) => !isRefEntry(p)));
+    applying = true;
+    try {
+      const decoded = await decodeDeck({
+        app: APP,
+        knownKinds: KINDS,
+        getFile: (path) => {
+          const b = tin.files.get(path);
+          return b ? new Blob([b], { type: mimeForName(path) }) : null;
+        }
+      });
+      w.deck.restore(decoded);
+      phase = "ready";
+    } catch (e) {
+      w.deck.clear();
+      phase = "readonly";
+      why = e instanceof DeckManifestTooNewError ? "\u53C2\u8003\u7A97\u7684\u6E05\u5355\u662F\u65B0\u7248\u672C\u5199\u7684" : `\u53C2\u8003\u7A97\u7684\u6E05\u5355\u8BFB\u4E0D\u51FA\uFF08${e instanceof Error ? e.message : String(e)}\uFF09`;
+      d.log("warn", `\u53C2\u8003\u7A97\uFF1A${why}\uFF1B\u8FD9\u4E00\u5C40\u4E0D\u5199`);
+    } finally {
+      applying = false;
+    }
+    const ref = tin.head.ref;
+    if (ref?.rect) w.rect = ref.rect;
+    if (ref?.open && w.deck.size) {
+      w.open = true;
+      syncFloor();
+    }
+    cardsDirty = viewDirty = false;
+    d.log("info", `\u53C2\u8003\u7A97\uFF1A\u8BFB\u8FDB ${w.deck.size} \u5F20${ref?.open ? "\uFF08\u4E0A\u6B21\u5F00\u7740\uFF0C\u653E\u56DE\u539F\u5904\uFF09" : ""}`);
+  }
+  function scheduleSave() {
+    if (saveTimer) clearTimeout(saveTimer);
+    saveTimer = setTimeout(() => {
+      saveTimer = null;
+      void save({});
+    }, SAVE_DELAY_MS);
+  }
+  function save(opts) {
+    return saving = saving.then(() => saveNow(opts)).catch((e) => d.log("error", `\u53C2\u8003\u7A97\u6CA1\u5B58\u4E0A\uFF1A${e instanceof Error ? e.message : String(e)}`));
+  }
+  async function saveNow(opts) {
+    const g = game, w = el, pw = getPw();
+    if (!g || !w || phase !== "ready" || !pw || !(cardsDirty || viewDirty)) return;
+    if (!cardsDirty && !w.deck.size && !others.size) {
+      viewDirty = false;
+      return;
+    }
+    cardsDirty = viewDirty = false;
+    const refs = /* @__PURE__ */ new Map();
+    for (const [path, blob] of encodeDeck(w.deck.snapshot(), { app: APP })) refs.set(path, new Uint8Array(await blob.arrayBuffer()));
+    const r = w.rect;
+    const zip = encodeTin({ head: { ...head, ref: { open: w.open, rect: { left: Math.round(r.left), top: Math.round(r.top), width: Math.round(r.width), height: Math.round(r.height) } } }, files: withRefs(others, refs) });
+    const res = await saveTin(tinId(g.key), zip, pw, opts);
+    d.log("info", `\u53C2\u8003\u7A97\uFF1A\u5B58\u4E86 ${w.deck.size} \u5F20\uFF08${mb2(zip.length)}\uFF09${res.pushed ? "\uFF0C\u5DF2\u540C\u6B65" : opts.deferPush ? "\uFF0C\u5148\u843D\u8FD9\u53F0\u8BBE\u5907" : `\uFF0C\u6CA1\u63A8\u4E0A\u53BB\uFF08${res.reason ?? "\u7B49\u7F51"}\uFF09`}`);
+    if (res.resolution === "takeCloud" && game === g) {
+      d.log("info", "\u53C2\u8003\u7A97\uFF1A\u51B2\u7A81\u65F6\u9009\u4E86\u4E91\u7AEF\u90A3\u4EFD\uFF0C\u91CD\u8BFB");
+      loading = null;
+      await ensureLoaded();
+    }
+  }
+  return {
+    attach(g, password, delayMs) {
+      ensureEl();
+      game = g;
+      getPw = password;
+      phase = "none";
+      why = null;
+      told = false;
+      head = { v: TIN_VERSION };
+      others = /* @__PURE__ */ new Map();
+      loading = null;
+      cardsDirty = viewDirty = false;
+      applying = true;
+      try {
+        el.deck.clear();
+      } finally {
+        applying = false;
+      }
+      el.open = false;
+      if (loadTimer) clearTimeout(loadTimer);
+      loadTimer = setTimeout(() => {
+        loadTimer = null;
+        void ensureLoaded();
+      }, delayMs);
+    },
+    async toggle() {
+      const w = ensureEl();
+      if (!game) return;
+      if (!w.open && (phase === "none" || phase === "loading" || phase === "nopw" && getPw())) {
+        d.say("\u6B63\u5728\u6253\u5F00\u53C2\u8003\u7A97\u2026", 2e3);
+        await ensureLoaded();
+      }
+      w.open = !w.open;
+      if (w.open) {
+        syncFloor();
+        w.focus({ preventScroll: true });
+        if (!w.deck.size) d.say("\u53C2\u8003\u7A97\uFF1A\u70B9 \uFF0B \u5BFC\u5165\u653B\u7565\u622A\u56FE / \u6587\u5B57\uFF0C\u6216\u8005 Ctrl+V \u7C98\u8D34", 5e3);
+        tellIfNotSaved();
+      } else w.blur();
+    },
+    isOpen: () => !!el?.open,
+    async flush(opts = {}) {
+      if (saveTimer) {
+        clearTimeout(saveTimer);
+        saveTimer = null;
+      }
+      await save(opts);
+    },
+    state: () => ({ phase, cards: el?.deck.size ?? 0, open: !!el?.open, why })
+  };
+}
+
 // src/app/main.ts
 var params = new URLSearchParams(location.search);
 var DEV_SERVER = /^(127\.0\.0\.1|localhost)$/.test(location.hostname);
@@ -12896,6 +15909,12 @@ var say = (text, ms) => {
   lastNote = text;
   note(text, ms);
 };
+var guide = createGuideWindow({
+  log: (level, text) => logEvent(level, text),
+  say,
+  topFloor: () => document.fullscreenElement ? 0 : $("toolbar").getBoundingClientRect().bottom,
+  cloudReachable: () => auth.isSignedIn() && navigator.onLine
+});
 var pantryItems = [];
 var pantryComplete = false;
 var unwatchPantry = null;
@@ -13323,6 +16342,7 @@ async function play(prepare, resume) {
   });
   jamSigs = session.memstickDirs();
   setInterval(() => jamTick(false), JAM_POLL_MS);
+  guide.attach({ key: disc.key, title: disc.title, k: PLATFORM_CODE.psp, id: disc.fp.id, ver: disc.fp.v }, getPassword, 5e3);
   addEventListener("visibilitychange", () => {
     if (!session) return;
     if (pip.active) {
@@ -13358,6 +16378,7 @@ async function play(prepare, resume) {
     }
     snaps?.onLeave().catch((e) => console.warn("[auto snapshot]", e));
     jamTick(true);
+    void guide.flush({ deferPush: true });
   });
   startFrameLoop();
   renderToolbar();
@@ -13847,6 +16868,9 @@ function openMenu() {
       h(
         "div",
         { class: "menu-list" },
+        item(guide.isOpen() ? "\u6536\u8D77\u53C2\u8003\u7A97" : "\u53C2\u8003\u7A97", "Alt+R \xB7 \u653B\u7565 / \u7B14\u8BB0\uFF0C\u8DDF\u7740\u8FD9\u4E2A\u6E38\u620F\u540C\u6B65", () => {
+          void guide.toggle();
+        }, guide.isOpen()),
         item("\u8BBE\u7F6E\u2026", changed.length ? `\u8FD9\u6B21\u6253\u5F00\u6539\u7740\uFF1A${changed.join(" \xB7 ")}` : "\u753B\u9762 \xB7 \u8282\u594F \xB7 \u64CD\u4F5C \xB7 \u6A21\u62DF\u5668 \xB7 \u517C\u5BB9 \xB7 \u8BCA\u65AD", () => openSettings(settingsHost()), changed.length > 0),
         item("\u65E5\u5FD7", "\u9ED1\u5323\u5B50\uFF08\u8DE8\u91CD\u8F7D\uFF09", openLog),
         item("\u9000\u51FA\u8FD9\u5F20\u76D8", "\u5B58\u6863\u4F1A\u5148\u540C\u6B65\u5B8C", () => {
@@ -14247,6 +17271,7 @@ async function closePrefetcher() {
 }
 addEventListener("pagehide", () => {
   void closePrefetcher();
+  void guide.flush({ deferPush: true });
 });
 async function quit() {
   const ok = await confirmSheet("\u9000\u51FA\uFF1F", "\u5B58\u6863\u4F1A\u5148\u540C\u6B65\u5B8C\u518D\u9000\u51FA\uFF1B\u4E0D\u4F1A\u81EA\u52A8\u5B58\u5FEB\u7167\u3002", "\u9000\u51FA");
@@ -14268,6 +17293,7 @@ async function quit() {
   });
   try {
     if (!leaveNow) await jamTick(true);
+    if (!leaveNow) await guide.flush();
     if (!leaveNow) await whenIdle();
     if (!leaveNow) await closePrefetcher();
   } finally {
@@ -14561,6 +17587,11 @@ function onKey(e, down) {
   if (down && e.code === "Enter" && e.altKey) {
     e.preventDefault();
     toggleFullscreen();
+    return;
+  }
+  if (down && e.code === "KeyR" && e.altKey) {
+    e.preventDefault();
+    if (!e.repeat) void guide.toggle();
     return;
   }
   if (down && e.code === "KeyP" && e.altKey) {
@@ -15154,6 +18185,8 @@ globalThis.kr = {
   },
   restoreFromServer: restoreFromDevServer,
   started: () => session !== null,
+  guide: () => guide.state(),
+  toggleGuide: () => guide.toggle(),
   pause: (p) => {
     session?.setPaused(p);
     renderToolbar();
@@ -15209,4 +18242,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-b6ecb16b286d.mjs.map
+//# sourceMappingURL=kudsrocket-c022d523af89.mjs.map

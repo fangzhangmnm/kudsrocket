@@ -3,6 +3,10 @@
   color-scheme: dark;
   --bg: #111; --panel: #1c1c1c; --line: #333; --ink: #ddd; --ink-soft: #888; --accent: #7aa2ff; --warn: #e0a040; --err: #e05a5a;
   --tool: 40px;
+  /* 家族组件要的 token（参考窗 @internal/reference-window + 弹出菜单 @internal/workbench-elements；10-18）。
+     层级：画面里的东西 ≤ 6 < 参考窗 30 < 提示 40 / 更新 45 < 面板 50 < 菜单 55 < 横条 60 < 遮罩 70 */
+  --radius: 10px; --shadow: 0 6px 24px rgba(0,0,0,.55); --void: #000; --bg-soft: var(--panel); --danger: var(--err);
+  --z-window: 30; --z-modal: 50; --z-menu: 55; --z-popover: 56; --z-notice: 58; --z-toast: 59;
 }
 * { box-sizing: border-box; }
 html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); font: 15px/1.5 system-ui, sans-serif; }
