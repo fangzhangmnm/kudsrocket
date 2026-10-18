@@ -250,3 +250,6 @@ body:has(#game:not([hidden])) > #note { top: calc(env(safe-area-inset-top) + var
 .setting-hint { grid-column: 1 / -1; font-size: 12px; margin: 0; }
 .menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
 .menu-grid button { padding: 14px 8px; font-size: 15px; }
+
+/* 盘的镜像面板（W-44） */
+.sheet textarea.mirror-list { width: 100%; box-sizing: border-box; font: 13px/1.4 ui-monospace, monospace; }

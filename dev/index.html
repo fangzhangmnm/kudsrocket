@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#111111">
 <title>KudsRocket</title>
 <link rel="manifest" href="./manifest.webmanifest">
-<link rel="stylesheet" href="./styles.css?v=66f7e1ff8bcb">
+<link rel="stylesheet" href="./styles.css?v=daef0f66c488">
 </head>
 <body>
 <main id="home">
@@ -42,11 +42,13 @@
     <div class="tool-group">
       <h3>这台设备</h3>
       <button id="clear-cache" title="放掉所有已同步的本机副本（没传上去的不动）">清本机缓存</button>
+      <button id="mirrors" title="读盘先从这台设备上的文件 / 自己电脑上的镜像拿，拿不到再走 OneDrive">盘的镜像…</button>
       <label class="muted">暂存区上限 <select id="staging-cap"></select></label>
       <button id="force-update" title="清掉这个 app 自己的离线壳缓存并重新载入">强制更新</button>
     </div>
     <input type="file" id="local-file" hidden>
     <input type="file" id="upload-file" hidden>
+    <input type="file" id="mirror-files" multiple hidden>
   </section>
 </main>
 
@@ -67,6 +69,6 @@
 <div id="note" hidden></div>
 <div id="update" hidden></div>
 <div id="busy" hidden><span></span></div>
-<script type="module" src="./dist/kudsrocket-66f7e1ff8bcb.mjs"></script>
+<script type="module" src="./dist/kudsrocket-daef0f66c488.mjs"></script>
 </body>
 </html>

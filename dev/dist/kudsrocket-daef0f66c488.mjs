@@ -1,5 +1,5 @@
 // src/version.ts
-var APP_VERSION = "v0.1.60-2026-10-18";
+var APP_VERSION = "v0.1.61-2026-10-18";
 
 // assets/icons.svg
 var icons_default = '<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none">\n<!--\n  14 icons extracted from the family icon library (../20260708 SVG Icons/icons.svg) by extract-icons.py \u2014 do not hand-edit; re-run the script instead.\n  Family SVG Icons \u2014 MIT License, Copyright (c) 2026 fangzhangmnm.\n  Contains work derived from (per-icon provenance in data-src):\n    Feather Icons \u2014 MIT License, Copyright (c) 2013-2023 Cole Bemis \xB7 https://github.com/feathericons/feather\n-->\n  <!-- media -->\n  <!-- pause \u2014 \u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="pause" data-cat="media" data-src="own" data-note="\u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="3.2"><path d="M8.3 5.5 V18.5"/><path d="M15.7 5.5 V18.5"/></g></symbol>\n  <!-- play \u2014 \u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="play" data-cat="media" data-src="own" data-note="\u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 5.4 L18.8 12 L8.2 18.6 Z" fill="currentColor"/></symbol>\n  <!-- fast-forward \u2014 \u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="fast-forward" data-cat="media" data-src="own" data-note="\u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.4 6.8 L10.9 12 L4.4 17.2 Z" fill="currentColor"/><path d="M13.1 6.8 L19.6 12 L13.1 17.2 Z" fill="currentColor"/></symbol>\n  <!-- volume \u2014 \u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009) -->\n  <symbol id="volume" data-cat="media" data-src="own" data-note="\u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 10.3 H8.7 L12.6 6.6 V17.4 L8.7 13.7 H5.5 Z" fill="currentColor"/><path d="M15.13 9.73 A3.4 3.4 0 0 1 15.13 14.27"/><path d="M16.36 7.19 A6.1 6.1 0 0 1 16.36 16.81"/></symbol>\n  <!-- file -->\n  <!-- floppy-disk \u2014 \u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3 -->\n  <symbol id="floppy-disk" data-cat="file" data-src="feather:save" data-note="\u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13l3 3v13a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 17 8 17 3"/></symbol>\n  <!-- folder-open \u2014 \u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF -->\n  <symbol id="folder-open" data-cat="file" data-src="own" data-note="\u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18 V7 a2 2 0 0 1 2 -2 h4 l2 2 h6 a2 2 0 0 1 2 2 v1.8"/><path d="M3 18 L6.4 10.8 H21.6 L18.2 18 Z"/></symbol>\n  <!-- hierarchy -->\n  <!-- lock \u2014 \u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D -->\n  <symbol id="lock" data-cat="hierarchy" data-src="own" data-note="\u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10" width="13" height="11"/><path d="M8.8 10 V6.5 a3.2 3.2 0 0 1 6.4 0 V10"/></symbol>\n  <!-- common -->\n  <!-- x \u2014 \u53C9 -->\n  <symbol id="x" data-cat="common" data-src="own" data-note="\u53C9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 L17.5 17.5 M17.5 6.5 L6.5 17.5"/></symbol>\n  <!-- cloud -->\n  <!-- cloud \u2014 \u4E91 -->\n  <symbol id="cloud" data-cat="cloud" data-src="feather:cloud" data-note="\u4E91" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>\n  <!-- viewport -->\n  <!-- maximize-viewport \u2014 \u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55) -->\n  <symbol id="maximize-viewport" data-cat="viewport" data-src="own" data-note="\u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934 --> <polyline points="4 9 4 4 9 4"/> <polyline points="20 9 20 4 15 4"/> <polyline points="4 15 4 20 9 20"/> <polyline points="20 15 20 20 15 20"/></symbol>\n  <!-- picture-in-picture \u2014 \u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1) -->\n  <symbol id="picture-in-picture" data-cat="viewport" data-src="own" data-note="\u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u5927\u6846\uFF08\u4E3B\u753B\u5E03\uFF09+ \u5185\u5D4C\u5C0F\u7A97\uFF08\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1\uFF09\u2014\u2014 picture-in-picture \u9690\u55BB --> <rect x="3" y="4" width="18" height="14" rx="2"/> <rect x="12" y="10" width="7" height="5" rx="1"/></symbol>\n  <!-- ui -->\n  <!-- more \u2014 \u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00) -->\n  <symbol id="more" data-cat="ui" data-src="own" data-note="\u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/></symbol>\n  <!-- keyboard \u2014 \u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49) -->\n  <symbol id="keyboard" data-cat="ui" data-src="own" data-note="\u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="7.2" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="7.2" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><path d="M8.6 15.6 H15.4"/></symbol>\n  <!-- menu \u2014 \u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17) -->\n  <symbol id="menu" data-cat="ui" data-src="own" data-note="\u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"></line> <line x1="4" y1="12" x2="20" y2="12"></line> <line x1="4" y1="17" x2="20" y2="17"></line></symbol>\n</svg>\n';
@@ -7088,6 +7088,77 @@ function createOneDriveProvider(config = {}) {
   };
 }
 
+// node_modules/@internal/store/dist/stream/mirror.js
+function createFileMirror(label, lookup) {
+  return {
+    label,
+    async open(name, size) {
+      const f = await lookup(name);
+      if (!f || f.size !== size)
+        return null;
+      return {
+        async read(offset, length) {
+          const start = Math.max(0, Math.min(offset, f.size));
+          return new Uint8Array(await f.slice(start, Math.min(f.size, start + Math.max(0, length))).arrayBuffer());
+        }
+      };
+    }
+  };
+}
+function createHttpMirror(label, urlFor, opts = {}) {
+  const doFetch = opts.fetch ?? ((input, init) => fetch(input, init));
+  const timed2 = () => opts.timeoutMs && typeof AbortSignal !== "undefined" && typeof AbortSignal.timeout === "function" ? AbortSignal.timeout(opts.timeoutMs) : void 0;
+  return {
+    label,
+    async open(name, size) {
+      const url = urlFor(name);
+      if (!url)
+        return null;
+      let r;
+      try {
+        r = await doFetch(url, { headers: { Range: "bytes=0-0" }, signal: timed2() });
+      } catch {
+        return null;
+      }
+      try {
+        await r.body?.cancel();
+      } catch {
+      }
+      if (r.status !== 206)
+        return null;
+      const m = /\/(\d+)\s*$/.exec(r.headers.get("Content-Range") ?? "");
+      if (!m || Number(m[1]) !== size)
+        return null;
+      return {
+        async read(offset, length, o = {}) {
+          let res;
+          try {
+            res = await doFetch(url, { headers: { Range: `bytes=${offset}-${offset + length - 1}` }, signal: anySignal([timed2(), o.signal]) });
+          } catch (e) {
+            throw new Error(`mirror "${label}": range fetch failed (${String(e)})`, { cause: e });
+          }
+          if (res.status !== 206) {
+            try {
+              await res.body?.cancel();
+            } catch {
+            }
+            throw new Error(`mirror "${label}": range GET \u2192 ${res.status}`);
+          }
+          let buf;
+          try {
+            buf = await readBody(res, o.onProgress);
+          } catch (e) {
+            throw new Error(`mirror "${label}": range body failed (${String(e)})`, { cause: e });
+          }
+          if (buf.byteLength !== length)
+            throw new Error(`mirror "${label}": range returned ${buf.byteLength} bytes, wanted ${length}`);
+          return new Uint8Array(buf);
+        }
+      };
+    }
+  };
+}
+
 // node_modules/@internal/encryption/dist/encryption.js
 var SEVENZ_MAGIC = [55, 122, 188, 175, 39, 28];
 var ZIP_MAGIC = [80, 75, 3, 4];
@@ -7514,6 +7585,17 @@ function saveBlackbox(entries) {
   } catch {
   }
 }
+function mirrorUrls() {
+  try {
+    const v = JSON.parse(get("mirrors") ?? "[]");
+    return Array.isArray(v) ? v.filter((x) => typeof x === "string") : [];
+  } catch {
+    return [];
+  }
+}
+function setMirrorUrls(urls) {
+  set("mirrors", urls.length ? JSON.stringify(urls) : null);
+}
 
 // src/app/sync-status.ts
 var STUCK_MS = 45e3;
@@ -7791,6 +7873,50 @@ var storeUI = {
   }
 };
 
+// src/app/mirror-urls.ts
+function mirrorUrlFor(base, identifier, pantry) {
+  if (!identifier.startsWith(`${pantry}/`)) return null;
+  return `${base.replace(/\/+$/, "")}/${identifier.split("/").map(encodeURIComponent).join("/")}`;
+}
+var MAX_MIRRORS = 8;
+function parseMirrorList(text) {
+  const ok = [], rejected = [];
+  for (const raw of text.split(/\r?\n/)) {
+    const line = raw.trim();
+    if (!line || line.startsWith("#")) continue;
+    let u;
+    try {
+      u = new URL(line);
+    } catch {
+      rejected.push({ line, why: "\u4E0D\u662F\u7F51\u5740" });
+      continue;
+    }
+    if (u.protocol !== "https:") {
+      rejected.push({ line, why: "\u53EA\u6536 https\uFF08Tailscale \u7528 tailscale serve \u7ED9\u8BC1\u4E66\uFF09" });
+      continue;
+    }
+    if (u.search || u.hash) {
+      rejected.push({ line, why: "\u4E0D\u8981\u5E26 ? \u6216 #" });
+      continue;
+    }
+    const norm = `${u.origin}${u.pathname.replace(/\/+$/, "")}`;
+    if (ok.includes(norm)) continue;
+    if (ok.length >= MAX_MIRRORS) {
+      rejected.push({ line, why: `\u6700\u591A ${MAX_MIRRORS} \u6761` });
+      continue;
+    }
+    ok.push(norm);
+  }
+  return { ok, rejected };
+}
+function mirrorLabel(base) {
+  try {
+    return new URL(base).host;
+  } catch {
+    return base;
+  }
+}
+
 // src/app/app-store.ts
 var od = createOneDriveProvider({
   clientId: CLIENT_ID2,
@@ -7802,6 +7928,17 @@ var od = createOneDriveProvider({
 var auth = od.auth;
 var _keeper = null;
 var passwordKeeper = () => _keeper ??= createPasswordKeeper({ dbName: `${APP_ID}.remember` });
+var localDiscFiles = null;
+function setLocalDiscFiles(files) {
+  localDiscFiles = files?.length ? new Map(files.map((f) => [f.name, f])) : null;
+}
+var localDiscFileCount = () => localDiscFiles?.size ?? 0;
+function discMirrors() {
+  const out = [];
+  if (localDiscFiles) out.push(createFileMirror("\u8FD9\u53F0\u8BBE\u5907\u4E0A\u7684\u6587\u4EF6", (id) => id.startsWith(`${PANTRY}/`) ? localDiscFiles?.get(id.slice(PANTRY.length + 1)) ?? null : null));
+  for (const base of mirrorUrls()) out.push(createHttpMirror(mirrorLabel(base), (id) => mirrorUrlFor(base, id, PANTRY), { timeoutMs: 6e4 }));
+  return out;
+}
 var activeIdentifier = null;
 function setActiveIdentifier(id) {
   activeIdentifier = id;
@@ -7831,8 +7968,8 @@ function getStore() {
     validateAdopt,
     docKinds: DOC_KINDS,
     // store 2.1：每行带公民等级（盘三等 / 自动快照二等 / 其余一等），表和理由在 config.ts
-    streaming: { lanes: STREAM_LANES, stallMs: STREAM_STALL_MS },
-    // store 2.0：读盘投机并行 + 卡住对冲 / 让道（默认关，大文件消费方显式开）
+    streaming: { lanes: STREAM_LANES, stallMs: STREAM_STALL_MS, mirrors: discMirrors },
+    // store 2.0：读盘投机并行 + 卡住对冲 / 让道 + 镜像（默认关，大文件消费方显式开）
     autoCacheOpenedFile: true,
     // 快照 / 存档 open 后留本地；盘只走 openStream（不整份落本地）
     ...stagingCapBytes() ? { stagingCapBytes: stagingCapBytes() } : {},
@@ -13921,6 +14058,52 @@ async function clearCache() {
     banner(`\u6E05\u7F13\u5B58\u5931\u8D25\uFF1A${errorText(e)}`);
   }
 }
+function openMirrors() {
+  const area = h("textarea", { class: "mirror-list", rows: 4, spellcheck: "false", placeholder: "https://\u6211\u7684\u7535\u8111.xxxx.ts.net" });
+  area.value = mirrorUrls().join("\n");
+  const status = h("p", { class: "muted" });
+  const showLocal = () => {
+    status.textContent = localDiscFileCount() ? `\u8FD9\u6B21\u6253\u5F00\u91CC\uFF1A\u7528 ${localDiscFileCount()} \u4E2A\u8FD9\u53F0\u8BBE\u5907\u4E0A\u7684\u76D8\u6587\u4EF6\uFF08\u91CD\u65B0\u8F7D\u5165\u9875\u9762\u5C31\u5FD8\uFF09` : "\u8FD9\u6B21\u6253\u5F00\u91CC\uFF1A\u6CA1\u6311\u672C\u673A\u76D8\u6587\u4EF6";
+  };
+  showLocal();
+  const pick = $("mirror-files");
+  pick.onchange = () => {
+    const fs = [...pick.files ?? []];
+    setLocalDiscFiles(fs);
+    logEvent("info", `\u955C\u50CF\uFF1A\u7528\u8FD9\u53F0\u8BBE\u5907\u4E0A\u7684 ${fs.length} \u4E2A\u76D8\u6587\u4EF6`);
+    showLocal();
+  };
+  void sheet((done) => [
+    h("h2", {}, "\u76D8\u7684\u955C\u50CF"),
+    h("p", {}, "\u8BFB\u76D8\u65F6\u5148\u4ECE\u8FD9\u91CC\u62FF\uFF0C\u62FF\u4E0D\u5230 / \u5361\u4F4F / \u5185\u5BB9\u548C\u4E91\u7AEF\u4E0D\u4E00\u6837\u5C31\u56DE\u5230 OneDrive\u3002\u7B2C\u4E00\u7247\u4F1A\u5148\u548C\u4E91\u7AEF\u6BD4\u4E00\u6B21\uFF0C\u4E4B\u540E\u62BD\u6837\u6BD4\uFF1B\u4E0D\u4E00\u6837\u7684\u8FD9\u53F0\u8BBE\u5907\u8FD9\u6B21\u5C31\u4E0D\u7528\u5B83\u3002\u4E0B\u4E00\u6B21\u5F00\u76D8\u751F\u6548\u3002"),
+    h("h3", {}, "\u955C\u50CF\u4E3B\u673A\uFF08\u4E00\u884C\u4E00\u4E2A\uFF0C\u53EA\u6536 https\uFF09"),
+    area,
+    h("p", { class: "muted" }, "\u7535\u8111\u4E0A\uFF1Anode scripts/mirror-serve.ts <OneDrive \u91CC KudsRocket \u7684\u6587\u4EF6\u5939>\uFF0C\u518D tailscale serve --bg 8790\uFF0C\u628A tailscale \u7ED9\u7684 https \u5730\u5740\u586B\u5728\u8FD9\u91CC\u3002\u5730\u5740\u53EA\u8BB0\u5728\u8FD9\u53F0\u8BBE\u5907\u3002"),
+    h("h3", {}, "\u8FD9\u53F0\u8BBE\u5907\u4E0A\u7684\u76D8\u6587\u4EF6"),
+    h("button", { onclick: () => {
+      pick.value = "";
+      pick.click();
+    } }, "\u6311\u76D8\u6587\u4EF6\u2026"),
+    h("button", { onclick: () => {
+      setLocalDiscFiles(null);
+      showLocal();
+    } }, "\u4E0D\u7528\u4E86"),
+    status,
+    h(
+      "div",
+      { class: "row" },
+      h("button", { onclick: () => done(null) }, "\u53D6\u6D88"),
+      h("button", { class: "primary", onclick: () => {
+        const { ok, rejected } = parseMirrorList(area.value);
+        setMirrorUrls(ok);
+        logEvent("info", `\u955C\u50CF\uFF1A\u5730\u5740\u8868 ${ok.length} \u6761${rejected.length ? `\uFF0C\u9000\u56DE ${rejected.length} \u6761` : ""}`);
+        if (rejected.length) banner(`\u6CA1\u6536\u4E0B\uFF1A${rejected.map((r) => `${r.line}\uFF08${r.why}\uFF09`).join("\uFF1B")}`, "warning");
+        else say(ok.length ? `\u8BB0\u4E0B\u4E86 ${ok.length} \u4E2A\u955C\u50CF\uFF0C\u4E0B\u4E00\u6B21\u5F00\u76D8\u751F\u6548` : "\u955C\u50CF\u5730\u5740\u6E05\u7A7A\u4E86", 4e3);
+        done(void 0);
+      } }, "\u4FDD\u5B58")
+    )
+  ]);
+}
 async function withBusyNote(text, fn) {
   say(text, 6e5);
   try {
@@ -13992,6 +14175,7 @@ async function boot() {
   $("clear-cache").addEventListener("click", () => {
     clearCache().catch(toolErr);
   });
+  $("mirrors").addEventListener("click", openMirrors);
   const capSel = $("staging-cap");
   for (const c of STAGING_CAP_CHOICES) capSel.append(h("option", { value: String(c.bytes) }, c.label));
   capSel.value = String(stagingCapBytes());
@@ -14192,4 +14376,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-66f7e1ff8bcb.mjs.map
+//# sourceMappingURL=kudsrocket-daef0f66c488.mjs.map
