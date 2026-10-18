@@ -1,5 +1,5 @@
 // src/version.ts
-var APP_VERSION = "v0.1.65-2026-10-18";
+var APP_VERSION = "v0.1.66-2026-10-18";
 
 // assets/icons.svg
 var icons_default = '<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none">\n<!--\n  14 icons extracted from the family icon library (../20260708 SVG Icons/icons.svg) by extract-icons.py \u2014 do not hand-edit; re-run the script instead.\n  Family SVG Icons \u2014 MIT License, Copyright (c) 2026 fangzhangmnm.\n  Contains work derived from (per-icon provenance in data-src):\n    Feather Icons \u2014 MIT License, Copyright (c) 2013-2023 Cole Bemis \xB7 https://github.com/feathericons/feather\n-->\n  <!-- media -->\n  <!-- pause \u2014 \u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="pause" data-cat="media" data-src="own" data-note="\u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="3.2"><path d="M8.3 5.5 V18.5"/><path d="M15.7 5.5 V18.5"/></g></symbol>\n  <!-- play \u2014 \u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="play" data-cat="media" data-src="own" data-note="\u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 5.4 L18.8 12 L8.2 18.6 Z" fill="currentColor"/></symbol>\n  <!-- fast-forward \u2014 \u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="fast-forward" data-cat="media" data-src="own" data-note="\u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.4 6.8 L10.9 12 L4.4 17.2 Z" fill="currentColor"/><path d="M13.1 6.8 L19.6 12 L13.1 17.2 Z" fill="currentColor"/></symbol>\n  <!-- volume \u2014 \u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009) -->\n  <symbol id="volume" data-cat="media" data-src="own" data-note="\u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 10.3 H8.7 L12.6 6.6 V17.4 L8.7 13.7 H5.5 Z" fill="currentColor"/><path d="M15.13 9.73 A3.4 3.4 0 0 1 15.13 14.27"/><path d="M16.36 7.19 A6.1 6.1 0 0 1 16.36 16.81"/></symbol>\n  <!-- file -->\n  <!-- floppy-disk \u2014 \u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3 -->\n  <symbol id="floppy-disk" data-cat="file" data-src="feather:save" data-note="\u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13l3 3v13a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 17 8 17 3"/></symbol>\n  <!-- folder-open \u2014 \u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF -->\n  <symbol id="folder-open" data-cat="file" data-src="own" data-note="\u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18 V7 a2 2 0 0 1 2 -2 h4 l2 2 h6 a2 2 0 0 1 2 2 v1.8"/><path d="M3 18 L6.4 10.8 H21.6 L18.2 18 Z"/></symbol>\n  <!-- hierarchy -->\n  <!-- lock \u2014 \u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D -->\n  <symbol id="lock" data-cat="hierarchy" data-src="own" data-note="\u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10" width="13" height="11"/><path d="M8.8 10 V6.5 a3.2 3.2 0 0 1 6.4 0 V10"/></symbol>\n  <!-- common -->\n  <!-- x \u2014 \u53C9 -->\n  <symbol id="x" data-cat="common" data-src="own" data-note="\u53C9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 L17.5 17.5 M17.5 6.5 L6.5 17.5"/></symbol>\n  <!-- cloud -->\n  <!-- cloud \u2014 \u4E91 -->\n  <symbol id="cloud" data-cat="cloud" data-src="feather:cloud" data-note="\u4E91" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>\n  <!-- viewport -->\n  <!-- maximize-viewport \u2014 \u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55) -->\n  <symbol id="maximize-viewport" data-cat="viewport" data-src="own" data-note="\u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934 --> <polyline points="4 9 4 4 9 4"/> <polyline points="20 9 20 4 15 4"/> <polyline points="4 15 4 20 9 20"/> <polyline points="20 15 20 20 15 20"/></symbol>\n  <!-- picture-in-picture \u2014 \u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1) -->\n  <symbol id="picture-in-picture" data-cat="viewport" data-src="own" data-note="\u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u5927\u6846\uFF08\u4E3B\u753B\u5E03\uFF09+ \u5185\u5D4C\u5C0F\u7A97\uFF08\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1\uFF09\u2014\u2014 picture-in-picture \u9690\u55BB --> <rect x="3" y="4" width="18" height="14" rx="2"/> <rect x="12" y="10" width="7" height="5" rx="1"/></symbol>\n  <!-- ui -->\n  <!-- more \u2014 \u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00) -->\n  <symbol id="more" data-cat="ui" data-src="own" data-note="\u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/></symbol>\n  <!-- keyboard \u2014 \u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49) -->\n  <symbol id="keyboard" data-cat="ui" data-src="own" data-note="\u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="7.2" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="7.2" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><path d="M8.6 15.6 H15.4"/></symbol>\n  <!-- menu \u2014 \u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17) -->\n  <symbol id="menu" data-cat="ui" data-src="own" data-note="\u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"></line> <line x1="4" y1="12" x2="20" y2="12"></line> <line x1="4" y1="17" x2="20" y2="17"></line></symbol>\n</svg>\n';
@@ -7540,6 +7540,7 @@ function labelFor(identifier) {
   if (identifier.startsWith("jars/")) return "\u5B58\u6863";
   if (identifier.startsWith("pantry/")) return "\u76D8";
   if (identifier.startsWith("recipes/")) return "\u8BFB\u76D8\u83DC\u8C31";
+  if (identifier.startsWith("tmp/traces/")) return "\u8BFB\u76D8\u8F68\u8FF9";
   return identifier.replace(/^.*\//, "");
 }
 
@@ -8637,6 +8638,7 @@ function createDiscPrefetcher(stream, o) {
     source: { size: stream.totalSize, read: (off, n) => stream.read(off, n), prefetch: (off, n) => stream.prefetch(off, n) },
     budget: { cacheBytes: o.cacheBytes, concurrency: o.lanes, network: networkState },
     ...o.memory ? { memory: o.memory } : {},
+    ...o.trace ? { trace: o.trace } : {},
     report: (e, where) => {
       if (where.startsWith("prefetch block")) {
         if (++missed <= 3 || missed % 50 === 0) console.info(`[prefetch] ${where} \u6CA1\u62C9\u5230\uFF08\u7B2C ${missed} \u6B21\uFF09`, e);
@@ -8668,6 +8670,30 @@ function prefetchSummary(s) {
   const ms = (v) => v == null ? "?" : `${Math.round(v)}`;
   const ex = Object.entries(s.experts).filter(([, v]) => v.issued).map(([k, v]) => `${k} ${v.used}/${v.issued}`).join(" \xB7 ");
   return `\u9884\u53D6\uFF1A\u8BFB ${s.reads} \u6B21\uFF0C\u6162\u8BFB ${s.slowReads} \u6B21\u5171\u5361 ${(s.stallMs / 1e3).toFixed(1)} s\uFF1B\u6295\u673A\u8D70\u7F51\u7EDC ${s.prefetches} \u7247\uFF0C\u7528\u4E0A ${s.used}\u3001\u767D\u62C9 ${s.wasted}\uFF1B\u62C9\u4E00\u5757 \u4E2D\u4F4D ${ms(s.fetchMs)} ms / p90 ${ms(s.fetchP90Ms)} ms${ex ? `\uFF1B\u4E13\u5BB6 ${ex}` : ""}`;
+}
+
+// src/app/identity.ts
+async function sha16(text) {
+  const d = new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text)));
+  return Array.from(d.slice(0, 8), (b) => b.toString(16).padStart(2, "0")).join("");
+}
+async function discKey(stem) {
+  return /^[0-9a-f]{16}$/.test(stem) ? stem : sha16(stem);
+}
+var gameKey = (fp) => sha16(`${fp.k}:${fp.id}:${fp.v ?? ""}`);
+function fpCompatible(saved, now) {
+  if (!saved) return true;
+  if (saved.k !== now.k || saved.size !== now.size) return false;
+  if (saved.id && now.id && (saved.id !== now.id || (saved.v ?? "") !== (now.v ?? ""))) return false;
+  return true;
+}
+
+// src/app/recipe-names.ts
+var MAX_OTHER_RECIPES = 8;
+var recipeBase = (discIdentifier) => sha16(`recipe:${discIdentifier}`);
+var recipeId = (base, device) => `${RECIPES}/${base}-${device}${RECIPE_SUFFIX}`;
+function otherRecipes(ids, base, mine) {
+  return ids.filter((id) => id !== mine && id.startsWith(`${RECIPES}/${base}-`) && id.endsWith(RECIPE_SUFFIX)).slice(0, MAX_OTHER_RECIPES);
 }
 
 // src/disc/crypt.ts
@@ -9960,22 +9986,6 @@ function unzipSync(data, opts) {
   return files;
 }
 
-// src/app/identity.ts
-async function sha16(text) {
-  const d = new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text)));
-  return Array.from(d.slice(0, 8), (b) => b.toString(16).padStart(2, "0")).join("");
-}
-async function discKey(stem) {
-  return /^[0-9a-f]{16}$/.test(stem) ? stem : sha16(stem);
-}
-var gameKey = (fp) => sha16(`${fp.k}:${fp.id}:${fp.v ?? ""}`);
-function fpCompatible(saved, now) {
-  if (!saved) return true;
-  if (saved.k !== now.k || saved.size !== now.size) return false;
-  if (saved.id && now.id && (saved.id !== now.id || (saved.v ?? "") !== (now.v ?? ""))) return false;
-  return true;
-}
-
 // src/app/save-scan.ts
 function groupSaveDirs(files) {
   const norm = files.map((f) => ({ ...f, path: f.path.replace(/\\/g, "/").replace(/^\/+/, "") }));
@@ -10181,6 +10191,9 @@ async function recheckAfterPush(identifier) {
 }
 var readSealed = (identifier) => get2(identifier);
 var putSealed = (identifier, sealed) => put(identifier, sealed);
+function saveTrace(identifier, bytes, opts = {}) {
+  return put(identifier, bytes, opts);
+}
 async function saveRecipe(identifier, model, password, opts = {}) {
   return put(identifier, await sealBytes(password, model, { salt: sessionSalt, compress: true, meta: { at: Date.now() } }), opts);
 }
@@ -10427,14 +10440,6 @@ function importSaveDirs(items, password, onEach) {
   });
 }
 
-// src/app/recipe-names.ts
-var MAX_OTHER_RECIPES = 8;
-var recipeBase = (discIdentifier) => sha16(`recipe:${discIdentifier}`);
-var recipeId = (base, device) => `${RECIPES}/${base}-${device}${RECIPE_SUFFIX}`;
-function otherRecipes(ids, base, mine) {
-  return ids.filter((id) => id !== mine && id.startsWith(`${RECIPES}/${base}-`) && id.endsWith(RECIPE_SUFFIX)).slice(0, MAX_OTHER_RECIPES);
-}
-
 // src/app/recipes.ts
 var OWN_WAIT_MS = 2500;
 var OTHERS_WAIT_MS = 3e3;
@@ -10458,6 +10463,47 @@ function recipeMemory(discIdentifier, password, hidden, log2) {
     save: async (model) => {
       const { mine } = await names;
       await saveRecipe(mine, model, password, { deferPush: hidden() });
+    }
+  };
+}
+
+// src/app/read-trace.ts
+var EXPERTS = ["sequential", "ranges", "label", "successor"];
+var MAX_ROWS = 2e5;
+function createReadTrace(clock = () => performance.now()) {
+  const t0 = clock();
+  const startedAt = Date.now();
+  const rows = [];
+  let dropped = 0;
+  const push = (row) => {
+    if (rows.length < MAX_ROWS) rows.push(row);
+    else dropped++;
+  };
+  const at = (t) => Math.round(t - t0);
+  return {
+    onEvent(e) {
+      if (e.kind === "read") push([at(e.t), "r", e.offset, e.length, Math.round(e.waitMs)]);
+      else if (e.kind === "prefetch") push([at(e.t), "p", e.block, EXPERTS.indexOf(e.expert), Math.round(e.ms), e.ok ? 1 : 0, e.local ? 1 : 0]);
+      else if (e.kind === "outcome") push([at(e.t), "o", e.block, e.used ? 1 : 0, EXPERTS.indexOf(e.expert)]);
+    },
+    wrap(pf) {
+      return {
+        read: (o, n) => pf.read(o, n),
+        hint: (h2) => {
+          push([at(clock()), "h", h2.label ?? null, h2.ranges ? h2.ranges.flatMap((r) => [r.offset, r.length]) : null, h2.confidence ?? 0.8, h2.withinMs ?? 3e4]);
+          pf.hint(h2);
+        },
+        workingSet: (w) => pf.workingSet(w),
+        stats: () => pf.stats(),
+        close: () => pf.close()
+      };
+    },
+    rows: () => rows.length,
+    async dump(head) {
+      const json = new TextEncoder().encode(JSON.stringify({ v: 1, startedAt, ...head, experts: EXPERTS, dropped, rows }));
+      if (typeof CompressionStream !== "function") return { bytes: json, gzip: false };
+      const gz = new Uint8Array(await new Response(new Blob([json]).stream().pipeThrough(new CompressionStream("gzip"))).arrayBuffer());
+      return { bytes: gz, gzip: true };
     }
   };
 }
@@ -10487,6 +10533,10 @@ async function readWithRetry(read, o, n, hooks) {
 }
 
 // src/app/discs.ts
+var traceOn = false;
+var enableReadTrace = () => {
+  traceOn = true;
+};
 var sessionPassword = null;
 var getPassword = () => sessionPassword;
 var setPassword = (p) => {
@@ -10563,9 +10613,11 @@ async function fromPantry(identifier, password, fallbackKey) {
   const memory = pw ? recipeMemory(identifier, pw, () => document.visibilityState === "hidden", (t) => logEvent("info", t)) : void 0;
   const stream = await getStore().file(identifier, { mode: "existing" }).openStream();
   if (!stream) throw new Error("\u8FD9\u5F20\u76D8\u73B0\u5728\u62FF\u4E0D\u5230\uFF08\u6CA1\u767B\u5F55\u3001\u79BB\u7EBF\uFF0C\u6216\u8005\u4E91\u7AEF\u5DF2\u7ECF\u6CA1\u6709\u4E86\uFF09");
-  const prefetcher = await createDiscPrefetcher(stream, { cacheBytes: stagingCapBytes() || 256 * 2 ** 20, lanes: STREAM_LANES, log: logEvent, memory });
+  const trace = traceOn ? createReadTrace() : void 0;
+  const raw = await createDiscPrefetcher(stream, { cacheBytes: stagingCapBytes() || 256 * 2 ** 20, lanes: STREAM_LANES, log: logEvent, memory, ...trace ? { trace: (e) => trace.onEvent(e) } : {} });
+  const prefetcher = trace ? trace.wrap(raw) : raw;
   const src = { size: stream.totalSize, read: (o, n) => readWithRetry((a, b) => prefetcher.read(a, b), o, n, retryHooks) };
-  return { ...await unwrap(src, identifier, password, fallbackKey), identifier, net: () => stream.status(), prefetcher, rawSize: stream.totalSize };
+  return { ...await unwrap(src, identifier, password, fallbackKey), identifier, net: () => stream.status(), prefetcher, rawSize: stream.totalSize, ...trace ? { trace } : {} };
 }
 async function inspectPantry(identifier) {
   const encrypted = identifier.endsWith(".wafter");
@@ -12686,6 +12738,7 @@ var params = new URLSearchParams(location.search);
 var DEV_SERVER = /^(127\.0\.0\.1|localhost)$/.test(location.hostname);
 var IS_DEV_CHANNEL = location.pathname.includes("/dev/") || DEV_SERVER;
 var CACHE_PREFIX = IS_DEV_CHANNEL ? "kudsrocket-dev-" : "kudsrocket-prod-";
+if (IS_DEV_CHANNEL) enableReadTrace();
 var ownCache = (k) => k.startsWith(CACHE_PREFIX) || IS_DEV_CHANNEL && /^kudsrocket-(?!dev-|prod-)/.test(k);
 var OWN_SW = new URL("./service-worker.js", location.href).href;
 var ownController = () => navigator.serviceWorker.controller?.scriptURL === OWN_SW;
@@ -14176,8 +14229,21 @@ async function closePrefetcher() {
   const pf = current?.prefetcher;
   if (!pf || prefetchClosed) return;
   prefetchClosed = true;
-  logEvent("info", prefetchSummary(pf.stats()));
+  const stats = pf.stats();
+  logEvent("info", prefetchSummary(stats));
   await pf.close().catch((e) => logEvent("warn", `\u9884\u53D6\u7ED3\u8D26\u5931\u8D25\uFF1A${errorText(e)}`));
+  const tr = current?.trace;
+  if (tr && current?.identifier && tr.rows()) {
+    try {
+      const { bytes, gzip } = await tr.dump({ app: APP_VERSION, disc: await recipeBase(current.identifier), device: deviceId(), size: current.rawSize, blockBytes: 2 * 2 ** 20, stats });
+      const stamp2 = (/* @__PURE__ */ new Date()).toISOString().replace(/[-:]/g, "").replace(/\..*$/, "").replace("T", "-");
+      const id = `tmp/traces/${await recipeBase(current.identifier)}-${deviceId()}-${stamp2}.trace.json${gzip ? ".gz" : ""}`;
+      await saveTrace(id, bytes, { deferPush: document.visibilityState === "hidden" });
+      logEvent("info", `\u8BFB\u76D8\u8F68\u8FF9\uFF1A${tr.rows()} \u884C\uFF0C${(bytes.length / 1024).toFixed(0)} KB \u2192 ${id}`);
+    } catch (e) {
+      logEvent("warn", `\u8BFB\u76D8\u8F68\u8FF9\u6CA1\u5B58\u4E0A\uFF1A${errorText(e)}`);
+    }
+  }
 }
 addEventListener("pagehide", () => {
   void closePrefetcher();
@@ -15143,4 +15209,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-7919de0b2426.mjs.map
+//# sourceMappingURL=kudsrocket-b6ecb16b286d.mjs.map
