@@ -1,5 +1,5 @@
 // src/version.ts
-var APP_VERSION = "v0.1.58-2026-10-17";
+var APP_VERSION = "v0.1.59-2026-10-18";
 
 // assets/icons.svg
 var icons_default = '<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none">\n<!--\n  14 icons extracted from the family icon library (../20260708 SVG Icons/icons.svg) by extract-icons.py \u2014 do not hand-edit; re-run the script instead.\n  Family SVG Icons \u2014 MIT License, Copyright (c) 2026 fangzhangmnm.\n  Contains work derived from (per-icon provenance in data-src):\n    Feather Icons \u2014 MIT License, Copyright (c) 2013-2023 Cole Bemis \xB7 https://github.com/feathericons/feather\n-->\n  <!-- media -->\n  <!-- pause \u2014 \u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="pause" data-cat="media" data-src="own" data-note="\u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="3.2"><path d="M8.3 5.5 V18.5"/><path d="M15.7 5.5 V18.5"/></g></symbol>\n  <!-- play \u2014 \u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="play" data-cat="media" data-src="own" data-note="\u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 5.4 L18.8 12 L8.2 18.6 Z" fill="currentColor"/></symbol>\n  <!-- fast-forward \u2014 \u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="fast-forward" data-cat="media" data-src="own" data-note="\u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.4 6.8 L10.9 12 L4.4 17.2 Z" fill="currentColor"/><path d="M13.1 6.8 L19.6 12 L13.1 17.2 Z" fill="currentColor"/></symbol>\n  <!-- volume \u2014 \u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009) -->\n  <symbol id="volume" data-cat="media" data-src="own" data-note="\u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 10.3 H8.7 L12.6 6.6 V17.4 L8.7 13.7 H5.5 Z" fill="currentColor"/><path d="M15.13 9.73 A3.4 3.4 0 0 1 15.13 14.27"/><path d="M16.36 7.19 A6.1 6.1 0 0 1 16.36 16.81"/></symbol>\n  <!-- file -->\n  <!-- floppy-disk \u2014 \u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3 -->\n  <symbol id="floppy-disk" data-cat="file" data-src="feather:save" data-note="\u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13l3 3v13a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 17 8 17 3"/></symbol>\n  <!-- folder-open \u2014 \u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF -->\n  <symbol id="folder-open" data-cat="file" data-src="own" data-note="\u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18 V7 a2 2 0 0 1 2 -2 h4 l2 2 h6 a2 2 0 0 1 2 2 v1.8"/><path d="M3 18 L6.4 10.8 H21.6 L18.2 18 Z"/></symbol>\n  <!-- hierarchy -->\n  <!-- lock \u2014 \u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D -->\n  <symbol id="lock" data-cat="hierarchy" data-src="own" data-note="\u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10" width="13" height="11"/><path d="M8.8 10 V6.5 a3.2 3.2 0 0 1 6.4 0 V10"/></symbol>\n  <!-- common -->\n  <!-- x \u2014 \u53C9 -->\n  <symbol id="x" data-cat="common" data-src="own" data-note="\u53C9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 L17.5 17.5 M17.5 6.5 L6.5 17.5"/></symbol>\n  <!-- cloud -->\n  <!-- cloud \u2014 \u4E91 -->\n  <symbol id="cloud" data-cat="cloud" data-src="feather:cloud" data-note="\u4E91" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>\n  <!-- viewport -->\n  <!-- maximize-viewport \u2014 \u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55) -->\n  <symbol id="maximize-viewport" data-cat="viewport" data-src="own" data-note="\u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934 --> <polyline points="4 9 4 4 9 4"/> <polyline points="20 9 20 4 15 4"/> <polyline points="4 15 4 20 9 20"/> <polyline points="20 15 20 20 15 20"/></symbol>\n  <!-- picture-in-picture \u2014 \u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1) -->\n  <symbol id="picture-in-picture" data-cat="viewport" data-src="own" data-note="\u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u5927\u6846\uFF08\u4E3B\u753B\u5E03\uFF09+ \u5185\u5D4C\u5C0F\u7A97\uFF08\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1\uFF09\u2014\u2014 picture-in-picture \u9690\u55BB --> <rect x="3" y="4" width="18" height="14" rx="2"/> <rect x="12" y="10" width="7" height="5" rx="1"/></symbol>\n  <!-- ui -->\n  <!-- more \u2014 \u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00) -->\n  <symbol id="more" data-cat="ui" data-src="own" data-note="\u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/></symbol>\n  <!-- keyboard \u2014 \u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49) -->\n  <symbol id="keyboard" data-cat="ui" data-src="own" data-note="\u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="7.2" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="7.2" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><path d="M8.6 15.6 H15.4"/></symbol>\n  <!-- menu \u2014 \u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17) -->\n  <symbol id="menu" data-cat="ui" data-src="own" data-note="\u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"></line> <line x1="4" y1="12" x2="20" y2="12"></line> <line x1="4" y1="17" x2="20" y2="17"></line></symbol>\n</svg>\n';
@@ -1033,7 +1033,7 @@ function mountSoftKeys(host, on) {
   };
 }
 
-// node_modules/@internal/store/dist/substrate.js
+// node_modules/@internal/store/dist/base/substrate.js
 async function toU8(x) {
   if (x == null)
     return new Uint8Array(0);
@@ -1146,7 +1146,7 @@ function createSubstrate() {
   return { edits, session: session2, serialize, serialize2, drain };
 }
 
-// node_modules/@internal/store/dist/local-head.js
+// node_modules/@internal/store/dist/works/local-head.js
 var BypassError = class extends Error {
   code = "BYPASS";
   constructor(name) {
@@ -1231,7 +1231,7 @@ function createLocalHead({ kv, getCloudEtag, setCloudEtag, keyPrefix = "head" })
   return { ifMatchFor, seenBase, isDirtyThisTab, isDirtyAnywhere, recordEdit, markSeen, markSynced, onPushed, forget, editCount: (name) => _edits.get(name) ?? 0 };
 }
 
-// node_modules/@internal/store/dist/error-handling.js
+// node_modules/@internal/store/dist/base/error-handling.js
 var reporter = null;
 function setStoreErrorReporter(fn) {
   reporter = fn;
@@ -1242,7 +1242,7 @@ function reportStoreError(err3, level = "error") {
   reporter?.(err3, level);
 }
 
-// node_modules/@internal/store/dist/seal.js
+// node_modules/@internal/store/dist/works/seal.js
 var LockedError = class extends Error {
   code = "LOCKED";
   constructor(name) {
@@ -1304,12 +1304,13 @@ function createSeal(cfg) {
   return { isContainer, sealForWrite, unsealForRead, withPassword: withPassword2 };
 }
 
-// node_modules/@internal/store/dist/identifiers.js
+// node_modules/@internal/store/dist/base/identifiers.js
 var SEAL_SUFFIX = ".zip";
 function validateDocKinds(docKinds) {
   if (!Array.isArray(docKinds))
     throw new Error("docKinds must be an array (pass [] to declare that this app has no document kinds)");
   const seen = /* @__PURE__ */ new Set();
+  const plain = /* @__PURE__ */ new Set();
   for (const k of docKinds) {
     if (!k || typeof k.kind !== "string" || !k.kind)
       throw new Error(`docKinds: every row needs a non-empty kind (got ${JSON.stringify(k)})`);
@@ -1319,9 +1320,20 @@ function validateDocKinds(docKinds) {
       throw new Error(`docKinds[${k.kind}]: suffix must not contain "/" or end with whitespace (got ${JSON.stringify(k.suffix)})`);
     if (k.container !== "raw" && k.container !== "zip")
       throw new Error(`docKinds[${k.kind}]: container must be "raw" or "zip" (got ${JSON.stringify(k.container)})`);
+    if (k.tier !== void 0 && k.tier !== "work" && k.tier !== "auto-backup" && k.tier !== "resource")
+      throw new Error(`docKinds[${k.kind}]: tier must be "work" | "auto-backup" | "resource" (got ${JSON.stringify(k.tier)})`);
+    if (k.stem !== void 0 && !(k.stem instanceof RegExp))
+      throw new Error(`docKinds[${k.kind}]: stem must be a RegExp (got ${JSON.stringify(String(k.stem))})`);
+    if (k.stem && (k.stem.global || k.stem.sticky))
+      throw new Error(`docKinds[${k.kind}]: stem must not use the g / y flags (stateful)`);
+    if (k.validate !== void 0 && typeof k.validate !== "function")
+      throw new Error(`docKinds[${k.kind}]: validate must be a function`);
     const low = k.suffix.toLowerCase();
-    if (seen.has(low))
-      throw new Error(`docKinds: suffix ${JSON.stringify(k.suffix)} declared twice`);
+    if (!k.stem) {
+      if (plain.has(low))
+        throw new Error(`docKinds: suffix ${JSON.stringify(k.suffix)} declared twice (rows sharing a suffix must carry a stem pattern; at most one may not)`);
+      plain.add(low);
+    }
     seen.add(low);
   }
   const lows = [...seen];
@@ -1338,23 +1350,41 @@ function validateDocKinds(docKinds) {
 }
 function createIdentifiers(docKinds) {
   validateDocKinds(docKinds);
-  const kinds = Object.freeze(docKinds.map((k) => Object.freeze({ kind: k.kind, suffix: k.suffix, container: k.container })));
-  const bySuffixLength = [...kinds].sort((a, b) => b.suffix.length - a.suffix.length);
-  function parse(identifier) {
+  const kinds = Object.freeze(docKinds.map((k) => Object.freeze({
+    kind: k.kind,
+    suffix: k.suffix,
+    container: k.container,
+    tier: k.tier ?? "work",
+    ...k.stem ? { stem: k.stem } : {},
+    ...k.validate ? { validate: k.validate } : {}
+  })));
+  const bySuffix = /* @__PURE__ */ new Map();
+  for (const k of kinds) {
+    const low = k.suffix.toLowerCase();
+    (bySuffix.get(low) ?? bySuffix.set(low, []).get(low)).push(k);
+  }
+  const suffixesLongestFirst = [...bySuffix.keys()].sort((a, b) => b.length - a.length);
+  function match(identifier) {
     if (typeof identifier !== "string" || !identifier)
       return null;
     const slash = identifier.lastIndexOf("/");
     const folder = slash < 0 ? "" : identifier.slice(0, slash);
     const base = slash < 0 ? identifier : identifier.slice(slash + 1);
     const low = base.toLowerCase();
-    for (const k of bySuffixLength) {
-      const s = k.suffix.toLowerCase();
-      if (low.length > s.length && low.endsWith(s)) {
-        return { identifier, folder, stem: base.slice(0, base.length - s.length), suffix: base.slice(base.length - s.length), kind: k.kind, container: k.container };
-      }
+    for (const s of suffixesLongestFirst) {
+      if (!(low.length > s.length && low.endsWith(s)))
+        continue;
+      const stem = base.slice(0, base.length - s.length);
+      const rows = bySuffix.get(s);
+      const row = rows.find((r) => r.stem && r.stem.test(stem)) ?? rows.find((r) => !r.stem);
+      if (!row)
+        continue;
+      return { row, d: { identifier, folder, stem, suffix: base.slice(base.length - s.length), kind: row.kind, container: row.container, tier: row.tier ?? "work" } };
     }
     return null;
   }
+  const parse = (identifier) => match(identifier)?.d ?? null;
+  const rowOf = (identifier) => match(identifier)?.row ?? null;
   function join(parts) {
     const folder = parts.folder ?? "";
     return `${folder ? `${folder}/` : ""}${parts.stem}${parts.suffix}`;
@@ -1370,7 +1400,7 @@ function createIdentifiers(docKinds) {
     }
     return { identifier: cloudName, sealed: false };
   }
-  return { kinds, parse, join, sealed, fromCloud };
+  return { kinds, parse, rowOf, join, sealed, fromCloud };
 }
 function withStemTail(identifier, tail, ids) {
   const d = ids.parse(identifier);
@@ -1383,7 +1413,7 @@ function withStemTail(identifier, tail, ids) {
   return `${slash < 0 ? "" : identifier.slice(0, slash + 1)}${stem}${tail}${rest}`;
 }
 
-// node_modules/@internal/store/dist/safe-resolve.js
+// node_modules/@internal/store/dist/works/safe-resolve.js
 function createSafeResolve(cfg) {
   const { cloud, local: local2, head, localDirty = () => false, validateAdopt: validateAdopt2, unseal = (_n, blob) => Promise.resolve(blob), onReplacing = () => {
   }, looksEncrypted = () => Promise.resolve(false), serialize = (_n, fn) => fn() } = cfg;
@@ -1405,7 +1435,7 @@ function createSafeResolve(cfg) {
       if (!r)
         return { ok: false, reason: "cloud-vanished", backupName };
       const plain = await unseal(name, r.blob);
-      const ok = plain != null ? await validateAdopt2(plain) : await looksEncrypted(r.blob);
+      const ok = plain != null ? await validateAdopt2(plain, name) : await looksEncrypted(r.blob);
       if (!ok)
         return { ok: false, reason: "invalid-cloud-bytes", backupName };
       const commit = async () => {
@@ -1452,8 +1482,8 @@ function createSafeResolve(cfg) {
     }
     return false;
   }
-  async function weakOverride(name, bytes) {
-    const r = await cloud.weakOverride(name, bytes, { encrypted: await looksEncrypted(bytes) });
+  async function weakOverride(name, bytes, backup = true) {
+    const r = await cloud.weakOverride(name, bytes, { encrypted: await looksEncrypted(bytes), backup });
     if (!(r.item && r.item.eTag))
       return { backedUp: r.backedUp, deferred: true };
     head.markSynced(name, r.item.eTag);
@@ -1465,7 +1495,7 @@ function createSafeResolve(cfg) {
       return r.ok ? { status: "resolved", resolution: "takeCloud", backupName: r.backupName } : { status: "unresolved", reason: r.reason, backupName: r.backupName };
     }
     if (choice === "keepMine" && ctx.bytes != null) {
-      const r = await weakOverride(name, ctx.bytes);
+      const r = await weakOverride(name, ctx.bytes, ctx.loserBackup !== false);
       if (r.deferred)
         return { status: "unresolved", reason: "deferred", backedUp: r.backedUp };
       return { status: "resolved", resolution: "keepMine", backedUp: r.backedUp };
@@ -1475,7 +1505,7 @@ function createSafeResolve(cfg) {
   return { safePull, tryHeal, weakOverride, resolveConflict };
 }
 
-// node_modules/@internal/store/dist/push.js
+// node_modules/@internal/store/dist/works/push.js
 var passBusy = (_l, fn) => fn();
 var isConflict = (e) => !!e && (e.name === "CloudConflictError" || e.status === 412);
 var pushRetryDefaults = { maxAttempts: 4, backoffMs: 200, exponential: false };
@@ -1488,7 +1518,7 @@ function retriable(e) {
 }
 function createPush(cfg) {
   const { cloud, head, seal, safeResolve, serialize, editVersion, busy = passBusy, maxAttempts = pushRetryDefaults.maxAttempts, backoffMs = pushRetryDefaults.backoffMs, exponential = pushRetryDefaults.exponential, sleep = (ms) => new Promise((r) => setTimeout(r, ms)) } = cfg;
-  async function doPush(name, { encode: encode2, getEditVersion = editVersion, onConflict, adopt, surfaceCollision = false, onProgress }) {
+  async function doPush(name, { encode: encode2, getEditVersion = editVersion, onConflict, adopt, surfaceCollision = false, onProgress, loserBackup }) {
     const ifMatch = head.ifMatchFor(name);
     const v0 = getEditVersion();
     const e0 = head.editCount?.(name) ?? 0;
@@ -1515,11 +1545,11 @@ function createPush(cfg) {
               return { status: "healed", dirtyAfter };
             }
             const choice = onConflict ? await onConflict({ name }) : "cancel";
-            return await safeResolve.resolveConflict(name, choice, { bytes, adopt, inChain: true });
+            return await safeResolve.resolveConflict(name, choice, { bytes, adopt, inChain: true, loserBackup });
           }
           if (surfaceCollision && e?.name === "CloudNameCollisionError") {
             const choice = onConflict ? await onConflict({ name }) : "cancel";
-            return await safeResolve.resolveConflict(name, choice, { bytes, adopt, inChain: true });
+            return await safeResolve.resolveConflict(name, choice, { bytes, adopt, inChain: true, loserBackup });
           }
           if (retriable(e) && attempt < maxAttempts) {
             lastErr = e;
@@ -1538,7 +1568,7 @@ function createPush(cfg) {
   return { push, doPush };
 }
 
-// node_modules/@internal/store/dist/freshness.js
+// node_modules/@internal/store/dist/works/freshness.js
 var passBusy2 = (_l, fn) => fn();
 function createFreshness(cfg) {
   const { cloud, head, safeResolve, busy: _busy = passBusy2, hints, lineageFromDurable = true } = cfg;
@@ -1663,7 +1693,7 @@ function createFreshness(cfg) {
   return { open, refresh };
 }
 
-// node_modules/@internal/store/dist/fresh-hints.js
+// node_modules/@internal/store/dist/works/fresh-hints.js
 function createFreshHints(opts = {}) {
   const ttl = opts.ttlMs ?? 3e4;
   const now = opts.now ?? (() => Date.now());
@@ -1688,7 +1718,7 @@ function createFreshHints(opts = {}) {
   };
 }
 
-// node_modules/@internal/store/dist/move-aside.js
+// node_modules/@internal/store/dist/base/move-aside.js
 function pad(n, w = 2) {
   return String(n).padStart(w, "0");
 }
@@ -1733,7 +1763,7 @@ async function restoreTargetName(orig, occupied, stamp14, fallbackMs, ids) {
   return target;
 }
 
-// node_modules/@internal/store/dist/delete.js
+// node_modules/@internal/store/dist/works/delete.js
 var passBusy3 = (_l, fn) => fn();
 var DELQ_KEY = "internal.pending_deletions";
 function createDelete(cfg) {
@@ -1864,7 +1894,7 @@ function createDelete(cfg) {
   return { del, replayDelete, drainDeleteQueue };
 }
 
-// node_modules/@internal/store/dist/is-hidden.js
+// node_modules/@internal/store/dist/base/is-hidden.js
 function isHidden(name) {
   if (!name)
     return false;
@@ -1885,7 +1915,7 @@ function assertValidCollectionName(name) {
   }
 }
 
-// node_modules/@internal/store/dist/errors.js
+// node_modules/@internal/store/dist/base/errors.js
 var CloudNetworkError = class extends Error {
   cause;
   constructor(message, cause) {
@@ -1906,7 +1936,7 @@ var CloudStaleRefError = class extends Error {
   }
 };
 
-// node_modules/@internal/store/dist/cloud-sync.js
+// node_modules/@internal/store/dist/works/cloud-sync.js
 var CloudConflictError = class extends Error {
   sessionName;
   constructor(message, sessionName) {
@@ -1927,7 +1957,7 @@ var CloudNameCollisionError = class extends Error {
 };
 var NO_KINDS = createIdentifiersNoKinds();
 function createIdentifiersNoKinds() {
-  return { kinds: [], parse: () => null, join: (p) => `${p.folder ? `${p.folder}/` : ""}${p.stem}${p.suffix}` };
+  return { kinds: [], parse: () => null, rowOf: () => null, join: (p) => `${p.folder ? `${p.folder}/` : ""}${p.stem}${p.suffix}` };
 }
 var defaultCloudToName = (cloudName) => cloudName.endsWith(".zip") ? cloudName.slice(0, -4) : cloudName;
 function createCloudSync(cfg) {
@@ -2177,10 +2207,12 @@ function createCloudSync(cfg) {
     let backedUp = null;
     let item;
     if (cur.item) {
-      const folderId = await provider.ensureFolder(backupFolder);
-      const stamped = stampedName(name, cur.enc);
-      await provider.copy(cur.item.ref, folderId, stamped);
-      backedUp = `${backupFolder}/${stamped}`;
+      if (opts.backup !== false) {
+        const folderId = await provider.ensureFolder(backupFolder);
+        const stamped = stampedName(name, cur.enc);
+        await provider.copy(cur.item.ref, folderId, stamped);
+        backedUp = `${backupFolder}/${stamped}`;
+      }
       item = await provider.upload(path, bytes, { contentType, eTag: cur.item.eTag, conflictBehavior: "replace" });
     } else {
       item = await provider.upload(path, bytes, { contentType, conflictBehavior: "fail" });
@@ -2334,7 +2366,7 @@ function createCloudSync(cfg) {
   };
 }
 
-// node_modules/@internal/store/dist/identity.js
+// node_modules/@internal/store/dist/works/identity.js
 var passBusy4 = (_l, fn) => fn();
 function createIdentity(cfg) {
   const { cloud, local: local2, head, doPush, serialize, serialize2, seal, busy: _busy = passBusy4, isOnline, deleteOffline, queueUpload, nameOccupied } = cfg;
@@ -2451,7 +2483,7 @@ function createIdentity(cfg) {
   return { rename, acquire };
 }
 
-// node_modules/@internal/store/dist/trash.js
+// node_modules/@internal/store/dist/works/trash.js
 var passBusy5 = (_l, fn) => fn();
 function createTrash(cfg) {
   const { cloud, local: local2, head, busy: _busy = passBusy5 } = cfg;
@@ -2576,7 +2608,7 @@ function createTrash(cfg) {
   return { restore, purge, emptyTrash, emptyBackup };
 }
 
-// node_modules/@internal/store/dist/offload.js
+// node_modules/@internal/store/dist/works/offload.js
 var OffloadIllegalError = class extends Error {
   code = "OFFLOAD_ILLEGAL";
   reason;
@@ -2616,7 +2648,7 @@ function createOffload(cfg) {
   return { offload };
 }
 
-// node_modules/@internal/store/dist/reconcile.js
+// node_modules/@internal/store/dist/works/reconcile.js
 function classifyCloudGone(localNames, cloudNameSet, opts) {
   const demote = [];
   if (!opts.authoritative)
@@ -2658,7 +2690,10 @@ function createReconcile(cfg) {
     for (const name of demote) {
       if (!pending2.seenGone(name, now()))
         continue;
-      await local2.trash(name, asideStamp(now()));
+      if (cfg.drop?.(name))
+        await local2.hardDelete(name);
+      else
+        await local2.trash(name, asideStamp(now()));
       cloud.clearState(name);
       head.forget(name);
       pending2.clear(name);
@@ -2701,7 +2736,7 @@ function createReconcile(cfg) {
   return { reconcile, reconcileFolder };
 }
 
-// node_modules/@internal/store/dist/pending-gone.js
+// node_modules/@internal/store/dist/works/pending-gone.js
 var KEY = "internal.pending_gone";
 function createPendingGone(kv, graceMs) {
   function read() {
@@ -2748,7 +2783,7 @@ function createPendingGone(kv, graceMs) {
   };
 }
 
-// node_modules/@internal/store/dist/folder-merge.js
+// node_modules/@internal/store/dist/works/folder-merge.js
 var lastWinResolve = (x, y) => defaultResolve(x, y);
 function resolverForPolicy(policy) {
   switch (policy) {
@@ -2805,7 +2840,7 @@ function normalizeFolder(f) {
   });
 }
 
-// node_modules/@internal/store/dist/folder-flow.js
+// node_modules/@internal/store/dist/works/folder-flow.js
 function withTimeout(p, ms) {
   if (!ms)
     return p;
@@ -2867,7 +2902,7 @@ function createFolderFlow(cfg) {
   return { sync };
 }
 
-// node_modules/@internal/store/dist/collection.js
+// node_modules/@internal/store/dist/works/collection.js
 function collectionLocalKey(name) {
   return `collections/${name}`;
 }
@@ -3118,7 +3153,7 @@ function createCollection(cfg) {
   return { init, reconcileWithRemote, setItem, deleteItem, getItem, getEntry, entries, keys, onChange, flushLocal, isDirty: isDirty2 };
 }
 
-// node_modules/@internal/store/dist/listing.js
+// node_modules/@internal/store/dist/works/listing.js
 function classifySyncState(f) {
   if (!f.hasLocal)
     return "cloud-only";
@@ -3152,6 +3187,10 @@ var toMs = (v) => {
 function createListing(cfg) {
   const isHiddenAny = (n) => isHidden(n) || !!cfg.hidden?.(n);
   const { cloud, local: local2, head, pendingFolders, isPendingGone, pendingFolderDeletions } = cfg;
+  const describe = (n) => {
+    const d = cfg.describe?.(n);
+    return d ? d.kind !== void 0 ? { kind: d.kind, tier: d.tier } : { tier: d.tier } : { tier: "work" };
+  };
   function classifyPath(path, cf, hasLocal, cloudReachable, absenceAuthoritative, localStat) {
     const hasCloud = cf != null;
     const seen = head.seenBase(path);
@@ -3169,7 +3208,7 @@ function createListing(cfg) {
       pendingGone: isPendingGone?.(path)
     });
     const lastModified = dirty ? localStat?.updatedAt ?? cf?.lastModified : cf?.lastModified ?? localStat?.updatedAt;
-    return { identifier: path, syncState: syncState2, size: cf?.size ?? localStat?.size, lastModified };
+    return { identifier: path, ...describe(path), syncState: syncState2, size: cf?.size ?? localStat?.size, lastModified };
   }
   async function statLocal(keys) {
     const m = /* @__PURE__ */ new Map();
@@ -3237,7 +3276,7 @@ function createListing(cfg) {
         const rest = folder ? f.name.startsWith(prefix) ? f.name.slice(prefix.length) : "" : f.name;
         if (!rest || rest.includes("/"))
           continue;
-        items.push({ identifier: f.name, syncState: "cloud-only", size: f.size, lastModified: f.lastModified });
+        items.push({ identifier: f.name, ...describe(f.name), syncState: "cloud-only", size: f.size, lastModified: f.lastModified });
       }
       for (const sf of opts.staleCloud.folders)
         if (!isHiddenAny(sf))
@@ -3287,7 +3326,7 @@ function createListing(cfg) {
   return { listAllItems, listFolder };
 }
 
-// node_modules/@internal/store/dist/upload-queue.js
+// node_modules/@internal/store/dist/works/upload-queue.js
 var UPQ_KEY = "internal.pending_uploads";
 function createUploadReplay(cfg) {
   const { kv, local: local2, head, isOnline, serialize, pushLocal, policy, confirm, onStatus } = cfg;
@@ -3363,7 +3402,7 @@ function createUploadReplay(cfg) {
   return { enqueue, remove, drain, pending: readQueue };
 }
 
-// node_modules/@internal/store/dist/trash-merge.js
+// node_modules/@internal/store/dist/works/trash-merge.js
 var STAMP_RE = /^(.*) \[((\d{14})-[0-9a-fA-F-]+)\](\.zip)?$/;
 var baseNameOf = (n) => n.includes("/") ? n.slice(n.lastIndexOf("/") + 1) : n;
 function parseCloudTrashName(cloudName, toName) {
@@ -3430,7 +3469,7 @@ function mergeTrash(localEntries, cloudEntries, liveCloudNames = /* @__PURE__ */
   return out;
 }
 
-// node_modules/@internal/store/dist/idb-store.js
+// node_modules/@internal/store/dist/base/idb-store.js
 var STORE = "blobs";
 var _idbOpTimeoutMs = 3e3;
 var IdbTimeoutError = class extends Error {
@@ -3686,7 +3725,7 @@ function createIdbCache(dbName) {
   };
 }
 
-// node_modules/@internal/store/dist/blob-partition.js
+// node_modules/@internal/store/dist/base/blob-partition.js
 function createPartitionedBlobStore(dbName) {
   const idb = createIdbCache(dbName);
   const key = (p, name) => `${p}/${name}`;
@@ -3705,7 +3744,7 @@ function createPartitionedBlobStore(dbName) {
   return { partition: view, close: () => idb.close() };
 }
 
-// node_modules/@internal/store/dist/local-cache.js
+// node_modules/@internal/store/dist/base/local-cache.js
 var NO_KINDS2 = createIdentifiers([]);
 var stripStamp = (inner) => inner.replace(/^[^:]*:/, "");
 var stamp = () => asideStamp(Date.now());
@@ -3866,7 +3905,280 @@ function createCollectionCache(dbName) {
   };
 }
 
-// node_modules/@internal/store/dist/download-session.js
+// node_modules/@internal/store/dist/stream/chunk-scheduler.js
+var StreamStallError = class extends Error {
+  constructor(key) {
+    super(`chunk stalled (no bytes within the stall window): ${key}`);
+    this.name = "StreamStallError";
+  }
+};
+var MAX_ATTEMPTS = 3;
+function createChunkScheduler(cfg = {}) {
+  const lanes = Math.max(1, Math.floor(cfg.lanes ?? 1));
+  const stallMs = cfg.stallMs !== void 0 && cfg.stallMs > 0 ? cfg.stallMs : null;
+  const now = cfg.now ?? (() => Date.now());
+  const jobs = /* @__PURE__ */ new Map();
+  let playbackBusy = 0;
+  const idleWaiters = /* @__PURE__ */ new Set();
+  let laneFree = lanes;
+  const laneQueue = [];
+  const stats = { hedges: 0, stallAborts: 0, fallbacks: 0 };
+  function playbackDone() {
+    playbackBusy--;
+    if (playbackBusy === 0) {
+      const ws = [...idleWaiters];
+      idleWaiters.clear();
+      for (const w of ws)
+        w();
+    }
+  }
+  function request(req) {
+    let job = jobs.get(req.key);
+    const fresh = !job;
+    if (job) {
+      if (req.prio === "playback")
+        promote(job);
+    } else {
+      job = newJob(req);
+      jobs.set(req.key, job);
+    }
+    if (req.prio === "playback") {
+      playbackBusy++;
+      job.promise.then(playbackDone, playbackDone);
+    }
+    if (fresh)
+      void run(job);
+    return job.promise;
+  }
+  function newJob(req) {
+    let resolve, reject;
+    const promise = new Promise((res, rej) => {
+      resolve = res;
+      reject = rej;
+    });
+    promise.catch(() => {
+    });
+    return { key: req.key, req, demand: req.prio === "playback", startedAt: -1, attempts: [], settled: false, hasLane: false, wake: null, promise, resolve, reject };
+  }
+  function promote(job) {
+    if (job.demand)
+      return;
+    job.demand = true;
+    job.wake?.();
+    if (stallMs !== null) {
+      const t = now();
+      const a = job.attempts.find((x) => x.running && t - x.lastAt >= stallMs);
+      if (a)
+        onStall(job, a);
+    }
+  }
+  async function run(job) {
+    try {
+      if (job.req.preflight) {
+        const pre = await job.req.preflight();
+        if (pre) {
+          settleOk(job, pre, null);
+          return;
+        }
+      }
+      if (!job.demand) {
+        await acquireLane(job);
+        while (!job.demand && playbackBusy > 0)
+          await yieldToPlayback(job);
+      }
+      if (job.req.sources.length === 0)
+        throw new Error(`no source for chunk ${job.key}`);
+      launch(job);
+    } catch (e) {
+      settleErr(job, e);
+    }
+  }
+  function acquireLane(job) {
+    if (job.demand)
+      return Promise.resolve();
+    if (laneFree > 0) {
+      laneFree--;
+      job.hasLane = true;
+      return Promise.resolve();
+    }
+    return new Promise((r) => {
+      job.wake = () => {
+        job.wake = null;
+        r();
+      };
+      laneQueue.push(job);
+    });
+  }
+  function releaseLane(job) {
+    if (!job.hasLane)
+      return;
+    job.hasLane = false;
+    laneFree++;
+    while (laneQueue.length) {
+      const j = laneQueue.shift();
+      if (j.wake && !j.demand) {
+        laneFree--;
+        j.hasLane = true;
+        j.wake();
+        return;
+      }
+    }
+  }
+  function yieldToPlayback(job) {
+    return new Promise((r) => {
+      const w = () => {
+        idleWaiters.delete(w);
+        job.wake = null;
+        r();
+      };
+      job.wake = w;
+      idleWaiters.add(w);
+    });
+  }
+  const unusedSource = (job) => {
+    const used = new Set(job.attempts.map((a) => a.sourceIdx));
+    for (let i = 0; i < job.req.sources.length; i++)
+      if (!used.has(i))
+        return i;
+    return -1;
+  };
+  const finish = (a) => {
+    a.running = false;
+    if (a.timer) {
+      clearTimeout(a.timer);
+      a.timer = null;
+    }
+  };
+  function launch(job) {
+    const idx = unusedSource(job) >= 0 ? unusedSource(job) : job.attempts[job.attempts.length - 1].sourceIdx;
+    const src = job.req.sources[idx];
+    const a = { sourceIdx: idx, ctrl: typeof AbortController === "function" ? new AbortController() : null, lastAt: now(), timer: null, running: true };
+    job.attempts.push(a);
+    if (job.startedAt < 0)
+      job.startedAt = a.lastAt;
+    const arm = () => {
+      if (stallMs === null)
+        return;
+      if (a.timer)
+        clearTimeout(a.timer);
+      a.timer = setTimeout(() => onStall(job, a), stallMs);
+    };
+    arm();
+    let p;
+    try {
+      p = src.fetch({ signal: a.ctrl?.signal, onProgress: () => {
+        a.lastAt = now();
+        arm();
+      } });
+    } catch (e) {
+      p = Promise.reject(e);
+    }
+    p.then((bytes) => {
+      finish(a);
+      settleOk(job, bytes, src.origin);
+    }, (err3) => {
+      const wasRunning = a.running;
+      finish(a);
+      if (job.settled || !wasRunning)
+        return;
+      if (job.attempts.some((x) => x.running))
+        return;
+      if (unusedSource(job) >= 0 && job.attempts.length < MAX_ATTEMPTS) {
+        stats.fallbacks++;
+        launch(job);
+        return;
+      }
+      settleErr(job, err3);
+    });
+  }
+  function onStall(job, a) {
+    if (!a.running || job.settled)
+      return;
+    if (job.demand) {
+      const running = job.attempts.filter((x) => x.running).length;
+      if (running < 2 && job.attempts.length < MAX_ATTEMPTS) {
+        stats.hedges++;
+        launch(job);
+      }
+      return;
+    }
+    stats.stallAborts++;
+    finish(a);
+    a.ctrl?.abort();
+    if (job.attempts.some((x) => x.running))
+      return;
+    if (unusedSource(job) >= 0 && job.attempts.length < MAX_ATTEMPTS) {
+      stats.fallbacks++;
+      launch(job);
+      return;
+    }
+    settleErr(job, new StreamStallError(job.key));
+  }
+  function settleOk(job, bytes, origin) {
+    const first = !job.settled;
+    if (first) {
+      job.settled = true;
+      for (const x of job.attempts)
+        if (x.running) {
+          finish(x);
+          x.ctrl?.abort();
+        }
+    }
+    let tee = Promise.resolve();
+    if (origin !== null && job.req.arrived) {
+      try {
+        tee = Promise.resolve(job.req.arrived(bytes, origin)).then(() => {
+        }, () => {
+        });
+      } catch {
+      }
+    }
+    if (first) {
+      job.resolve(bytes);
+      void tee.then(() => close(job));
+    }
+  }
+  function settleErr(job, err3) {
+    if (job.settled)
+      return;
+    job.settled = true;
+    for (const x of job.attempts)
+      if (x.running) {
+        finish(x);
+        x.ctrl?.abort();
+      }
+    job.reject(err3);
+    close(job);
+  }
+  function close(job) {
+    if (jobs.get(job.key) === job)
+      jobs.delete(job.key);
+    releaseLane(job);
+  }
+  function status(prefix) {
+    const t = now();
+    let demand = 0, speculative = 0, queued = 0, oldest = 0, stalled = 0;
+    for (const j of jobs.values()) {
+      if (j.settled || prefix !== void 0 && !j.key.startsWith(prefix))
+        continue;
+      if (j.demand)
+        demand++;
+      else if (j.startedAt >= 0)
+        speculative++;
+      else
+        queued++;
+      if (j.startedAt >= 0)
+        oldest = Math.max(oldest, t - j.startedAt);
+      const running = j.attempts.filter((a) => a.running);
+      if (stallMs !== null && running.length > 0 && running.every((a) => t - a.lastAt >= stallMs))
+        stalled++;
+    }
+    return { demand, speculative, queued, oldestMs: oldest, stalled };
+  }
+  return { request, status, stats, lanes, stallMs };
+}
+
+// node_modules/@internal/store/dist/stream/download-session.js
 var EtagChangedError = class extends Error {
   constructor(name) {
     super(`\u4E91\u7AEF\u6587\u4EF6\u5DF2\u66F4\u65B0\uFF0C\u4E0B\u8F7D\u4F1A\u8BDD\u5931\u6548\uFF1A${name}`);
@@ -3875,6 +4187,9 @@ var EtagChangedError = class extends Error {
 };
 var CHUNK_DEFAULT = 2 * 1024 * 1024;
 var CAP_DEFAULT = 256 * 1024 * 1024;
+var VERIFY_EVERY = 16;
+var MIRROR_COOLDOWN_MS = 3e4;
+var MIRROR_COOLDOWN_MAX_MS = 10 * 6e4;
 var mKey = (name) => `meta:${name}`;
 var cKey = (name, i) => `chunk:${name}:${i}`;
 function createDownloadSessions(cfg) {
@@ -3882,21 +4197,13 @@ function createDownloadSessions(cfg) {
   const chunkSize = cfg.chunkSize ?? CHUNK_DEFAULT;
   const capBytes = cfg.capBytes ?? CAP_DEFAULT;
   const now = cfg.now ?? (() => Date.now());
-  let playbackBusy = 0;
-  let playbackIdleWaiters = [];
-  const playbackIdle = () => playbackBusy === 0 ? Promise.resolve() : new Promise((r) => playbackIdleWaiters.push(r));
-  function playbackDone() {
-    playbackBusy--;
-    if (playbackBusy === 0) {
-      const ws = playbackIdleWaiters;
-      playbackIdleWaiters = [];
-      for (const w of ws)
-        w();
-    }
-  }
-  let pinChain = Promise.resolve();
-  const inflight = /* @__PURE__ */ new Map();
+  const streaming = cfg.streaming;
+  const lanes = Math.max(1, Math.floor(streaming?.lanes ?? 1));
+  const scheduler = createChunkScheduler({ lanes, stallMs: streaming?.stallMs, now });
   const activeSessions = /* @__PURE__ */ new Set();
+  const liveMeta = /* @__PURE__ */ new Map();
+  const mirrorHealth = /* @__PURE__ */ new Map();
+  const mirrorRejected = /* @__PURE__ */ new Set();
   const sGet = async (k) => {
     try {
       return await staging.get(k);
@@ -3908,6 +4215,13 @@ function createDownloadSessions(cfg) {
   const sPut = async (k, b) => {
     try {
       await staging.put(k, b);
+    } catch (e) {
+      reportStoreError(e, "log");
+    }
+  };
+  const sDel = async (k) => {
+    try {
+      await staging.del(k);
     } catch (e) {
       reportStoreError(e, "log");
     }
@@ -3965,7 +4279,7 @@ function createDownloadSessions(cfg) {
     }
   }
   async function coverage(name) {
-    const m = await readMeta(name);
+    const m = liveMeta.get(name) ?? await readMeta(name);
     if (!m)
       return null;
     const nChunks = Math.max(1, Math.ceil(m.totalBytes / m.chunkBytes));
@@ -4000,65 +4314,232 @@ function createDownloadSessions(cfg) {
     await purgeName(name);
     return "done";
   }
+  const healthOf = (src) => {
+    let h2 = mirrorHealth.get(src);
+    if (!h2)
+      mirrorHealth.set(src, h2 = { failures: 0, downUntil: 0 });
+    return h2;
+  };
+  const mirrorUp = (src) => now() >= healthOf(src).downUntil;
+  const mirrorFailed = (src) => {
+    const h2 = healthOf(src);
+    h2.failures++;
+    h2.downUntil = now() + Math.min(MIRROR_COOLDOWN_MS * 2 ** (h2.failures - 1), MIRROR_COOLDOWN_MAX_MS);
+  };
+  const mirrorOk = (src) => {
+    const h2 = healthOf(src);
+    h2.failures = 0;
+    h2.downUntil = 0;
+  };
+  const sameBytes = (a, b) => {
+    if (a.length !== b.length)
+      return false;
+    for (let i = 0; i < a.length; i++)
+      if (a[i] !== b[i])
+        return false;
+    return true;
+  };
   async function open(name) {
-    const cm0 = await fetchMeta(name);
-    if (!cm0)
-      return null;
-    const { etag, size, item } = cm0;
+    let cm0 = null, cloudErr = null;
+    try {
+      cm0 = await fetchMeta(name);
+    } catch (e) {
+      cloudErr = e;
+    }
     const prev = await readMeta(name);
+    const mirrorList = streaming?.mirrors?.() ?? [];
+    let etag, size, item;
+    if (cm0) {
+      ({ etag, size, item } = cm0);
+    } else if (prev && mirrorList.length > 0) {
+      etag = prev.eTag;
+      size = prev.totalBytes;
+      item = null;
+    } else {
+      if (cloudErr)
+        throw cloudErr;
+      return null;
+    }
     if (prev && prev.eTag !== etag)
       await purgeName(name);
     const meta = prev && prev.eTag === etag ? { ...prev, touchedAt: now() } : { v: 1, eTag: etag, totalBytes: size, chunkBytes: chunkSize, chunks: [], touchedAt: now() };
     const got = new Set(meta.chunks);
+    const mirrored = new Set(meta.mirrored ?? []);
     await writeMeta(name, meta);
     const nChunks = Math.max(1, Math.ceil(size / chunkSize));
     let closed = false;
+    let mirror = null;
+    let mirrorState = "none";
+    for (const src of mirrorList) {
+      if (mirrorRejected.has(`${name}@${etag}@${src.label}`)) {
+        mirrorState = "rejected";
+        continue;
+      }
+      if (item !== null && !mirrorUp(src)) {
+        mirrorState = "down";
+        continue;
+      }
+      let handle = null;
+      try {
+        handle = await src.open(name, size);
+      } catch (e) {
+        reportStoreError(e, "log");
+      }
+      if (handle) {
+        mirror = { src, handle };
+        mirrorState = "ok";
+        break;
+      }
+    }
+    if (item === null && !mirror) {
+      if (cloudErr)
+        throw cloudErr;
+      return null;
+    }
     activeSessions.add(name);
-    function fetchChunk(i, prio) {
-      const key = `${name}:${i}`;
-      const existing = inflight.get(key);
-      if (existing)
-        return existing;
-      const job = (async () => {
-        const cached = await sGet(cKey(name, i));
-        if (cached)
-          return new Uint8Array(await cached.arrayBuffer());
-        if (prio === "pin")
-          await playbackIdle();
-        const off = i * chunkSize;
-        const len = Math.min(chunkSize, size - off);
-        const bytes = await range(item, off, len);
-        await sPut(cKey(name, i), new Blob([bytes]));
-        if (!got.has(i)) {
-          got.add(i);
-          meta.chunks = [...got];
-          meta.touchedAt = now();
+    liveMeta.set(name, meta);
+    let mirrorChunks = 0;
+    let firstOk = false;
+    let firstCheck = null;
+    const verified = /* @__PURE__ */ new Set();
+    const chunkOff = (i) => i * chunkSize;
+    const chunkLen = (i) => Math.min(chunkSize, size - chunkOff(i));
+    async function rejectMirror(reason) {
+      if (!mirror)
+        return;
+      const { src } = mirror;
+      mirror = null;
+      mirrorState = "rejected";
+      mirrorRejected.add(`${name}@${etag}@${src.label}`);
+      const bad = [...mirrored];
+      for (const i of bad) {
+        got.delete(i);
+        mirrored.delete(i);
+        await sDel(cKey(name, i));
+      }
+      meta.chunks = [...got];
+      meta.mirrored = [];
+      await writeMeta(name, meta);
+      reportStoreError(new Error(`mirror "${src.label}" served different bytes for "${name}" (${reason}); dropped it for this version and purged ${bad.length} unverified chunk(s)`), "warning");
+    }
+    async function sampleVerify(i, bytes) {
+      if (item === null || !mirror || verified.has(i))
+        return;
+      if (mirrorChunks % VERIFY_EVERY !== 0)
+        return;
+      let ref = null;
+      try {
+        ref = await range(item, chunkOff(i), chunkLen(i));
+      } catch (e) {
+        reportStoreError(e, "log");
+        return;
+      }
+      if (!mirror)
+        return;
+      if (sameBytes(ref, bytes)) {
+        verified.add(i);
+        if (mirrored.delete(i)) {
+          meta.mirrored = mirrored.size ? [...mirrored] : void 0;
           await writeMeta(name, meta);
         }
-        void enforceCap();
-        return bytes;
-      })();
-      inflight.set(key, job);
-      job.finally(() => inflight.delete(key)).catch(() => {
-      });
-      return job;
+      } else
+        await rejectMirror(`chunk ${i}`);
     }
-    function playbackChunk(i) {
-      playbackBusy++;
-      return fetchChunk(i, "playback").finally(playbackDone);
+    async function arrived(i, bytes, origin) {
+      if (origin === "mirror" && !mirror)
+        return;
+      let changed = false;
+      if (!got.has(i)) {
+        got.add(i);
+        changed = true;
+      }
+      if (origin === "mirror" && !verified.has(i) && !mirrored.has(i)) {
+        mirrored.add(i);
+        changed = true;
+      }
+      if (changed) {
+        meta.chunks = [...got];
+        meta.mirrored = mirrored.size ? [...mirrored] : void 0;
+        meta.touchedAt = now();
+      }
+      if (origin === "mirror")
+        mirrorChunks++;
+      await sPut(cKey(name, i), new Blob([bytes]));
+      if (changed)
+        await writeMeta(name, meta);
+      void enforceCap();
+      if (origin === "mirror")
+        void sampleVerify(i, bytes);
     }
-    function pinChunk(i) {
-      const job = pinChain.then(() => fetchChunk(i, "pin"));
-      pinChain = job.catch(() => {
-      });
-      return job;
+    function sourcesFor(i) {
+      const off = chunkOff(i), len = chunkLen(i);
+      const list = [];
+      if (mirror && (item === null || mirrorUp(mirror.src))) {
+        const m = mirror;
+        list.push({
+          origin: "mirror",
+          fetch: async (o) => {
+            try {
+              const b = await m.handle.read(off, len, o);
+              if (b.length !== len)
+                throw new Error(`mirror "${m.src.label}": chunk ${i} returned ${b.length} bytes, wanted ${len}`);
+              if (!firstOk && item !== null && mirror === m) {
+                let checker = false;
+                if (!firstCheck) {
+                  checker = true;
+                  firstCheck = range(item, off, len).then((ref) => sameBytes(ref, b) ? "same" : "differs", (e) => {
+                    reportStoreError(e, "log");
+                    return "unknown";
+                  });
+                }
+                const r = await firstCheck;
+                if (r === "differs") {
+                  if (checker)
+                    await rejectMirror(`chunk ${i}`);
+                  throw new Error(`mirror "${m.src.label}": chunk ${i} differs from cloud`);
+                }
+                if (r === "same") {
+                  firstOk = true;
+                  if (checker)
+                    verified.add(i);
+                } else if (checker)
+                  firstCheck = null;
+              }
+              mirrorOk(m.src);
+              return b;
+            } catch (e) {
+              if (!o.signal?.aborted && mirror === m) {
+                mirrorFailed(m.src);
+                mirrorState = "down";
+                reportStoreError(e, "log");
+              }
+              throw e;
+            }
+          }
+        });
+      }
+      if (item !== null)
+        list.push({ origin: "cloud", fetch: (o) => range(item, off, len, o) });
+      return list;
     }
+    const fetchChunk = (i, prio) => scheduler.request({
+      key: `${name}:${i}`,
+      prio,
+      preflight: async () => {
+        const c = await sGet(cKey(name, i));
+        return c ? new Uint8Array(await c.arrayBuffer()) : null;
+      },
+      sources: sourcesFor(i),
+      arrived: (bytes, origin) => arrived(i, bytes, origin)
+    });
+    const playbackChunk = (i) => fetchChunk(i, "playback");
+    const pinChunk = (i) => fetchChunk(i, "pin");
     const clampRange = (offset, length) => {
       const off = Math.max(0, Math.min(offset, size));
       const len = Math.max(0, Math.min(length, size - off));
       return { i0: Math.floor(off / chunkSize), i1: len === 0 ? -1 : Math.floor((off + len - 1) / chunkSize), off, len };
     };
-    const havedBytes = () => [...got].reduce((s, i) => s + Math.min(chunkSize, size - i * chunkSize), 0);
+    const havedBytes = () => [...got].reduce((s, i) => s + chunkLen(i), 0);
     return {
       name,
       totalSize: size,
@@ -4074,7 +4555,7 @@ function createDownloadSessions(cfg) {
         let written = 0;
         for (let i = i0; i <= i1; i++) {
           const c = chunks[i - i0];
-          const chunkStart = i * chunkSize;
+          const chunkStart = chunkOff(i);
           const from = Math.max(off, chunkStart) - chunkStart;
           const to = Math.min(off + len, chunkStart + c.length) - chunkStart;
           out.set(c.subarray(from, to), written);
@@ -4087,10 +4568,14 @@ function createDownloadSessions(cfg) {
           return;
         const { i0, i1 } = clampRange(offset, length);
         for (let i = i0; i <= i1; i++) {
-          try {
+          if (streaming)
             await pinChunk(i);
-          } catch (e) {
-            reportStoreError(e, "log");
+          else {
+            try {
+              await pinChunk(i);
+            } catch (e) {
+              reportStoreError(e, "log");
+            }
           }
         }
       },
@@ -4098,11 +4583,16 @@ function createDownloadSessions(cfg) {
       async promote(opts) {
         if (closed)
           throw new Error(`\u4F1A\u8BDD\u5DF2\u5173\u95ED\uFF1A${name}`);
-        for (let i = 0; i < nChunks; i++) {
-          if (!got.has(i))
-            await pinChunk(i);
-          opts?.onProgress?.(havedBytes(), size);
-        }
+        const missing = Array.from({ length: nChunks }, (_, i) => i).filter((i) => !got.has(i));
+        let next = 0;
+        const worker = async () => {
+          while (next < missing.length) {
+            await pinChunk(missing[next++]);
+            opts?.onProgress?.(havedBytes(), size);
+          }
+        };
+        await Promise.all(Array.from({ length: Math.max(1, Math.min(lanes, missing.length)) }, worker));
+        opts?.onProgress?.(havedBytes(), size);
         const nowMeta = await fetchMeta(name);
         if (!nowMeta || nowMeta.etag !== etag) {
           await purgeName(name);
@@ -4121,16 +4611,23 @@ function createDownloadSessions(cfg) {
         await adoptLocal(name, new Blob(parts), etag);
         await purgeName(name);
       },
+      status() {
+        const s = scheduler.status(`${name}:`);
+        const state2 = mirror ? item === null || mirrorUp(mirror.src) ? "ok" : "down" : mirrorState;
+        return { ...s, mirror: state2, mirrorLabel: mirror?.src.label, cloudless: item === null };
+      },
       close() {
         closed = true;
         activeSessions.delete(name);
+        if (liveMeta.get(name) === meta)
+          liveMeta.delete(name);
       }
     };
   }
-  return { open, coverage, promoteFromStaging, purgeName, _enforceCap: enforceCap };
+  return { open, coverage, promoteFromStaging, purgeName, _enforceCap: enforceCap, _scheduler: scheduler };
 }
 
-// node_modules/@internal/store/dist/kv-namespace.js
+// node_modules/@internal/store/dist/base/kv-namespace.js
 function namespacedKv(kv, ns) {
   if (!ns)
     throw new Error("namespacedKv: ns \u5FC5\u586B\uFF08${appId}.${databaseId}\uFF09");
@@ -4143,7 +4640,7 @@ function namespacedKv(kv, ns) {
   };
 }
 
-// node_modules/@internal/store/dist/migration.js
+// node_modules/@internal/store/dist/works/migration.js
 function parseSchemaVersion(v) {
   const m = /^v(\d{3,})-(\d{8})$/.exec(v);
   if (!m)
@@ -4196,7 +4693,7 @@ async function runStoreMigrations(appId, databaseId, log2) {
   await runMigrations({ kv, ns, log: log2 });
 }
 
-// node_modules/@internal/store/dist/zip-peek.js
+// node_modules/@internal/store/dist/works/zip-peek.js
 var SIG_EOCD = 101010256;
 var SIG_CD = 33639248;
 var SIG_LOCAL = 67324752;
@@ -4294,7 +4791,7 @@ async function readEntryBytes(src, entry) {
   return await inflate(raw, entry.method);
 }
 
-// node_modules/@internal/store/dist/persistence.js
+// node_modules/@internal/store/dist/base/persistence.js
 var globalStorage = () => globalThis.navigator?.storage ?? null;
 async function queryStoragePersistence(sm = globalStorage()) {
   if (typeof sm?.persisted !== "function")
@@ -4317,7 +4814,7 @@ async function requestStoragePersistence(sm = globalStorage()) {
   }
 }
 
-// node_modules/@internal/store/dist/ui-text.js
+// node_modules/@internal/store/dist/base/ui-text.js
 var STORE_TEXT_EN = {
   "sync.pushing": "Syncing\u2026",
   "file.renaming": "Renaming\u2026",
@@ -4351,8 +4848,9 @@ function resolveStoreText(custom, key, params2) {
 
 // node_modules/@internal/store/dist/create-store.js
 var ReadOnlyFilesError = class extends Error {
-  constructor(op) {
-    super(`\u53EA\u8BFB\u955C\u50CF\uFF1Afiles \u9762\u4E0D\u53EF\u5199\uFF08${op}\uFF09`);
+  /** resource 给了 = 2.1.0 三等资源那一种文档只读（docKinds 行 tier:"resource"）；没给 = readOnlyFiles:true 的整面只读。 */
+  constructor(op, resource) {
+    super(resource ? `\u4E09\u7B49\u8D44\u6E90\u300C${resource}\u300D\u53EA\u8BFB\uFF1A${op}` : `\u53EA\u8BFB\u955C\u50CF\uFF1Afiles \u9762\u4E0D\u53EF\u5199\uFF08${op}\uFF09`);
     this.name = "ReadOnlyFilesError";
   }
 };
@@ -4399,6 +4897,12 @@ function createStore(config) {
   const ns = storeNamespace(appId, databaseId);
   const kv = namespacedKv(rawKv, ns.root);
   const ids = createIdentifiers(config.docKinds);
+  const tierOf = (name) => ids.parse(name)?.tier ?? "work";
+  const tierGuard = (op, name) => {
+    roGuard(op);
+    if (tierOf(name) === "resource")
+      throw new ReadOnlyFilesError(op, name);
+  };
   const local2 = config.local ?? createLocalCache(ns.dbName, { identifiers: ids });
   const collectionLocal = config.local ?? createCollectionCache(ns.dbName);
   const rawOnline = config.isOnline ?? (() => globalThis.navigator?.onLine !== false);
@@ -4425,7 +4929,7 @@ function createStore(config) {
   const offloadMod = createOffload({ cloud, local: local2, head, isOnline, serialize: sub.serialize });
   const CLOUD_GONE_GRACE_MS = 24 * 3600 * 1e3;
   const pendingGone = createPendingGone(kv, config.cloudGoneGraceMs ?? CLOUD_GONE_GRACE_MS);
-  const reconcileMod = createReconcile({ cloud, local: local2, head, pending: pendingGone, isOnline, activeIdentifier: config.activeIdentifier, hidden: config.hidden });
+  const reconcileMod = createReconcile({ cloud, local: local2, head, pending: pendingGone, isOnline, activeIdentifier: config.activeIdentifier, hidden: config.hidden, drop: (n) => tierOf(n) === "resource" });
   const stagingStore = config.staging ?? createStagingStore(ns.dbName);
   const toU8Raw = async (raw) => raw instanceof Uint8Array ? raw : raw instanceof ArrayBuffer ? new Uint8Array(raw) : new Uint8Array(await raw.arrayBuffer());
   const sessions = createDownloadSessions({
@@ -4435,7 +4939,7 @@ function createStore(config) {
       return m ? { etag: m.etag, size: m.size, item: m.item } : null;
     },
     // 分片直连 provider.downloadRange（item.ref 已在开会话时解析——不每分片重走 metadata 往返）。
-    range: async (item, offset, length) => toU8Raw(await provider.downloadRange(item.ref, offset, length)),
+    range: async (item, offset, length, opts) => toU8Raw(await provider.downloadRange(item.ref, offset, length, opts)),
     // promote 落地：对齐 identity.acquire 语义（serialize 锁 + markSynced）；已有副本/dirty 绝不覆盖（§A）。
     adoptLocal: (name, blob, etag) => sub.serialize(name, async () => {
       if (await local2.exists(name))
@@ -4448,7 +4952,9 @@ function createStore(config) {
       return true;
     }),
     chunkSize: config.stagingChunkBytes,
-    capBytes: config.stagingCapBytes
+    capBytes: config.stagingCapBytes,
+    streaming: config.streaming
+    // 2.0.0 行为开关（不传 = 0.18）
   });
   const FOLDERS_PENDING_KEY = "internal.pending_new_folders";
   const readPending = () => {
@@ -4537,7 +5043,19 @@ function createStore(config) {
     await del.drainDeleteQueue();
     await drainFolderDeletions();
   }
-  const listing = createListing({ cloud, local: local2, head, pendingFolders: readPending, isPendingGone: (p) => pendingGone.isPending(p), pendingFolderDeletions: readFolderDel, hidden: config.hidden });
+  const listing = createListing({
+    cloud,
+    local: local2,
+    head,
+    pendingFolders: readPending,
+    isPendingGone: (p) => pendingGone.isPending(p),
+    pendingFolderDeletions: readFolderDel,
+    hidden: config.hidden,
+    describe: (n) => {
+      const d = ids.parse(n);
+      return { kind: d?.kind, tier: d?.tier ?? "work" };
+    }
+  });
   const ctxNow = () => ({ signedIn: signedIn2(), online: rawOnline() });
   const LOCAL_CTX = { signedIn: false, online: false };
   const folderWatchers = /* @__PURE__ */ new Map();
@@ -4721,7 +5239,8 @@ function createStore(config) {
     localDirty: () => sub.edits.localDirty(),
     serialize: sub.serialize,
     // 0.15.2：拉云覆盖的临界段与用户保存的本地写同链互斥
-    validateAdopt: validateAdopt2,
+    validateAdopt: (plain, name) => (ids.rowOf(name)?.validate ?? validateAdopt2)(plain),
+    // 2.1.0：每种文档可带自己的验真，没带用全局的
     unseal: (n, blob) => seal.unsealForRead(n, blob),
     // 返明文；加密但锁定 → null（safePull 退验封套）
     looksEncrypted: (b) => enc.looksEncryptedContainer(b)
@@ -4834,6 +5353,8 @@ function createStore(config) {
     return { ok: true, where: r.where, oldKept: r.oldKept, oldUnknown: r.oldUnknown, oldCloudOrphan: r.oldCloudOrphan, cloudDeferred: r.cloudDeferred, oldName: from };
   });
   const onConflictFor = (occasion) => async ({ name }) => {
+    if (tierOf(name) === "auto-backup")
+      return "keepMine";
     return ui.resolveConflict({ name, local: await local2.get(name), cloud: null, occasion, cloudState: "changed" });
   };
   const onConflict = onConflictFor("push");
@@ -5025,7 +5546,7 @@ function createStore(config) {
       }
       if (meta)
         return { status: "clean" };
-      const choice = await ui.resolveConflict({ name, local: await local2.get(name), cloud: null, occasion: "push", cloudState: "absent" });
+      const choice = tierOf(name) === "auto-backup" ? "takeCloud" : await ui.resolveConflict({ name, local: await local2.get(name), cloud: null, occasion: "push", cloudState: "absent" });
       if (choice === "cancel")
         return { status: "cancelled" };
       if (choice === "takeCloud") {
@@ -5044,7 +5565,7 @@ function createStore(config) {
       head.recordEdit(name);
       let r;
       try {
-        r = await pushMod.push(name, { encode: () => atRest, onConflict, surfaceCollision: true });
+        r = await pushMod.push(name, { encode: () => atRest, onConflict, surfaceCollision: true, loserBackup: tierOf(name) !== "auto-backup" });
       } catch (e) {
         ui.reportError(e);
         notifyFolderOf(name);
@@ -5058,7 +5579,7 @@ function createStore(config) {
     };
     return {
       async save(bytes, opts) {
-        roGuard("save");
+        tierGuard("save", name);
         await migrationReady;
         if (!_createChecked) {
           _createChecked = true;
@@ -5080,7 +5601,7 @@ function createStore(config) {
           return { pushed: false, reason: "not-attempted" };
         let pushed = false, reason, resolution;
         try {
-          const r = await pushMod.push(name, { encode: () => plain, onConflict, surfaceCollision: mode !== "new", onProgress: opts?.onProgress });
+          const r = await pushMod.push(name, { encode: () => plain, onConflict, surfaceCollision: mode !== "new", onProgress: opts?.onProgress, loserBackup: tierOf(name) !== "auto-backup" });
           pushed = r.status === "pushed" || r.status === "healed" || r.status === "resolved";
           if (!pushed)
             reason = r.status;
@@ -5111,7 +5632,7 @@ function createStore(config) {
           }
           return readLocal();
         }
-        if (autoCacheOpenedFile) {
+        if (autoCacheOpenedFile && tierOf(name) !== "resource") {
           const esc = isOnline() ? ui.offlineEscape?.() : void 0;
           const pulling = identity.acquire(name, { localName: name }).catch((e) => {
             ui.reportError(e);
@@ -5160,6 +5681,8 @@ function createStore(config) {
       async resolve(opts) {
         await migrationReady;
         roGuard("resolve");
+        if (tierOf(name) === "resource")
+          return { status: "clean" };
         if (!await local2.exists(name))
           return { status: "no-local" };
         if (!head.isDirtyAnywhere(name))
@@ -5173,7 +5696,7 @@ function createStore(config) {
         } catch (e) {
           ui.reportError(e, "log");
         }
-        const choice = await ui.resolveConflict({ name, local: await local2.get(name), cloud: null, occasion: "push", cloudState });
+        const choice = tierOf(name) === "auto-backup" ? "keepMine" : await ui.resolveConflict({ name, local: await local2.get(name), cloud: null, occasion: "push", cloudState });
         if (choice === "cancel")
           return { status: "cancelled" };
         if (choice === "takeCloud") {
@@ -5192,7 +5715,7 @@ function createStore(config) {
         const atRest = await toU8(blob instanceof Blob ? blob : new Blob([blob]));
         let r;
         try {
-          r = await pushMod.push(name, { encode: () => atRest, onConflict, surfaceCollision: true });
+          r = await pushMod.push(name, { encode: () => atRest, onConflict, surfaceCollision: true, loserBackup: tierOf(name) !== "auto-backup" });
         } catch (e) {
           ui.reportError(e);
           notifyFolderOf(name);
@@ -5205,18 +5728,18 @@ function createStore(config) {
         return pushed ? { status: "pushed" } : { status: "not-pushed", reason: r.status };
       },
       tryMove(to) {
-        roGuard("tryMove");
+        tierGuard("tryMove", name);
         return tryMoveSF(name, to);
       },
-      async delete() {
-        roGuard("delete");
+      async trash() {
+        tierGuard("trash", name);
         const r = await delSF(name);
         notifyFolderOf(name);
         return r;
       },
-      // 返 DelResult（v436）：cancelled/noop/queuedCloudDelete 都不是「已删除」
+      // 2.1.2 起叫 trash（原 delete；动词 = 语义：移进回收站）。返 TrashOutcome（v436）：cancelled/noop/queuedCloudDelete 都不是「已进回收站」
       reupload() {
-        roGuard("reupload");
+        tierGuard("reupload", name);
         return busyK("file.reuploading", void 0, async () => {
           if (!await local2.exists(name))
             return { status: "no-local" };
@@ -5294,7 +5817,8 @@ function createStore(config) {
             keep: async () => {
             },
             close: () => {
-            }
+            },
+            status: () => ({ demand: 0, speculative: 0, queued: 0, oldestMs: 0, stalled: 0, mirror: "none", cloudless: false })
           };
         }
         const sess = await sessions.open(name).catch((e) => {
@@ -5308,6 +5832,7 @@ function createStore(config) {
           read: (off, len) => sess.read(off, len),
           prefetch: (off, len) => sess.prefetch(off, len),
           keep: (o) => sess.promote({ onProgress: o?.onProgress }),
+          status: () => sess.status(),
           close: () => sess.close()
         };
       },
@@ -5320,17 +5845,17 @@ function createStore(config) {
         return encIsEncrypted(name);
       },
       encrypt(opts) {
-        roGuard("encrypt");
+        tierGuard("encrypt", name);
         if (!ids.parse(name))
           throw new Error(`store: "${name}" is not a document of any declared kind and cannot be encrypted (docKinds: ${ids.kinds.map((k) => k.suffix).join(", ") || "none"})`);
         return encEncrypt(name, opts?.isOnline ?? isOnline);
       },
       decrypt(opts) {
-        roGuard("decrypt");
+        tierGuard("decrypt", name);
         return encDecrypt(name, opts?.isOnline ?? isOnline);
       },
       rekey(opts) {
-        roGuard("rekey");
+        tierGuard("rekey", name);
         return encRekey(name, opts.newPassword, opts.isOnline ?? isOnline);
       },
       // at-rest 密文字节原样（内容盲、不解壳、不碰密码）。非加密件 / 无本地副本 → null。
@@ -5441,7 +5966,7 @@ function createStore(config) {
   }
   return {
     // ── file + collection。改身份走 file.tryMove(to)。──
-    /** 文件对象工厂（含 tryMove/pullIfClean/save/open/delete/reupload…）。 */
+    /** 文件对象工厂（含 tryMove/pullIfClean/save/open/trash/reupload…）。 */
     file,
     /** zip 容器文档（多 getPeek / decryptPeek）；种类不是 zip 容器 → 抛。 */
     zip,
@@ -5630,7 +6155,52 @@ function createStore(config) {
   };
 }
 
-// node_modules/@internal/store/dist/providers/graph.js
+// node_modules/@internal/store/dist/base/providers/range-body.js
+async function readBody(r, onProgress) {
+  const body = r.body;
+  if (!onProgress || !body || typeof body.getReader !== "function")
+    return await r.arrayBuffer();
+  const reader = body.getReader();
+  const parts = [];
+  let total = 0;
+  for (; ; ) {
+    const { done, value } = await reader.read();
+    if (done)
+      break;
+    if (value && value.byteLength) {
+      parts.push(value);
+      total += value.byteLength;
+      onProgress(total);
+    }
+  }
+  const out = new Uint8Array(total);
+  let at = 0;
+  for (const p of parts) {
+    out.set(p, at);
+    at += p.byteLength;
+  }
+  return out.buffer;
+}
+function anySignal(signals) {
+  const live = signals.filter((s) => !!s);
+  if (live.length === 0)
+    return void 0;
+  if (live.length === 1)
+    return live[0];
+  if (typeof AbortController !== "function")
+    return live[0];
+  const ctrl = new AbortController();
+  for (const s of live) {
+    if (s.aborted) {
+      ctrl.abort(s.reason);
+      break;
+    }
+    s.addEventListener("abort", () => ctrl.abort(s.reason), { once: true });
+  }
+  return ctrl.signal;
+}
+
+// node_modules/@internal/store/dist/base/providers/graph.js
 var DEFAULT_GRAPH_TIMEOUTS = { meta: 3e4, chunk: 12e4, range: 6e4, blob: 15 * 6e4 };
 var graphTimeouts = null;
 var graphChunkResume = false;
@@ -5655,10 +6225,10 @@ function encodeApprootPath(path) {
 function _rangeHeader(offset, length) {
   return offset == null ? `bytes=-${length}` : `bytes=${offset}-${offset + length - 1}`;
 }
-async function downloadRangeFromUrl(downloadUrl, offset, length) {
+async function downloadRangeFromUrl(downloadUrl, offset, length, opts = {}) {
   let r;
   try {
-    r = await fetch(downloadUrl, { headers: { Range: _rangeHeader(offset, length) }, signal: timed("range") });
+    r = await fetch(downloadUrl, { headers: { Range: _rangeHeader(offset, length) }, signal: anySignal([timed("range"), opts.signal]) });
   } catch (e) {
     throw new CloudNetworkError(`range download: network fetch failed (${String(e)})`, e);
   }
@@ -5667,7 +6237,11 @@ async function downloadRangeFromUrl(downloadUrl, offset, length) {
     err3.status = r.status;
     throw err3;
   }
-  return await r.arrayBuffer();
+  try {
+    return await readBody(r, opts.onProgress);
+  } catch (e) {
+    throw new CloudNetworkError(`range download: body failed (${String(e)})`, e);
+  }
 }
 function createGraph(tokenSource, opts = {}) {
   graphTimeouts = opts.timeouts ? { ...DEFAULT_GRAPH_TIMEOUTS, ...opts.timeouts } : null;
@@ -5758,18 +6332,20 @@ function createGraph(tokenSource, opts = {}) {
     return await r.blob();
   }
   const _dlUrlCache = /* @__PURE__ */ new Map();
-  async function downloadItemRange(itemId, offset, length) {
+  async function downloadItemRange(itemId, offset, length, opts2 = {}) {
     let url = _dlUrlCache.get(itemId) ?? await getDownloadUrl(itemId);
     if (url) {
       _dlUrlCache.set(itemId, url);
       try {
-        return await downloadRangeFromUrl(url, offset, length);
-      } catch (_e) {
+        return await downloadRangeFromUrl(url, offset, length, opts2);
+      } catch (e) {
+        if (opts2.signal?.aborted)
+          throw e;
         _dlUrlCache.delete(itemId);
         url = await getDownloadUrl(itemId);
         if (url) {
           _dlUrlCache.set(itemId, url);
-          return await downloadRangeFromUrl(url, offset, length);
+          return await downloadRangeFromUrl(url, offset, length, opts2);
         }
       }
     }
@@ -6030,7 +6606,7 @@ function createGraph(tokenSource, opts = {}) {
   };
 }
 
-// node_modules/@internal/store/dist/providers/auth.js
+// node_modules/@internal/store/dist/base/providers/auth.js
 var CLIENT_ID = "";
 var AUTHORITY = "https://login.microsoftonline.com/common";
 var SCOPES = ["Files.ReadWrite.AppFolder", "offline_access"];
@@ -6427,7 +7003,7 @@ async function retrySilentSignIn() {
   }
 }
 
-// node_modules/@internal/store/dist/folder-delete.js
+// node_modules/@internal/store/dist/base/folder-delete.js
 async function deleteEmptyFolderVia(getItemByPath, list, deleteById, path) {
   const item = await getItemByPath(path);
   if (!item)
@@ -6446,7 +7022,7 @@ async function deleteEmptyFolderVia(getItemByPath, list, deleteById, path) {
   return { status: "deleted" };
 }
 
-// node_modules/@internal/store/dist/onedrive-provider.js
+// node_modules/@internal/store/dist/base/onedrive-provider.js
 function toItem(it) {
   if (!it)
     return null;
@@ -6473,7 +7049,7 @@ function graphToCloudProvider(graph) {
     list,
     getItemByPath,
     download: (ref) => graph.downloadItemBlob(ref),
-    downloadRange: (ref, offset, length) => graph.downloadItemRange(ref, offset, length),
+    downloadRange: (ref, offset, length, opts) => graph.downloadItemRange(ref, offset, length, opts),
     // graph.js 是 Blob 原生（按 .size 选简单/分块路径、用 .slice 切块）；lib 把字节归一成 Uint8Array。
     // 必须在这道接缝转回 Blob——Uint8Array.size===undefined → undefined<=4MB 为 false → 永远走分块、
     // while(0<undefined) 一个 chunk 都不传 → 上传 0 字节占位还回 etag（postmortem 2026-06-05 根因）。
@@ -6497,7 +7073,7 @@ function graphToCloudProvider(graph) {
   };
 }
 
-// node_modules/@internal/store/dist/providers/index.js
+// node_modules/@internal/store/dist/base/providers/index.js
 function createOneDriveProvider(config = {}) {
   configureOneDriveAuth(config);
   const hid = config.homeAccountId;
@@ -6855,6 +7431,16 @@ var JARS = "jars";
 var DISC_SUFFIXES = [".wafter", ".iso", ".cso"];
 var CRUMB_SUFFIX = ".crumb";
 var JAM_SUFFIX = ".jam";
+var DOC_KINDS = [
+  { kind: "disc", suffix: ".wafter", container: "raw", tier: "resource" },
+  { kind: "disc", suffix: ".iso", container: "raw", tier: "resource" },
+  { kind: "disc", suffix: ".cso", container: "raw", tier: "resource" },
+  { kind: "crumb", suffix: CRUMB_SUFFIX, container: "raw" },
+  { kind: "crumb", suffix: CRUMB_SUFFIX, container: "raw", tier: "auto-backup", stem: /^[0-9a-f]{16}-[ah]\d+$/ },
+  { kind: "jam", suffix: JAM_SUFFIX, container: "raw" }
+];
+var STREAM_LANES = 3;
+var STREAM_STALL_MS = 3e3;
 var AUTO_SLOTS = 4;
 var LOCAL_SNAPSHOTS_KEPT = 2;
 var READ_AHEAD_BYTES = 4 * 2 ** 20;
@@ -7243,13 +7829,10 @@ function getStore() {
     pushRetry: { maxAttempts: 5, backoffMs: 1e3, exponential: true },
     // 0.17.2 显式开：熬得过 iOS 切网络那几秒（默认 4 × 200·n ms）
     validateAdopt,
-    docKinds: [
-      { kind: "disc", suffix: ".wafter", container: "raw" },
-      { kind: "disc", suffix: ".iso", container: "raw" },
-      { kind: "disc", suffix: ".cso", container: "raw" },
-      { kind: "crumb", suffix: CRUMB_SUFFIX, container: "raw" },
-      { kind: "jam", suffix: JAM_SUFFIX, container: "raw" }
-    ],
+    docKinds: DOC_KINDS,
+    // store 2.1：每行带公民等级（盘三等 / 自动快照二等 / 其余一等），表和理由在 config.ts
+    streaming: { lanes: STREAM_LANES, stallMs: STREAM_STALL_MS },
+    // store 2.0：读盘投机并行 + 卡住对冲 / 让道（默认关，大文件消费方显式开）
     autoCacheOpenedFile: true,
     // 快照 / 存档 open 后留本地；盘只走 openStream（不整份落本地）
     ...stagingCapBytes() ? { stagingCapBytes: stagingCapBytes() } : {},
@@ -7719,7 +8302,7 @@ function withReadAhead(stream) {
 async function fromPantry(identifier, password, fallbackKey) {
   const stream = await getStore().file(identifier, { mode: "existing" }).openStream();
   if (!stream) throw new Error("\u8FD9\u5F20\u76D8\u73B0\u5728\u62FF\u4E0D\u5230\uFF08\u6CA1\u767B\u5F55\u3001\u79BB\u7EBF\uFF0C\u6216\u8005\u4E91\u7AEF\u5DF2\u7ECF\u6CA1\u6709\u4E86\uFF09");
-  return { ...await unwrap(withReadAhead(stream), identifier, password, fallbackKey), identifier };
+  return { ...await unwrap(withReadAhead(stream), identifier, password, fallbackKey), identifier, net: () => stream.status() };
 }
 async function inspectPantry(identifier) {
   const encrypted = identifier.endsWith(".wafter");
@@ -9032,7 +9615,7 @@ async function moveSnapshot(from, to) {
   return r.ok;
 }
 async function deleteSnapshot(identifier) {
-  const r = await getStore().file(identifier, { mode: "existing" }).delete();
+  const r = await getStore().file(identifier, { mode: "existing" }).trash();
   return r.status !== "cancelled" && r.status !== "noop";
 }
 async function tidyLocalSnapshots(slots, history = []) {
@@ -9185,10 +9768,10 @@ async function saveSaveDir(jar, files, password, opts = {}) {
 async function deleteSaveDir(jar) {
   const id = await jamId(jar);
   const store2 = getStore();
-  if (await store2.files.occupied(id)) await store2.file(id, { mode: "existing" }).delete();
+  if (await store2.files.occupied(id)) await store2.file(id, { mode: "existing" }).trash();
 }
 async function deleteJam(identifier) {
-  const r = await getStore().file(identifier, { mode: "existing" }).delete();
+  const r = await getStore().file(identifier, { mode: "existing" }).trash();
   return r.status !== "cancelled" && r.status !== "noop";
 }
 async function listBins(titleByKey) {
@@ -12423,9 +13006,14 @@ function renderHud() {
   const heap = session.heapUsed();
   const js = performance.memory?.usedJSHeapSize;
   const el = $("hud");
-  el.textContent = `${st.fps.toFixed(0)} fps \xB7 \u2193${rate(down)} \u2191${rate(up)} \xB7 ${heap ? `${(heap / 2 ** 20).toFixed(0)}/768M` : "\u2014"}${js ? ` \xB7 JS ${(js / 2 ** 20).toFixed(0)}M` : ""}`;
-  el.classList.toggle("waiting", st.netWaitMs > 300);
-  el.title = st.netWaitMs > 300 ? `\u5728\u7B49\u8BFB\u76D8\uFF1A\u8FD9\u4E00\u79D2\u7B49\u4E86 ${st.netWaitMs.toFixed(0)} ms\uFF08\u7F51\u6162 / \u65AD\u4E86\uFF1B\u300C\u7F13\u5B58\u5168\u76D8\u300D\u540E\u5C31\u4E0D\u7B49\uFF09` : "\u5E27\u7387 \xB7 \u4E0B\u8F7D \xB7 \u4E0A\u4F20 \xB7 \u6838\u5185\u5B58\uFF08\u5DF2\u7528 / 768 MB\uFF09";
+  const ns = current?.net?.();
+  const waiting = ns && ns.demand > 0 ? ` \xB7 \u7B49\u76D8 ${ns.demand}${ns.oldestMs >= 1e3 ? ` \xB7 ${(ns.oldestMs / 1e3).toFixed(0)}s` : ""}${ns.stalled ? ` \xB7 \u5361${ns.stalled}` : ""}` : "";
+  el.textContent = `${st.fps.toFixed(0)} fps \xB7 \u2193${rate(down)} \u2191${rate(up)}${waiting} \xB7 ${heap ? `${(heap / 2 ** 20).toFixed(0)}/768M` : "\u2014"}${js ? ` \xB7 JS ${(js / 2 ** 20).toFixed(0)}M` : ""}`;
+  const stuck = st.netWaitMs > 300 || !!ns?.stalled;
+  el.classList.toggle("waiting", stuck);
+  const nsLine = ns ? `
+\u8BFB\u76D8\u5728\u9014\uFF1A\u6E38\u620F\u5728\u7B49 ${ns.demand} \u7247 \xB7 \u9884\u53D6 ${ns.speculative} \u7247\u5728\u4F20\u3001${ns.queued} \u7247\u6392\u961F${ns.stalled ? ` \xB7 ${ns.stalled} \u7247 3 \u79D2\u6CA1\u5230\u5B57\u8282\uFF08\u5728\u6362\u8DEF / \u5BF9\u51B2\uFF09` : ""}${ns.mirror !== "none" ? ` \xB7 \u955C\u50CF${ns.mirrorLabel ? `\u300C${ns.mirrorLabel}\u300D` : ""}\uFF1A${{ ok: "\u5728\u7528", down: "\u51FA\u9519\u4E86\uFF0C\u6682\u65F6\u8D70\u4E91\u7AEF", rejected: "\u5B57\u8282\u548C\u4E91\u7AEF\u4E0D\u4E00\u6837\uFF0C\u8FD9\u4E00\u7248\u4E0D\u7528\u5B83" }[ns.mirror] ?? ns.mirror}` : ""}` : "";
+  el.title = (stuck ? `\u5728\u7B49\u8BFB\u76D8\uFF1A\u8FD9\u4E00\u79D2\u7B49\u4E86 ${st.netWaitMs.toFixed(0)} ms\uFF08\u7F51\u6162 / \u65AD\u4E86\uFF1B\u300C\u7F13\u5B58\u5168\u76D8\u300D\u540E\u5C31\u4E0D\u7B49\uFF09` : "\u5E27\u7387 \xB7 \u4E0B\u8F7D \xB7 \u4E0A\u4F20 \xB7 \u6838\u5185\u5B58\uFF08\u5DF2\u7528 / 768 MB\uFF09") + nsLine;
 }
 var syncState = { kind: "idle", text: "" };
 function snapshotButton(id = "snapshot-btn") {
@@ -13604,4 +14192,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-fc0593c51766.mjs.map
+//# sourceMappingURL=kudsrocket-b97c9d31091d.mjs.map
