@@ -76,11 +76,15 @@ typedef struct {
   uint64_t last_used;
   uint8_t *data;
   int32_t len;
+  int32_t loading; // 1 = 有线程正在锁外拉这一块；要它的线程等 g_cache_cv，挑空位的跳过它
 } cache_slot;
 
 static cache_slot g_cache[KR_CACHE_BLOCKS];
 static uint64_t g_cache_clock = 0;
+// 锁只护「哪一格是哪一块」这张账和拷贝，**不跨网络**（2026-10-18 P0½ 第二刀，user「opus可以做得完」）：
+//   以前一次没命中拿着锁等主线程拉 256 KiB——另一个线程（PPSSPP 的 IO 线程 / 模拟线程）哪怕要的块就在缓存里也得陪等。
 static pthread_mutex_t g_cache_lock = PTHREAD_MUTEX_INITIALIZER;
+static pthread_cond_t g_cache_cv = PTHREAD_COND_INITIALIZER;
 static atomic_uint_least64_t g_bytes_fetched = 0;
 static atomic_uint_least32_t g_reads_waiting = 0;
 
@@ -134,7 +138,8 @@ static int32_t fetch_block(int64_t block, uint8_t *dst) {
   return req.got;
 }
 
-// 读 [offset, offset+len) 到 dst。返回实际读到的字节数，出错返回 -1。
+// 读 [offset, offset+len) 到 dst。返回实际读到的字节数，出错返回 -1。可以几个线程同时调（见 g_cache_lock 的注释）：
+//   命中 → 锁里拷走；别的线程正在拉这一块 → 等它拉完（同一块只拉一次）；没人在拉 → 占一格、标「在拉」、放锁去拉、拉完叫醒等的人。
 static int64_t disc_read(int64_t offset, uint8_t *dst, int64_t len) {
   if (offset >= g_disc_size || len <= 0) return 0;
   if (offset + len > g_disc_size) len = g_disc_size - offset;
@@ -144,18 +149,26 @@ static int64_t disc_read(int64_t offset, uint8_t *dst, int64_t len) {
     int64_t pos = offset + done;
     int64_t block = pos / KR_BLOCK_BYTES;
     int32_t within = (int32_t)(pos % KR_BLOCK_BYTES);
-    cache_slot *hit = NULL, *victim = &g_cache[0];
+    cache_slot *hit = NULL, *victim = NULL;
     for (int i = 0; i < KR_CACHE_BLOCKS; i++) {
-      if (g_cache[i].block == block) { hit = &g_cache[i]; break; }
-      if (g_cache[i].last_used < victim->last_used) victim = &g_cache[i];
+      cache_slot *c = &g_cache[i];
+      if (c->block == block) { hit = c; break; }
+      if (!c->loading && (!victim || c->last_used < victim->last_used)) victim = c;
     }
+    if (hit && hit->loading) { pthread_cond_wait(&g_cache_cv, &g_cache_lock); continue; }   // 别的线程正在拉这一块：等它，醒来重查
     if (!hit) {
+      if (!victim) { pthread_cond_wait(&g_cache_cv, &g_cache_lock); continue; }             // 128 格全在拉（实际不会）：等一格空出来
       if (!victim->data) victim->data = (uint8_t *)malloc(KR_BLOCK_BYTES);
-      victim->block = -1;
-      int32_t n = fetch_block(block, victim->data);
-      if (n < 0) { pthread_mutex_unlock(&g_cache_lock); return -1; }
       victim->block = block;
+      victim->loading = 1;
+      victim->len = 0;
+      pthread_mutex_unlock(&g_cache_lock);
+      int32_t n = fetch_block(block, victim->data);                                          // 锁外拉
+      pthread_mutex_lock(&g_cache_lock);
+      victim->loading = 0;
+      if (n < 0) { victim->block = -1; pthread_cond_broadcast(&g_cache_cv); pthread_mutex_unlock(&g_cache_lock); return -1; }
       victim->len = n;
+      pthread_cond_broadcast(&g_cache_cv);
       hit = victim;
     }
     hit->last_used = ++g_cache_clock;
@@ -247,6 +260,19 @@ static void mark_seen(int64_t offset, int64_t len) {
     int64_t span = g_disc_size - sec * KR_SECTOR;
     atomic_fetch_add_explicit(&g_seen_bytes, (uint64_t)(span < KR_SECTOR ? span : KR_SECTOR), memory_order_relaxed);
   }
+}
+
+// PPSSPP 的 LocalFileLoader::ReadAt（我们的补丁）直接按位置读盘，不经它那把 readLock_、不动任何句柄的位置——
+//   这样 IO 线程在网上等一块的时候，模拟线程读别的（已缓存的）块不用排队。路径不是这张盘 → -1（补丁退回老路）。
+EMSCRIPTEN_KEEPALIVE int64_t kr_disc_pread(const char *path, int64_t pos, void *dst, int64_t len) {
+  if (!path || strcmp(path, g_disc_path) != 0 || pos < 0) {
+    static int warned = 0;
+    if (path && is_disc_path(path) && !warned) { warned = 1; fprintf(stderr, "[kr] pread: unexpected disc path %s (want %s), falling back to locked reads\n", path, g_disc_path); }
+    return -1;
+  }
+  int64_t n = disc_read(pos, (uint8_t *)dst, len);
+  if (n > 0) mark_seen(pos, n);
+  return n < 0 ? 0 : n;   // 拉失败 = 读到 0 字节（同老路 fread 的结果），不再退回老路重拉一遍
 }
 
 static int64_t vfs_read(struct retro_vfs_file_handle *h, void *s, uint64_t len) {
@@ -809,6 +835,10 @@ static const struct { const char *key, *value; } g_options[] = {
   {"ppsspp_fast_memory", "disabled"},
   {"ppsspp_software_rendering", "enabled"}, // 有 GPU 时在 environment() 里改答 "disabled"
   {"ppsspp_internal_resolution", "480x272"},
+  // 读盘计时 = 跟主机（2026-10-18 P0½ 第一刀；PPSSPP 默认「快」）：「快」模式下游戏同步读盘时模拟线程原地等 IO 线程读完——
+  //   我们的盘在网上，一片没到整个游戏（画面、BGM、动画）冻住。「跟主机」= 只有等这个文件的那个 PSP 线程挂起，模拟每 0.5 ms（模拟时间）回来看一眼，
+  //   别的线程照跑。设置面板仍可改回「快」或「模拟 UMD 延迟」。user 10-17「卡stdio的时候别的线程还在走」。
+  {"ppsspp_io_timing_method", "Host"},
   {"ppsspp_auto_frameskip", "disabled"}, // 不用 PPSSPP 的自动跳帧：它在不限速时最多连跳 8 帧，太狠（10-14 实测画面掉到 10 帧）；
                                          // 跳帧数由主循环按「落后真实时间多少」动态给（ppsspp_frameskip，见 environment()）
 };

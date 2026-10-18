@@ -113,6 +113,37 @@ index f05856d..89f2c42 100644
 +void SetupDebuggerLock();
  // Note: blocks.
  void StopAllDebuggers();
+diff --git a/Core/FileLoaders/LocalFileLoader.cpp b/Core/FileLoaders/LocalFileLoader.cpp
+index 6de92da..89d5fa9 100644
+--- a/Core/FileLoaders/LocalFileLoader.cpp
++++ b/Core/FileLoaders/LocalFileLoader.cpp
+@@ -24,6 +24,11 @@
+ #include "Core/Util/DarwinFileSystemServices.h"
+ #include "Core/FileLoaders/LocalFileLoader.h"
+ 
++#if defined(HAVE_LIBRETRO_VFS) && defined(__EMSCRIPTEN__)
++// KudsRocket 宿主（core/ppsspp/host.c）：按绝对位置读盘，不改任何句柄的位置；路径不是盘 → 返回 -1。
++extern "C" int64_t kr_disc_pread(const char *path, int64_t pos, void *dst, int64_t len);
++#endif
++
+ #if PPSSPP_PLATFORM(ANDROID)
+ #include "android/jni/app-android.h"
+ #endif
+@@ -191,6 +196,14 @@ size_t LocalFileLoader::ReadAt(s64 absolutePos, size_t bytes, size_t count, void
+ 	}
+ 
+ #if defined(HAVE_LIBRETRO_VFS)
++#if defined(__EMSCRIPTEN__)
++	// KudsRocket：盘走宿主的「按位置读」，不拿 readLock_——两个线程（IO 线程 + 模拟线程）读盘不再整条排队；
++	//   宿主自己的块缓存只在真去拉的那一块上等（host.c kr_disc_pread）。不是盘（返回 < 0）→ 照旧的 seek + read。
++	{
++		int64_t n = kr_disc_pread(filename_.c_str(), (int64_t)absolutePos, data, (int64_t)(bytes * count));
++		if (n >= 0) return (size_t)(n / (int64_t)bytes);
++	}
++#endif
+ 	std::lock_guard<std::mutex> guard(readLock_);
+ 	File::Fseek(file_, absolutePos, SEEK_SET);
+ 	return fread(data, bytes, count, file_);
 diff --git a/Core/MIPS/IR/IRInterpreter.cpp b/Core/MIPS/IR/IRInterpreter.cpp
 index ac8bd08..af64b91 100644
 --- a/Core/MIPS/IR/IRInterpreter.cpp
