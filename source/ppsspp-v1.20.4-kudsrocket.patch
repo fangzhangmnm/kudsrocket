@@ -144,6 +144,33 @@ index 6de92da..89d5fa9 100644
  	std::lock_guard<std::mutex> guard(readLock_);
  	File::Fseek(file_, absolutePos, SEEK_SET);
  	return fread(data, bytes, count, file_);
+diff --git a/Core/FileSystems/ISOFileSystem.cpp b/Core/FileSystems/ISOFileSystem.cpp
+index e051503..7a40a33 100644
+--- a/Core/FileSystems/ISOFileSystem.cpp
++++ b/Core/FileSystems/ISOFileSystem.cpp
+@@ -24,6 +24,11 @@
+ #include "Common/Serialize/SerializeFuncs.h"
+ #include "Common/StringUtils.h"
+ #include "Core/FileSystems/ISOFileSystem.h"
++
++#if defined(__EMSCRIPTEN__) && defined(__LIBRETRO__)
++// KudsRocket 宿主（core/ppsspp/host.c）：游戏打开了盘上哪个文件 → 页面的预取库当标签学「打开它之后会读哪些字节」。异步投递，不等。
++extern "C" void kr_note_disc_open(const char *path);
++#endif
+ #include "Core/HLE/sceKernel.h"
+ #include "Core/MemMap.h"
+ #include "Core/Reporting.h"
+@@ -376,6 +381,10 @@ int ISOFileSystem::OpenFile(std::string filename, FileAccess access, const char
+ 
+ 	if (entry.file == &entireISO)
+ 		entry.isBlockSectorMode = true;
++#if defined(__EMSCRIPTEN__) && defined(__LIBRETRO__)
++	else
++		kr_note_disc_open(filename.c_str());
++#endif
+ 
+ 	entry.seekPos = 0;
+ 
 diff --git a/Core/MIPS/IR/IRInterpreter.cpp b/Core/MIPS/IR/IRInterpreter.cpp
 index ac8bd08..af64b91 100644
 --- a/Core/MIPS/IR/IRInterpreter.cpp

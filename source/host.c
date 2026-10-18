@@ -275,6 +275,23 @@ EMSCRIPTEN_KEEPALIVE int64_t kr_disc_pread(const char *path, int64_t pos, void *
   return n < 0 ? 0 : n;   // 拉失败 = 读到 0 字节（同老路 fread 的结果），不再退回老路重拉一遍
 }
 
+// 游戏打开了盘上哪个文件（上游补丁 ISOFileSystem::OpenFile 调）→ 主线程 Module.krOnDiscOpen(路径)，页面交给预取库当标签。
+//   异步投递、不等（emscripten_proxy_async）：模拟线程不为这个停一下。路径拷一份，主线程用完 free。2026-10-18 P0½ 第三刀。
+EM_JS(void, kr_js_disc_open, (const char *path), {
+  var end = path;
+  while (HEAPU8[end]) end++;
+  var s = new TextDecoder().decode(HEAPU8.slice(path, end));   // slice = 拷出共享内存（TextDecoder 不吃 SharedArrayBuffer 的视图）
+  var f = Module["krOnDiscOpen"];
+  if (f) { try { f(s); } catch (e) {} }
+});
+static void disc_open_on_main(void *arg) { kr_js_disc_open((const char *)arg); free(arg); }
+EMSCRIPTEN_KEEPALIVE void kr_note_disc_open(const char *path) {
+  if (!path) return;
+  char *copy = strdup(path);
+  if (!copy) return;
+  if (!emscripten_proxy_async(emscripten_proxy_get_system_queue(), emscripten_main_runtime_thread_id(), disc_open_on_main, copy)) free(copy);
+}
+
 static int64_t vfs_read(struct retro_vfs_file_handle *h, void *s, uint64_t len) {
   if (!h->is_disc) return retro_vfs_file_read_impl(h->impl, s, len);
   int64_t n = disc_read(h->pos, (uint8_t *)s, (int64_t)len);
