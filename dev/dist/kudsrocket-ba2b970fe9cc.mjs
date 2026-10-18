@@ -1,5 +1,5 @@
 // src/version.ts
-var APP_VERSION = "v0.1.63-2026-10-18";
+var APP_VERSION = "v0.1.64-2026-10-18";
 
 // assets/icons.svg
 var icons_default = '<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none">\n<!--\n  14 icons extracted from the family icon library (../20260708 SVG Icons/icons.svg) by extract-icons.py \u2014 do not hand-edit; re-run the script instead.\n  Family SVG Icons \u2014 MIT License, Copyright (c) 2026 fangzhangmnm.\n  Contains work derived from (per-icon provenance in data-src):\n    Feather Icons \u2014 MIT License, Copyright (c) 2013-2023 Cole Bemis \xB7 https://github.com/feathericons/feather\n-->\n  <!-- media -->\n  <!-- pause \u2014 \u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="pause" data-cat="media" data-src="own" data-note="\u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="3.2"><path d="M8.3 5.5 V18.5"/><path d="M15.7 5.5 V18.5"/></g></symbol>\n  <!-- play \u2014 \u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="play" data-cat="media" data-src="own" data-note="\u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 5.4 L18.8 12 L8.2 18.6 Z" fill="currentColor"/></symbol>\n  <!-- fast-forward \u2014 \u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="fast-forward" data-cat="media" data-src="own" data-note="\u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.4 6.8 L10.9 12 L4.4 17.2 Z" fill="currentColor"/><path d="M13.1 6.8 L19.6 12 L13.1 17.2 Z" fill="currentColor"/></symbol>\n  <!-- volume \u2014 \u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009) -->\n  <symbol id="volume" data-cat="media" data-src="own" data-note="\u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 10.3 H8.7 L12.6 6.6 V17.4 L8.7 13.7 H5.5 Z" fill="currentColor"/><path d="M15.13 9.73 A3.4 3.4 0 0 1 15.13 14.27"/><path d="M16.36 7.19 A6.1 6.1 0 0 1 16.36 16.81"/></symbol>\n  <!-- file -->\n  <!-- floppy-disk \u2014 \u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3 -->\n  <symbol id="floppy-disk" data-cat="file" data-src="feather:save" data-note="\u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13l3 3v13a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 17 8 17 3"/></symbol>\n  <!-- folder-open \u2014 \u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF -->\n  <symbol id="folder-open" data-cat="file" data-src="own" data-note="\u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18 V7 a2 2 0 0 1 2 -2 h4 l2 2 h6 a2 2 0 0 1 2 2 v1.8"/><path d="M3 18 L6.4 10.8 H21.6 L18.2 18 Z"/></symbol>\n  <!-- hierarchy -->\n  <!-- lock \u2014 \u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D -->\n  <symbol id="lock" data-cat="hierarchy" data-src="own" data-note="\u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10" width="13" height="11"/><path d="M8.8 10 V6.5 a3.2 3.2 0 0 1 6.4 0 V10"/></symbol>\n  <!-- common -->\n  <!-- x \u2014 \u53C9 -->\n  <symbol id="x" data-cat="common" data-src="own" data-note="\u53C9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 L17.5 17.5 M17.5 6.5 L6.5 17.5"/></symbol>\n  <!-- cloud -->\n  <!-- cloud \u2014 \u4E91 -->\n  <symbol id="cloud" data-cat="cloud" data-src="feather:cloud" data-note="\u4E91" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>\n  <!-- viewport -->\n  <!-- maximize-viewport \u2014 \u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55) -->\n  <symbol id="maximize-viewport" data-cat="viewport" data-src="own" data-note="\u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934 --> <polyline points="4 9 4 4 9 4"/> <polyline points="20 9 20 4 15 4"/> <polyline points="4 15 4 20 9 20"/> <polyline points="20 15 20 20 15 20"/></symbol>\n  <!-- picture-in-picture \u2014 \u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1) -->\n  <symbol id="picture-in-picture" data-cat="viewport" data-src="own" data-note="\u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u5927\u6846\uFF08\u4E3B\u753B\u5E03\uFF09+ \u5185\u5D4C\u5C0F\u7A97\uFF08\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1\uFF09\u2014\u2014 picture-in-picture \u9690\u55BB --> <rect x="3" y="4" width="18" height="14" rx="2"/> <rect x="12" y="10" width="7" height="5" rx="1"/></symbol>\n  <!-- ui -->\n  <!-- more \u2014 \u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00) -->\n  <symbol id="more" data-cat="ui" data-src="own" data-note="\u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/></symbol>\n  <!-- keyboard \u2014 \u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49) -->\n  <symbol id="keyboard" data-cat="ui" data-src="own" data-note="\u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="7.2" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="7.2" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><path d="M8.6 15.6 H15.4"/></symbol>\n  <!-- menu \u2014 \u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17) -->\n  <symbol id="menu" data-cat="ui" data-src="own" data-note="\u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"></line> <line x1="4" y1="12" x2="20" y2="12"></line> <line x1="4" y1="17" x2="20" y2="17"></line></symbol>\n</svg>\n';
@@ -7502,13 +7502,17 @@ var JARS = "jars";
 var DISC_SUFFIXES = [".wafter", ".iso", ".cso"];
 var CRUMB_SUFFIX = ".crumb";
 var JAM_SUFFIX = ".jam";
+var RECIPES = "recipes";
+var RECIPE_SUFFIX = ".recipe";
 var DOC_KINDS = [
   { kind: "disc", suffix: ".wafter", container: "raw", tier: "resource" },
   { kind: "disc", suffix: ".iso", container: "raw", tier: "resource" },
   { kind: "disc", suffix: ".cso", container: "raw", tier: "resource" },
   { kind: "crumb", suffix: CRUMB_SUFFIX, container: "raw" },
   { kind: "crumb", suffix: CRUMB_SUFFIX, container: "raw", tier: "auto-backup", stem: /^[0-9a-f]{16}-[ah]\d+$/ },
-  { kind: "jam", suffix: JAM_SUFFIX, container: "raw" }
+  { kind: "jam", suffix: JAM_SUFFIX, container: "raw" },
+  // 菜谱 = 机器写、可重学的东西 → 二等：永不弹面、这台的赢（每台设备只写自己那份，撞上只会是同一台的两个标签页）
+  { kind: "recipe", suffix: RECIPE_SUFFIX, container: "raw", tier: "auto-backup" }
 ];
 var STREAM_LANES = 3;
 var STREAM_STALL_MS = 3e3;
@@ -7534,6 +7538,7 @@ function labelFor(identifier) {
   if (m) return `\u5FEB\u7167\uFF08${m[1] === "s" ? "\u624B\u52A8" : "\u81EA\u52A8"} ${m[2]}\uFF09`;
   if (identifier.startsWith("jars/")) return "\u5B58\u6863";
   if (identifier.startsWith("pantry/")) return "\u76D8";
+  if (identifier.startsWith("recipes/")) return "\u8BFB\u76D8\u83DC\u8C31";
   return identifier.replace(/^.*\//, "");
 }
 
@@ -7594,6 +7599,14 @@ function mirrorUrls() {
 }
 function setMirrorUrls(urls) {
   set("mirrors", urls.length ? JSON.stringify(urls) : null);
+}
+function deviceId() {
+  let v = get("device-id");
+  if (!v || !/^[0-9a-f]{8}$/.test(v)) {
+    v = Array.from(crypto.getRandomValues(new Uint8Array(4)), (b) => b.toString(16).padStart(2, "0")).join("");
+    set("device-id", v);
+  }
+  return v;
 }
 
 // src/app/sync-status.ts
@@ -8216,19 +8229,19 @@ var Planner = class {
   }
   observeHint(t, h2) {
     const conf = Math.min(1, Math.max(0, h2.confidence ?? 0.8));
-    const within = Math.max(0, h2.withinMs ?? 3e4);
+    const within2 = Math.max(0, h2.withinMs ?? 3e4);
     let i = 0;
     for (const r of h2.ranges ?? []) {
       if (!(r.length > 0))
         continue;
       const b0 = this.blockOf(r.offset), b1 = this.blockOf(r.offset + r.length - 1);
       for (let b = b0; b <= b1 && b < this.blockCount; b++)
-        this.explicit.push({ block: b, p: conf, until: t + within, due: t + i++ });
+        this.explicit.push({ block: b, p: conf, until: t + within2, due: t + i++ });
     }
     if (h2.label) {
       for (const m of [this.model, this.delta])
         labelFired(m, h2.label);
-      this.windows.push({ label: h2.label, start: t, until: t + within, conf, seen: /* @__PURE__ */ new Set() });
+      this.windows.push({ label: h2.label, start: t, until: t + within2, conf, seen: /* @__PURE__ */ new Set() });
     }
   }
   // ── 预取的来回 ──
@@ -8622,6 +8635,7 @@ function createDiscPrefetcher(stream, o) {
   return createPrefetch({
     source: { size: stream.totalSize, read: (off, n) => stream.read(off, n), prefetch: (off, n) => stream.prefetch(off, n) },
     budget: { cacheBytes: o.cacheBytes, concurrency: o.lanes, network: networkState },
+    ...o.memory ? { memory: o.memory } : {},
     report: (e, where) => {
       if (where.startsWith("prefetch block")) {
         if (++missed <= 3 || missed % 50 === 0) console.info(`[prefetch] ${where} \u6CA1\u62C9\u5230\uFF08\u7B2C ${missed} \u6B21\uFF09`, e);
@@ -8964,235 +8978,6 @@ async function readDiscLabel(src) {
     return null;
   }
 }
-
-// src/app/read-retry.ts
-function permanentReadError(e) {
-  const x = e;
-  return x?.name === "EtagChangedError" || x?.status === 404 || x?.status === 410;
-}
-var retryDelayMs = (attempt) => Math.min(5e3, 500 * 2 ** Math.min(attempt - 1, 4));
-async function readWithRetry(read, o, n, hooks) {
-  for (let attempt = 1; ; attempt++) {
-    try {
-      const bytes = await read(o, n);
-      if (attempt > 1) hooks.onWait(null);
-      return bytes;
-    } catch (e) {
-      if (permanentReadError(e)) {
-        hooks.onWait(null);
-        throw e;
-      }
-      const why = hooks.reason();
-      hooks.onWait(`\u8BFB\u76D8\u5728\u7B49${why.startsWith("\u767B\u5F55") ? "\u767B\u5F55" : "\u7F51"}\uFF08\u7B2C ${attempt} \u6B21\u91CD\u8BD5${why ? `\uFF0C${why}` : ""}\uFF09`);
-      await hooks.wait(attempt);
-    }
-  }
-}
-
-// src/app/identity.ts
-async function sha16(text) {
-  const d = new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text)));
-  return Array.from(d.slice(0, 8), (b) => b.toString(16).padStart(2, "0")).join("");
-}
-async function discKey(stem) {
-  return /^[0-9a-f]{16}$/.test(stem) ? stem : sha16(stem);
-}
-var gameKey = (fp) => sha16(`${fp.k}:${fp.id}:${fp.v ?? ""}`);
-function fpCompatible(saved, now) {
-  if (!saved) return true;
-  if (saved.k !== now.k || saved.size !== now.size) return false;
-  if (saved.id && now.id && (saved.id !== now.id || (saved.v ?? "") !== (now.v ?? ""))) return false;
-  return true;
-}
-
-// src/app/discs.ts
-var sessionPassword = null;
-var getPassword = () => sessionPassword;
-var setPassword = (p) => {
-  sessionPassword = p;
-};
-var stemOf2 = (name) => name.replace(/^.*\//, "").replace(/\.[^.]*$/, "");
-var extOf = (name) => (name.match(/\.[A-Za-z0-9]+$/)?.[0] ?? ".iso").toLowerCase();
-var DiscUnavailableError = class extends Error {
-  constructor(identifier) {
-    super(`disc unavailable right now: ${identifier}`);
-    this.name = "DiscUnavailableError";
-  }
-};
-var NeedPassword = class extends Error {
-  constructor() {
-    super("password needed");
-    this.name = "NeedPassword";
-  }
-};
-async function isEncrypted(src) {
-  try {
-    await peekDisc(src);
-    return true;
-  } catch (e) {
-    if (e instanceof NotADiscError) return false;
-    throw e;
-  }
-}
-async function unwrap(src, name, password, fallbackKey) {
-  let media = src, original = name, opened = null;
-  if (await isEncrypted(src)) {
-    const pw = password ?? sessionPassword;
-    if (!pw) throw new NeedPassword();
-    opened = await openDisc(src, pw);
-    sessionPassword = pw;
-    original = opened.meta.name ?? "game.iso";
-    media = opened;
-  }
-  const fp = await fingerprintOf(media, opened?.meta.fp);
-  const keyFromGame = !!fp.id;
-  const key = keyFromGame ? await gameKey(fp) : fallbackKey ?? await discKey(stemOf2(name));
-  if (!keyFromGame) console.warn("[disc] disc id unreadable; key =", fallbackKey ? "cached card" : "file name");
-  return { media, ext: extOf(original), title: stemOf2(original), fp, key, keyFromGame };
-}
-async function fingerprintOf(media, fromMeta) {
-  if (fromMeta?.k && fromMeta.size === media.size) return fromMeta;
-  const label = await readDiscLabel(media);
-  return { k: PLATFORM_CODE.psp, size: media.size, ...label?.id ? { id: label.id } : {}, ...label?.version ? { v: label.version } : {} };
-}
-async function fromLocalFile(file, password) {
-  const src = { size: file.size, read: async (o, n) => new Uint8Array(await file.slice(o, o + n).arrayBuffer()) };
-  return { ...await unwrap(src, file.name, password), identifier: null };
-}
-var retryHooks = {
-  onWait: (text) => setReadWait(text),
-  reason: () => !navigator.onLine ? "\u73B0\u5728\u79BB\u7EBF" : !auth.isSignedIn() ? "\u767B\u5F55\u8FC7\u671F\u4E86\uFF1A\u9000\u51FA\u5230\u9996\u9875\u91CD\u65B0\u767B\u5F55\uFF0C\u518D\u70B9\u300C\u7EE7\u7EED\u300D\uFF08\u56DE\u5230\u6700\u8FD1\u4E00\u4EFD\u5FEB\u7167\uFF09\uFF1B\u4EE5\u540E\u5148\u300C\u7F13\u5B58\u5168\u76D8\u300D\u5C31\u4E0D\u6015\u8FD9\u4E2A" : "",
-  wait: (attempt) => new Promise((resolve) => {
-    const done = () => {
-      clearTimeout(t);
-      removeEventListener("online", done);
-      document.removeEventListener("visibilitychange", onVis);
-      resolve();
-    };
-    const onVis = () => {
-      if (document.visibilityState === "visible") done();
-    };
-    const t = setTimeout(done, navigator.onLine ? retryDelayMs(attempt) : 3e4);
-    addEventListener("online", done);
-    document.addEventListener("visibilitychange", onVis);
-  })
-};
-async function fromPantry(identifier, password, fallbackKey) {
-  const stream = await getStore().file(identifier, { mode: "existing" }).openStream();
-  if (!stream) throw new Error("\u8FD9\u5F20\u76D8\u73B0\u5728\u62FF\u4E0D\u5230\uFF08\u6CA1\u767B\u5F55\u3001\u79BB\u7EBF\uFF0C\u6216\u8005\u4E91\u7AEF\u5DF2\u7ECF\u6CA1\u6709\u4E86\uFF09");
-  const prefetcher = await createDiscPrefetcher(stream, { cacheBytes: stagingCapBytes() || 256 * 2 ** 20, lanes: STREAM_LANES, log: logEvent });
-  const src = { size: stream.totalSize, read: (o, n) => readWithRetry((a, b) => prefetcher.read(a, b), o, n, retryHooks) };
-  return { ...await unwrap(src, identifier, password, fallbackKey), identifier, net: () => stream.status(), prefetcher, rawSize: stream.totalSize };
-}
-async function inspectPantry(identifier) {
-  const encrypted = identifier.endsWith(".wafter");
-  if (encrypted && !sessionPassword) return null;
-  const f = getStore().file(identifier, { mode: "existing" });
-  const card = async (name, fp) => ({ title: stemOf2(name), fp, key: fp.id ? await gameKey(fp) : await discKey(stemOf2(identifier)) });
-  try {
-    if (encrypted) {
-      const head = await f.getHead({ bytesLength: HEAD_PEEK_BYTES, source: "local" }).catch(() => null);
-      if (head) {
-        const got = await openHead(new Uint8Array(await head.arrayBuffer()), sessionPassword);
-        if (got?.meta.fp?.k) return card(got.meta.name ?? identifier, got.meta.fp);
-      }
-    }
-    const stream = await f.openStream();
-    if (!stream) throw new DiscUnavailableError(identifier);
-    try {
-      const src = { size: stream.totalSize, read: (o, n) => stream.read(o, n) };
-      let media = src, name = identifier, metaFp;
-      if (encrypted) {
-        const opened = await openDisc(src, sessionPassword);
-        media = opened;
-        name = opened.meta.name ?? identifier;
-        metaFp = opened.meta.fp;
-      }
-      return card(name, await fingerprintOf(media, metaFp));
-    } finally {
-      stream.close();
-    }
-  } catch (e) {
-    if (e instanceof WrongPasswordError) return null;
-    throw e;
-  }
-}
-
-// src/app/remember-password.ts
-var rememberPassword = async (password) => (await passwordKeeper().remember(password)).expiresAt;
-var recallPassword = () => passwordKeeper().recall();
-var rememberedUntil = async () => (await passwordKeeper().status()).expiresAt;
-var hasRememberedPassword = async () => (await passwordKeeper().status()).remembered;
-var forgetPassword = () => passwordKeeper().forget();
-
-// src/app/title-cache.ts
-var DB_NAME = "kudsrocket.titles";
-var STORE2 = "cards";
-var SALT_KEY = "_salt";
-var dbp = null;
-function db() {
-  dbp ??= new Promise((resolve, reject) => {
-    const req = indexedDB.open(DB_NAME, 1);
-    req.onupgradeneeded = () => {
-      req.result.createObjectStore(STORE2);
-    };
-    req.onsuccess = () => resolve(req.result);
-    req.onerror = () => reject(req.error);
-  });
-  dbp.catch(() => {
-    dbp = null;
-  });
-  return dbp;
-}
-async function tx(mode, body) {
-  const d = await db();
-  return new Promise((resolve, reject) => {
-    const t = d.transaction(STORE2, mode);
-    let result;
-    const req = body(t.objectStore(STORE2));
-    if (req) req.onsuccess = () => {
-      result = req.result;
-    };
-    t.oncomplete = () => resolve(result);
-    t.onerror = () => reject(t.error);
-    t.onabort = () => reject(t.error ?? new Error("title-cache transaction aborted"));
-  });
-}
-async function cacheKey(password, create) {
-  let salt = await tx("readonly", (s) => s.get(SALT_KEY));
-  if (!salt) {
-    if (!create) return null;
-    salt = crypto.getRandomValues(new Uint8Array(16));
-    await tx("readwrite", (s) => s.put(salt, SALT_KEY));
-  }
-  return (await deriveKeys(password, salt, DEFAULT_ITERATIONS)).meta;
-}
-async function loadTitleCards(password) {
-  const out = /* @__PURE__ */ new Map();
-  const key = await cacheKey(password, false).catch(() => null);
-  if (!key) return out;
-  const keys = await tx("readonly", (s) => s.getAllKeys()).catch(() => void 0) ?? [];
-  const vals = await tx("readonly", (s) => s.getAll()).catch(() => void 0) ?? [];
-  for (let i = 0; i < keys.length && i < vals.length; i++) {
-    if (keys[i] === SALT_KEY) continue;
-    const v = vals[i];
-    try {
-      const plain = await crypto.subtle.decrypt({ name: "AES-GCM", iv: v.iv }, key, v.ct);
-      out.set(String(keys[i]), { size: v.size, card: JSON.parse(new TextDecoder().decode(plain)) });
-    } catch {
-    }
-  }
-  return out;
-}
-async function saveTitleCard(password, identifier, size, card) {
-  const key = await cacheKey(password, true);
-  if (!key) return;
-  const iv = crypto.getRandomValues(new Uint8Array(12));
-  const ct = await crypto.subtle.encrypt({ name: "AES-GCM", iv }, key, new TextEncoder().encode(JSON.stringify(card)));
-  const rec = { size, iv, ct };
-  await tx("readwrite", (s) => s.put(rec, identifier));
-}
-var clearTitleCards = () => tx("readwrite", (s) => s.clear()).then(() => void 0);
 
 // vendor/fflate/fflate.esm.js
 var u8 = Uint8Array;
@@ -10156,6 +9941,22 @@ function unzipSync(data, opts) {
   return files;
 }
 
+// src/app/identity.ts
+async function sha16(text) {
+  const d = new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text)));
+  return Array.from(d.slice(0, 8), (b) => b.toString(16).padStart(2, "0")).join("");
+}
+async function discKey(stem) {
+  return /^[0-9a-f]{16}$/.test(stem) ? stem : sha16(stem);
+}
+var gameKey = (fp) => sha16(`${fp.k}:${fp.id}:${fp.v ?? ""}`);
+function fpCompatible(saved, now) {
+  if (!saved) return true;
+  if (saved.k !== now.k || saved.size !== now.size) return false;
+  if (saved.id && now.id && (saved.id !== now.id || (saved.v ?? "") !== (now.v ?? ""))) return false;
+  return true;
+}
+
 // src/app/save-scan.ts
 function groupSaveDirs(files) {
   const norm = files.map((f) => ({ ...f, path: f.path.replace(/\\/g, "/").replace(/^\/+/, "") }));
@@ -10361,6 +10162,18 @@ async function recheckAfterPush(identifier) {
 }
 var readSealed = (identifier) => get2(identifier);
 var putSealed = (identifier, sealed) => put(identifier, sealed);
+async function saveRecipe(identifier, model, password, opts = {}) {
+  return put(identifier, await sealBytes(password, model, { salt: sessionSalt, compress: true, meta: { at: Date.now() } }), opts);
+}
+async function readRecipe(identifier, password) {
+  const sealed = await get2(identifier).catch(() => null);
+  if (!sealed) return null;
+  try {
+    return (await unsealBytes(password, sealed)).plain;
+  } catch {
+    return null;
+  }
+}
 async function saveSnapshot(identifier, state2, meta, password, opts = {}) {
   const thumb = meta.thumb ? btoa(Array.from(meta.thumb, (b) => String.fromCharCode(b)).join("")) : void 0;
   return put(identifier, await sealBytes(password, state2, { salt: sessionSalt, compress: true, meta: { thumb, at: meta.at, auto: meta.auto, fp: meta.fp, t: meta.title, ...meta.ws?.length && meta.wsz ? { ws: meta.ws, wsz: meta.wsz } : {} } }), opts);
@@ -10594,6 +10407,256 @@ function importSaveDirs(items, password, onEach) {
     k
   });
 }
+
+// src/app/recipe-names.ts
+var MAX_OTHER_RECIPES = 8;
+var recipeBase = (discIdentifier) => sha16(`recipe:${discIdentifier}`);
+var recipeId = (base, device) => `${RECIPES}/${base}-${device}${RECIPE_SUFFIX}`;
+function otherRecipes(ids, base, mine) {
+  return ids.filter((id) => id !== mine && id.startsWith(`${RECIPES}/${base}-`) && id.endsWith(RECIPE_SUFFIX)).slice(0, MAX_OTHER_RECIPES);
+}
+
+// src/app/recipes.ts
+var OWN_WAIT_MS = 2500;
+var OTHERS_WAIT_MS = 3e3;
+var within = (p, ms, fallback) => Promise.race([p.catch(() => fallback), new Promise((r) => setTimeout(() => r(fallback), ms))]);
+function recipeMemory(discIdentifier, password, hidden, log2) {
+  const names = recipeBase(discIdentifier).then((base) => ({ base, mine: recipeId(base, deviceId()) }));
+  const own = within(names.then(({ mine }) => readRecipe(mine, password)), OWN_WAIT_MS, null);
+  const others = within(names.then(async ({ base, mine }) => {
+    const { items } = await listFolderOnce(RECIPES, OTHERS_WAIT_MS, true);
+    const out = [];
+    for (const id of otherRecipes(items.map((it) => it.identifier), base, mine)) {
+      const m = await readRecipe(id, password);
+      if (m) out.push(m);
+    }
+    return out;
+  }), OTHERS_WAIT_MS, []);
+  void Promise.all([own, others]).then(([o, x]) => log2(`\u8BFB\u76D8\u83DC\u8C31\uFF1A\u8FD9\u53F0\u8BBE\u5907\u7684${o ? `\u6709\uFF08${(o.length / 1024).toFixed(0)} KB\uFF09` : "\u6CA1\u6709"}\uFF0C\u522B\u7684\u8BBE\u5907 ${x.length} \u4EFD`));
+  return {
+    load: () => own,
+    others: () => others,
+    save: async (model) => {
+      const { mine } = await names;
+      await saveRecipe(mine, model, password, { deferPush: hidden() });
+    }
+  };
+}
+
+// src/app/read-retry.ts
+function permanentReadError(e) {
+  const x = e;
+  return x?.name === "EtagChangedError" || x?.status === 404 || x?.status === 410;
+}
+var retryDelayMs = (attempt) => Math.min(5e3, 500 * 2 ** Math.min(attempt - 1, 4));
+async function readWithRetry(read, o, n, hooks) {
+  for (let attempt = 1; ; attempt++) {
+    try {
+      const bytes = await read(o, n);
+      if (attempt > 1) hooks.onWait(null);
+      return bytes;
+    } catch (e) {
+      if (permanentReadError(e)) {
+        hooks.onWait(null);
+        throw e;
+      }
+      const why = hooks.reason();
+      hooks.onWait(`\u8BFB\u76D8\u5728\u7B49${why.startsWith("\u767B\u5F55") ? "\u767B\u5F55" : "\u7F51"}\uFF08\u7B2C ${attempt} \u6B21\u91CD\u8BD5${why ? `\uFF0C${why}` : ""}\uFF09`);
+      await hooks.wait(attempt);
+    }
+  }
+}
+
+// src/app/discs.ts
+var sessionPassword = null;
+var getPassword = () => sessionPassword;
+var setPassword = (p) => {
+  sessionPassword = p;
+};
+var stemOf2 = (name) => name.replace(/^.*\//, "").replace(/\.[^.]*$/, "");
+var extOf = (name) => (name.match(/\.[A-Za-z0-9]+$/)?.[0] ?? ".iso").toLowerCase();
+var DiscUnavailableError = class extends Error {
+  constructor(identifier) {
+    super(`disc unavailable right now: ${identifier}`);
+    this.name = "DiscUnavailableError";
+  }
+};
+var NeedPassword = class extends Error {
+  constructor() {
+    super("password needed");
+    this.name = "NeedPassword";
+  }
+};
+async function isEncrypted(src) {
+  try {
+    await peekDisc(src);
+    return true;
+  } catch (e) {
+    if (e instanceof NotADiscError) return false;
+    throw e;
+  }
+}
+async function unwrap(src, name, password, fallbackKey) {
+  let media = src, original = name, opened = null;
+  if (await isEncrypted(src)) {
+    const pw = password ?? sessionPassword;
+    if (!pw) throw new NeedPassword();
+    opened = await openDisc(src, pw);
+    sessionPassword = pw;
+    original = opened.meta.name ?? "game.iso";
+    media = opened;
+  }
+  const fp = await fingerprintOf(media, opened?.meta.fp);
+  const keyFromGame = !!fp.id;
+  const key = keyFromGame ? await gameKey(fp) : fallbackKey ?? await discKey(stemOf2(name));
+  if (!keyFromGame) console.warn("[disc] disc id unreadable; key =", fallbackKey ? "cached card" : "file name");
+  return { media, ext: extOf(original), title: stemOf2(original), fp, key, keyFromGame };
+}
+async function fingerprintOf(media, fromMeta) {
+  if (fromMeta?.k && fromMeta.size === media.size) return fromMeta;
+  const label = await readDiscLabel(media);
+  return { k: PLATFORM_CODE.psp, size: media.size, ...label?.id ? { id: label.id } : {}, ...label?.version ? { v: label.version } : {} };
+}
+async function fromLocalFile(file, password) {
+  const src = { size: file.size, read: async (o, n) => new Uint8Array(await file.slice(o, o + n).arrayBuffer()) };
+  return { ...await unwrap(src, file.name, password), identifier: null };
+}
+var retryHooks = {
+  onWait: (text) => setReadWait(text),
+  reason: () => !navigator.onLine ? "\u73B0\u5728\u79BB\u7EBF" : !auth.isSignedIn() ? "\u767B\u5F55\u8FC7\u671F\u4E86\uFF1A\u9000\u51FA\u5230\u9996\u9875\u91CD\u65B0\u767B\u5F55\uFF0C\u518D\u70B9\u300C\u7EE7\u7EED\u300D\uFF08\u56DE\u5230\u6700\u8FD1\u4E00\u4EFD\u5FEB\u7167\uFF09\uFF1B\u4EE5\u540E\u5148\u300C\u7F13\u5B58\u5168\u76D8\u300D\u5C31\u4E0D\u6015\u8FD9\u4E2A" : "",
+  wait: (attempt) => new Promise((resolve) => {
+    const done = () => {
+      clearTimeout(t);
+      removeEventListener("online", done);
+      document.removeEventListener("visibilitychange", onVis);
+      resolve();
+    };
+    const onVis = () => {
+      if (document.visibilityState === "visible") done();
+    };
+    const t = setTimeout(done, navigator.onLine ? retryDelayMs(attempt) : 3e4);
+    addEventListener("online", done);
+    document.addEventListener("visibilitychange", onVis);
+  })
+};
+async function fromPantry(identifier, password, fallbackKey) {
+  const pw = password ?? sessionPassword;
+  const memory = pw ? recipeMemory(identifier, pw, () => document.visibilityState === "hidden", (t) => logEvent("info", t)) : void 0;
+  const stream = await getStore().file(identifier, { mode: "existing" }).openStream();
+  if (!stream) throw new Error("\u8FD9\u5F20\u76D8\u73B0\u5728\u62FF\u4E0D\u5230\uFF08\u6CA1\u767B\u5F55\u3001\u79BB\u7EBF\uFF0C\u6216\u8005\u4E91\u7AEF\u5DF2\u7ECF\u6CA1\u6709\u4E86\uFF09");
+  const prefetcher = await createDiscPrefetcher(stream, { cacheBytes: stagingCapBytes() || 256 * 2 ** 20, lanes: STREAM_LANES, log: logEvent, memory });
+  const src = { size: stream.totalSize, read: (o, n) => readWithRetry((a, b) => prefetcher.read(a, b), o, n, retryHooks) };
+  return { ...await unwrap(src, identifier, password, fallbackKey), identifier, net: () => stream.status(), prefetcher, rawSize: stream.totalSize };
+}
+async function inspectPantry(identifier) {
+  const encrypted = identifier.endsWith(".wafter");
+  if (encrypted && !sessionPassword) return null;
+  const f = getStore().file(identifier, { mode: "existing" });
+  const card = async (name, fp) => ({ title: stemOf2(name), fp, key: fp.id ? await gameKey(fp) : await discKey(stemOf2(identifier)) });
+  try {
+    if (encrypted) {
+      const head = await f.getHead({ bytesLength: HEAD_PEEK_BYTES, source: "local" }).catch(() => null);
+      if (head) {
+        const got = await openHead(new Uint8Array(await head.arrayBuffer()), sessionPassword);
+        if (got?.meta.fp?.k) return card(got.meta.name ?? identifier, got.meta.fp);
+      }
+    }
+    const stream = await f.openStream();
+    if (!stream) throw new DiscUnavailableError(identifier);
+    try {
+      const src = { size: stream.totalSize, read: (o, n) => stream.read(o, n) };
+      let media = src, name = identifier, metaFp;
+      if (encrypted) {
+        const opened = await openDisc(src, sessionPassword);
+        media = opened;
+        name = opened.meta.name ?? identifier;
+        metaFp = opened.meta.fp;
+      }
+      return card(name, await fingerprintOf(media, metaFp));
+    } finally {
+      stream.close();
+    }
+  } catch (e) {
+    if (e instanceof WrongPasswordError) return null;
+    throw e;
+  }
+}
+
+// src/app/remember-password.ts
+var rememberPassword = async (password) => (await passwordKeeper().remember(password)).expiresAt;
+var recallPassword = () => passwordKeeper().recall();
+var rememberedUntil = async () => (await passwordKeeper().status()).expiresAt;
+var hasRememberedPassword = async () => (await passwordKeeper().status()).remembered;
+var forgetPassword = () => passwordKeeper().forget();
+
+// src/app/title-cache.ts
+var DB_NAME = "kudsrocket.titles";
+var STORE2 = "cards";
+var SALT_KEY = "_salt";
+var dbp = null;
+function db() {
+  dbp ??= new Promise((resolve, reject) => {
+    const req = indexedDB.open(DB_NAME, 1);
+    req.onupgradeneeded = () => {
+      req.result.createObjectStore(STORE2);
+    };
+    req.onsuccess = () => resolve(req.result);
+    req.onerror = () => reject(req.error);
+  });
+  dbp.catch(() => {
+    dbp = null;
+  });
+  return dbp;
+}
+async function tx(mode, body) {
+  const d = await db();
+  return new Promise((resolve, reject) => {
+    const t = d.transaction(STORE2, mode);
+    let result;
+    const req = body(t.objectStore(STORE2));
+    if (req) req.onsuccess = () => {
+      result = req.result;
+    };
+    t.oncomplete = () => resolve(result);
+    t.onerror = () => reject(t.error);
+    t.onabort = () => reject(t.error ?? new Error("title-cache transaction aborted"));
+  });
+}
+async function cacheKey(password, create) {
+  let salt = await tx("readonly", (s) => s.get(SALT_KEY));
+  if (!salt) {
+    if (!create) return null;
+    salt = crypto.getRandomValues(new Uint8Array(16));
+    await tx("readwrite", (s) => s.put(salt, SALT_KEY));
+  }
+  return (await deriveKeys(password, salt, DEFAULT_ITERATIONS)).meta;
+}
+async function loadTitleCards(password) {
+  const out = /* @__PURE__ */ new Map();
+  const key = await cacheKey(password, false).catch(() => null);
+  if (!key) return out;
+  const keys = await tx("readonly", (s) => s.getAllKeys()).catch(() => void 0) ?? [];
+  const vals = await tx("readonly", (s) => s.getAll()).catch(() => void 0) ?? [];
+  for (let i = 0; i < keys.length && i < vals.length; i++) {
+    if (keys[i] === SALT_KEY) continue;
+    const v = vals[i];
+    try {
+      const plain = await crypto.subtle.decrypt({ name: "AES-GCM", iv: v.iv }, key, v.ct);
+      out.set(String(keys[i]), { size: v.size, card: JSON.parse(new TextDecoder().decode(plain)) });
+    } catch {
+    }
+  }
+  return out;
+}
+async function saveTitleCard(password, identifier, size, card) {
+  const key = await cacheKey(password, true);
+  if (!key) return;
+  const iv = crypto.getRandomValues(new Uint8Array(12));
+  const ct = await crypto.subtle.encrypt({ name: "AES-GCM", iv }, key, new TextEncoder().encode(JSON.stringify(card)));
+  const rec = { size, iv, ct };
+  await tx("readwrite", (s) => s.put(rec, identifier));
+}
+var clearTitleCards = () => tx("readwrite", (s) => s.clear()).then(() => void 0);
 
 // src/app/presence.ts
 var pipActive = false;
@@ -15053,4 +15116,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-1e51002b5beb.mjs.map
+//# sourceMappingURL=kudsrocket-ba2b970fe9cc.mjs.map
