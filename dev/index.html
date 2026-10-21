@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#111111">
 <title>KudsRocket</title>
 <link rel="manifest" href="./manifest.webmanifest">
-<link rel="stylesheet" href="./styles.css?v=a8dfefa97060">
+<link rel="stylesheet" href="./styles.css?v=a37d5c2543c5">
 </head>
 <body>
 <main id="home">
@@ -46,6 +46,10 @@
       <label class="muted">暂存区上限 <select id="staging-cap"></select></label>
       <button id="force-update" title="清掉这个 app 自己的离线壳缓存并重新载入">强制更新</button>
     </div>
+    <div class="tool-group">
+      <h3>开发者</h3>
+      <button id="factory-reset" title="这个 app 在这台设备上的全部清成新装（本机副本、缓存、记住的口令、设备号、离线壳）；云端不动；两步确认">还原出厂设置…</button>
+    </div>
     <input type="file" id="local-file" hidden>
     <input type="file" id="upload-file" hidden>
     <input type="file" id="mirror-files" multiple hidden>
@@ -69,6 +73,6 @@
 <div id="note" hidden></div>
 <div id="update" hidden></div>
 <div id="busy" hidden><span></span></div>
-<script type="module" src="./dist/kudsrocket-a8dfefa97060.mjs"></script>
+<script type="module" src="./dist/kudsrocket-a37d5c2543c5.mjs"></script>
 </body>
 </html>
