@@ -272,3 +272,9 @@ body:has(#game:not([hidden])) > #note { top: calc(env(safe-area-inset-top) + var
 .bind-cell.capturing { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
 .bind-key { display: inline-flex; align-items: center; gap: 2px; padding: 2px 6px; border: 1px solid var(--line); border-radius: 6px; font-size: 13px; }
 .bind-key .bind-x, .bind-add { padding: 0 6px; min-width: 0; font-size: 13px; line-height: 1.4; }
+
+/* 软键的 GBA 布局（softkeys.ts setLayout("gba")，2026-10-21）：藏掉 GBA 没有的——摇杆、□ △、LT / RT；○ 位画 A、× 位画 B */
+.softkeys.gba .stick, .softkeys.gba .fb.sq, .softkeys.gba .fb.tri, .softkeys.gba .shoulder.lt, .softkeys.gba .shoulder.rt { display: none; }
+.softkeys.gba .fb .sym { display: none; }
+.softkeys.gba .fb.ci::after, .softkeys.gba .fb.cr::after { font: 700 calc(var(--u) * .42) / 1 system-ui, sans-serif; color: #e8ecf5; }
+.softkeys.gba .fb.ci::after { content: "A"; } .softkeys.gba .fb.cr::after { content: "B"; }

@@ -1,5 +1,8 @@
+// <define:__CORE_DIRS__>
+var define_CORE_DIRS_default = { ppsspp: "./dist/core-602016aa4429/", mgba: "./dist/core-mgba-628493fe928a/" };
+
 // src/version.ts
-var APP_VERSION = "v0.1.72-2026-10-21";
+var APP_VERSION = "v0.2.0-2026-10-21";
 
 // assets/icons.svg
 var icons_default = '<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none">\n<!--\n  24 icons extracted from the family icon library (../20260708 SVG Icons/icons.svg) by extract-icons.py \u2014 do not hand-edit; re-run the script instead.\n  Family SVG Icons \u2014 MIT License, Copyright (c) 2026 fangzhangmnm.\n  Contains work derived from (per-icon provenance in data-src):\n    Feather Icons \u2014 MIT License, Copyright (c) 2013-2023 Cole Bemis \xB7 https://github.com/feathericons/feather\n    Lucide \u2014 ISC License, Copyright (c) 2020 Lucide Contributors \xB7 https://github.com/lucide-icons/lucide\n-->\n  <!-- edit -->\n  <!-- paste \u2014 \u7C98\u8D34:\u526A\u8D34\u677F\u4E0D\u7F29(\u5E93\u5C3A\u5BF8)+\u6587\u6863\u63A2\u51FA\u53F3\u4E0B\u89D2, \u6309 copy \u7684\u524D\u540E\u4EF6\u6BD4\u4F8B -->\n  <symbol id="paste" data-cat="edit" data-src="own" data-note="\u7C98\u8D34:\u526A\u8D34\u677F\u4E0D\u7F29(\u5E93\u5C3A\u5BF8)+\u6587\u6863\u63A2\u51FA\u53F3\u4E0B\u89D2, \u6309 copy \u7684\u524D\u540E\u4EF6\u6BD4\u4F8B" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><mask id="icPaC"><rect width="24" height="24" fill="#fff" stroke="none"/><g transform="translate(6.76 3.85) scale(0.860)" fill="#000" stroke="#000" stroke-width="3.14" stroke-linejoin="round"><path d="M4 5.6a1.7 1.7 0 0 1 1.7-1.7h6.6l4 4v11.5a1.7 1.7 0 0 1-1.7 1.7H5.7A1.7 1.7 0 0 1 4 20.8z"/></g></mask><g mask="url(#icPaC)"><mask id="icPbTC"><rect width="24" height="24" fill="#fff"/><rect x="6.0" y="1.0000000000000002" width="6" height="4.2" rx="1.2" fill="#000" stroke="#000" stroke-width="2.4"/></mask><g mask="url(#icPbTC)"><rect x="2.0" y="3.3" width="14" height="17" rx="2"/></g><rect x="6.0" y="1.0000000000000002" width="6" height="4.2" rx="1.2"/></g><g transform="translate(6.76 3.85) scale(0.860)" stroke-width="1.98"><path d="M4 5.6a1.7 1.7 0 0 1 1.7-1.7h6.6l4 4v11.5a1.7 1.7 0 0 1-1.7 1.7H5.7A1.7 1.7 0 0 1 4 20.8z"/><path d="M12.3 3.9V8h4"/><path d="M6.6 12.4h7.2M6.6 15.4h5"/></g></symbol>\n  <!-- media -->\n  <!-- pause \u2014 \u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="pause" data-cat="media" data-src="own" data-note="\u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="3.2"><path d="M8.3 5.5 V18.5"/><path d="M15.7 5.5 V18.5"/></g></symbol>\n  <!-- play \u2014 \u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="play" data-cat="media" data-src="own" data-note="\u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 5.4 L18.8 12 L8.2 18.6 Z" fill="currentColor"/></symbol>\n  <!-- fast-forward \u2014 \u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="fast-forward" data-cat="media" data-src="own" data-note="\u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.4 6.8 L10.9 12 L4.4 17.2 Z" fill="currentColor"/><path d="M13.1 6.8 L19.6 12 L13.1 17.2 Z" fill="currentColor"/></symbol>\n  <!-- volume \u2014 \u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009) -->\n  <symbol id="volume" data-cat="media" data-src="own" data-note="\u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 10.3 H8.7 L12.6 6.6 V17.4 L8.7 13.7 H5.5 Z" fill="currentColor"/><path d="M15.13 9.73 A3.4 3.4 0 0 1 15.13 14.27"/><path d="M16.36 7.19 A6.1 6.1 0 0 1 16.36 16.81"/></symbol>\n  <!-- file -->\n  <!-- floppy-disk \u2014 \u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3 -->\n  <symbol id="floppy-disk" data-cat="file" data-src="feather:save" data-note="\u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13l3 3v13a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 17 8 17 3"/></symbol>\n  <!-- folder-open \u2014 \u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF -->\n  <symbol id="folder-open" data-cat="file" data-src="own" data-note="\u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18 V7 a2 2 0 0 1 2 -2 h4 l2 2 h6 a2 2 0 0 1 2 2 v1.8"/><path d="M3 18 L6.4 10.8 H21.6 L18.2 18 Z"/></symbol>\n  <!-- folder \u2014 \u6587\u4EF6\u5939:\u5DE6\u8FB9 tab + \u77E9\u5F62\u4E3B\u4F53 -->\n  <symbol id="folder" data-cat="file" data-src="lucide:folder" data-note="\u6587\u4EF6\u5939:\u5DE6\u8FB9 tab + \u77E9\u5F62\u4E3B\u4F53" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u6587\u4EF6\u5939\uFF1A\u5DE6\u8FB9 tab + \u77E9\u5F62\u4E3B\u4F53 --> <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>\n  <!-- trash-can \u2014 \u5783\u573E\u6876:\u6876\u8EAB\u6536\u53E3(feather \u662F\u76F4\u7B52);\u4E0E fluent(\u5706\u63D0\u624B/\u66F4\u4F4E)\u3001heroicons(\u5F27\u5F62\u900F\u89C6)\u4EA6\u4E0D\u540C \u2014 own -->\n  <symbol id="trash-can" data-cat="file" data-src="own" data-note="\u5783\u573E\u6876:\u6876\u8EAB\u6536\u53E3(feather \u662F\u76F4\u7B52);\u4E0E fluent(\u5706\u63D0\u624B/\u66F4\u4F4E)\u3001heroicons(\u5F27\u5F62\u900F\u89C6)\u4EA6\u4E0D\u540C \u2014 own" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 9.5v9"/><path d="M14 9.5v9"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></symbol>\n  <!-- new \u2014 \u65B0\u5EFA:\u7EAF\u52A0\u53F7(\u7B49\u957F\u5341\u5B57\u7EBF) -->\n  <symbol id="new" data-cat="file" data-src="own" data-note="\u65B0\u5EFA:\u7EAF\u52A0\u53F7(\u7B49\u957F\u5341\u5B57\u7EBF)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/> <line x1="5" y1="12" x2="19" y2="12"/></symbol>\n  <!-- hierarchy -->\n  <!-- lock \u2014 \u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D -->\n  <symbol id="lock" data-cat="hierarchy" data-src="own" data-note="\u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10" width="13" height="11"/><path d="M8.8 10 V6.5 a3.2 3.2 0 0 1 6.4 0 V10"/></symbol>\n  <!-- common -->\n  <!-- x \u2014 \u53C9 -->\n  <symbol id="x" data-cat="common" data-src="own" data-note="\u53C9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 L17.5 17.5 M17.5 6.5 L6.5 17.5"/></symbol>\n  <!-- chevron-left \u2014 \u2039 \u5C0F\u5C3A\u5BF8\u4F18\u5316\u88F8 chevron:\u63CF\u8FB9 2.4\u3001\u81C2\u77ED(14px chip \u7528)\uFF1B\u5E93\u91CC\u5E26\u6746\u7684 back \u662F\u53E6\u4E00\u8BED\u4E49\u3010WeebPaint \u53C2\u8003\u7A97\u591A\u56FE\u65F6\u7A97\u5E95\u7FFB\u9875 chip\uFF1Bfable \u81EA\u753B\u672A\u8FC7\u76EE\u3011 -->\n  <symbol id="chevron-left" data-cat="common" data-src="own" data-note="\u2039 \u5C0F\u5C3A\u5BF8\u4F18\u5316\u88F8 chevron:\u63CF\u8FB9 2.4\u3001\u81C2\u77ED(14px chip \u7528)\uFF1B\u5E93\u91CC\u5E26\u6746\u7684 back \u662F\u53E6\u4E00\u8BED\u4E49\u3010WeebPaint \u53C2\u8003\u7A97\u591A\u56FE\u65F6\u7A97\u5E95\u7FFB\u9875 chip\uFF1Bfable \u81EA\u753B\u672A\u8FC7\u76EE\u3011" data-review="pending" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="14.5 6 9 12 14.5 18" stroke-width="2.4"/></symbol>\n  <!-- chevron-right \u2014 \u203A chevron-left \u7684\u7CBE\u786E\u955C\u50CF\u3010WeebPaint \u53C2\u8003\u7A97\u7FFB\u9875 chip\uFF1Bfable \u81EA\u753B\u672A\u8FC7\u76EE\u3011 -->\n  <symbol id="chevron-right" data-cat="common" data-src="own" data-note="\u203A chevron-left \u7684\u7CBE\u786E\u955C\u50CF\u3010WeebPaint \u53C2\u8003\u7A97\u7FFB\u9875 chip\uFF1Bfable \u81EA\u753B\u672A\u8FC7\u76EE\u3011" data-review="pending" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="9.5 6 15 12 9.5 18" stroke-width="2.4"/></symbol>\n  <!-- back \u2014 \u8FD4\u56DE:\u5DE6\u5411\u6574\u7BAD\u5934(\u5E26\u6746;\u88F8 chevron-left \u66FE\u56E0\u5C0F\u5C3A\u5BF8\u6E32\u67D3\u5DEE\u88AB sunset) -->\n  <symbol id="back" data-cat="common" data-src="own" data-note="\u8FD4\u56DE:\u5DE6\u5411\u6574\u7BAD\u5934(\u5E26\u6746;\u88F8 chevron-left \u66FE\u56E0\u5C0F\u5C3A\u5BF8\u6E32\u67D3\u5DEE\u88AB sunset)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H5"/><polyline points="11 6 5 12 11 18"/></symbol>\n  <!-- forward \u2014 \u524D\u8FDB:back \u7684\u7CBE\u786E\u955C\u50CF(\u53F3\u5411\u6574\u7BAD\u5934\u5E26\u6746;\u4E0E chevron-right \u88F8 chevron \u5206\u5DE5)\u3010WebXiaoHeiWu \u4FA7\u680F\u9875\u5934\u300C\u56DE\u9000\u300D\u53F3\u90BB\u7684\u300C\u524D\u8FDB\u300D\u94AE\uFF08\u56DE\u9000\u4E4B\u540E\u518D\u56DE\u53BB\uFF09\uFF1B2026-09-10 fable \u81EA\u753B\u672A\u8FC7\u76EE\u3011 -->\n  <symbol id="forward" data-cat="common" data-src="own" data-note="\u524D\u8FDB:back \u7684\u7CBE\u786E\u955C\u50CF(\u53F3\u5411\u6574\u7BAD\u5934\u5E26\u6746;\u4E0E chevron-right \u88F8 chevron \u5206\u5DE5)\u3010WebXiaoHeiWu \u4FA7\u680F\u9875\u5934\u300C\u56DE\u9000\u300D\u53F3\u90BB\u7684\u300C\u524D\u8FDB\u300D\u94AE\uFF08\u56DE\u9000\u4E4B\u540E\u518D\u56DE\u53BB\uFF09\uFF1B2026-09-10 fable \u81EA\u753B\u672A\u8FC7\u76EE\u3011" data-review="pending" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12H19"/><polyline points="13 6 19 12 13 18"/></symbol>\n  <!-- check \u2014 \u52FE -->\n  <symbol id="check" data-cat="common" data-src="own" data-note="\u52FE" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5 L9.5 17.5 L19.5 6.5"/></symbol>\n  <!-- cloud -->\n  <!-- cloud \u2014 \u4E91 -->\n  <symbol id="cloud" data-cat="cloud" data-src="feather:cloud" data-note="\u4E91" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>\n  <!-- viewport -->\n  <!-- maximize-viewport \u2014 \u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55) -->\n  <symbol id="maximize-viewport" data-cat="viewport" data-src="own" data-note="\u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934 --> <polyline points="4 9 4 4 9 4"/> <polyline points="20 9 20 4 15 4"/> <polyline points="4 15 4 20 9 20"/> <polyline points="20 15 20 20 15 20"/></symbol>\n  <!-- picture-in-picture \u2014 \u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1) -->\n  <symbol id="picture-in-picture" data-cat="viewport" data-src="own" data-note="\u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u5927\u6846\uFF08\u4E3B\u753B\u5E03\uFF09+ \u5185\u5D4C\u5C0F\u7A97\uFF08\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1\uFF09\u2014\u2014 picture-in-picture \u9690\u55BB --> <rect x="3" y="4" width="18" height="14" rx="2"/> <rect x="12" y="10" width="7" height="5" rx="1"/></symbol>\n  <!-- one-to-one \u2014 1:1 \u50CF\u7D20:\u56DB\u89D2\u62EC\u53F7 + \u4E2D\u5FC3\u4E00\u9897\u5B9E\u5FC3\u50CF\u7D20=\u300C\u4E00\u56FE\u50CF\u7D20\u5BF9\u4E00\u5C4F\u50CF\u7D20\u300D(\u4E0D\u5199 1:1 \u6587\u5B57)\u3010WeebPaint \u53C2\u8003\u7A97 \uFF0B \u83DC\u5355\u300C1:1 \u50CF\u7D20\u300D\u9879\uFF1Bfable \u81EA\u753B\u672A\u8FC7\u76EE\u3011 -->\n  <symbol id="one-to-one" data-cat="viewport" data-src="own" data-note="1:1 \u50CF\u7D20:\u56DB\u89D2\u62EC\u53F7 + \u4E2D\u5FC3\u4E00\u9897\u5B9E\u5FC3\u50CF\u7D20=\u300C\u4E00\u56FE\u50CF\u7D20\u5BF9\u4E00\u5C4F\u50CF\u7D20\u300D(\u4E0D\u5199 1:1 \u6587\u5B57)\u3010WeebPaint \u53C2\u8003\u7A97 \uFF0B \u83DC\u5355\u300C1:1 \u50CF\u7D20\u300D\u9879\uFF1Bfable \u81EA\u753B\u672A\u8FC7\u76EE\u3011" data-review="pending" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8 V3.5 H8"/><path d="M16 3.5 H20.5 V8"/><path d="M20.5 16 V20.5 H16"/><path d="M8 20.5 H3.5 V16"/><rect x="9.6" y="9.6" width="4.8" height="4.8" fill="currentColor" stroke="none"/></symbol>\n  <!-- ui -->\n  <!-- more \u2014 \u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00) -->\n  <symbol id="more" data-cat="ui" data-src="own" data-note="\u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/></symbol>\n  <!-- keyboard \u2014 \u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49) -->\n  <symbol id="keyboard" data-cat="ui" data-src="own" data-note="\u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="7.2" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="7.2" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><path d="M8.6 15.6 H15.4"/></symbol>\n  <!-- menu \u2014 \u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17) -->\n  <symbol id="menu" data-cat="ui" data-src="own" data-note="\u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"></line> <line x1="4" y1="12" x2="20" y2="12"></line> <line x1="4" y1="17" x2="20" y2="17"></line></symbol>\n</svg>\n';
@@ -240,6 +243,10 @@ var CoreSession = class _CoreSession {
       arguments: [`/disc/game${opts.ext}`, String(media.size), ...opts.lowLatency ? ["lowlatency"] : [], ...opts.cpuCore === "interp" ? ["cpu=interp"] : [], ...opts.skinning === "gpu" ? ["skin=gpu"] : [], ...opts.presentEvery ? [`cadence=${opts.presentEvery}`] : [], ...opts.cullOff ? ["cull=0"] : [], ...opts.forceSoftware ? ["render=sw"] : [], ...opts.glCheck ? ["glcheck=1"] : [], ...opts.tapOff ? ["tap=0"] : [], ...opts.hideExt ? [`hideext=${opts.hideExt}`] : [], ...opts.coreOptions ?? []],
       locateFile: (path) => new URL(`${opts.coreDir}${path}`, location.href).href,
       preRun: [(M) => {
+        for (const [path, bytes] of opts.extraFiles ?? []) {
+          M.FS.mkdirTree(path.replace(/\/[^/]*$/, ""));
+          M.FS.writeFile(path, bytes);
+        }
         if (!opts.memstick?.size) return;
         for (const [rel, bytes] of opts.memstick) {
           const full = `${MEMSTICK_DIR}/${rel}`;
@@ -353,7 +360,8 @@ var CoreSession = class _CoreSession {
   /** 声音缓冲（W-4 方案用）：顺滑模式的目标水位、对齐模式的上限，毫秒（页面记着自己设的；没设过 = 核的默认 46 / 81 ms）。 */
   audioBufferMs = { target: 46, max: 81 };
   setAudioBuffer(targetMs, maxMs) {
-    const f = (ms) => Math.round(ms / 1e3 * 44100);
+    const rate = this.core._kr_audio_rate() || 44100;
+    const f = (ms) => Math.round(ms / 1e3 * rate);
     this.core._kr_audio_set_target(f(targetMs));
     this.core._kr_audio_set_max(f(maxMs));
     this.audioBufferMs = { target: targetMs, max: maxMs };
@@ -441,6 +449,14 @@ var CoreSession = class _CoreSession {
     c._kr_gpu_totals(this.gpuTotalsBuf);
     const b = this.gpuTotalsBuf >> 3;
     return { readbacks: c.HEAPF64[b], blocking: c.HEAPF64[b + 1], transfers: c.HEAPF64[b + 2], copies: c.HEAPF64[b + 3] };
+  }
+  /** 卡带核的电池存档（mGBA：SRAM / Flash / EEPROM 一块内存）：此刻的字节 + 变化计数（宿主每 30 帧算一次哈希，变了 +1）。PSP 核没有这几个导出 → null。2026-10-21 */
+  saveRam() {
+    const c = this.core;
+    if (!c._kr_save_ptr || !c._kr_save_size || !c._kr_save_seq) return null;
+    const ptr = c._kr_save_ptr(), size = c._kr_save_size();
+    if (!ptr || !size) return null;
+    return { bytes: c.HEAPU8.slice(ptr, ptr + size), seq: c._kr_save_seq() };
   }
   /** 核 stderr 里最近的报错 / 诊断行（最多 40 行）。 */
   coreLog() {
@@ -769,8 +785,8 @@ var CoreSession = class _CoreSession {
       audioState: ac2.state,
       audioClock: ac2.currentTime,
       audioRead: core2.HEAP32[core2._kr_audio_r_ptr() >> 2],
-      audioFillMs: core2._kr_audio_fill() / 44.1,
-      audioUnderrunMs: core2.HEAP32[core2._kr_audio_underrun_ptr() >> 2] / 44.1,
+      audioFillMs: core2._kr_audio_fill() / ((core2._kr_audio_rate() || 44100) / 1e3),
+      audioUnderrunMs: core2.HEAP32[core2._kr_audio_underrun_ptr() >> 2] / ((core2._kr_audio_rate() || 44100) / 1e3),
       audioDropped: core2._kr_audio_dropped(),
       outputLatencyMs: ((ac2.outputLatency || 0) + (ac2.baseLatency || 0)) * 1e3,
       paused: this.paused,
@@ -1030,6 +1046,9 @@ function mountSoftKeys(host, on) {
     },
     get visible() {
       return !layer.hidden;
+    },
+    setLayout(layout) {
+      layer.classList.toggle("gba", layout === "gba");
     }
   };
 }
@@ -7500,7 +7519,7 @@ var MSAL_URL2 = "./vendor/msal/msal-browser.min.js";
 var PANTRY = "pantry";
 var CRUMBS = "crumbs";
 var JARS = "jars";
-var DISC_SUFFIXES = [".wafter", ".iso", ".cso"];
+var DISC_SUFFIXES = [".wafter", ".iso", ".cso", ".gba", ".gb", ".gbc"];
 var CRUMB_SUFFIX = ".crumb";
 var JAM_SUFFIX = ".jam";
 var RECIPES = "recipes";
@@ -7511,6 +7530,10 @@ var DOC_KINDS = [
   { kind: "disc", suffix: ".wafter", container: "raw", tier: "resource" },
   { kind: "disc", suffix: ".iso", container: "raw", tier: "resource" },
   { kind: "disc", suffix: ".cso", container: "raw", tier: "resource" },
+  { kind: "disc", suffix: ".gba", container: "raw", tier: "resource" },
+  // 卡带（mGBA）：同样三等、只读、不留本地（2026-10-21）
+  { kind: "disc", suffix: ".gb", container: "raw", tier: "resource" },
+  { kind: "disc", suffix: ".gbc", container: "raw", tier: "resource" },
   { kind: "crumb", suffix: CRUMB_SUFFIX, container: "raw" },
   { kind: "crumb", suffix: CRUMB_SUFFIX, container: "raw", tier: "auto-backup", stem: /^[0-9a-f]{16}-[ah]\d+$/ },
   { kind: "jam", suffix: JAM_SUFFIX, container: "raw" },
@@ -7526,7 +7549,7 @@ var LOCAL_SNAPSHOTS_KEPT = 2;
 var AUTO_EVERY_MS = 10 * 6e4;
 var AUTO_MIN_GAP_MS = 3e4;
 var THUMB_W = 240;
-var PLATFORM_CODE = { psp: "wafer" };
+var PLATFORM_CODE = { psp: "wafer", gba: "cracker" };
 var JAM_POLL_MS = 1e3;
 var ACTIVITY_INPUT_WINDOW_MS = 2 * 6e4;
 var ACTIVITY_PROGRESS_WINDOW_MS = 2 * 6e4;
@@ -9066,6 +9089,30 @@ async function readDiscLabel(src) {
     return null;
   }
 }
+
+// src/disc/gba-header.ts
+var ascii = (b) => Array.from(b, (x) => x >= 32 && x < 127 ? String.fromCharCode(x) : "").join("").trim();
+function parseGbaHeader(head) {
+  if (head.length < 192 || head[178] !== 150) return null;
+  const code = ascii(head.subarray(172, 176));
+  if (code.length !== 4) return null;
+  return { title: ascii(head.subarray(160, 172)), code, maker: ascii(head.subarray(176, 178)), version: head[188] };
+}
+async function readGbaHeader(src) {
+  if (src.size < 192) return null;
+  return parseGbaHeader(await src.read(0, 192));
+}
+
+// src/app/cores.ts
+var CORES = {
+  ppsspp: { id: "ppsspp", platform: PLATFORM_CODE.psp, exts: [".iso", ".cso", ".pbp"], media: "random", saves: "shared" },
+  mgba: { id: "mgba", platform: PLATFORM_CODE.gba, exts: [".gba", ".gb", ".gbc"], media: "whole", saves: "file" }
+};
+function coreForExt(ext) {
+  const e = ext.toLowerCase();
+  return Object.values(CORES).find((c) => c.exts.includes(e)) ?? CORES.ppsspp;
+}
+var coreDirOf = (id) => define_CORE_DIRS_default[id];
 
 // vendor/fflate/fflate.esm.js
 var u8 = Uint8Array;
@@ -10714,14 +10761,19 @@ async function unwrap(src, name, password, fallbackKey) {
     original = opened.meta.name ?? "game.iso";
     media = opened;
   }
-  const fp = await fingerprintOf(media, opened?.meta.fp);
+  const fp = await fingerprintFor(media, opened?.meta.fp, extOf(original));
   const keyFromGame = !!fp.id;
   const key = keyFromGame ? await gameKey(fp) : fallbackKey ?? await discKey(stemOf2(name));
   if (!keyFromGame) console.warn("[disc] disc id unreadable; key =", fallbackKey ? "cached card" : "file name");
   return { media, ext: extOf(original), title: stemOf2(original), fp, key, keyFromGame };
 }
-async function fingerprintOf(media, fromMeta) {
+async function fingerprintFor(media, fromMeta, ext) {
   if (fromMeta?.k && fromMeta.size === media.size) return fromMeta;
+  const core2 = coreForExt(ext);
+  if (core2.id === "mgba") {
+    const h2 = await readGbaHeader(media);
+    return { k: core2.platform, size: media.size, ...h2 ? { id: h2.code + h2.maker, v: String(h2.version) } : {} };
+  }
   const label = await readDiscLabel(media);
   return { k: PLATFORM_CODE.psp, size: media.size, ...label?.id ? { id: label.id } : {}, ...label?.version ? { v: label.version } : {} };
 }
@@ -10782,7 +10834,7 @@ async function inspectPantry(identifier) {
         name = opened.meta.name ?? identifier;
         metaFp = opened.meta.fp;
       }
-      return card(name, await fingerprintOf(media, metaFp));
+      return card(name, await fingerprintFor(media, metaFp, extOf(name)));
     } finally {
       stream.close();
     }
@@ -12565,6 +12617,21 @@ var PPSSPP_OPTIONS = [
   core("ppsspp_lazy_texture_caching", "compat", "\u61D2\u8D34\u56FE\u7F13\u5B58", OFF_ON(), "disabled", "\u5FEB\uFF0C\u4E2A\u522B\u6E38\u620F\u6587\u5B57\u4F1A\u51FA\u9519"),
   core("ppsspp_lower_resolution_for_effects", "compat", "\u7279\u6548\u964D\u5206\u8FA8\u7387", [{ value: "disabled", label: "\u5173" }, { value: "Safe", label: "\u4FDD\u5B88" }, { value: "Balanced", label: "\u5747\u8861" }, { value: "Aggressive", label: "\u6FC0\u8FDB" }], "disabled")
 ];
+var OFF_ON_CAPS = (off = "\u5173", on = "\u5F00") => [{ value: "OFF", label: off }, { value: "ON", label: on }];
+var MGBA_OPTIONS = [
+  core("mgba_skip_bios", "system", "\u8DF3\u8FC7\u5F00\u673A\u52A8\u753B", OFF_ON_CAPS(), "OFF", "GBA \u5F00\u673A\u90A3\u4E0B Game Boy \u6807\u5FD7"),
+  core("mgba_gb_model", "system", "Game Boy \u673A\u578B", ["Autodetect", "Game Boy", "Super Game Boy", "Game Boy Color", "Game Boy Advance"].map((v, i) => ({ value: v, label: ["\u81EA\u52A8", "Game Boy", "Super Game Boy", "Game Boy Color", "Game Boy Advance"][i] })), "Autodetect", "\u53EA\u7BA1 .gb / .gbc"),
+  core("mgba_idle_optimization", "pacing", "\u7A7A\u8F6C\u5FAA\u73AF\u4F18\u5316", [{ value: "Remove Known", label: "\u53BB\u6389\u5DF2\u77E5\u7684\uFF08\u9ED8\u8BA4\uFF09" }, { value: "Detect and Remove", label: "\u81EA\u52A8\u68C0\u6D4B\u5E76\u53BB\u6389" }, { value: "Don't Remove", label: "\u4E0D\u52A8" }], "Remove Known", "\u6E38\u620F\u7A7A\u7B49\u65F6\u5C11\u7B97\u51E0\u5708\uFF1B\u4E2A\u522B\u6E38\u620F\u4F1A\u51FA\u95EE\u9898\u65F6\u6539\u300C\u4E0D\u52A8\u300D"),
+  core("mgba_allow_opposing_directions", "controls", "\u5141\u8BB8\u540C\u65F6\u6309\u76F8\u53CD\u65B9\u5411", [{ value: "no", label: "\u4E0D\uFF08\u771F\u673A\u505A\u4E0D\u5230\uFF09" }, { value: "yes", label: "\u5141\u8BB8" }], "no"),
+  core("mgba_solar_sensor_level", "controls", "\u592A\u9633\u4F20\u611F\u5668", [{ value: "sensor", label: "\u8DDF\u8BBE\u5907\u5149\u611F" }, ...Array.from({ length: 11 }, (_, i) => ({ value: String(i), label: String(i) }))], "0", "\u6076\u9B54\u57CE\u6653\u6708 / \u6211\u4EEC\u7684\u592A\u9633\u90A3\u51E0\u4E2A"),
+  core("mgba_audio_low_pass_filter", "system", "\u58F0\u97F3\u4F4E\u901A\u6EE4\u6CE2", OFF_ON(), "disabled", "\u50CF\u771F\u673A\u5587\u53ED\u90A3\u79CD\u95F7\u4E00\u70B9"),
+  core("mgba_audio_low_pass_range", "system", "\u4F4E\u901A\u6EE4\u6CE2\u5F3A\u5EA6", [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60].map((x) => ({ value: String(x), label: `${x}%` })), "60"),
+  core("mgba_sgb_borders", "picture", "Super Game Boy \u8FB9\u6846", OFF_ON_CAPS(), "ON"),
+  core("mgba_gb_colors_preset", "picture", "Game Boy \u914D\u8272\u9884\u8BBE", ["0", "1", "2", "3"].map((v) => ({ value: v, label: ["\u9ED8\u8BA4", "1", "2", "3"][Number(v)] })), "0"),
+  core("mgba_force_gbp", "compat", "Game Boy Player \u9707\u52A8", OFF_ON_CAPS(), "OFF")
+];
+var ALL_CORE_OPTIONS = [...PPSSPP_OPTIONS, ...MGBA_OPTIONS];
+var coreOptionsFor = (core2) => core2 === "mgba" ? MGBA_OPTIONS : PPSSPP_OPTIONS;
 var HIDDEN = [
   { match: /^ppsspp_(enable_wlan|change_mac_address\d+|wlan_channel|enable_builtin_pro_ad_hoc_server|change_pro_ad_hoc_server_address|pro_ad_hoc_server_address\d+|enable_upnp|upnp_use_original_port|port_offset|minimum_timeout|forced_first_connect)$/, why: "\u8054\u7F51\uFF1A\u5BB6\u89C4\u9EC4\u7EBF\u533A\uFF0C\u4E0D\u8FDE\u5916\u90E8\u670D\u52A1" },
   { match: /^ppsspp_cache_iso$/, why: "\u6574\u5F20\u76D8\u8BFB\u8FDB\u5185\u5B58\uFF1A\u786C\u89C4\u77E9\uFF0C\u6574\u5F20\u5149\u76D8\u6C38\u8FDC\u4E0D\u8FDB\u5185\u5B58" },
@@ -12573,7 +12640,10 @@ var HIDDEN = [
   { match: /^ppsspp_(cheats|texture_replacement)$/, why: "\u8981\u5916\u90E8\u6587\u4EF6\uFF08\u91D1\u624B\u6307 / \u8D34\u56FE\u5305\uFF09\uFF0C\u8FD8\u6CA1\u63A5" },
   { match: /^ppsspp_fast_memory$/, why: "wasm \u4E0B\u5FC5\u987B\u5173\uFF08\u574F\u5730\u5740\u4F1A\u8BA9\u6574\u4E2A\u6838\u5D29\uFF0Cv0.1.32\uFF09" },
   { match: /^ppsspp_(ignore_bad_memory_access|memstick_inserted)$/, why: "\u5FC5\u987B\u5F00\u7740\uFF1A\u5173\u4E86\u6E38\u620F\u8BFB\u4E0D\u5230\u5B58\u6863 / \u78B0\u5230\u574F\u5730\u5740\u6574\u4E2A\u6838\u5C31\u505C" },
-  { match: /^ppsspp_(mulitsample_level|cropto16x9|analog_sensitivity)$/, why: "\u8FD8\u6CA1\u5728\u7F51\u9875\u91CC\u9A8C\u8FC7 / \u7528\u4E0D\u4E0A\uFF0C\u7B49\u9700\u8981\u518D\u9732" }
+  { match: /^ppsspp_(mulitsample_level|cropto16x9|analog_sensitivity)$/, why: "\u8FD8\u6CA1\u5728\u7F51\u9875\u91CC\u9A8C\u8FC7 / \u7528\u4E0D\u4E0A\uFF0C\u7B49\u9700\u8981\u518D\u9732" },
+  { match: /^mgba_frameskip$/, why: "\u6392\u7A0B / \u8DF3\u5E27\u5F52 app\uFF08\u5BBF\u4E3B\uFF09" },
+  { match: /^mgba_use_bios$/, why: "BIOS \u6587\u4EF6\u6CA1\u63A5\uFF08HLE \u5C31\u591F\uFF09" },
+  { match: /^mgba_gb_colors$/, why: "\u81EA\u5B9A\u4E49\u8C03\u8272\u76D8\uFF1A\u4E0A\u6E38\u4E5F\u53EA\u6709 Grayscale \u4E00\u9879" }
 ];
 var isHidden2 = (key) => HIDDEN.some((h2) => h2.match.test(key));
 var APP_SETTINGS = [
@@ -12597,7 +12667,7 @@ var APP_SETTINGS = [
   { id: "app.glcheck", section: "diag", label: "GL \u8BCA\u65AD", hint: "\u62BD\u6837\u67E5\u6BCF\u4E2A\u663E\u5361\u8C03\u7528\uFF0C\u7B2C\u4E00\u6B21\u51FA\u9519\u7684\u5199\u8FDB\u65E5\u5FD7\uFF08\u6162\u4E00\u70B9\uFF09", choices: OFF_ON(), def: "disabled", apply: "reload", layer: "app" }
 ];
 var APP_RELOAD_PARAMS = { "app.render": ["render", "sw"], "app.glcheck": ["glcheck", "1"] };
-var VALID = new Map(PPSSPP_OPTIONS.map((d) => [d.id, new Set(d.choices.map((c) => c.value))]));
+var VALID = new Map(ALL_CORE_OPTIONS.map((d) => [d.id, new Set(d.choices.map((c) => c.value))]));
 function readCoreOverrides(params2) {
   const out = /* @__PURE__ */ new Map();
   if (params2.get("skin") === "cpu") out.set("ppsspp_software_skinning", "enabled");
@@ -12617,7 +12687,7 @@ function writeCoreOverrides(params2, overrides2) {
   q.delete("skin");
   q.delete("cull");
   q.delete("cpu");
-  const parts = [...overrides2].filter(([k, v]) => PPSSPP_OPTIONS.find((d) => d.id === k)?.def !== v && !isHidden2(k) && VALID.get(k)?.has(v)).sort(([a], [b]) => a.localeCompare(b)).map(([k, v]) => `${encodeURIComponent(k)}:${encodeURIComponent(v)}`);
+  const parts = [...overrides2].filter(([k, v]) => ALL_CORE_OPTIONS.find((d) => d.id === k)?.def !== v && !isHidden2(k) && VALID.get(k)?.has(v)).sort(([a], [b]) => a.localeCompare(b)).map(([k, v]) => `${encodeURIComponent(k)}:${encodeURIComponent(v)}`);
   if (parts.length) q.set("o", parts.join(";"));
   else q.delete("o");
   return q;
@@ -12839,6 +12909,87 @@ var PSP_SCHEME = {
   },
   stickKeys: { KeyI: [0, -1], KeyK: [0, 1], KeyJ: [-1, 0], KeyL: [1, 0], PadLUp: [0, -1], PadLDown: [0, 1], PadLRight: [1, 0], PadLLeft: [-1, 0] }
 };
+var GBA_SCHEME = {
+  core: "mgba",
+  buttons: [
+    { id: "b", bit: 0, label: "B" },
+    { id: "select", bit: 2, label: "SELECT" },
+    { id: "start", bit: 3, label: "START" },
+    { id: "up", bit: 4, label: "\u2191" },
+    { id: "down", bit: 5, label: "\u2193" },
+    { id: "left", bit: 6, label: "\u2190" },
+    { id: "right", bit: 7, label: "\u2192" },
+    { id: "a", bit: 8, label: "A" },
+    { id: "l", bit: 10, label: "L" },
+    { id: "r", bit: 11, label: "R" }
+  ],
+  sticks: 0,
+  rightStick: null,
+  softkeys: "gba",
+  keyboard: {
+    ArrowUp: "up",
+    ArrowDown: "down",
+    ArrowLeft: "left",
+    ArrowRight: "right",
+    KeyZ: "a",
+    KeyX: "b",
+    KeyA: "l",
+    KeyS: "r",
+    Enter: "start",
+    Backspace: "select",
+    Space: "start",
+    KeyV: "select",
+    Tab: "!fast",
+    Backquote: "!fast-toggle",
+    Escape: "!pause",
+    KeyP: "!pause",
+    KeyM: "!mute",
+    F2: "!snapshot",
+    F4: "!load",
+    PadA: "a",
+    PadB: "b",
+    PadX: "b",
+    PadY: "a",
+    PadRB: "r",
+    PadLB: "l",
+    PadLT: "l",
+    PadRT: "r",
+    PadUp: "up",
+    PadDown: "down",
+    PadLeft: "left",
+    PadRight: "right",
+    PadMenu: "start",
+    PadView: "select",
+    PadLUp: "up",
+    PadLDown: "down",
+    PadLRight: "right",
+    PadLLeft: "left",
+    PadRUp: "up",
+    PadRDown: "down",
+    PadRRight: "right",
+    PadRLeft: "left"
+  },
+  gamepad: {
+    0: "a",
+    1: "b",
+    2: "b",
+    3: "a",
+    4: "l",
+    5: "r",
+    8: "select",
+    9: "start",
+    12: "up",
+    13: "down",
+    14: "left",
+    15: "right",
+    6: "!pause",
+    7: "!fast-analog",
+    11: "!fast-toggle",
+    16: "!pause"
+  },
+  stickKeys: {}
+};
+var SCHEMES = { ppsspp: PSP_SCHEME, mgba: GBA_SCHEME };
 function parseOverrides(text) {
   if (!text) return null;
   try {
@@ -12982,9 +13133,9 @@ function openBindings(host, capture = null) {
 }
 
 // src/app/settings-panel.ts
-function activeReloadSettings(params2) {
+function activeReloadSettings(params2, catalog = ALL_CORE_OPTIONS) {
   const ov = readCoreOverrides(params2);
-  const core2 = PPSSPP_OPTIONS.filter((d) => ov.has(d.id) && ov.get(d.id) !== d.def).map((d) => `${d.label}\uFF1A${d.choices.find((c) => c.value === ov.get(d.id))?.label ?? ov.get(d.id)}`);
+  const core2 = catalog.filter((d) => ov.has(d.id) && ov.get(d.id) !== d.def).map((d) => `${d.label}\uFF1A${d.choices.find((c) => c.value === ov.get(d.id))?.label ?? ov.get(d.id)}`);
   const app = Object.entries(APP_RELOAD_PARAMS).filter(([, [k, v]]) => params2.get(k) === v).map(([id]) => APP_SETTINGS.find((d) => d.id === id).label);
   return [...app, ...core2];
 }
@@ -12993,11 +13144,12 @@ function openSettings(host, focus, draft) {
   const appReloadStart = new Map(Object.entries(APP_RELOAD_PARAMS).map(([id, [k, v]]) => [id, host.params.get(k) === v ? "enabled" : "disabled"]));
   const core2 = new Map(draft?.core ?? start);
   const appReload = new Map(draft?.appReload ?? appReloadStart);
+  const catalog = host.coreOptions ?? PPSSPP_OPTIONS;
   const valueOf2 = (d) => d.layer === "core" ? core2.get(d.id) ?? d.def : d.apply === "reload" ? appReload.get(d.id) : host.get(d.id);
   const pending2 = () => {
     const keys = /* @__PURE__ */ new Set([...core2.keys(), ...start.keys()]);
     let n = 0;
-    for (const k of keys) if ((core2.get(k) ?? PPSSPP_OPTIONS.find((d) => d.id === k)?.def) !== (start.get(k) ?? PPSSPP_OPTIONS.find((d) => d.id === k)?.def)) n++;
+    for (const k of keys) if ((core2.get(k) ?? catalog.find((d) => d.id === k)?.def) !== (start.get(k) ?? catalog.find((d) => d.id === k)?.def)) n++;
     for (const [k, v] of appReload) if (appReloadStart.get(k) !== v) n++;
     return n;
   };
@@ -13036,7 +13188,7 @@ function openSettings(host, focus, draft) {
         d.hint ? h("p", { class: "muted setting-hint" }, d.hint) : null
       );
     };
-    const all = [...APP_SETTINGS, ...PPSSPP_OPTIONS];
+    const all = [...APP_SETTINGS, ...catalog];
     const sections = SECTIONS.map((s) => {
       const items = all.filter((d) => d.section === s.id);
       const extra = host.extras?.[s.id];
@@ -13093,8 +13245,7 @@ async function writeAll(out, body) {
 }
 async function uploadToPantry(input, password, identifier, onProgress) {
   const src = { size: input.size, read: async (o, n) => new Uint8Array(await input.slice(o, o + n).arrayBuffer()) };
-  const label = await readDiscLabel(src);
-  const fp = { k: PLATFORM_CODE.psp, size: input.size, ...label?.id ? { id: label.id } : {}, ...label?.version ? { v: label.version } : {} };
+  const fp = await fingerprintFor(src, void 0, extOf(input.name));
   const writer2 = await beginDisc(password, { size: input.size });
   const head = await writer2.finish({ name: input.name, fp });
   const total = head.length + input.size;
@@ -13121,8 +13272,7 @@ async function uploadToPantry(input, password, identifier, onProgress) {
 }
 async function encryptToLocal(input, password, out, p) {
   const src = { size: input.size, read: async (o, n) => new Uint8Array(await input.slice(o, o + n).arrayBuffer()) };
-  const label = await readDiscLabel(src);
-  const fp = { k: PLATFORM_CODE.psp, size: input.size, ...label?.id ? { id: label.id } : {}, ...label?.version ? { v: label.version } : {} };
+  const fp = await fingerprintFor(src, void 0, extOf(input.name));
   const writer2 = await beginDisc(password);
   await writeAll(out, async (w) => {
     await w.write(new Uint8Array(writer2.headBytes));
@@ -16763,40 +16913,47 @@ async function play(prepare, resume) {
   const disc = await prepare();
   if (!disc) return;
   current = disc;
+  const core2 = coreForExt(disc.ext);
+  useScheme(core2.id);
   let memstick = /* @__PURE__ */ new Map();
   let memstickTimes = /* @__PURE__ */ new Map();
+  let extraFiles = /* @__PURE__ */ new Map();
   say("\u6B63\u5728\u8BFB\u5B58\u6863\u2026", 3e4);
   const cloudReachable = auth.isSignedIn() && navigator.onLine;
-  const listed = await listJams(PLATFORM_CODE.psp, { timeoutMs: 1e4, waitForCloud: cloudReachable });
-  if (listed.ids.length) {
-    const loaded = await withPassword(async (pw) => {
-      const p = pw ?? getPassword();
-      if (!p) throw new NeedPassword();
-      const m = await loadMemstick(PLATFORM_CODE.psp, p, listed.ids, listed.complete);
-      if (pw) setPassword(pw);
-      return m;
-    }, "\u5B58\u6863");
-    if (loaded) {
-      memstickInfo = loaded;
-      memstick = loaded.files;
-      memstickTimes = loaded.times;
-      say(`\u5B58\u6863\uFF1A${loaded.dirs.size} \u4E2A`);
-      if (loaded.unreadable.size) banner(`${loaded.unreadable.size} \u7F50\u5B58\u6863\u8FD9\u6B21\u6CA1\u8BFB\u8FDB\u6765\uFF08\u62FF\u4E0D\u5230\u3001\u53E3\u4EE4\u4E0D\u662F\u8FD9\u4E2A\u3001\u6216\u5185\u5BB9\u574F\u4E86\uFF09\uFF1A\u5B83\u4EEC\u5BF9\u5E94\u7684\u5B58\u6863\u8FD9\u6B21\u4E0D\u4F1A\u88AB\u8986\u76D6\u3002`, "warning");
-      if (loaded.duplicates.size) {
-        const pw = getPassword();
-        const changed = await resolveDuplicates(loaded.duplicates, (id) => peekSnapshot(id, pw).then((m) => m && { at: m.at, size: m.size }), (dir) => jamId(PSP_JAR(dir)));
-        if (changed) {
-          banner("\u5B58\u6863\u6574\u7406\u597D\u4E86\uFF0C\u91CD\u65B0\u5F00\u8FD9\u5F20\u76D8\u5C31\u4F1A\u8BFB\u8FDB\u6765\u3002", "warning");
-          return;
+  if (core2.saves === "shared") {
+    const listed = await listJams(PLATFORM_CODE.psp, { timeoutMs: 1e4, waitForCloud: cloudReachable });
+    if (listed.ids.length) {
+      const loaded = await withPassword(async (pw) => {
+        const p = pw ?? getPassword();
+        if (!p) throw new NeedPassword();
+        const m = await loadMemstick(PLATFORM_CODE.psp, p, listed.ids, listed.complete);
+        if (pw) setPassword(pw);
+        return m;
+      }, "\u5B58\u6863");
+      if (loaded) {
+        memstickInfo = loaded;
+        memstick = loaded.files;
+        memstickTimes = loaded.times;
+        say(`\u5B58\u6863\uFF1A${loaded.dirs.size} \u4E2A`);
+        if (loaded.unreadable.size) banner(`${loaded.unreadable.size} \u7F50\u5B58\u6863\u8FD9\u6B21\u6CA1\u8BFB\u8FDB\u6765\uFF08\u62FF\u4E0D\u5230\u3001\u53E3\u4EE4\u4E0D\u662F\u8FD9\u4E2A\u3001\u6216\u5185\u5BB9\u574F\u4E86\uFF09\uFF1A\u5B83\u4EEC\u5BF9\u5E94\u7684\u5B58\u6863\u8FD9\u6B21\u4E0D\u4F1A\u88AB\u8986\u76D6\u3002`, "warning");
+        if (loaded.duplicates.size) {
+          const pw = getPassword();
+          const changed = await resolveDuplicates(loaded.duplicates, (id) => peekSnapshot(id, pw).then((m) => m && { at: m.at, size: m.size }), (dir) => jamId(PSP_JAR(dir)));
+          if (changed) {
+            banner("\u5B58\u6863\u6574\u7406\u597D\u4E86\uFF0C\u91CD\u65B0\u5F00\u8FD9\u5F20\u76D8\u5C31\u4F1A\u8BFB\u8FDB\u6765\u3002", "warning");
+            return;
+          }
+          banner(`${loaded.duplicates.size} \u4E2A\u5B58\u6863\u5404\u6709\u597D\u51E0\u4EFD\u3001\u8FD8\u6CA1\u9009\uFF1A\u8FD9\u6B21\u5B83\u4EEC\u4E0D\u8BFB\u4E5F\u4E0D\u5199\u3002`, "warning");
         }
-        banner(`${loaded.duplicates.size} \u4E2A\u5B58\u6863\u5404\u6709\u597D\u51E0\u4EFD\u3001\u8FD8\u6CA1\u9009\uFF1A\u8FD9\u6B21\u5B83\u4EEC\u4E0D\u8BFB\u4E5F\u4E0D\u5199\u3002`, "warning");
+      } else {
+        jamBlocked = true;
+        banner("\u6CA1\u8BFB\u5B58\u6863\uFF1A\u8FD9\u6B21\u7A0B\u5E8F\u81EA\u5DF1\u5B58\u7684\u6863\u4E0D\u4F1A\u540C\u6B65\u5230 OneDrive\uFF08\u514D\u5F97\u76D6\u6389\u539F\u6765\u7684\uFF09\u3002", "warning");
       }
-    } else {
-      jamBlocked = true;
-      banner("\u6CA1\u8BFB\u5B58\u6863\uFF1A\u8FD9\u6B21\u7A0B\u5E8F\u81EA\u5DF1\u5B58\u7684\u6863\u4E0D\u4F1A\u540C\u6B65\u5230 OneDrive\uFF08\u514D\u5F97\u76D6\u6389\u539F\u6765\u7684\uFF09\u3002", "warning");
-    }
-  } else say("\u8FD8\u6CA1\u6709\u5B58\u6863", 2e3);
-  if (cloudReachable && !listed.complete) banner("\u5B58\u6863\u7684\u4E91\u7AEF\u5217\u8868\u6CA1\u62FF\u5168\uFF08\u7F51\u7EDC\u6162\uFF1F\uFF09\uFF1A\u8FD9\u6B21\u53EF\u80FD\u770B\u4E0D\u5230\u522B\u7684\u8BBE\u5907\u4E0A\u7684\u65B0\u5B58\u6863\uFF1B\u65B0\u5B58\u7684\u6863\u548C\u4E91\u7AEF\u649E\u4E0A\u65F6\u4F1A\u8BA9\u4F60\u9009\u3002", "warning");
+    } else say("\u8FD8\u6CA1\u6709\u5B58\u6863", 2e3);
+    if (cloudReachable && !listed.complete) banner("\u5B58\u6863\u7684\u4E91\u7AEF\u5217\u8868\u6CA1\u62FF\u5168\uFF08\u7F51\u7EDC\u6162\uFF1F\uFF09\uFF1A\u8FD9\u6B21\u53EF\u80FD\u770B\u4E0D\u5230\u522B\u7684\u8BBE\u5907\u4E0A\u7684\u65B0\u5B58\u6863\uFF1B\u65B0\u5B58\u7684\u6863\u548C\u4E91\u7AEF\u649E\u4E0A\u65F6\u4F1A\u8BA9\u4F60\u9009\u3002", "warning");
+  } else {
+    extraFiles = await loadCartSave(core2, disc, cloudReachable);
+  }
   $("home").hidden = true;
   $("game").hidden = false;
   $("title").textContent = disc.title;
@@ -16807,7 +16964,7 @@ async function play(prepare, resume) {
     onInput: () => activity2?.input(performance.now()),
     media: disc.media,
     ext: disc.ext,
-    coreDir: "./dist/core-602016aa4429/",
+    coreDir: coreDirOf(core2.id),
     glCanvas: $("gl"),
     softCanvas: $("screen"),
     audioContext: audioContext(),
@@ -16833,7 +16990,8 @@ async function play(prepare, resume) {
     skinning: params.get("skin") === "cpu" ? "cpu" : "gpu",
     // 10-16 默认 GPU 蒙皮：PC 量过模拟线程 28%→25% 忙、顶点缓冲 2.4→1.4 MB/帧（wasm 没有 JIT 顶点解码器，软件蒙皮不划算）；?skin=cpu 退回
     memstick,
-    memstickTimes
+    memstickTimes,
+    extraFiles
   });
   if (resume) session.setHold(true);
   session.setFrameCap30(defaultFrameCap30());
@@ -16851,9 +17009,13 @@ async function play(prepare, resume) {
   snaps = new Snapshots(session, disc, snapshotVerbs, () => {
     if (slotsSheetOpen) renderSlots();
   });
-  jamSigs = session.memstickDirs();
-  setInterval(() => jamTick(false), JAM_POLL_MS);
-  guide.attach({ key: disc.key, title: disc.title, k: PLATFORM_CODE.psp, id: disc.fp.id, ver: disc.fp.v }, getPassword, 5e3);
+  if (core2.saves === "shared") {
+    jamSigs = session.memstickDirs();
+    setInterval(() => jamTick(false), JAM_POLL_MS);
+  } else setInterval(() => {
+    void cartTick(false);
+  }, JAM_POLL_MS);
+  guide.attach({ key: disc.key, title: disc.title, k: disc.fp.k, id: disc.fp.id, ver: disc.fp.v }, getPassword, 5e3);
   addEventListener("visibilitychange", () => {
     if (!session) return;
     if (pip.active) {
@@ -16936,6 +17098,73 @@ async function jamWritable(dir) {
     banner(`\u5B58\u6863\u300C${dir}\u300D${why}\uFF1A\u8FD9\u6B21\u7A0B\u5E8F\u5B58\u7684\u8FD9\u4E2A\u6863\u53EA\u7559\u5728\u8FD9\u53F0\u8BBE\u5907\u7684\u5185\u5B58\u91CC\uFF0C\u4E0D\u4F1A\u5199\u5230 OneDrive\uFF08\u514D\u5F97\u76D6\u6389\u539F\u6765\u7684\uFF09\u3002`, "warning");
   }
   return false;
+}
+var CART_JAR = (k, key) => ({ k, m: "file", u: key });
+var cartCore = null;
+var cartSeqSaved = -1;
+var cartSeqSeen = -1;
+var cartSaving = false;
+async function loadCartSave(core2, disc, cloudReachable) {
+  const files = /* @__PURE__ */ new Map();
+  cartCore = core2;
+  const listed = await listJams(core2.platform, { timeoutMs: 1e4, waitForCloud: cloudReachable });
+  const id = await jamId(CART_JAR(core2.platform, disc.key));
+  if (!listed.ids.includes(id)) {
+    if (cloudReachable && !listed.complete) {
+      jamBlocked = true;
+      banner("\u5B58\u6863\u7684\u4E91\u7AEF\u5217\u8868\u6CA1\u62FF\u5168\uFF08\u7F51\u7EDC\u6162\uFF1F\uFF09\uFF1A\u8FD9\u6B21\u4E0D\u5F80\u4E91\u7AEF\u5199\u7535\u6C60\u5B58\u6863\uFF0C\u514D\u5F97\u76D6\u6389\u522B\u7684\u8BBE\u5907\u5B58\u7684\u3002", "warning");
+    } else say("\u8FD8\u6CA1\u6709\u5B58\u6863", 2e3);
+    return files;
+  }
+  const loaded = await withPassword(async (pw) => {
+    const p = pw ?? getPassword();
+    if (!p) throw new NeedPassword();
+    const m = await loadMemstick(core2.platform, p, [id], listed.complete);
+    if (pw) setPassword(pw);
+    return m;
+  }, "\u5B58\u6863");
+  if (!loaded || loaded.unreadable.size) {
+    jamBlocked = true;
+    banner("\u6CA1\u8BFB\u5230\u7535\u6C60\u5B58\u6863\uFF1A\u8FD9\u6B21\u7A0B\u5E8F\u81EA\u5DF1\u5B58\u7684\u6863\u4E0D\u4F1A\u540C\u6B65\u5230 OneDrive\uFF08\u514D\u5F97\u76D6\u6389\u539F\u6765\u7684\uFF09\u3002", "warning");
+    return files;
+  }
+  const bytes = loaded.files.get("save.bin") ?? [...loaded.files.values()][0];
+  if (bytes) files.set("/saves/game.sav", bytes);
+  say(`\u5B58\u6863\uFF1A${bytes ? `${(bytes.length / 1024).toFixed(0)} KB` : "\u7A7A"}`);
+  return files;
+}
+async function cartTick(force) {
+  if (!session || !current || !cartCore || jamBlocked || cartSaving) return;
+  const ram = session.saveRam();
+  if (!ram || ram.seq === cartSeqSaved) return;
+  if (!force && ram.seq !== cartSeqSeen) {
+    cartSeqSeen = ram.seq;
+    return;
+  }
+  const pw = await ensurePassword("\u5B58\u6863");
+  if (!pw) {
+    jamBlocked = true;
+    banner("\u6CA1\u8BBE\u53E3\u4EE4\uFF1A\u8FD9\u6B21\u7A0B\u5E8F\u81EA\u5DF1\u5B58\u7684\u6863\u4E0D\u4F1A\u540C\u6B65\u3002", "warning");
+    return;
+  }
+  cartSaving = true;
+  try {
+    const r = await withDeadline(
+      saveSaveDir(CART_JAR(cartCore.platform, current.key), /* @__PURE__ */ new Map([["save.bin", ram.bytes]]), pw, { deferPush: inBackground() }),
+      2e4,
+      (late) => logEvent(late.ok ? "info" : "warn", late.ok ? `\u7535\u6C60\u5B58\u6863\u8FDF\u5230\u7684\u4E0A\u4F20${late.value.pushed ? "\u4F20\u597D\u4E86" : "\u6CA1\u4F20\u4E0A\u53BB\uFF08\u4F1A\u7EED\u63A8\uFF09"}` : `\u7535\u6C60\u5B58\u6863\u8FDF\u5230\u7684\u4E0A\u4F20\u5931\u8D25\uFF1A${errorText(late.error)}`)
+    );
+    if (r === "timeout") {
+      logEvent("warn", "\u7535\u6C60\u5B58\u6863 20 s \u8FD8\u6CA1\u5B58\u5B8C\uFF1A\u5148\u653E\u5F00\uFF08\u672C\u673A\u4F1A\u843D\u4E0B\u3001\u81EA\u52A8\u7EED\u63A8\uFF09\uFF0C\u4E0B\u6B21\u518D\u6838");
+      return;
+    }
+    cartSeqSaved = ram.seq;
+    logEvent("info", `\u7535\u6C60\u5B58\u6863\uFF1A${(ram.bytes.length / 1024).toFixed(0)} KB \u88C5\u7F50${r.pushed ? "\u3001\u5DF2\u4F20" : "\u3001\u672C\u673A\u5DF2\u843D\uFF08\u7A0D\u540E\u4F20\uFF09"}`);
+  } catch (e) {
+    logEvent("error", `\u7535\u6C60\u5B58\u6863\u6CA1\u5B58\u4E0A\uFF1A${errorText(e)}`);
+  } finally {
+    cartSaving = false;
+  }
 }
 async function jamTick(force) {
   if (!session || jamBlocked || jamSaving || performance.now() < jamRetryAt) return;
@@ -17467,6 +17696,7 @@ function settingsHost() {
     reload: (search) => {
       location.search = search;
     },
+    coreOptions: coreOptionsFor(activeCore),
     extras: { controls: (close) => h("div", { class: "setting-row" }, h("label", {}, h("span", {}, "\u952E\u4F4D"), h("span", { class: "setting-tag" }, "\u53EA\u5728\u8FD9\u53F0\u8BBE\u5907")), h("button", { onclick: () => {
       close();
       openBindings(bindingsHost());
@@ -17808,7 +18038,7 @@ async function quit() {
     }
   });
   try {
-    if (!leaveNow) await jamTick(true);
+    if (!leaveNow) await Promise.all([jamTick(true), cartTick(true)]);
     if (!leaveNow) await guide.flush();
     if (!leaveNow) await snaps?.drainWrites();
     if (!leaveNow) await pushDirtyNow();
@@ -17821,6 +18051,13 @@ async function quit() {
 }
 var scheme = PSP_SCHEME;
 var overrides = parseOverrides(bindingsText(scheme.core));
+var activeCore = "ppsspp";
+function useScheme(core2) {
+  activeCore = core2;
+  scheme = SCHEMES[core2] ?? PSP_SCHEME;
+  overrides = parseOverrides(bindingsText(scheme.core));
+  softKeys?.setLayout(scheme.softkeys);
+}
 function setOverrides(ov) {
   overrides = ov;
   setBindingsText(scheme.core, serializeOverrides(ov));
@@ -18676,6 +18913,8 @@ globalThis.kr = {
   snapshot: async () => session ? (await session.snapshot()).state.length : 0,
   /** 手柄这一路此刻按着的 PSP 键位（测试：按住 RT 时不该有 R）。 */
   padMask: () => session?.getMask("pad") ?? 0,
+  /** 卡带核的电池存档内存大小（-1 = 这个核没有）。 */
+  saveRam: () => session?.saveRam()?.bytes.length ?? -1,
   /** GL 诊断自测：核在下一趟抽查帧里故意发一个非法调用（要用 ?glcheck=1 开盘）。 */
   glSelfTest: () => session?.core?._kr_glcheck_selftest?.(),
   /** 开发期：把这一刻存成 private/states/<name>（经开发服务器 POST /__dev/state/；之后 ?state=<name> 从这里起跑）。added 20261017 by Claude Opus 5.5 */
@@ -18748,4 +18987,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-1ce5fa0dc29e.mjs.map
+//# sourceMappingURL=kudsrocket-a8dfefa97060.mjs.map
