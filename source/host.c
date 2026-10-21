@@ -802,8 +802,12 @@ static int16_t input_state(unsigned port, unsigned device, unsigned index, unsig
 // 直接改 PPSSPP 的跳帧数（补丁里的 kr_ppsspp_set_frameskip）——经 GET_VARIABLE_UPDATE 改会让核整套重读选项，
 // 在 GL 多线程模式下卡死（10-14 实测；对照：一开始就固定跳帧、中途不改，不卡）。
 void kr_ppsspp_set_frameskip(int n);
-void kr_ppsspp_set_fastforward(int on);   // 上游补丁：告诉 PPSSPP 正在快进，它自己的 60 帧限速就不睡（10-17 ff-smoke：不告诉它，8× 实际只跑 1.07×）
-static int g_ff_told = 0;
+void kr_ppsspp_set_fastforward(int on);   // 上游补丁：告诉 PPSSPP 正在快进，它自己的 60 帧限速就不睡（10-17 ff-smoke：不告诉它，8× 实际只跑 1.07×）。10-21 起不用：见 kr_ppsspp_set_speed
+// 10-21（W-41，Claude Fable 5.1）：快进改走 PPSSPP 自己的「备用速度」限速（CUSTOM1 = 60 × 倍数）。fastForward 标志会让模拟线程脱缰、只按渲染出来的帧回 retro_run：
+//   ff-smoke 量到 retro_run 一趟 64–474 ms、模拟线程 100% 忙、每秒丢 60 万帧声音（= 模拟 13×），而这里按「一趟 ≈ 一帧」对齐、每趟声音还钉死 200 ms 上限 → 显示 40%、画面 2 fps。
+//   备用速度限速下模拟线程自己按 8× 节奏跑、每帧照旧 flip（超过刷新率的不上屏），retro_run 回到一趟一帧。
+void kr_ppsspp_set_speed(double x);
+static double g_speed_told = 1.0;
 static int g_frameskip_want = 0, g_frameskip_told = 0;
 static atomic_uint g_frameskip_now = 0;
 EMSCRIPTEN_KEEPALIVE unsigned kr_frameskip(void) { return g_frameskip_now; }
@@ -1280,7 +1284,7 @@ static void run_one(void) {
   atomic_fetch_add(&g_frames_run, 1);
   uint64_t produced = g_audio_produced - produced_before;
   double emu_ms = produced ? (double)produced * 1000.0 / g_rate : g_frame_ms_avg;
-  if (emu_ms > 200.0) emu_ms = 200.0; // 读档等一次性大块，不让它把对齐推得太远
+  { double cap = 200.0 * (g_speed > 1.0 ? g_speed : 1.0); if (emu_ms > cap) emu_ms = cap; } // 读档等一次性大块，不让它把对齐推得太远；快进时一趟真会产出几帧的声音，上限跟倍数放宽（W-41）
   g_emu_ms_total += emu_ms;
   g_frame_ms_last = emu_ms;
   g_frame_ms_avg += (emu_ms - g_frame_ms_avg) * 0.1;
@@ -1341,7 +1345,7 @@ static void frame(void) {
   }
   if (g_paused) { service_snapshots(); g_anchor_real = 0; return; } // 继续时重新锚定，不补回暂停的时间
   if (g_anchor_real == 0 || g_anchor_speed != g_speed) reanchor();
-  { int ff = g_speed > 1.0; if (ff != g_ff_told) { kr_ppsspp_set_fastforward(ff); g_ff_told = ff; } }   // 核线程上告诉 PPSSPP（它在模拟线程里读）
+  if (g_speed != g_speed_told) { kr_ppsspp_set_speed(g_speed); g_speed_told = g_speed; }   // 核线程上告诉 PPSSPP 目标倍数（它在模拟线程里读；W-41）
   const double e = g_frame_ms_avg;
 
   // 顺滑（?pace=audio）：等 AudioWorklet 播掉一些再跑；声音时钟卡住超过 50 ms 就退回时间对齐

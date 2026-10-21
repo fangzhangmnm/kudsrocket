@@ -1,5 +1,5 @@
 // src/version.ts
-var APP_VERSION = "v0.1.71-2026-10-21";
+var APP_VERSION = "v0.1.72-2026-10-21";
 
 // assets/icons.svg
 var icons_default = '<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none">\n<!--\n  24 icons extracted from the family icon library (../20260708 SVG Icons/icons.svg) by extract-icons.py \u2014 do not hand-edit; re-run the script instead.\n  Family SVG Icons \u2014 MIT License, Copyright (c) 2026 fangzhangmnm.\n  Contains work derived from (per-icon provenance in data-src):\n    Feather Icons \u2014 MIT License, Copyright (c) 2013-2023 Cole Bemis \xB7 https://github.com/feathericons/feather\n    Lucide \u2014 ISC License, Copyright (c) 2020 Lucide Contributors \xB7 https://github.com/lucide-icons/lucide\n-->\n  <!-- edit -->\n  <!-- paste \u2014 \u7C98\u8D34:\u526A\u8D34\u677F\u4E0D\u7F29(\u5E93\u5C3A\u5BF8)+\u6587\u6863\u63A2\u51FA\u53F3\u4E0B\u89D2, \u6309 copy \u7684\u524D\u540E\u4EF6\u6BD4\u4F8B -->\n  <symbol id="paste" data-cat="edit" data-src="own" data-note="\u7C98\u8D34:\u526A\u8D34\u677F\u4E0D\u7F29(\u5E93\u5C3A\u5BF8)+\u6587\u6863\u63A2\u51FA\u53F3\u4E0B\u89D2, \u6309 copy \u7684\u524D\u540E\u4EF6\u6BD4\u4F8B" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><mask id="icPaC"><rect width="24" height="24" fill="#fff" stroke="none"/><g transform="translate(6.76 3.85) scale(0.860)" fill="#000" stroke="#000" stroke-width="3.14" stroke-linejoin="round"><path d="M4 5.6a1.7 1.7 0 0 1 1.7-1.7h6.6l4 4v11.5a1.7 1.7 0 0 1-1.7 1.7H5.7A1.7 1.7 0 0 1 4 20.8z"/></g></mask><g mask="url(#icPaC)"><mask id="icPbTC"><rect width="24" height="24" fill="#fff"/><rect x="6.0" y="1.0000000000000002" width="6" height="4.2" rx="1.2" fill="#000" stroke="#000" stroke-width="2.4"/></mask><g mask="url(#icPbTC)"><rect x="2.0" y="3.3" width="14" height="17" rx="2"/></g><rect x="6.0" y="1.0000000000000002" width="6" height="4.2" rx="1.2"/></g><g transform="translate(6.76 3.85) scale(0.860)" stroke-width="1.98"><path d="M4 5.6a1.7 1.7 0 0 1 1.7-1.7h6.6l4 4v11.5a1.7 1.7 0 0 1-1.7 1.7H5.7A1.7 1.7 0 0 1 4 20.8z"/><path d="M12.3 3.9V8h4"/><path d="M6.6 12.4h7.2M6.6 15.4h5"/></g></symbol>\n  <!-- media -->\n  <!-- pause \u2014 \u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="pause" data-cat="media" data-src="own" data-note="\u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="3.2"><path d="M8.3 5.5 V18.5"/><path d="M15.7 5.5 V18.5"/></g></symbol>\n  <!-- play \u2014 \u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="play" data-cat="media" data-src="own" data-note="\u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 5.4 L18.8 12 L8.2 18.6 Z" fill="currentColor"/></symbol>\n  <!-- fast-forward \u2014 \u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="fast-forward" data-cat="media" data-src="own" data-note="\u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.4 6.8 L10.9 12 L4.4 17.2 Z" fill="currentColor"/><path d="M13.1 6.8 L19.6 12 L13.1 17.2 Z" fill="currentColor"/></symbol>\n  <!-- volume \u2014 \u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009) -->\n  <symbol id="volume" data-cat="media" data-src="own" data-note="\u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 10.3 H8.7 L12.6 6.6 V17.4 L8.7 13.7 H5.5 Z" fill="currentColor"/><path d="M15.13 9.73 A3.4 3.4 0 0 1 15.13 14.27"/><path d="M16.36 7.19 A6.1 6.1 0 0 1 16.36 16.81"/></symbol>\n  <!-- file -->\n  <!-- floppy-disk \u2014 \u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3 -->\n  <symbol id="floppy-disk" data-cat="file" data-src="feather:save" data-note="\u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13l3 3v13a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 17 8 17 3"/></symbol>\n  <!-- folder-open \u2014 \u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF -->\n  <symbol id="folder-open" data-cat="file" data-src="own" data-note="\u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18 V7 a2 2 0 0 1 2 -2 h4 l2 2 h6 a2 2 0 0 1 2 2 v1.8"/><path d="M3 18 L6.4 10.8 H21.6 L18.2 18 Z"/></symbol>\n  <!-- folder \u2014 \u6587\u4EF6\u5939:\u5DE6\u8FB9 tab + \u77E9\u5F62\u4E3B\u4F53 -->\n  <symbol id="folder" data-cat="file" data-src="lucide:folder" data-note="\u6587\u4EF6\u5939:\u5DE6\u8FB9 tab + \u77E9\u5F62\u4E3B\u4F53" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u6587\u4EF6\u5939\uFF1A\u5DE6\u8FB9 tab + \u77E9\u5F62\u4E3B\u4F53 --> <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>\n  <!-- trash-can \u2014 \u5783\u573E\u6876:\u6876\u8EAB\u6536\u53E3(feather \u662F\u76F4\u7B52);\u4E0E fluent(\u5706\u63D0\u624B/\u66F4\u4F4E)\u3001heroicons(\u5F27\u5F62\u900F\u89C6)\u4EA6\u4E0D\u540C \u2014 own -->\n  <symbol id="trash-can" data-cat="file" data-src="own" data-note="\u5783\u573E\u6876:\u6876\u8EAB\u6536\u53E3(feather \u662F\u76F4\u7B52);\u4E0E fluent(\u5706\u63D0\u624B/\u66F4\u4F4E)\u3001heroicons(\u5F27\u5F62\u900F\u89C6)\u4EA6\u4E0D\u540C \u2014 own" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 9.5v9"/><path d="M14 9.5v9"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></symbol>\n  <!-- new \u2014 \u65B0\u5EFA:\u7EAF\u52A0\u53F7(\u7B49\u957F\u5341\u5B57\u7EBF) -->\n  <symbol id="new" data-cat="file" data-src="own" data-note="\u65B0\u5EFA:\u7EAF\u52A0\u53F7(\u7B49\u957F\u5341\u5B57\u7EBF)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/> <line x1="5" y1="12" x2="19" y2="12"/></symbol>\n  <!-- hierarchy -->\n  <!-- lock \u2014 \u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D -->\n  <symbol id="lock" data-cat="hierarchy" data-src="own" data-note="\u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10" width="13" height="11"/><path d="M8.8 10 V6.5 a3.2 3.2 0 0 1 6.4 0 V10"/></symbol>\n  <!-- common -->\n  <!-- x \u2014 \u53C9 -->\n  <symbol id="x" data-cat="common" data-src="own" data-note="\u53C9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 L17.5 17.5 M17.5 6.5 L6.5 17.5"/></symbol>\n  <!-- chevron-left \u2014 \u2039 \u5C0F\u5C3A\u5BF8\u4F18\u5316\u88F8 chevron:\u63CF\u8FB9 2.4\u3001\u81C2\u77ED(14px chip \u7528)\uFF1B\u5E93\u91CC\u5E26\u6746\u7684 back \u662F\u53E6\u4E00\u8BED\u4E49\u3010WeebPaint \u53C2\u8003\u7A97\u591A\u56FE\u65F6\u7A97\u5E95\u7FFB\u9875 chip\uFF1Bfable \u81EA\u753B\u672A\u8FC7\u76EE\u3011 -->\n  <symbol id="chevron-left" data-cat="common" data-src="own" data-note="\u2039 \u5C0F\u5C3A\u5BF8\u4F18\u5316\u88F8 chevron:\u63CF\u8FB9 2.4\u3001\u81C2\u77ED(14px chip \u7528)\uFF1B\u5E93\u91CC\u5E26\u6746\u7684 back \u662F\u53E6\u4E00\u8BED\u4E49\u3010WeebPaint \u53C2\u8003\u7A97\u591A\u56FE\u65F6\u7A97\u5E95\u7FFB\u9875 chip\uFF1Bfable \u81EA\u753B\u672A\u8FC7\u76EE\u3011" data-review="pending" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="14.5 6 9 12 14.5 18" stroke-width="2.4"/></symbol>\n  <!-- chevron-right \u2014 \u203A chevron-left \u7684\u7CBE\u786E\u955C\u50CF\u3010WeebPaint \u53C2\u8003\u7A97\u7FFB\u9875 chip\uFF1Bfable \u81EA\u753B\u672A\u8FC7\u76EE\u3011 -->\n  <symbol id="chevron-right" data-cat="common" data-src="own" data-note="\u203A chevron-left \u7684\u7CBE\u786E\u955C\u50CF\u3010WeebPaint \u53C2\u8003\u7A97\u7FFB\u9875 chip\uFF1Bfable \u81EA\u753B\u672A\u8FC7\u76EE\u3011" data-review="pending" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="9.5 6 15 12 9.5 18" stroke-width="2.4"/></symbol>\n  <!-- back \u2014 \u8FD4\u56DE:\u5DE6\u5411\u6574\u7BAD\u5934(\u5E26\u6746;\u88F8 chevron-left \u66FE\u56E0\u5C0F\u5C3A\u5BF8\u6E32\u67D3\u5DEE\u88AB sunset) -->\n  <symbol id="back" data-cat="common" data-src="own" data-note="\u8FD4\u56DE:\u5DE6\u5411\u6574\u7BAD\u5934(\u5E26\u6746;\u88F8 chevron-left \u66FE\u56E0\u5C0F\u5C3A\u5BF8\u6E32\u67D3\u5DEE\u88AB sunset)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H5"/><polyline points="11 6 5 12 11 18"/></symbol>\n  <!-- forward \u2014 \u524D\u8FDB:back \u7684\u7CBE\u786E\u955C\u50CF(\u53F3\u5411\u6574\u7BAD\u5934\u5E26\u6746;\u4E0E chevron-right \u88F8 chevron \u5206\u5DE5)\u3010WebXiaoHeiWu \u4FA7\u680F\u9875\u5934\u300C\u56DE\u9000\u300D\u53F3\u90BB\u7684\u300C\u524D\u8FDB\u300D\u94AE\uFF08\u56DE\u9000\u4E4B\u540E\u518D\u56DE\u53BB\uFF09\uFF1B2026-09-10 fable \u81EA\u753B\u672A\u8FC7\u76EE\u3011 -->\n  <symbol id="forward" data-cat="common" data-src="own" data-note="\u524D\u8FDB:back \u7684\u7CBE\u786E\u955C\u50CF(\u53F3\u5411\u6574\u7BAD\u5934\u5E26\u6746;\u4E0E chevron-right \u88F8 chevron \u5206\u5DE5)\u3010WebXiaoHeiWu \u4FA7\u680F\u9875\u5934\u300C\u56DE\u9000\u300D\u53F3\u90BB\u7684\u300C\u524D\u8FDB\u300D\u94AE\uFF08\u56DE\u9000\u4E4B\u540E\u518D\u56DE\u53BB\uFF09\uFF1B2026-09-10 fable \u81EA\u753B\u672A\u8FC7\u76EE\u3011" data-review="pending" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12H19"/><polyline points="13 6 19 12 13 18"/></symbol>\n  <!-- check \u2014 \u52FE -->\n  <symbol id="check" data-cat="common" data-src="own" data-note="\u52FE" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5 L9.5 17.5 L19.5 6.5"/></symbol>\n  <!-- cloud -->\n  <!-- cloud \u2014 \u4E91 -->\n  <symbol id="cloud" data-cat="cloud" data-src="feather:cloud" data-note="\u4E91" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>\n  <!-- viewport -->\n  <!-- maximize-viewport \u2014 \u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55) -->\n  <symbol id="maximize-viewport" data-cat="viewport" data-src="own" data-note="\u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934 --> <polyline points="4 9 4 4 9 4"/> <polyline points="20 9 20 4 15 4"/> <polyline points="4 15 4 20 9 20"/> <polyline points="20 15 20 20 15 20"/></symbol>\n  <!-- picture-in-picture \u2014 \u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1) -->\n  <symbol id="picture-in-picture" data-cat="viewport" data-src="own" data-note="\u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u5927\u6846\uFF08\u4E3B\u753B\u5E03\uFF09+ \u5185\u5D4C\u5C0F\u7A97\uFF08\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1\uFF09\u2014\u2014 picture-in-picture \u9690\u55BB --> <rect x="3" y="4" width="18" height="14" rx="2"/> <rect x="12" y="10" width="7" height="5" rx="1"/></symbol>\n  <!-- one-to-one \u2014 1:1 \u50CF\u7D20:\u56DB\u89D2\u62EC\u53F7 + \u4E2D\u5FC3\u4E00\u9897\u5B9E\u5FC3\u50CF\u7D20=\u300C\u4E00\u56FE\u50CF\u7D20\u5BF9\u4E00\u5C4F\u50CF\u7D20\u300D(\u4E0D\u5199 1:1 \u6587\u5B57)\u3010WeebPaint \u53C2\u8003\u7A97 \uFF0B \u83DC\u5355\u300C1:1 \u50CF\u7D20\u300D\u9879\uFF1Bfable \u81EA\u753B\u672A\u8FC7\u76EE\u3011 -->\n  <symbol id="one-to-one" data-cat="viewport" data-src="own" data-note="1:1 \u50CF\u7D20:\u56DB\u89D2\u62EC\u53F7 + \u4E2D\u5FC3\u4E00\u9897\u5B9E\u5FC3\u50CF\u7D20=\u300C\u4E00\u56FE\u50CF\u7D20\u5BF9\u4E00\u5C4F\u50CF\u7D20\u300D(\u4E0D\u5199 1:1 \u6587\u5B57)\u3010WeebPaint \u53C2\u8003\u7A97 \uFF0B \u83DC\u5355\u300C1:1 \u50CF\u7D20\u300D\u9879\uFF1Bfable \u81EA\u753B\u672A\u8FC7\u76EE\u3011" data-review="pending" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8 V3.5 H8"/><path d="M16 3.5 H20.5 V8"/><path d="M20.5 16 V20.5 H16"/><path d="M8 20.5 H3.5 V16"/><rect x="9.6" y="9.6" width="4.8" height="4.8" fill="currentColor" stroke="none"/></symbol>\n  <!-- ui -->\n  <!-- more \u2014 \u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00) -->\n  <symbol id="more" data-cat="ui" data-src="own" data-note="\u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/></symbol>\n  <!-- keyboard \u2014 \u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49) -->\n  <symbol id="keyboard" data-cat="ui" data-src="own" data-note="\u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="7.2" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="7.2" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><path d="M8.6 15.6 H15.4"/></symbol>\n  <!-- menu \u2014 \u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17) -->\n  <symbol id="menu" data-cat="ui" data-src="own" data-note="\u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"></line> <line x1="4" y1="12" x2="20" y2="12"></line> <line x1="4" y1="17" x2="20" y2="17"></line></symbol>\n</svg>\n';
@@ -7607,6 +7607,12 @@ function mirrorUrls() {
 function setMirrorUrls(urls) {
   set("mirrors", urls.length ? JSON.stringify(urls) : null);
 }
+function bindingsText(core2) {
+  return get(`bindings.${core2}`);
+}
+function setBindingsText(core2, text) {
+  set(`bindings.${core2}`, text);
+}
 function deviceId() {
   let v = get("device-id");
   if (!v || !/^[0-9a-f]{8}$/.test(v)) {
@@ -12606,17 +12612,17 @@ function readCoreOverrides(params2) {
   }
   return out;
 }
-function writeCoreOverrides(params2, overrides) {
+function writeCoreOverrides(params2, overrides2) {
   const q = new URLSearchParams(params2);
   q.delete("skin");
   q.delete("cull");
   q.delete("cpu");
-  const parts = [...overrides].filter(([k, v]) => PPSSPP_OPTIONS.find((d) => d.id === k)?.def !== v && !isHidden2(k) && VALID.get(k)?.has(v)).sort(([a], [b]) => a.localeCompare(b)).map(([k, v]) => `${encodeURIComponent(k)}:${encodeURIComponent(v)}`);
+  const parts = [...overrides2].filter(([k, v]) => PPSSPP_OPTIONS.find((d) => d.id === k)?.def !== v && !isHidden2(k) && VALID.get(k)?.has(v)).sort(([a], [b]) => a.localeCompare(b)).map(([k, v]) => `${encodeURIComponent(k)}:${encodeURIComponent(v)}`);
   if (parts.length) q.set("o", parts.join(";"));
   else q.delete("o");
   return q;
 }
-var coreOptionArgs = (overrides) => [...overrides].filter(([k, v]) => !isHidden2(k) && VALID.get(k)?.has(v)).map(([k, v]) => `opt:${k}=${v}`);
+var coreOptionArgs = (overrides2) => [...overrides2].filter(([k, v]) => !isHidden2(k) && VALID.get(k)?.has(v)).map(([k, v]) => `opt:${k}=${v}`);
 var PRESETS = {
   default: { pacing: "vsync", audioTargetMs: 46, audioMaxMs: 81, latencyHint: "interactive", cap30: "auto" },
   gal: { pacing: "audio", audioTargetMs: 150, audioMaxMs: 300, latencyHint: "playback", cap30: true, note: "\u5207\u5230\u540E\u53F0\u7EE7\u7EED\u51FA\u58F0\uFF08\u6302\u673A\u5F53 mp3\uFF09\u8FD8\u6CA1\u505A\uFF1A\u73B0\u5728\u5207\u540E\u53F0\u4F1A\u6682\u505C" },
@@ -12643,6 +12649,336 @@ function triggerSpeed(value, cap = DEFAULT_FF_CAP) {
   if (value >= FULL_PRESS) return cap;
   const s = 1 + (Math.min(ANALOG_MAX, cap) - 1) * (v / ((FULL_PRESS - TRIGGER_DEADZONE) / (1 - TRIGGER_DEADZONE)));
   return Math.min(cap, Math.round(s * 4) / 4);
+}
+
+// src/app/controls.ts
+var ACTIONS = ["pause", "fast", "fast-toggle", "fast-analog", "snapshot", "load", "screenshot", "mute", "fullscreen", "reference", "pip"];
+var ACTION_LABEL = {
+  pause: "\u6682\u505C / \u7EE7\u7EED",
+  fast: "\u5FEB\u8FDB\uFF08\u6309\u4F4F\uFF09",
+  "fast-toggle": "\u5FEB\u8FDB\uFF08\u5F00\u5173\uFF09",
+  "fast-analog": "\u5FEB\u8FDB\uFF08\u6309\u6DF1\u6D45\u53D8\u901F\uFF09",
+  snapshot: "\u5B58\u5FEB\u7167\uFF08\u9009\u8FC7\u7684\u683C\uFF09",
+  load: "\u8BFB\u5FEB\u7167\uFF08\u9009\u8FC7\u7684\u683C\uFF09",
+  screenshot: "\u622A\u56FE",
+  mute: "\u9759\u97F3",
+  fullscreen: "\u5168\u5C4F",
+  reference: "\u53C2\u8003\u7A97",
+  pip: "\u5C0F\u7A97"
+};
+var isAction = (target) => target.startsWith("!");
+var actionOf = (target) => isAction(target) && ACTIONS.includes(target.slice(1)) ? target.slice(1) : null;
+function keyTarget(scheme2, ov, code) {
+  const o = ov?.keyboard;
+  if (o && code in o) return o[code];
+  return scheme2.keyboard[code] ?? null;
+}
+function padTarget(scheme2, ov, index) {
+  const o = ov?.gamepad;
+  if (o && String(index) in o) return o[String(index)];
+  return scheme2.gamepad[index] ?? null;
+}
+function resolveTarget(scheme2, target) {
+  if (!target) return null;
+  if (isAction(target)) {
+    const a = actionOf(target);
+    return a ? { kind: "action", action: a } : null;
+  }
+  const b = scheme2.buttons.find((x) => x.id === target);
+  return b ? { kind: "button", id: b.id, bit: b.bit } : null;
+}
+var resolveKey = (scheme2, ov, code) => resolveTarget(scheme2, keyTarget(scheme2, ov, code));
+var resolvePad = (scheme2, ov, index) => resolveTarget(scheme2, padTarget(scheme2, ov, index));
+function withBinding(scheme2, ov, device, key, target) {
+  const next = { keyboard: { ...ov?.keyboard ?? {} }, gamepad: { ...ov?.gamepad ?? {} } };
+  const def = device === "keyboard" ? scheme2.keyboard[key] ?? null : scheme2.gamepad[Number(key)] ?? null;
+  const table = next[device];
+  if (target === def) delete table[key];
+  else table[key] = target;
+  if (!Object.keys(next.keyboard).length) delete next.keyboard;
+  if (!Object.keys(next.gamepad).length) delete next.gamepad;
+  return next;
+}
+function keysFor(scheme2, ov, target) {
+  const keyboard = [.../* @__PURE__ */ new Set([...Object.keys(scheme2.keyboard), ...Object.keys(ov?.keyboard ?? {})])].filter((c) => keyTarget(scheme2, ov, c) === target).sort();
+  const gamepad = [.../* @__PURE__ */ new Set([...Object.keys(scheme2.gamepad), ...Object.keys(ov?.gamepad ?? {})])].map(Number).filter((i) => padTarget(scheme2, ov, i) === target).sort((a, b) => a - b);
+  return { keyboard, gamepad };
+}
+var PAD_KEYCODES = {
+  195: "PadA",
+  196: "PadB",
+  197: "PadX",
+  198: "PadY",
+  199: "PadRB",
+  200: "PadLB",
+  201: "PadLT",
+  202: "PadRT",
+  203: "PadUp",
+  204: "PadDown",
+  205: "PadLeft",
+  206: "PadRight",
+  207: "PadMenu",
+  208: "PadView",
+  211: "PadLUp",
+  212: "PadLDown",
+  213: "PadLRight",
+  214: "PadLLeft",
+  215: "PadRUp",
+  216: "PadRDown",
+  217: "PadRRight",
+  218: "PadRLeft"
+};
+function keyCodeOf(e) {
+  return e.code && e.code !== "Unidentified" ? e.code : PAD_KEYCODES[e.keyCode] ?? "";
+}
+var PAD_INDEX_LABEL = {
+  0: "A\uFF08\u4E0B\uFF09",
+  1: "B\uFF08\u53F3\uFF09",
+  2: "X\uFF08\u5DE6\uFF09",
+  3: "Y\uFF08\u4E0A\uFF09",
+  4: "LB",
+  5: "RB",
+  6: "LT",
+  7: "RT",
+  8: "View / Select",
+  9: "Menu / Start",
+  10: "\u5DE6\u6447\u6746\u6309\u4E0B",
+  11: "\u53F3\u6447\u6746\u6309\u4E0B",
+  12: "\u5341\u5B57 \u2191",
+  13: "\u5341\u5B57 \u2193",
+  14: "\u5341\u5B57 \u2190",
+  15: "\u5341\u5B57 \u2192",
+  16: "Home / Guide"
+};
+function keyLabel(code) {
+  if (code.startsWith("Key")) return code.slice(3);
+  if (code.startsWith("Digit")) return code.slice(5);
+  if (code.startsWith("Arrow")) return { ArrowUp: "\u2191", ArrowDown: "\u2193", ArrowLeft: "\u2190", ArrowRight: "\u2192" }[code] ?? code;
+  if (code.startsWith("Pad")) return "\u624B\u67C4 " + code.slice(3);
+  return { Space: "\u7A7A\u683C", Enter: "\u56DE\u8F66", Escape: "Esc", Backquote: "`", ShiftRight: "\u53F3 Shift", ShiftLeft: "\u5DE6 Shift", Tab: "Tab" }[code] ?? code;
+}
+var PSP_SCHEME = {
+  core: "ppsspp",
+  buttons: [
+    { id: "cross", bit: 0, label: "\xD7" },
+    { id: "square", bit: 1, label: "\u25A1" },
+    { id: "select", bit: 2, label: "SELECT" },
+    { id: "start", bit: 3, label: "START" },
+    { id: "up", bit: 4, label: "\u2191" },
+    { id: "down", bit: 5, label: "\u2193" },
+    { id: "left", bit: 6, label: "\u2190" },
+    { id: "right", bit: 7, label: "\u2192" },
+    { id: "circle", bit: 8, label: "\u25CB" },
+    { id: "triangle", bit: 9, label: "\u25B3" },
+    { id: "l", bit: 10, label: "L" },
+    { id: "r", bit: 11, label: "R" }
+  ],
+  sticks: 1,
+  rightStick: "dpad",
+  softkeys: "psp",
+  keyboard: {
+    ArrowUp: "up",
+    ArrowDown: "down",
+    ArrowLeft: "left",
+    ArrowRight: "right",
+    KeyX: "circle",
+    KeyZ: "cross",
+    KeyA: "square",
+    KeyS: "triangle",
+    Space: "start",
+    KeyV: "select",
+    Enter: "select",
+    KeyQ: "l",
+    KeyW: "r",
+    // 壳的动作：Tab 按住快进、` 快进开关、Esc / P 暂停、M 静音、F2 存、F4 读
+    Tab: "!fast",
+    Backquote: "!fast-toggle",
+    Escape: "!pause",
+    KeyP: "!pause",
+    KeyM: "!mute",
+    F2: "!snapshot",
+    F4: "!load",
+    // 手柄当键盘来的（Quest 的 2D 浏览器把蓝牙手柄翻成 VK_GAMEPAD_*；main.ts PAD_KEYCODES 翻成这些假 code）：A × · B ○ · X □ · Y △ · 肩键 / 扳机 L R · 十字 · Menu Start · View Select · 右摇杆四向 → 十字
+    PadA: "cross",
+    PadB: "circle",
+    PadX: "square",
+    PadY: "triangle",
+    PadRB: "r",
+    PadLB: "l",
+    PadLT: "l",
+    PadRT: "r",
+    PadUp: "up",
+    PadDown: "down",
+    PadLeft: "left",
+    PadRight: "right",
+    PadMenu: "start",
+    PadView: "select",
+    PadRUp: "up",
+    PadRDown: "down",
+    PadRRight: "right",
+    PadRLeft: "left"
+  },
+  gamepad: {
+    0: "cross",
+    1: "circle",
+    2: "square",
+    3: "triangle",
+    4: "l",
+    5: "r",
+    8: "select",
+    9: "start",
+    12: "up",
+    13: "down",
+    14: "left",
+    15: "right",
+    // 扳机和功能键（PPSSPP Xbox 出厂默认）：LT 暂停、RT 按深浅变速、右摇杆按下 = 快进开关、Home 暂停。PSP 只有 L / R 两个肩键 = LB / RB，扳机本来就空着
+    6: "!pause",
+    7: "!fast-analog",
+    11: "!fast-toggle",
+    16: "!pause"
+  },
+  stickKeys: { KeyI: [0, -1], KeyK: [0, 1], KeyJ: [-1, 0], KeyL: [1, 0], PadLUp: [0, -1], PadLDown: [0, 1], PadLRight: [1, 0], PadLLeft: [-1, 0] }
+};
+function parseOverrides(text) {
+  if (!text) return null;
+  try {
+    const v = JSON.parse(text);
+    if (!v || typeof v !== "object") return null;
+    const clean = (t) => {
+      if (!t || typeof t !== "object") return void 0;
+      const out = {};
+      for (const [k, x] of Object.entries(t)) if (x === null || typeof x === "string") out[k] = x;
+      return Object.keys(out).length ? out : void 0;
+    };
+    const o = {};
+    const kb = clean(v.keyboard), gp = clean(v.gamepad);
+    if (kb) o.keyboard = kb;
+    if (gp) o.gamepad = gp;
+    return Object.keys(o).length ? o : null;
+  } catch {
+    return null;
+  }
+}
+var serializeOverrides = (ov) => ov && Object.keys(ov).length ? JSON.stringify(ov) : null;
+
+// src/app/bindings-panel.ts
+var KEYBOARD_SKIP = ["fast-analog"];
+function openBindings(host, capture = null) {
+  const { scheme: scheme2 } = host;
+  const targets = [
+    ...scheme2.buttons.map((b) => ({ target: b.id, label: b.label, kind: "button" })),
+    ...ACTIONS.map((a) => ({ target: "!" + a, label: ACTION_LABEL[a], kind: "action" }))
+  ];
+  let stopCapture = null;
+  const reopen = (next) => {
+    stopCapture?.();
+    stopCapture = null;
+    closeSheet();
+    openBindings(host, next);
+  };
+  let closeSheet = () => {
+  };
+  const bind = (device, key, target) => {
+    host.setOverrides(withBinding(scheme2, host.overrides(), device, key, target));
+    const label = targets.find((t) => t.target === target)?.label ?? target;
+    host.log(`\u952E\u4F4D\uFF1A${device === "keyboard" ? "\u952E\u76D8" : "\u624B\u67C4"} ${device === "keyboard" ? keyLabel(key) : PAD_INDEX_LABEL[Number(key)] ?? `#${key}`} \u2192 ${label}`);
+    reopen(null);
+  };
+  const unbind = (device, key) => {
+    host.setOverrides(withBinding(scheme2, host.overrides(), device, key, null));
+    host.log(`\u952E\u4F4D\uFF1A\u89E3\u7ED1 ${device === "keyboard" ? "\u952E\u76D8 " + keyLabel(key) : "\u624B\u67C4 " + (PAD_INDEX_LABEL[Number(key)] ?? `#${key}`)}`);
+    reopen(null);
+  };
+  void sheet((close) => {
+    closeSheet = () => close();
+    const ov = host.overrides();
+    const changed = (ov?.keyboard ? Object.keys(ov.keyboard).length : 0) + (ov?.gamepad ? Object.keys(ov.gamepad).length : 0);
+    const cell = (device, t) => {
+      const keys = keysFor(scheme2, ov, t.target);
+      const list = device === "keyboard" ? keys.keyboard : keys.gamepad.map(String);
+      const skip = device === "keyboard" && t.kind === "action" && KEYBOARD_SKIP.includes(t.target.slice(1));
+      const capturing = capture && capture.device === device && capture.target === t.target;
+      return h(
+        "div",
+        { class: "bind-cell" + (capturing ? " capturing" : "") },
+        ...list.map((k) => h(
+          "span",
+          { class: "bind-key" },
+          device === "keyboard" ? keyLabel(k) : PAD_INDEX_LABEL[Number(k)] ?? `#${k}`,
+          h("button", { class: "bind-x", title: "\u89E3\u7ED1", "aria-label": "\u89E3\u7ED1", onclick: () => unbind(device, k) }, "\xD7")
+        )),
+        skip ? h("span", { class: "muted" }, "\u2014") : capturing ? h("span", { class: "muted" }, device === "keyboard" ? "\u6309\u4E00\u4E2A\u952E\u2026\uFF08Esc \u53D6\u6D88\uFF09" : "\u6309\u624B\u67C4\u4E0A\u7684\u4E00\u4E2A\u952E\u2026\uFF08Esc \u53D6\u6D88\uFF09") : h("button", { class: "bind-add", title: "\u518D\u7ED1\u4E00\u4E2A", onclick: () => reopen({ device, target: t.target }) }, "\uFF0B")
+      );
+    };
+    const rows = targets.map((t) => h(
+      "div",
+      { class: "bind-row" + (t.kind === "action" ? " action" : "") },
+      h("span", { class: "bind-label" }, t.label),
+      cell("keyboard", t),
+      cell("gamepad", t)
+    ));
+    if (capture) {
+      const onKey2 = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (e.repeat) return;
+        if (e.code === "Escape") {
+          reopen(null);
+          return;
+        }
+        if (capture.device === "keyboard") {
+          const code = keyCodeOf(e);
+          if (code) bind("keyboard", code, capture.target);
+        }
+      };
+      window.addEventListener("keydown", onKey2, { capture: true });
+      let raf = 0;
+      if (capture.device === "gamepad") {
+        const was = /* @__PURE__ */ new Map();
+        for (const gp of navigator.getGamepads?.() ?? []) if (gp) gp.buttons.forEach((b, i) => was.set(`${gp.index}:${i}`, b.pressed));
+        const poll = () => {
+          for (const gp of navigator.getGamepads?.() ?? []) {
+            if (!gp) continue;
+            for (let i = 0; i < gp.buttons.length; i++) {
+              const pressed = gp.buttons[i].pressed || (gp.buttons[i].value ?? 0) > 0.5;
+              if (pressed && !was.get(`${gp.index}:${i}`)) {
+                bind("gamepad", String(i), capture.target);
+                return;
+              }
+              was.set(`${gp.index}:${i}`, pressed);
+            }
+          }
+          raf = requestAnimationFrame(poll);
+        };
+        raf = requestAnimationFrame(poll);
+      }
+      stopCapture = () => {
+        window.removeEventListener("keydown", onKey2, { capture: true });
+        if (raf) cancelAnimationFrame(raf);
+      };
+    }
+    return [
+      h("h2", {}, "\u6539\u952E"),
+      h("p", { class: "hint" }, `\u952E\u76D8\u548C\u624B\u67C4\u5404\u81EA\u7ED1\uFF1B\u4E00\u4E2A\u952E\u53EA\u80FD\u6307\u4E00\u4E2A\u4E1C\u897F\uFF0C\u4E00\u4E2A\u4E1C\u897F\u53EF\u4EE5\u6709\u51E0\u4E2A\u952E\u3002\u53EA\u8BB0\u5728\u8FD9\u53F0\u8BBE\u5907\u4E0A${changed ? `\uFF08\u6539\u4E86 ${changed} \u5904\uFF09` : "\uFF08\u73B0\u5728\u5168\u662F\u9ED8\u8BA4\uFF09"}\u3002\u624B\u67C4\u6309\u6807\u51C6\u5E03\u5C40\u8BA4\u952E\uFF0CQuest \u628A\u624B\u67C4\u5F53\u952E\u76D8\u5582\u8FDB\u6765\u7684\u4E5F\u7B97\u952E\u76D8\u3002`),
+      h("div", { class: "bind-head" }, h("span", {}, ""), h("span", {}, "\u952E\u76D8"), h("span", {}, "\u624B\u67C4")),
+      h("div", { class: "bind-table" }, ...rows),
+      h(
+        "div",
+        { class: "row" },
+        h("button", { onclick: () => {
+          stopCapture?.();
+          close();
+        } }, "\u5173\u95ED"),
+        h("button", { disabled: changed ? void 0 : "", onclick: () => {
+          host.setOverrides(null);
+          host.log("\u952E\u4F4D\uFF1A\u5168\u90E8\u6062\u590D\u9ED8\u8BA4");
+          reopen(null);
+        } }, "\u5168\u90E8\u6062\u590D\u9ED8\u8BA4")
+      )
+    ];
+  }).then(() => {
+    stopCapture?.();
+  });
 }
 
 // src/app/settings-panel.ts
@@ -12703,7 +13039,8 @@ function openSettings(host, focus, draft) {
     const all = [...APP_SETTINGS, ...PPSSPP_OPTIONS];
     const sections = SECTIONS.map((s) => {
       const items = all.filter((d) => d.section === s.id);
-      return h("section", { class: "setting-section", id: `settings-${s.id}` }, h("h3", {}, `${s.title}`, h("span", { class: "muted" }, ` \xB7 ${s.hint}`)), ...items.map(row));
+      const extra = host.extras?.[s.id];
+      return h("section", { class: "setting-section", id: `settings-${s.id}` }, h("h3", {}, `${s.title}`, h("span", { class: "muted" }, ` \xB7 ${s.hint}`)), ...items.map(row), extra ? extra(() => close()) : null);
     });
     const nav = h("div", { class: "setting-nav" }, ...SECTIONS.map((s) => h("button", { onclick: () => document.getElementById(`settings-${s.id}`)?.scrollIntoView({ block: "start", behavior: "smooth" }) }, s.title)));
     go.addEventListener("click", () => {
@@ -16470,7 +16807,7 @@ async function play(prepare, resume) {
     onInput: () => activity2?.input(performance.now()),
     media: disc.media,
     ext: disc.ext,
-    coreDir: "./dist/core-b865f1f47260/",
+    coreDir: "./dist/core-602016aa4429/",
     glCanvas: $("gl"),
     softCanvas: $("screen"),
     audioContext: audioContext(),
@@ -17129,7 +17466,11 @@ function settingsHost() {
     log: (text) => logEvent("info", text),
     reload: (search) => {
       location.search = search;
-    }
+    },
+    extras: { controls: (close) => h("div", { class: "setting-row" }, h("label", {}, h("span", {}, "\u952E\u4F4D"), h("span", { class: "setting-tag" }, "\u53EA\u5728\u8FD9\u53F0\u8BBE\u5907")), h("button", { onclick: () => {
+      close();
+      openBindings(bindingsHost());
+    } }, "\u6539\u952E\u2026"), h("p", { class: "muted setting-hint" }, "\u952E\u76D8\u548C\u624B\u67C4\u5404\u81EA\u7ED1\uFF1B\u9ED8\u8BA4 = PPSSPP \u7684\u952E\u4F4D\uFF08Z \xD7 \xB7 X \u25CB \xB7 A \u25A1 \xB7 S \u25B3 \xB7 \u7A7A\u683C Start \xB7 V / \u56DE\u8F66 Select \xB7 Q W = L R \xB7 Tab \u5FEB\u8FDB \xB7 Esc \u6682\u505C\uFF09\u548C Xbox \u51FA\u5382\u6273\u673A\uFF08LT \u6682\u505C \xB7 RT \u5FEB\u8FDB\uFF09")) }
   };
 }
 var hudPrev = { t: performance.now(), up: 0, down: 0 };
@@ -17478,27 +17819,21 @@ async function quit() {
   }
   if (!leaveNow) location.reload();
 }
-var PAD_MAP = [
-  [0, "cross"],
-  [1, "circle"],
-  [2, "square"],
-  [3, "triangle"],
-  [4, "l"],
-  [5, "r"],
-  [8, "select"],
-  [9, "start"],
-  [12, "up"],
-  [13, "down"],
-  [14, "left"],
-  [15, "right"]
-];
+var scheme = PSP_SCHEME;
+var overrides = parseOverrides(bindingsText(scheme.core));
+function setOverrides(ov) {
+  overrides = ov;
+  setBindingsText(scheme.core, serializeOverrides(ov));
+}
+var bindingsHost = () => ({ scheme, overrides: () => overrides, setOverrides, log: (t) => logEvent("info", t) });
 var STICK_DEADZONE2 = 0.12;
 var padInfo = "";
 function rightStickMask(x, y) {
   return (x < -0.5 ? bit("left") : 0) | (x > 0.5 ? bit("right") : 0) | (y < -0.5 ? bit("up") : 0) | (y > 0.5 ? bit("down") : 0);
 }
 function pollGamepads(s) {
-  let mask = rightStickMask(softRight.x, softRight.y), ax = softAnalog.x, ay = softAnalog.y;
+  let mask = scheme.rightStick ? rightStickMask(softRight.x, softRight.y) : 0, ax = softAnalog.x, ay = softAnalog.y;
+  const act = { pause: 0, fastAnalog: 0, fastToggle: false, fastHold: false, others: /* @__PURE__ */ new Set() };
   if (Math.hypot(keyAnalog.x, keyAnalog.y) > Math.hypot(ax, ay)) {
     ax = keyAnalog.x;
     ay = keyAnalog.y;
@@ -17514,9 +17849,35 @@ function pollGamepads(s) {
     }
     names.push(gp.id.slice(0, 40) + (gp.mapping === "standard" ? "" : "\uFF08\u975E\u6807\u51C6\u5E03\u5C40\uFF0C\u952E\u4F4D\u53EF\u80FD\u4E0D\u5BF9\uFF09"));
     if (gp.buttons[8]?.pressed && gp.buttons[9]?.pressed) combo = true;
-    for (const [i, name] of PAD_MAP) if (gp.buttons[i]?.pressed) {
-      mask |= bit(name);
-      pressed = true;
+    for (let i = 0; i < gp.buttons.length; i++) {
+      const b = gp.buttons[i];
+      if (!b) continue;
+      const r = resolvePad(scheme, overrides, i);
+      if (!r) continue;
+      if (r.kind === "button") {
+        if (b.pressed) {
+          mask |= 1 << r.bit;
+          pressed = true;
+        }
+        continue;
+      }
+      const v = typeof b.value === "number" ? b.value : b.pressed ? 1 : 0;
+      switch (r.action) {
+        case "pause":
+          act.pause = Math.max(act.pause, v);
+          break;
+        case "fast-analog":
+          act.fastAnalog = Math.max(act.fastAnalog, v);
+          break;
+        case "fast-toggle":
+          act.fastToggle ||= b.pressed;
+          break;
+        case "fast":
+          act.fastHold ||= b.pressed;
+          break;
+        default:
+          if (b.pressed) act.others.add(r.action);
+      }
     }
     const x = gp.axes[0] ?? 0, y = gp.axes[1] ?? 0;
     if (Math.hypot(x, y) > STICK_DEADZONE2) {
@@ -17526,33 +17887,29 @@ function pollGamepads(s) {
         ay = y;
       }
     }
-    const rm = rightStickMask(gp.axes[2] ?? 0, gp.axes[3] ?? 0);
+    const rm = scheme.rightStick ? rightStickMask(gp.axes[2] ?? 0, gp.axes[3] ?? 0) : 0;
     if (rm) pressed = true;
     mask |= rm;
   }
   padInfo = names.join(" + ");
   {
-    let lt = 0, rt = 0, r3 = false, home = false;
-    for (const gp of navigator.getGamepads?.() ?? []) {
-      if (!gp || !gp.connected || gp.mapping !== "standard") continue;
-      lt = Math.max(lt, gp.buttons[6]?.value ?? 0);
-      rt = Math.max(rt, gp.buttons[7]?.value ?? (gp.buttons[7]?.pressed ? 1 : 0));
-      r3 ||= !!gp.buttons[11]?.pressed;
-      home ||= !!gp.buttons[16]?.pressed;
-    }
-    const ltDown = padLtDown ? lt > 0.3 : lt > 0.5;
+    const ltDown = padLtDown ? act.pause > 0.3 : act.pause > 0.5;
     if (ltDown && !padLtDown) togglePause();
-    if (home && !padHome) togglePause();
-    if (r3 && !padR3) setFast(!ffOn);
+    if (act.fastToggle && !padR3) setFast(!ffOn);
+    if (act.fastHold !== padFfHold) {
+      padFfHold = act.fastHold;
+      setFast(act.fastHold);
+    }
+    for (const a of act.others) if (!padActionsDown.has(a)) runAction(a);
+    padActionsDown = act.others;
     padLtDown = ltDown;
-    padHome = home;
-    padR3 = r3;
-    const rs = s.paused ? 1 : triggerSpeed(rt, ffCap);
+    padR3 = act.fastToggle;
+    const rs = s.paused ? 1 : triggerSpeed(act.fastAnalog, ffCap);
     if (rs !== rtSpeed) {
       rtSpeed = rs;
       applySpeed();
     }
-    if (ltDown || r3 || home || rt > TRIGGER_DEADZONE) pressed = true;
+    if (ltDown || act.fastToggle || act.fastHold || act.others.size || act.fastAnalog > TRIGGER_DEADZONE) pressed = true;
   }
   if (pressed) hardwareInput("\u624B\u67C4");
   s.setMask("pad", mask);
@@ -17570,8 +17927,9 @@ function pollGamepads(s) {
 }
 var comboHeld = false;
 var padLtDown = false;
-var padHome = false;
 var padR3 = false;
+var padFfHold = false;
+var padActionsDown = /* @__PURE__ */ new Set();
 var padLastTs = /* @__PURE__ */ new Map();
 var padTsChanges = 0;
 var padTsAtBurst = 0;
@@ -17661,41 +18019,6 @@ function statusText() {
     `\u952E\u76D8\uFF08\u540C PPSSPP \u9ED8\u8BA4\uFF09\uFF1A\u65B9\u5411\u952E \u5341\u5B57 \xB7 I/J/K/L \u6447\u6746\uFF08\u53F3 Shift \u8F7B\u63A8\uFF09\xB7 X \u25CB \xB7 Z \xD7 \xB7 A \u25A1 \xB7 S \u25B3 \xB7 Q/W L/R \xB7 \u7A7A\u683C Start \xB7 V / \u56DE\u8F66 Select \xB7 Esc / P \u6682\u505C \xB7 \u6309\u4F4F Tab \u5FEB\u8FDB \xB7 \` \u5FEB\u8FDB\u5F00\u5173 \xB7 M \u9759\u97F3 \xB7 F2 \u5B58 / F4 \u8BFB\u5F53\u524D\u683C`
   ].join("\n");
 }
-var KEYMAP = {
-  ArrowUp: "up",
-  ArrowDown: "down",
-  ArrowLeft: "left",
-  ArrowRight: "right",
-  KeyX: "circle",
-  KeyZ: "cross",
-  KeyA: "square",
-  KeyS: "triangle",
-  Space: "start",
-  KeyV: "select",
-  Enter: "select",
-  KeyQ: "l",
-  KeyW: "r",
-  // 手柄当键盘来的（下面 PAD_KEYCODES 翻出来的假 code）：A × · B ○ · X □ · Y △ · 肩键 / 扳机 L R · 十字 · Menu Start · View Select · 右摇杆四向 → 十字
-  PadA: "cross",
-  PadB: "circle",
-  PadX: "square",
-  PadY: "triangle",
-  PadRB: "r",
-  PadLB: "l",
-  PadLT: "l",
-  PadRT: "r",
-  PadUp: "up",
-  PadDown: "down",
-  PadLeft: "left",
-  PadRight: "right",
-  PadMenu: "start",
-  PadView: "select",
-  PadRUp: "up",
-  PadRDown: "down",
-  PadRRight: "right",
-  PadRLeft: "left"
-};
-var STICK_KEYS = { KeyI: [0, -1], KeyK: [0, 1], KeyJ: [-1, 0], KeyL: [1, 0], PadLUp: [0, -1], PadLDown: [0, 1], PadLRight: [1, 0], PadLLeft: [-1, 0] };
 var IS_QUEST = /\bQuest\b|OculusBrowser/.test(navigator.userAgent);
 var questAdvisor = IS_QUEST ? createQuestInputAdvisor() : null;
 function questFeed(sig) {
@@ -17704,40 +18027,14 @@ function questFeed(sig) {
   logEvent("info", adv.log);
   say(adv.text, 15e3);
 }
-var PAD_KEYCODES = {
-  195: "PadA",
-  196: "PadB",
-  197: "PadX",
-  198: "PadY",
-  199: "PadRB",
-  200: "PadLB",
-  201: "PadLT",
-  202: "PadRT",
-  203: "PadUp",
-  204: "PadDown",
-  205: "PadLeft",
-  206: "PadRight",
-  207: "PadMenu",
-  208: "PadView",
-  211: "PadLUp",
-  212: "PadLDown",
-  213: "PadLRight",
-  214: "PadLLeft",
-  215: "PadRUp",
-  216: "PadRDown",
-  217: "PadRRight",
-  218: "PadRLeft"
-};
-function keyCodeOf(e) {
-  return e.code && e.code !== "Unidentified" ? e.code : PAD_KEYCODES[e.keyCode] ?? "";
-}
 var seenKeys = /* @__PURE__ */ new Set();
 function noteKey(e, code) {
   if (seenKeys.size >= 16) return;
   const sig = `${e.code}|${e.keyCode}|${e.location}`;
   if (seenKeys.has(sig)) return;
   seenKeys.add(sig);
-  const mapped = KEYMAP[code] ? `\u2192 ${KEYMAP[code]}` : STICK_KEYS[code] ? "\u2192 \u6447\u6746" : "\xB7 \u6CA1\u6620\u5C04\u5230 PSP \u952E";
+  const r = resolveKey(scheme, overrides, code);
+  const mapped = r ? r.kind === "button" ? `\u2192 ${r.id}` : `\u2192 \u52A8\u4F5C ${r.action}` : scheme.stickKeys[code] ? "\u2192 \u6447\u6746" : "\xB7 \u6CA1\u6620\u5C04\u5230\u952E\u4F4D";
   logEvent("info", `\u8F93\u5165\uFF1A\u952E code=${e.code || "(\u7A7A)"} key=${e.key.length > 1 ? e.key : "(\u5B57\u7B26)"} keyCode=${e.keyCode} location=${e.location}${code !== e.code ? ` \u2192 ${code}` : ""} ${mapped}`);
 }
 var stickKeysDown = /* @__PURE__ */ new Set();
@@ -17745,8 +18042,11 @@ var keyAnalog = { x: 0, y: 0 };
 function updateKeyAnalog(lightly) {
   let x = 0, y = 0;
   for (const k of stickKeysDown) {
-    x += STICK_KEYS[k][0];
-    y += STICK_KEYS[k][1];
+    const d = scheme.stickKeys[k];
+    if (d) {
+      x += d[0];
+      y += d[1];
+    }
   }
   const len = Math.hypot(x, y) || 1, mag = lightly ? 0.5 : 1;
   keyAnalog = { x: x / len * mag, y: y / len * mag };
@@ -17777,12 +18077,7 @@ function onKey(e, down) {
     });
     return;
   }
-  if (e.code === "Tab") {
-    e.preventDefault();
-    if (!e.repeat) setFast(down);
-    return;
-  }
-  if (STICK_KEYS[code]) {
+  if (scheme.stickKeys[code]) {
     e.preventDefault();
     if (down) {
       stickKeysDown.add(code);
@@ -17796,41 +18091,60 @@ function onKey(e, down) {
     updateKeyAnalog(down);
     return;
   }
-  if (down && !e.repeat) {
-    if (e.code === "KeyP" || e.code === "Escape") {
-      e.preventDefault();
-      togglePause();
-      return;
-    }
-    if (e.code === "Backquote") {
-      e.preventDefault();
-      setFast(!(session.speed > 1));
-      return;
-    }
-    if (e.code === "KeyM") {
-      e.preventDefault();
-      toggleMute();
-      return;
-    }
-    if (e.code === "F2") {
-      e.preventDefault();
-      const t = quickSlot(true);
-      if (t) saveTo(t);
-      return;
-    }
-    if (e.code === "F4") {
-      e.preventDefault();
-      const t = quickSlot(false);
-      if (t) loadFrom(t);
-      return;
-    }
-  }
-  const b = KEYMAP[code];
-  if (!b) return;
+  const r = resolveKey(scheme, overrides, code);
+  if (!r) return;
   e.preventDefault();
+  if (r.kind === "action") {
+    if (r.action === "fast") {
+      if (!e.repeat) setFast(down);
+      return;
+    }
+    if (down && !e.repeat) runAction(r.action);
+    return;
+  }
   if (down && counts) hardwareInput(kind);
   const m = session.getMask("keyboard");
-  session.setMask("keyboard", down ? m | bit(b) : m & ~bit(b));
+  session.setMask("keyboard", down ? m | 1 << r.bit : m & ~(1 << r.bit));
+}
+function runAction(a) {
+  if (!session) return;
+  switch (a) {
+    case "pause":
+      togglePause();
+      break;
+    case "fast-toggle":
+      setFast(!ffOn);
+      break;
+    case "snapshot": {
+      const t = quickSlot(true);
+      if (t) saveTo(t);
+      break;
+    }
+    case "load": {
+      const t = quickSlot(false);
+      if (t) loadFrom(t);
+      break;
+    }
+    case "screenshot":
+      shareScreenshot().catch((e) => banner(`\u622A\u56FE\u5931\u8D25\uFF1A${errorText(e)}`));
+      break;
+    case "mute":
+      toggleMute();
+      break;
+    case "fullscreen":
+      toggleFullscreen();
+      break;
+    case "reference":
+      void guide.toggle();
+      break;
+    case "pip":
+      togglePip().catch(() => {
+      });
+      break;
+    case "fast":
+    case "fast-analog":
+      break;
+  }
 }
 function progressSheet(title) {
   let cancelled = false;
@@ -18434,4 +18748,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-122a2befb502.mjs.map
+//# sourceMappingURL=kudsrocket-1ce5fa0dc29e.mjs.map

@@ -377,7 +377,6 @@ index 9c0c469..fbbe89d 100644
  	bool success = false;
  	http::Client http(nullptr);
  	bool cancelled = false;
-Submodule ext/aemu_postoffice contains modified content
 diff --git a/GPU/GLES/GPU_GLES.cpp b/GPU/GLES/GPU_GLES.cpp
 index 307ad5e..a18f31a 100644
 --- a/GPU/GLES/GPU_GLES.cpp
@@ -397,6 +396,7 @@ index 307ad5e..a18f31a 100644
  	features |= GPU_USE_16BIT_FORMATS;
  
  	if (gl_extensions.GLES3 || !gl_extensions.IsGLES)
+Submodule ext/aemu_postoffice contains modified content
 diff --git a/ext/aemu_postoffice/client/sock_impl_linux.c b/ext/aemu_postoffice/client/sock_impl_linux.c
 index 4a44f53..a6ac5b7 100644
 --- a/ext/aemu_postoffice/client/sock_impl_linux.c
@@ -588,7 +588,7 @@ index 6bdb4ef..1f71ff8 100644
  ifneq (,$(findstring x86,$(TARGET_ARCH)))
  	COREFLAGS += -DHAVE_SYSCTLBYNAME
 diff --git a/libretro/libretro.cpp b/libretro/libretro.cpp
-index 3b2f103..2be4b31 100644
+index 3b2f103..80a59ea 100644
 --- a/libretro/libretro.cpp
 +++ b/libretro/libretro.cpp
 @@ -547,7 +547,13 @@ static void check_variables(CoreParameter &coreParam)
@@ -606,7 +606,7 @@ index 3b2f103..2be4b31 100644
  #endif
  
     var.key = "ppsspp_fast_memory";
-@@ -1170,6 +1176,34 @@ static void check_variables(CoreParameter &coreParam)
+@@ -1170,6 +1176,49 @@ static void check_variables(CoreParameter &coreParam)
     set_variable_visibility();
  }
  
@@ -617,6 +617,21 @@ index 3b2f103..2be4b31 100644
 +// KudsRocket patch (fast-forward): tell PPSSPP the frontend is fast-forwarding, so its own frame timing stops sleeping to 60 fps
 +// (FrameTimingThrottled() == false). Without it the host can pace as fast as it likes and the core still waits each frame -> 1x.
 +extern "C" void kr_ppsspp_set_fastforward(int on) { PSP_CoreParameter().fastForward = on != 0; }
++// KudsRocket patch (fast-forward, 2026-10-21): drive fast-forward through PPSSPP's own alternate-speed limiter instead of the fastForward flag.
++// With fastForward the emu thread runs unthrottled while the frontend's retro_run() waits for a *presented* frame: measured in the browser,
++// retro_run() returned only every 64-474 ms although the emu ran at ~13x (audio produced), so the host's pacing (1 retro_run ~ 1 frame) fell
++// apart and the shown speed dropped to 40%. FPSLimit::CUSTOM1 with iFpsLimit1 = 60 * x throttles the emu thread to exactly x times real time
++// (sceDisplay scales vblank timing by the limit) and keeps flipping every frame (presents above the refresh rate are skipped), so retro_run()
++// keeps its one-frame rhythm. x <= 1 restores the normal limiter.
++// The display refresh rate the core believes in follows the speed: sceDisplay's "fpsLimit > refreshRate -> skip flips down to the refresh rate"
++// would otherwise stack on top of the frontend's frameskip (ceil(x) - 1) and present only ~1/64 of the frames (measured: 5-13 fps while fast-forwarding).
++// The frontend already keeps the presented rate at ~60 by skipping draws; telling the core the display runs at 60 * x Hz disables the second layer.
++static double g_kr_speed = 1.0;
++extern "C" void kr_ppsspp_set_speed(double x) {
++   g_kr_speed = x > 1.0 ? x : 1.0;
++   if (x > 1.0) { g_Config.iFpsLimit1 = (int)(60.0 * x + 0.5); PSP_CoreParameter().fpsLimit = FPSLimit::CUSTOM1; }
++   else PSP_CoreParameter().fpsLimit = FPSLimit::NORMAL;
++}
 +// KudsRocket patch (perf probe): collect gpuStats (numDrawCalls etc.) even without PPSSPP's UI overlay (EmuScreen drives
 +// PSP_UpdateDebugStats in the desktop app; the libretro build never calls it). Counters only; nothing is drawn.
 +static bool g_kr_debug_stats = false;
@@ -641,7 +656,7 @@ index 3b2f103..2be4b31 100644
  void retro_set_audio_sample_batch(retro_audio_sample_batch_t cb) { audio_batch_cb = cb; }
  void retro_set_audio_sample(retro_audio_sample_t cb) { (void)cb; }
  void retro_set_input_poll(retro_input_poll_t cb) { input_poll_cb = cb; }
-@@ -1360,6 +1394,7 @@ namespace Libretro
+@@ -1360,6 +1409,7 @@ namespace Libretro
     static std::thread emuThread;
     static void EmuFrame()
     {
@@ -649,7 +664,7 @@ index 3b2f103..2be4b31 100644
        ctx->SetRenderTarget();
        Draw::DrawContext *draw = ctx->GetDrawContext();
        if (draw) {
-@@ -1475,11 +1510,13 @@ namespace Libretro
+@@ -1475,11 +1525,13 @@ namespace Libretro
  
        emuThreadState = EmuThreadState::PAUSE_REQUESTED;
  
@@ -668,7 +683,16 @@ index 3b2f103..2be4b31 100644
     }
  
  } // namespace Libretro
-@@ -2048,24 +2085,15 @@ inline int16_t Clamp16(int32_t sample) {
+@@ -1994,7 +2046,7 @@ float System_GetPropertyFloat(SystemProperty prop)
+    switch (prop)
+    {
+       case SYSPROP_DISPLAY_REFRESH_RATE:
+-         return 60.0f / 1.001f;
++         return (float)(60.0 / 1.001 * g_kr_speed);   // KudsRocket patch: see kr_ppsspp_set_speed
+       case SYSPROP_DISPLAY_SAFE_INSET_LEFT:
+       case SYSPROP_DISPLAY_SAFE_INSET_RIGHT:
+       case SYSPROP_DISPLAY_SAFE_INSET_TOP:
+@@ -2048,24 +2100,15 @@ inline int16_t Clamp16(int32_t sample) {
  
  void System_AudioPushSamples(const int32_t *audio, int numSamples, float volume) {
     // We ignore volume here, because it's handled by libretro presumably.
