@@ -94,6 +94,8 @@ button:disabled { opacity: .4; cursor: default; }
 .sheet p { margin: 0; }
 .sheet .hint { color: var(--ink-soft); font-size: 13px; }
 .sheet input { font: inherit; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--line); background: #111; color: var(--ink); }
+.sheet form.pw-form { display: contents; }   /* 口令真表单：布局和以前一样，只是多了个 form 给密码管理器认 */
+.sr-only, .sheet .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }   /* 密码管理器的账号键：在 DOM 里、人看不见（.sheet .sr-only 压过 .sheet input 的 padding） */
 .sheet .row { display: flex; justify-content: flex-end; gap: 8px; flex-wrap: wrap; }
 .remember-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; cursor: pointer; } .remember-row input { width: 18px; height: 18px; margin: 0; }
 .slots { display: grid; gap: 0; max-height: 60vh; overflow-y: auto; }
