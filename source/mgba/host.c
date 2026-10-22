@@ -264,6 +264,7 @@ static void capture_thumb(void) {
   memcpy(g_thumb, g_frame, (size_t)w * h * 4);   // 帧缓冲已经是 R,G,B,A
   g_thumb_w = w; g_thumb_h = h;
 }
+static void service_cart_load(void);   // 定义在电池存档节（要用 kr_save_ptr / save_size / fnv1a）
 static _Atomic int g_req_frame = 0; static _Atomic unsigned g_frame_shot_seq = 0;
 EMSCRIPTEN_KEEPALIVE void kr_request_frame(void) { g_req_frame = 1; }
 EMSCRIPTEN_KEEPALIVE unsigned kr_frame_shot_seq(void) { return g_frame_shot_seq; }
@@ -287,6 +288,7 @@ static void service_snapshots(void) {
     if (g_audio_live) atomic_store(&g_audio_r, atomic_load(&g_audio_w));
     atomic_fetch_add(&g_restore_seq, 1);
   }
+  service_cart_load();
 }
 
 // ───────────── 电池存档：一块内存，变了就通知页面（页面装罐进 jars/）─────────────
@@ -311,6 +313,27 @@ static void load_save_file(void) {   // 页面 preRun 写在 /saves/game.sav 的
   if (p) { size_t n = fread(p, 1, SAVE_MAX, f); fprintf(stderr, "[kr] battery save loaded: %zu bytes\n", n); }
   fclose(f);
   g_save_hash = fnv1a(p ? p : (const uint8_t *)"", p ? save_size() : 0);   // 读进来的不算「变了」
+}
+// 导入电池存档（v0.2.5，user 10-21「今天没有导入电池存档的入口 做」）：页面把字节 malloc 进核内存后请求；模拟线程上 memcpy 进 SAVE_RAM、
+//   重算哈希（页面自己已经装罐，不算「变了」）、retro_reset 让游戏从头把它读进去（闪存 / EEPROM 的内容游戏只在开机 / 读档时读；mGBA 的快照里也带着
+//   存档内容，所以不能靠读快照——必须冷启）。大小对不上就拒（页面先核过一次，这里是最后一道）。
+static uint8_t *_Atomic g_cart_ptr = NULL; static _Atomic size_t g_cart_size = 0; static _Atomic unsigned g_cart_seq = 0; static _Atomic int g_cart_ok = 0;
+EMSCRIPTEN_KEEPALIVE void kr_request_cart_load(uint8_t *ptr, double size) { g_cart_size = (size_t)size; g_cart_ptr = ptr; }
+EMSCRIPTEN_KEEPALIVE unsigned kr_cart_seq(void) { return g_cart_seq; }
+EMSCRIPTEN_KEEPALIVE int kr_cart_ok(void) { return g_cart_ok; }
+static void service_cart_load(void) {
+  uint8_t *cp = g_cart_ptr;
+  if (!cp) return;
+  g_cart_ptr = NULL;
+  uint8_t *p = kr_save_ptr(); size_t n = save_size();
+  if (p && n && (size_t)g_cart_size == n) {
+    memcpy(p, cp, n); g_save_hash = fnv1a(p, n);
+    retro_reset();
+    if (g_audio_live) atomic_store(&g_audio_r, atomic_load(&g_audio_w));
+    g_cart_ok = 1; fprintf(stderr, "[kr] battery save imported: %zu bytes, core reset\n", n);
+  } else { g_cart_ok = 0; fprintf(stderr, "[kr] battery save import rejected: %zu bytes offered, save ram is %zu\n", (size_t)g_cart_size, n); }
+  free(cp);
+  atomic_fetch_add(&g_cart_seq, 1);
 }
 
 // ───────────── 主循环：时间对齐 + 快进（照 PPSSPP 宿主的墙钟 / 跟屏幕两条路，没有跳帧——GBA 一帧很便宜）─────────────

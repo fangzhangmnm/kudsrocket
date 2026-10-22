@@ -1,8 +1,8 @@
 // <define:__CORE_DIRS__>
-var define_CORE_DIRS_default = { ppsspp: "./dist/core-602016aa4429/", mgba: "./dist/core-mgba-13fbc9b68c66/" };
+var define_CORE_DIRS_default = { ppsspp: "./dist/core-602016aa4429/", mgba: "./dist/core-mgba-2f884ffc38e0/" };
 
 // src/version.ts
-var APP_VERSION = "v0.2.4-2026-10-21";
+var APP_VERSION = "v0.2.5-2026-10-21";
 
 // src/app/config.ts
 var APP_ID = "kudsrocket";
@@ -673,6 +673,19 @@ var CoreSession = class _CoreSession {
     const w = core2._kr_thumb_w(), h2 = core2._kr_thumb_h();
     const frame2 = w > 0 && h2 > 0 ? { rgba: core2.HEAPU8.slice(core2._kr_thumb_ptr(), core2._kr_thumb_ptr() + w * h2 * 4), w, h: h2 } : null;
     return { state: state2, frame: frame2 };
+  }
+  /** 导入电池存档（卡带核）：字节进核内存 → 核在模拟线程上换掉 SAVE_RAM 并冷启（host.c service_cart_load）。大小必须等于 saveRam().bytes.length。 */
+  async cartLoad(bytes) {
+    await this.whenRunning();
+    const { core: core2 } = this;
+    if (!core2._kr_request_cart_load || !core2._kr_cart_seq || !core2._kr_cart_ok) throw new Error("this core has no battery save to import into");
+    const ptr = core2._malloc(bytes.length);
+    if (!ptr) throw new Error(`core out of memory: cannot allocate ${bytes.length} bytes for the battery save`);
+    core2.HEAPU8.set(bytes, ptr);
+    const before = core2._kr_cart_seq();
+    core2._kr_request_cart_load(ptr, bytes.length);
+    await this.waitSeq(() => core2._kr_cart_seq(), before);
+    if (!core2._kr_cart_ok()) throw new Error("core rejected the battery save (size mismatch)");
   }
   async restore(bytes) {
     await this.whenRunning();
@@ -17824,6 +17837,53 @@ async function loadCartSave(core2, disc, cloudReachable) {
   say(`\u5B58\u6863\uFF1A${bytes ? `${(bytes.length / 1024).toFixed(0)} KB` : "\u7A7A"}`);
   return files;
 }
+var SAVE_KIND = { 512: "EEPROM 4 Kb", 8192: "EEPROM 64 Kb", 32768: "SRAM 32 KB", 65536: "Flash 64 KB", 131072: "Flash 128 KB" };
+async function importCartSave() {
+  if (!session || !cartCore || !current) {
+    banner("\u5148\u6253\u5F00\u8FD9\u5F20\u5361\u5E26\uFF0C\u518D\u5BFC\u5165\u5B83\u7684\u7535\u6C60\u5B58\u6863\u3002", "warning");
+    return;
+  }
+  const ram = session.saveRam();
+  if (!ram || !ram.bytes.length) {
+    banner("\u8FD9\u5F20\u5361\u5E26\u6CA1\u6709\u7535\u6C60\u5B58\u6863\uFF08\u6838\u6CA1\u5F00\u5B58\u6863\u5185\u5B58\uFF09\u3002", "warning");
+    return;
+  }
+  if (jamBlocked) {
+    banner("\u5B58\u6863\u7684\u4E91\u7AEF\u5217\u8868\u6CA1\u62FF\u5168\uFF08\u6CA1\u767B\u5F55 / \u79BB\u7EBF / \u7F51\u7EDC\u6162\uFF09\uFF1A\u5148\u4E0D\u5BFC\u5165\uFF0C\u514D\u5F97\u76D6\u6389\u522B\u7684\u8BBE\u5907\u5B58\u7684\u3002\u8054\u7F51\u540E\u91CD\u5F00\u8FD9\u5F20\u5361\u5E26\u518D\u8BD5\u3002", "warning");
+    return;
+  }
+  const [file] = await pickFiles({ folder: false, accept: ".sav,.srm,.sa1,.fla,.eep,.bin" }) ?? [];
+  if (!file) return;
+  const bytes = new Uint8Array(await file.arrayBuffer());
+  const want = ram.bytes.length;
+  if (bytes.length !== want) {
+    banner(`\u300C${file.name}\u300D\u4E0D\u662F\u8FD9\u5F20\u5361\u5E26\u7684\u7535\u6C60\u5B58\u6863\uFF1A\u5B83 ${bytes.length} \u5B57\u8282\uFF0C\u8FD9\u5F20\u5361\u5E26\u7684\u5B58\u6863\u662F ${want} \u5B57\u8282\uFF08${SAVE_KIND[want] ?? "\u672A\u77E5\u7C7B\u578B"}\uFF09\u3002\u6A21\u62DF\u5668\u7684\u5FEB\u7167\uFF08.sgm / .ss0 / .state\uFF09\u4E0D\u662F\u7535\u6C60\u5B58\u6863\uFF0C\u8FDB\u4E0D\u6765\u3002`, "warning");
+    return;
+  }
+  const same = bytes.length === ram.bytes.length && bytes.every((b, i) => b === ram.bytes[i]);
+  if (same) {
+    say("\u5BFC\u5165\u7684\u548C\u73B0\u5728\u7684\u7535\u6C60\u5B58\u6863\u4E00\u5B57\u4E0D\u5DEE\uFF0C\u4EC0\u4E48\u90FD\u4E0D\u7528\u505A\u3002", 4e3);
+    return;
+  }
+  const pw = await ensurePassword("\u7535\u6C60\u5B58\u6863");
+  if (!pw) return;
+  const jar = CART_JAR(cartCore.platform, current.key);
+  const had = await getStore().files.occupied(await jamId(jar)).catch(() => false);
+  const ok = await confirmSheet(
+    "\u5BFC\u5165\u7535\u6C60\u5B58\u6863\uFF1F",
+    `\u300C${file.name}\u300D\uFF08${(bytes.length / 1024).toFixed(0)} KB\uFF0C${SAVE_KIND[want] ?? "\u672A\u77E5\u7C7B\u578B"}\uFF09\u4F1A\u6362\u6389\u8FD9\u5F20\u5361\u5E26\u73B0\u5728\u7684\u7535\u6C60\u5B58\u6863${had ? "\u3002\u73B0\u5728\u8FD9\u7F50\u5148\u79FB\u8FDB\u56DE\u6536\u7AD9\uFF0C\u5B58\u6863\u7BA1\u7406\u91CC\u80FD\u627E\u56DE" : ""}\u3002
+\u6362\u5B8C\u6E38\u620F\u4F1A\u91CD\u5F00\uFF0C\u4ECE\u6807\u9898\u753B\u9762\u9009\u300C\u7EE7\u7EED\u300D\u3002`,
+    "\u5BFC\u5165"
+  );
+  if (!ok) return;
+  logEvent("info", `\u7535\u6C60\u5B58\u6863\uFF1A\u5BFC\u5165\u300C${file.name}\u300D\uFF08${bytes.length} B\uFF09${had ? "\uFF0C\u65E7\u7F50\u8FDB\u56DE\u6536\u7AD9" : ""}`);
+  if (had) await deleteSaveDir(jar);
+  const r = await saveSaveDir(jar, /* @__PURE__ */ new Map([["save.bin", bytes]]), pw, { deferPush: inBackground() });
+  await session.cartLoad(bytes);
+  const now = session.saveRam();
+  cartSeqSeen = cartSeqSaved = now?.seq ?? cartSeqSeen;
+  say(`\u5BFC\u5165\u597D\u4E86${r.pushed ? "\u3001\u5DF2\u4F20\u4E0A\u4E91\u7AEF" : "\uFF08\u672C\u673A\u5DF2\u843D\uFF0C\u7A0D\u540E\u4F20\uFF09"}\uFF1A\u6E38\u620F\u5DF2\u91CD\u5F00\uFF0C\u4ECE\u6807\u9898\u753B\u9762\u9009\u300C\u7EE7\u7EED\u300D\u3002\u6E38\u620F\u8BA4\u4E0D\u51FA\u8FD9\u4EFD\u5B58\u6863\u7684\u8BDD\u4F1A\u5F53\u65B0\u6863\u5F00\u59CB\u3002`, 7e3);
+}
 async function cartTick(force) {
   if (!session || !current || !cartCore || jamBlocked || cartSaving) return;
   const ram = session.saveRam();
@@ -18282,6 +18342,9 @@ function openMenu() {
           openSaveManager({ ...saveManagerContext, only: current ? { title: current.title, key: current.key, discId: current.fp.id } : void 0 }).catch((e) => banner(errorText(e)));
         })
       ),
+      ...cartCore ? [h("div", { class: "menu-list" }, item("\u5BFC\u5165\u7535\u6C60\u5B58\u6863\u2026", "\u522B\u7684\u6A21\u62DF\u5668\u7684 .sav / .srm\uFF1A\u6362\u6389\u8FD9\u5F20\u5361\u5E26\u7684\u5B58\u6863\uFF0C\u6E38\u620F\u91CD\u5F00", () => {
+        importCartSave().catch((e) => banner(errorText(e)));
+      }))] : [],
       h("h3", {}, "\u8FD9\u53F0\u8BBE\u5907"),
       h(
         "div",
@@ -19633,6 +19696,11 @@ globalThis.kr = {
   padMask: () => session?.getMask("pad") ?? 0,
   /** 卡带核的电池存档内存大小（-1 = 这个核没有）。 */
   saveRam: () => session?.saveRam()?.bytes.length ?? -1,
+  saveRamHead: (n = 32) => {
+    const b = session?.saveRam()?.bytes;
+    return b ? Array.from(b.subarray(0, n), (x) => x.toString(16).padStart(2, "0")).join("") : null;
+  },
+  importCartSave: () => importCartSave(),
   /** GL 诊断自测：核在下一趟抽查帧里故意发一个非法调用（要用 ?glcheck=1 开盘）。 */
   glSelfTest: () => session?.core?._kr_glcheck_selftest?.(),
   /** 开发期：把这一刻存成 private/states/<name>（经开发服务器 POST /__dev/state/；之后 ?state=<name> 从这里起跑）。added 20261017 by Claude Opus 5.5 */
@@ -19705,4 +19773,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-87084c8675d2.mjs.map
+//# sourceMappingURL=kudsrocket-a9fb44ab30bb.mjs.map
