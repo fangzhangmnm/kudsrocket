@@ -306,11 +306,16 @@ static void save_tick(void) {   // 每 30 帧算一次哈希（128 KB 几十微�
   uint64_t h = fnv1a(p, n);
   if (h != g_save_hash) { g_save_hash = h; atomic_fetch_add(&g_save_seq, 1); }
 }
+static _Atomic long g_save_file_bytes = -1;   // 开盘时 /saves/game.sav 的大小（-1 = 没有）；和 save_size() 对不上就没读进去，页面据此报
+EMSCRIPTEN_KEEPALIVE double kr_save_file_bytes(void) { return (double)g_save_file_bytes; }
 static void load_save_file(void) {   // 页面 preRun 写在 /saves/game.sav 的那罐（没有就是新游戏）
   FILE *f = fopen("/saves/game.sav", "rb");
   if (!f) return;
-  uint8_t *p = kr_save_ptr();
-  if (p) { size_t n = fread(p, 1, SAVE_MAX, f); fprintf(stderr, "[kr] battery save loaded: %zu bytes\n", n); }
+  fseek(f, 0, SEEK_END); long len = ftell(f); fseek(f, 0, SEEK_SET);
+  g_save_file_bytes = len;
+  uint8_t *p = kr_save_ptr(); size_t want = save_size();
+  if (p && len >= 0 && (size_t)len == want) { size_t n = fread(p, 1, want, f); fprintf(stderr, "[kr] battery save loaded: %zu bytes\n", n); }
+  else fprintf(stderr, "[kr] battery save NOT loaded: file is %ld bytes, this cartridge's save is %zu\n", len, want);   // 不读半截：游戏会当新档；页面报横条
   fclose(f);
   g_save_hash = fnv1a(p ? p : (const uint8_t *)"", p ? save_size() : 0);   // 读进来的不算「变了」
 }
