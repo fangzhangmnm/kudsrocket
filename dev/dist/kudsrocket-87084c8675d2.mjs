@@ -2,7 +2,7 @@
 var define_CORE_DIRS_default = { ppsspp: "./dist/core-602016aa4429/", mgba: "./dist/core-mgba-13fbc9b68c66/" };
 
 // src/version.ts
-var APP_VERSION = "v0.2.3-2026-10-21";
+var APP_VERSION = "v0.2.4-2026-10-21";
 
 // src/app/config.ts
 var APP_ID = "kudsrocket";
@@ -5075,9 +5075,9 @@ function createStore(config) {
       throw new ReadOnlyFilesError(op);
   };
   let _disposed = false;
-  function rejectAfterDispose(obj) {
+  function rejectAfterDispose(obj2) {
     const out = {};
-    for (const [k, v] of Object.entries(obj))
+    for (const [k, v] of Object.entries(obj2))
       out[k] = typeof v === "function" ? (...a) => {
         if (_disposed)
           throw new StoreDisposedError(k);
@@ -7031,7 +7031,7 @@ function inspectMsalTokenCache(homeAccountId) {
       return null;
     const prefix = homeAccountId ? homeAccountId.toLowerCase() + "-" : "";
     const rts = [], ats = [];
-    const fmt = (v) => {
+    const fmt2 = (v) => {
       const n = Number(v);
       return Number.isFinite(n) && n > 0 ? new Date(n * 1e3).toISOString() : String(v ?? "-");
     };
@@ -7052,9 +7052,9 @@ function inspectMsalTokenCache(homeAccountId) {
       }
       const env = String(ent.environment ?? kl.split("-")[1] ?? "?");
       if (isRt)
-        rts.push(`env=${env} familyId=${String(ent.familyId ?? "-")} expiresOn=${fmt(ent.expiresOn)}`);
+        rts.push(`env=${env} familyId=${String(ent.familyId ?? "-")} expiresOn=${fmt2(ent.expiresOn)}`);
       else
-        ats.push(`env=${env} cachedAt=${fmt(ent.cachedAt)} expiresOn=${fmt(ent.expiresOn)} extExpiresOn=${fmt(ent.extendedExpiresOn)} target=${String(ent.target ?? "-").slice(0, 80)}`);
+        ats.push(`env=${env} cachedAt=${fmt2(ent.cachedAt)} expiresOn=${fmt2(ent.expiresOn)} extExpiresOn=${fmt2(ent.extendedExpiresOn)} target=${String(ent.target ?? "-").slice(0, 80)}`);
     }
     return { refreshTokens: rts, accessTokens: ats };
   } catch {
@@ -9422,10 +9422,10 @@ function parseSfo(b) {
   const dec = new TextDecoder();
   for (let n = 0; n < count && 20 + n * 16 + 16 <= b.length; n++) {
     const e = 20 + n * 16;
-    const keyOff = dv.getUint16(e, true), fmt = dv.getUint16(e + 2, true), len = dv.getUint32(e + 4, true), dataOff = dv.getUint32(e + 12, true);
+    const keyOff = dv.getUint16(e, true), fmt2 = dv.getUint16(e + 2, true), len = dv.getUint32(e + 4, true), dataOff = dv.getUint32(e + 12, true);
     const k0 = keyTable + keyOff;
     const key = dec.decode(b.subarray(k0, b.indexOf(0, k0)));
-    if (fmt === 516 || fmt === 4) out[key] = dec.decode(b.subarray(dataTable + dataOff, dataTable + dataOff + len)).replace(/\0+$/, "");
+    if (fmt2 === 516 || fmt2 === 4) out[key] = dec.decode(b.subarray(dataTable + dataOff, dataTable + dataOff + len)).replace(/\0+$/, "");
   }
   return out;
 }
@@ -10434,6 +10434,100 @@ function unzipSync(data, opts) {
   return files;
 }
 
+// src/app/format/migrate/index.ts
+var FORMAT = {
+  crumb: { major: 1, minor: 0, patch: 0 },
+  jam: { major: 1, minor: 0, patch: 0 },
+  recipe: { major: 1, minor: 0, patch: 0 },
+  tin: { major: 1, minor: 0, patch: 0 }
+};
+var MISSING_MAJOR = { crumb: 1, jam: 1, recipe: 1, tin: null };
+var MIN_MAJOR = { crumb: 1, jam: 1, recipe: 1, tin: 1 };
+var STAMP_AT = { crumb: "format", jam: "format", recipe: "format", tin: "self" };
+var LABEL = { crumb: "\u5FEB\u7167", jam: "\u5B58\u6863\u7F50", recipe: "\u8BFB\u76D8\u83DC\u8C31", tin: "\u997C\u5E72\u94C1\u76D2" };
+var STEPS = {};
+var FormatTooNewError = class extends Error {
+  component;
+  fileStamp;
+  appStamp;
+  constructor(component, fileStamp, appStamp) {
+    super(`\u8FD9\u4EFD${LABEL[component]}\u662F\u66F4\u65B0\u7248\u672C\u5199\u7684\uFF08\u683C\u5F0F ${fmt(fileStamp)}\uFF0C\u8FD9\u7248\u53EA\u8BA4\u5230 ${fmt(appStamp)}\uFF09\uFF1A\u8FD9\u7248\u6253\u4E0D\u5F00\uFF0C\u4E5F\u4E0D\u4F1A\u6539\u5B83`);
+    this.name = "FormatTooNewError";
+    this.component = component;
+    this.fileStamp = fileStamp;
+    this.appStamp = appStamp;
+  }
+};
+var FormatTooOldError = class extends Error {
+  component;
+  fileStamp;
+  constructor(component, fileStamp, minMajor) {
+    super(`\u8FD9\u4EFD${LABEL[component]}\u7684\u683C\u5F0F ${fmt(fileStamp)} \u6BD4\u8FD9\u7248\u80FD\u8BFB\u7684\u8FD8\u8001\uFF08\u6700\u8001 ${minMajor}\uFF09`);
+    this.name = "FormatTooOldError";
+    this.component = component;
+    this.fileStamp = fileStamp;
+  }
+};
+var fmt = (s) => `${s.major}.${s.minor}.${s.patch}`;
+var nat = (v) => typeof v === "number" && Number.isInteger(v) && v >= 0 ? v : null;
+var obj = (x) => x && typeof x === "object" && !Array.isArray(x) ? x : {};
+var stampObject = (c, json) => STAMP_AT[c] === "self" ? obj(json) : obj(obj(json).format);
+function readStamp(c, json) {
+  const o = stampObject(c, json);
+  const major = nat(o.v) ?? MISSING_MAJOR[c];
+  if (major === null) return null;
+  return { major, minor: nat(o.minor) ?? 0, patch: nat(o.patch) ?? 0 };
+}
+function compareStamp(file, mine) {
+  if (file.minor > mine.minor) return "newer-minor";
+  if (file.minor < mine.minor) return "older";
+  if (file.patch > mine.patch) return "newer-patch";
+  if (file.patch < mine.patch) return "older";
+  return "same";
+}
+function migrate(c, json, steps = STEPS) {
+  const stamp2 = readStamp(c, json);
+  if (!stamp2) throw new Error(`${c}: format stamp missing`);
+  const mine = FORMAT[c];
+  if (stamp2.major > mine.major) throw new FormatTooNewError(c, stamp2, mine);
+  if (stamp2.major < MIN_MAJOR[c]) throw new FormatTooOldError(c, stamp2, MIN_MAJOR[c]);
+  let cur = json, v = stamp2.major;
+  while (v < mine.major) {
+    const step = steps[c]?.[v];
+    if (!step) throw new Error(`migrate: no step registered for ${c} v${v} \u2192 v${v + 1} (format discipline violated: every major bump needs a STEP)`);
+    cur = step(cur);
+    v++;
+    if (stampObject(c, cur).v !== v) throw new Error(`migrate: step ${c} v${v - 1}\u2192v${v} did not set v`);
+  }
+  return { json: cur, stamp: stamp2, verdict: v !== stamp2.major ? "older" : compareStamp(stamp2, mine) };
+}
+function stampFields(c) {
+  const s = FORMAT[c];
+  return { v: s.major, minor: s.minor, patch: s.patch };
+}
+function checkFormat(c, json) {
+  const r = migrate(c, obj(json));
+  return { stamp: r.stamp, verdict: r.verdict };
+}
+var told = /* @__PURE__ */ new Set();
+function toldOnce(c) {
+  if (told.has(c)) return false;
+  told.add(c);
+  return true;
+}
+var newerMinorText = (c, file) => `\u8FD9\u4EFD${LABEL[c]}\u662F\u66F4\u65B0\u7248\u672C\u5199\u7684\uFF08\u683C\u5F0F ${fmt(file)}\uFF09\uFF1A\u8FD9\u7248\u6CA1\u6709\u7684\u529F\u80FD\u770B\u4E0D\u5230\uFF0C\u4E5F\u4E0D\u4F1A\u4E22\u3002`;
+
+// src/app/format/metas.ts
+function crumbMeta(m) {
+  return { format: stampFields("crumb"), thumb: m.thumbB64, at: m.at, auto: m.auto, fp: m.fp, t: m.title, ...m.ws?.length && m.wsz ? { ws: m.ws, wsz: m.wsz } : {} };
+}
+function jamMeta(jar, at) {
+  return { format: stampFields("jam"), jar, at };
+}
+function recipeMeta(at) {
+  return { format: stampFields("recipe"), at };
+}
+
 // src/app/save-scan.ts
 function groupSaveDirs(files) {
   const norm = files.map((f) => ({ ...f, path: f.path.replace(/\\/g, "/").replace(/^\/+/, "") }));
@@ -10468,11 +10562,11 @@ function sfoInfo(bytes) {
   const out = {};
   for (let i = 0; i < n && 20 + i * 16 + 16 <= bytes.length; i++) {
     const e = 20 + i * 16;
-    const kOff = v.getUint16(e, true), fmt = v.getUint16(e + 2, true), len = v.getUint32(e + 4, true), dOff = v.getUint32(e + 12, true);
+    const kOff = v.getUint16(e, true), fmt2 = v.getUint16(e + 2, true), len = v.getUint32(e + 4, true), dOff = v.getUint32(e + 12, true);
     let end = keyTab + kOff;
     while (end < bytes.length && bytes[end]) end++;
     const key = new TextDecoder().decode(bytes.subarray(keyTab + kOff, end));
-    if (fmt !== 516) continue;
+    if (fmt2 !== 516) continue;
     const s = new TextDecoder().decode(bytes.subarray(dataTab + dOff, Math.min(bytes.length, dataTab + dOff + len))).replace(/\0+$/, "").replace(/\s+/g, " ").trim();
     if (key === "TITLE") out.title = s;
     else if (key === "SAVEDATA_TITLE") out.saveTitle = s;
@@ -10522,11 +10616,12 @@ async function runImport(items, password, onEach, io) {
         const sealed = await io.get(id);
         if (!sealed) throw new Error("\u4E91\u7AEF\u5217\u8868\u91CC\u6709\uFF0C\u4F46\u8BFB\u4E0D\u5230");
         const { plain, meta } = await unsealBytes(password, sealed);
+        checkFormat("jam", meta);
         const cloud = unzipSync(plain);
         r = sameEntries(it.entries, cloud) ? { dir: it.dir, status: "same" } : { dir: it.dir, status: "differ", mineAt, cloudAt: meta.at, differ: differingFiles(it.entries, cloud) };
       } else {
         const zip = zipSync(Object.fromEntries(Object.entries(it.entries).map(([p, b]) => [p, [b, { mtime: new Date(it.mtimes[p] ?? mineAt) }]])), { level: 0 });
-        await io.put(id, await sealBytes(password, zip, { salt: io.salt, meta: { jar: { k: io.k, m: "shared", u: it.dir }, at: mineAt } }), it.dir);
+        await io.put(id, await sealBytes(password, zip, { salt: io.salt, meta: jamMeta({ k: io.k, m: "shared", u: it.dir }, mineAt) }), it.dir);
         const back = await io.get(id);
         if (!back) throw new Error("\u5199\u5B8C\u8BFB\u4E0D\u56DE\u6765");
         const { plain, meta } = await unsealBytes(password, back);
@@ -10555,7 +10650,7 @@ function exportSaveDirs(files, times, dirs) {
 
 // src/app/tin-format.ts
 var TIN_HEAD = "tin.json";
-var TIN_VERSION = 1;
+var TIN_VERSION = FORMAT.tin.major;
 var TIN_REFS_DIR = ".kudsrocket/references";
 var TinTooNewError = class extends Error {
   fileVersion;
@@ -10578,7 +10673,7 @@ var isRefEntry = (path) => path.startsWith(`${TIN_REFS_DIR}/`);
 var TEXTISH = /\.(json|txt|md|ini|csv)$/i;
 function encodeTin(t) {
   const entries = {};
-  entries[TIN_HEAD] = [new TextEncoder().encode(JSON.stringify({ ...t.head, v: TIN_VERSION })), { level: 6 }];
+  entries[TIN_HEAD] = [new TextEncoder().encode(JSON.stringify({ ...t.head, ...stampFields("tin") })), { level: 6 }];
   for (const path of [...t.files.keys()].sort()) {
     if (path === TIN_HEAD) continue;
     entries[path] = [t.files.get(path), { level: TEXTISH.test(path) ? 6 : 0 }];
@@ -10602,9 +10697,10 @@ function decodeTin(zip) {
   }
   if (typeof head !== "object" || head === null || typeof head.v !== "number") throw new NotATinError(`${TIN_HEAD} has no version`);
   if (head.v > TIN_VERSION) throw new TinTooNewError(head.v);
+  const verdict = compareStamp(readStamp("tin", head), FORMAT.tin);
   const files = /* @__PURE__ */ new Map();
   for (const [path, bytes] of Object.entries(raw)) if (path !== TIN_HEAD && !path.endsWith("/")) files.set(path, bytes);
-  return { head, files };
+  return { head, files, verdict };
 }
 function withRefs(files, refs) {
   const out = /* @__PURE__ */ new Map();
@@ -10709,14 +10805,25 @@ function saveTrace(identifier, bytes, opts = {}) {
   return put(identifier, bytes, opts);
 }
 async function saveRecipe(identifier, model, password, opts = {}) {
-  return put(identifier, await sealBytes(password, model, { salt: sessionSalt, compress: true, meta: { at: Date.now() } }), opts);
+  if (recipeTooNew.has(identifier)) {
+    console.warn("[recipe] not overwriting a recipe written by a newer app", identifier);
+    return { pushed: false };
+  }
+  return put(identifier, await sealBytes(password, model, { salt: sessionSalt, compress: true, meta: recipeMeta(Date.now()) }), opts);
 }
+var recipeTooNew = /* @__PURE__ */ new Set();
 async function readRecipe(identifier, password) {
   const sealed = await get2(identifier).catch(() => null);
   if (!sealed) return null;
   try {
-    return (await unsealBytes(password, sealed)).plain;
-  } catch {
+    const { plain, meta } = await unsealBytes(password, sealed);
+    checkFormat("recipe", meta);
+    return plain;
+  } catch (e) {
+    if (e instanceof FormatTooNewError) {
+      recipeTooNew.add(identifier);
+      console.warn("[recipe]", e.message);
+    }
     return null;
   }
 }
@@ -10743,7 +10850,7 @@ async function saveTin(identifier, zip, password, opts = {}) {
 }
 async function sealSnapshot(state2, meta, password) {
   const thumb = meta.thumb ? btoa(Array.from(meta.thumb, (b) => String.fromCharCode(b)).join("")) : void 0;
-  return sealBytes(password, state2, { salt: sessionSalt, compress: true, meta: { thumb, at: meta.at, auto: meta.auto, fp: meta.fp, t: meta.title, ...meta.ws?.length && meta.wsz ? { ws: meta.ws, wsz: meta.wsz } : {} } });
+  return sealBytes(password, state2, { salt: sessionSalt, compress: true, meta: crumbMeta({ thumbB64: thumb, at: meta.at, auto: meta.auto, fp: meta.fp, title: meta.title, ws: meta.ws, wsz: meta.wsz }) });
 }
 async function saveSnapshot(identifier, state2, meta, password, opts = {}) {
   return put(identifier, await sealSnapshot(state2, meta, password), opts);
@@ -10756,7 +10863,8 @@ async function loadSnapshot(identifier, password) {
   const sealed = await get2(identifier);
   if (!sealed) return null;
   const { plain, meta } = await unsealBytes(password, sealed);
-  return { state: plain, meta };
+  const { stamp: stamp2, verdict } = checkFormat("crumb", meta);
+  return { state: plain, meta, stamp: stamp2, verdict };
 }
 async function peekMeta(identifier, password) {
   const f = getStore().file(identifier, { mode: "existing" });
@@ -10896,6 +11004,16 @@ async function loadMemstick(k, password, ids, complete) {
           continue;
         }
         const { plain, meta } = await unsealBytes(password, sealed);
+        try {
+          checkFormat("jam", meta);
+        } catch (e) {
+          if (e instanceof FormatTooNewError) {
+            unreadable.add(id);
+            console.warn("[memstick]", e.message);
+            continue;
+          }
+          throw e;
+        }
         const entries = unzipSync(plain);
         const dir = meta.jar?.u ?? Object.keys(entries)[0]?.split("/")[0];
         if (!dir) {
@@ -10930,7 +11048,7 @@ async function saveSaveDir(jar, files, password, opts = {}) {
   const id = await jamId(jar);
   setLabel(id, describeJar(jar));
   const zip = zipSync(Object.fromEntries(files), { level: 0 });
-  return put(id, await sealBytes(password, zip, { salt: sessionSalt, meta: { jar, at: Date.now() } }), opts);
+  return put(id, await sealBytes(password, zip, { salt: sessionSalt, meta: jamMeta(jar, Date.now()) }), opts);
 }
 async function deleteSaveDir(jar) {
   const id = await jamId(jar);
@@ -12447,6 +12565,7 @@ var Snapshots = class {
       this.verbs.say(`\u300C${slotLabel(slot)}\u300D\u662F\u7A7A\u7684`);
       return false;
     }
+    if (got.verdict === "newer-minor" && toldOnce("crumb")) this.verbs.say(newerMinorText("crumb", got.stamp));
     if (!fpCompatible(got.meta.fp, this.disc.fp) && !await this.verbs.confirmMismatch()) return false;
     const before = this.session.readyForSnapshot() ? await this.session.snapshot().catch(() => null) : null;
     await this.session.restore(got.state);
@@ -14649,8 +14768,8 @@ var WpReferenceWindow = class extends HTMLElement {
     this._aPlay.disabled = missing;
     this._aSeek.disabled = !dur;
     this._aSeek.value = String(dur ? Math.round(t / dur * 1e3) : 0);
-    const fmt = (x) => `${Math.floor(x / 60)}:${String(Math.floor(x % 60)).padStart(2, "0")}`;
-    this._aTime.textContent = `${fmt(t)}${dur ? ` / ${fmt(dur)}` : ""}${a && a.playbackRate !== 1 ? ` \xB7 ${a.playbackRate}\xD7` : ""}${cur.play?.loop ? ` \xB7 ${this._labels.loop ?? "loop"}` : ""}`;
+    const fmt2 = (x) => `${Math.floor(x / 60)}:${String(Math.floor(x % 60)).padStart(2, "0")}`;
+    this._aTime.textContent = `${fmt2(t)}${dur ? ` / ${fmt2(dur)}` : ""}${a && a.playbackRate !== 1 ? ` \xB7 ${a.playbackRate}\xD7` : ""}${cur.play?.loop ? ` \xB7 ${this._labels.loop ?? "loop"}` : ""}`;
   }
   get live() {
     return this._deck.current?.kind === "live";
@@ -16001,7 +16120,7 @@ function extOfName(name) {
   return m ? m[1].toLowerCase() : "bin";
 }
 var fileName = (dir, position, ext) => `${dir}/r${position}.${ext}`;
-var STEPS = {};
+var STEPS2 = {};
 function isObj(x) {
   return !!x && typeof x === "object" && !Array.isArray(x);
 }
@@ -16012,7 +16131,7 @@ function migrateDeckManifest(json) {
     throw new DeckManifestTooNewError(v, DECK_MANIFEST_VERSION);
   let cur = src;
   while (v < DECK_MANIFEST_VERSION) {
-    const step = STEPS[v];
+    const step = STEPS2[v];
     if (!step)
       throw new Error(`migrateDeckManifest: no step registered for v${v} \u2192 v${v + 1}`);
     cur = step(cur);
@@ -16419,7 +16538,7 @@ function createGuideWindow(d) {
   let cardsDirty = false, viewDirty = false;
   let applying = false;
   let saving = Promise.resolve();
-  let told = false;
+  let told2 = false;
   function ensureEl() {
     if (el) return el;
     document.head.append(h("style", { id: "workbench-elements-css" }, workbench_elements_default));
@@ -16616,8 +16735,8 @@ function createGuideWindow(d) {
     }).then((v) => v ?? "cancel");
   }
   function tellIfNotSaved() {
-    if (told || phase === "ready" || phase === "loading") return;
-    told = true;
+    if (told2 || phase === "ready" || phase === "loading") return;
+    told2 = true;
     d.say(phase === "nopw" ? "\u53C2\u8003\u7A97\uFF1A\u8FD9\u6B21\u6CA1\u6709\u53E3\u4EE4\uFF0C\u91CC\u9762\u7684\u4E1C\u897F\u4E0D\u4F1A\u5B58" : `\u53C2\u8003\u7A97\u8FD9\u6B21\u53EA\u8BFB\uFF1A${why ?? "\u76D2\u5B50\u6CA1\u8BFB\u8FDB\u6765"}\u2014\u2014\u6539\u7684\u4E1C\u897F\u4E0D\u4F1A\u5B58`, 6e3);
   }
   function ensureLoaded() {
@@ -16663,6 +16782,10 @@ function createGuideWindow(d) {
       why = e instanceof TinTooNewError ? `\u76D2\u5B50\u662F\u65B0\u7248\u672C\u5199\u7684\uFF08\u683C\u5F0F ${e.fileVersion}\uFF09` : `\u76D2\u5B50\u574F\u4E86\uFF08${e instanceof Error ? e.message : String(e)}\uFF09`;
       d.log("warn", `\u53C2\u8003\u7A97\uFF1A${why}\uFF1B\u8FD9\u4E00\u5C40\u4E0D\u5199`);
       return;
+    }
+    if (tin.verdict === "newer-minor" && toldOnce("tin")) {
+      const st = readStamp("tin", tin.head);
+      if (st) note(newerMinorText("tin", st), 5e3);
     }
     head = { ...tin.head, k: g.k, t: g.title, ...g.id ? { id: g.id } : {}, ...g.ver ? { ver: g.ver } : {} };
     others = new Map([...tin.files].filter(([p]) => !isRefEntry(p)));
@@ -16732,7 +16855,7 @@ function createGuideWindow(d) {
       getPw = password;
       phase = "none";
       why = null;
-      told = false;
+      told2 = false;
       head = { v: TIN_VERSION };
       others = /* @__PURE__ */ new Map();
       loading = null;
@@ -19582,4 +19705,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-bf5d46248de6.mjs.map
+//# sourceMappingURL=kudsrocket-87084c8675d2.mjs.map
