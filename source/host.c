@@ -38,6 +38,7 @@
 #include <string.h>
 #include <math.h>
 #include <malloc.h>
+#include <unistd.h>   // sbrk（KR_NO_MALLINFO）
 #include <sys/stat.h>
 
 // ───────────── libretro-common 自带的默认 VFS 实现（在核的静态库里）─────────────
@@ -251,7 +252,11 @@ static _Atomic uint8_t *g_seen = NULL;
 static _Atomic uint64_t g_seen_bytes = 0;
 EMSCRIPTEN_KEEPALIVE double kr_disc_seen_bytes(void) { return (double)g_seen_bytes; }
 // 核堆用了多少（状态栏的「内存」；user 10-14「显示帧率，网络和内存」）：wasm 版没有 mmap，PPSSPP 的分配全走 malloc，mallinfo 就是全部。added 20261014 by Claude Opus 5.5
+#ifdef KR_NO_MALLINFO   // 换了分配器（KR_MALLOC=mimalloc）：没有 mallinfo，用堆顶代替（偏大，只是 dev 数字）
+EMSCRIPTEN_KEEPALIVE double kr_heap_used(void) { return (double)(uintptr_t)sbrk(0); }
+#else
 EMSCRIPTEN_KEEPALIVE double kr_heap_used(void) { struct mallinfo mi = mallinfo(); return (double)(unsigned)mi.uordblks; }
+#endif
 static void mark_seen(int64_t offset, int64_t len) {
   if (!g_seen || len <= 0) return;
   for (int64_t sec = offset / KR_SECTOR, last = (offset + len - 1) / KR_SECTOR; sec <= last; sec++) {

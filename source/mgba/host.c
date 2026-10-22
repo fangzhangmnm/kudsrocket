@@ -72,10 +72,12 @@ EMSCRIPTEN_KEEPALIVE int kr_stat_reads_waiting(void) { return (int)g_reads_waiti
 EMSCRIPTEN_KEEPALIVE double kr_disc_seen_bytes(void) { return (double)(g_rom ? g_rom_size : 0); }   // 卡带整条在内存里：挂机判定用不上它，给个常量
 EMSCRIPTEN_KEEPALIVE double kr_heap_used(void) { struct mallinfo mi = mallinfo(); return (double)(unsigned)mi.uordblks; }
 
-// ───────────── 画面：软件帧缓冲（核给 RGB565 / XRGB8888，这里统一成页面要的 XRGB8888）─────────────
+// ───────────── 画面：软件帧缓冲（核给 RGB565 / XRGB8888，这里一步转成画布要的 RGBA8888）─────────────
+// v0.2.2 起字节序就是 ImageData 的 R,G,B,A：页面 putImageData 前只 memcpy（以前页面每帧还要在主线程逐像素换 R / B；kr_frame_format 报 1 让页面认出来。
+//   PPSSPP 宿主没有这个导出 = 老的 XRGB8888，页面照旧自己换）。
 #define FRAME_MAX_W 256
 #define FRAME_MAX_H 224
-static uint32_t g_frame[FRAME_MAX_W * FRAME_MAX_H];   // XRGB8888（内存里按字节是 B,G,R,X），页面 putImageData 前自己换 R / B
+static uint32_t g_frame[FRAME_MAX_W * FRAME_MAX_H];   // RGBA8888（内存里按字节是 R,G,B,A；小端 uint32 = A<<24 | B<<16 | G<<8 | R）
 static atomic_int g_frame_w = 0, g_frame_h = 0;
 static atomic_uint g_frame_seq = 0;
 static enum retro_pixel_format g_pixfmt = RETRO_PIXEL_FORMAT_0RGB1555;
@@ -84,6 +86,7 @@ static atomic_int g_hw_active = 0;   // 永远 0：没有 GPU 路
 EMSCRIPTEN_KEEPALIVE int kr_hw_active(void) { return g_hw_active; }
 EMSCRIPTEN_KEEPALIVE int kr_desync_state(void) { return 0; }
 EMSCRIPTEN_KEEPALIVE uint32_t *kr_frame_ptr(void) { return g_frame; }
+EMSCRIPTEN_KEEPALIVE int kr_frame_format(void) { return 1; }   // 1 = RGBA8888（页面 memcpy 即可）；没有这个导出 = 0 = XRGB8888
 EMSCRIPTEN_KEEPALIVE int kr_frame_w(void) { return g_frame_w; }
 EMSCRIPTEN_KEEPALIVE int kr_frame_h(void) { return g_frame_h; }
 EMSCRIPTEN_KEEPALIVE unsigned kr_frame_seq(void) { return g_frame_seq; }
@@ -102,15 +105,19 @@ static void present_last(void) {
   if (!g_last_data) return;
   unsigned w = g_last_w > FRAME_MAX_W ? FRAME_MAX_W : g_last_w, h = g_last_h > FRAME_MAX_H ? FRAME_MAX_H : g_last_h;
   if (g_pixfmt == RETRO_PIXEL_FORMAT_XRGB8888) {
-    for (unsigned y = 0; y < h; y++) memcpy(g_frame + (size_t)y * w, (const uint8_t *)g_last_data + y * g_last_pitch, w * 4);
+    for (unsigned y = 0; y < h; y++) {
+      const uint32_t *src = (const uint32_t *)((const uint8_t *)g_last_data + y * g_last_pitch);
+      uint32_t *dst = g_frame + (size_t)y * w;
+      for (unsigned x = 0; x < w; x++) { uint32_t p = src[x]; dst[x] = 0xFF000000u | ((p & 0xFF) << 16) | (p & 0xFF00) | ((p >> 16) & 0xFF); }   // X,R,G,B → R,G,B,A
+    }
   } else {
     for (unsigned y = 0; y < h; y++) {
       const uint16_t *src = (const uint16_t *)((const uint8_t *)g_last_data + y * g_last_pitch);
       uint32_t *dst = g_frame + (size_t)y * w;
       if (g_pixfmt == RETRO_PIXEL_FORMAT_RGB565) {
-        for (unsigned x = 0; x < w; x++) { uint16_t p = src[x]; uint32_t r = (p >> 11) & 31, g = (p >> 5) & 63, b = p & 31; dst[x] = ((r << 3) | (r >> 2)) << 16 | ((g << 2) | (g >> 4)) << 8 | ((b << 3) | (b >> 2)); }
+        for (unsigned x = 0; x < w; x++) { uint16_t p = src[x]; uint32_t r = (p >> 11) & 31, g = (p >> 5) & 63, b = p & 31; dst[x] = 0xFF000000u | ((b << 3) | (b >> 2)) << 16 | ((g << 2) | (g >> 4)) << 8 | ((r << 3) | (r >> 2)); }
       } else {   // 0RGB1555
-        for (unsigned x = 0; x < w; x++) { uint16_t p = src[x]; uint32_t r = (p >> 10) & 31, g = (p >> 5) & 31, b = p & 31; dst[x] = ((r << 3) | (r >> 2)) << 16 | ((g << 3) | (g >> 2)) << 8 | ((b << 3) | (b >> 2)); }
+        for (unsigned x = 0; x < w; x++) { uint16_t p = src[x]; uint32_t r = (p >> 10) & 31, g = (p >> 5) & 31, b = p & 31; dst[x] = 0xFF000000u | ((b << 3) | (b >> 2)) << 16 | ((g << 3) | (g >> 2)) << 8 | ((r << 3) | (r >> 2)); }
       }
     }
   }
@@ -129,7 +136,7 @@ static void video_refresh(const void *data, unsigned width, unsigned height, siz
 static int16_t g_audio_ring[AUDIO_RING_FRAMES * 2];
 static _Atomic uint32_t g_audio_w = 0, g_audio_r = 0, g_audio_underruns = 0, g_audio_dropped = 0;
 static _Atomic int g_audio_live = 0;
-static _Atomic uint32_t g_audio_target = 1536, g_audio_max = 2662;   // ≈ 46 / 81 ms @ 32768（页面按 44.1k 换算成帧数再给，差 25%，先这样；见 core-session setAudioBuffer）
+static _Atomic uint32_t g_audio_target = 1536, g_audio_max = 2662;   // ≈ 46 / 81 ms @ 32768 的出厂值；页面 setAudioBuffer 按 kr_audio_rate() 换算成帧数再给（core-session.ts）
 static _Atomic int g_pacing = 2;   // 0 墙钟 / 1 顺滑 / 2 跟屏幕
 static double g_fps = 59.7275, g_rate = 32768.0;
 EMSCRIPTEN_KEEPALIVE int16_t *kr_audio_ring(void) { return g_audio_ring; }
@@ -254,8 +261,7 @@ static void capture_thumb(void) {
   int w = g_frame_w, h = g_frame_h;
   g_thumb_w = g_thumb_h = 0;
   if (w <= 0 || h <= 0) return;
-  const uint8_t *src = (const uint8_t *)g_frame;   // B,G,R,X → R,G,B,A
-  for (size_t i = 0, n = (size_t)w * h; i < n; i++) { g_thumb[i * 4] = src[i * 4 + 2]; g_thumb[i * 4 + 1] = src[i * 4 + 1]; g_thumb[i * 4 + 2] = src[i * 4]; g_thumb[i * 4 + 3] = 255; }
+  memcpy(g_thumb, g_frame, (size_t)w * h * 4);   // 帧缓冲已经是 R,G,B,A
   g_thumb_w = w; g_thumb_h = h;
 }
 static _Atomic int g_req_frame = 0; static _Atomic unsigned g_frame_shot_seq = 0;

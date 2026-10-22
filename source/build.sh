@@ -51,13 +51,21 @@ lto=""
 [ "${KR_LTO:-0}" = "1" ] && lto="-flto"
 prof="--profiling-funcs"
 [ "${KR_NO_SYMBOLS:-0}" = "1" ] && prof=""
+# 链接期 A/B 开关（10-21 user「看一下ppsspp还有什么优化。如果担心负优化的话可以写了之后做成开关」；量数在 ai-docs wishlist W-4 10-21 节）：
+#   KR_MALLOC=mimalloc   换分配器（emscripten 自带 dlmalloc / emmalloc / mimalloc）；不设 = emscripten 默认（dlmalloc）
+#   KR_GL_TRACK_ERRORS=0 关掉 emscripten GL 胶水自己记错误（glGetError 仍返回浏览器 GL 的真错误；只少了胶水层的簿记）
+extra=""
+[ -n "${KR_MALLOC:-}" ] && extra="$extra -sMALLOC=$KR_MALLOC"
+hostdef=""
+[ -n "${KR_MALLOC:-}" ] && [ "${KR_MALLOC}" != "dlmalloc" ] && hostdef="-DKR_NO_MALLINFO"   # mimalloc / emmalloc 没有 mallinfo（host.c kr_heap_used）
+[ "${KR_GL_TRACK_ERRORS:-1}" = "0" ] && extra="$extra -sGL_TRACK_ERRORS=0"
 
 # host.c 是 C：先用 emcc 编成 .o；核里是 C++，链接交给 em++ 才会带上 C++ 标准库
-emcc -c "$here/host.c" -o "$assets/host.o" -I"$PPSSPP_SRC/libretro/libretro-common/include" -O3 -pthread -msimd128 $lto
+emcc -c "$here/host.c" -o "$assets/host.o" -I"$PPSSPP_SRC/libretro/libretro-common/include" -O3 -pthread -msimd128 $lto $hostdef
 # shellcheck disable=SC2086
 em++ "$assets/host.o" "$assets/libppsspp_libretro.a" \
   "$ff/libavformat.a" "$ff/libavcodec.a" "$ff/libswscale.a" "$ff/libswresample.a" "$ff/libavutil.a" \
-  -O3 -pthread -msimd128 $lto $wrap $prof \
+  -O3 -pthread -msimd128 $lto $wrap $prof $extra \
   -sPROXY_TO_PTHREAD=1 -sPTHREAD_POOL_SIZE=12 \
   -sMODULARIZE=1 -sEXPORT_ES6=1 -sEXPORT_NAME=createKrCore -sENVIRONMENT=web,worker \
   -sINITIAL_MEMORY=768MB -sALLOW_MEMORY_GROWTH=0 \
