@@ -2,7 +2,7 @@
 var define_CORE_DIRS_default = { ppsspp: "./dist/core-602016aa4429/", mgba: "./dist/core-mgba-0eb982e32acb/" };
 
 // src/version.ts
-var APP_VERSION = "v0.2.6-2026-10-21";
+var APP_VERSION = "v0.2.7-2026-10-23";
 
 // src/app/config.ts
 var APP_ID = "kudsrocket";
@@ -14276,6 +14276,23 @@ function createStallDetector(opts) {
   };
 }
 
+// src/app/unlock-triage.ts
+var UNAVAILABLE_TRIES = 4;
+var MAYBE_LATER = /* @__PURE__ */ new Set(["DiscUnavailableError", "TitleReadTimeout", "EtagChangedError"]);
+function triageUnlockFailure(e, ctx) {
+  const name = e?.name ?? "";
+  if (!(ctx.isNetwork || MAYBE_LATER.has(name))) return { kind: "unsupported", why: whyText(e) };
+  if (ctx.isNetwork || !ctx.reachable) return { kind: "retry", counted: false };
+  return ctx.tries + 1 >= UNAVAILABLE_TRIES ? { kind: "unsupported", why: `\u5728\u7EBF\u65F6\u8FDE\u7740 ${UNAVAILABLE_TRIES} \u6B21\u90FD\u4ECE OneDrive \u62FF\u4E0D\u5230\u5B83\u3002\u4E0A\u4F20\u76D8\u4F20\u5230\u4E00\u534A\u5173\u6389\u9875\u9762\uFF0COneDrive \u4F1A\u7559\u4E0B\u8FD9\u6837\u4E00\u4E2A\u770B\u4E0D\u89C1\u7684\u534A\u622A\uFF0C\u8FC7\u4E00\u9635\u4F1A\u81EA\u5DF1\u6E05\u6389\u3002` } : { kind: "retry", counted: true };
+}
+function whyText(e) {
+  const x = e;
+  if (x?.name === "NotADiscError") return "\u8BFB\u4E0D\u5230\u76D8\u5934\uFF1A\u6587\u4EF6\u592A\u5C0F\uFF0C\u6216\u8005\u4E0D\u662F\u672C app \u505A\u7684\u76D8\u3002\u4E0A\u4F20\u76D8\u4F20\u5230\u4E00\u534A\u5173\u6389\u9875\u9762\u4E5F\u4F1A\u7559\u4E0B\u8FD9\u6837\u7684\u534A\u622A\u3002";
+  if (x?.name === "CorruptDiscError") return "\u76D8\u5934\u548C\u6587\u4EF6\u5927\u5C0F\u5BF9\u4E0D\u4E0A\uFF1A\u591A\u534A\u662F\u6CA1\u4F20\u5B8C\u7684\u76D8\uFF08\u4E0A\u4F20\u4E2D\u9014\u5173\u4E86\u9875\u9762\uFF09\uFF0C\u6216\u8005\u6587\u4EF6\u574F\u4E86\u3002";
+  if (x?.status === 404 || x?.status === 410) return "OneDrive \u8BF4\u8FD9\u4E2A\u6587\u4EF6\u4E0D\u5728\u4E86\u3002";
+  return `\u8BFB\u4E0D\u51FA\u6765\uFF08${x?.message ?? String(e)}\uFF09\u3002`;
+}
+
 // src/app/pip.ts
 var api = () => globalThis.documentPictureInPicture ?? null;
 var pipSupported = () => typeof api()?.requestWindow === "function";
@@ -17669,6 +17686,10 @@ var remembered = false;
 var rememberedTill = null;
 var dayText = (ms) => new Date(ms).toLocaleDateString("zh-CN", { month: "long", day: "numeric" });
 var triedUnlock = /* @__PURE__ */ new Set();
+var unsupported = /* @__PURE__ */ new Map();
+var unavailableTries = /* @__PURE__ */ new Map();
+var unlocking = /* @__PURE__ */ new Set();
+var UNLOCK_DEADLINE_MS = 45e3;
 var titleCache = null;
 var titleCacheFor = null;
 async function hydrateTitles() {
@@ -17762,16 +17783,16 @@ var gb = (n) => n ? `${(n / 2 ** 30).toFixed(2)} GB` : "";
 function renderLibrary() {
   const list = $("library");
   const discs = pantryItems.filter((it) => DISC_SUFFIXES.some((s) => it.identifier.toLowerCase().endsWith(s))).sort((a, b) => (b.lastModified ?? 0) - (a.lastModified ?? 0));
-  const locked = discs.some((d) => d.identifier.endsWith(".wafter") && !titles.has(d.identifier));
+  const locked = discs.some((d) => d.identifier.endsWith(".wafter") && !titles.has(d.identifier) && !unsupported.has(d.identifier));
   if (getPassword()) {
     if (titleCacheFor !== getPassword()) {
       hydrateTitles().catch(() => {
       });
     }
-    const pending2 = discs.filter((d) => d.identifier.endsWith(".wafter") && !cards.has(d.identifier) && !triedUnlock.has(d.identifier) && !(titleCache?.get(d.identifier) && (d.size == null || titleCache.get(d.identifier).size === d.size)));
+    const pending2 = discs.filter((d) => d.identifier.endsWith(".wafter") && !cards.has(d.identifier) && !unsupported.has(d.identifier) && !triedUnlock.has(d.identifier) && !(titleCache?.get(d.identifier) && (d.size == null || titleCache.get(d.identifier).size === d.size)));
     if (pending2.length) {
       for (const d of pending2) triedUnlock.add(d.identifier);
-      unlockTitles().catch((e) => console.warn("[unlock]", e));
+      unlockTitles(pending2.map((d) => d.identifier)).catch((e) => console.warn("[unlock]", e));
     }
   }
   const rows = [];
@@ -17786,6 +17807,21 @@ function renderLibrary() {
     ));
   }
   for (const d of discs) {
+    if (unsupported.has(d.identifier)) {
+      rows.push(h(
+        "div",
+        { class: "disc-row" },
+        h(
+          "button",
+          { class: "disc", onclick: () => {
+            unsupportedSheet(d.identifier).catch((e) => banner(errorText(e)));
+          } },
+          h("span", { class: "title" }, h("span", {}, stemOf2(d.identifier)), h("span", { class: "sub muted" }, "\u4E0D\u652F\u6301\u7684\u76D8")),
+          h("span", { class: "muted" }, gb(d.size))
+        )
+      ));
+      continue;
+    }
     const t = titles.get(d.identifier) ?? (d.identifier.endsWith(".wafter") ? null : stemOf2(d.identifier));
     const local2 = d.syncState !== "cloud-only";
     rows.push(h(
@@ -17820,6 +17856,7 @@ function renderLibrary() {
   $("unlock").hidden = !locked;
 }
 async function discMenu(identifier) {
+  if (unsupported.has(identifier)) return unsupportedSheet(identifier);
   const card = cards.get(identifier);
   const title = card?.title ?? (identifier.endsWith(".wafter") ? "\u8FD9\u5F20\u76D8" : stemOf2(identifier));
   const choice = await sheet((done) => [
@@ -17884,7 +17921,7 @@ async function offloadDisc(identifier) {
     banner(`\u6CA1\u79FB\u9664\uFF1A${errorText(e)}`);
   }
 }
-async function unlockTitles() {
+async function unlockTitles(ids) {
   let pw = getPassword();
   if (!pw) {
     pw = await askPassword("\u8F93\u5165\u53E3\u4EE4", "\u52A0\u5BC6\u76D8\u7684\u540D\u5B57\u8981\u53E3\u4EE4\u624D\u770B\u5F97\u89C1\u3002", { offerRemember: true });
@@ -17892,14 +17929,18 @@ async function unlockTitles() {
     adoptPassword(pw);
   }
   let wrong = 0, unavailable = 0;
-  const todo = pantryItems.filter((it) => it.identifier.endsWith(".wafter") && !cards.has(it.identifier)).map((it) => it.identifier);
+  const gaveUp = [];
+  const todo = (ids ?? pantryItems.filter((it) => it.identifier.endsWith(".wafter")).map((it) => it.identifier)).filter((id) => !cards.has(id) && !unsupported.has(id) && !unlocking.has(id));
+  for (const id of todo) unlocking.add(id);
   let next = 0;
   const worker = async () => {
     while (next < todo.length) {
       const id = todo[next++];
       try {
-        const card = await inspectPantry(id);
+        const card = await withDeadline(inspectPantry(id), UNLOCK_DEADLINE_MS);
+        if (card === "timeout") throw Object.assign(new Error(`${UNLOCK_DEADLINE_MS / 1e3} \u79D2\u6CA1\u8BFB\u51FA\u6765`), { name: "TitleReadTimeout" });
         if (card) {
+          unavailableTries.delete(id);
           cards.set(id, card);
           renderLibrary();
           const size = pantryItems.find((it) => it.identifier === id)?.size ?? 0;
@@ -17911,22 +17952,49 @@ async function unlockTitles() {
           logEvent("warn", `\u76D8\u540D\uFF1A${id} \u8FD9\u4E2A\u53E3\u4EE4\u6253\u4E0D\u5F00`);
         }
       } catch (e) {
-        logEvent("warn", `\u76D8\u540D\uFF1A${id} \u6CA1\u8BFB\u5230\u2014\u2014${errorText(e).slice(0, 200)}`);
-        if (e instanceof DiscUnavailableError || isNetworkError(e)) {
+        const tries = unavailableTries.get(id) ?? 0;
+        const v = triageUnlockFailure(e, { reachable: auth.isSignedIn() && navigator.onLine, isNetwork: isNetworkError(e), tries });
+        if (v.kind === "unsupported") {
+          unsupported.set(id, v.why);
+          unavailableTries.delete(id);
+          gaveUp.push(id);
+          logEvent("warn", `\u76D8\u540D\uFF1A${id} \u6807\u6210\u4E0D\u652F\u6301\u7684\u76D8\u2014\u2014${errorText(e).slice(0, 200)}`);
+        } else {
+          if (v.counted) unavailableTries.set(id, tries + 1);
           unavailable++;
           triedUnlock.delete(id);
-        } else banner(`\u8BFB\u540D\u5B57\u5931\u8D25\uFF1A${errorText(e)}`, "warning");
+          logEvent("warn", `\u76D8\u540D\uFF1A${id} \u6CA1\u8BFB\u5230${v.counted ? `\uFF08\u7B2C ${tries + 1} \u6B21\uFF09` : ""}\u2014\u2014${errorText(e).slice(0, 200)}`);
+        }
+      } finally {
+        unlocking.delete(id);
       }
     }
   };
   await Promise.all(Array.from({ length: Math.min(4, todo.length) }, worker));
   if (wrong) say(`${wrong} \u5F20\u76D8\u8FD9\u4E2A\u53E3\u4EE4\u6253\u4E0D\u5F00`);
   if (unavailable) {
-    say(`${unavailable} \u5F20\u76D8\u7684\u540D\u5B57\u8FD9\u6B21\u6CA1\u8BFB\u5230\uFF08\u79BB\u7EBF / \u7F51\u7EDC\uFF1F\uFF09\uFF0C${unlockRetryMs / 1e3} \u79D2\u540E\u518D\u8BD5`, 5e3);
+    if (unlockRetryMs === 15e3) say(`${unavailable} \u5F20\u76D8\u7684\u540D\u5B57\u8FD9\u6B21\u6CA1\u8BFB\u5230\uFF0C\u4F1A\u81EA\u5DF1\u518D\u8BD5`, 5e3);
     clearTimeout(unlockRetryTimer);
     unlockRetryTimer = window.setTimeout(() => renderLibrary(), unlockRetryMs);
     unlockRetryMs = Math.min(unlockRetryMs * 2, 6e4);
   } else unlockRetryMs = 15e3;
+  if (gaveUp.length) {
+    renderLibrary();
+    say(`${gaveUp.length} \u5F20\u76D8\u8BFB\u4E0D\u51FA\u6765\uFF0C\u6807\u6210\u300C\u4E0D\u652F\u6301\u7684\u76D8\u300D\u4E86\uFF08\u70B9\u5F00\u770B\u4E3A\u4EC0\u4E48\uFF09`, 6e3);
+  }
+}
+async function unsupportedSheet(identifier) {
+  const again = await sheet((done) => [
+    h("h2", {}, "\u4E0D\u652F\u6301\u7684\u76D8"),
+    h("p", {}, `${identifier.split("/").pop()}\uFF1A${unsupported.get(identifier) ?? ""}`),
+    h("p", { class: "muted" }, "\u8FD9\u4E00\u9875\u4E0D\u4F1A\u518D\u81EA\u52A8\u8BFB\u5B83\uFF0C\u4E5F\u4E0D\u4F1A\u518D\u5F39\u9519\u3002\u770B\u5F97\u89C1\u7684\u574F\u6587\u4EF6\u5728 OneDrive \u91CC\u5220\uFF1B\u770B\u4E0D\u89C1\u7684\u662F\u6CA1\u4F20\u5B8C\u7684\u534A\u622A\uFF0COneDrive \u8FC7\u4E00\u9635\u4F1A\u81EA\u5DF1\u6E05\u6389\u3002"),
+    h("div", { class: "row" }, h("button", { onclick: () => done(null) }, "\u5173\u95ED"), h("button", { class: "primary", onclick: () => done(true) }, "\u518D\u8BFB\u4E00\u6B21"))
+  ]);
+  if (!again) return;
+  unsupported.delete(identifier);
+  unavailableTries.delete(identifier);
+  triedUnlock.delete(identifier);
+  renderLibrary();
 }
 var appState = () => getStore().collection("synced-app-state");
 function lastPlayed() {
@@ -19618,7 +19686,7 @@ var toolErr = (e) => {
 async function uploadWafer(file) {
   const label = await readDiscLabel({ size: file.size, read: async (o, n) => new Uint8Array(await file.slice(o, o + n).arrayBuffer()) });
   const twin = [...cards.entries()].find(([, c]) => c.fp.size === file.size && (c.fp.id ?? null) === (label?.id ?? null) && (c.fp.v ?? null) === (label?.version ?? null));
-  const locked = pantryItems.filter((it) => it.identifier.endsWith(".wafter") && !cards.has(it.identifier)).length;
+  const locked = pantryItems.filter((it) => it.identifier.endsWith(".wafter") && !cards.has(it.identifier) && !unsupported.has(it.identifier)).length;
   if (twin && !await confirmSheet("\u98DF\u54C1\u67DC\u91CC\u597D\u50CF\u5DF2\u7ECF\u6709\u8FD9\u5F20\u76D8\u4E86", `\u300C${twin[1].title}\u300D\uFF08${stemOf2(twin[0])}\uFF09\u76D8\u53F7\u3001\u7248\u672C\u3001\u5927\u5C0F\u90FD\u4E00\u6837\u3002\u8FD8\u8981\u518D\u4F20\u4E00\u4EFD\u5417\uFF1F`, "\u8FD8\u662F\u4F20", "\u4E0D\u4F20")) return;
   if (!twin && locked) say(`\u6709 ${locked} \u5F20\u76D8\u8FD8\u6CA1\u8F93\u53E3\u4EE4\u770B\u540D\u5B57\uFF0C\u6CA1\u6CD5\u6BD4\u5BF9\u662F\u4E0D\u662F\u4F20\u8FC7\u4E86`, 6e3);
   const pw = await askNewPassword();
@@ -20009,4 +20077,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-53a652d5ed3f.mjs.map
+//# sourceMappingURL=kudsrocket-dea1d1b72fae.mjs.map
