@@ -2,7 +2,7 @@
 var define_CORE_DIRS_default = { ppsspp: "./dist/core-602016aa4429/", mgba: "./dist/core-mgba-0eb982e32acb/" };
 
 // src/version.ts
-var APP_VERSION = "v0.2.8-2026-10-24";
+var APP_VERSION = "v0.2.9-2026-10-24";
 
 // src/app/config.ts
 var APP_ID = "kudsrocket";
@@ -14300,6 +14300,12 @@ function whyText(e) {
 }
 
 // src/app/pip.ts
+var FIT_SLACK_PX = 2;
+function fitDelta(inner, picture) {
+  if (inner.h > inner.w || picture.w <= 0 || picture.h <= 0) return null;
+  const dw = Math.round(picture.w) - inner.w, dh = Math.round(picture.h) - inner.h;
+  return dw < -FIT_SLACK_PX || dh < -FIT_SLACK_PX ? { dw: Math.min(dw, 0), dh: Math.min(dh, 0) } : null;
+}
 var api = () => globalThis.documentPictureInPicture ?? null;
 var pipSupported = () => typeof api()?.requestWindow === "function";
 function copyStyles(from, to) {
@@ -14341,8 +14347,10 @@ function createPip(stage, host) {
     const a = api();
     if (!a || win) return false;
     const r = stage.getBoundingClientRect();
+    const pic = host.picture();
+    const ar = pic && pic.width > 0 && pic.height > 0 ? pic.width / pic.height : 480 / 272;
     const width = Math.round(Math.min(Math.max(r.width / 2, 320), 720));
-    const w = await a.requestWindow({ width, height: Math.round(width * 272 / 480) });
+    const w = await a.requestWindow({ width, height: Math.round(width / ar) });
     const d = w.document;
     d.title = home.title;
     copyStyles(home, d);
@@ -14355,6 +14363,27 @@ function createPip(stage, host) {
     d.body.append(stage);
     win = w;
     w.addEventListener("pagehide", restore);
+    let fitPending = false;
+    const measure = () => {
+      const p = host.picture();
+      fitPending = !!p && fitDelta({ w: w.innerWidth, h: w.innerHeight }, { w: p.width, h: p.height }) !== null;
+    };
+    const fit = () => {
+      if (!fitPending) return;
+      fitPending = false;
+      const p = host.picture();
+      const dd = p && fitDelta({ w: w.innerWidth, h: w.innerHeight }, { w: p.width, h: p.height });
+      if (!dd) return;
+      try {
+        w.resizeBy(dd.dw, dd.dh);
+      } catch (e) {
+        console.warn("[pip] fit", e);
+      }
+    };
+    w.addEventListener("resize", measure);
+    w.addEventListener("pointerup", fit, true);
+    w.addEventListener("keyup", fit, true);
+    measure();
     host.onEnter(w);
     return true;
   };
@@ -17583,6 +17612,10 @@ var pip = createPip(stageEl, {
     logEvent("info", "\u5C0F\u7A97\uFF1A\u753B\u9762\u642C\u56DE\u9875\u9762");
   },
   // 这一页看着像空标签页，容易被顺手关掉：写明关了会怎样（user 10-24「小窗的时候父窗口关了不应该猝死」）
+  picture: () => {
+    const c = stageEl.querySelector("canvas:not([hidden])");
+    return c ? c.getBoundingClientRect() : null;
+  },
   placeholder: () => h("div", { class: "pip-placeholder" }, h("p", {}, "\u753B\u9762\u5728\u5C0F\u7A97\u91CC"), h("p", { class: "hint" }, "\u5173\u6389\u8FD9\u4E2A\u6807\u7B7E\u9875\uFF0C\u5C0F\u7A97\u548C\u6E38\u620F\u4F1A\u4E00\u8D77\u5173\u3002"), h("button", { class: "primary", onclick: () => pip.close() }, "\u6536\u56DE"))
 });
 addEventListener("beforeunload", (e) => {
@@ -20089,4 +20122,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-8d5c315a453f.mjs.map
+//# sourceMappingURL=kudsrocket-4616612bb613.mjs.map
