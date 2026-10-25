@@ -2,7 +2,7 @@
 var define_CORE_DIRS_default = { ppsspp: "./dist/core-602016aa4429/", mgba: "./dist/core-mgba-0eb982e32acb/" };
 
 // src/version.ts
-var APP_VERSION = "v0.2.7-2026-10-23";
+var APP_VERSION = "v0.2.8-2026-10-24";
 
 // src/app/config.ts
 var APP_ID = "kudsrocket";
@@ -11806,6 +11806,12 @@ function setPipActive(on) {
 }
 var inForeground = () => document.visibilityState === "visible" || pipActive;
 var inBackground = () => !inForeground();
+var purposeAt = -Infinity;
+function reloadOnPurpose() {
+  purposeAt = performance.now();
+  location.reload();
+}
+var leavingOnPurpose = () => performance.now() - purposeAt < 3e3;
 
 // src/app/slot-writer.ts
 function createSlotWriter(d) {
@@ -17473,19 +17479,19 @@ async function runFactoryReset(opts = {}) {
       const names = [...storeReport.blockedDatabases, ...blocked].join(" ");
       logEvent("warn", `\u8FD8\u539F\u51FA\u5382\uFF1A${totalBlocked} \u4E2A\u5E93\u88AB\u5360\u7740\u6CA1\u5220\u6389\uFF08${names}\uFF09\uFF1B\u5173\u6389\u522B\u7684\u6807\u7B7E\u9875\u518D\u505A\u4E00\u6B21`);
       banner(`\u8FD8\u539F\u51FA\u5382\u505A\u4E86\u4E00\u534A\uFF1A${totalBlocked} \u4E2A\u5E93\u88AB\u522B\u7684\u6807\u7B7E\u9875\u5360\u7740\uFF0C\u6CA1\u5220\u6389\uFF08${names}\uFF09\u3002\u5173\u6389\u8FD9\u4E2A app \u7684\u5176\u4ED6\u6807\u7B7E\u9875\u518D\u505A\u4E00\u6B21\uFF08\u53EF\u4EE5\u91CD\u590D\u505A\uFF09\u3002\u9875\u9762\u4F1A\u91CD\u65B0\u8F7D\u5165\u3002`, "warning");
-      setTimeout(() => location.reload(), 2500);
+      setTimeout(() => reloadOnPurpose(), 2500);
       return;
     }
     const residue = scan.databases.length + scan.localStorageKeys + (await listOwnDbs()).length + deviceKvCount();
     note(residue === 0 ? `\u8FD8\u539F\u51FA\u5382\u5B8C\u6210\uFF1A\u5220\u4E86 ${storeReport.deletedDatabases.length + deleted.length} \u4E2A\u5E93\u3001${storeReport.localStorageKeysRemoved + ls} \u4E2A\u952E\u3001${cachesRemoved} \u4E2A\u7F13\u5B58\u3002\u91CD\u65B0\u8F7D\u5165\u2026` : `\u8FD8\u539F\u51FA\u5382\u505A\u5B8C\u4E86\uFF0C\u4F46\u8FD8\u5269 ${residue} \u5904\u6B8B\u7559\uFF1B\u91CD\u65B0\u8F7D\u5165\u540E\u518D\u505A\u4E00\u6B21\u3002`, 4e3);
-    setTimeout(() => location.reload(), 1200);
+    setTimeout(() => reloadOnPurpose(), 1200);
   } catch (e) {
     if (e?.name === "WipeConsentError") {
       banner("\u8F93\u5165\u7684\u5B57\u4E0D\u5BF9\uFF0C\u4EC0\u4E48\u90FD\u6CA1\u505A\u3002", "warning");
       return;
     }
     banner(`\u8FD8\u539F\u51FA\u5382\u51FA\u9519\uFF1A${errorText(e)}\u3002\u9875\u9762\u4F1A\u91CD\u65B0\u8F7D\u5165\u3002`);
-    setTimeout(() => location.reload(), 1500);
+    setTimeout(() => reloadOnPurpose(), 1500);
   }
 }
 
@@ -17537,13 +17543,13 @@ function showUpdate() {
   close.addEventListener("click", () => {
     el.hidden = true;
   });
-  el.replaceChildren(h("span", {}, "\u6709\u65B0\u7248\u672C"), h("button", { class: "primary", onclick: () => location.reload() }, session ? "\u91CD\u65B0\u8F7D\u5165\uFF08\u4F1A\u9000\u51FA\u5F53\u524D\u8FD9\u5F20\u76D8\uFF09" : "\u91CD\u65B0\u8F7D\u5165"), close);
+  el.replaceChildren(h("span", {}, "\u6709\u65B0\u7248\u672C"), h("button", { class: "primary", onclick: () => reloadOnPurpose() }, session ? "\u91CD\u65B0\u8F7D\u5165\uFF08\u4F1A\u9000\u51FA\u5F53\u524D\u8FD9\u5F20\u76D8\uFF09" : "\u91CD\u65B0\u8F7D\u5165"), close);
   el.hidden = false;
 }
 async function forceUpdate() {
   if (!await confirmSheet("\u5F3A\u5236\u66F4\u65B0\uFF1F", `\u73B0\u5728\u662F ${APP_VERSION}\u3002\u4F1A\u6E05\u6389\u8FD9\u4E2A app \u81EA\u5DF1\u7684\u79BB\u7EBF\u58F3\u7F13\u5B58\u5E76\u91CD\u65B0\u8F7D\u5165${session ? "\uFF08\u4F1A\u9000\u51FA\u5F53\u524D\u8FD9\u5F20\u76D8\uFF09" : ""}\uFF1B\u5B58\u6863\u3001\u5FEB\u7167\u3001\u767B\u5F55\u72B6\u6001\u90FD\u4E0D\u52A8\u3002${inFlight() ? "\u26A0 \u6709\u4E1C\u897F\u6B63\u5728\u4F20\uFF0C\u91CD\u65B0\u8F7D\u5165\u4F1A\u6253\u65AD\u5B83\uFF08\u5FEB\u7167\u4F1A\u7559\u5728\u672C\u673A\u7B49\u7EED\u4F20\uFF1B\u4E0A\u4F20\u4E2D\u7684\u76D8\u5F97\u91CD\u4F20\uFF09\u3002" : ""}`, "\u66F4\u65B0")) return;
   await clearOwnShell();
-  location.reload();
+  reloadOnPurpose();
 }
 var session = null;
 var current = null;
@@ -17576,7 +17582,14 @@ var pip = createPip(stageEl, {
     renderToolbar();
     logEvent("info", "\u5C0F\u7A97\uFF1A\u753B\u9762\u642C\u56DE\u9875\u9762");
   },
-  placeholder: () => h("div", { class: "pip-placeholder" }, h("p", {}, "\u753B\u9762\u5728\u5C0F\u7A97\u91CC"), h("button", { class: "primary", onclick: () => pip.close() }, "\u6536\u56DE"))
+  // 这一页看着像空标签页，容易被顺手关掉：写明关了会怎样（user 10-24「小窗的时候父窗口关了不应该猝死」）
+  placeholder: () => h("div", { class: "pip-placeholder" }, h("p", {}, "\u753B\u9762\u5728\u5C0F\u7A97\u91CC"), h("p", { class: "hint" }, "\u5173\u6389\u8FD9\u4E2A\u6807\u7B7E\u9875\uFF0C\u5C0F\u7A97\u548C\u6E38\u620F\u4F1A\u4E00\u8D77\u5173\u3002"), h("button", { class: "primary", onclick: () => pip.close() }, "\u6536\u56DE"))
+});
+addEventListener("beforeunload", (e) => {
+  if (pip.active && session && !leavingOnPurpose()) {
+    e.preventDefault();
+    e.returnValue = "";
+  }
 });
 async function togglePip() {
   if (pip.active) {
@@ -17602,13 +17615,12 @@ function renderPipBar(on) {
   if (!on) return;
   stageEl.append(h(
     "div",
-    { id: "pip-bar" },
+    { id: "pip-bar", class: "esc-keys" },
     toolButton("floppy-disk", "\u5B58\u5FEB\u7167\uFF08F2 \u90A3\u4E00\u683C\uFF09", () => {
       const t = quickSlot(true);
       if (t) saveTo(t);
     }, "\u5FEB\u7167"),
-    toolButton("keyboard", "\u5C4F\u5E55\u8F6F\u952E", toggleSoftKeys, "\u8F6F\u952E"),
-    toolButton("picture-in-picture", "\u6536\u56DE\u5230\u9875\u9762", () => pip.close(), "\u6536\u56DE")
+    toolButton("keyboard", "\u5C4F\u5E55\u8F6F\u952E", toggleSoftKeys, "\u8F6F\u952E")
   ));
 }
 var softAnalog = { x: 0, y: 0 };
@@ -18932,7 +18944,7 @@ function pipButton() {
   return b;
 }
 function renderFsBar() {
-  const bar = document.getElementById("fs-bar") ?? h("div", { id: "fs-bar" });
+  const bar = document.getElementById("fs-bar") ?? h("div", { id: "fs-bar", class: "esc-keys" });
   bar.replaceChildren(shotButton(), snapshotButton("fs-snapshot-btn"), toolButton("menu", "\u83DC\u5355\uFF08\u9000\u51FA\u5168\u5C4F\u5728\u8FD9\u91CC\uFF09", openMenu, "\u83DC\u5355"));
   if (!bar.isConnected) stageEl.append(bar);
 }
@@ -19167,7 +19179,7 @@ function openStallSheet() {
       } }, h("span", {}, "\u5B58\u5FEB\u7167\u62A2\u6551"), h("span", { class: "muted" }, "\u6838\u8FD8\u80FD\u7B54\u5C31\u5B58\u6210\u65B0\u7684\u624B\u52A8\u683C")),
       h("button", { class: "menu-item", onclick: () => {
         done();
-        location.reload();
+        reloadOnPurpose();
       } }, h("span", {}, "\u91CD\u65B0\u8F7D\u5165"), h("span", { class: "muted" }, "\u4E3B\u9875\u70B9\u300C\u7EE7\u7EED\u300D\u8BFB\u6700\u65B0\u5FEB\u7167\uFF08\u5207\u51FA\u53BB\u65F6\u5B58\u8FC7\u81EA\u52A8\u5FEB\u7167\uFF09")),
       h("button", { class: "menu-item", onclick: () => {
         done();
@@ -19222,7 +19234,7 @@ async function quit() {
   ], { dismissable: false }).then((v) => {
     if (v === "leave") {
       leaveNow = true;
-      location.reload();
+      reloadOnPurpose();
     }
   });
   try {
@@ -19235,7 +19247,7 @@ async function quit() {
   } finally {
     off();
   }
-  if (!leaveNow) location.reload();
+  if (!leaveNow) reloadOnPurpose();
 }
 var scheme = PSP_SCHEME;
 var overrides = parseOverrides(bindingsText(scheme.core));
@@ -20077,4 +20089,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-dea1d1b72fae.mjs.map
+//# sourceMappingURL=kudsrocket-8d5c315a453f.mjs.map

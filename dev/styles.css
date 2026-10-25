@@ -61,12 +61,16 @@ button:disabled { opacity: .4; cursor: default; }
    旧的 --u = 11vmin，竖屏中间一排比十字键和四键之间的空宽，压在十字键 / × 上）。各种屏都验过：private/tests/softkey-layout.ts。
    横：键盖在画面两侧。左右各一列 = 肩键（顶）· 摇杆 · 十字键 / 四键（底），中间一排在底部正中 → 宽要 ≥ 14.5u、高要 ≥ 7.4u。
    竖：键在画面下面那块。自下而上 = 中间一排 · 十字键 / 四键 · 摇杆 · 肩键（宽 ≥ 9.6u、画面下面那块高 ≥ 7.7u）。72px 封顶（大屏不让键变成盘子）。 */
-.softkeys { position: absolute; inset: 0; pointer-events: none; --u: min(100cqh / 7.4, 100cqw / 14.5, 72px); }
-@container (orientation: portrait) { .softkeys { --u: min((100cqh - 100cqw * 272 / 480) / 7.7, 100cqw / 9.6, 72px); } }
+.softkeys, .esc-keys, #stage > #update, #stage > #note { --u: min(100cqh / 7.4, 100cqw / 14.5, 72px); }   /* 逃生键 / 全屏时的提示跟软键同一个单位（都是 #stage 的孩子） */
+@container (orientation: portrait) { .softkeys, .esc-keys, #stage > #update, #stage > #note { --u: min((100cqh - 100cqw * 272 / 480) / 7.7, 100cqw / 9.6, 72px); } }
+.softkeys { position: absolute; inset: 0; pointer-events: none; }
 .softkeys[hidden] { display: none; }
 .softkeys .pk, .softkeys .dpad { pointer-events: auto; touch-action: none; position: absolute; }
 .pk { display: grid; place-items: center; color: rgba(255,255,255,.75); background: rgba(255,255,255,.10); border: 1.5px solid rgba(255,255,255,.28); font: 600 calc(var(--u) * .28)/1 system-ui, sans-serif; letter-spacing: .04em; }
 .pk.on { background: rgba(122,162,255,.40); border-color: rgba(122,162,255,.9); }
+/* 亮画面上也认得出（v0.2.8：10-24 小尺寸截图里白底画面上肩键 / 逃生键几乎隐形）：外面一圈淡暗边 + 字带暗光晕；暗画面上看不出差别 */
+.pk, .dpad .arm, .softkeys .stick, .softkeys .stick .knob, .esc-keys .icon-btn { box-shadow: 0 0 0 1px rgba(0,0,0,.3); }
+.pk, .esc-keys .icon-btn .label { text-shadow: 0 0 3px rgba(0,0,0,.85), 0 0 1px rgba(0,0,0,.9); }
 .shoulder { top: calc(var(--u) * .3); width: calc(var(--u) * 2.1); height: calc(var(--u) * .8); border-radius: calc(var(--u) * .3); }
 .shoulder.l { left: calc(var(--u) * .3); }
 .shoulder.r { right: calc(var(--u) * .3); }
@@ -224,11 +228,24 @@ body:has(#game:not([hidden])) > #banners { top: calc(env(safe-area-inset-top) + 
 body:has(#game:not([hidden])) > #update, #stage > #update { left: 50%; right: auto; transform: translateX(-50%); bottom: auto; width: max-content; max-width: calc(100% - 24px); }
 body:has(#game:not([hidden])) > #update { top: calc(env(safe-area-inset-top) + var(--tool) + 6px); }
 body:has(#game:not([hidden])) > #note { top: calc(env(safe-area-inset-top) + var(--tool) + 64px); bottom: auto; }
-/* 全屏浮条（截图 · 快照 · 菜单）：只在全屏显示（.fs-test 给无头测试用）；提示 / 有新版本往下让。added 20261015 by Claude Fable 5.1 */
-#fs-bar { display: none; position: absolute; top: calc(env(safe-area-inset-top) + 6px); left: 50%; transform: translateX(-50%); gap: 2px; padding: 2px 4px; border-radius: 10px; background: rgba(10,10,10,.78); border: 1px solid #222; z-index: 6; }
-#stage:fullscreen #fs-bar, #stage.fs-test #fs-bar { display: flex; }
-#stage > #update { top: calc(env(safe-area-inset-top) + 52px); }
-#stage > #note { top: calc(env(safe-area-inset-top) + 110px); bottom: auto; }
+/* 逃生键 = 软键的一部分（全屏 #fs-bar：截图 · 快照 · 菜单；小窗 #pip-bar：快照 · 软键）。added 20261015 by Claude Fable 5.1（全屏浮条）
+   v0.2.8：user 10-24 小窗截图「逃生口的三个键在小窗或者全屏模式把所有东西都遮住了」「对齐一下软键盘」「鼠标一移上去就立马高亮然后挡住了一堆屏幕空间」→
+   和中间一排同一种键（半透明、细描边、按 --u 缩放），没有深色底板，悬停不变（以前鼠标在小窗里任何地方 = 整条全亮），按下亮蓝。
+   横屏：肩键那一排正中（L 和 R 之间；最挤的屏中间也有 5.1u，三个键 4.5u）。竖屏：两根摇杆之间（最窄时 L、R 挨着，肩键那排没空；摇杆间 ≥ 4u，三个键 3.7u）。
+   软键收起时照样在（收起之后还得能再打开 / 退全屏）。softkey-layout.ts 每种屏量：不压键、横屏在肩键那排、竖屏不压画面、提示不盖它。edited 20261024 by Claude Opus 5.5 */
+.esc-keys { display: none; position: absolute; left: 50%; top: calc(var(--u) * .425); transform: translateX(-50%); gap: calc(var(--u) * .3); z-index: 6; }
+#stage:fullscreen #fs-bar, #stage.fs-test #fs-bar, #stage.pip #pip-bar { display: flex; }
+.esc-keys .icon-btn { width: calc(var(--u) * 1.3); height: max(16px, calc(var(--u) * .55)); min-height: 0; padding: 0; gap: 0; justify-content: center; border-radius: 999px;
+  color: rgba(255,255,255,.75); background: rgba(255,255,255,.10); border: 1.5px solid rgba(255,255,255,.28); }
+.esc-keys .icon-btn:active { background: rgba(122,162,255,.40); border-color: rgba(122,162,255,.9); }
+.esc-keys .icon-btn .label { font: 600 max(10px, calc(var(--u) * .26))/1 system-ui, sans-serif; letter-spacing: .04em; white-space: nowrap; }
+@container (orientation: portrait) {
+  .esc-keys { top: auto; bottom: calc(var(--u) * 4.975); gap: calc(var(--u) * .2); }   /* 摇杆那排（4.2u 起、2.1u 高）的中线 */
+  .esc-keys .icon-btn { width: calc(var(--u) * 1.1); }
+}
+/* 全屏时提示 / 有新版本在逃生键下面让位（横屏逃生键底边 ≤ 1u） */
+#stage > #update { top: calc(env(safe-area-inset-top) + var(--u) * 1.1 + 6px); }
+#stage > #note { top: calc(env(safe-area-inset-top) + var(--u) * 1.1 + 64px); bottom: auto; }
 
 /* 工具栏：名字吃掉剩下的宽度；性能读数；按钮带文字（窄屏只留图标 / 字更小）。等读盘 = 红。 */
 .toolbar #title-wrap { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -246,10 +263,8 @@ body:has(#game:not([hidden])) > #note { top: calc(env(safe-area-inset-top) + var
 /* ── 小窗（Document PiP，src/app/pip.ts）：#stage 搬进小窗时铺满它；主页面原位留一块占位。added 20261016 by Claude Fable 5.1 ── */
 .pip-body { margin: 0; background: #000; overflow: hidden; }
 #stage.pip { position: fixed; inset: 0; }
-#pip-bar { display: none; position: absolute; top: 4px; left: 50%; transform: translateX(-50%); gap: 2px; padding: 2px 4px; border-radius: 10px; background: rgba(10,10,10,.78); border: 1px solid #222; z-index: 6; opacity: .35; transition: opacity .15s; }
-#stage.pip #pip-bar { display: flex; }
-#stage.pip:hover #pip-bar, #stage.pip #pip-bar:focus-within { opacity: 1; }
 .pip-placeholder { display: grid; place-content: center; justify-items: center; gap: 10px; background: #000; color: var(--ink-soft); }
+.pip-placeholder p { margin: 0; } .pip-placeholder .hint { font-size: 13px; }
 /* 设置面板（settings-panel.ts，added 20261017 by Claude Opus 5.5）：一节一节往下排，每项「名字 · 下拉」一行、说明在下 */
 .setting-nav { display: flex; flex-wrap: wrap; gap: 6px; position: sticky; top: -18px; background: var(--panel); padding: 6px 0; z-index: 1; }
 .setting-nav button { padding: 6px 10px; font-size: 13px; }
