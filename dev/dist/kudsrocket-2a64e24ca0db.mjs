@@ -2,7 +2,7 @@
 var define_CORE_DIRS_default = { ppsspp: "./dist/core-602016aa4429/", mgba: "./dist/core-mgba-0eb982e32acb/" };
 
 // src/version.ts
-var APP_VERSION = "v0.2.10-2026-10-25";
+var APP_VERSION = "v0.2.11-2026-10-26";
 
 // src/app/config.ts
 var APP_ID = "kudsrocket";
@@ -2102,16 +2102,43 @@ function retriable(e) {
   return (s == null || s === 429 || s >= 500 && s <= 599) && x?.name !== "CloudConflictError" && x?.name !== "CloudNameCollisionError";
 }
 function createPush(cfg) {
-  const { cloud, head, seal, safeResolve, serialize, editVersion, busy = passBusy, maxAttempts = pushRetryDefaults.maxAttempts, backoffMs = pushRetryDefaults.backoffMs, exponential = pushRetryDefaults.exponential, sleep = (ms) => new Promise((r) => setTimeout(r, ms)) } = cfg;
+  const { cloud, head, seal, safeResolve, serialize, editVersion, recaptureLineage = true, busy = passBusy, maxAttempts = pushRetryDefaults.maxAttempts, backoffMs = pushRetryDefaults.backoffMs, exponential = pushRetryDefaults.exponential, sleep = (ms) => new Promise((r) => setTimeout(r, ms)) } = cfg;
   async function doPush(name, { encode: encode2, getEditVersion = editVersion, onConflict, adopt, surfaceCollision = false, onProgress, loserBackup }) {
-    const ifMatch = head.ifMatchFor(name);
+    let ifMatch = head.ifMatchFor(name);
     const v0 = getEditVersion();
     const e0 = head.editCount?.(name) ?? 0;
     const editedSince = () => getEditVersion() !== v0 || (head.editCount?.(name) ?? 0) !== e0;
     const bytes = await seal.sealForWrite(name, await toU8(await encode2()));
     const isEnc = await seal.isContainer(bytes);
     const session2 = cfg.sessionFor ? await cfg.sessionFor(name, bytes) : void 0;
+    let staleKnown = false;
+    const durable = head.seenBase?.(name) ?? null;
+    if (ifMatch == null && recaptureLineage && durable != null && cloud.fetchMeta && head.markSeen) {
+      let meta;
+      try {
+        meta = await cloud.fetchMeta(name);
+      } catch {
+        meta = void 0;
+      }
+      if (meta && meta.etag === durable) {
+        head.markSeen(name, meta.etag);
+        ifMatch = head.ifMatchFor(name);
+      } else if (meta)
+        staleKnown = true;
+    }
+    const onCloudConflict = async () => {
+      if (await safeResolve.tryHeal(name, bytes)) {
+        const dirtyAfter = editedSince();
+        if (dirtyAfter)
+          head.recordEdit(name);
+        return { status: "healed", dirtyAfter };
+      }
+      const choice = onConflict ? await onConflict({ name, cloudState: "changed" }) : "cancel";
+      return await safeResolve.resolveConflict(name, choice, { bytes, adopt, inChain: true, loserBackup });
+    };
     return busy("sync.pushing", async () => {
+      if (staleKnown)
+        return onCloudConflict();
       let attempt = 0, lastErr;
       while (attempt < maxAttempts) {
         attempt++;
@@ -2123,16 +2150,8 @@ function createPush(cfg) {
           head.onPushed(name, item.eTag, dirtyAfter);
           return { status: "pushed", dirtyAfter };
         } catch (e) {
-          if (isConflict(e)) {
-            if (await safeResolve.tryHeal(name, bytes)) {
-              const dirtyAfter = editedSince();
-              if (dirtyAfter)
-                head.recordEdit(name);
-              return { status: "healed", dirtyAfter };
-            }
-            const choice = onConflict ? await onConflict({ name }) : "cancel";
-            return await safeResolve.resolveConflict(name, choice, { bytes, adopt, inChain: true, loserBackup });
-          }
+          if (isConflict(e))
+            return onCloudConflict();
           if (surfaceCollision && e?.name === "CloudNameCollisionError") {
             const choice = onConflict ? await onConflict({ name }) : "cancel";
             return await safeResolve.resolveConflict(name, choice, { bytes, adopt, inChain: true, loserBackup });
@@ -5991,7 +6010,8 @@ function createStore(config) {
       }
     };
   } : void 0;
-  const pushMod = createPush({ cloud, head, seal, safeResolve, serialize: sub.serialize, editVersion: () => sub.edits.version(), busy: busyT, sessionFor, ...config.pushRetry });
+  const recaptureLineage = config.recaptureLineageOnPush ?? true;
+  const pushMod = createPush({ cloud, head, seal, safeResolve, serialize: sub.serialize, editVersion: () => sub.edits.version(), busy: busyT, sessionFor, recaptureLineage, ...config.pushRetry });
   const uploadReplayPolicy = config.offlineUploadReplay ?? "manual";
   if (uploadReplayPolicy !== "manual") {
     if (!ui.onReplayStatus)
@@ -5999,7 +6019,7 @@ function createStore(config) {
     if (uploadReplayPolicy === "ask" && !ui.confirmReplay)
       throw new Error("createStore: offlineUploadReplay='ask' \u9700 ui.confirmReplay\uFF08\u56DE\u7EBF\u8BE2\u95EE\u7528\u6237\uFF09");
   }
-  const pushBg = createPush({ cloud, head, seal, safeResolve, serialize: sub.serialize, editVersion: () => sub.edits.version(), busy: (_l, fn) => fn(), sessionFor, ...config.pushRetry });
+  const pushBg = createPush({ cloud, head, seal, safeResolve, serialize: sub.serialize, editVersion: () => sub.edits.version(), busy: (_l, fn) => fn(), sessionFor, recaptureLineage, ...config.pushRetry });
   async function pushLocalBytes(name) {
     const blob = await local2.get(name);
     if (!blob)
@@ -6096,10 +6116,21 @@ function createStore(config) {
     }
     return { ok: true, where: r.where, oldKept: r.oldKept, oldUnknown: r.oldUnknown, oldCloudOrphan: r.oldCloudOrphan, cloudDeferred: r.cloudDeferred, oldName: from };
   });
-  const onConflictFor = (occasion) => async ({ name }) => {
+  const cloudStateNow = async (name) => {
+    try {
+      const meta = await cloud.fetchMeta(name);
+      const base = head.seenBase(name);
+      return !meta ? base == null ? "never" : "absent" : meta.etag === base ? "unchanged" : "changed";
+    } catch (e) {
+      ui.reportError(e, "log");
+      return "changed";
+    }
+  };
+  const onConflictFor = (occasion) => async ({ name, cloudState, cloudEtag }) => {
     if (tierOf(name) === "auto-backup")
       return "keepMine";
-    return ui.resolveConflict({ name, local: await local2.get(name), cloud: null, occasion, cloudState: "changed" });
+    const state2 = cloudState ?? (cloudEtag != null ? "changed" : await cloudStateNow(name));
+    return ui.resolveConflict({ name, local: await local2.get(name), cloud: null, occasion, cloudState: state2 });
   };
   const onConflict = onConflictFor("push");
   async function encTailBytes(name, n, tryCloud) {
@@ -6748,24 +6779,30 @@ function createStore(config) {
           await migrationReady;
           let pushed = 0;
           const failed = [];
+          const failures = [];
           for (const name of dirtyNames()) {
             const st = await sub.serialize(name, async () => {
               if (!head.isDirtyAnywhere(name))
                 return "clean";
               try {
                 const r = await pushLocalBytes(name);
-                return r.status === "pushed" || r.status === "healed" ? "pushed" : "failed";
+                if (r.status === "pushed" || r.status === "healed")
+                  return "pushed";
+                return r.status === "deferred" ? "deferred" : "conflict";
               } catch (e) {
                 ui.reportError(e, "warning");
-                return "failed";
+                const n = e?.name;
+                return n === "CloudNameCollisionError" ? "collision" : n === "CloudNetworkError" ? "network" : "error";
               }
             });
             if (st === "pushed")
               pushed++;
-            else if (st === "failed")
+            else if (st !== "clean") {
               failed.push(name);
+              failures.push({ name, reason: st });
+            }
           }
-          return { pushed, failed };
+          return { pushed, failed, failures };
         }
       }),
       /** 订阅**一个**文件夹（网盘模型）：立即本地帧 + 云端帧同一 cb 再闪；之后本夹任何本地写即时重推本地帧。返回退订。 */
@@ -20122,4 +20159,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-492786ad54ea.mjs.map
+//# sourceMappingURL=kudsrocket-2a64e24ca0db.mjs.map
