@@ -117,6 +117,20 @@ button:disabled { opacity: .4; cursor: default; }
 .banner span { flex: 1; }
 #note { position: fixed; bottom: 12px; left: 50%; transform: translateX(-50%); width: max-content; padding: 6px 14px; border-radius: 999px; background: rgba(30,30,30,.92); border: 1px solid var(--line); z-index: 40; max-width: calc(100% - 24px); font-size: 13px; }
 #update { position: fixed; bottom: 12px; right: 12px; display: flex; align-items: center; gap: 8px; padding: 6px 6px 6px 14px; border-radius: 10px; background: var(--panel); border: 1px solid var(--accent); z-index: 45; }
+/* 同步闸门（工单 F，2026-11-03）：游戏窗之上、面板（50）之下；开头 120 ms 不显形（核对很快时看不出闪了一下；输入从第一帧就锁了）。 */
+#syncGate { position: fixed; inset: 0; z-index: 49; display: grid; place-items: center; padding: 16px; background: rgba(0,0,0,.35); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); animation: sync-gate-in .16s ease-out .12s both; }
+#syncGate[hidden] { display: none; }
+/* 长得和 .sheet 一样，但不用这个 class：它不是面板，探针和样式里的 .sheet 都指「开着的面板」 */
+.sync-gate-card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px; display: grid; gap: 12px; width: min(360px, 92vw); text-align: center; }
+.sync-gate-card h2 { margin: 0; font-size: 18px; }
+.sync-gate-card p { margin: 0; }
+.sync-gate-card .row { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+.sync-gate-spinner { width: 22px; height: 22px; margin: 6px auto 10px; border-radius: 50%; border: 2px solid currentColor; border-right-color: transparent; opacity: .55; animation: sync-gate-spin .8s linear infinite; }
+.sync-gate-spinner[hidden] { display: none; }
+@keyframes sync-gate-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes sync-gate-spin { to { transform: rotate(360deg); } }
+#offlineBar { position: fixed; top: 6px; left: 50%; transform: translateX(-50%); z-index: 58; display: flex; align-items: center; gap: 8px; padding: 3px 10px; border-radius: 999px; background: var(--panel, #222); color: var(--ink, #eee); font-size: 12px; opacity: .92; max-width: calc(100% - 16px); }
+#offlineBar[hidden] { display: none; }
 #busy { position: fixed; inset: 0; background: rgba(0,0,0,.5); display: grid; place-items: center; z-index: 70; }
 #busy span { padding: 10px 18px; border-radius: 10px; background: var(--panel); border: 1px solid var(--line); }
 [hidden] { display: none !important; }

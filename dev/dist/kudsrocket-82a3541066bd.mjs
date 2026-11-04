@@ -2,7 +2,7 @@
 var define_CORE_DIRS_default = { ppsspp: "./dist/core-602016aa4429/", mgba: "./dist/core-mgba-0eb982e32acb/" };
 
 // src/version.ts
-var APP_VERSION = "v0.2.11-2026-10-26";
+var APP_VERSION = "v0.2.12-2026-11-03";
 
 // src/app/config.ts
 var APP_ID = "kudsrocket";
@@ -51,6 +51,55 @@ var ACTIVITY_PROGRESS_WINDOW_MS = 2 * 6e4;
 
 // assets/icons.svg
 var icons_default = '<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none">\n<!--\n  25 icons extracted from the family icon library (../20260708 SVG Icons/icons.svg) by extract-icons.py \u2014 do not hand-edit; re-run the script instead.\n  Family SVG Icons \u2014 MIT License, Copyright (c) 2026 fangzhangmnm.\n  Contains work derived from (per-icon provenance in data-src):\n    Feather Icons \u2014 MIT License, Copyright (c) 2013-2023 Cole Bemis \xB7 https://github.com/feathericons/feather\n    Lucide \u2014 ISC License, Copyright (c) 2020 Lucide Contributors \xB7 https://github.com/lucide-icons/lucide\n-->\n  <!-- edit -->\n  <!-- paste \u2014 \u7C98\u8D34:\u526A\u8D34\u677F\u4E0D\u7F29(\u5E93\u5C3A\u5BF8)+\u6587\u6863\u63A2\u51FA\u53F3\u4E0B\u89D2, \u6309 copy \u7684\u524D\u540E\u4EF6\u6BD4\u4F8B -->\n  <symbol id="paste" data-cat="edit" data-src="own" data-note="\u7C98\u8D34:\u526A\u8D34\u677F\u4E0D\u7F29(\u5E93\u5C3A\u5BF8)+\u6587\u6863\u63A2\u51FA\u53F3\u4E0B\u89D2, \u6309 copy \u7684\u524D\u540E\u4EF6\u6BD4\u4F8B" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><mask id="icPaC"><rect width="24" height="24" fill="#fff" stroke="none"/><g transform="translate(6.76 3.85) scale(0.860)" fill="#000" stroke="#000" stroke-width="3.14" stroke-linejoin="round"><path d="M4 5.6a1.7 1.7 0 0 1 1.7-1.7h6.6l4 4v11.5a1.7 1.7 0 0 1-1.7 1.7H5.7A1.7 1.7 0 0 1 4 20.8z"/></g></mask><g mask="url(#icPaC)"><mask id="icPbTC"><rect width="24" height="24" fill="#fff"/><rect x="6.0" y="1.0000000000000002" width="6" height="4.2" rx="1.2" fill="#000" stroke="#000" stroke-width="2.4"/></mask><g mask="url(#icPbTC)"><rect x="2.0" y="3.3" width="14" height="17" rx="2"/></g><rect x="6.0" y="1.0000000000000002" width="6" height="4.2" rx="1.2"/></g><g transform="translate(6.76 3.85) scale(0.860)" stroke-width="1.98"><path d="M4 5.6a1.7 1.7 0 0 1 1.7-1.7h6.6l4 4v11.5a1.7 1.7 0 0 1-1.7 1.7H5.7A1.7 1.7 0 0 1 4 20.8z"/><path d="M12.3 3.9V8h4"/><path d="M6.6 12.4h7.2M6.6 15.4h5"/></g></symbol>\n  <!-- media -->\n  <!-- pause \u2014 \u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="pause" data-cat="media" data-src="own" data-note="\u6682\u505C:\u53CC\u7AD6\u6760 \u23F8(\u7C97 3.2 \u5706\u5E3D, brush-width \u540C\u6B3E\u52A0\u7C97\u624B\u6CD5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="3.2"><path d="M8.3 5.5 V18.5"/><path d="M15.7 5.5 V18.5"/></g></symbol>\n  <!-- play \u2014 \u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="play" data-cat="media" data-src="own" data-note="\u64AD\u653E:\u5B9E\u5FC3\u53F3\u5411\u4E09\u89D2 \u25B6(IEC 60417 \u78C1\u5E26\u673A\u60EF\u4F8B\u7EDF\u4E00\u5B9E\u5FC3, \u63CF\u8FB9\u540C\u8272\u53E0\u52A0\u5F97\u5706\u89D2); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 5.4 L18.8 12 L8.2 18.6 Z" fill="currentColor"/></symbol>\n  <!-- fast-forward \u2014 \u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93 -->\n  <symbol id="fast-forward" data-cat="media" data-src="own" data-note="\u5FEB\u8FDB:\u53CC\u53F3\u5411\u5B9E\u5FC3\u4E09\u89D2 \u23E9(\u8D70\u5E26\u8BED\u4E49; timelapse-record \u7684\u52A0\u901F\u89D2\u6807\u7528 chevron \u5206\u5DE5); 20260819 media \u6279\u5165\u5E93" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.4 6.8 L10.9 12 L4.4 17.2 Z" fill="currentColor"/><path d="M13.1 6.8 L19.6 12 L13.1 17.2 Z" fill="currentColor"/></symbol>\n  <!-- volume \u2014 \u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009) -->\n  <symbol id="volume" data-cat="media" data-src="own" data-note="\u97F3\u91CF(BR \u97F3\u91CF\u6761\u65C1\u6807\u8BC6): \u5B9E\u5FC3\u5587\u53ED(\u7BB1\u4F53+\u9525\u5355\u8DEF\u5F84)+\u53CC\u58F0\u6CE2\u5F27(\u5185 r3.4 \xB142\xB0, \u5916 r6.1 \xB152\xB0, \u5F27\u95F4\u7559\u767D 1.0); media \u6279\u7EDF\u4E00\u5B9E\u5FC3, \u5F27\u7559\u63CF\u8FB9=\u58F0\u6CE2\u4E0D\u662F\u5B9E\u4F53\u300220260821 \u7532\u65B9\u62CD\u677F\u7D27\u51D1\u7248+\u7B2C\u4E8C\u9053\u58F0\u6CE2\u5165\u5E93(\u7A7A\u5FC3\u5587\u53ED\u7248/\u5355\u5F27\u7248\u843D\u9009)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 10.3 H8.7 L12.6 6.6 V17.4 L8.7 13.7 H5.5 Z" fill="currentColor"/><path d="M15.13 9.73 A3.4 3.4 0 0 1 15.13 14.27"/><path d="M16.36 7.19 A6.1 6.1 0 0 1 16.36 16.81"/></symbol>\n  <!-- file -->\n  <!-- floppy-disk \u2014 \u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3 -->\n  <symbol id="floppy-disk" data-cat="file" data-src="feather:save" data-note="\u8F6F\u76D8/\u4FDD\u5B58:\u6ED1\u76D6\u5DE6\u53F3\u5BF9\u79F0(7/17)\u4E14\u4E24\u7AD6\u7EBF\u9876\u5230\u9876\u8FB9 + \u9632\u5446\u89D2 k=3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13l3 3v13a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 17 8 17 3"/></symbol>\n  <!-- folder-open \u2014 \u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF -->\n  <symbol id="folder-open" data-cat="file" data-src="own" data-note="\u6253\u5F00\u7684\u6587\u4EF6\u5939:\u80CC\u677F\u6B62\u4E8E\u76D6\u9876 T \u63A5,\u4E0D\u518D\u4E92\u76F8\u538B\u7EBF" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18 V7 a2 2 0 0 1 2 -2 h4 l2 2 h6 a2 2 0 0 1 2 2 v1.8"/><path d="M3 18 L6.4 10.8 H21.6 L18.2 18 Z"/></symbol>\n  <!-- folder \u2014 \u6587\u4EF6\u5939:\u5DE6\u8FB9 tab + \u77E9\u5F62\u4E3B\u4F53 -->\n  <symbol id="folder" data-cat="file" data-src="lucide:folder" data-note="\u6587\u4EF6\u5939:\u5DE6\u8FB9 tab + \u77E9\u5F62\u4E3B\u4F53" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u6587\u4EF6\u5939\uFF1A\u5DE6\u8FB9 tab + \u77E9\u5F62\u4E3B\u4F53 --> <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>\n  <!-- trash-can \u2014 \u5783\u573E\u6876:\u6876\u8EAB\u6536\u53E3(feather \u662F\u76F4\u7B52);\u4E0E fluent(\u5706\u63D0\u624B/\u66F4\u4F4E)\u3001heroicons(\u5F27\u5F62\u900F\u89C6)\u4EA6\u4E0D\u540C \u2014 own -->\n  <symbol id="trash-can" data-cat="file" data-src="own" data-note="\u5783\u573E\u6876:\u6876\u8EAB\u6536\u53E3(feather \u662F\u76F4\u7B52);\u4E0E fluent(\u5706\u63D0\u624B/\u66F4\u4F4E)\u3001heroicons(\u5F27\u5F62\u900F\u89C6)\u4EA6\u4E0D\u540C \u2014 own" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 9.5v9"/><path d="M14 9.5v9"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></symbol>\n  <!-- new \u2014 \u65B0\u5EFA:\u7EAF\u52A0\u53F7(\u7B49\u957F\u5341\u5B57\u7EBF) -->\n  <symbol id="new" data-cat="file" data-src="own" data-note="\u65B0\u5EFA:\u7EAF\u52A0\u53F7(\u7B49\u957F\u5341\u5B57\u7EBF)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/> <line x1="5" y1="12" x2="19" y2="12"/></symbol>\n  <!-- hierarchy -->\n  <!-- lock \u2014 \u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D -->\n  <symbol id="lock" data-cat="hierarchy" data-src="own" data-note="\u9501:\u4F53 13x11+\u9501\u6881\u62AC\u9AD8(\u817F3.5),\u6574\u4F53\u5C45\u4E2D" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10" width="13" height="11"/><path d="M8.8 10 V6.5 a3.2 3.2 0 0 1 6.4 0 V10"/></symbol>\n  <!-- common -->\n  <!-- x \u2014 \u53C9 -->\n  <symbol id="x" data-cat="common" data-src="own" data-note="\u53C9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 L17.5 17.5 M17.5 6.5 L6.5 17.5"/></symbol>\n  <!-- chevron-left \u2014 \u2039 \u5C0F\u5C3A\u5BF8\u4F18\u5316\u88F8 chevron:\u63CF\u8FB9 2.4\u3001\u81C2\u77ED(14px chip \u7528)\uFF1B\u5E93\u91CC\u5E26\u6746\u7684 back \u662F\u53E6\u4E00\u8BED\u4E49\u3010WeebPaint \u53C2\u8003\u7A97\u591A\u56FE\u65F6\u7A97\u5E95\u7FFB\u9875 chip\uFF1Bfable \u81EA\u753B\u672A\u8FC7\u76EE\u3011 -->\n  <symbol id="chevron-left" data-cat="common" data-src="own" data-note="\u2039 \u5C0F\u5C3A\u5BF8\u4F18\u5316\u88F8 chevron:\u63CF\u8FB9 2.4\u3001\u81C2\u77ED(14px chip \u7528)\uFF1B\u5E93\u91CC\u5E26\u6746\u7684 back \u662F\u53E6\u4E00\u8BED\u4E49\u3010WeebPaint \u53C2\u8003\u7A97\u591A\u56FE\u65F6\u7A97\u5E95\u7FFB\u9875 chip\uFF1Bfable \u81EA\u753B\u672A\u8FC7\u76EE\u3011" data-review="pending" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="14.5 6 9 12 14.5 18" stroke-width="2.4"/></symbol>\n  <!-- chevron-right \u2014 \u203A chevron-left \u7684\u7CBE\u786E\u955C\u50CF\u3010WeebPaint \u53C2\u8003\u7A97\u7FFB\u9875 chip\uFF1Bfable \u81EA\u753B\u672A\u8FC7\u76EE\u3011 -->\n  <symbol id="chevron-right" data-cat="common" data-src="own" data-note="\u203A chevron-left \u7684\u7CBE\u786E\u955C\u50CF\u3010WeebPaint \u53C2\u8003\u7A97\u7FFB\u9875 chip\uFF1Bfable \u81EA\u753B\u672A\u8FC7\u76EE\u3011" data-review="pending" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="9.5 6 15 12 9.5 18" stroke-width="2.4"/></symbol>\n  <!-- back \u2014 \u8FD4\u56DE:\u5DE6\u5411\u6574\u7BAD\u5934(\u5E26\u6746;\u88F8 chevron-left \u66FE\u56E0\u5C0F\u5C3A\u5BF8\u6E32\u67D3\u5DEE\u88AB sunset) -->\n  <symbol id="back" data-cat="common" data-src="own" data-note="\u8FD4\u56DE:\u5DE6\u5411\u6574\u7BAD\u5934(\u5E26\u6746;\u88F8 chevron-left \u66FE\u56E0\u5C0F\u5C3A\u5BF8\u6E32\u67D3\u5DEE\u88AB sunset)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H5"/><polyline points="11 6 5 12 11 18"/></symbol>\n  <!-- forward \u2014 \u524D\u8FDB:back \u7684\u7CBE\u786E\u955C\u50CF(\u53F3\u5411\u6574\u7BAD\u5934\u5E26\u6746;\u4E0E chevron-right \u88F8 chevron \u5206\u5DE5)\u3010WebXiaoHeiWu \u4FA7\u680F\u9875\u5934\u300C\u56DE\u9000\u300D\u53F3\u90BB\u7684\u300C\u524D\u8FDB\u300D\u94AE\uFF08\u56DE\u9000\u4E4B\u540E\u518D\u56DE\u53BB\uFF09\uFF1B2026-09-10 fable \u81EA\u753B\u672A\u8FC7\u76EE\u3011 -->\n  <symbol id="forward" data-cat="common" data-src="own" data-note="\u524D\u8FDB:back \u7684\u7CBE\u786E\u955C\u50CF(\u53F3\u5411\u6574\u7BAD\u5934\u5E26\u6746;\u4E0E chevron-right \u88F8 chevron \u5206\u5DE5)\u3010WebXiaoHeiWu \u4FA7\u680F\u9875\u5934\u300C\u56DE\u9000\u300D\u53F3\u90BB\u7684\u300C\u524D\u8FDB\u300D\u94AE\uFF08\u56DE\u9000\u4E4B\u540E\u518D\u56DE\u53BB\uFF09\uFF1B2026-09-10 fable \u81EA\u753B\u672A\u8FC7\u76EE\u3011" data-review="pending" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12H19"/><polyline points="13 6 19 12 13 18"/></symbol>\n  <!-- check \u2014 \u52FE -->\n  <symbol id="check" data-cat="common" data-src="own" data-note="\u52FE" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5 L9.5 17.5 L19.5 6.5"/></symbol>\n  <!-- cloud -->\n  <!-- cloud \u2014 \u4E91 -->\n  <symbol id="cloud" data-cat="cloud" data-src="feather:cloud" data-note="\u4E91" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>\n  <!-- viewport -->\n  <!-- maximize-viewport \u2014 \u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55) -->\n  <symbol id="maximize-viewport" data-cat="viewport" data-src="own" data-note="\u9002\u914D\u89C6\u53E3:\u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934(reset-transform=\u540C\u5F62\u522B\u540D id, \u6539\u52A8\u4FDD\u6301\u540C\u51E0\u4F55)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u56DB\u89D2\u5411\u5916\u7684\u7BAD\u5934 --> <polyline points="4 9 4 4 9 4"/> <polyline points="20 9 20 4 15 4"/> <polyline points="4 15 4 20 9 20"/> <polyline points="20 15 20 20 15 20"/></symbol>\n  <!-- picture-in-picture \u2014 \u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1) -->\n  <symbol id="picture-in-picture" data-cat="viewport" data-src="own" data-note="\u753B\u4E2D\u753B:\u5927\u6846(\u4E3B\u753B\u5E03) + \u53F3\u4E0B\u89D2\u5185\u5D4C\u5C0F\u7A97(\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><!-- \u5927\u6846\uFF08\u4E3B\u753B\u5E03\uFF09+ \u5185\u5D4C\u5C0F\u7A97\uFF08\u53C2\u8003\u5C0F\u7A97\u81EA\u5DF1\uFF09\u2014\u2014 picture-in-picture \u9690\u55BB --> <rect x="3" y="4" width="18" height="14" rx="2"/> <rect x="12" y="10" width="7" height="5" rx="1"/></symbol>\n  <!-- one-to-one \u2014 1:1 \u50CF\u7D20:\u56DB\u89D2\u62EC\u53F7 + \u4E2D\u5FC3\u4E00\u9897\u5B9E\u5FC3\u50CF\u7D20=\u300C\u4E00\u56FE\u50CF\u7D20\u5BF9\u4E00\u5C4F\u50CF\u7D20\u300D(\u4E0D\u5199 1:1 \u6587\u5B57)\u3010WeebPaint \u53C2\u8003\u7A97 \uFF0B \u83DC\u5355\u300C1:1 \u50CF\u7D20\u300D\u9879\uFF1Bfable \u81EA\u753B\u672A\u8FC7\u76EE\u3011 -->\n  <symbol id="one-to-one" data-cat="viewport" data-src="own" data-note="1:1 \u50CF\u7D20:\u56DB\u89D2\u62EC\u53F7 + \u4E2D\u5FC3\u4E00\u9897\u5B9E\u5FC3\u50CF\u7D20=\u300C\u4E00\u56FE\u50CF\u7D20\u5BF9\u4E00\u5C4F\u50CF\u7D20\u300D(\u4E0D\u5199 1:1 \u6587\u5B57)\u3010WeebPaint \u53C2\u8003\u7A97 \uFF0B \u83DC\u5355\u300C1:1 \u50CF\u7D20\u300D\u9879\uFF1Bfable \u81EA\u753B\u672A\u8FC7\u76EE\u3011" data-review="pending" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8 V3.5 H8"/><path d="M16 3.5 H20.5 V8"/><path d="M20.5 16 V20.5 H16"/><path d="M8 20.5 H3.5 V16"/><rect x="9.6" y="9.6" width="4.8" height="4.8" fill="currentColor" stroke="none"/></symbol>\n  <!-- mini-window \u2014 \u5C0F\u7A97:\u6BD4\u6EE1\u683C\u5C0F\u4E00\u5708\u7684\u7A97\u53E3(14\xD712 \u5706\u89D2\u6846) + \u9876\u4E0A\u4E00\u6761\u5B9E\u5FC3\u6807\u9898\u680F = \u7F6E\u9876\u5C0F\u7A97\uFF08Document PiP\uFF0CAlt+P\uFF09\uFF1B\u4E0E picture-in-picture(\u5927\u6846\u91CC\u5D4C\u5C0F\u6846 = \u53C2\u8003\u7A97)\u5206\u5DE5\u3010WebXiaoHeiWu \u4FA7\u680F\u9876\u884C\u300C\u5C0F\u7A97\u300D\u5165\u53E3 + KudsRocket \u5DE5\u5177\u680F / \u2630\u300C\u5C0F\u7A97\u300D\u94AE\uFF1B2026-10-25 Claude Opus 5.5 \u81EA\u753B\u672A\u8FC7\u76EE\uFF08\u6E32\u8FC7\u4EAE / \u6697\u5E95 16 / 24 px\uFF0C\u56DB\u6848\u91CC\u9009\u7684\u5B9E\u5FC3\u6807\u9898\u680F\uFF09\u3011 -->\n  <symbol id="mini-window" data-cat="viewport" data-src="own" data-note="\u5C0F\u7A97:\u6BD4\u6EE1\u683C\u5C0F\u4E00\u5708\u7684\u7A97\u53E3(14\xD712 \u5706\u89D2\u6846) + \u9876\u4E0A\u4E00\u6761\u5B9E\u5FC3\u6807\u9898\u680F = \u7F6E\u9876\u5C0F\u7A97\uFF08Document PiP\uFF0CAlt+P\uFF09\uFF1B\u4E0E picture-in-picture(\u5927\u6846\u91CC\u5D4C\u5C0F\u6846 = \u53C2\u8003\u7A97)\u5206\u5DE5\u3010WebXiaoHeiWu \u4FA7\u680F\u9876\u884C\u300C\u5C0F\u7A97\u300D\u5165\u53E3 + KudsRocket \u5DE5\u5177\u680F / \u2630\u300C\u5C0F\u7A97\u300D\u94AE\uFF1B2026-10-25 Claude Opus 5.5 \u81EA\u753B\u672A\u8FC7\u76EE\uFF08\u6E32\u8FC7\u4EAE / \u6697\u5E95 16 / 24 px\uFF0C\u56DB\u6848\u91CC\u9009\u7684\u5B9E\u5FC3\u6807\u9898\u680F\uFF09\u3011" data-review="pending" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 6 H17 A2 2 0 0 1 19 8 V9.8 H5 V8 A2 2 0 0 1 7 6 Z" fill="currentColor" stroke="none"/><rect x="5" y="6" width="14" height="12" rx="2"/></symbol>\n  <!-- ui -->\n  <!-- more \u2014 \u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00) -->\n  <symbol id="more" data-cat="ui" data-src="own" data-note="\u6EA2\u51FA\u83DC\u5355:\u6A2A\u5411\u4E09\u70B9(\u539F \u22EF \u5B57\u7B26\u8DE8\u5E73\u53F0\u5B57\u5F62\u4E0D\u4E00)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/></symbol>\n  <!-- keyboard \u2014 \u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49) -->\n  <symbol id="keyboard" data-cat="ui" data-src="own" data-note="\u952E\u76D8:\u5706\u70B9\u52A0\u5927\u6536\u7D27+\u7A7A\u683C\u4E0A\u79FB\u4E0D\u538B\u6846(\u4E0E shortcut \u4E0D\u540C\u8BED\u4E49)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="7.2" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="9.7" r="1.15" fill="currentColor" stroke="none"/><circle cx="7.2" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="10.4" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="13.6" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><circle cx="16.8" cy="12.8" r="1.15" fill="currentColor" stroke="none"/><path d="M8.6 15.6 H15.4"/></symbol>\n  <!-- menu \u2014 \u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17) -->\n  <symbol id="menu" data-cat="ui" data-src="own" data-note="\u6C49\u5821\u83DC\u5355:\u4E09\u6761\u7B49\u957F\u6A2A\u7EBF(y=7/12/17)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"></line> <line x1="4" y1="12" x2="20" y2="12"></line> <line x1="4" y1="17" x2="20" y2="17"></line></symbol>\n</svg>\n';
+
+// src/app/gate-stack.ts
+function createGateStack(render2) {
+  const stack = [];
+  const paint = () => render2(stack.length ? stack[stack.length - 1].view : null);
+  const finish = (e, v) => {
+    if (!e.open) return;
+    e.open = false;
+    const i = stack.indexOf(e);
+    if (i >= 0) stack.splice(i, 1);
+    paint();
+    e.resolve(v);
+  };
+  return {
+    open(view) {
+      let entry;
+      const result = new Promise((resolve) => {
+        entry = { view, resolve, open: true };
+      });
+      stack.push(entry);
+      paint();
+      return {
+        result,
+        update: (v) => {
+          entry.view = { ...entry.view, ...v };
+          if (stack[stack.length - 1] === entry) paint();
+        },
+        close: (value = null) => finish(entry, value),
+        isOpen: () => entry.open
+      };
+    },
+    settleTop: (value = null) => {
+      const e = stack[stack.length - 1];
+      if (e) finish(e, value);
+    },
+    isUp: () => stack.length > 0,
+    top: () => stack.length ? stack[stack.length - 1].view : null,
+    pick: (i) => {
+      const e = stack[stack.length - 1];
+      const a = e?.view.actions[i];
+      if (e && a) finish(e, a.value);
+    },
+    depth: () => stack.length
+  };
+}
+function gateSwallowsEvent(up, target) {
+  if (!up) return false;
+  return !target?.closest?.("#syncGate, .sheet-back");
+}
 
 // src/app/ui.ts
 var $ = (id) => {
@@ -118,9 +167,10 @@ function sheet(build, opts = {}) {
   });
 }
 var isSheetOpen = () => openSheet !== null;
-var OVERLAY_IDS = ["banners", "note", "update", "busy"];
+var OVERLAY_IDS = ["banners", "note", "update", "busy", "syncGate", "offlineBar"];
 var overlayHost = () => document.fullscreenElement ?? document.body;
 function mountOverlays() {
+  installGateInputLock();
   document.addEventListener("fullscreenchange", () => {
     const host = overlayHost();
     for (const id of OVERLAY_IDS) host.append($(id));
@@ -198,6 +248,39 @@ function note(text, ms = 4e3) {
   noteTimer = window.setTimeout(() => {
     el.hidden = true;
   }, ms);
+}
+var _gate = createGateStack((top) => {
+  const root = $("syncGate");
+  if (!top) {
+    root.hidden = true;
+    return;
+  }
+  $("syncGateTitle").textContent = top.title;
+  const msg = $("syncGateMessage");
+  msg.textContent = top.message ?? "";
+  msg.hidden = !top.message;
+  $("syncGateSpinner").hidden = !top.showSpinner;
+  const actions = $("syncGateActions");
+  actions.textContent = "";
+  top.actions.forEach((a, i) => {
+    const b = h("button", { class: a.primary ? "primary" : "", onclick: () => _gate.pick(i) }, a.label);
+    actions.append(b);
+  });
+  if (root.hidden && document.activeElement instanceof HTMLElement) document.activeElement.blur();
+  root.hidden = false;
+});
+function openSyncGate(view) {
+  return _gate.open(view);
+}
+var GATE_SWALLOWED = ["keydown", "keypress", "pointerdown", "mousedown", "touchstart", "wheel", "contextmenu", "dblclick", "click"];
+function installGateInputLock() {
+  for (const type of GATE_SWALLOWED) window.addEventListener(type, (e) => {
+    if (openSheet && (e.type === "keydown" || e.type === "keypress")) return;
+    if (gateSwallowsEvent(_gate.isUp(), e.target)) {
+      e.stopImmediatePropagation();
+      e.preventDefault();
+    }
+  }, { capture: true, passive: false });
 }
 var busyDepth = 0;
 async function withBusy(label, fn) {
@@ -2193,7 +2276,7 @@ function createFreshness(cfg) {
   };
   const pullFailText = (reason) => reason === "invalid-cloud-bytes" ? "\u4E91\u7AEF\u5185\u5BB9\u6CA1\u901A\u8FC7\u6821\u9A8C\uFF0C\u53EF\u80FD\u662F\u516C\u5171 Wi-Fi \u767B\u5F55\u9875\u52AB\u6301\u6216\u6587\u4EF6\u635F\u574F" : reason === "cloud-vanished" ? "\u4E91\u7AEF\u6587\u4EF6\u521A\u521A\u88AB\u79FB\u52A8\u6216\u5220\u9664" : reason === "backup-failed" ? "\u672C\u5730\u7559\u5E95\u5931\u8D25\uFF0C\u4E3A\u4FDD\u6570\u636E\u6CA1\u6709\u8986\u76D6" : reason;
   async function open(name, opts = {}) {
-    const { isOnline = () => true, probe, onNewer, adopt, localDirty, busy = passBusy2 } = opts;
+    const { isOnline = () => true, probe, onNewer, adopt, localDirty, busy = passBusy2, localBytes } = opts;
     if (!isOnline()) {
       adoptDurableBase(name, localDirty);
       return { source: "local", reason: "offline" };
@@ -2240,6 +2323,27 @@ function createFreshness(cfg) {
         if (!r.ok && r.reason !== "edited-during-pull")
           reportStoreError(new Error(`\u300C${name}\u300D\u4E91\u7AEF\u6709\u65B0\u7248\u672C\u4F46\u6682\u65F6\u53D6\u4E0D\u5230\uFF08${pullFailText(r.reason)}\uFF09\uFF0C\u5DF2\u6253\u5F00\u672C\u5730\u7248\u672C`), "info");
         return r.ok ? { source: "fast-forwarded", backupName: r.backupName } : { source: "local", reason: r.reason, error: r.error };
+      }
+      if (localBytes && safeResolve.tryHeal) {
+        const mine = await localBytes().catch((e) => {
+          reportStoreError(e, "log");
+          return null;
+        });
+        if (mine && (meta.size == null || meta.size === mine.byteLength)) {
+          const healing = (async () => {
+            try {
+              return await safeResolve.tryHeal(name, mine);
+            } catch (e) {
+              reportStoreError(e, "log");
+              return false;
+            }
+          })();
+          const outcome = probe ? await Promise.race([healing.then((h2) => ({ k: "heal", h: h2 })), Promise.resolve(probe).then(() => ({ k: "skip" }))]) : { k: "heal", h: await healing };
+          if (outcome.k === "skip")
+            return { source: "local", reason: "skipped" };
+          if (outcome.h)
+            return { source: "local", reason: "healed" };
+        }
       }
       const choice = onNewer ? await onNewer({ name, cloudEtag: meta.etag, baseEtag: base, cloudTime: meta.lastModified }) : "cancel";
       if (choice === "takeCloud") {
@@ -2974,7 +3078,7 @@ function createCloudSync(cfg) {
 // node_modules/@internal/store/dist/works/identity.js
 var passBusy4 = (_l, fn) => fn();
 function createIdentity(cfg) {
-  const { cloud, local: local2, head, doPush, serialize, serialize2, seal, busy: _busy = passBusy4, isOnline, deleteOffline, queueUpload, nameOccupied } = cfg;
+  const { cloud, local: local2, head, doPush, serialize, serialize2, seal, busy: _busy = passBusy4, isOnline, deleteOffline, queueUpload, nameOccupied, askKeepOld } = cfg;
   const unseal = (name, blob) => seal ? seal.unsealForRead(name, blob) : Promise.resolve(blob);
   async function assertNameFree(newName, doCloud) {
     if (doCloud && nameOccupied) {
@@ -3013,6 +3117,19 @@ function createIdentity(cfg) {
         await deleteOffline(oldName);
         return { status: "renamed", where: "offline-move", newName };
       }
+      let userOld = null;
+      if (doCloud && askKeepOld && hasLocal && bytes != null && (!isOnline || isOnline()) && head.isDirtyAnywhere(oldName)) {
+        const pre = await probeOld(oldName);
+        if (pre.known && pre.meta) {
+          const base0 = head.seenBase(oldName);
+          if (base0 == null || base0 !== pre.meta.etag) {
+            const c = await askKeepOld({ oldName, newName, reason: base0 == null ? "unknown-lineage" : "diverged" });
+            if (c === "cancel")
+              return { status: "cancelled", oldName, newName };
+            userOld = c;
+          }
+        }
+      }
       if (local2 && hasLocal) {
         await local2.save(newName, bytes);
         await local2.hardDelete(oldName);
@@ -3036,11 +3153,11 @@ function createIdentity(cfg) {
         const baseAtStart = head.seenBase(oldName);
         await doPush(newName, { encode: () => bytes, getEditVersion });
         const after = await probeOld(oldName);
-        let oldCloudOrphan = false, oldKept = false, oldUnknown = false;
+        let oldCloudOrphan = false, oldKept = false, oldUnknown = false, oldKeptByUser = false;
         if (!after.known) {
           oldUnknown = true;
         } else if (after.meta == null) {
-        } else if (baseAtStart != null && baseAtStart === after.meta.etag) {
+        } else if (baseAtStart != null && baseAtStart === after.meta.etag || userOld === "trash") {
           try {
             await cloud.trash(oldName, asideStamp(Date.now()), { baseEtag: after.meta.etag });
           } catch (e) {
@@ -3049,6 +3166,7 @@ function createIdentity(cfg) {
           }
         } else {
           oldKept = true;
+          oldKeptByUser = userOld === "keep";
         }
         head.forget(oldName);
         return {
@@ -3057,6 +3175,7 @@ function createIdentity(cfg) {
           newName,
           oldCloudOrphan,
           oldKept,
+          oldKeptByUser,
           oldUnknown,
           oldName
         };
@@ -6057,8 +6176,10 @@ function createStore(config) {
     // 完整离线删语义（move-aside + base-etag 云删排队 + null 守卫 + forget）
     queueUpload: (name) => uploadReplay.enqueue(name),
     // never-synced float 重连补推（ADR-0018）
-    nameOccupied
+    nameOccupied,
     // 唯一占用检查（assertNameFree 据此抛）
+    askKeepOld: ui.resolveRenameOld
+    // 2.2.2：谱系不明 / 分叉的改名先问人搬不搬云端旧的（宿主没给 = 默认留着 + oldKept）
   });
   const trashMod = createTrash({ cloud, local: local2, head, busy: busyT });
   async function aggregateBox(box) {
@@ -6105,6 +6226,8 @@ function createStore(config) {
     if (occ)
       return { ok: false, reason: "name-collision", where: occ };
     const r = await identity.rename(from, to, { skipOccupiedCheck: true });
+    if (r.status === "cancelled")
+      return { ok: false, reason: "cancelled" };
     notifyFolderOf(from);
     notifyFolderOf(to);
     for (const cb of renameListeners) {
@@ -6114,7 +6237,7 @@ function createStore(config) {
         ui.reportError(e, "warning");
       }
     }
-    return { ok: true, where: r.where, oldKept: r.oldKept, oldUnknown: r.oldUnknown, oldCloudOrphan: r.oldCloudOrphan, cloudDeferred: r.cloudDeferred, oldName: from };
+    return { ok: true, where: r.where, oldKept: r.oldKept, oldKeptByUser: r.oldKeptByUser, oldUnknown: r.oldUnknown, oldCloudOrphan: r.oldCloudOrphan, cloudDeferred: r.cloudDeferred, oldName: from };
   });
   const cloudStateNow = async (name) => {
     try {
@@ -6400,7 +6523,12 @@ function createStore(config) {
               isOnline,
               probe: esc?.probe,
               onNewer: onConflictFor("open"),
-              localDirty: () => sub.edits.localDirty()
+              localDirty: () => sub.edits.localDirty(),
+              localBytes: async () => {
+                const b = await local2.get(name);
+                return b ? await toU8(b instanceof Blob ? b : new Blob([b])) : null;
+              }
+              // 2.2.2：回执丢失自愈
             }).catch((e) => ui.reportError(e));
           } finally {
             esc?.settle();
@@ -6470,6 +6598,13 @@ function createStore(config) {
           cloudState = !meta ? head.seenBase(name) == null ? "never" : "absent" : meta.etag === head.seenBase(name) ? "unchanged" : "changed";
         } catch (e) {
           ui.reportError(e, "log");
+        }
+        if (cloudState === "changed") {
+          const cur = await local2.get(name);
+          if (cur && await safeResolve.tryHeal(name, await toU8(cur instanceof Blob ? cur : new Blob([cur])))) {
+            notifyFolderOf(name);
+            return { status: "pushed" };
+          }
         }
         const choice = tierOf(name) === "auto-backup" ? "keepMine" : await ui.resolveConflict({ name, local: await local2.get(name), cloud: null, occasion: "push", cloudState });
         if (choice === "cancel")
@@ -6722,7 +6857,7 @@ function createStore(config) {
     const cached = _collections.get(name);
     if (cached)
       return cached;
-    const coll = rejectAfterDispose(createCollection({ cloud: collectionsCloud, name, local: collectionLocal, manual: opts.manual, getInitData: opts.getInitData }));
+    const coll = rejectAfterDispose(createCollection({ cloud: collectionsCloud, name, local: collectionLocal, manual: opts.manual, getInitData: opts.getInitData, isOnline }));
     registerScaffold(name);
     _collections.set(name, coll);
     return coll;
@@ -8493,6 +8628,10 @@ function saveBlackbox(entries) {
   } catch {
   }
 }
+var accountSeen = () => get("account-seen") === "1";
+function setAccountSeen(on) {
+  set("account-seen", on ? "1" : null);
+}
 function mirrorUrls() {
   try {
     const v = JSON.parse(get("mirrors") ?? "[]");
@@ -8762,6 +8901,268 @@ function render() {
   }, 1e3);
 }
 
+// src/app/cloud-gate.ts
+var GATE_COPY = {
+  checkingTitle: "\u6B63\u5728\u6838\u5BF9\u7F51\u76D8\u4E0A\u7684\u7248\u672C\u2026",
+  pullingTitle: "\u6B63\u5728\u4ECE\u7F51\u76D8\u66F4\u65B0\u2026",
+  escape: "\u5148\u79BB\u7EBF\u7528",
+  blockedTitle: "\u7F51\u76D8\u6CA1\u8FDE\u4E0A",
+  reason: { expired: "\u767B\u5F55\u8FC7\u671F\u4E86", "no-network": "\u73B0\u5728\u6CA1\u6709\u7F51\u7EDC", "no-response": "\u7F51\u76D8\u6CA1\u6709\u56DE\u5E94" },
+  signIn: "\u91CD\u65B0\u767B\u5F55",
+  offline: "\u79BB\u7EBF\u7EE7\u7EED",
+  bar: (n) => n > 0 ? `\u79BB\u7EBF \xB7 \u8FD8\u6709 ${n} \u4EFD\u6CA1\u4F20\u4E0A\u53BB` : "\u79BB\u7EBF",
+  barReconnecting: "\u5DF2\u8FDE\u4E0A\u7F51\u76D8\uFF0C\u6B63\u5728\u8865\u4F20\u2026",
+  barOpenList: "\u770B\u5217\u8868"
+};
+function parseRenewFailure(msg) {
+  const m = /^\[auth\] silent token renewal failed \(([^)]*)\): name=(\S*) code=(\S*) sub=(\S*)/.exec(msg);
+  return m ? { where: m[1], name: m[2], code: m[3], sub: m[4] } : null;
+}
+function isInteractionCode(code) {
+  return !!code && /^(login_required|interaction_required|consent_required|InteractionRequiredAuthError|no_tokens_found|refresh_token_expired|bad_token)$/.test(code);
+}
+function reasonOf(code, online) {
+  if (!online) return "no-network";
+  return isInteractionCode(code) ? "expired" : "no-response";
+}
+var lastRenewFailure = null;
+function noteRenewFailureLine(msg) {
+  const f = parseRenewFailure(msg);
+  if (f) lastRenewFailure = f;
+  return f;
+}
+function takeRenewFailureCode() {
+  const c = lastRenewFailure ? lastRenewFailure.code !== "?" ? lastRenewFailure.code : lastRenewFailure.name : null;
+  lastRenewFailure = null;
+  return c;
+}
+var HARD_TIMEOUT_MS = 8e3;
+var RECHECK_MS = 3e4;
+var deferred = () => {
+  let resolve;
+  const promise = new Promise((r) => {
+    resolve = r;
+  });
+  return { promise, resolve };
+};
+var CloudGate = class {
+  cycle = null;
+  escapeSignal = null;
+  escaped = false;
+  generation = 0;
+  // 每次尝试一个代号：超时 / 逃生之后迟到的结果作废
+  stopTimer = null;
+  blockedAnswer = null;
+  blockedReason = null;
+  lastOkAt = -Infinity;
+  reconnecting = false;
+  now;
+  d;
+  // 不用参数属性：node 的类型剥离不认（测试直跑 .ts）
+  constructor(d) {
+    this.d = d;
+    this.now = d.now ?? (() => Date.now());
+  }
+  /** 罩子在（开机 / 醒来这一轮还没走完）。 */
+  isRunning() {
+    return this.cycle !== null;
+  }
+  /** 这一轮里点了「先离线用」或超时了：迟到的云端结果不许再换字节（session 的 localDirty 问它）。 */
+  abandoned(gen) {
+    return this.escaped || gen !== this.generation;
+  }
+  /** 库的 offlineEscape 接缝（§4）：这一轮的逃生信号；不在闸门里 = null（走库默认那条通知）。 */
+  escapeProbe() {
+    return this.cycle ? this.escapeSignal?.promise ?? null : null;
+  }
+  /** 罩子上的「先离线用」/ 拉取罩子上的同一个钮。 */
+  escape() {
+    if (this.cycle && this.escapeSignal) {
+      this.escaped = true;
+      this.escapeSignal.resolve();
+      this.d.note("gate: escape clicked");
+      return;
+    }
+    if (!this.d.userOffline()) this.goOffline("escape-outside-cycle");
+  }
+  /** 拉取已经开始 / 库的面弹出来了：人在看着，别拿超时打断（它们各有自己的出口）。 */
+  pauseHardTimer() {
+    this.stopTimer?.();
+    this.stopTimer = null;
+  }
+  goOffline(why) {
+    this.d.setUserOffline(true);
+    this.d.bar.show();
+    this.d.note(`gate: offline chosen (${why})`);
+  }
+  /** 开机 / 醒来走这里。before = 本地那段（恢复上次的模型），在罩子底下跑完再问云端（app-store.ts 的开机顺序契约）。 */
+  async run(trigger, opts = {}) {
+    if (this.cycle) {
+      await opts.before?.();
+      return this.cycle;
+    }
+    if (!this.d.attached()) {
+      await opts.before?.();
+      return "no-gate";
+    }
+    if (this.d.userOffline()) {
+      await opts.before?.();
+      this.d.note(`gate: ${trigger} while offline chosen \u2192 no gate`);
+      void this.reconnect();
+      return "offline-kept";
+    }
+    if (trigger === "wake" && this.now() - this.lastOkAt < (this.d.recheckMs ?? RECHECK_MS)) return "recent";
+    this.cycle = this.runCycle(trigger, opts.before);
+    try {
+      return await this.cycle;
+    } finally {
+      this.cycle = null;
+    }
+  }
+  async runCycle(trigger, before) {
+    const t0 = this.now();
+    this.escaped = false;
+    this.escapeSignal = deferred();
+    this.d.ui.showChecking(() => this.escape());
+    try {
+      await before?.();
+      for (; ; ) {
+        const a = await this.attempt();
+        if (a.k === "pass") {
+          this.lastOkAt = this.now();
+          this.d.note(`gate: ${trigger} pass ${(this.now() - t0).toFixed(0)}ms`);
+          this.d.ui.hide();
+          this.d.afterPass();
+          return "pass";
+        }
+        if (a.k === "no-account") {
+          this.d.note(`gate: ${trigger} no account on this device \u2192 no gate`);
+          this.d.ui.hide();
+          return "no-login";
+        }
+        if (a.k === "escaped") {
+          this.goOffline("escape");
+          this.d.ui.hide();
+          return "offline";
+        }
+        const answer = await this.askBlocked(a.reason);
+        if (answer === "offline") {
+          this.goOffline("blocked:" + a.reason);
+          this.d.ui.hide();
+          return "offline";
+        }
+        this.escaped = false;
+        this.escapeSignal = deferred();
+        this.d.ui.showChecking(() => this.escape());
+      }
+    } catch (e) {
+      this.d.ui.hide();
+      throw e;
+    }
+  }
+  async attempt() {
+    if (this.escaped) return { k: "escaped" };
+    if (!this.d.browserOnline()) return { k: "blocked", reason: "no-network" };
+    const gen = ++this.generation;
+    const timeout = deferred();
+    const timer2 = setTimeout(() => timeout.resolve(), this.d.hardTimeoutMs ?? HARD_TIMEOUT_MS);
+    this.stopTimer = () => clearTimeout(timer2);
+    const work = (async () => {
+      const r = await this.d.renew();
+      if (r.kind !== "ok") return r;
+      await this.d.check({ abandoned: () => this.abandoned(gen), onLongWait: () => this.pauseHardTimer() });
+      return r;
+    })();
+    const first = await Promise.race([
+      work.then((r) => ({ k: "done", r }), (e) => ({ k: "err", e })),
+      this.escapeSignal.promise.then(() => ({ k: "escaped" })),
+      timeout.promise.then(() => ({ k: "timeout" }))
+    ]);
+    clearTimeout(timer2);
+    this.stopTimer = null;
+    if (first.k === "escaped") {
+      this.generation++;
+      work.catch(() => {
+      });
+      return { k: "escaped" };
+    }
+    if (first.k === "timeout") {
+      this.generation++;
+      work.catch(() => {
+      });
+      this.d.note("gate: cloud check timed out");
+      return { k: "blocked", reason: this.d.browserOnline() ? "no-response" : "no-network" };
+    }
+    if (first.k === "err") {
+      this.d.note("gate: check threw " + String(first.e));
+      return { k: "blocked", reason: this.d.browserOnline() ? "no-response" : "no-network" };
+    }
+    if (first.r.kind === "ok") return { k: "pass" };
+    if (first.r.kind === "no-account") return { k: "no-account" };
+    this.d.note(`gate: renew failed code=${first.r.code ?? "-"}`);
+    return { k: "blocked", reason: reasonOf(first.r.code, this.d.browserOnline()) };
+  }
+  askBlocked(reason) {
+    const answer = deferred();
+    this.blockedAnswer = answer;
+    this.blockedReason = reason;
+    this.d.note(`gate: blocked reason=${reason}`);
+    this.d.ui.showBlocked(reason, {
+      signIn: () => {
+        if (this.d.browserOnline()) this.d.signInInteractive();
+        else answer.resolve("retry");
+      },
+      // 没网时点登录 = 再核一次，不去跳一个注定失败的页
+      offline: () => answer.resolve("offline")
+    });
+    return answer.promise.finally(() => {
+      this.blockedAnswer = null;
+      this.blockedReason = null;
+    });
+  }
+  /** 闸门上点了「重新登录」但没跳走（登录起跳被拒）：把那张面摆回去，别留一个没罩子的半截状态。 */
+  reshowBlocked() {
+    const a = this.blockedAnswer, r = this.blockedReason;
+    if (!a || !r) return;
+    this.d.ui.showBlocked(r, { signIn: () => {
+      if (this.d.browserOnline()) this.d.signInInteractive();
+      else a.resolve("retry");
+    }, offline: () => a.resolve("offline") });
+  }
+  /** 网回来了（window online）/ 登录落地了（auth 事件）：闸开着就重新核一次；选了离线就静默补传；都不是 = 没事。 */
+  onCloudMaybeBack() {
+    if (this.blockedAnswer) {
+      this.blockedAnswer.resolve("retry");
+      return;
+    }
+    if (this.d.userOffline()) void this.reconnect();
+  }
+  /** 从「离线继续」回来。闸只在开机 / 醒来弹一次：这里失败就是条还在，不再弹。 */
+  async reconnect() {
+    if (this.reconnecting || !this.d.userOffline() || !this.d.browserOnline()) return false;
+    this.reconnecting = true;
+    try {
+      const r = await this.d.renew().catch(() => ({ kind: "failed", code: null }));
+      if (r.kind !== "ok") {
+        this.d.note(`gate: reconnect not yet (${r.kind}${r.kind === "failed" ? " code=" + (r.code ?? "-") : ""})`);
+        return false;
+      }
+      this.d.setUserOffline(false);
+      this.d.bar.reconnecting();
+      this.d.note("gate: reconnected \u2192 catching up");
+      this.lastOkAt = this.now();
+      try {
+        await this.d.catchUp();
+      } finally {
+        this.d.bar.hide();
+      }
+      return true;
+    } finally {
+      this.reconnecting = false;
+    }
+  }
+};
+
 // src/app/store-ui.ts
 var BACKGROUND_KEYS = /* @__PURE__ */ new Set(["sync.pushing", "file.renaming", "file.uploading", "cloud.checking", "file.pulling"]);
 var STATUS_KEYS = /* @__PURE__ */ new Set(["file.deleting", "folder.creating"]);
@@ -8831,6 +9232,8 @@ var storeUI = {
       console.info("[store]", err3);
       return;
     }
+    const renew = noteRenewFailureLine(err3?.message ?? "");
+    if (renew) logEvent("warn", `\u9759\u9ED8\u7EED\u7B7E\u6CA1\u6210\uFF1Awhere=${renew.where} code=${renew.code}${renew.sub ? " sub=" + renew.sub : ""}`);
     if (level === "log") {
       console.info("[store]", err3);
       logEvent("info", `store\xB7log\uFF1A${errorText(err3).slice(0, 220)}`);
@@ -8898,6 +9301,21 @@ function mirrorLabel(base) {
   }
 }
 
+// src/app/user-offline.ts
+var userOffline = false;
+function isUserOffline() {
+  return userOffline;
+}
+function setUserOffline(v) {
+  userOffline = v;
+}
+function browserOnline() {
+  return typeof navigator === "undefined" || navigator.onLine !== false;
+}
+function cloudOnline() {
+  return browserOnline() && !userOffline;
+}
+
 // src/app/app-store.ts
 var od = createOneDriveProvider({
   clientId: CLIENT_ID,
@@ -8957,6 +9375,7 @@ function getStore() {
     // 流式暂存区上限（设置里改；user「cache上限设置」）。改了要重新载入才生效
     offlineUploadReplay: "auto",
     signedIn: () => od.auth.isSignedIn(),
+    isOnline: cloudOnline,
     activeIdentifier: () => activeIdentifier
   });
   return store;
@@ -9219,7 +9638,7 @@ async function get2(identifier) {
 }
 async function ensureLineage(identifier) {
   const f = getStore().file(identifier, { mode: "existing" });
-  if (navigator.onLine) {
+  if (cloudOnline()) {
     const r = await f.pullIfClean({ trustHints: false }).catch((e) => {
       console.warn("[lineage]", e);
       return null;
@@ -10465,7 +10884,7 @@ async function fromLocalFile(file, password) {
 }
 var retryHooks = {
   onWait: (text) => setReadWait(text),
-  reason: () => !navigator.onLine ? "\u73B0\u5728\u79BB\u7EBF" : !auth.isSignedIn() ? "\u767B\u5F55\u8FC7\u671F\u4E86\uFF1A\u9000\u51FA\u5230\u9996\u9875\u91CD\u65B0\u767B\u5F55\uFF0C\u518D\u70B9\u300C\u7EE7\u7EED\u300D\uFF08\u56DE\u5230\u6700\u8FD1\u4E00\u4EFD\u5FEB\u7167\uFF09\uFF1B\u4EE5\u540E\u5148\u300C\u7F13\u5B58\u5168\u76D8\u300D\u5C31\u4E0D\u6015\u8FD9\u4E2A" : "",
+  reason: () => !cloudOnline() ? "\u73B0\u5728\u79BB\u7EBF" : !auth.isSignedIn() ? "\u767B\u5F55\u8FC7\u671F\u4E86\uFF1A\u9000\u51FA\u5230\u9996\u9875\u91CD\u65B0\u767B\u5F55\uFF0C\u518D\u70B9\u300C\u7EE7\u7EED\u300D\uFF08\u56DE\u5230\u6700\u8FD1\u4E00\u4EFD\u5FEB\u7167\uFF09\uFF1B\u4EE5\u540E\u5148\u300C\u7F13\u5B58\u5168\u76D8\u300D\u5C31\u4E0D\u6015\u8FD9\u4E2A" : "",
   wait: (attempt) => new Promise((resolve) => {
     const done = () => {
       clearTimeout(t);
@@ -10476,7 +10895,7 @@ var retryHooks = {
     const onVis = () => {
       if (document.visibilityState === "visible") done();
     };
-    const t = setTimeout(done, navigator.onLine ? retryDelayMs(attempt) : 3e4);
+    const t = setTimeout(done, cloudOnline() ? retryDelayMs(attempt) : 3e4);
     addEventListener("online", done);
     document.addEventListener("visibilitychange", onVis);
   })
@@ -11953,6 +12372,18 @@ function pickNewest(cands) {
   }
   return best?.c.item ?? null;
 }
+var OWN_WRITE_SLACK_MS = 5 * 6e4;
+function newerElsewhere(slots, seenAt, ownAt) {
+  if (!seenAt) return null;
+  let best = null;
+  for (const s of slots) {
+    if (s.savedAt == null || s.savedAt <= (seenAt.get(s.id) ?? 0)) continue;
+    const own = ownAt.get(s.id);
+    if (own != null && s.savedAt <= own + OWN_WRITE_SLACK_MS) continue;
+    if (!best || s.savedAt > best.savedAt) best = s;
+  }
+  return best;
+}
 
 // src/app/undo-guard.ts
 var DB_NAME2 = `${APP_GUID}.undo-guard`;
@@ -12752,6 +13183,24 @@ var Snapshots = class {
     this.off();
     this.off = this.subscribe(onChange);
   }
+  // ── W-25 醒来先核（工单 F，2026-11-03 Claude Opus 5.5；闸门的「问云端一次」在一局开着时就是这一步）──
+  seenAt = null;
+  ownAt = /* @__PURE__ */ new Map();
+  /** 切到后台时调：记下这一刻看到的每格时刻（醒来跟它比）。 */
+  markSeen() {
+    this.seenAt = new Map(this.slots.filter((s) => s.savedAt).map((s) => [s.id, s.savedAt]));
+  }
+  /** 重列并等云端完整帧。**这里不超时**：闸门在外面和超时 / 「先离线用」赛跑（cloud-gate.ts）。 */
+  refreshComplete() {
+    this.listComplete = false;
+    const p = new Promise((r) => this.completeWaiters.push(r));
+    this.refresh();
+    return p;
+  }
+  /** 别的设备存过更新的格（resume.ts newerElsewhere）；没有 = null。 */
+  newerElsewhere() {
+    return newerElsewhere(this.slots, this.seenAt, this.ownAt);
+  }
   /** 「接着玩」：等云端完整帧（waitCloud 时，最多 timeoutMs），再读每一格的元数据按存档时刻 at 选最新（resume.ts 的不变量）。
    *  partial = 没等到云端帧，选的是这台设备上看得到的最新一份。 */
   async newestForResume(opts) {
@@ -12813,6 +13262,7 @@ var Snapshots = class {
       throw new Error("\u4E0A\u4E00\u4E2A\u5FEB\u7167\u8FD8\u5728\u5B58\uFF0C\u7B49\u4E00\u4E0B\u518D\u5B58");
     }
     this.busy = true;
+    this.ownAt.set(this.slots.find((s) => s.kind === kind && s.n === n)?.id ?? crumbId(this.disc.key, kind, n), Date.now());
     let label = slotLabel({ kind, n });
     beginLocal(`${auto ? "\u81EA\u52A8\u5FEB\u7167" : `\u5FEB\u7167\u300C${label}\u300D`}`);
     try {
@@ -17747,11 +18197,182 @@ onStoreModal((on) => {
     renderToolbar();
   }
 });
+var authInited = false;
+var accountExpected = false;
+function noteInit(st) {
+  authInited = true;
+  accountExpected = st.signedIn || !!st.probing;
+  logEvent("info", `\u767B\u5F55\u72B6\u6001\uFF1AsignedIn=${st.signedIn} probing=${!!st.probing}`);
+}
+async function renewSilently() {
+  if (auth.isSignedIn()) return { kind: "ok" };
+  if (!authInited) {
+    const st = await auth.initAuth();
+    noteInit(st);
+    if (st.signedIn) return { kind: "ok" };
+  }
+  if (!accountExpected) return { kind: "no-account" };
+  takeRenewFailureCode();
+  const ok = await auth.retrySilentSignIn();
+  const code = ok ? null : takeRenewFailureCode();
+  logEvent(ok ? "info" : "warn", `\u9759\u9ED8\u7EED\u7B7E \u2192 ${ok ? "\u6210\u4E86" : "\u6CA1\u6210"}${code ? " code=" + code : ""}`);
+  return ok ? { kind: "ok" } : { kind: "failed", code };
+}
+var lastQuietRetryAt = 0;
+function retrySilentQuietly(why) {
+  if (cloudGate.isRunning() || isUserOffline() || auth.isSignedIn() || !authInited || !accountExpected || !browserOnline()) return;
+  const t = Date.now();
+  if (t - lastQuietRetryAt < 6e4) return;
+  lastQuietRetryAt = t;
+  logEvent("info", `\u9759\u9ED8\u8865\u767B\uFF08${why}\uFF09`);
+  void renewSilently().catch((e) => logEvent("warn", `\u9759\u9ED8\u8865\u767B\u51FA\u9519\uFF1A${errorText(e)}`));
+}
+var pausedByGate = false;
+var wakeSnapshotDeferred = false;
+function holdGame(on) {
+  const s = session;
+  if (on) {
+    if (s && !s.paused && !pausedByHide) {
+      s.setPaused(true);
+      pausedByGate = true;
+      renderToolbar();
+    }
+    return;
+  }
+  if (pausedByGate) {
+    pausedByGate = false;
+    if (s) {
+      s.setPaused(false);
+      renderToolbar();
+      if (!s.paused) cycleAudio().catch((e) => logEvent("warn", `\u58F0\u97F3\u6302\u8D77\u2192\u6062\u590D\u5931\u8D25\uFF1A${errorText(e)}`));
+    }
+  }
+  if (wakeSnapshotDeferred) {
+    wakeSnapshotDeferred = false;
+    snaps?.onWake().catch((e) => console.warn("[wake snapshot]", e));
+  }
+}
+var gateCover = null;
+function showGateCover(view, onPick) {
+  gateCover?.close();
+  const h2 = openSyncGate(view);
+  gateCover = h2;
+  void h2.result.then((v) => {
+    if (gateCover === h2) gateCover = null;
+    if (v != null) onPick(v);
+  });
+}
+var barPainting = false;
+function paintOfflineBar() {
+  if (!isUserOffline() || barPainting) return;
+  barPainting = true;
+  void getStore().files.dirty.count().catch(() => 0).then((n) => {
+    barPainting = false;
+    if (!isUserOffline()) return;
+    $("offlineBarText").textContent = GATE_COPY.bar(n);
+    const list = $("offlineBarList");
+    list.textContent = GATE_COPY.barOpenList;
+    list.hidden = false;
+    $("offlineBar").hidden = false;
+  });
+}
+async function checkOtherDevices(g) {
+  const sn = snaps;
+  if (!session || !sn) return;
+  await sn.refreshComplete();
+  if (g.abandoned() || snaps !== sn) return;
+  const newer = sn.newerElsewhere();
+  if (!newer) return;
+  g.onLongWait();
+  logEvent("info", `\u9192\u6765\uFF1A\u522B\u7684\u8BBE\u5907\u5B58\u8FC7\u300C${slotLabel(newer)}\u300D`);
+  const when = newer.savedAt ? new Date(newer.savedAt).toLocaleString() : "";
+  const choice = await sheet((done) => [
+    h("h2", {}, "\u522B\u7684\u8BBE\u5907\u5B58\u8FC7\u66F4\u65B0\u7684"),
+    h("p", {}, `\u522B\u7684\u8BBE\u5907\u5728 ${when} \u5B58\u8FC7\u300C${slotLabel(newer)}\u300D\u3002`),
+    h("p", { class: "hint" }, "\u300C\u8BFB\u4E91\u7AEF\u6700\u65B0\u300D= \u6362\u6210\u90A3\u4E00\u4EFD\uFF08\u8BFB\u4E4B\u524D\u7684\u72B6\u6001\u80FD\u64A4\u9500\uFF09\uFF1B\u300C\u7EE7\u7EED\u8FD9\u4E00\u5C40\u300D= \u63A5\u7740\u73A9\u8FD9\u53F0\u7684\uFF0C\u5B58\u6863\u65F6\u649E\u4E0A\u4E86\u4F1A\u95EE\u3002"),
+    h(
+      "div",
+      { class: "row" },
+      h("button", { onclick: () => done("keep") }, "\u7EE7\u7EED\u8FD9\u4E00\u5C40"),
+      h("button", { class: "primary", onclick: () => done("cloud") }, "\u8BFB\u4E91\u7AEF\u6700\u65B0")
+    )
+  ], { dismissable: false });
+  if (choice === "cloud" && snaps === sn) await sn.load(newer);
+}
+var afterSignedIn = () => {
+};
+var catchUpPush = async () => {
+};
+var gateTune = { recheckMs: 3e4 };
+var cloudGate = new CloudGate({
+  attached: () => auth.isAuthConfigured() && accountSeen(),
+  browserOnline,
+  renew: renewSilently,
+  check: checkOtherDevices,
+  signInInteractive: () => {
+    requestStoragePersistence().catch(() => {
+    });
+    auth.signIn().catch((e) => banner(`\u767B\u5F55\u5931\u8D25\uFF1A${errorText(e)}`));
+  },
+  ui: {
+    showChecking: (onEscape) => {
+      holdGame(true);
+      showGateCover({ title: GATE_COPY.checkingTitle, showSpinner: true, actions: [{ label: GATE_COPY.escape, value: "escape" }] }, () => onEscape());
+    },
+    showBlocked: (reason, b) => {
+      holdGame(true);
+      showGateCover({ title: GATE_COPY.blockedTitle, message: GATE_COPY.reason[reason], actions: [{ label: GATE_COPY.signIn, value: "signin", primary: true }, { label: GATE_COPY.offline, value: "offline" }] }, (v) => {
+        if (v === "offline") {
+          b.offline();
+          return;
+        }
+        b.signIn();
+        cloudGate.reshowBlocked();
+      });
+    },
+    hide: () => {
+      gateCover?.close();
+      gateCover = null;
+      holdGame(false);
+    }
+  },
+  bar: {
+    show: paintOfflineBar,
+    reconnecting: () => {
+      $("offlineBarText").textContent = GATE_COPY.barReconnecting;
+      $("offlineBarList").hidden = true;
+      $("offlineBar").hidden = false;
+    },
+    hide: () => {
+      $("offlineBar").hidden = true;
+    }
+  },
+  setUserOffline,
+  userOffline: isUserOffline,
+  catchUp: async () => {
+    await catchUpPush();
+    afterSignedIn();
+  },
+  // 库逐个 If-Match 补传（撞上的留着进存档管理，不替人选）
+  afterPass: () => {
+    afterSignedIn();
+  },
+  note: (m) => logEvent("info", m),
+  get recheckMs() {
+    return gateTune.recheckMs;
+  }
+});
+function wakeGate(why) {
+  if (pip.active) return;
+  void cloudGate.run("wake").then((o) => {
+    if (o !== "no-gate" && o !== "recent") logEvent("info", `\u9192\u6765\uFF08${why}\uFF09\u2192 ${o}`);
+  }).catch((e) => banner(errorText(e)));
+}
 var guide = createGuideWindow({
   log: (level, text) => logEvent(level, text),
   say,
   topFloor: () => document.fullscreenElement ? 0 : $("toolbar").getBoundingClientRect().bottom,
-  cloudReachable: () => auth.isSignedIn() && navigator.onLine
+  cloudReachable: () => auth.isSignedIn() && cloudOnline()
 });
 var pantryItems = [];
 var pantryComplete = false;
@@ -18035,7 +18656,7 @@ async function unlockTitles(ids) {
         }
       } catch (e) {
         const tries = unavailableTries.get(id) ?? 0;
-        const v = triageUnlockFailure(e, { reachable: auth.isSignedIn() && navigator.onLine, isNetwork: isNetworkError(e), tries });
+        const v = triageUnlockFailure(e, { reachable: auth.isSignedIn() && cloudOnline(), isNetwork: isNetworkError(e), tries });
         if (v.kind === "unsupported") {
           unsupported.set(id, v.why);
           unavailableTries.delete(id);
@@ -18147,7 +18768,7 @@ async function play(prepare2, resume) {
   let memstickTimes = /* @__PURE__ */ new Map();
   let extraFiles = /* @__PURE__ */ new Map();
   say("\u6B63\u5728\u8BFB\u5B58\u6863\u2026", 3e4);
-  const cloudReachable = auth.isSignedIn() && navigator.onLine;
+  const cloudReachable = auth.isSignedIn() && cloudOnline();
   if (core2.saves === "shared") {
     const listed = await listJams(PLATFORM_CODE.psp, { timeoutMs: 1e4, waitForCloud: cloudReachable });
     if (listed.ids.length) {
@@ -18256,8 +18877,11 @@ async function play(prepare2, resume) {
       logEvent("info", `\u56DE\u5230\u524D\u53F0\uFF1A\u5E27 ${f0}\uFF0C\u58F0\u97F3 ${audioContext().state}${pausedByHide ? "\uFF08\u540E\u53F0\u65F6\u6682\u505C\u7740\uFF09" : ""}`);
       if (pausedByHide) {
         pausedByHide = false;
-        session.setPaused(false);
-        renderToolbar();
+        if (cloudGate.isRunning()) pausedByGate = true;
+        else {
+          session.setPaused(false);
+          renderToolbar();
+        }
       }
       if (!session.paused) cycleAudio().catch((e) => logEvent("warn", `\u58F0\u97F3\u6302\u8D77\u2192\u6062\u590D\u5931\u8D25\uFF1A${errorText(e)}`));
       perfSoon();
@@ -18269,7 +18893,8 @@ async function play(prepare2, resume) {
         if (!soundOk) rebuildAudio("\u56DE\u6765\u540E\u58F0\u97F3\u4E0D\u8D70").catch((e) => logEvent("error", `\u58F0\u97F3\u91CD\u5EFA\u5931\u8D25\uFF1A${errorText(e)}`));
       }, 2e3);
       snaps?.refresh();
-      snaps?.onWake().catch((e) => console.warn("[wake snapshot]", e));
+      if (cloudGate.isRunning()) wakeSnapshotDeferred = true;
+      else snaps?.onWake().catch((e) => console.warn("[wake snapshot]", e));
       return;
     }
     logEvent("info", `\u5207\u5230\u540E\u53F0\uFF1A\u5E27 ${session.stats().frames}\uFF0C\u58F0\u97F3 ${audioContext().state}`);
@@ -18277,6 +18902,7 @@ async function play(prepare2, resume) {
       session.setPaused(true);
       pausedByHide = true;
     }
+    snaps?.markSeen();
     snaps?.onLeave().catch((e) => console.warn("[auto snapshot]", e));
     jamTick(true);
     void guide.flush({ deferPush: true });
@@ -18301,7 +18927,7 @@ function hideResumeCover() {
 async function resumeNewest() {
   say("\u6B63\u5728\u627E\u6700\u65B0\u7684\u5FEB\u7167\u2026", 3e4);
   if (!resumeCoverEl.hidden) showResumeCover("\u6B63\u5728\u627E\u6700\u65B0\u7684\u5FEB\u7167\u2026");
-  const got = await snaps.newestForResume({ waitCloud: auth.isSignedIn() && navigator.onLine });
+  const got = await snaps.newestForResume({ waitCloud: auth.isSignedIn() && cloudOnline() });
   if (!resumeCoverEl.hidden && got) showResumeCover(`\u6B63\u5728\u8BFB\u300C${slotLabel(got.slot)}\u300D\u2026`);
   if (!got) {
     say("\u8FD9\u5F20\u76D8\u8FD8\u6CA1\u6709\u5FEB\u7167\uFF0C\u4ECE\u5934\u5F00\u59CB");
@@ -18386,6 +19012,7 @@ function importCtx() {
 var runImportSaves = () => importSaves(importCtx());
 var cartNoted = false;
 async function cartTick(force) {
+  if (cloudGate.isRunning()) return;
   if (!session || !current || !cartCore || jamBlocked || cartSaving) return;
   const ram = session.saveRam();
   if (ram && !cartNoted) {
@@ -18434,6 +19061,7 @@ async function cartTick(force) {
   }
 }
 async function jamTick(force) {
+  if (cloudGate.isRunning()) return;
   if (!session || jamBlocked || jamSaving || performance.now() < jamRetryAt) return;
   const now = session.memstickDirs();
   const changed = [], removed = [];
@@ -19977,6 +20605,7 @@ async function boot() {
       });
       const sum = [...pendingBy.values()].reduce((a, b) => ({ needsYou: a.needsYou + b.needsYou, waiting: a.waiting + b.waiting, newer: a.newer + b.newer }), { needsYou: 0, waiting: 0, newer: 0 });
       setPending(sum);
+      paintOfflineBar();
       for (const it of newer) if (folder === CRUMBS || !session) dropStaleLocal(it.identifier).catch((e) => console.warn("[stale]", e));
     }));
   };
@@ -20003,7 +20632,7 @@ async function boot() {
   let pushing = null;
   const pushDirty = () => {
     if (pushing) return pushing;
-    if (inFlightFresh() || !auth.isSignedIn() || !navigator.onLine) return Promise.resolve();
+    if (cloudGate.isRunning() || inFlightFresh() || !auth.isSignedIn() || !cloudOnline()) return Promise.resolve();
     pushing = activity("\u6B63\u5728\u4F20\u6CA1\u4F20\u4E0A\u53BB\u7684\u2026", () => store2.files.dirty.pushAll()).then((r) => {
       if (r.pushed || r.failed.length) logEvent(r.failed.length ? "warn" : "info", `\u7EED\u63A8\uFF1A\u4F20\u4E0A\u53BB ${r.pushed} \u4E2A${r.failed.length ? `\uFF0C\u6CA1\u4F20\u4E0A\u53BB ${r.failed.length} \u4E2A\uFF08\u79BB\u7EBF / \u51B2\u7A81\uFF1A\u51B2\u7A81\u7684\u5728\u5B58\u6863\u7BA1\u7406\u300C\u8981\u4F60\u5904\u7406\u7684\u300D\u91CC\uFF09` : ""}`);
       snaps?.afterPush();
@@ -20017,9 +20646,24 @@ async function boot() {
   };
   pushDirtyNow = pushDirty;
   document.addEventListener("visibilitychange", () => {
-    if (document.visibilityState === "visible") pushDirty();
+    if (document.visibilityState === "visible") {
+      retrySilentQuietly("foreground");
+      wakeGate("visible");
+      pushDirty();
+    }
   });
-  addEventListener("online", pushDirty);
+  addEventListener("pageshow", (e) => {
+    if (e.persisted) wakeGate("pageshow");
+  });
+  addEventListener("online", () => {
+    cloudGate.onCloudMaybeBack();
+    retrySilentQuietly("online");
+    void pushDirty();
+  });
+  catchUpPush = () => pushDirty();
+  $("offlineBarList").addEventListener("click", () => {
+    openSaveManager(saveManagerContext).catch((e) => banner(errorText(e)));
+  });
   let retryTimer = 0;
   onRetryWanted(() => {
     clearTimeout(retryTimer);
@@ -20045,19 +20689,41 @@ async function boot() {
     logEvent("info", go ? `\u767B\u5F55\u540E\uFF1A${n} \u4EFD\u8FD8\u6CA1\u4F20\u4E0A\u53BB\uFF0C\u4F20` : `\u767B\u5F55\u540E\uFF1A${n} \u4EFD\u8FD8\u6CA1\u4F20\u4E0A\u53BB\uFF0C\u5148\u4E0D\u4F20`);
     if (go) void pushDirty();
   };
-  auth.onAuthChanged(() => {
+  afterSignedIn = () => {
+    if (!auth.isSignedIn()) return;
+    for (const f of [PANTRY, CRUMBS, JARS]) store2.files.ensureFolder(f).catch((e) => console.warn("[ensureFolder]", f, e));
+    store2.files.drainOfflineQueue().catch((e) => console.warn("[drain]", e));
+    void askThenPush();
+  };
+  auth.onAuthChanged((st) => {
+    if (st.signedIn) {
+      authInited = true;
+      accountExpected = true;
+      setAccountSeen(true);
+    } else if (st.reason === "signOut") {
+      accountExpected = false;
+      setAccountSeen(false);
+    }
+    logEvent("info", `\u767B\u5F55\u53D8\u5316\uFF1AsignedIn=${st.signedIn} reason=${st.reason ?? "-"}`);
     renderAccount();
     renderLibrary();
-    if (auth.isSignedIn()) {
-      for (const f of [PANTRY, CRUMBS, JARS]) store2.files.ensureFolder(f).catch((e) => console.warn("[ensureFolder]", f, e));
-      store2.files.drainOfflineQueue().catch((e) => console.warn("[drain]", e));
-      void askThenPush();
+    if (st.signedIn) {
+      cloudGate.onCloudMaybeBack();
+      if (!cloudGate.isRunning() && !isUserOffline()) afterSignedIn();
     }
   });
-  try {
-    await auth.initAuth();
-  } catch (e) {
-    banner(`OneDrive \u767B\u5F55\u72B6\u6001\u8BFB\u53D6\u5931\u8D25\uFF1A${errorText(e)}`, "warning");
+  if (cloudGate.isRunning() || auth.isAuthConfigured() && accountSeen()) {
+    try {
+      logEvent("info", `\u95F8\u95E8\uFF1A${await cloudGate.run("boot")}`);
+    } catch (e) {
+      banner(`OneDrive \u767B\u5F55\u72B6\u6001\u8BFB\u53D6\u5931\u8D25\uFF1A${errorText(e)}`, "warning");
+    }
+  } else {
+    try {
+      noteInit(await auth.initAuth());
+    } catch (e) {
+      banner(`OneDrive \u767B\u5F55\u72B6\u6001\u8BFB\u53D6\u5931\u8D25\uFF1A${errorText(e)}`, "warning");
+    }
   }
   try {
     await appState().init();
@@ -20067,6 +20733,7 @@ async function boot() {
   }
 }
 globalThis.kr = {
+  gate: { cloudGate, tune: gateTune, isUserOffline },
   stats: () => session ? { ...session.stats(), note: lastNote } : null,
   discOpens: () => discOpens,
   // 核报上来的「打开了盘上哪个文件」次数（P0½ 第三刀的无头验证）
@@ -20159,4 +20826,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-2a64e24ca0db.mjs.map
+//# sourceMappingURL=kudsrocket-82a3541066bd.mjs.map

@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#111111">
 <title>KudsRocket</title>
 <link rel="manifest" href="./manifest.webmanifest">
-<link rel="stylesheet" href="./styles.css?v=2a64e24ca0db">
+<link rel="stylesheet" href="./styles.css?v=82a3541066bd">
 </head>
 <body>
 <main id="home">
@@ -73,6 +73,15 @@
 <div id="note" hidden></div>
 <div id="update" hidden></div>
 <div id="busy" hidden><span></span></div>
-<script type="module" src="./dist/kudsrocket-2a64e24ca0db.mjs"></script>
+<div id="syncGate" role="dialog" aria-modal="true" aria-labelledby="syncGateTitle" hidden>
+  <div class="sync-gate-card">
+    <h2 id="syncGateTitle"></h2>
+    <p id="syncGateMessage" hidden></p>
+    <div class="sync-gate-spinner" id="syncGateSpinner" hidden></div>
+    <div class="row" id="syncGateActions"></div>
+  </div>
+</div>
+<div id="offlineBar" hidden><span id="offlineBarText"></span><button id="offlineBarList" hidden></button></div>
+<script type="module" src="./dist/kudsrocket-82a3541066bd.mjs"></script>
 </body>
 </html>
