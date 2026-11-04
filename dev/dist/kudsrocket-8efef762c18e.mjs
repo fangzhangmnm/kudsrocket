@@ -2,7 +2,7 @@
 var define_CORE_DIRS_default = { ppsspp: "./dist/core-602016aa4429/", mgba: "./dist/core-mgba-0eb982e32acb/" };
 
 // src/version.ts
-var APP_VERSION = "v0.2.12-2026-11-03";
+var APP_VERSION = "v0.2.13-2026-11-03";
 
 // src/app/config.ts
 var APP_ID = "kudsrocket";
@@ -121,8 +121,8 @@ function icon(name) {
   svg.append(use);
   return svg;
 }
-function h(tag, attrs = {}, ...children) {
-  const el = document.createElement(tag);
+function h(tag2, attrs = {}, ...children) {
+  const el = document.createElement(tag2);
   for (const [k, v] of Object.entries(attrs)) {
     if (v == null || v === false) continue;
     if (k.startsWith("on") && typeof v === "function") el.addEventListener(k.slice(2), v);
@@ -1699,6 +1699,38 @@ async function unsealBytes(password, sealed) {
   if (disc.meta.sha256 && disc.meta.sha256 !== await sha256Hex(payload)) throw new CorruptDiscError("content does not match its recorded sha256");
   if (disc.meta.z && disc.meta.z !== "deflate-raw") throw new CorruptDiscError(`unknown compression "${String(disc.meta.z)}"`);
   return { plain: disc.meta.z ? await inflateRaw(payload) : payload, meta: disc.meta };
+}
+
+// src/app/log-scrub.ts
+var secrets = /* @__PURE__ */ new Set();
+var sorted = null;
+function tag(s) {
+  let h2 = 2166136261;
+  for (let i = 0; i < s.length; i++) {
+    h2 ^= s.charCodeAt(i);
+    h2 = Math.imul(h2, 16777619);
+  }
+  return (h2 >>> 0 & 65535).toString(16).padStart(4, "0");
+}
+function noteLogSecret(s) {
+  const v = s?.trim();
+  if (!v) return;
+  const longEnough = /[^\x00-\x7f]/.test(v) ? v.length >= 2 : v.length >= 3;
+  if (!longEnough || secrets.has(v)) return;
+  secrets.add(v);
+  sorted = null;
+}
+var logTag = (s) => `<#${tag(s)}>`;
+var DISC_ID = /[A-Z]{4}[-_]?[0-9]{5}[A-Z0-9_-]*/g;
+var DISC_FILE = /[^/\\，。；：:、「」【】<>"'\n]+\.(?:iso|cso|chd|pbp|gba|gbc|gb|wafter|ppst)\b/gi;
+var PANTRY_PATH = /\bpantry\/[^\s，。；：、）)」】]+/g;
+function scrubLogText(text) {
+  let out = text;
+  if (secrets.size) {
+    sorted ??= [...secrets].sort((a, b) => b.length - a.length);
+    for (const s of sorted) if (out.includes(s)) out = out.split(s).join(`<\u540D\u5B57#${tag(s)}>`);
+  }
+  return out.replace(PANTRY_PATH, (m) => `pantry/<#${tag(m)}>`).replace(DISC_FILE, (m) => `<\u6587\u4EF6#${tag(m)}>`).replace(DISC_ID, (m) => `<\u76D8\u53F7#${tag(m)}>`);
 }
 
 // node_modules/@internal/store/dist/base/substrate.js
@@ -8614,9 +8646,11 @@ function setStagingCapBytes(bytes) {
   set("staging-cap", bytes > 0 ? String(bytes) : null);
 }
 var BLACKBOX_MAX = 400;
+var BLACKBOX_KEY = "blackbox2";
 function loadBlackbox() {
+  set("blackbox", null);
   try {
-    const v = JSON.parse(get("blackbox") ?? "[]");
+    const v = JSON.parse(get(BLACKBOX_KEY) ?? "[]");
     return Array.isArray(v) ? v : [];
   } catch {
     return [];
@@ -8624,7 +8658,7 @@ function loadBlackbox() {
 }
 function saveBlackbox(entries) {
   try {
-    set("blackbox", JSON.stringify(entries.slice(-BLACKBOX_MAX)));
+    set(BLACKBOX_KEY, JSON.stringify(entries.slice(-BLACKBOX_MAX)));
   } catch {
   }
 }
@@ -8715,7 +8749,7 @@ function setReadWait(text) {
     else render();
   }
 }
-var log = loadBlackbox();
+var log = loadBlackbox().map((e) => ({ ...e, text: scrubLogText(e.text) }));
 log.push({ at: Date.now(), level: "info", text: `\u2014\u2014 \u9875\u9762\u8F7D\u5165 ${APP_VERSION} \u2014\u2014` });
 var flushTimer = 0;
 function flushLog() {
@@ -8776,7 +8810,8 @@ function endLocal() {
 }
 var mb = (n) => n >= 2 ** 20 ? `${(n / 2 ** 20).toFixed(1)} MB` : `${(n / 1024).toFixed(0)} KB`;
 var secs = (t0) => `${((performance.now() - t0) / 1e3).toFixed(0)} s`;
-function logEvent(level, text) {
+function logEvent(level, raw) {
+  const text = scrubLogText(raw);
   log.push({ at: Date.now(), level, text });
   if (log.length > LOG_MAX) log.shift();
   if (!flushTimer) flushTimer = window.setTimeout(flushLog, 500);
@@ -9224,7 +9259,7 @@ var storeUI = {
         h("button", { class: "primary", onclick: () => done("takeCloud") }, "\u4E91\u7AEF\u8986\u76D6\u672C\u5730")
       )
     ], { dismissable: false }));
-    logEvent("warn", `\u51B2\u7A81\uFF1A${stemOf(name)}\uFF08${occasion}\uFF09\u2192 ${{ keepMine: "\u672C\u5730\u8986\u76D6\u4E91\u7AEF", takeCloud: "\u4E91\u7AEF\u8986\u76D6\u672C\u5730", cancel: "\u53D6\u6D88" }[choice ?? "cancel"]}`);
+    logEvent("warn", `\u51B2\u7A81\uFF1A${logTag(stemOf(name))}\uFF08${occasion}\uFF09\u2192 ${{ keepMine: "\u672C\u5730\u8986\u76D6\u4E91\u7AEF", takeCloud: "\u4E91\u7AEF\u8986\u76D6\u672C\u5730", cancel: "\u53D6\u6D88" }[choice ?? "cancel"]}`);
     return choice ?? "cancel";
   },
   reportError: (err3, level = "error") => {
@@ -9762,7 +9797,10 @@ var jamId = async (jar) => {
   const seed = jar.k === PLATFORM_CODE.psp && jar.m === "shared" ? `savedata:${jar.u}` : `${jar.k}/${jar.m}:${jar.u}`;
   return `${jarFolder(jar.k)}/${await sha16(seed)}${JAM_SUFFIX}`;
 };
-var describeJar = (jar) => jar.m === "shared" ? `\u5B58\u6863 ${jar.u}` : `\u5B58\u6863\uFF08\u8DDF\u6587\u4EF6 ${jar.u}\uFF09`;
+var describeJar = (jar) => {
+  noteLogSecret(jar.u);
+  return jar.m === "shared" ? `\u5B58\u6863 ${jar.u}` : `\u5B58\u6863\uFF08\u8DDF\u6587\u4EF6 ${jar.u}\uFF09`;
+};
 function listFolderOnce(folder, timeoutMs = 1e4, waitForCloud = true) {
   return new Promise((resolve) => {
     let latest = { items: [], complete: false };
@@ -10866,6 +10904,9 @@ async function unwrap(src, name, password, fallbackKey) {
   const keyFromGame = !!fp.id;
   const key = keyFromGame ? await gameKey(fp) : fallbackKey ?? await discKey(stemOf2(name));
   if (!keyFromGame) console.warn("[disc] disc id unreadable; key =", fallbackKey ? "cached card" : "file name");
+  noteLogSecret(stemOf2(original));
+  noteLogSecret(stemOf2(name));
+  noteLogSecret(fp.id);
   return { media, ext: extOf(original), title: stemOf2(original), fp, key, keyFromGame };
 }
 async function fingerprintFor(media, fromMeta, ext) {
@@ -10915,7 +10956,11 @@ async function inspectPantry(identifier) {
   const encrypted = identifier.endsWith(".wafter");
   if (encrypted && !sessionPassword) return null;
   const f = getStore().file(identifier, { mode: "existing" });
-  const card = async (name, fp) => ({ title: stemOf2(name), fp, key: fp.id ? await gameKey(fp) : await discKey(stemOf2(identifier)) });
+  const card = async (name, fp) => {
+    noteLogSecret(stemOf2(name));
+    noteLogSecret(fp.id);
+    return { title: stemOf2(name), fp, key: fp.id ? await gameKey(fp) : await discKey(stemOf2(identifier)) };
+  };
   try {
     if (encrypted) {
       const head = await f.getHead({ bytesLength: HEAD_PEEK_BYTES, source: "local" }).catch(() => null);
@@ -11848,8 +11893,8 @@ var CoreSession = class _CoreSession {
         }
         this.perfPrev = p;
       }
-      const sorted = this.perRefresh.dts.slice().sort((a, b) => a - b);
-      this.perRefresh.hz = sorted.length ? 1e3 / sorted[sorted.length >> 1] : 0;
+      const sorted2 = this.perRefresh.dts.slice().sort((a, b) => a - b);
+      this.perRefresh.hz = sorted2.length ? 1e3 / sorted2[sorted2.length >> 1] : 0;
       this.perRefresh.shown = this.perRefresh.counts;
       this.perRefresh.dts = [];
       this.perRefresh.counts = [0, 0, 0];
@@ -13165,6 +13210,7 @@ var Snapshots = class {
     return watchSlots(this.disc.key, (slots, all, complete) => {
       this.slots = slots;
       this.all = all;
+      noteLogSecret(this.disc.title);
       for (const s of slots) setLabel(s.id, `\u5FEB\u7167\uFF08${slotLabel(s)}\uFF0C${this.disc.title}\uFF09`);
       this.gotFrame = true;
       for (const w of this.frameWaiters.splice(0)) w();
@@ -18411,6 +18457,8 @@ async function hydrateTitles() {
     const c = titleCache?.get(it.identifier);
     if (c && (it.size == null || c.size === it.size)) {
       cards.set(it.identifier, c.card);
+      noteLogSecret(c.card.title);
+      noteLogSecret(c.card.fp?.id);
       hit++;
     }
   }
@@ -18652,7 +18700,7 @@ async function unlockTitles(ids) {
           }, (e) => console.warn("[title-cache]", e));
         } else {
           wrong++;
-          logEvent("warn", `\u76D8\u540D\uFF1A${id} \u8FD9\u4E2A\u53E3\u4EE4\u6253\u4E0D\u5F00`);
+          logEvent("warn", `\u76D8\u540D\uFF1A${logTag(id)} \u8FD9\u4E2A\u53E3\u4EE4\u6253\u4E0D\u5F00`);
         }
       } catch (e) {
         const tries = unavailableTries.get(id) ?? 0;
@@ -19089,10 +19137,10 @@ async function jamTick(force) {
       const r = await withDeadline(
         saveSaveDir(PSP_JAR(dir), session.readSaveDir(dir), pw, { deferPush: hidden }),
         2e4,
-        (late) => logEvent(late.ok ? "info" : "warn", late.ok ? `\u5B58\u6863 ${dir} \u8FDF\u5230\u7684\u4E0A\u4F20${late.value.pushed ? "\u4F20\u597D\u4E86" : "\u6CA1\u4F20\u4E0A\u53BB\uFF08\u4F1A\u7EED\u63A8\uFF09"}` : `\u5B58\u6863 ${dir} \u8FDF\u5230\u7684\u4E0A\u4F20\u51FA\u9519\uFF1A${String(late.error)}`)
+        (late) => logEvent(late.ok ? "info" : "warn", late.ok ? `\u5B58\u6863 ${logTag(dir)} \u8FDF\u5230\u7684\u4E0A\u4F20${late.value.pushed ? "\u4F20\u597D\u4E86" : "\u6CA1\u4F20\u4E0A\u53BB\uFF08\u4F1A\u7EED\u63A8\uFF09"}` : `\u5B58\u6863 ${logTag(dir)} \u8FDF\u5230\u7684\u4E0A\u4F20\u51FA\u9519\uFF1A${String(late.error)}`)
       );
       if (r === "timeout") {
-        logEvent("warn", `\u5B58\u6863 ${dir} 20 s \u8FD8\u6CA1\u5B58\u5B8C\uFF1A\u5148\u653E\u5F00\uFF08\u672C\u673A\u4F1A\u843D\u4E0B\u3001\u81EA\u52A8\u7EED\u63A8\uFF09\uFF0C\u4E0B\u6B21\u518D\u6838`);
+        logEvent("warn", `\u5B58\u6863 ${logTag(dir)} 20 s \u8FD8\u6CA1\u5B58\u5B8C\uFF1A\u5148\u653E\u5F00\uFF08\u672C\u673A\u4F1A\u843D\u4E0B\u3001\u81EA\u52A8\u7EED\u63A8\uFF09\uFF0C\u4E0B\u6B21\u518D\u6838`);
         pushed = false;
         continue;
       }
@@ -20387,7 +20435,7 @@ async function unpackSaves() {
   a.click();
   a.remove();
   setTimeout(() => URL.revokeObjectURL(url), 6e4);
-  logEvent("info", `\u5B58\u6863\u89E3\u7F50\uFF1A${[...chosen].join(" \xB7 ")}\uFF0C${want.length} \u4E2A\u76EE\u5F55 \u2192 saves-${stamp2}.zip\uFF08${(zip.length / 1024).toFixed(0)} KB\uFF09`);
+  logEvent("info", `\u5B58\u6863\u89E3\u7F50\uFF1A${[...chosen].map(logTag).join(" \xB7 ")}\uFF0C${want.length} \u4E2A\u76EE\u5F55 \u2192 saves-${stamp2}.zip\uFF08${(zip.length / 1024).toFixed(0)} KB\uFF09`);
   say(`\u6253\u5305\u597D\u4E86\uFF1A${want.length} \u4E2A\u5B58\u6863\u76EE\u5F55\uFF08saves-${stamp2}.zip\uFF09`, 6e3);
 }
 var toolErr = (e) => {
@@ -20783,6 +20831,13 @@ globalThis.kr = {
     openStallSheet: () => openStallSheet(),
     log: () => dumpLog(),
     debugLoseGl: () => session?.debugLoseGl() ?? false,
+    /** 工单 F2 探针：走真标签写一行黑匣子，返回标签（里面有真游戏名；探针拿它查黑匣子里没有）。 */
+    logLabelProbe: () => {
+      const id = snaps?.slots.find((x) => x.savedAt)?.id;
+      const label = id ? labelFor(id) : "";
+      if (label) logEvent("info", `\u5F00\u59CB\u4F20 ${label}`);
+      return label;
+    },
     history: () => snaps?.history().map((h2) => h2.n) ?? [],
     setHistoryMinAge: (ms) => setHistoryMinAgeForTest(ms),
     /** 库的全屏遮罩跑 ms 毫秒（验遮罩开着时游戏暂停、关了恢复；W-42）。 */
@@ -20826,4 +20881,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-82a3541066bd.mjs.map
+//# sourceMappingURL=kudsrocket-8efef762c18e.mjs.map
