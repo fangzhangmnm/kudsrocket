@@ -2,7 +2,7 @@
 var define_CORE_DIRS_default = { ppsspp: "./dist/core-602016aa4429/", mgba: "./dist/core-mgba-0eb982e32acb/" };
 
 // src/version.ts
-var APP_VERSION = "v0.2.14-2026-11-03";
+var APP_VERSION = "v0.2.15-2026-11-04";
 
 // src/app/config.ts
 var APP_ID = "kudsrocket";
@@ -3950,7 +3950,7 @@ function createListing(cfg) {
     const d = cfg.describe?.(n);
     return d ? d.kind !== void 0 ? { kind: d.kind, tier: d.tier } : { tier: d.tier } : { tier: "work" };
   };
-  function classifyPath(path, cf, hasLocal, cloudReachable, absenceAuthoritative, localStat) {
+  function classifyPath(path, cf, hasLocal, cloudReachable2, absenceAuthoritative, localStat) {
     const hasCloud = cf != null;
     const seen = head.seenBase(path);
     const everSynced = seen != null;
@@ -3962,7 +3962,7 @@ function createListing(cfg) {
       everSynced,
       cloudMoved,
       dirty,
-      cloudReachable,
+      cloudReachable: cloudReachable2,
       absenceAuthoritative,
       pendingGone: isPendingGone?.(path)
     });
@@ -3985,8 +3985,8 @@ function createListing(cfg) {
       reportStoreError(e, "log");
       return null;
     }) : null;
-    const cloudReachable = cloudRes != null;
-    const absenceAuthoritative = cloudReachable && cloudRes.complete === true;
+    const cloudReachable2 = cloudRes != null;
+    const absenceAuthoritative = cloudReachable2 && cloudRes.complete === true;
     const prefix = folder ? `${folder}/` : "";
     const cloudMap = /* @__PURE__ */ new Map();
     for (const c of cloudRes?.files ?? []) {
@@ -4026,7 +4026,7 @@ function createListing(cfg) {
     const localStats = await statLocal(localDirect);
     const items = [];
     for (const path of paths)
-      items.push(classifyPath(path, cloudMap.get(path), localDirect.has(path), cloudReachable, absenceAuthoritative, localStats.get(path)));
+      items.push(classifyPath(path, cloudMap.get(path), localDirect.has(path), cloudReachable2, absenceAuthoritative, localStats.get(path)));
     const stale = opts?.staleCloud != null;
     if (opts?.staleCloud) {
       for (const f of opts.staleCloud.files) {
@@ -4053,8 +4053,8 @@ function createListing(cfg) {
       reportStoreError(e, "log");
       return null;
     }) : null;
-    const cloudReachable = cloudRes != null;
-    const absenceAuthoritative = cloudReachable && cloudRes.complete === true;
+    const cloudReachable2 = cloudRes != null;
+    const absenceAuthoritative = cloudReachable2 && cloudRes.complete === true;
     const cloudMap = /* @__PURE__ */ new Map();
     for (const c of cloudRes?.files ?? []) {
       if (isHiddenAny(c.name))
@@ -4070,7 +4070,7 @@ function createListing(cfg) {
     const localStats = await statLocal(localSet);
     const items = [];
     for (const path of paths)
-      items.push(classifyPath(path, cloudMap.get(path), localSet.has(path), cloudReachable, absenceAuthoritative, localStats.get(path)));
+      items.push(classifyPath(path, cloudMap.get(path), localSet.has(path), cloudReachable2, absenceAuthoritative, localStats.get(path)));
     const folderSet = /* @__PURE__ */ new Set();
     for (const f of cloudRes?.folders ?? [])
       if (!isHiddenAny(f))
@@ -4080,7 +4080,7 @@ function createListing(cfg) {
         folderSet.add(p);
     for (const d of pendingFolderDeletions?.() ?? [])
       folderSet.delete(d);
-    return { items, folders: [...folderSet], complete: cloudReachable ? cloudRes.complete : false };
+    return { items, folders: [...folderSet], complete: cloudReachable2 ? cloudRes.complete : false };
   }
   return { listAllItems, listFolder };
 }
@@ -8976,6 +8976,7 @@ function takeRenewFailureCode() {
 }
 var HARD_TIMEOUT_MS = 8e3;
 var RECHECK_MS = 3e4;
+var OFFLINE_RETRY_MS = 6e4;
 var deferred = () => {
   let resolve;
   const promise = new Promise((r) => {
@@ -8994,6 +8995,7 @@ var CloudGate = class {
   blockedReason = null;
   lastOkAt = -Infinity;
   reconnecting = false;
+  stopOfflineRetry = null;
   now;
   d;
   // 不用参数属性：node 的类型剥离不认（测试直跑 .ts）
@@ -9032,6 +9034,7 @@ var CloudGate = class {
     this.d.setUserOffline(true);
     this.d.bar.show();
     this.d.note(`gate: offline chosen (${why})`);
+    this.startOfflineRetry();
   }
   /** 开机 / 醒来走这里。before = 本地那段（恢复上次的模型），在罩子底下跑完再问云端（app-store.ts 的开机顺序契约）。 */
   async run(trigger, opts = {}) {
@@ -9175,6 +9178,41 @@ var CloudGate = class {
     }
     if (this.d.userOffline()) void this.reconnect();
   }
+  /** 离线态期间定时静默再试（成功才收条；失败不弹不扰）。回前台那一下走 run("wake")。 */
+  startOfflineRetry() {
+    if (this.stopOfflineRetry) return;
+    const every = this.d.every ?? ((ms, fn) => {
+      const t = setInterval(fn, ms);
+      t.unref?.();
+      return () => clearInterval(t);
+    });
+    this.stopOfflineRetry = every(this.d.offlineRetryMs ?? OFFLINE_RETRY_MS, () => {
+      if (!this.d.userOffline()) {
+        this.endOfflineRetry();
+        return;
+      }
+      if (this.d.pageVisible?.() === false) return;
+      void this.reconnect().catch((e) => this.d.note("gate: offline retry threw " + String(e)));
+    });
+  }
+  endOfflineRetry() {
+    this.stopOfflineRetry?.();
+    this.stopOfflineRetry = null;
+  }
+  /** 云端答话了吗（带硬超时：慢网上问不出来 = 还没回来，不许挂住）。 */
+  async cloudAnswers() {
+    const ask = this.d.reachable;
+    if (!ask) return true;
+    let timer2;
+    const timeout = new Promise((res) => {
+      timer2 = setTimeout(() => res(false), this.d.hardTimeoutMs ?? HARD_TIMEOUT_MS);
+    });
+    try {
+      return await Promise.race([ask().then(() => true, () => false), timeout]);
+    } finally {
+      clearTimeout(timer2);
+    }
+  }
   /** 从「离线继续」回来。闸只在开机 / 醒来弹一次：这里失败就是条还在，不再弹。 */
   async reconnect() {
     if (this.reconnecting || !this.d.userOffline() || !this.d.browserOnline()) return false;
@@ -9185,7 +9223,12 @@ var CloudGate = class {
         this.d.note(`gate: reconnect not yet (${r.kind}${r.kind === "failed" ? " code=" + (r.code ?? "-") : ""})`);
         return false;
       }
+      if (!await this.cloudAnswers()) {
+        this.d.note("gate: reconnect not yet (cloud did not answer)");
+        return false;
+      }
       this.d.setUserOffline(false);
+      this.endOfflineRetry();
       this.d.bar.reconnecting();
       this.d.note("gate: reconnected \u2192 catching up");
       this.lastOkAt = this.now();
@@ -9363,6 +9406,9 @@ var od = createOneDriveProvider({
   transport: { timeouts: DEFAULT_GRAPH_TIMEOUTS, chunkResume: true, verifyChunkedCommit: true }
 });
 var auth = od.auth;
+async function cloudReachable() {
+  await od.provider.getItemByPath(".reachable-probe");
+}
 var _keeper = null;
 var passwordKeeper = () => _keeper ??= createPasswordKeeper({ dbName: `${APP_GUID}.remember` });
 var localDiscFiles = null;
@@ -18398,6 +18444,8 @@ var cloudGate = new CloudGate({
   },
   setUserOffline,
   userOffline: isUserOffline,
+  reachable: cloudReachable,
+  pageVisible: () => document.visibilityState !== "hidden",
   catchUp: async () => {
     await catchUpPush();
     afterSignedIn();
@@ -18819,9 +18867,9 @@ async function play(prepare2, resume) {
   let memstickTimes = /* @__PURE__ */ new Map();
   let extraFiles = /* @__PURE__ */ new Map();
   say("\u6B63\u5728\u8BFB\u5B58\u6863\u2026", 3e4);
-  const cloudReachable = auth.isSignedIn() && cloudOnline();
+  const cloudReachable2 = auth.isSignedIn() && cloudOnline();
   if (core2.saves === "shared") {
-    const listed = await listJams(PLATFORM_CODE.psp, { timeoutMs: 1e4, waitForCloud: cloudReachable });
+    const listed = await listJams(PLATFORM_CODE.psp, { timeoutMs: 1e4, waitForCloud: cloudReachable2 });
     if (listed.ids.length) {
       const loaded = await withPassword(async (pw) => {
         const p = pw ?? getPassword();
@@ -18850,9 +18898,9 @@ async function play(prepare2, resume) {
         banner("\u6CA1\u8BFB\u5B58\u6863\uFF1A\u8FD9\u6B21\u7A0B\u5E8F\u81EA\u5DF1\u5B58\u7684\u6863\u4E0D\u4F1A\u540C\u6B65\u5230 OneDrive\uFF08\u514D\u5F97\u76D6\u6389\u539F\u6765\u7684\uFF09\u3002", "warning");
       }
     } else say("\u8FD8\u6CA1\u6709\u5B58\u6863", 2e3);
-    if (cloudReachable && !listed.complete) banner("\u5B58\u6863\u7684\u4E91\u7AEF\u5217\u8868\u6CA1\u62FF\u5168\uFF08\u7F51\u7EDC\u6162\uFF1F\uFF09\uFF1A\u8FD9\u6B21\u53EF\u80FD\u770B\u4E0D\u5230\u522B\u7684\u8BBE\u5907\u4E0A\u7684\u65B0\u5B58\u6863\uFF1B\u65B0\u5B58\u7684\u6863\u548C\u4E91\u7AEF\u649E\u4E0A\u65F6\u4F1A\u8BA9\u4F60\u9009\u3002", "warning");
+    if (cloudReachable2 && !listed.complete) banner("\u5B58\u6863\u7684\u4E91\u7AEF\u5217\u8868\u6CA1\u62FF\u5168\uFF08\u7F51\u7EDC\u6162\uFF1F\uFF09\uFF1A\u8FD9\u6B21\u53EF\u80FD\u770B\u4E0D\u5230\u522B\u7684\u8BBE\u5907\u4E0A\u7684\u65B0\u5B58\u6863\uFF1B\u65B0\u5B58\u7684\u6863\u548C\u4E91\u7AEF\u649E\u4E0A\u65F6\u4F1A\u8BA9\u4F60\u9009\u3002", "warning");
   } else {
-    extraFiles = await loadCartSave(core2, disc, cloudReachable);
+    extraFiles = await loadCartSave(core2, disc, cloudReachable2);
   }
   $("home").hidden = true;
   $("game").hidden = false;
@@ -19009,14 +19057,14 @@ var cartCore = null;
 var cartSeqSaved = -1;
 var cartSeqSeen = -1;
 var cartSaving = false;
-async function loadCartSave(core2, disc, cloudReachable) {
+async function loadCartSave(core2, disc, cloudReachable2) {
   const files = /* @__PURE__ */ new Map();
   cartCore = core2;
   cartNoted = false;
-  const listed = await listJams(core2.platform, { timeoutMs: 1e4, waitForCloud: cloudReachable });
+  const listed = await listJams(core2.platform, { timeoutMs: 1e4, waitForCloud: cloudReachable2 });
   const id = await jamId(CART_JAR(core2.platform, disc.key));
   if (!listed.ids.includes(id)) {
-    if (cloudReachable && !listed.complete) {
+    if (cloudReachable2 && !listed.complete) {
       jamBlocked = true;
       banner("\u5B58\u6863\u7684\u4E91\u7AEF\u5217\u8868\u6CA1\u62FF\u5168\uFF08\u7F51\u7EDC\u6162\uFF1F\uFF09\uFF1A\u8FD9\u6B21\u4E0D\u5F80\u4E91\u7AEF\u5199\u7535\u6C60\u5B58\u6863\uFF0C\u514D\u5F97\u76D6\u6389\u522B\u7684\u8BBE\u5907\u5B58\u7684\u3002", "warning");
     } else say("\u8FD8\u6CA1\u6709\u5B58\u6863", 2e3);
@@ -20870,4 +20918,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-990dd62efe52.mjs.map
+//# sourceMappingURL=kudsrocket-8c23117a1ce8.mjs.map
