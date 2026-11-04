@@ -2,7 +2,7 @@
 var define_CORE_DIRS_default = { ppsspp: "./dist/core-602016aa4429/", mgba: "./dist/core-mgba-0eb982e32acb/" };
 
 // src/version.ts
-var APP_VERSION = "v0.2.13-2026-11-03";
+var APP_VERSION = "v0.2.14-2026-11-03";
 
 // src/app/config.ts
 var APP_ID = "kudsrocket";
@@ -91,7 +91,10 @@ function createGateStack(render2) {
     pick: (i) => {
       const e = stack[stack.length - 1];
       const a = e?.view.actions[i];
-      if (e && a) finish(e, a.value);
+      if (e && a) {
+        a.onPick?.();
+        finish(e, a.value);
+      }
     },
     depth: () => stack.length
   };
@@ -18193,6 +18196,7 @@ var softAnalog = { x: 0, y: 0 };
 var softRight = { x: 0, y: 0 };
 var currentSlot = null;
 var lastNote = "";
+var PLAIN_NOTE = "\u8FD9\u4EFD\u662F\u660E\u6587\u3001\u6CA1\u6709\u52A0\u5BC6";
 var cards = /* @__PURE__ */ new Map();
 var titles = { get: (id) => cards.get(id)?.title, has: (id) => cards.has(id) };
 var latencyHint = "interactive";
@@ -18367,12 +18371,11 @@ var cloudGate = new CloudGate({
     },
     showBlocked: (reason, b) => {
       holdGame(true);
-      showGateCover({ title: GATE_COPY.blockedTitle, message: GATE_COPY.reason[reason], actions: [{ label: GATE_COPY.signIn, value: "signin", primary: true }, { label: GATE_COPY.offline, value: "offline" }] }, (v) => {
+      showGateCover({ title: GATE_COPY.blockedTitle, message: GATE_COPY.reason[reason], actions: [{ label: GATE_COPY.signIn, value: "signin", primary: true, onPick: () => b.signIn() }, { label: GATE_COPY.offline, value: "offline" }] }, (v) => {
         if (v === "offline") {
           b.offline();
           return;
         }
-        b.signIn();
         cloudGate.reshowBlocked();
       });
     },
@@ -19801,6 +19804,7 @@ async function shareScreenshot() {
   await render2();
   await sheet((done) => [
     h("h2", {}, "\u622A\u56FE"),
+    h("p", { class: "hint" }, PLAIN_NOTE),
     img,
     info,
     h(
@@ -20397,6 +20401,7 @@ async function unwrapWafer() {
     return openForDecrypt(input, p);
   }, "\u8FD9\u4E2A\u6587\u4EF6");
   if (!opened) return;
+  if (!await confirmSheet(PLAIN_NOTE, "\u89E3\u51FA\u6765\u7684\u76D8\u6587\u4EF6\u53EA\u80FD\u662F\u660E\u6587\uFF1A\u62FF\u5230\u6587\u4EF6\u7684\u4EBA\u90FD\u80FD\u770B\u3002", "\u77E5\u9053\u4E86\uFF0C\u89E3\u5F00")) return;
   const out = await showSaveFilePicker({ suggestedName: opened.name });
   const ui = progressSheet("\u6B63\u5728\u89E3\u5BC6\u2026");
   try {
@@ -20426,6 +20431,7 @@ async function unpackSaves() {
   const skipped = stick.unreadable.size + [...stick.duplicates.values()].reduce((s, v) => s + v.length, 0);
   const chosen = await chooseGames("\u5B58\u6863\u89E3\u7F50\uFF1A\u89E3\u54EA\u51E0\u4E2A\u6E38\u620F", `\u4E91\u7AEF ${ids.length} \u7F50${complete ? "" : "\uFF08\u4E91\u7AEF\u5217\u8868\u6CA1\u62FF\u5168\uFF0C\u53EF\u80FD\u7F3A\u51E0\u7F50\uFF09"}${skipped ? `\uFF1B${skipped} \u7F50\u6253\u4E0D\u5F00\u6216\u91CD\u590D\uFF0C\u6CA1\u5217\u51FA\u6765` : ""}\u3002\u6253\u6210\u4E00\u4E2A zip \u4E0B\u8F7D\uFF1A\u91CC\u9762\u662F SAVEDATA/<\u5B58\u6863\u76EE\u5F55>/\u2026\uFF0C\u89E3\u538B\u8FDB PPSSPP \u7684 memstick/PSP/ \u5C31\u80FD\u7528\uFF08\u540C\u540D\u76EE\u5F55\u4F1A\u88AB\u76D6\uFF0C\u5148\u5907\u4EFD\uFF09\u3002`, groupByGame(dirs), "\u6253\u5305\u4E0B\u8F7D");
   if (!chosen?.size) return;
+  if (!await confirmSheet(PLAIN_NOTE, "\u7ED9 PPSSPP \u7528\u7684\u5B58\u6863\u53EA\u80FD\u662F\u660E\u6587\uFF1A\u62FF\u5230\u6587\u4EF6\u7684\u4EBA\u90FD\u80FD\u770B\u3002", "\u77E5\u9053\u4E86\uFF0C\u6253\u5305")) return;
   const want = dirs.filter((d) => chosen.has(d.game)).map((d) => d.dir);
   const zip = await exportSaveDirs(stick.files, stick.times, want);
   const stamp2 = (/* @__PURE__ */ new Date()).toISOString().slice(0, 16).replace(/[-:T]/g, "");
@@ -20720,28 +20726,11 @@ async function boot() {
   setInterval(() => {
     if ([...pendingBy.values()].some((n) => n.needsYou + n.waiting > 0)) void pushDirty();
   }, 45e3);
-  let askedPush = false;
-  const askThenPush = async () => {
-    if (askedPush) {
-      void pushDirty();
-      return;
-    }
-    askedPush = true;
-    let n = 0;
-    try {
-      n = await store2.files.dirty.count();
-    } catch {
-    }
-    if (n === 0) return;
-    const go = await confirmSheet("\u6709\u8FD8\u6CA1\u4F20\u4E0A\u53BB\u7684", `\u8FD9\u53F0\u8BBE\u5907\u4E0A\u6709 ${n} \u4EFD\u8FD8\u6CA1\u4F20\u4E0A\u53BB\uFF08\u5FEB\u7167 / \u5B58\u6863\uFF09\u3002\u73B0\u5728\u4F20\u4E0A\u53BB\uFF1F\u4E0D\u4F20\u7684\u8BDD\u7559\u5728\u8FD9\u53F0\u8BBE\u5907\uFF0C\u56DE\u524D\u53F0 / \u4E0B\u6B21\u5B58\u6863\u65F6\u4F1A\u8DDF\u7740\u4E00\u8D77\u4F20\u3002`, "\u4F20\u4E0A\u53BB", "\u5148\u4E0D\u4F20");
-    logEvent("info", go ? `\u767B\u5F55\u540E\uFF1A${n} \u4EFD\u8FD8\u6CA1\u4F20\u4E0A\u53BB\uFF0C\u4F20` : `\u767B\u5F55\u540E\uFF1A${n} \u4EFD\u8FD8\u6CA1\u4F20\u4E0A\u53BB\uFF0C\u5148\u4E0D\u4F20`);
-    if (go) void pushDirty();
-  };
   afterSignedIn = () => {
     if (!auth.isSignedIn()) return;
     for (const f of [PANTRY, CRUMBS, JARS]) store2.files.ensureFolder(f).catch((e) => console.warn("[ensureFolder]", f, e));
     store2.files.drainOfflineQueue().catch((e) => console.warn("[drain]", e));
-    void askThenPush();
+    void pushDirty();
   };
   auth.onAuthChanged((st) => {
     if (st.signedIn) {
@@ -20881,4 +20870,4 @@ boot().catch((e) => {
   console.error(e);
   banner(`\u542F\u52A8\u5931\u8D25\uFF1A${errorText(e)}`);
 });
-//# sourceMappingURL=kudsrocket-8efef762c18e.mjs.map
+//# sourceMappingURL=kudsrocket-990dd62efe52.mjs.map
