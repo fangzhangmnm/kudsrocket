@@ -3,11 +3,13 @@
 <html lang="zh">
 <head>
 <meta charset="utf-8">
+<!-- CSP（2026-10-17，user「csp…一起上」，和记住口令一起）：脚本只准本站文件 + wasm（核、音频 worklet 都是本站）；iframe 只准微软登录（MSAL 后台续登录）；connect-src 放 https: 是因为 OneDrive 的下载 / 上传主机不固定。test/csp.test.ts 钉着。 -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; worker-src 'self' blob:; connect-src 'self' https: blob: data:; img-src 'self' data: blob:; media-src 'self' data: blob:; font-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; frame-src 'self' https://login.microsoftonline.com https://login.live.com; object-src 'none'; base-uri 'self'; form-action 'self'; manifest-src 'self'">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <meta name="theme-color" content="#111111">
 <title>KudsRocket</title>
 <link rel="manifest" href="./manifest.webmanifest">
-<link rel="stylesheet" href="./styles.css?v=0486e16b6241">
+<link rel="stylesheet" href="./styles.css?v=8c23117a1ce8">
 </head>
 <body>
 <main id="home">
@@ -34,17 +36,23 @@
       <h3>存档</h3>
       <button id="save-manager" title="所有盘的快照和游戏存档：同步状态、要处理的、按游戏分组">存档管理…</button>
       <button id="bins" title="删掉的、被替换下来的都在这里，能恢复">回收站 / 备份箱…</button>
-      <button id="pack-saves" title="把 PPSSPP 记忆棒里的存档（SAVEDATA 文件夹或 zip）装进云端：云端没有的新建，一样的跳过，不一样的不动">存档装罐…</button>
+      <button id="pack-saves" title="PSP 记忆棒存档（SAVEDATA 文件夹 / zip）或 GBA 电池存档（.sav / .srm）：认出是什么先给你看，云端没有的新建，一样的跳过，不一样的你定覆盖不覆盖（旧的进回收站）">导入存档…</button>
       <button id="unpack-saves" title="把云端的存档解成 PPSSPP 能用的 SAVEDATA，打成 zip 下载">存档解罐…</button>
     </div>
     <div class="tool-group">
       <h3>这台设备</h3>
       <button id="clear-cache" title="放掉所有已同步的本机副本（没传上去的不动）">清本机缓存</button>
+      <button id="mirrors" title="读盘先从这台设备上的文件 / 自己电脑上的镜像拿，拿不到再走 OneDrive">盘的镜像…</button>
       <label class="muted">暂存区上限 <select id="staging-cap"></select></label>
       <button id="force-update" title="清掉这个 app 自己的离线壳缓存并重新载入">强制更新</button>
     </div>
+    <div class="tool-group">
+      <h3>开发者</h3>
+      <button id="factory-reset" title="这个 app 在这台设备上的全部清成新装（本机副本、缓存、记住的口令、设备号、离线壳）；云端不动；两步确认">还原出厂设置…</button>
+    </div>
     <input type="file" id="local-file" hidden>
     <input type="file" id="upload-file" hidden>
+    <input type="file" id="mirror-files" multiple hidden>
   </section>
 </main>
 
@@ -65,6 +73,15 @@
 <div id="note" hidden></div>
 <div id="update" hidden></div>
 <div id="busy" hidden><span></span></div>
-<script type="module" src="./dist/kudsrocket-0486e16b6241.mjs"></script>
+<div id="syncGate" role="dialog" aria-modal="true" aria-labelledby="syncGateTitle" hidden>
+  <div class="sync-gate-card">
+    <h2 id="syncGateTitle"></h2>
+    <p id="syncGateMessage" hidden></p>
+    <div class="sync-gate-spinner" id="syncGateSpinner" hidden></div>
+    <div class="row" id="syncGateActions"></div>
+  </div>
+</div>
+<div id="offlineBar" hidden><span id="offlineBarText"></span><button id="offlineBarList" hidden></button></div>
+<script type="module" src="./dist/kudsrocket-8c23117a1ce8.mjs"></script>
 </body>
 </html>

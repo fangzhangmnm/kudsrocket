@@ -1,8 +1,12 @@
 /* KudsRocket —— created 20261014 by Claude Opus 5.5 */
 :root {
   color-scheme: dark;
-  --bg: #111; --panel: #1c1c1c; --line: #333; --ink: #ddd; --ink-soft: #888; --accent: #7aa2ff; --warn: #e0a040; --err: #e05a5a;
+  --bg: #111; --panel: #1c1c1c; --line: #333; --ink: #ddd; --ink-soft: #888; --accent: #7aa2ff; --warn: #e0a040; --err: #e05a5a; --wait: #8ea2c4; /* wait = 没传上去但会自己好（蓝灰，不用管）；warn = 要人处理（琥珀）——user 10-18「颜色也分开」 */
   --tool: 40px;
+  /* 家族组件要的 token（参考窗 @internal/reference-window + 弹出菜单 @internal/workbench-elements；10-18）。
+     层级：画面里的东西 ≤ 6 < 参考窗 30 < 提示 40 / 更新 45 < 面板 50 < 菜单 55 < 横条 60 < 遮罩 70 */
+  --radius: 10px; --shadow: 0 6px 24px rgba(0,0,0,.55); --void: #000; --bg-soft: var(--panel); --danger: var(--err);
+  --z-window: 30; --z-modal: 50; --z-menu: 55; --z-popover: 56; --z-notice: 58; --z-toast: 59;
 }
 * { box-sizing: border-box; }
 html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); font: 15px/1.5 system-ui, sans-serif; }
@@ -45,7 +49,7 @@ button:disabled { opacity: .4; cursor: default; }
 .icon-btn .label { font-size: 13px; }
 
 #stage { position: relative; display: grid; place-items: center; overflow: hidden; container-type: size; background: #000; touch-action: none; user-select: none; -webkit-user-select: none; }
-#stage canvas { width: min(100cqw, calc(100cqh * 480 / 272)); height: auto; aspect-ratio: 480 / 272; image-rendering: pixelated; background: #000; }
+#stage canvas { --ar: calc(480 / 272); width: min(100cqw, calc(100cqh * var(--ar))); height: auto; aspect-ratio: var(--ar); image-rendering: pixelated; background: #000; }   /* --ar 由 core-session 按核的画面尺寸改（GBA 3:2） */
 #stage canvas[hidden] { display: none; }
 @container (orientation: portrait) { #stage canvas { align-self: start; } } /* 竖的是游戏区本身（不是整个视口）：画面贴顶、键在下面 */
 #stage:fullscreen { background: #000; }
@@ -57,12 +61,16 @@ button:disabled { opacity: .4; cursor: default; }
    旧的 --u = 11vmin，竖屏中间一排比十字键和四键之间的空宽，压在十字键 / × 上）。各种屏都验过：private/tests/softkey-layout.ts。
    横：键盖在画面两侧。左右各一列 = 肩键（顶）· 摇杆 · 十字键 / 四键（底），中间一排在底部正中 → 宽要 ≥ 14.5u、高要 ≥ 7.4u。
    竖：键在画面下面那块。自下而上 = 中间一排 · 十字键 / 四键 · 摇杆 · 肩键（宽 ≥ 9.6u、画面下面那块高 ≥ 7.7u）。72px 封顶（大屏不让键变成盘子）。 */
-.softkeys { position: absolute; inset: 0; pointer-events: none; --u: min(100cqh / 7.4, 100cqw / 14.5, 72px); }
-@container (orientation: portrait) { .softkeys { --u: min((100cqh - 100cqw * 272 / 480) / 7.7, 100cqw / 9.6, 72px); } }
+.softkeys, .esc-keys, #stage > #update, #stage > #note { --u: min(100cqh / 7.4, 100cqw / 14.5, 72px); }   /* 逃生键 / 全屏时的提示跟软键同一个单位（都是 #stage 的孩子） */
+@container (orientation: portrait) { .softkeys, .esc-keys, #stage > #update, #stage > #note { --u: min((100cqh - 100cqw * 272 / 480) / 7.7, 100cqw / 9.6, 72px); } }
+.softkeys { position: absolute; inset: 0; pointer-events: none; }
 .softkeys[hidden] { display: none; }
 .softkeys .pk, .softkeys .dpad { pointer-events: auto; touch-action: none; position: absolute; }
 .pk { display: grid; place-items: center; color: rgba(255,255,255,.75); background: rgba(255,255,255,.10); border: 1.5px solid rgba(255,255,255,.28); font: 600 calc(var(--u) * .28)/1 system-ui, sans-serif; letter-spacing: .04em; }
 .pk.on { background: rgba(122,162,255,.40); border-color: rgba(122,162,255,.9); }
+/* 亮画面上也认得出（v0.2.8：10-24 小尺寸截图里白底画面上肩键 / 逃生键几乎隐形）：外面一圈淡暗边 + 字带暗光晕；暗画面上看不出差别 */
+.pk, .dpad .arm, .softkeys .stick, .softkeys .stick .knob, .esc-keys .icon-btn { box-shadow: 0 0 0 1px rgba(0,0,0,.3); }
+.pk, .esc-keys .icon-btn .label { text-shadow: 0 0 3px rgba(0,0,0,.85), 0 0 1px rgba(0,0,0,.9); }
 .shoulder { top: calc(var(--u) * .3); width: calc(var(--u) * 2.1); height: calc(var(--u) * .8); border-radius: calc(var(--u) * .3); }
 .shoulder.l { left: calc(var(--u) * .3); }
 .shoulder.r { right: calc(var(--u) * .3); }
@@ -90,6 +98,8 @@ button:disabled { opacity: .4; cursor: default; }
 .sheet p { margin: 0; }
 .sheet .hint { color: var(--ink-soft); font-size: 13px; }
 .sheet input { font: inherit; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--line); background: #111; color: var(--ink); }
+.sheet form.pw-form { display: contents; }   /* 口令真表单：布局和以前一样，只是多了个 form 给密码管理器认 */
+.sr-only, .sheet .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }   /* 密码管理器的账号键：在 DOM 里、人看不见（.sheet .sr-only 压过 .sheet input 的 padding） */
 .sheet .row { display: flex; justify-content: flex-end; gap: 8px; flex-wrap: wrap; }
 .remember-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; cursor: pointer; } .remember-row input { width: 18px; height: 18px; margin: 0; }
 .slots { display: grid; gap: 0; max-height: 60vh; overflow-y: auto; }
@@ -97,7 +107,7 @@ button:disabled { opacity: .4; cursor: default; }
 .slot .thumb { width: 96px; aspect-ratio: 480 / 272; background: #000; border-radius: 4px; overflow: hidden; }
 .slot.foreign { grid-template-columns: minmax(0, 1fr) auto; } /* 别的快照那几行没缩略图：两列 */
 .slot.foreign .slot-buttons { flex-wrap: wrap; justify-content: flex-end; }
-.slot .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.slot .thumb img { width: 100%; height: 100%; object-fit: contain; display: block; }   /* GBA 的缩略图是 3:2，PSP 的框里留黑边，不裁 */
 .slot-text { display: grid; min-width: 0; }
 .slot-buttons { display: flex; gap: 6px; }
 .slot.current .slot-name { color: var(--accent); }
@@ -107,6 +117,20 @@ button:disabled { opacity: .4; cursor: default; }
 .banner span { flex: 1; }
 #note { position: fixed; bottom: 12px; left: 50%; transform: translateX(-50%); width: max-content; padding: 6px 14px; border-radius: 999px; background: rgba(30,30,30,.92); border: 1px solid var(--line); z-index: 40; max-width: calc(100% - 24px); font-size: 13px; }
 #update { position: fixed; bottom: 12px; right: 12px; display: flex; align-items: center; gap: 8px; padding: 6px 6px 6px 14px; border-radius: 10px; background: var(--panel); border: 1px solid var(--accent); z-index: 45; }
+/* 同步闸门（工单 F，2026-11-03）：游戏窗之上、面板（50）之下；开头 120 ms 不显形（核对很快时看不出闪了一下；输入从第一帧就锁了）。 */
+#syncGate { position: fixed; inset: 0; z-index: 49; display: grid; place-items: center; padding: 16px; background: rgba(0,0,0,.35); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); animation: sync-gate-in .16s ease-out .12s both; }
+#syncGate[hidden] { display: none; }
+/* 长得和 .sheet 一样，但不用这个 class：它不是面板，探针和样式里的 .sheet 都指「开着的面板」 */
+.sync-gate-card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px; display: grid; gap: 12px; width: min(360px, 92vw); text-align: center; }
+.sync-gate-card h2 { margin: 0; font-size: 18px; }
+.sync-gate-card p { margin: 0; }
+.sync-gate-card .row { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+.sync-gate-spinner { width: 22px; height: 22px; margin: 6px auto 10px; border-radius: 50%; border: 2px solid currentColor; border-right-color: transparent; opacity: .55; animation: sync-gate-spin .8s linear infinite; }
+.sync-gate-spinner[hidden] { display: none; }
+@keyframes sync-gate-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes sync-gate-spin { to { transform: rotate(360deg); } }
+#offlineBar { position: fixed; top: 6px; left: 50%; transform: translateX(-50%); z-index: 58; display: flex; align-items: center; gap: 8px; padding: 3px 10px; border-radius: 999px; background: var(--panel, #222); color: var(--ink, #eee); font-size: 12px; opacity: .92; max-width: calc(100% - 16px); }
+#offlineBar[hidden] { display: none; }
 #busy { position: fixed; inset: 0; background: rgba(0,0,0,.5); display: grid; place-items: center; z-index: 70; }
 #busy span { padding: 10px 18px; border-radius: 10px; background: var(--panel); border: 1px solid var(--line); }
 [hidden] { display: none !important; }
@@ -133,21 +157,25 @@ button:disabled { opacity: .4; cursor: default; }
 .syncbar-track { display: block; height: 3px; background: rgba(255,255,255,.12); overflow: hidden; }
 .syncbar-fill { display: block; height: 100%; width: 35%; background: var(--accent); animation: syncbar-slide 1.4s linear infinite; }
 .syncbar.stuck .syncbar-fill, .syncbar.bad .syncbar-fill { background: var(--err); animation: none; width: 100%; }
-.syncbar.pending .syncbar-fill { background: var(--warn); animation: none; width: 100%; }
+.syncbar.attention .syncbar-fill { background: var(--warn); animation: none; width: 100%; }
+.syncbar.waiting .syncbar-fill { background: var(--wait); animation: none; width: 100%; opacity: .6; }
 .syncbar.done .syncbar-fill, .syncbar.local .syncbar-fill { animation: none; width: 100%; } /* 传好了 / 存在这台设备了：静态满条，别再转（user 10-15「存档好了下面的蓝条还要转几秒」） */
 .syncbar-text { justify-self: end; margin: 2px 8px 0 0; padding: 2px 10px; border-radius: 999px; font-size: 11px; background: rgba(0,0,0,.6); color: #ddd; }
 .syncbar.stuck .syncbar-text, .syncbar.bad .syncbar-text { background: var(--err); color: #fff; }
-.syncbar.pending .syncbar-text { background: var(--warn); color: #000; }
+.syncbar.attention .syncbar-text { background: var(--warn); color: #000; }
+.syncbar.waiting .syncbar-text { background: rgba(0,0,0,.6); color: var(--wait); }
 @keyframes syncbar-slide { from { transform: translateX(-100%); } to { transform: translateX(300%); } }
 .sync-home { font-size: 13px; cursor: pointer; }
 .sync-home.busy { color: var(--accent); }
 .sync-home.stuck, .sync-home.bad { color: var(--err); }
-.sync-home.pending { color: var(--warn); }
+.sync-home.attention { color: var(--warn); }
+.sync-home.waiting { color: var(--wait); }
 .sheet pre.log { max-height: 50vh; overflow: auto; margin: 0; padding: 8px; font: 11px/1.4 ui-monospace, monospace; background: #111; border-radius: 6px; white-space: pre-wrap; }
 /* smart save button：按同步状态变色 */
 .icon-btn.smart.saving, .icon-btn.smart.busy { color: var(--accent); animation: smart-pulse 1s ease-in-out infinite; }
 .icon-btn.smart.stuck, .icon-btn.smart.bad { color: var(--err); animation: none; }
-.icon-btn.smart.pending { color: var(--warn); }
+.icon-btn.smart.attention { color: var(--warn); }
+.icon-btn.smart.waiting { color: var(--wait); }
 .icon-btn.smart.done { color: #7c6; }
 @keyframes smart-pulse { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
 /* 存档管理：按游戏分组；快照小缩略图；要处理的行左边一道色 */
@@ -155,8 +183,9 @@ button:disabled { opacity: .4; cursor: default; }
 .sm-body .bins { max-height: none; overflow: visible; }
 .sm-body h3 { position: sticky; top: 0; background: var(--panel); margin: 6px 0 2px; }
 .thumb.small { width: 64px; height: 36px; flex: none; background: #000; border-radius: 4px; overflow: hidden; }
-.thumb.small img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.thumb.small img { width: 100%; height: 100%; object-fit: contain; display: block; }
 .bin-row.attention { border-left: 3px solid var(--warn); }
+.bin-row.waiting { border-left: 3px solid var(--wait); }
 /* 连点按钮不选中文字（user 10-14「连续按按钮的时候状态栏上的文字会被选中」） */
 .toolbar, #status, .syncbar, #note, #banners, .sheet .row, .softkeys, .sync-home, .home-head { user-select: none; -webkit-user-select: none; }
 /* 真进度：条子不再无限滑动 */
@@ -213,11 +242,24 @@ body:has(#game:not([hidden])) > #banners { top: calc(env(safe-area-inset-top) + 
 body:has(#game:not([hidden])) > #update, #stage > #update { left: 50%; right: auto; transform: translateX(-50%); bottom: auto; width: max-content; max-width: calc(100% - 24px); }
 body:has(#game:not([hidden])) > #update { top: calc(env(safe-area-inset-top) + var(--tool) + 6px); }
 body:has(#game:not([hidden])) > #note { top: calc(env(safe-area-inset-top) + var(--tool) + 64px); bottom: auto; }
-/* 全屏浮条（截图 · 快照 · 菜单）：只在全屏显示（.fs-test 给无头测试用）；提示 / 有新版本往下让。added 20261015 by Claude Fable 5.1 */
-#fs-bar { display: none; position: absolute; top: calc(env(safe-area-inset-top) + 6px); left: 50%; transform: translateX(-50%); gap: 2px; padding: 2px 4px; border-radius: 10px; background: rgba(10,10,10,.78); border: 1px solid #222; z-index: 6; }
-#stage:fullscreen #fs-bar, #stage.fs-test #fs-bar { display: flex; }
-#stage > #update { top: calc(env(safe-area-inset-top) + 52px); }
-#stage > #note { top: calc(env(safe-area-inset-top) + 110px); bottom: auto; }
+/* 逃生键 = 软键的一部分（全屏 #fs-bar：截图 · 快照 · 菜单；小窗 #pip-bar：快照 · 软键）。added 20261015 by Claude Fable 5.1（全屏浮条）
+   v0.2.8：user 10-24 小窗截图「逃生口的三个键在小窗或者全屏模式把所有东西都遮住了」「对齐一下软键盘」「鼠标一移上去就立马高亮然后挡住了一堆屏幕空间」→
+   和中间一排同一种键（半透明、细描边、按 --u 缩放），没有深色底板，悬停不变（以前鼠标在小窗里任何地方 = 整条全亮），按下亮蓝。
+   横屏：肩键那一排正中（L 和 R 之间；最挤的屏中间也有 5.1u，三个键 4.5u）。竖屏：两根摇杆之间（最窄时 L、R 挨着，肩键那排没空；摇杆间 ≥ 4u，三个键 3.7u）。
+   软键收起时照样在（收起之后还得能再打开 / 退全屏）。softkey-layout.ts 每种屏量：不压键、横屏在肩键那排、竖屏不压画面、提示不盖它。edited 20261024 by Claude Opus 5.5 */
+.esc-keys { display: none; position: absolute; left: 50%; top: calc(var(--u) * .425); transform: translateX(-50%); gap: calc(var(--u) * .3); z-index: 6; }
+#stage:fullscreen #fs-bar, #stage.fs-test #fs-bar, #stage.pip #pip-bar { display: flex; }
+.esc-keys .icon-btn { width: calc(var(--u) * 1.3); height: max(16px, calc(var(--u) * .55)); min-height: 0; padding: 0; gap: 0; justify-content: center; border-radius: 999px;
+  color: rgba(255,255,255,.75); background: rgba(255,255,255,.10); border: 1.5px solid rgba(255,255,255,.28); }
+.esc-keys .icon-btn:active { background: rgba(122,162,255,.40); border-color: rgba(122,162,255,.9); }
+.esc-keys .icon-btn .label { font: 600 max(10px, calc(var(--u) * .26))/1 system-ui, sans-serif; letter-spacing: .04em; white-space: nowrap; }
+@container (orientation: portrait) {
+  .esc-keys { top: auto; bottom: calc(var(--u) * 4.975); gap: calc(var(--u) * .2); }   /* 摇杆那排（4.2u 起、2.1u 高）的中线 */
+  .esc-keys .icon-btn { width: calc(var(--u) * 1.1); }
+}
+/* 全屏时提示 / 有新版本在逃生键下面让位（横屏逃生键底边 ≤ 1u） */
+#stage > #update { top: calc(env(safe-area-inset-top) + var(--u) * 1.1 + 6px); }
+#stage > #note { top: calc(env(safe-area-inset-top) + var(--u) * 1.1 + 64px); bottom: auto; }
 
 /* 工具栏：名字吃掉剩下的宽度；性能读数；按钮带文字（窄屏只留图标 / 字更小）。等读盘 = 红。 */
 .toolbar #title-wrap { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -235,10 +277,8 @@ body:has(#game:not([hidden])) > #note { top: calc(env(safe-area-inset-top) + var
 /* ── 小窗（Document PiP，src/app/pip.ts）：#stage 搬进小窗时铺满它；主页面原位留一块占位。added 20261016 by Claude Fable 5.1 ── */
 .pip-body { margin: 0; background: #000; overflow: hidden; }
 #stage.pip { position: fixed; inset: 0; }
-#pip-bar { display: none; position: absolute; top: 4px; left: 50%; transform: translateX(-50%); gap: 2px; padding: 2px 4px; border-radius: 10px; background: rgba(10,10,10,.78); border: 1px solid #222; z-index: 6; opacity: .35; transition: opacity .15s; }
-#stage.pip #pip-bar { display: flex; }
-#stage.pip:hover #pip-bar, #stage.pip #pip-bar:focus-within { opacity: 1; }
 .pip-placeholder { display: grid; place-content: center; justify-items: center; gap: 10px; background: #000; color: var(--ink-soft); }
+.pip-placeholder p { margin: 0; } .pip-placeholder .hint { font-size: 13px; }
 /* 设置面板（settings-panel.ts，added 20261017 by Claude Opus 5.5）：一节一节往下排，每项「名字 · 下拉」一行、说明在下 */
 .setting-nav { display: flex; flex-wrap: wrap; gap: 6px; position: sticky; top: -18px; background: var(--panel); padding: 6px 0; z-index: 1; }
 .setting-nav button { padding: 6px 10px; font-size: 13px; }
@@ -250,3 +290,22 @@ body:has(#game:not([hidden])) > #note { top: calc(env(safe-area-inset-top) + var
 .setting-hint { grid-column: 1 / -1; font-size: 12px; margin: 0; }
 .menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
 .menu-grid button { padding: 14px 8px; font-size: 15px; }
+
+/* 盘的镜像面板（W-44） */
+.sheet textarea.mirror-list { width: 100%; box-sizing: border-box; font: 13px/1.4 ui-monospace, monospace; }
+
+/* 改键面板（bindings-panel.ts，20261021）：一行一个目标，键盘 / 手柄两列 */
+.bind-head, .bind-row { display: grid; grid-template-columns: minmax(6em, 1fr) 2fr 2fr; gap: 6px 10px; align-items: center; }
+.bind-head { font-size: 12px; color: var(--muted, #888); padding: 4px 0; }
+.bind-row { padding: 6px 0; border-top: 1px solid var(--line); }
+.bind-row.action .bind-label { color: var(--muted, #888); }
+.bind-cell { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.bind-cell.capturing { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+.bind-key { display: inline-flex; align-items: center; gap: 2px; padding: 2px 6px; border: 1px solid var(--line); border-radius: 6px; font-size: 13px; }
+.bind-key .bind-x, .bind-add { padding: 0 6px; min-width: 0; font-size: 13px; line-height: 1.4; }
+
+/* 软键的 GBA 布局（softkeys.ts setLayout("gba")，2026-10-21）：藏掉 GBA 没有的——摇杆、□ △、LT / RT；○ 位画 A、× 位画 B */
+.softkeys.gba .stick, .softkeys.gba .fb.sq, .softkeys.gba .fb.tri, .softkeys.gba .shoulder.lt, .softkeys.gba .shoulder.rt { display: none; }
+.softkeys.gba .fb .sym { display: none; }
+.softkeys.gba .fb.ci::after, .softkeys.gba .fb.cr::after { font: 700 calc(var(--u) * .42) / 1 system-ui, sans-serif; color: #e8ecf5; }
+.softkeys.gba .fb.ci::after { content: "A"; } .softkeys.gba .fb.cr::after { content: "B"; }
